@@ -1,0 +1,17 @@
+
+<h2>TPServer-cpp 0.1.0 released.</h2>
+<p>by Lee</p>
+<p>
+	After sitting on it for a while, I have finally released tpserver-cpp 0.1.0.  This is the
+	Minisec release of the server.
+</p>
+<p>
+	I may or may not release bug fixes for 0.1.0.  My efforts on the server are now directed towards
+	MTSec and TP03 (see the developer documentation page).  I will try to keep support of Minisec combat and
+	rules if I can.
+</p>
+<p>
+	Finally a larger numbered release... TPServer-cpp 0.1.0 is on the downloads page along with
+	gpg signature if you want to confirm it.  The CVS module is tpserver-cpp and the tag is 
+	TPSERVER_CPP_0_1_0. Feedback and suggestions are always welcome.
+</p>
