@@ -215,7 +215,7 @@ protocol is revised).</p>
 <p>
 <table>
   <tr>
-    <td><b>From</b></td><td><b>type</b></td><td><b>Data Packet</b></td><td>Description</td>
+    <td><b>From</b></td><td><b>type</b></td><td><b>Data Packet</b></td><td><b>Description</b></td>
   </tr>
   <tr>
     <td>Client</td><td>Connect</td><td>&nbsp;</td><td>Can I connect? (version check)</td>
