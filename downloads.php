@@ -30,26 +30,7 @@ function display($directory) {
 <p>
 	This is the main server for Thousand Parsec.
 </p>
-<p>
-<?php 
-
-$dir = $downloads . "cpp-server/";
-$files = @get_files($dir);
-
-foreach ($files as $file) {
-	list($trash, $goodness) = split("-", $file, 2);
-	list($major, $minor, $revision, $tar, $compression) = split("\.", $goodness, 5);
-?>
-
-<p>
-	<a href="<?php echo $dir . $file; ?>"> Version <?php echo "$major.$minor.$revision"; ?></a> <?php echo "$tar/$compression"; ?>, <?php echo (int)(filesize($dir . $file)/1024) ?> KB
-</p>
-
-<?php
-}
-?>
-</p>
-
+<?php display("cpp-server/"); ?>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
@@ -59,23 +40,7 @@ foreach ($files as $file) {
 	Binaries for windows may be avalible at a later date. It's not a colorful as
 	the pygame client but it's more fully featured.
 </p>
-<?php 
-
-$dir = $downloads . "pywx-client/";
-$files = @get_files($dir);
-
-foreach ($files as $file) {
-	list($trash, $goodness) = split("-", $file, 2);
-	list($major, $minor, $revision, $tar, $compression) = split("\.", $goodness, 5);
-?>
-
-<p>
-	<a href="<?php echo $dir . $file; ?>"> Version <?php echo "$major.$minor.$revision"; ?></a> <?php echo "$tar/$compression"; ?>, <?php echo (int)(filesize($dir . $file)/1024) ?> KB
-</p>
-
-<?php
-}
-?>
+<?php display("pywx-client/"); ?>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
@@ -85,7 +50,7 @@ foreach ($files as $file) {
 	Binaries for windows may be avalible at a later date. It doesn't have all the 
 	pretty graphics but it is the first to get new features.
 </p>
-<?php display("pytext-client"); ?>
+<?php display("pytext-client/"); ?>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
@@ -94,6 +59,7 @@ foreach ($files as $file) {
 	This library is used by all the new python clients to connect to TP servers.<br>
 	All new python clients require this library to function.
 </p>
-<?php display("pytext-client"); ?>
+<?php display("py-netlib/"); ?>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/end_page.inc" ?>
+
