@@ -675,6 +675,7 @@
 ?>
 
 <h2>Generic Responses</h2>
+<hr>
 
 <h3>OK Frame</h3>
 <p>
@@ -723,6 +724,7 @@
 ?>
 
 <h2>Connecting</h2>
+<hr>
 
 <span class="new">
 <h3>Redirect Frame</h3>
@@ -780,6 +782,7 @@
 ?>
 
 <h2>Feature Negotiation</h2>
+<hr>
 
 <span class="new">
 <h3>Get Features Frame</h3>
@@ -814,6 +817,7 @@
 ?>
 
 <h2>Keep Alive</h2>
+<hr>
 
 <span class="new">
 <h3>Ping Frame</h3>
@@ -830,6 +834,7 @@
 ?>
 
 <h2>Objects</h2>
+<hr>
 
 <h3>Get Object by ID Frame</h3>
 <p>
@@ -894,6 +899,7 @@ Example:
 ?>
 
 <h2>Orders</h2>
+<hr>
 
 <h3>Get Order Frame, Remove Order Frame</h3>
 <p>
@@ -1113,6 +1119,7 @@ ignore any information in read only field (even if they are non-empty).
 ?>
 
 <h2>Time</h2>
+<hr>
 
 <h3>Get Time Remaining Frame</h3>
 <p>
@@ -1135,6 +1142,7 @@ ignore any information in read only field (even if they are non-empty).
 ?>
 
 <h2>Messages</h2>
+<hr>
 
 <h3>Get Board Frame</h3>
 <p>
@@ -1323,6 +1331,7 @@ ignore any information in read only field (even if they are non-empty).
 ?>
 
 <h2>Resources</h2>
+<hr>
 
 <h3>Get Resource Description Frame</h3>
 <p>
@@ -1391,6 +1400,7 @@ ignore any information in read only field (even if they are non-empty).
 ?>
 
 <h2>Design Manipulation</h2>
+<hr>
 
 <span class="new">
 <h3>Get Category Description Frame</h3>
@@ -1539,6 +1549,7 @@ done in one step).
 ?>
 
 <h2>Binary Data</h2>
+<hr>
 
 <span class="new">
 <h3>Get Data URL Frame</h3>
@@ -1568,6 +1579,7 @@ done in one step).
 ?>
 
 <h2>Players</h2>
+<hr>
 
 <span class="new">
 <h3>Get Player Frame</h3>
