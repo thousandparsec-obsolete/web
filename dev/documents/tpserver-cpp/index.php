@@ -10,8 +10,8 @@
 <p>Most of this documentation is coming from my Advanced OO Design project at Uni.</p>
 
 <?php
-  include "../bits/end_section.inc";
-  include "../bits/start_section.inc";
+  include "../../bits/end_section.inc";
+  include "../../bits/start_section.inc";
 ?>
 
 <h2>UML Diagram</h2>
@@ -26,8 +26,8 @@
 </ul>
 
 <?php
-  include "../bits/end_section.inc";
-  include "../bits/start_section.inc";
+  include "../../bits/end_section.inc";
+  include "../../bits/start_section.inc";
 ?>
 
 <h2>Class List</h2>
@@ -103,6 +103,6 @@
 <p>Builds a new fleet with one ship of one type.</p>
 
 <?php
-  include "../bits/end_section.inc";
-  include "../bits/end_page.inc";
+  include "../../bits/end_section.inc";
+  include "../../bits/end_page.inc";
 ?>
