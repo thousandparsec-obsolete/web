@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html401/strict.dtd"
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html401/strict.dtd">
 <html>
 <head>
 
@@ -10,10 +10,25 @@
 
 <style type="text/css">
 <!--
-a {  font-family: "Times New Roman", Times, serif; color: #00FF99; text-decoration: none}
-a.top_link {  font-family: "Times New Roman", Times, serif; color: #00FF99; text-decoration: none}
-.small { font-size: 10 }
-pre { font-family: Courier; }
+a {  
+	font-family: "Times New Roman", Times, serif; 
+	color: #00FF99; 
+	text-decoration: none
+}
+
+a.top_link {
+	font-family: "Times New Roman", Times, serif;
+	color: #00FF99; 
+	text-decoration: none
+}
+
+.small { 
+	font-size: 10
+}
+
+pre { 
+	font-family: Courier; 
+}
 -->
 </style>
 
