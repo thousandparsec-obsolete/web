@@ -18,6 +18,7 @@ if len(sys.argv) != 2:
     sys.exit()
 
 colors = { "python" : "blue",
+           "perl" : "purple",
            "ansic" : "silver",
 	   "java" : "brown",
            "cpp" : "green",

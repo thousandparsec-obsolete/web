@@ -9,10 +9,10 @@ $files = get_files($news);
 
 foreach($files as $file) {
 	include "bits/start_section.inc";
-?>
-	<td>Posted: <?php echo substr($file, 0, -5); ?></td>
-<?
 	include($news . $file);
+?>
+	<p class="small">Posted: <?php echo substr($file, 0, -5); ?></p>
+<?
 	include "bits/end_section.inc";
 }
 
