@@ -1,0 +1,12 @@
+
+<h2>TPServer-cpp 0.0.9 released</h2>
+<p>by Lee</p>
+<p>
+	I have just released 0.0.9 of tpserver-cpp.  This will be the last release before the minisec
+	release.  Please test the server and report any bugs. Only small improvements like better 
+	random numbers and more messages to the player's message board will be in the next release.  
+	Changes to the server this release include: Fixed bugs and orders, added combat. 
+</p>
+<p>
+	All the normal stuff.  CVS tag: TPSERVER_CPP_0_0_9. Tarball and gpg sig on the downloads page.
+</p>
