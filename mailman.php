@@ -24,7 +24,7 @@ $sto   = array("#DOT#", "#PLUS#");
 
 $post = array();
 foreach ($_POST as $key => $value) {
-	$post[] = array(str_replace($sto, $sfrom, substr($key,5)) => $value);
+	$post[] = array(str_replace($sto, $sfrom, /*substr(*/$key/*,5)*/) => $value);
 }
 $fetcher->set_submit_multipart();
 $fetcher->submit($url,$post);
@@ -71,7 +71,7 @@ foreach ($matches[1] as $key => $value) {
 		$prev = $value;
 
 	$from = '/name=' . $value . '/i';
-	$to = 'name="' . sprintf("%05d", $i) . str_replace($sfrom, $sto, str_replace('"', '', $value)) . '"';
+	$to = 'name="' . /*sprintf("%05d", $i) .*/ str_replace($sfrom, $sto, str_replace('"', '', $value)) . '"';
 
 	$data = preg_replace($from, $to, $data, 1);
 
