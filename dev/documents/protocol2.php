@@ -10,24 +10,24 @@
 <p>Last updated 18 February 2004.</p>
 
 <p>
-	This protocol definition is for the Thousand Parsec project. It
-	is designed as a simple, easy to implement protocol. It is designed by
-	Lee Begg (and modified by Tim Ansell) and any questions should be
-	directed at these two or the tp-devel mailing list.
+    This protocol definition is for the Thousand Parsec project. It
+    is designed as a simple, easy to implement protocol. It is designed by
+    Lee Begg (and modified by Tim Ansell) and any questions should be
+    directed at these two or the tp-devel mailing list.
 </p>
 
 <p>
-	This version of the protocol replaces the <a href="protocol.php">previous version (0.1)</a> and
-	has improvements where we noticed we could have done better.  Any server
-	should try to remain backward compatible with version 0.1 for a period
-	to allow the clients to be ported gradually.
+    This version of the protocol replaces the <a href="protocol.php">previous version (0.1)</a> and
+    has improvements where we noticed we could have done better.  Any server
+    should try to remain backward compatible with version 0.1 for a period
+    to allow the clients to be ported gradually.
 </p>
 
 <p>
-	This protocol will only change in a backward compatible way, with
-	respect to current versions and revisions that the client(s) and
-	server are using. Any change that is not backward compatible will
-	change the version number of the protocol.
+    This protocol will only change in a backward compatible way, with
+    respect to current versions and revisions that the client(s) and
+    server are using. Any change that is not backward compatible will
+    change the version number of the protocol.
 </p>
 
 <?php
@@ -37,21 +37,21 @@
 
 <h2>Basics</h2>
 <p>
-	TP will use TCP port 6923. This port is not known to have any other
-	services on it.
+    TP will use TCP port 6923. This port is not known to have any other
+    services on it.
 </p>
 <p>
-	Data does not need to be 32 bit aligned. Strings will be prefixed by the 32
-	bit integer length (include null terminator) with no padding necessary. A list will be of
-	only one type (IE int32 or int64) and be prefixed by an int32 for the
-	number of items in the list.
+    Data does not need to be 32 bit aligned. Strings will be prefixed by the 32
+    bit integer length (include null terminator) with no padding necessary. A list will be of
+    only one type (IE Int32 or Int64) and be prefixed by an Int32 for the
+    number of items in the list.
 <p>
 <p>
-	All integers are in Network Byte Order (Big Endian).
+    All integers are in Network Byte Order (Big Endian).
 </p>
 <p>
-	In this document a 32 bit integer is shown as &lt;n&gt; and a 64 bit
-	integer as &lt;&lt;n&gt;&gt;.  ASCII text is shown as normal.
+    In this document a 32 bit integer is shown as &lt;n&gt; and a 64 bit
+    integer as &lt;&lt;n&gt;&gt;.  ASCII text is shown as normal.
 </p>
 
 <?php
@@ -61,13 +61,13 @@
 
 <h2>TP Frame format</h2>
 <p>
-	A TP Frame has the following parts:
+    A TP Frame has the following parts:
 <table border="1">
   <tbody>
     <tr>
       <td><b>Fields</b></td>
       <td>Header</td>
-	  <td>Sequence Number</td>
+      <td>Sequence Number</td>
       <td>Type</td>
       <td>Length</td>
       <td>Data Packet</td>
@@ -80,20 +80,20 @@
       <td>32 bits</td>
       <td>length * 8 bits</td>
     </tr>
-	<tr>
-		<td><b>Type</b></td>
-		<td>4 * char</td>
-		<td>UInt32</td>
-		<td>UInt32</td>
-		<td>UInt32</td>
-		<td>data</td>
-	</tr>
+    <tr>
+        <td><b>Type</b></td>
+        <td>4 * Char</td>
+        <td>UInt32</td>
+        <td>UInt32</td>
+        <td>UInt32</td>
+        <td>data</td>
+    </tr>
     <tr>
       <td><b>Description and notes</b></td>
       <td>Always has value "TP02" ("TP" plus version number), no null terminator.</td>
-	  <td>
-		An incrementing number "sequence number". The sequence number
-		should alway be one more then the previous packets sequence number.
+      <td>
+        An incrementing number "sequence number". The sequence number
+        should alway be one more then the previous packets sequence number.
       </td>
       <td>Type of data, see table below</td>
       <td>Length of data in bytes, must be multiplies of 4</td>
@@ -102,7 +102,7 @@
     <tr>
       <td><b>Example</b></td>
       <td>TP02</td>
-	  <td>2345</td>
+      <td>2345</td>
       <td>2</td>
       <td>21</td>
       <td>&lt;5&gt;blah\0&lt;6&gt;blah2\0</td>
@@ -111,12 +111,12 @@
 </table>
 </p>
 <p>
-	The Client may start with any positive (it's an unsigned number) sequence number except 
-	zero (0).  Server replies with have sequence numbers that are the same as the sequence
-	number on the operation they are a response to.  If the server sends a frame that is not
-	a response, the frames sequence number will be zero (0).
+    The Client may start with any positive (it's an unsigned number) sequence number except 
+    zero (0).  Server replies with have sequence numbers that are the same as the sequence
+    number on the operation they are a response to.  If the server sends a frame that is not
+    a response, the frames sequence number will be zero (0).
 </p>
-<p>	
+<p>    
 </p>
 
 <?php
@@ -126,16 +126,16 @@
 
 <h2>Types</h2>
 <p>
-	There are a number of types that can be put in types field of the
-	packet. There is no meaning in odd/even distinction in this version.
-	The types are listed below:
+    There are a number of types that can be put in types field of the
+    packet. There is no meaning in odd/even distinction in this version.
+    The types are listed below:
 </p>
 <p>
-	If there is no C++ enum value, it is not current implemented yet and
-	should be taken as advisory only.
+    If there is no C++ enum value, it is not current implemented yet and
+    should be taken as advisory only.
 </p>
 <p>
-	<b>Warning:</b> these values have changed from version 0.1 to 0.2.
+    <b>Warning:</b> these values have changed from version 0.1 to 0.2.
 
 <table border="1">
   <tbody>
@@ -147,7 +147,7 @@
       <td><b>Description</b></td>
       <td><b>ParsecStone</b></td>
     </tr>
-	
+    
     <tr>
       <td colspan="6" align="center"><b>Generic Responses</b></td>
     </tr>
@@ -195,7 +195,7 @@
       <td>Login with username/password</td>
       <td>Alpha</td>
     </tr>
-	
+    
     <tr>
       <td colspan="6" align="center"><b>Objects</b></td>
     </tr>
@@ -207,7 +207,7 @@
       <td>Returns object with the IDs.</td>
       <td>Bravo</td>
     </tr>
-	<tr>
+    <tr>
       <td>6</td>
       <td>Get Objects by Position</td>
       <td>&nbsp;</td>
@@ -275,7 +275,7 @@
       <td>Charlie</td>
     </tr>
 
-	<tr>
+    <tr>
       <td colspan="6" align="center"><b>Time</b></td>
     </tr>
     <tr>
@@ -375,7 +375,7 @@
       <td>Echo</td>
     </tr>
     
-	
+    
   </tbody>
 </table>
 </p>
@@ -388,112 +388,112 @@
 
 <h2>Data Packet formats</h2>
 <p>
-	The different types have different formats for the Data Packet.	Any Data
-	Packet may have be extended at any time in a backward compatible manner.
-	The program should just ignore any extra data in the Data Packet which
-	it does not understand.
+    The different types have different formats for the Data Packet.    Any Data
+    Packet may have be extended at any time in a backward compatible manner.
+    The program should just ignore any extra data in the Data Packet which
+    it does not understand.
 </p>
 
 <h3>OK Packet</h3>
 <p>
-	The OK packet consists of:
-	<ol>
-		<li>
-			may contain a string (the string can be	safely ignored - 
-			however it may contain useful information for debugging purposes)
-		</li>
-	</ol>
+    The OK packet consists of:
+    <ul>
+        <li>
+            may contain a string (the string can be    safely ignored - 
+            however it may contain useful information for debugging purposes)
+        </li>
+    </ul>
 </p>
 
 <h3>Fail Packet</h3>
 <p>
-	A fail packet consists of:
-	<ol>
-		<li>a int32, error code</li>
-		<li>a text string, message of the error</li>
-	</ol>
-	Current error codes consist of:
-	<ol>
-		<li>0 - Protocol Error, Something went wrong with the protocol</li>
-		<li>1 - Frame Error, One of the frames sent was bad</li>
-		<li>2 - Unavailable Permanently, This operation is unavailable</li>
-		<li>3 - Unavailable Temporarily, This operation is unavailable at this moment</li>
-		<li>4 - No such thing, The object/order does not exist</li>
-		<li>...</li>
-	</ol>
-	Exception: If the connect packet is not valid TP frame, this
-	packet will not be returned, instead a plain text string will be sent saying that the wrong
-	protocol has been used. A fail packet may be send if the wrong protocol version is detected.
-	This does not affect clients as they should always get the connect packet right.
+    A fail packet consists of:
+    <ul>
+        <li>a Int32, error code</li>
+        <li>a text string, message of the error</li>
+    </ul>
+    Current error codes consist of:
+    <ul>
+        <li>0 - Protocol Error, Something went wrong with the protocol</li>
+        <li>1 - Frame Error, One of the frames sent was bad</li>
+        <li>2 - Unavailable Permanently, This operation is unavailable</li>
+        <li>3 - Unavailable Temporarily, This operation is unavailable at this moment</li>
+        <li>4 - No such thing, The object/order does not exist</li>
+        <li>...</li>
+    </ul>
+    Exception: If the connect packet is not valid TP frame, this
+    packet will not be returned, instead a plain text string will be sent saying that the wrong
+    protocol has been used. A fail packet may be send if the wrong protocol version is detected.
+    This does not affect clients as they should always get the connect packet right.
 </p>
 
 <h3>Sequence Packet</h3>
 <p>
-	Sequence packet consist of:
-	<ol>
-		<li>a UInt32, giving the number of packets to follow</li>
-	</ol>
-	This packet will proceed a response which requires numerous packets to be complete.
+    Sequence packet consist of:
+    <ul>
+        <li>a UInt32, giving the number of packets to follow</li>
+    </ul>
+    This packet will proceed a response which requires numerous packets to be complete.
 </p>
 
 <h3>Connect Packet</h3>
 <p>
-	The Connect packet consists of:
-	<ol>
-		<li>a text string, a client identification string</li>
-	</ol>
-	The client identification string can be any string but will mostly
-	used to produce stats of who uses which client.
+    The Connect packet consists of:
+    <ul>
+        <li>a text string, a client identification string</li>
+    </ul>
+    The client identification string can be any string but will mostly
+    used to produce stats of who uses which client.
 </p>
 
 <h3>Login Packet</h3>
 <p>
-	The Login packet consists of:
-	<ol>
-		<li>a text string, the username of the player</li>
-		<li>a text string, the password</li>
-	</ol>
-	Currently the password will be transmitted in plain text, further
-	security will be added in future version.
+    The Login packet consists of:
+    <ul>
+        <li>a text string, the username of the player</li>
+        <li>a text string, the password</li>
+    </ul>
+    Currently the password will be transmitted in plain text, further
+    security will be added in future version.
 </p>
 
 <h3>Get Object by ID Packet</h3>
 <p>
-	A Get Object by ID packet consist of:
-	<ol>
-		<li>a list UInt32, object IDs of the object requested<li>
-	</ol>
-	An object ID of 0 is the top level Universe object.
+    A Get Object by ID packet consist of:
+    <ul>
+        <li>a list UInt32, object IDs of the object requested<li>
+    </ul>
+    An object ID of 0 is the top level Universe object.
 </p>
 
 <h3>Object Packet</h3>
 <p>
-	An Object packet consist of:
-	
-	<ol>
-		<li>a UInt32, object ID</li>
-		<li>a UInt32, object type</li>
-		<li>a text string, name of object</li>
-		<li>a UInt64, size of object (diameter)</li>
-		<li>3 by int64, position of object</li>
-		<li>3 by int64, velocity of object</li>
-		<li>
-			a list of UInt32, object IDs of objects contained in the current
-			object
-		</li>
-		<li>
-			a list of UInt32, order types that the player can send to this
-			object
-		</li>
-		<li>a UInt32, number of orders currently on this object</li>
-		<li>
-			4 by UInt32 of padding, for future expansion of common
-			attributes
-		</li>
-		<li>
-			extra data, as defined by each object type
-		</li>
-	</ol>
+    An Object packet consist of:
+    
+    <ul>
+        <li>a UInt32, object ID</li>
+        <li>a UInt32, object type</li>
+        <li>a text string, name of object</li>
+        <li>a UInt64, size of object (diameter)</li>
+        <li>3 by Int64, position of object</li>
+        <li>3 by Int64, velocity of object</li>
+        <li>
+            a list of UInt32, object IDs of objects contained in the current
+            object
+        </li>
+        <li>
+            a list of UInt32, order types that the player can send to this
+            object
+        </li>
+        <li>a UInt32, number of orders currently on this object</li>
+        <li>
+            4 by UInt32 of padding, for future expansion of common
+            attributes
+        </li>
+        <li>
+            extra data, as defined by each object type
+        </li>
+    </ul>
 
 Example:
 &lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\0&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
@@ -502,13 +502,13 @@ Example:
 
 <h3>Get Objects by Position Packet</h3>
 <p>
-	A Get Objects by Position packet consist of:
-	<ol>
-  		<li>3 by int64, giving the position of center the sphere</li>
-		<li>a UInt64, giving the radius of the sphere</li>
-	</ol>
-	This will return a bunch of Objects which are inside the sphere. If
-	a sphere size of zero is used all object at the point will be returned.
+    A Get Objects by Position packet consist of:
+    <ul>
+          <li>3 by Int64, giving the position of center the sphere</li>
+        <li>a UInt64, giving the radius of the sphere</li>
+    </ul>
+    This will return a bunch of Objects which are inside the sphere. If
+    a sphere size of zero is used all object at the point will be returned.
 </p>
 
 <p>
@@ -519,32 +519,36 @@ by the extended protocol specification.
 <h3>Get Order Packet, Remove Order Packet</h3>
 
 <p>
-	Get Order packet and Remove Order packet have the int32 id of the
-	object it's on, and the int32 slot number the order is in to be sent or
-	removed.
+    Get Order packet and Remove Order packet have the Int32 ID of the
+    object it's on, and a list of Int32 slot numbers for the orders that
+    are to be sent or removed.
+</p>
+<p>
+    Note: You should sent Remove Order slot numbers in decrementing value if
+    you don't want strange things to happen. (IE 10, 4, 1)
 </p>
 
 <h3>Order Packet, Add Order packet</h3>
 <p>
-	An Order Packet or Add Order packet has int32 Object ID of the
-	object it's on (or to be put on), int32 type, and
-	which slot number it is in or should go in, -1 for last. Any extra data
-	required by the order is appended to the end and is defined on a type
-	by type basis.
+    An Order Packet or Add Order packet has Int32 Object ID of the
+    object it's on (or to be put on), Int32 type, and
+    which slot number it is in or should go in, -1 for last. Any extra data
+    required by the order is appended to the end and is defined on a type
+    by type basis.
 </p>
 
 <h3>Describe Order Packet</h3>
 <p>
-	This packet contains a single int32, the order type to be described.
+    This packet contains a list of Int32 which are the order types to be described.
 </p>
 
 <h3>Order Description Packet</h3>
 <p>
-	The Order Description packet contains: int32 order type, string
-	name, string description, int32 number of parameters and then of each
-	parameter:
-	string name, int32 type ID, string desc. The Parameter Types are given
-	below:
+    The Order Description packet contains: Int32 order type, string
+    name, string description, Int32 number of parameters and then of each
+    parameter:
+    string name, Int32 type ID, string description. The Parameter Types are given
+    below:
 <table>
   <tbody>
     <tr>
@@ -557,42 +561,97 @@ by the extended protocol specification.
     <tr>
       <td>Absolute Space Coordinates</td>
       <td>0</td>
-      <td>opT_Space_Coord</td>
-      <td>Coordinates in absolute space, three int64: x, y, z</td>
-      <td>&lt;&lt;x&gt;&gt; &lt;&lt;y&gt;&gt; &lt;&lt;z&gt;&gt;</td>
+      <td>opT_Space_Coord_Abs</td>
+      <td>Coordinates in absolute space. (Relative to the center of the Universe)</td>
+      <td>
+          <ul>
+            <li>Int 64, read write, X value</li>
+            <li>Int 64, read write, Y value</li>
+            <li>Int 64, read write, Z value</li>
+          </ul>
+      </td>
     </tr>
     <tr>
       <td>Time</td>
       <td>1</td>
       <td>opT_Time</td>
-      <td>The number of turns before something happens, int32</td>
-      <td>&lt;n&gt;</td>
+      <td>The number of turns before something happens.</td>
+      <td>
+          <ul>
+            <li>Int 32, read write, number of turns</li>
+            <li>Int 32, read only, maximum number of turns</li>
+          </ul>
+      </td>
     </tr>
     <tr>
       <td>Object</td>
       <td>2</td>
       <td>opT_Object_ID</td>
-      <td>An object's ID number, unsigned int32</td>
-      <td>&lt;id&gt;</td>
+      <td>An object's ID number.</td>
+      <td>
+          <ul>
+            <li>UInt 32, read write, objects id</li>
+          </ul>
+      </td>
     </tr>
     <tr>
       <td>Player</td>
       <td>3</td>
       <td>opT_Player_ID</td>
-      <td>A player's ID number, int32</td>
-      <td>&lt;id&gt;</td>
+      <td>A player's ID number, Int32</td>
+      <td>
+          <ul>
+            <li>UInt 32, read write, players id</li>
+            <li>UInt 32, read only, mask (ON bits should be not be able to be selected),
+                <ul>
+                    <li>0x00000001 - Allies</li>
+                    <li>0x00000002 - Trading Partner</li>
+                    <li>0x00000004 - Neutral</li>
+                    <li>0x00000008 - Enemies</li>
+                    <li>0x00000016 - Non-player</li>
+                </ul>
+            <li>
+          </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Relative Space Coordinates</td>
+      <td>4</td>
+      <td>opT_Space_Coord_Rel</td>
+      <td>Coordinates in absolute space relative to an object</td>
+      <td>
+          <ul>
+            <li>UInt 32, read write, ID of the object these coordinates are relative to</li>
+            <li>Int 64, read write, X value</li>
+            <li>Int 64, read write, Y value</li>
+            <li>Int 64, read write, Z value</li>
+          </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>5</td>
+      <td>opT_Range</td>
+      <td>A number value from a range</td>
+      <td>
+          <ul>
+            <li>Int 32, read write, value</li>
+            <li>Int 32, read only, minimum value</li>
+            <li>Int 32, read only, maximum value</li>
+            <li>Int 32, read only, value to increment by</li>
+          </ul>
+      </td>
     </tr>
   </tbody>
 </table>
 </p>
 
-
 <h3>Get Outcome</h3>
-<p>The Get Outcome data packet consists of int32 Object id and int32
+<p>The Get Outcome data packet consists of Int32 Object id and Int32
 order slot number.</p>
 <h3>Outcome</h3>
-<p>The Outcome Frame contains int32 Object id, int32 order slot number,
-int32 turns to completion,
+<p>The Outcome Frame contains Int32 Object id, Int32 order slot number,
+Int32 turns to completion,
 followed by more data to be specified in future.</p>
 <h3>Other Packets</h3>
 <p>All other data packets are not defined yet and shall be added to
