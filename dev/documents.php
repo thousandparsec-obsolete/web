@@ -8,6 +8,25 @@
 		</font>
 	</p>
 	<p>
+		Server documentation
+	</p>
+	<blockquote>
+		<p>
+			<a href="documents/cpp-server">C++ Server Documentation.</a> Documentation for the C++ server.<br>
+		</p>
+	</blockquote>
+
+	<p>
+		Python documentation
+	</p>
+	<blockquote>
+		<p>
+			<a href="documents/python/netlib-doc/">TP Python Network Library.</a> Documentation for Thousand Parsec python network library. Can also be downloaded from <a href="documents/python/py-netlib-doc-cvs.tar.gz">here</a><br>
+		</p>
+	</blockquote>
+
+
+	<p>
 		Other documents
 	</p>
 	
