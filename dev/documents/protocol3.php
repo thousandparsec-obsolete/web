@@ -270,6 +270,12 @@
 		<td colspan="6" align="center">These packets are used for negotiation which features to use.</td>
 	</tr><tr class="new">
 		<td></td>
+		<td>Get Features</td>
+		<td></td>
+		<td>Get the features available on this server.</td>
+		<td></td>
+	</tr><tr class="new">
+		<td></td>
 		<td>Available Features</td>
 		<td></td>
 		<td>The features available on this server.</td>
@@ -356,6 +362,12 @@
 		<td>ft02_Order_Remove</td>
 		<td>Remove an order from a slot of an object</td>
 		<td>Charlie</td>
+	</tr><tr class="new">
+		<td></td>
+		<td>Probe Order</td>
+		<td></td>
+		<td>Returns an order object which would be created if this was an Insert order</td>
+		<td></td>
 	</tr>
 
 	<tr>
@@ -443,31 +455,31 @@
 		<td colspan="6" align="center"><b>Design Manipulation</b></td>
 	</tr><tr class="new">
 		<td colspan="6" align="center">
-			These packets are used to manipulate designs. Designs are stored in design boards which 
+			These packets are used to manipulate designs. Designs are stored in design collections which 
 			group similar designs together. Many servers will even let you create your own design 
-			boards to use.
+			collections to use.
 		</td>
 	</tr><tr class="new">
 		<td></td>
-		<td>Get Design Board</td>
+		<td>Get Design Collection</td>
 		<td></td>
 		<td></td>
 		<td></td>
 	</tr><tr class="new">
 		<td></td>
-		<td>Design Board</td>
+		<td>Design Collection</td>
 		<td></td>
 		<td></td>
 		<td></td>
 	</tr><tr class="new">
 		<td></td>
-		<td>Insert Design Board</td>
+		<td>Insert Design Collection</td>
 		<td></td>
 		<td></td>
 		<td></td>
 	</tr><tr class="new">
 		<td></td>
-		<td>Remove Design Board</td>
+		<td>Remove Design Collection</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -556,6 +568,18 @@
 	This packet will proceed a response which requires numerous packets to be complete.
 </p>
 
+<span class="new">
+<h3>Redirect Packet</h3>
+<p>
+	Redirect packet consist of:
+	<ul>
+		<li>a String, the URI of the new server to connect too</li>
+	</ul>
+	This URI will be of the standard format. A server won't redirect to a different type of
+	service (IE If you using the tunnel service it will only redirect to another tunnel service).
+</p>
+</span>
+
 <h3>Connect Packet</h3>
 <p>
 	The Connect packet consists of:
@@ -563,7 +587,11 @@
 		<li>a String, a client identification string</li>
 	</ul>
 	The client identification string can be any string but will mostly
-	used to produce stats of who uses which client.
+	used to produce stats of who uses which client. The server may return 
+	either a OK, Fail or Redirect packet.
+</p><p>
+	If the server wants to return a Redirect and the client only supports
+	the old protocol a Fail should be returned instead.
 </p>
 
 <h3>Login Packet</h3>
@@ -573,14 +601,25 @@
 		<li>a String, the username of the player</li>
 		<li>a String, the password</li>
 	</ul>
-	Currently the password will be transmitted in plain text, further
-	security will be added in future version.
+	Currently the password will be transmitted in plain text. 
+	<span class="new">To avoid interception	SSL service should be used. Some
+	servers may refuse to authenticate on the unencrypted service and only
+	run it to allow detection of encryption support.</span>
 </p>
 
 <span class="new">
-<h3>Avalible Packet</h3>
+<h3>Get Features Packet</h3>
 <p>
-	The Avalible packet consists of:
+	The Get Features Packet has no data.
+	Get the features this server supports. This packet can be sent before 
+	Connect.
+</p>
+</span>
+
+<span class="new">
+<h3>Features Packet</h3>
+<p>
+	The Features packet consists of:
 	<ul>
 		<li>a List of UInt32, ID code of feature</li>
 	</ul>
@@ -608,7 +647,7 @@
 <p>
 	A Get Object by ID packet consist of:
 	<ul>
-		<li>a list UInt32, object IDs of the object requested</li>
+		<li>a list of UInt32, object IDs of the object requested</li>
 	</ul>
 	An object ID of 0 is the top level Universe object.
 </p>
@@ -663,10 +702,9 @@ Example:
 	Get Order packet and Remove Order packet consist of:
 	<ul>
 		<li>a UInt32, id of object to be changed</li>
-		<li>a list UInt32, slot numbers of orders to be sent/removed</li>
+		<li>a list of UInt32, slot numbers of orders to be sent/removed</li>
 	</ul>
-</p>
-<p>
+</p><p>
 	Note: You should sent Remove Order slot numbers in decrementing value if
 	you don't want strange things to happen. (IE 10, 4, 1)
 </p>
@@ -688,12 +726,26 @@ Example:
 		<li>extra data, required by the order is appended to the end</li>
 	</ul>
 
-	The extra data is defined by Order descriptions packets. The number of turns and the size of the
-	resource list should be zero (0) when sent by the client.<br>
+	The extra data is defined by Order descriptions packets. The number of turns
+	and the size of the	resource list should be zero (0) when sent by the client.<br>
 	<br>
 	<b>Note:</b> Order type ID's below 1000 are reserved for orders defined 
 	by the extended protocol specification.
 </p>
+
+<span class="new">
+<h3>Probe Order packet</h3>
+<p>
+	A Probe Order packet is an Insert order which doesn't take effect. 
+	These probes should occur as if no orders currently exist on object and should 
+	have no side-effects.	
+	This is used to get the read-only fields for an order which is needed for good
+	offline operation.
+</p><p>
+	<b>Note:</b>This data should only be used as a guide, complex interactions may 
+	cause the read-only fields to be different in some cases.
+</p>
+</span>
 
 <h3>Describe Order Packet</h3>
 <p>
@@ -730,9 +782,9 @@ Example:
 		<td>Coordinates in absolute space. (Relative to the center of the Universe)</td>
 		<td>
 			<ul>
-			<li>a Int64, read write, X value</li>
-			<li>a Int64, read write, Y value</li>
-			<li>a Int64, read write, Z value</li>
+				<li>a Int64, read write, X value</li>
+				<li>a Int64, read write, Y value</li>
+				<li>a Int64, read write, Z value</li>
 			</ul>
 		</td>
 	</tr>
@@ -743,8 +795,8 @@ Example:
 		<td>The number of turns before something happens.</td>
 		<td>
 			<ul>
-			<li>a Int32, read write, number of turns</li>
-			<li>a Int32, read only, maximum number of turns</li>
+				<li>a Int32, read write, number of turns</li>
+				<li>a Int32, read only, maximum number of turns</li>
 			</ul>
 		</td>
 	</tr>
@@ -755,7 +807,7 @@ Example:
 		<td>An object's ID number.</td>
 		<td>
 			<ul>
-			<li>a UInt32, read write, objects id</li>
+				<li>a UInt32, read write, objects id</li>
 			</ul>
 		</td>
 	</tr>
@@ -767,13 +819,13 @@ Example:
 		<td>
 			<ul>
 			<li>a UInt32, read write, players id</li>
-			<li>a UInt32, read only, mask (ON bits should be not be able to be selected),
+			<li>a UInt32, read only, mask (ON bits are NOT allowed to choosen),
 				<ul>
 					<li>0x00000001 - Allies</li>
 					<li>0x00000002 - Trading Partner</li>
 					<li>0x00000004 - Neutral</li>
 					<li>0x00000008 - Enemies</li>
-					<li>0x00000010 - Non-player</li>
+					<li>0x00000016 - Non-player</li>
 				</ul>
 			</li>
 			</ul>
@@ -786,10 +838,10 @@ Example:
 		<td>Coordinates in absolute space relative to an object</td>
 		<td>
 			<ul>
-			<li>a UInt32, read write, ID of the object these coordinates are relative to</li>
-			<li>a Int64, read write, X value</li>
-			<li>a Int64, read write, Y value</li>
-			<li>a Int64, read write, Z value</li>
+				<li>a UInt32, read write, ID of the object these coordinates are relative to</li>
+				<li>a Int64, read write, X value</li>
+				<li>a Int64, read write, Y value</li>
+				<li>a Int64, read write, Z value</li>
 			</ul>
 		</td>
 	</tr>
@@ -800,10 +852,10 @@ Example:
 		<td>A number value from a range</td>
 		<td>
 			<ul>
-			<li>a Int32, read write, value</li>
-			<li>a Int32, read only, minimum value</li>
-			<li>a Int32, read only, maximum value</li>
-			<li>a Int32, read only, value to increment by</li>
+				<li>a Int32, read write, value</li>
+				<li>a Int32, read only, minimum value</li>
+				<li>a Int32, read only, maximum value</li>
+				<li>a Int32, read only, value to increment by</li>
 			</ul>
 		</td>
 	</tr>
@@ -814,16 +866,16 @@ Example:
 		<td>A list in which numerous objects can be selected</td>
 		<td>
 			The possible selections, A list of:
-		<ul>
-			<li>a UInt32, read only, id of what can be selected</li>
-			<li>a String, read only, String Name of can be selected</li>
-			<li>a UInt32, read only, Maximum number of can to be selected</li>
-		</ul>
-		The selection, A list of:
-		<ul>
-			<li>a UInt32, read write, id of the selection</li>
-			<li>a UInt32, read write, number of the selection</li>
-		</ul>
+			<ul>
+				<li>a UInt32, read only, id of what can be selected</li>
+				<li>a String, read only, String Name of can be selected</li>
+				<li>a UInt32, read only, Maximum number of can to be selected</li>
+			</ul>
+			The selection, A list of:
+			<ul>
+				<li>a UInt32, read write, id of the selection</li>
+				<li>a UInt32, read write, number of the selection</li>
+			</ul>
 		</td>
 	</tr>
 	<tr>
@@ -833,8 +885,8 @@ Example:
 		<td>A number textual string</td>
 		<td>
 			<ul>
-			<li>a Int 32, read only, maximum length of the string</li>
-			<li>a String, read write, the string</li>
+				<li>a Int 32, read only, maximum length of the string</li>
+				<li>a String, read write, the string</li>
 			</ul>
 		</td>
 	</tr>
@@ -847,7 +899,7 @@ ignore any information in read only field (even if they are non-empty).
 </p>
 
 <h3>Get Time Remaining</h3>
-<p>Get the time remaining before the end of turn.	No data</p>
+<p>Get the time remaining before the end of turn. No data</p>
 
 <h3>Time Remaining</h3>
 <p>Contains one UInt32, with the time in seconds before the next end
@@ -858,7 +910,7 @@ end of turn has just started.</p>
 <p>
 	A Get Board packet consist of:
 	<ul>
-		<li>a list UInt32, Board IDs of the boards requested<li>
+		<li>a list of UInt32, Board IDs of the boards requested</li>
 	</ul>
 	A board ID of 0 is the special private (system) board for the current player.
 </p>
@@ -879,11 +931,10 @@ end of turn has just started.</p>
 	Get Message packet and Remove Message packet consist of:
 	<ul>
 		<li>a UInt32, id of board to be changed</li>
-		<li>a list UInt32, slot numbers of orders to be sent/removed</li>
+		<li>a list of UInt32, slot numbers of orders to be sent/removed</li>
 	</ul>
-</p>
-<p>
-	Note: You should sent Remove Message slot numbers in decrementing value if
+</p><p>
+	Note: You should send Remove Message slot numbers in decrementing value if
 	you don't want strange things to happen. (IE 10, 4, 1)
 </p>
 
@@ -900,19 +951,21 @@ end of turn has just started.</p>
 		<li class="new">a UInt32, Turn the message was generated on</li>
 		<li class="new">something about references</li>
 	</ul>
-</p>
-<p>
+</p><p>
 	Message types are "or"ed together to produce the type field.
 	<ol>
 		<li>Order Completion, this message refers to a completion of an order</li>
 		<li>Order Canceled, this message refers to the cancellation of an order</li>
-		<li></li>
+		<li class="new"></li>
 	</ol>
 </p>
 
 <h3>Get Resource Description</h3>
 <p>
-	Get the Resource Description. 
+	Get Resource Description consist of:
+	<ul>
+		<li>a list of UInt32, Resource ID</li>
+	</ul>
 </p>
 
 <h3>Resource Description</h3>
@@ -938,11 +991,10 @@ end of turn has just started.</p>
 	All other data packets are not defined yet and shall be added to
 	this protocol version (unless the protocol is revised).
 </p>
+
 <h2>Example</h2>
 <p>The following is a simple example of the first interaction.</p>
-<p>
 <table>
-	<tbody>
 	<tr>
 		<td><b>From</b></td>
 		<td><b>type</b></td>
@@ -987,9 +1039,7 @@ end of turn has just started.</p>
 &lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;0&gt;&lt;0&gt;</td>
 		<td>Universe object</td>
 	</tr>
-	</tbody>
 </table>
-</p>
 
 <?php
 	include "../bits/end_section.inc";
@@ -1000,8 +1050,6 @@ end of turn has just started.</p>
 <p>
 	Stuff we have to do before we can consider this protocol to be complete enough 
 	to move onto another version.
-</p>
-<p>
 	<ul>
 		<li>Figure out how to do masking for the opT_Object_ID Order Argument type (IE like opT_Object_Type)</li>
 		<li>Add references to Messages (IE This message refers to these objects/orders/players)</li>
@@ -1018,5 +1066,3 @@ end of turn has just started.</p>
 	include "../bits/end_section.inc";
 	include "../bits/end_page.inc";
 ?>
-
-
