@@ -1,2 +1,1 @@
-
-<?php include "../bits/end_section.inc" ?>
+<?php include dirname(__FILE__) . "/../../bits/end_section.inc" ?>

@@ -1,6 +1,6 @@
 
 <?php $nobreak=true ?>
-<?php include "../bits/start_page.inc" ?>
+<?php include dirname(__FILE__) . "/../../bits/start_page.inc" ?>
 
 <table width="100%" border="0" bordercolor="#FFFFFF">
 	<tr> 
