@@ -12,8 +12,8 @@ $viewcvs_url = "http://" . $_SERVER['SERVER_NAME'] . $viewcvs_short;
 
 // Include an rewrite the viewcvs stuff
 $url = $_SERVER['REQUEST_URI'];
-if ($url == "")
-	$url = "/";
+if ($url == $my_url)
+	$url = $my_url . "/";
 $url = str_replace($my_url, '', $url);
 
 echo "<!-- real url = $url -->";
