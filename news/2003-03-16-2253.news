@@ -1,0 +1,17 @@
+
+<h2>0.0.2 of wxPython client has been released!</h2>
+<p>by Mithro</p>
+<p>
+	The wxPython client has finnally got it's but into gear and reached 0.0.2,
+	ie Bravo release. It can connect to the Thousand Parsec server and login 
+	with a supplied username/password and display all the objects in the Universe.
+	<br>
+	Other new features are a config system which allows you to specifiy and save 
+	where all the windows go and their size. Clicking on an object in the System 
+	screen centers the StarMap onto that object. And A non-blocking network level
+	that allows the universe to progressivley downloaded.
+	<br>
+	I have also uploaded a new <a href="/tp/screenshots/pywx-client-main2.png">screen shot.</a>
+	<br>
+</p>
+
