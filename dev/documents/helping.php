@@ -68,9 +68,8 @@ As well the following graphics are needed,
 </ul>
 Some cool subtle space music for the background would be cool too!
 </p><p>
-As well the website is always in need of improvement. Take this email
-and turn it into a HTML page to be posted. Write us a RSS feed system or
-something. 
+As well the website is always in need of improvement. Write us a RSS feed
+system or something. 
 </p>
 <?php include "../bits/end_section.inc" ?>
 <?php include "../bits/start_section.inc" ?>
