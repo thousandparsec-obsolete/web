@@ -14,7 +14,7 @@
 <?php 
 
 $dir = $downloads . "cpp-server/";
-$files = array_reverse(get_files($dir));
+$files = @get_files($dir);
 
 foreach ($files as $file) {
 	list($trash, $goodness) = split("-", $file, 2);
@@ -42,7 +42,7 @@ foreach ($files as $file) {
 <?php 
 
 $dir = $downloads . "pywx-client/";
-$files = array_reverse(get_files($dir));
+$files = @get_files($dir);
 
 foreach ($files as $file) {
 	list($trash, $goodness) = split("-", $file, 2);
