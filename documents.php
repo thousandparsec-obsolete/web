@@ -86,8 +86,8 @@
 	<blockquote>
 		<p>
 			<a href="protocol.php">Protocol</a> document, describes the protocol.<br>
-			<a href="protocol.php">Milestone</a> document, describes what we are aiming for when.<br>
-			<a href="protocol.php">Orders</a> document, describes possible orders that could be given in the game.<br>
+			<a href="milestones.php">Milestones</a> document, describes what we are aiming for when.<br>
+			<a href="orders.php">Orders</a> document, describes possible orders that could be given in the game.<br>
 		</p>
 	</blockquote>
 

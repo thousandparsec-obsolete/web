@@ -2,6 +2,11 @@
 
 <?php include "bits/start_section.inc" ?>
 
+<p>Last updated: 18 Feb 2003</p>
+
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
 <h1>Milestones</h1>
 	
 <p>After each milestone is reached the CVS should be tagged and a tarball created.</p>

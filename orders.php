@@ -5,6 +5,11 @@
 
 <?php include "bits/start_section.inc" ?>
 
+<p>Last updated: 18 Feb 2003</p>
+
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
 <h2>Move</h2>
 <ul>
 	<li>

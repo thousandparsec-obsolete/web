@@ -4,7 +4,8 @@
   include "bits/start_section.inc";
 ?>
 
-<h1>Protocol Definition for Thousand Parsec, version 0.1.  Last updated 16 Feb 03.</h1>
+<h1>Protocol Definition for Thousand Parsec, version 0.1.</h1>
+<p>Last updated 16 Feb 2003.</p>
 <p>This protocol definition is for the Thousand Parsec project.  It
 is designed as a simple, easy to impliment protocol.  It is desgined by Lee Begg and
 any questions should be directed to him.</p>
