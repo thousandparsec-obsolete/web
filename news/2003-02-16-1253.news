@@ -1,0 +1,17 @@
+
+<h2>wxPython client released!</h2>
+<p>by Mithro</p>
+<p>
+	The wxPython client has been released. It can connect to the Thousand Parsec
+	server and login with a supplied username/password. Other new features are 
+	just waiting on the server. I have also uploaded some screen shots. One of 
+	the <a href="/tp/screenshots/pywx-client-login.png">login screen</a> and
+	one of the main <a href="/tp/screenshots/pywx-client-main.png">interface screen</a>.
+	<br>
+	This completes the Alpha milestone. Yay!
+	<br>
+	Hopefully we will have a server/client which can actually do something 
+	interesting very soon.
+</p>
+	
+
