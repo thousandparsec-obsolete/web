@@ -80,8 +80,7 @@
 		<p><span class="new">
 		Previously all strings had to be terminate by a null character, this is no 
 		longer necessary. It is recommend that the null terminator is no longer
-		transmitted. Later versions of the protocol will allow null characters to be
-		transmitted in strings.
+		transmitted.
 		</span></p>
 	</li><li>
 		A list will be of only one type (IE Int32 or String) and be prefixed by an
