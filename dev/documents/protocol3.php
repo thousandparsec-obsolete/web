@@ -212,7 +212,7 @@
 	FIXME: This number seems a bit large now that we are no longer moving large data via the TP protocol
 	but via HTTP or similar?
 </p><p class="new">
-	No frame may be bigger then <b>10485760</b> bytes (10 megabytes) long.
+	No frame may be bigger then <b>1048576</b> bytes (1 megabytes) long.
 </p>
 
 <?php
