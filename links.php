@@ -34,8 +34,8 @@
 			Free Orion.
 		</a>
 		<p>
-			Free Orion is aiming to create a clone of the popular Master of Orion game
-			series.
+			FreeOrion is a 4X game inspired by the MOO series, but 
+			incorporating novel design ideas.
 		</p>
 	</li>
 </ul>
