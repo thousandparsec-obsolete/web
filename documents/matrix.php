@@ -135,6 +135,11 @@
 		<td align="center" bgcolor="#00ff00">2</td>
 	</tr>
 	<tr>
+		<td>IPv6 support</td>
+		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
+	</tr>
+	<tr>
 		<td>Message Boards</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
@@ -167,6 +172,11 @@
 	</tr>
 	<tr>
 		<td>Merge/Split Fleet</td>
+		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+	</tr>
+	<tr>
+		<td>Colonise</td>
 		<td align="center" bgcolor="#000000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
