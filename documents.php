@@ -2,10 +2,10 @@
 
 <?php include "bits/start_page.inc" ?>
 <?php include "bits/start_section.inc" ?>
+	<h2>
+		User Documentation
+	</h2>
     <p>
-		<h2>
-			User Documentation
-		</h2>
 		<a href="/tp/dev/documents.php">
 			Goto Developer Documentation
 		</a>
