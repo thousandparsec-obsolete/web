@@ -42,32 +42,32 @@ a {  font-family: "Times New Roman", Times, serif; color: #00FF99; text-decorati
 			</a>
 		</td>
 		<td bgcolor="#000000" align="center">
-			<a href="/tp/documents.html">
+			<a href="/tp/documents.php">
 				DOCUMENTS
 			</a>
 		</td>
 		<td bgcolor="#000000" align="center">
-			<a href="/tp/downloads.html">
+			<a href="/tp/downloads.php">
 				DOWNLOADS
 			</a>
 		</td>
 		<td bgcolor="#000000" align="center">
-			<a href="/tp/ext.html">
+			<a href="/tp/ext.php">
 				EXTENSIONS
 			</a>
 		</td>
 		<td bgcolor="#000000" align="center">
-			<a href="/tp/dev/index.html">
+			<a href="/tp/dev/index.php">
 				DEVELOPERS
 			</a>
 		</td>
 		<td bgcolor="#000000" align="center">
-			<a href="/tp/faq.html">
+			<a href="/tp/faq.php">
 				FAQ
 			</a>
 		</td>
 		<td bgcolor="#000000" align="center">
-			<a href="/tp/links.html">
+			<a href="/tp/links.php">
 				LINKS
 			</a>
 		</td>

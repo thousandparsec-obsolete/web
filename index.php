@@ -1,14 +1,17 @@
 <?php include "bits/start_page.inc" ; ?>
 
-
 <?php
 
-$d = dir('news');
+$news = "news/";
 
-while ($file = $this_dir->read()) {
-	include "bits/start_section.inc";
-	include $file;
-	include "bits/end_section.inc";
+$d = dir($news);
+
+while ( false !== ($file = $d->read()) ) {
+    if ( is_file($news . $file) ) {
+        include "bits/start_section.inc";
+        include($news . $file);
+        include "bits/end_section.inc";
+    }
 }
 
 ?>
