@@ -27,7 +27,7 @@
 ?>
 
 <h1>Client Support Matrix</h1>
-<p>Last updated 30 October 2004.</p>
+<p>Last updated 04 November 2004.</p>
 
 <table>
 	<tr>
@@ -49,8 +49,8 @@
 	</tr>
 	<tr>
 		<td>IPv6 support</td>
-		<td align="center" bgcolor="#ff0000">#</td>
-		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 	</tr>
@@ -80,7 +80,7 @@
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
-		<td align="center" bgcolor="#ffff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 	</tr>
 	<tr>
 		<td>Can add orders?</td>
