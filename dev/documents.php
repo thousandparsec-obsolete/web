@@ -3,9 +3,9 @@
 <?php include "bits/start_page.inc" ?>
 <?php include "bits/start_section.inc" ?>
     <p>
-		<font size="4">
+		<h2>
 			Developer Documentation
-		</font>
+		</h2>
 	</p>
 	<p>
 		Server documentation

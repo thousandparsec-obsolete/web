@@ -4,11 +4,9 @@
 <?php include "bits/start_section.inc" ?>
 
 <br>
-<br>
-
-<font size="4">
+<h2>
 		Welcome Developers!
-</font>
+</h2>
 
 <p>
 	This is the developers section. If you just want to use Thousand Parsec

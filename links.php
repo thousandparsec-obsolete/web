@@ -4,9 +4,9 @@
 <?php include "bits/start_section.inc" ?>
 
 <p>
-	<font size="6">
+	<h2>
 		Thousand Parsec links
-	</font>
+	</h2>
 </p>
 <ul>
 	<li></li>
@@ -16,9 +16,9 @@
 <?php include "bits/start_section.inc" ?>
 
 <p>
-	<font size="6">
+	<h2>
 		Universe links
-	</font>
+	</h2>
 </p>
 <p>
 	Another open source game similar to Thousand Parsec, it's written in JAVA.
@@ -35,9 +35,9 @@
 <?php include "bits/start_section.inc" ?>
 
 <p>
-	<font size="6">
+	<h2>
 		Stars! links
-	</font>
+	</h2>
 </p>
 <p>
 	Stars! is a similar game to what we are trying to create. It's a decent 
@@ -53,9 +53,9 @@
 <?php include "bits/start_section.inc" ?>
 
 <p>
-	<font size="6">
+	<h2>
 		VGA Planets links
-	</font>
+	</h2>
 </p>
 <p>
 	VGA Planets is another similar game. There is also a shareware version.
@@ -68,9 +68,9 @@
 <?php include "bits/start_section.inc" ?>
 
 <p>
-	<font size="6">
+	<h2>
 		XPace links
-	</font>
+	</h2>
 </p>
 <p>
 	Another commerical game like Stars! and VGA Planets. Downloadable for

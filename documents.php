@@ -3,9 +3,9 @@
 <?php include "bits/start_page.inc" ?>
 <?php include "bits/start_section.inc" ?>
     <p>
-		<h1>
+		<h2>
 			User Documentation
-		</h1>
+		</h2>
 		<a href="/tp/dev/documents.php">
 			Goto Developer Documentation
 		</a>
