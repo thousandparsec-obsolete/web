@@ -1,0 +1,14 @@
+
+<h2>TP-Server 0.0.4rc1 Released</h2>
+<p>by Lee</p>
+<p>
+  I have released tp-serv 0.0.4rc1 as a "should be going, untested" release of the C++ server of 
+  Thousand Parsec.  Because mithro is very busy, and the server up to date, I've released this
+  to allow anyone else to work on a client compatable with it.
+</p>
+<p>The Tag in the CVS is CPP_SERVER_0_0_4RC1, and the tarball is available from the downloads page.
+  Some parts of the protocol have not been fully documented yet (mostly extra data fields) and I will
+  try to document them in the next couple of weeks.
+</p>
+
+
