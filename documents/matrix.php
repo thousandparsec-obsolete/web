@@ -29,12 +29,12 @@
 <h1>Client Support Matrix</h1>
 <p>Last updated 04 November 2004.</p>
 
-<table>
+<table cellpadding=3>
 	<tr>
 		<td>&nbsp;</td>
 		<td colspan="4"><b>py-netlib</b></td>
 		<td><b>libtpproto-cpp</b></td>
-		<td><b>Java (no lib yet)</b></td>
+		<td><b></b></td>
 	</tr>
 	<tr>
 		<td>&nbsp;</td>
@@ -46,7 +46,7 @@
 		<td>TPJava</td>
 	</tr>
 	<tr>
-	        <td>&nbsp;</td>
+		<td>&nbsp;</td>
 		<td align="center" colspan="6">
 			<b>Network Features</b>
 		</td>
@@ -132,6 +132,13 @@
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
+		<td>Can post messages?</td>
+		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ffff00">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 	<tr>
 		<td>Can tell when a turn will end?</td>
 		<td align="center" bgcolor="#00ff00">#</td>
@@ -139,6 +146,75 @@
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+	</tr>
+	<tr>
+		<td>Can download weapon/ship designs?</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+	</tr>
+	<tr>
+		<td>Can upload weapon/ship designs?</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+	</tr>
+	<tr>
+		<td>Can download battle data?</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td align="center" colspan="6">
+			<b>Other Features</b>
+		</td>
+	</tr>
+	<tr>
+		<td>Can work in offline mode?</td>
+		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#ffff00">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+	</tr>
+	<tr>
+		<td>Can view weapon/ship designs?</td>
+		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+	</tr>
+	<tr>
+		<td>Can view weapon/ship designs?</td>
+		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+	</tr>
+	<tr>
+		<td>Can view battles?</td>
+		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#000000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 </td>
@@ -187,9 +263,29 @@
 		<td align="center" bgcolor="#00ff00">#</td>
 	</tr>
 	<tr>
-		<td>Combat</td>
+		<td>Postable Message Boards</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ffff00">#</td>
+	</tr>
+	<tr>
+		<td>MiniSec Combat</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
+	</tr>
+	<tr>
+		<td>MTSec Combat</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+	</tr>
+	<tr>
+		<td>Componet Design</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+	</tr>
+	<tr>
+		<td>Ship Design</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 
 	<tr>
