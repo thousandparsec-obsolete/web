@@ -338,12 +338,20 @@
       <td>Post a message to a board.</td>
       <td>Foxtrot</td>
     </tr>
+    <tr>
+      <td>21</td>
+      <td>Remove Message</td>
+      <td>&nbsp;</td>
+      <td>ft02_Message_Remove</td>
+      <td>Remove a message from a board.</td>
+      <td>Foxtrot</td>
+    </tr>
 
     <tr>
       <td colspan="6" align="center"><b>Resources</b></td>
     </tr>
     <tr>
-      <td>21</td>
+      <td>22</td>
       <td>Get Resource Description</td>
       <td>&nbsp;</td>
       <td>ft02_ResDesc_Get</td>
@@ -351,7 +359,7 @@
       <td>Foxtrot</td>
     </tr>
     <tr>
-      <td>22</td>
+      <td>23</td>
       <td>Resource Description</td>
       <td>&nbsp;</td>
       <td>ft02_ResDesc</td>
@@ -417,10 +425,8 @@
 <p>
     The OK packet consists of:
     <ul>
-        <li>
-            a String, the string can be safely ignored - however it may 
-			contain useful information for debugging purposes)
-        </li>
+        <li>a String, the string can be safely ignored - however it may 
+			contain useful information for debugging purposes)</li>
     </ul>
 </p>
 
@@ -437,7 +443,7 @@
         <li>1 - Frame Error, One of the frames sent was bad</li>
         <li>2 - Unavailable Permanently, This operation is unavailable</li>
         <li>3 - Unavailable Temporarily, This operation is unavailable at this moment</li>
-        <li>4 - No such thing, The object/order does not exist</li>
+        <li>4 - No such thing, The object/order/message does not exist</li>
         <li>...</li>
     </ul>
     Exception: If the connect packet is not valid TP frame, this
@@ -532,9 +538,11 @@ Example:
 
 <h3>Get Order Packet, Remove Order Packet</h3>
 <p>
-    Get Order packet and Remove Order packet have the Int32 ID of the
-    object it's on, and a list of Int32 slot numbers for the orders that
-    are to be sent or removed.
+    Get Order packet and Remove Order packet consist of:
+	<ul>
+		<li>a UInt32, id of object to be changed</li>
+		<li>a list UInt32, slot numbers of orders to be sent/removed</li>
+	</ul>
 </p>
 <p>
     Note: You should sent Remove Order slot numbers in decrementing value if
@@ -563,8 +571,6 @@ Example:
 	<br>
 	<b>Note:</b> Order type ID's below 1000 are reserved for orders defined 
 	by the extended protocol specification.
-</p>
-
 </p>
 
 <h3>Describe Order Packet</h3>
@@ -700,9 +706,63 @@ Example:
 <p>Get the time remaining before the end of turn.  No data</p>
 
 <h3>Time Remaining</h3>
-<p>Contains one Int32, with the time in seconds before the next end
+<p>Contains one UInt32, with the time in seconds before the next end
 of turn starts.  Can be sent at any time.  If the value is 0 then the
 end of turn has just started.</p>
+
+<h3>Get Board Packet</h3>
+<p>
+    A Get Board packet consist of:
+    <ul>
+        <li>a list UInt32, Board IDs of the boards requested<li>
+    </ul>
+    A board ID of 0 is the special private (system) board for the current player.
+</p>
+
+<h3>Board Packet</h3>
+<p>
+    A Board packet consist of:
+    <ul>
+		<li>a UInt32, Board ID</li>
+		<li>a String, name of the Board</li>
+		<li>a String, description of the Board</li>
+		<li>a UInt32, number of messages on the Board</li>
+	</ul>
+</p>
+
+<h3>Get Message Packet, Remove Message Packet</h3>
+<p>
+    Get Message packet and Remove Message packet consist of:
+	<ul>
+		<li>a UInt32, id of board to be changed</li>
+		<li>a list UInt32, slot numbers of orders to be sent/removed</li>
+	</ul>
+</p>
+<p>
+    Note: You should sent Remove Message slot numbers in decrementing value if
+    you don't want strange things to happen. (IE 10, 4, 1)
+</p>
+
+<h3>Message Packet, Post Message packet</h3>
+<p>
+    A Message packet consist of:
+    <ul>
+        <li>a UInt32, Board ID of the message is on/to be placed on</li>
+        <li>a UInt32, Slot number of the message/to be put in, 
+			-1 will insert at the last position, otherwise it is inserted before the number</li>
+		<li>a list UInt32, type of message (can be multiple types at once).</li>
+		<li>a String, Subject of the Message</li>
+		<li>a String, Body of the Message</li>
+    </ul>
+</p>
+<p>
+	Message types are "or"ed together to produce the type field.
+	<ol>
+		<li>Order Completion, this message refers to a completion of an order</li>
+		<li>Order Canceled, this message refers to the cancelation of an order</li>
+		<li></li>
+	</ol>
+</p>
 
 <h3>Get Resource Description</h3>
 <p>
@@ -726,7 +786,6 @@ end of turn has just started.</p>
         <li>a UInt32, size per unit of resource (0 for not applicable)</li>
     </ul>
 </p>
-
 
 <h3>Other Packets</h3>
 <p>
