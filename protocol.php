@@ -19,6 +19,7 @@ any questions should be directed to him.</p>
 <p>All data will be 32 bit aligned.  Strings will be prefixed by the 32 bit integer length (include null terminator) and then padded
 with nulls ('\0') to the next 32 bit boundary (if necessary).  All integers are in Network Byte Order
 (Big Endian).</p>
+<p>In this document a 32 bit integer is shown as &lt;n&gt; and a 64 bit integer as &lt;&lt;n&gt;&gt;</p>
 
 <?php
   include "bits/end_section.inc";
@@ -53,8 +54,8 @@ with nulls ('\0') to the next 32 bit boundary (if necessary).  All integers are 
     <td><b>Example</b></td>
     <td>TP01</td>
     <td>2</td>
-    <td>20</td>
-    <td>&lt;4&gt;lee\0&lt;6&gt;blah2\0\0\0</td>
+    <td>24</td>
+    <td>&lt;5&gt;blah\0\0\0\0&lt;6&gt;blah2\0\0\0</td>
   </tr>
 </table>
 </p>
@@ -112,7 +113,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>4</td>
     <td>Get Object</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>ft_Get_Object</td>
     <td>Get information about an object</td>
     <td>Bravo</td>
   </tr>
@@ -120,7 +121,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>5</td>
     <td>Object</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>ft_Object</td>
     <td>Object information</td>
     <td>Bravo</td>
   </tr>
@@ -181,15 +182,25 @@ Even values are sent from the client, odd values from the server. The types are 
 
 <h2>Data Packet formats</h2>
 <p>The different types have different formats for the Data Packet.</p>
-<h3>Connect Packet, Ok Packet</h3>
+<h3>Connect Packet</h3>
 <p>No Data Packet.  The length is zero.</p>
+<h3>OK Packet</h3>
+<p>the OK packet in the frame may contain a string.  The string can be safely ignored.</p>
 <h3>Login Packet</h3>
 <p>The login packet consists of two strings. The first is the username of the player and/or character.
-The second is Password. The password will be transimitted in plaintext, futher security will be added in
+The second is Password. The password will be transmitted in plaintext, futher security will be added in
 future version.</p>
 <h3>Fail Packet</h3>
-<p>A fail packet consists of a integer code, a text string of the error, then the packet (plus type and 
-length prefix) if the error relates to a particular data packet.</p>
+<p>A fail packet consists of a integer code, a text string of the error.</p>
+<h3>Get Object Packet</h3>
+<p>Packet contains the int32 object ID of the object requested.  Object 0 is the top level Universe object.</p>
+<h3>Object Packet</h3>
+<p>An object packet contains: int32 object ID, int32 object type, string name, unsigned int64 size (diameter), 3 by signed int64 
+position, 3 by signed int64 velocity, 3 by signed int64 acceleration, and a list of int32 object IDs of objects contained in 
+the current object, prefixed by the int32 of the number of items in the list.  After the list, any type specific data is appended.  Example: 
+&lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\0\0\0\0&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
+&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
+&lt;2&gt;&lt;1&gt;&lt;2&gt;</p>
 <h3>Other Packets</h3>
 <p>All other data packets are not defined yet and shall be added to this protocol version (unless the 
 protocol is revised).</p>
@@ -213,16 +224,21 @@ protocol is revised).</p>
     <td>Server</td><td>Ok</td><td>&nbsp;</td><td>You can connect</td>
   </tr>
   <tr>
-    <td>Client</td><td>Login</td><td>&lt;4&gt;lee\0&lt;6&gt;blah2\0\0\0</td><td>This is my username and password</td>
+    <td>Client</td><td>Login</td><td>&lt;5&gt;blah\0\0\0\0&lt;6&gt;blah2\0\0\0</td><td>This is my username and password</td>
   </tr>
   <tr>
     <td>Server</td><td>Ok</td><td>&nbsp;</td><td>Username/password accepted</td>
   </tr>
   <tr>
-    <td>Client</td><td>Get Object</td><td>&lt;not defined yet&gt;</td><td>Get the Universe object</td>
+    <td>Client</td><td>Get Object</td><td>&lt;0&gt;</td><td>Get the Universe object</td>
   </tr>
   <tr>
-    <td>Server</td><td>Object</td><td>&lt;not defined yet&gt;</td><td>Universe object</td>
+    <td>Server</td>
+    <td>Object</td>
+    <td>&lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\0\0\0\0&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
+      &lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
+      &lt;2&gt;&lt;1&gt;&lt;2&gt;</td>
+    <td>Universe object</td>
   </tr>
 </table>
 </p>
