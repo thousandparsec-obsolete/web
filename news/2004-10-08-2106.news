@@ -1,0 +1,12 @@
+
+<h2>Rename stuff</h2>
+<p>by Mithro</p>
+<p>
+	Well as Lee said we have renamed almost everything. The clients are now named 
+	tpclient-<old prefix>. The servers have been named tpserver-<old prefix>. So for example the
+	cpp-server is not called tpserver-cpp and the pywx-client is now called tpclient-pywx.
+</p>
+<p>
+	The reason we renamed the packages was to improve package naming for Debian and related 
+	Linux systems.
+</p>
