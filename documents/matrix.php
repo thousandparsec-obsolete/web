@@ -137,7 +137,7 @@
 	</tr>
 	<tr>
 		<td>Persistant Universe</td>
-		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
@@ -152,6 +152,11 @@
 	</tr>
 	<tr>
 		<td>Message Boards</td>
+		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
+	</tr>
+	<tr>
+		<td>Combat</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 	</tr>
@@ -173,27 +178,20 @@
 	</tr>
 	<tr>
 		<td>BuildFleet</td>
-		<td align="center" bgcolor="#ffff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
-	</tr>
-	<tr>
-		<td>Attack</td>
-		<td align="center" bgcolor="#000000">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 	</tr>
 	<tr>
 		<td>Merge/Split Fleet</td>
-		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 	</tr>
 	<tr>
 		<td>Colonise</td>
-		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 	</tr>
 </table>
-
-<p>Note that Attack orders aren't needed, combat occurs when two fleets meet.</p>
 
 <?php
   include "../bits/end_section.inc";
