@@ -39,6 +39,8 @@ foreach ($fetcher->headers as $key => $value) {
 
 ?>
 
+<!-- <?php echo $url; echo $real_url; ?> -->
+
 <?php $title = "Mailing Lists" ?>
 
 <?php include "bits/start_page.inc" ?>
