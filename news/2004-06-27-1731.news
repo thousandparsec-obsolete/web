@@ -1,0 +1,12 @@
+
+<h2>TP-Server 0.0.5 released</h2>
+<p>by Lee</p>
+<p>
+	I have just released 0.0.5 of the TP-server.  A bit of code clean up, fixed a
+	bug in recontainisation.  Fleets move to the right container at end of turn.  
+	Look out for 0.0.6rc1 before next weekend. Any bugs to the mailing list please.
+</p>
+<p>
+	All the normal stuff.  CVS tag: CPP_SERVER_0_0_5.  Tarball and pgp sig on the 
+	downloads page.
+</p>
