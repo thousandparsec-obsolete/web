@@ -276,13 +276,13 @@
 	</tr><tr class="new">
 		<td>25</td>
 		<td>Get Features</td>
-		<td></td>
+		<td>ft03_Features_Get</td>
 		<td>Get the features available on this server.</td>
 		<td></td>
 	</tr><tr class="new">
 		<td>26</td>
 		<td>Available Features</td>
-		<td></td>
+		<td>ft03_Features</td>
 		<td>The features available on this server.</td>
 		<td></td>
 	</tr>
@@ -298,7 +298,7 @@
 	</tr><tr class="new">
 		<td>27</td>
 		<td>Ping</td>
-		<td></td>
+		<td>ft03_Ping</td>
 		<td>Get the server to respond with a OK request.</td>
 		<td></td>
 	</tr>
@@ -370,7 +370,7 @@
 	</tr><tr class="new">
 		<td>28</td>
 		<td>Probe Order</td>
-		<td></td>
+		<td>ft03_Order_Probe</td>
 		<td>Returns an order object which would be created if this was an Insert order</td>
 		<td></td>
 	</tr>
@@ -510,31 +510,31 @@
 	</tr><tr class="new">
 		<td>35</td>
 		<td>Get Data Header</td>
-		<td></td>
+		<td>ft03_Data_Header_Get</td>
 		<td>Download the header for the binary data.</td>
 		<td></td>
 	</tr><tr class="new">
 		<td>36</td>
 		<td>Get Data</td>
-		<td></td>
+		<td>ft03_Data_Get</td>
 		<td>Download the header and the binary data.</td>
 		<td></td>
 	</tr><tr class="new">
 		<td>37</td>
 		<td>Remove Data</td>
-		<td></td>
+		<td>ft03_Data_Remove</td>
 		<td>Remove the binary data from the server.</td>
 		<td></td>
 	</tr><tr class="new">
 		<td>38</td>
 		<td>Data Header</td>
-		<td></td>
+		<td>ft03_Data_Header</td>
 		<td>Header for some arbitrary binary data.</td>
 		<td></td>
 	</tr><tr class="new">
 		<td>39</td>
 		<td>Data</td>
-		<td></td>
+		<td>ft03_Data</td>
 		<td>Header and arbitrary binary data.</td>
 		<td></td>
 	</tr>
@@ -548,13 +548,13 @@
 	</tr><tr class="new">
 		<td>40</td>
 		<td>Get Player Data</td>
-		<td></td>
+		<td>ft03_Player_Get</td>
 		<td>Get the information about a player/race.</td>
 		<td></td>
 	</tr><tr class="new">
 		<td>41</td>
 		<td>Player Data</td>
-		<td></td>
+		<td>ft03_Player</td>
 		<td></td>
 		<td></td>
 	</tr>
@@ -807,12 +807,24 @@ Example:
 <span class="new">
 <h3>Probe Order Frame</h3>
 <p>
-	A Probe Order frame is an Insert order which doesn't take effect. 
+	A Probe Order frame gets an order (or orders) as if they were already on an object. 
 	These probes should occur as if no orders currently exist on object and should 
 	have no side-effects.	
 	This is used to get the read-only fields for an order which is needed for good
 	offline operation.
-</p><p>
+</p>
+<p>
+	The data in this frame is:
+	<ul>
+		<li>UInt32 Object id, the object that the order might be placed on.</li>
+		<li>list of UInt32, the order types to probe on the object.</li>
+	</ul>
+</p>
+<p>
+	The server replies with the Order frames as if they were already on the object. Fail frames are possible
+	if the order type is not allowed, or the object or order type doesn't exist.
+</p>
+<p>
 	<b>Note:</b>This data should only be used as a guide, complex interactions may 
 	cause the read-only fields to be different in some cases.
 </p>
