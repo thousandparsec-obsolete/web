@@ -8,7 +8,7 @@
 if ($_SERVER['SERVER_NAME'] == 'www.thousandparsec.net')
 	include "bits/sloc.inc" ; 
 else
-	include "http://www.thousandparsec.net/dev/bits/sloc.inc" ;
+	include "http://www.thousandparsec.net/tp/dev/bits/sloc.inc" ;
 
 ?>
 </center>
