@@ -1,0 +1,12 @@
+
+<h2>TP-Server 0.0.3 patched</h2>
+<p>by Lee</p>
+<p>
+	Wow, that was a bug!  Mithro and I have just fixed a bug in the 
+	server. It caused the server to try to allocate over 768MB for a
+	frame.  I have updated the tag and the tarball.  All versions to
+	date are affected and I am not going to fix them.  Do not use 
+	versions 0.0.1 and 0.0.2 of the server.
+</p>
+
+
