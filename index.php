@@ -1,18 +1,16 @@
 <?php $title = "News" ?>
 <?php include "bits/start_page.inc" ; ?>
+<?php include "bits/func.inc" ; ?>
 
 <?php
 
 $news = "news/";
+$files = get_files($news);
 
-$d = array_reverse(dir($news));
-
-while ( false !== ($file = $d->read()) ) {
-    if ( is_file($news . $file) ) {
-        include "bits/start_section.inc";
-        include($news . $file);
-        include "bits/end_section.inc";
-    }
+foreach($files as $file) {
+	include "bits/start_section.inc";
+	include($news . $file);
+	include "bits/end_section.inc";
 }
 
 ?>
