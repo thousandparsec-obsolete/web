@@ -13,7 +13,7 @@ function display($directory) {
 		$time = date("Y-m-H h:i:s", filemtime ($directory.$file));
 
 		print "<p>\n";
-		print "	<a href=\"$directory$file\"> $file </a>, $size KB, <span class="small">last modified $time</span> \n";
+		print "	<a href=\"$directory$file\"> $file </a>, $size KB, <span class=\"small\">last modified $time</span> \n";
 		print "</p>\n";
 	}
 }
