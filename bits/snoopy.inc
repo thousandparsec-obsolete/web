@@ -1147,7 +1147,7 @@ class Snoopy
 				while(list($key,$val) = each($formvars)) {
 					if (is_array($val) || is_object($val)) {
 						while (list($cur_key, $cur_val) = each($val)) {
-							$postdata .= urlencode($key)."[]=".urlencode($cur_val)."&";
+							$postdata .= urlencode($cur_key)."=".urlencode($cur_val)."&";
 						}
 					} else
 						$postdata .= urlencode($key)."=".urlencode($val)."&";
@@ -1162,7 +1162,7 @@ class Snoopy
 					if (is_array($val) || is_object($val)) {
 						while (list($cur_key, $cur_val) = each($val)) {
 							$postdata .= "--".$this->_mime_boundary."\r\n";
-							$postdata .= "Content-Disposition: form-data; name=\"$key\[\]\"\r\n\r\n";
+							$postdata .= "Content-Disposition: form-data; name=\"$cur_key\"\r\n\r\n";
 							$postdata .= "$cur_val\r\n";
 						}
 					} else {

@@ -18,7 +18,15 @@ foreach ($_COOKIE as $key => $value) {
 }
 
 // Include POST
-$fetcher->submit($url,$_POST);
+$sfrom = array(".",     "+"     );
+$sto   = array("#DOT#", "#PLUS#");
+
+$post = array();
+foreach ($_POST as $key => $value) {
+	$post[] = array(str_replace($sto, $sfrom, substr($key,5)) => $value);
+}
+$fetcher->set_submit_multipart();
+$fetcher->submit($url,$post);
 $data = $fetcher->results;
 
 // Rewrite any cookies
@@ -44,6 +52,18 @@ $real_colors = array('#dddddd', '#99ccff', '#FFF0D0', '#99CCFF');
 $my_colors   = array('#444444', '#003355', '#666666', '#003355');
 
 $data = str_replace($real_colors, $my_colors, $data);
+
+preg_match_all ("/name=\"(.+?)\"/", $data, $matches);
+
+$i = 0;
+foreach ($matches[1] as $key => $value) {
+	$from = '!name="' . $value . '"!';
+	$to = 'name="' . sprintf("%05d", $i) . str_replace($sfrom, $sto, $value) . '"';
+
+	$data = preg_replace($from, $to, $data, 1);
+
+	$i += 1;
+}
 
 // Archives stuff
 $data = str_replace("/pipermail", "/tp/pipermail.php", $data);
