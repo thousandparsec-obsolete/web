@@ -8,6 +8,14 @@
 		</h2>
 	</p>
 	<p>
+		General Documentation
+	</p>
+	<blockquote>
+		<p>
+			<a href="documents/helping.php">Howto help for the unmotivated.</a> Document explaining simple things which people with little time or motivation can help out with.<br>
+		</p>
+	</blockquote>
+	<p>
 		Server documentation
 	</p>
 	<blockquote>

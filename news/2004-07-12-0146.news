@@ -1,0 +1,34 @@
+
+<h2>Website updates</h2>
+<p>by Mithro</p>
+<p>
+	The website has just been updated a few new important documents.
+</p>
+<p>
+	One is the MiniSec document (<a href="/tp/dev/documents/minisec.php">here</a>)
+	which describes	the game we are currently working on. Expect to see a flurry
+	of releases in the next couple of weeks as we try and complete it. It will
+	be our first playable game. It does much up some of our milestones but we
+	can fix that up at a later date. We plan to build more complex games as we
+	go along and add new features. Hopefully this will get us some players and
+	more developers and start building a good community.
+</p>
+<p>
+	The next is the Windows setup HOWTO (<a href="/tp/documents/setup/howto.php">here</a>).
+	This document tells how to setup the clients under windows. It's simple and
+	contains screen shots to lead you through the whole process.
+</p>
+<p>
+	There is also a feature matrix (<a href="/tp/documents/matrix.php">here</a>).
+	This matrix gives you a quick overview of what does what. Hopefully we can 
+	keep it up to date as we add new features.
+</p>
+<p>
+	Then there is a <a href="/tp/dev/documents/helping.php">How to help for unmotivated people</a>
+	document. This gives a bunch of small and easy to implement features which
+	anyone can just jump into and start hacking! It also includes non-coding 
+	stuff which you can do if your not a coder. We expect you all to go and
+	check it out and get cracking.
+</p>
+
+
