@@ -5,7 +5,7 @@
 
 $news = "news/";
 
-$d = dir($news);
+$d = array_reverse(dir($news));
 
 while ( false !== ($file = $d->read()) ) {
     if ( is_file($news . $file) ) {
