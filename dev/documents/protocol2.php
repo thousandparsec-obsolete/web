@@ -260,10 +260,10 @@
     </tr>
     <tr>
       <td>12</td>
-      <td>Add Order</td>
+      <td>Insert Order</td>
       <td>&nbsp;</td>
-      <td>ft02_Order_Add</td>
-      <td>Add order to an object in a slot</td>
+      <td>ft02_Order_Insert</td>
+      <td>Insert order on object before slot</td>
       <td>Charlie</td>
     </tr>
     <tr>
