@@ -3,7 +3,6 @@
 <?php include "bits/start_page.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
-<blockquote> 
 	<p>
 		<font size="4">
 			Game Play
@@ -24,7 +23,10 @@
 			</p>
 		</blockquote>
 	</blockquote>
-	
+
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
 	<p>
 		<font size="4">
 			Clients
@@ -39,6 +41,9 @@
 		</p>
 	</blockquote>
 	
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
 	<p>
 		<font size="4">
 			Server
@@ -65,6 +70,9 @@
 		</p>
 	</blockquote>
 	
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
     <p>
 		<font size="4">
 			Other
@@ -79,8 +87,6 @@
 			NONE
 		</p>
 	</blockquote>
-
-</blockquote>
 
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/end_page.inc" ?>
