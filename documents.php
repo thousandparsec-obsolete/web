@@ -17,5 +17,10 @@
 			HOWTO setup pywx-client under windows
 		</a>
 	</p>
+    <p>
+		<a href="/tp/documents/matrix.php">
+			Client and Server Feature Matrix
+		</a>
+	</p>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/end_page.inc" ?>
