@@ -28,7 +28,7 @@ cvs -z3 -d:pserver:cvsanon@cvs.thousandparsec.net:/tp co <i>modulename</i>
 
 <p>Updates from within the module's directory do not need the -d parameter.</p>
 
-<p><b>NOTE:</b> UNIX file and directory names are case sensitive.  The path to the project CVSROOT must be specified using lowercase characters (i.e. /cvsroot/gallery)
+<p><b>NOTE:</b>There are two "quick" modulenames. These will get the modules you need to get started, they are <i>client</i> (for your client needs) and <i>python-server</i> (for the python server and support libs).</p>
 <p><br /><b>Developer CVS Access via SSH</b>
 
 <p>Only project developers can access the CVS tree via this method. A SSH client must
