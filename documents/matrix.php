@@ -41,11 +41,12 @@
 		<td>tpclient-pywx</td>
 		<td>tpclient-pytext</td>
 		<td>pygame-client</td>
-		<td>none yet</td>
+		<td>(library)</td>
 		<td>TPJava</td>
 	</tr>
 	<tr>
-		<td align="center" colspan="6">
+	        <td>&nbsp;</td>
+		<td align="center" colspan="5">
 			<b>Network Features</b>
 		</td>
 	</tr>
