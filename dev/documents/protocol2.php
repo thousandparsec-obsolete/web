@@ -340,6 +340,26 @@
     </tr>
 
     <tr>
+      <td colspan="6" align="center"><b>Resources</b></td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>Get Resource Description</td>
+      <td>&nbsp;</td>
+      <td>ft02_ResDesc_Get</td>
+      <td>Returns a description of an resource type</td>
+      <td>Foxtrot</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>Resource Description</td>
+      <td>&nbsp;</td>
+      <td>ft02_ResDesc</td>
+      <td>Describes a resource</td>
+      <td>Foxtrot</td>
+    </tr>
+
+    <tr>
       <td colspan="6" align="center"><b>Obsolete</b></td>
     </tr>
     <tr>
@@ -376,7 +396,6 @@
     </tr>
     
     
-  </tbody>
 </table>
 </p>
 
@@ -388,7 +407,7 @@
 
 <h2>Data Packet formats</h2>
 <p>
-    The different types have different formats for the Data Packet.    Any Data
+    The different types have different formats for the Data Packet. Any Data
     Packet may have be extended at any time in a backward compatible manner.
     The program should just ignore any extra data in the Data Packet which
     it does not understand.
@@ -399,8 +418,8 @@
     The OK packet consists of:
     <ul>
         <li>
-            may contain a string (the string can be    safely ignored - 
-            however it may contain useful information for debugging purposes)
+            a String, the string can be safely ignored - however it may 
+			contain useful information for debugging purposes)
         </li>
     </ul>
 </p>
@@ -410,7 +429,7 @@
     A fail packet consists of:
     <ul>
         <li>a Int32, error code</li>
-        <li>a text string, message of the error</li>
+        <li>a String, message of the error</li>
     </ul>
     Current error codes consist of:
     <ul>
@@ -440,7 +459,7 @@
 <p>
     The Connect packet consists of:
     <ul>
-        <li>a text string, a client identification string</li>
+        <li>a String, a client identification string</li>
     </ul>
     The client identification string can be any string but will mostly
     used to produce stats of who uses which client.
@@ -450,8 +469,8 @@
 <p>
     The Login packet consists of:
     <ul>
-        <li>a text string, the username of the player</li>
-        <li>a text string, the password</li>
+        <li>a String, the username of the player</li>
+        <li>a String, the password</li>
     </ul>
     Currently the password will be transmitted in plain text, further
     security will be added in future version.
@@ -473,7 +492,7 @@
     <ul>
         <li>a UInt32, object ID</li>
         <li>a UInt32, object type</li>
-        <li>a text string, name of object</li>
+        <li>a String, name of object</li>
         <li>a UInt64, size of object (diameter)</li>
         <li>3 by Int64, position of object</li>
         <li>3 by Int64, velocity of object</li>
@@ -504,7 +523,7 @@ Example:
 <p>
     A Get Objects by Position packet consist of:
     <ul>
-          <li>3 by Int64, giving the position of center the sphere</li>
+        <li>3 by Int64, giving the position of center the sphere</li>
         <li>a UInt64, giving the radius of the sphere</li>
     </ul>
     This will return a bunch of Objects which are inside the sphere. If
@@ -517,7 +536,6 @@ by the extended protocol specification.
 </p>
 
 <h3>Get Order Packet, Remove Order Packet</h3>
-
 <p>
     Get Order packet and Remove Order packet have the Int32 ID of the
     object it's on, and a list of Int32 slot numbers for the orders that
@@ -528,13 +546,26 @@ by the extended protocol specification.
     you don't want strange things to happen. (IE 10, 4, 1)
 </p>
 
-<h3>Order Packet, Add Order packet</h3>
+<h3>Order Packet, Insert Order packet</h3>
 <p>
-    An Order Packet or Add Order packet has Int32 Object ID of the
+    An Order Packet or Insert Order packet has Int32 Object ID of the
     object it's on (or to be put on), Int32 type, and
     which slot number it is in or should go in, -1 for last. Any extra data
     required by the order is appended to the end and is defined on a type
     by type basis.
+
+    A Order packet consist of:
+    <ul>
+        <li>a UInt32, Object ID of the order is on/to be placed on</li>
+        <li>a UInt32, Slot number of the order/to be put in, -1 will insert
+			at the last position, otherwise it is inserted before the number</li>
+        <li>a UInt32, (Read Only) The number of turns the order will take</li>
+        <li>a list of</li>
+		<ul>
+	        <li>a UInt32, The resource ID</li>
+	        <li>a UInt32, The units of that resource required</li>
+		</ul>
+    </ul>
 </p>
 
 <h3>Describe Order Packet</h3>
@@ -550,7 +581,6 @@ by the extended protocol specification.
     string name, Int32 type ID, string description. The Parameter Types are given
     below:
 <table>
-  <tbody>
     <tr>
       <td><b>Name</b></td>
       <td><b>Int32 Code</b></td>
@@ -633,6 +663,20 @@ by the extended protocol specification.
       <td>5</td>
       <td>opT_Range</td>
       <td>A number value from a range</td>
+    A Order packet consist of:
+    <ul>
+        <li>a UInt32, Object ID of the order is on/to be placed on</li>
+        <li>a UInt32, Slot number of the order/to be put in, -1 will insert
+			at the last position, otherwise it is inserted before the number</li>
+        <li>a UInt32, (Read Only) The number of turns the order will take</li>
+        <li>a list of</li>
+        <li>a String, The singular name of the resource</li>
+        <li>a String, The plural name of the resource</li>
+		<ul>
+	        <li>a UInt32, The resource ID</li>
+	        <li>a UInt32, The units of that resource required</li>
+		</ul>
+    </ul>
       <td>
           <ul>
             <li>Int 32, read write, value</li>
@@ -642,20 +686,38 @@ by the extended protocol specification.
           </ul>
       </td>
     </tr>
-  </tbody>
 </table>
 </p>
 
-<h3>Get Outcome</h3>
-<p>The Get Outcome data packet consists of Int32 Object id and Int32
-order slot number.</p>
-<h3>Outcome</h3>
-<p>The Outcome Frame contains Int32 Object id, Int32 order slot number,
-Int32 turns to completion,
-followed by more data to be specified in future.</p>
+<h3>Get Resource Description</h3>
+<p>
+    Get the Resource Description. 
+</p>
+
+<h3>Resource Description</h3>
+<p>
+	A Resource is something that things are build out of, or consumed 
+	in production of something (ie work units).
+
+    A Resource Description consist of:
+    <ul>
+        <li>a UInt32, Resource ID</li>
+        <li>a String, singular name of the resource</li>
+        <li>a String, plural name of the resource</li>
+        <li>a String, singular name of the resources unit</li>
+        <li>a String, plural name of the resources unit</li>
+        <li>a String, description of the resource</li>
+        <li>a UInt32, weight per unit of resource (0 for not applicable)</li>
+        <li>a UInt32, size per unit of resource (0 for not applicable)</li>
+    </ul>
+</p>
+
+
 <h3>Other Packets</h3>
-<p>All other data packets are not defined yet and shall be added to
-this protocol version (unless the protocol is revised).</p>
+<p>
+	All other data packets are not defined yet and shall be added to
+	this protocol version (unless the protocol is revised).
+</p>
 <h2>Example</h2>
 <p>The following is a simple example of the first interaction.</p>
 <p>
