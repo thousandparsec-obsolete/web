@@ -16,7 +16,7 @@ any questions should be directed to him.</p>
 
 <h2>Basics</h2>
 <p>TP will use TCP port 6923.  This port is not known to have any other services on it.</p>
-<p>All data will be 32 bit aligned.  Strings will be prefixed by the 32 bit integer length and then padded
+<p>All data will be 32 bit aligned.  Strings will be prefixed by the 32 bit integer length (include null terminator) and then padded
 with nulls ('\0') to the next 32 bit boundary (if necessary).  All integers are in Network Byte Order
 (Big Endian).</p>
 
@@ -46,7 +46,7 @@ with nulls ('\0') to the next 32 bit boundary (if necessary).  All integers are 
     <td><b>Description and notes</b></td>
     <td>Always has value &quot;TP01&quot; (&quot;TP&quot; plus version number)</td>
     <td>Type of data, see table below</td>
-    <td>Lenght of data in bytes, must be mutliple of 4</td>
+    <td>Length of data in bytes, must be mutliple of 4</td>
     <td>The data</td>
   </tr>
   <tr>
@@ -54,7 +54,7 @@ with nulls ('\0') to the next 32 bit boundary (if necessary).  All integers are 
     <td>TP01</td>
     <td>2</td>
     <td>20</td>
-    <td>&lt;4&gt;lee\0&lt;8&gt;blah2\0\0\0</td>
+    <td>&lt;4&gt;lee\0&lt;6&gt;blah2\0\0\0</td>
   </tr>
 </table>
 </p>
@@ -72,7 +72,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td><b>Value</b></td>
     <td><b>Name</b></td>
     <td><b>Java Constant</b></td>
-    <td><b>C enum</b></td>
+    <td><b>C++ enum</b></td>
     <td><b>Description</b></td>
     <td><b>Milestone</b></td>
   </tr>
@@ -80,7 +80,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>0</td>
     <td>Connect</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>ft_Connect</td>
     <td>Can I connect?</td>
     <td>Alpha</td>
   </tr>
@@ -88,7 +88,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>1</td>
     <td>Ok</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>ft_OK</td>
     <td>Ok, continue or passed</td>
     <td>Alpha</td>
   </tr>
@@ -96,7 +96,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>2</td>
     <td>Login</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>ft_Login</td>
     <td>Login packet</td>
     <td>Alpha</td>
   </tr>
@@ -104,7 +104,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>3</td>
     <td>Fail</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>ft_Fail</td>
     <td>Failed, stop or impossible</td>
     <td>Alpha</td>
   </tr>
