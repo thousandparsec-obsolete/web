@@ -1,6 +1,6 @@
 #! /bin/sh
 
-CVSROOT="/var/www/www.thousandparsec.net/cvs/"
+CVSROOT="/var/www/thousandparsec/cvs/"
 
 cd $CVSROOT
 cvs update -dP
