@@ -6,8 +6,9 @@
 
 <style type="text/css">
 <!--
-.new { color: #00FF00; }
-.fixme { color: #FF0000; }
+.new { color: #00ff00; }
+.fixme { color: #ff0000; }
+.inote { color: #ffff00; }
 -->
 </style>
 
@@ -18,7 +19,7 @@
 		still version 0.2
 	</span>
 </h4>
-<p>Last updated 10 February 2005.</p>
+<p>Last updated 21 March 2005.</p>
 
 <?php
 	include "../bits/end_section.inc";
@@ -191,7 +192,9 @@
 	<li>A list is shown as &lt;length&gt;[item1, item2]</li>
 	<li><pre>Unicode text is shown as preformatted text</pre></li>
 	<li><pre><i>Binary data is shown as preformatted italics</i></pre></li>
-	<li><span class="new">New features of this document are marked like this</span></li>
+	<li class="new">New features of this document are marked like this</li>
+	<li class="inote">Notes marked with this color are issues for consideration when 
+	implementing (normally to do with security)</li>
 </ul>
 
 <?php
@@ -212,18 +215,23 @@
 	</li><li>
 		Strings will be prefixed by the 32 bit integer number of bytes the string takes
 		up. <span class="new">All strings will be transmitted in UTF-8.</span>
-		<p><span class="new">
+		<p class="new">
 		Previously all strings had to be terminate by a null character, this is no 
 		longer necessary. It is recommend that the null terminator is no longer
 		transmitted.
-		</span></p>
+		</p>
 	</li><li class="new">
 		Semi-signed Integers are integers which act like normal unsigned numbers except
 		that the biggest possible number is considered -1, this should equal the normal
 		signed representation for this number. These are noted as SInt&lt;Size&gt;.
 	</li><li class="new">
 		All times are in 64 bit Unix time stamp format in the timezone of UTC (with no 
-		daylight savings).
+		daylight savings). 
+		<p class="inote">
+		Note: Modified times should be relative to a person. If a person should not know
+		about the thing which caused the change then they should not know that the object
+		has been modified.
+		</p>
 	</li>
 </ul>
 <p class="new">
@@ -277,7 +285,7 @@
 	URL requested is random to stop broken proxy servers from caching the connection.
 	Once the POST connection has been established a normal TP connection follows.
 </p><p>
-	An example implementation of this can be found in py-netlib.
+	An example implementation of this can be found in libtpproto-py.
 </p>
 </span>
 
@@ -887,7 +895,9 @@
 	<ul>
 		<li>a UInt32, id of base thing</li>
 		<li>a list of UInt32, slot numbers of contained things be requested</li>
-</ul>
+	</ul>
+</p><p>
+	An empty list means you should return all slots.
 </p><p>
 	This packet is used to get things which are in "slots" on a parent. Examples 
 	would be orders (on objects), messages (on boards), etc.
@@ -1047,6 +1057,13 @@
 		<li>0x4 - HTTP Tunneling available on another port</li>
 		<li>0x5 - Support Keep alive frames</li>
 	</ul>
+</p><p class="fixme">
+	What about optimizations? Some "features" which could be supported are,
+	<ul class="fixme">
+		<li>?? - Order IDs, All ID Sequences are in descending last modified 
+			order. This would allow the client only download IDs which have 
+			changed by stopping as soon as instead of having to iterate over all IDs.</li>
+	</ul>
 </p>
 </span>
 
@@ -1105,18 +1122,16 @@
 		<li>a UInt32, number of orders currently on this object</li>
 		<li class="new">a UInt64, the last modified time</li>
 		<li>
-			<span class="new">2</span> by UInt32 of padding, for future expansion of common
-			attributes
+			<span class="new">2</span> by UInt32 of padding, for future expansion of
+			common attributes
 		</li>
 		<li>
 			extra data, as defined by each object type
 		</li>
 	</ul>
-</p><p>
-Example:
-&lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\0&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
-&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
-&lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;0&gt;&lt;0&gt;
+</p><p class="inote">
+	Note: The number of orders should be the number of orders the person can see on the
+	object. Not the total number of orders on the object. 
 </p>
 
 <span class="new">
@@ -1337,7 +1352,7 @@ Example:
 <a name="RemoveOrder_Desc"></a>
 <h3>Get Order Frame, Remove Order Frame</h3>
 <p>
-	See <a href="#GetwithIDandSlot">Get With ID and Slot</a>
+	See <a href="#GetwithIDandSlot_Desc">Get With ID and Slot</a>
 </p>
 
 <a name="Order_Desc"></a>
@@ -1361,11 +1376,11 @@ Example:
 </p><p>
 	The extra data is defined by Order descriptions frames. The number of turns
 	and the size of the	resource list should be zero (0) when sent by the client.<br>
-	<br>
+</p><p>
 	<b>Note:</b> Order type IDs below 1000 are reserved for orders defined 
 	by the extended protocol specification.
-	<br>
-	<b>Note:</b> Order's do not have a last modified time. Instead when an order changes
+</p><p class="inote">
+	Note: Order's do not have a last modified time. Instead when an order changes
 	the object which they are on has it's last modified time updated. This is because orders
 	can change position and do all types of other weird stuff.
 </p>
@@ -1466,7 +1481,7 @@ Example:
 <a name="RemoveMessage_Desc"></a>
 <h3>Get Message Frame, Remove Message Frame</h3>
 <p>
-	See <a href="#GetwithIDandSlot">Get With ID and Slot</a>
+	See <a href="#GetwithIDandSlot_Desc">Get With ID and Slot</a>
 </p>
 
 <a name="Message_Desc"></a>
