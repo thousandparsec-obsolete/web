@@ -75,8 +75,8 @@
 	<li>
 		All integers are in Network Byte Order (Big Endian).
 	</li><li>
-		Strings will be prefixed by the 32 bit integer number of characters with no 
-		padding necessary. <span class="new">All strings will be transmitted in UTF-8.</span>
+		Strings will be prefixed by the 32 bit integer number of bytes the string takes
+		up. <span class="new">All strings will be transmitted in UTF-8.</span>
 		<p><span class="new">
 		Previously all strings had to be terminate by a null character, this is no 
 		longer necessary. It is recommend that the null terminator is no longer
@@ -260,7 +260,7 @@
 		<td>Login with username/password</td>
 		<td>Alpha</td>
 	</tr><tr class="new">
-		<td></td>
+		<td>24</td>
 		<td>Redirect</td>
 		<td></td>
 		<td>Redirects a client to a different server.</td>
@@ -272,13 +272,13 @@
 	</tr><tr class="new">
 		<td colspan="6" align="center">These frames are used for negotiation which features to use.</td>
 	</tr><tr class="new">
-		<td></td>
+		<td>25</td>
 		<td>Get Features</td>
 		<td></td>
 		<td>Get the features available on this server.</td>
 		<td></td>
 	</tr><tr class="new">
-		<td></td>
+		<td>26</td>
 		<td>Available Features</td>
 		<td></td>
 		<td>The features available on this server.</td>
@@ -294,7 +294,7 @@
 			is supported.
 		</td>
 	</tr><tr class="new">
-		<td></td>
+		<td>27</td>
 		<td>Ping</td>
 		<td></td>
 		<td>Get the server to respond with a OK request.</td>
@@ -366,7 +366,7 @@
 		<td>Remove an order from a slot of an object</td>
 		<td>Charlie</td>
 	</tr><tr class="new">
-		<td></td>
+		<td>28</td>
 		<td>Probe Order</td>
 		<td></td>
 		<td>Returns an order object which would be created if this was an Insert order</td>
@@ -460,37 +460,37 @@
 		<td colspan="6" align="center">
 		</td>
 	</tr><tr class="new">
-		<td></td>
+		<td>29</td>
 		<td>Get Category Description</td>
 		<td></td>
 		<td>Returns a description of an category type</td>
 		<td></td>
 	</tr><tr class="new">
-		<td></td>
+		<td>30</td>
 		<td>Category Description</td>
 		<td></td>
 		<td>Describes a category</td>
 		<td></td>
 	</tr><tr class="new">
-		<td></td>
+		<td>31</td>
 		<td>Get Component</td>
 		<td></td>
 		<td>Gets the details about a component</td>
 		<td></td>
 	</tr><tr class="new">
-		<td></td>
+		<td>32</td>
 		<td>Component</td>
 		<td></td>
 		<td>Describes a component</td>
 		<td></td>
 	</tr><tr class="new">
-		<td></td>
+		<td>33</td>
 		<td>Insert Component</td>
 		<td></td>
 		<td>Creates a new component out of existing components</td>
 		<td></td>
 	</tr><tr class="new">
-		<td></td>
+		<td>34</td>
 		<td>Remove Component</td>
 		<td></td>
 		<td>Removes a component</td>
@@ -506,31 +506,31 @@
 			frames only small amounts of binary data should ever be transmitted this way.
 		</td>
 	</tr><tr class="new">
-		<td></td>
+		<td>35</td>
 		<td>Get Data Header</td>
 		<td></td>
 		<td>Download the header for the binary data.</td>
 		<td></td>
 	</tr><tr class="new">
-		<td></td>
+		<td>36</td>
 		<td>Get Data</td>
 		<td></td>
 		<td>Download the header and the binary data.</td>
 		<td></td>
 	</tr><tr class="new">
-		<td></td>
+		<td>37</td>
 		<td>Remove Data</td>
 		<td></td>
 		<td>Remove the binary data from the server.</td>
 		<td></td>
 	</tr><tr class="new">
-		<td></td>
+		<td>38</td>
 		<td>Data Header</td>
 		<td></td>
 		<td>Header for some arbitrary binary data.</td>
 		<td></td>
 	</tr><tr class="new">
-		<td></td>
+		<td>39</td>
 		<td>Data</td>
 		<td></td>
 		<td>Header and arbitrary binary data.</td>
