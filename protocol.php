@@ -4,8 +4,8 @@
   include "bits/start_section.inc";
 ?>
 
-<h1>Protocol Definition for Thousand Parasec, version 0.1</h1>
-<p>This protocol definition is for the Thousand Parasec project.  It
+<h1>Protocol Definition for Thousand Parsec, version 0.1</h1>
+<p>This protocol definition is for the Thousand Parsec project.  It
 is designed as a simple, easy to impliment protocol.  It is desgined by Lee Begg and
 any questions should be directed to him.</p>
 
@@ -142,6 +142,22 @@ Even values are sent from the client, odd values from the server. The types are 
   </tr>
   <tr>
     <td>8</td>
+    <td>Get Result</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Get the result of some order or event</td>
+    <td>Charlie</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>Result</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>The Result of an order or event</td>
+    <td>Charlie</td>
+  </tr>
+  <tr>
+    <td>10</td>
     <td>Get Time remaining</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -149,7 +165,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>Echo</td>
   </tr>
   <tr>
-    <td>9</td>
+    <td>11</td>
     <td>Time remaining</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
