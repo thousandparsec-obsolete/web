@@ -12,7 +12,8 @@ function get_files($dir) {
 	    }
 	}
 
-#	$files = array_reverse($files);
+	sort($files);
+	$files = array_reverse($files);
 
 	return $files;
 
