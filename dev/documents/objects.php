@@ -1,7 +1,7 @@
 <?php
   $title = "Object Definition for Thousand Parsec";
-  include "bits/start_page.inc";
-  include "bits/start_section.inc";
+  include "../bits/start_page.inc";
+  include "../bits/start_section.inc";
 ?>
 
 <h1>Object Definition for Thousand Parsec</h1>
@@ -11,8 +11,8 @@
 compatable will change the Object Type Numbers affected by the change.</p>
 
 <?php
-  include "bits/end_section.inc";
-  include "bits/start_section.inc";
+  include "../bits/end_section.inc";
+  include "../bits/start_section.inc";
 ?>
 
 <h2>Basics</h2>
@@ -21,8 +21,8 @@ and a 64 bit integer as &lt;&lt;n&gt;&gt;</p>
 <p>The extra data sections show follow the standard data for each object.</p>
 
 <?php
-  include "bits/end_section.inc";
-  include "bits/start_section.inc";
+  include "../bits/end_section.inc";
+  include "../bits/start_section.inc";
 ?>
 
 <h2>Object Types</h2>
@@ -56,8 +56,8 @@ and a 64 bit integer as &lt;&lt;n&gt;&gt;</p>
 </p>
 
 <?php
-  include "bits/end_section.inc";
-  include "bits/start_section.inc";
+  include "../bits/end_section.inc";
+  include "../bits/start_section.inc";
 ?>
 
 <h2>Universe</h2>
@@ -67,8 +67,8 @@ and a 64 bit integer as &lt;&lt;n&gt;&gt;</p>
 <p>&lt;nn&gt;<br>Where nn is the year/turn number.</p>
 
 <?php
-  include "bits/end_section.inc";
-  include "bits/start_section.inc";
+  include "../bits/end_section.inc";
+  include "../bits/start_section.inc";
 ?>
 
 <h2>Galaxy</h2>
@@ -78,8 +78,8 @@ and a 64 bit integer as &lt;&lt;n&gt;&gt;</p>
 <p>No extra data.</p>
 
 <?php
-  include "bits/end_section.inc";
-  include "bits/start_section.inc";
+  include "../bits/end_section.inc";
+  include "../bits/start_section.inc";
 ?>
 
 <h2>Star System</h2>
@@ -89,8 +89,8 @@ and a 64 bit integer as &lt;&lt;n&gt;&gt;</p>
 <p>No extra data.</p>
 
 <?php
-  include "bits/end_section.inc";
-  include "bits/start_section.inc";
+  include "../bits/end_section.inc";
+  include "../bits/start_section.inc";
 ?>
 
 <h2>Planet</h2>
@@ -100,8 +100,8 @@ and a 64 bit integer as &lt;&lt;n&gt;&gt;</p>
 <p>&lt;pid&gt;<br>Where pid is the player object that owns the planet or -1 if not owned.</p>
 
 <?php
-  include "bits/end_section.inc";
-  include "bits/start_section.inc";
+  include "../bits/end_section.inc";
+  include "../bits/start_section.inc";
 ?>
 
 <h2>Fleet</h2>
@@ -111,6 +111,6 @@ and a 64 bit integer as &lt;&lt;n&gt;&gt;</p>
 <p>&lt;pid&gt;<br>Where pid is the player object that owns the fleet or -1 if not owned.</p>
 
 <?php
-  include "bits/end_section.inc";
-  include "bits/end_page.inc";
+  include "../bits/end_section.inc";
+  include "../bits/end_page.inc";
 ?>

@@ -1,7 +1,7 @@
 <?php
   $title = "Protocol Definition Ver 0.1";
-  include "bits/start_page.inc";
-  include "bits/start_section.inc";
+  include "../bits/start_page.inc";
+  include "../bits/start_section.inc";
 ?>
 
 <h1>Protocol Definition for Thousand Parsec</h1>
@@ -15,8 +15,8 @@ revisions that the client(s) and server are using.  Any change that is not backw
 change the version number of the protocol.</p>
 
 <?php
-  include "bits/end_section.inc";
-  include "bits/start_section.inc";
+  include "../bits/end_section.inc";
+  include "../bits/start_section.inc";
 ?>
 
 <h2>Basics</h2>
@@ -27,8 +27,8 @@ with nulls ('\0') to the next 32 bit boundary (if necessary).  All integers are 
 <p>In this document a 32 bit integer is shown as &lt;n&gt; and a 64 bit integer as &lt;&lt;n&gt;&gt;</p>
 
 <?php
-  include "bits/end_section.inc";
-  include "bits/start_section.inc";
+  include "../bits/end_section.inc";
+  include "../bits/start_section.inc";
 ?>
 
 <h2>TP Frame format</h2>
@@ -43,10 +43,10 @@ with nulls ('\0') to the next 32 bit boundary (if necessary).  All integers are 
   </tr>
   <tr>
     <td><b>Sizes</b></td>
-    <td>32 bits</td>
-    <td>32 bits</td>
-    <td>32 bits</td>
-    <td>length * 8 bits</td>
+    <td>32 ../bits</td>
+    <td>32 ../bits</td>
+    <td>32 ../bits</td>
+    <td>length * 8 ../bits</td>
   </tr>
   <tr>
     <td><b>Description and notes</b></td>
@@ -66,8 +66,8 @@ with nulls ('\0') to the next 32 bit boundary (if necessary).  All integers are 
 </p>
 
 <?php
-  include "bits/end_section.inc";
-  include "bits/start_section.inc";
+  include "../bits/end_section.inc";
+  include "../bits/start_section.inc";
 ?>
 
 <h2>Types</h2>
@@ -230,8 +230,8 @@ Even values are sent from the client, odd values from the server. The types are 
 </table></p>
 
 <?php
-  include "bits/end_section.inc";
-  include "bits/start_section.inc";
+  include "../bits/end_section.inc";
+  include "../bits/start_section.inc";
 ?>
 
 <h2>Data Packet formats</h2>
@@ -325,8 +325,8 @@ followed by more data to be specified in future.</p>
 protocol is revised).</p>
 
 <?php
-  include "bits/end_section.inc";
-  include "bits/start_section.inc";
+  include "../bits/end_section.inc";
+  include "../bits/start_section.inc";
 ?>
 
 <h2>Example</h2>
@@ -364,6 +364,6 @@ protocol is revised).</p>
 
 
 <?php
-  include "bits/end_section.inc";
-  include "bits/end_page.inc";
+  include "../bits/end_section.inc";
+  include "../bits/end_page.inc";
 ?>

@@ -1,14 +1,14 @@
 
 <?php $title = "Orders" ?>
 
-<?php include "bits/start_page.inc" ?>
+<?php include "../bits/start_page.inc" ?>
 
-<?php include "bits/start_section.inc" ?>
+<?php include "../bits/start_section.inc" ?>
 
 <p>Last updated: 18 Feb 2003</p>
 
-<?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
+<?php include "../bits/end_section.inc" ?>
+<?php include "../bits/start_section.inc" ?>
 
 <h2>Move</h2>
 <ul>
@@ -46,8 +46,8 @@
 	</li>
 </ul>
 
-<?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
+<?php include "../bits/end_section.inc" ?>
+<?php include "../bits/start_section.inc" ?>
 
 <h2>Build</h2>
 <p>
@@ -56,16 +56,16 @@
 	can build ships which can fit in their docks.
 </p>
 
-<?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
+<?php include "../bits/end_section.inc" ?>
+<?php include "../bits/start_section.inc" ?>
 
 <h2>Colonize</h2>
 <p>
 	Colonize the currently orbiting planet.
 </p>
 
-<?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
+<?php include "../bits/end_section.inc" ?>
+<?php include "../bits/start_section.inc" ?>
 
 <h2>Colonize using Space Station</h2>
 <p>
@@ -73,8 +73,8 @@
 	on a planet.
 </p>
 
-<?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
+<?php include "../bits/end_section.inc" ?>
+<?php include "../bits/start_section.inc" ?>
 
 <h2>Deploy, Space Station</h2>
 <p>
@@ -83,16 +83,16 @@
 	station commonents).
 </p>
 
-<?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
+<?php include "../bits/end_section.inc" ?>
+<?php include "../bits/start_section.inc" ?>
 
 <h2>Deploy, Space Anchor</h2>
 <p>
 	Create a space anchor so that jump ships can reliably jump to this location
 </p>
 
-<?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
+<?php include "../bits/end_section.inc" ?>
+<?php include "../bits/start_section.inc" ?>
 
 <h2>Create "hole"</h2>
 <p>
@@ -100,16 +100,16 @@
 	Longer distances require exponentially more energy.
 </p>
 
-<?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
+<?php include "../bits/end_section.inc" ?>
+<?php include "../bits/start_section.inc" ?>
 
 <h2>Mine</h2>
 <p>
 	Mines the current location. (Used for remote mining operations)
 </p>
 
-<?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
+<?php include "../bits/end_section.inc" ?>
+<?php include "../bits/start_section.inc" ?>
 
 <h2>Transport</h2>
 <p>
@@ -131,24 +131,24 @@
 	</li>
 </ul>
 
-<?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
+<?php include "../bits/end_section.inc" ?>
+<?php include "../bits/start_section.inc" ?>
 
 <h2>??Tow??</h2>
 <p>
 	Drags a target to a destination, used by tug boats etc..
 </p>
 
-<?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
+<?php include "../bits/end_section.inc" ?>
+<?php include "../bits/start_section.inc" ?>
 
 <h2>Attack</h2>
 <p>
 	Attack and enemy
 </p>
 
-<?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
+<?php include "../bits/end_section.inc" ?>
+<?php include "../bits/start_section.inc" ?>
 
 <h2>Lay defense</h2>
 <p>
