@@ -100,11 +100,6 @@
 	A client can connect to a TP server on the standard 6923 port and use the new
 	negotiation frames to find out if the server supports tunneling or encrypted
 	access (and other optional features). The client is not required to do this however.
-</p><p>
-	The server should close the connect straight after the response if the first frame
-	is a negotiation frame.
-</p><p class="fixme">
-	FIXME: Should the above be the case?
 </p>
 
 <span class="new">
