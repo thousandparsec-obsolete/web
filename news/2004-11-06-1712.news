@@ -1,0 +1,17 @@
+
+<h2>First release of libtpproto-cpp</h2>
+<p>by Lee</p>
+<p>
+	I have just released the first version of libtpproto-cpp.  It is a client side library for Thousand
+	Parsec, written in C++ to greatly speed up C++ client development.  It supports everything in the TP02
+	protocol, and can easily be extended in a number of ways, including logging, socket and async frame
+	handling.  It is slightly under 4000 lines, making it bigger than even tpserver-cpp (not sure if that
+	is a good thing or not).
+</p>
+<p>
+	Be sure to read the README if you are going to use the library.  Any feedback would be helpful.
+	Documentation will appear soon.  I might throw together a client using it soon.
+</p>
+<p>
+	So... it's on the downloads page.  The cvs module is libtpproto-cpp.  CVS tag: LIBTPPROTO_CPP_0_0_1.
+</p>
