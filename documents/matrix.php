@@ -80,7 +80,7 @@
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
-		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ffff00">#</td>
 	</tr>
 	<tr>
 		<td>Can add orders?</td>
@@ -115,7 +115,7 @@
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
-		<td align="center" bgcolor="#ffff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 	</tr>
 </td>
 </table>
