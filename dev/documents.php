@@ -34,6 +34,16 @@
 	</blockquote>
 
 	<p>
+		Libtpproto-cpp Documentation
+	</p>
+	<blockquote>
+		<p>
+			Current cvs <a href="docuements/libtpproto-cpp/">libtpproto-cpp client side c++ library</a> documentation. Also available 
+			in html and latex in a <a href="documents/libtpproto-cpp-doc-cvs.tar.gz">tarball</a>.
+		</p>
+	</blockquote>
+
+	<p>
 		Game documentation
 	</p>
 	<blockquote>
