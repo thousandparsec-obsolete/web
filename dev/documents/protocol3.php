@@ -213,7 +213,7 @@
 		<td><b>Name</b></td>
 		<td><b>C++ enum</b></td>
 		<td><b>Description</b></td>
-		<td><b>ParsecStone</b></td>
+		<td><b>Parsec Stone</b></td>
 	</tr>
 	
 	<tr>
@@ -945,17 +945,88 @@ end of turn has just started.</p>
 		<li>a UInt32, Board ID of the message is on/to be placed on</li>
 		<li>a UInt32, Slot number of the message/to be put in, 
 			-1 will insert at the last position, otherwise it is inserted before the number</li>
-		<li>a list of UInt32, type of message (can be multiple types at once).</li>
+		<li>a list of UInt32, type of message (can be multiple types at once). <b class=new>This list is now obsolete and will be removed in future versions.</b></li>
 		<li>a String, Subject of the message</li>
 		<li>a String, Body of the message</li>
 		<li class="new">a UInt32, Turn the message was generated on</li>
-		<li class="new">something about references</li>
+		<li class="new">a list of
+			<ul>
+				<li>a Int32, type of thing being referenced</li>
+				<li>a UInt32, the ID of the object being referenced</li>
+			</ul>
+		</li>
 	</ul>
-</p><p>
-	Message types are "or"ed together to produce the type field.
+</p><p class="new">
+	The new reference system is similar to the old type system but has been expanded to cover more features.
+	This means the reference system replaces the old type system. The type system will be removed at a later date.
+</p><p class="new">
+	The reference system uses two integers to reference any object in the game. The first integer indicated what
+	type of thing is being referenced and the second gives the ID of the thing being referenced. For example
+	to reference the player 6 you would use (1, 6). As well the references system has a bunch of references which
+	point to "actions" (from example an order completing). As these do not refer to actual items in the game
+	the type is negative. The list of actions follows.
+</p><p class="new">
+	The types used in the reference system are described below,
+	<ul class="new">
+		<li>-1000 - Server specific action reference</li>
+		<li>-5 - Design action reference</li>
+		<li>-4 - Message action reference</li>
+		<li>-3 - Order action special reference</li>
+		<li>-2 - Object action reference</li>
+		<li>-1 - Player action reference</li>
+		<li>0 - Misc special reference</li>
+		<li>1 - Player</li>
+		<li>2 - Object</li>
+		<li>3 - Order Type (IE A type of order)</li>
+		<li>4 - Order Instance (An actual order on an object, should also include an Object reference)</li>
+		<li>5 - Message</li>
+		<li>6 - Design</li>
+		<li>7 - Data</li>
+	</ul>
+	
+</p><p class="new">
+	The special references are listed below,
+
+</p><p class="new">
+	Misc
+	<ol>
+		<li class="new">System Message, this message is from a the internal game system</li>
+		<li class="new">Administration Message, this message is an important message from game administrators</li>
+		<li class="new">Attention Message, this message is flagged to be important</li>
+	</ol>
+	
+</p><p class="new">
+	Player Action
+	<ol>
+		<li class="new">Player Eliminated, this message refers to the elimination of a player from the game</li>
+		<li class="new">Player Quit, this message refers to a player leaving the game</li>
+		<li class="new">Player Joined, this message refers to a new player joining the game</li>
+	</ol>
+	
+</p><p class="new">
+	Order Action
 	<ol>
 		<li>Order Completion, this message refers to a completion of an order</li>
-		<li>Order Canceled, this message refers to the cancellation of an order</li>
+		<li>Order Canceled, this message refers to the cancellation of an order (IE Building a ship and ship yard destroyed)</li>
+		<li class="new">Order Incompatible, this message refers to the inability to complete an order (IE Build Ship A when not enough material for Ship A is available)</li>
+		<li class="new">Order Invalid, this message refers to an order which is invalid (IE Mine order on a fleet with no remote miners)</li>
+	</ol>
+
+</p><p class="new">
+	Object Action
+	<ol>
+		<li class="new">Object Idle, this message refers to an object having nothing to do</li>
+	</ol>
+
+</p><p class="new">
+	Message
+	<ol>
+		<li class="new"></li>
+	</ol>
+	
+</p><p class="new">
+	Design
+	<ol>
 		<li class="new"></li>
 	</ol>
 </p>
@@ -1046,7 +1117,7 @@ end of turn has just started.</p>
 	include "../bits/start_section.inc";
 ?>
 
-<h2>TODO</h2>
+<h2>TO DO</h2>
 <p>
 	Stuff we have to do before we can consider this protocol to be complete enough 
 	to move onto another version.
