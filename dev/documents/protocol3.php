@@ -88,7 +88,7 @@
 	</li><li class="new">
 		Semi-signed Integers are integers which act like normal unsigned numbers except
 		that the biggest possible number is considered -1, this should equal the normal
-		signed representation for this number. These are noted as SInt[Size].
+		signed representation for this number. These are noted as SInt&lt;Size&gt;.
 	</li>
 </ul>
 <p class="new">
@@ -539,7 +539,27 @@
 		<td>Header and arbitrary binary data.</td>
 		<td></td>
 	</tr>
-	
+
+	<tr class="new">
+		<td colspan="6" align="center"><b>Players</b></td>
+	</tr><tr class="new">
+		<td colspan="6" align="center">
+			These frames are used to get information about other places/races.
+		</td>
+	</tr><tr class="new">
+		<td>40</td>
+		<td>Get Player Data</td>
+		<td></td>
+		<td>Get the information about a player/race.</td>
+		<td></td>
+	</tr><tr class="new">
+		<td>41</td>
+		<td>Player Data</td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+
 </span>
 
 </table>
@@ -737,8 +757,9 @@ Example:
 		<li>a list of UInt32, slot numbers of orders to be sent/removed</li>
 	</ul>
 </p><p>
-	Note: You should sent Remove Order slot numbers in decrementing value if
-	you don't want strange things to happen. (IE 10, 4, 1)
+	Note: You should send Remove Order slot numbers in decrementing value if you don't want strange things to happen. (IE 10, 4, 1)
+</p><p class="new">
+	Note: An empty slot list on Get will cause the server to return all orders, on Remove it will return an error.
 </p>
 
 <h3>Order Frame, Insert Order Frame</h3>
@@ -954,7 +975,10 @@ ignore any information in read only field (even if they are non-empty).
 	<ul>
 		<li>a list of UInt32, Board IDs of the boards requested</li>
 	</ul>
+</p><p>
 	A board ID of 0 is the special private (system) board for the current player.
+</p><p class="new">
+	Note: An empty list will cause the server to return all boards.
 </p>
 
 <h3>Board Frame</h3>
@@ -976,8 +1000,9 @@ ignore any information in read only field (even if they are non-empty).
 		<li>a list of UInt32, slot numbers of orders to be sent/removed</li>
 	</ul>
 </p><p>
-	Note: You should send Remove Message slot numbers in decrementing value if
-	you don't want strange things to happen. (IE 10, 4, 1)
+	Note: You should send Remove Message slot numbers in decrementing value if you don't want strange things to happen. (IE 10, 4, 1)
+</p><p class="new">
+	Note: An empty slot list on Get will cause the server to return all messages, on Remove it will return an error.
 </p>
 
 <h3>Message Frame, Post Message Frame</h3>
@@ -992,7 +1017,6 @@ ignore any information in read only field (even if they are non-empty).
 		<li>a String, Body of the message</li>
 		<li class="new">a UInt32, Turn the message was generated on</li>
 		<li class="new">a list of as described in the Generic Reference System</li>
-		</li>
 	</ul>
 </p>
 	
@@ -1093,6 +1117,8 @@ ignore any information in read only field (even if they are non-empty).
 	<ul>
 		<li>a list of UInt32, Resource ID</li>
 	</ul>
+</p><p class="new">
+	Note: An empty list will cause the server to return all resource descriptions.
 </p>
 
 <h3>Resource Description Frame</h3>
@@ -1120,6 +1146,8 @@ ignore any information in read only field (even if they are non-empty).
 	<ul>
 		<li>a list of UInt32, Category IDs to get</li>
 	</ul>
+</p><p>
+	Note: An empty list will cause the server to return all category descriptions.
 </p>
 </span>
 
@@ -1143,8 +1171,9 @@ ignore any information in read only field (even if they are non-empty).
 		<li>a list of UInt32, Category IDs to get or remove</li>
 	</ul>
 </p><p>
-	Note: You should sent Remove Order slot numbers in decrementing value if
-	you don't want strange things to happen. (IE 10, 4, 1)
+	Note: You should sent Remove ID numbers can be sent in any order (unlike other Get packets).
+</p><p>
+	Note: An empty list on Get will cause the server to return all components, on Remove it will cause an error.
 </p>
 </span>
 
@@ -1322,14 +1351,15 @@ done in one step).
 
 <h2>TO DO</h2>
 <p>
-	Stuff we have to do before we can consider this protocol to be complete enough 
-	to move onto another version.
+	Stuff we have to be considered fixed...
 	<ul>
 		<li>Figure out how to do masking for the opT_Object_ID Order Argument type (IE like opT_Object_Type)</li>
 		<li>Figure out how to support renaming objects</li>
 		<li>Figure out a way for the opT_List_ID to "suggest" maximums as well as hard maximums</li>
 		<li>Maybe a generic "string getter" for category names</li>
 		<li>Help support?</li>
+		<li>Permissions to change your stuff? Not really needed for now...</li>
+		<li>Get range functions?</li>
 		<li>Anything else I have forgotten</li>
 	</ul>
 </p>
