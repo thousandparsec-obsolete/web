@@ -23,7 +23,7 @@ a {  font-family: "Times New Roman", Times, serif; color: #00FF99; text-decorati
 			Thousand Parsec
 		</font><br>
     		<font color="#FFFFFF" face="Arial, Helvetica, sans-serif" size="2">
-			A journy of a thousand parsec starts with a single step
+			A journey of a thousand parsec starts with a single step
 		</font>
 	</p>
 </div>
