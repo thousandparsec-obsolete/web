@@ -1,5 +1,5 @@
 <?php
-	$title = "Protocol Definition Ver 0.2";
+	$title = "Protocol Definition Ver 0.3";
 	include "../bits/start_page.inc";
 	include "../bits/start_section.inc";
 ?>
@@ -412,16 +412,16 @@
 		<td>ft02_Board</td>
 		<td>A Message.</td>
 		<td>Foxtrot</td>
-	</tr><tr>
+	</tr><tr class="new">
 		<td>39</td>
 		<td>Get List Of Boards</td>
-		<td></td>
+		<td>ft03_Board_List_Get</td>
 		<td>Gets a list of board ids that the player can see.</td>
 		<td></td>
-	</tr><tr>
+	</tr><tr class="new">
 		<td>40</td>
 		<td>List Of Boards</td>
-		<td></td>
+		<td>ft03_Board_List</td>
 		<td>The list of board ids the player can see.</td>
 		<td></td>
 	</tr><tr>
@@ -466,16 +466,16 @@
 		<td>ft02_ResDesc</td>
 		<td>Describes a resource</td>
 		<td>Foxtrot</td>
-	</tr><tr>
+	</tr><tr class="new">
 		<td>41</td>
 		<td>Get List Of Resources</td>
-		<td></td>
+		<td>ft03_ResDesc_List_Get</td>
 		<td>Gets a list of resource type ids</td>
 		<td></td>
-	</tr><tr>
+	</tr><tr class="new">
 		<td>42</td>
 		<td>List Of Resouces</td>
-		<td></td>
+		<td>ft03_ResDesc_List</td>
 		<td>A list of resource type ids</td>
 		<td></td>
 	</tr>
