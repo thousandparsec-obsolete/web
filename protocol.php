@@ -5,10 +5,13 @@
 ?>
 
 <h1>Protocol Definition for Thousand Parsec, version 0.1.</h1>
-<p>Last updated 16 Feb 2003.</p>
+<p>Last updated 9 Mar 2003.</p>
 <p>This protocol definition is for the Thousand Parsec project.  It
 is designed as a simple, easy to impliment protocol.  It is desgined by Lee Begg and
 any questions should be directed to him.</p>
+<p>This protocol will only change in a backward compatable way, with respect to current versions and
+revisions that the client(s) and server are using.  Any change that is not backward compatable will
+change the version number of the protocol.</p>
 
 <?php
   include "bits/end_section.inc";
@@ -68,7 +71,8 @@ with nulls ('\0') to the next 32 bit boundary (if necessary).  All integers are 
 
 <h2>Types</h2>
 <p>There are a number of types that can be put in types field of the packet.
-Even values are sent from the client, odd values from the server. The types are listed below:
+Even values are sent from the client, odd values from the server. The types are listed below:</p>
+<p>If there is no C++ enum value, it is not current implemented yet and should be taken as advisory only.
 <table border="1">
   <tr>
     <td><b>Value</b></td>
@@ -130,7 +134,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>6</td>
     <td>Get Order</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>ft_Get_Order</td>
     <td>Get infomration about an order</td>
     <td>Charlie</td>
   </tr>
@@ -138,28 +142,60 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>7</td>
     <td>Order</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>ft_Order</td>
     <td>Order Information</td>
     <td>Charlie</td>
   </tr>
   <tr>
     <td>8</td>
-    <td>Get Result</td>
+    <td>Add Order</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>Get the result of some order or event</td>
+    <td>ft_Add_Order</td>
+    <td>Add order to an object in a slot</td>
     <td>Charlie</td>
   </tr>
   <tr>
     <td>9</td>
-    <td>Result</td>
+    <td>Remove Order</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>The Result of an order or event</td>
+    <td>ft_Remove_Order</td>
+    <td>Remove an order from a slot of an object</td>
     <td>Charlie</td>
   </tr>
   <tr>
     <td>10</td>
+    <td>Get Outcome</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Get the probable outcome of an order</td>
+    <td>Delta</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>Outcome</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>The Outcome of an order in a slot on an object</td>
+    <td>Delta</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>Get Result</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Get the result of some order or event</td>
+    <td>Echo</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>Result</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>The Result of an order or event</td>
+    <td>Echo</td>
+  </tr>
+  <tr>
+    <td>14</td>
     <td>Get Time remaining</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -167,7 +203,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>Echo</td>
   </tr>
   <tr>
-    <td>11</td>
+    <td>15</td>
     <td>Time remaining</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -196,12 +232,21 @@ future version.</p>
 <h3>Get Object Packet</h3>
 <p>Packet contains the int32 object ID of the object requested.  Object 0 is the top level Universe object.</p>
 <h3>Object Packet</h3>
-<p>An object packet contains: int32 object ID, int32 object type, string name, unsigned int64 size (diameter), 3 by signed int64 
-position, 3 by signed int64 velocity, 3 by signed int64 acceleration, and a list of int32 object IDs of objects contained in 
-the current object, prefixed by the int32 of the number of items in the list.  After the list, any type specific data is appended.  Example: 
+<p>An object packet contains: int32 object ID, int32 object type, string name, unsigned int64 size (diameter), 3 by signed int64
+position, 3 by signed int64 velocity, 3 by signed int64 acceleration, a list of int32 object IDs of objects contained in
+the current object, prefixed by the int32 of the number of items in the list, a list of int32 order types that the player
+can send to this object prefixed by the number of items in the list, and an int32 number of orders currently 
+on this object from the player.  After the number of orders, any type specific data is appended.  Example:
 &lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\0\0\0\0&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
 &lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
-&lt;2&gt;&lt;1&gt;&lt;2&gt;</p>
+&lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;0gt;&lt;0&gt;</p>
+<h3>Get Order Packet, Remove Order Packet</h3>
+<p>Get Order packet and Remove Order packet have the int32 id of the object it's on, and the int32 slot number the 
+order is in to be sent or removed.</p>
+<h3>Order Packet, Add Order packet</h3>
+<p>An Order Packet or Add Order packet has int32 Object ID of the object it's on (or to be put on), int 32 type, and 
+which slot number it is in or should go in, -1 for last. Any extra data required by the order is appended to the end 
+and is defined on a type by type basis.</p>
 <h3>Other Packets</h3>
 <p>All other data packets are not defined yet and shall be added to this protocol version (unless the 
 protocol is revised).</p>
@@ -238,7 +283,7 @@ protocol is revised).</p>
     <td>Object</td>
     <td>&lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\0\0\0\0&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
       &lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
-      &lt;2&gt;&lt;1&gt;&lt;2&gt;</td>
+      &lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;0gt;&lt;0&gt;</td>
     <td>Universe object</td>
   </tr>
 </table>
