@@ -34,7 +34,7 @@
 		<td>&nbsp;</td>
 		<td colspan="4"><b>py-netlib</b></td>
 		<td colspan="2"><b>libtpproto-cpp</b></td>
-		<td><b></b></td>
+		<td><b>(none)</b></td>
 	</tr>
 	<tr>
 		<td>&nbsp;</td>
