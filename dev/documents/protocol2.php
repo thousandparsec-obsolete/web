@@ -530,11 +530,6 @@ Example:
     a sphere size of zero is used all object at the point will be returned.
 </p>
 
-<p>
-<b>Note:</b> Order type ID's below 1000 are reserved for orders defined 
-by the extended protocol specification.
-</p>
-
 <h3>Get Order Packet, Remove Order Packet</h3>
 <p>
     Get Order packet and Remove Order packet have the Int32 ID of the
@@ -548,12 +543,6 @@ by the extended protocol specification.
 
 <h3>Order Packet, Insert Order packet</h3>
 <p>
-    An Order Packet or Insert Order packet has Int32 Object ID of the
-    object it's on (or to be put on), Int32 type, and
-    which slot number it is in or should go in, -1 for last. Any extra data
-    required by the order is appended to the end and is defined on a type
-    by type basis.
-
     A Order packet consist of:
     <ul>
         <li>a UInt32, Object ID of the order is on/to be placed on</li>
@@ -565,7 +554,15 @@ by the extended protocol specification.
 	        <li>a UInt32, The resource ID</li>
 	        <li>a UInt32, The units of that resource required</li>
 		</ul>
+    	<li>extra data, required by the order is appended to the end</li>
     </ul>
+
+	The extra data is defined by Order descriptions packets.<br>
+	<br>
+	<b>Note:</b> Order type ID's below 1000 are reserved for orders defined 
+	by the extended protocol specification.
+</p>
+
 </p>
 
 <h3>Describe Order Packet</h3>
