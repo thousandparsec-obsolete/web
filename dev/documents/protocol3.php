@@ -232,49 +232,79 @@
 		<td><b>Name</b></td>
 		<td><b>C++ enum</b></td>
 		<td><b>Description</b></td>
-		<td><b>Parsec Stone</b></td>
+		<td><b>Base</b></td>
 	</tr>
 	
 	<tr>
-		<td colspan="6" align="center"><b>Generic Responses</b></td>
+		<td colspan="5" align="center"><b>Generic Responses</b></td>
 	</tr><tr>
-		<td colspan="6" align="center">These responses are the most common and used to signify success of failure of many operations.</td>
+		<td colspan="5" align="center">These responses are the most common and generic that should be the first to be implimented.</td>
 	</tr><tr>
 		<td>0</td>
 		<td>Ok</td>
 		<td>ft02_OK</td>
 		<td>Ok, continue or passed</td>
-		<td>Alpha</td>
+		<td></td>
 	</tr><tr>
 		<td>1</td>
 		<td>Fail</td>
 		<td>ft02_Fail</td>
 		<td>Failed, stop or impossible</td>
-		<td>Alpha</td>
+		<td></td>
 	</tr><tr>
 		<td>2</td>
 		<td>Sequence</td>
 		<td>ft02_Sequence</td>
 		<td>Multiple frames will follow</td>
-		<td>Alpha</td>
+		<td></td>
+	</tr>
+
+	<tr class="new">
+		<td colspan="5" align="center"><b>Base Packets</b></td>
+	</tr><tr class="new">
+		<td colspan="5" align="center">These packets don't really exist but are the common parts of other packets.</td>
+	</tr><tr class="new">
+		<td></td>
+		<td>Get with ID</td>
+		<td></td>
+		<td>Gets things using ids (Objects, Boards)</td>
+		<td></td>
+	</tr><tr class="new">
+		<td></td>
+		<td>Get with ID and Slots</td>
+		<td></td>
+		<td>Gets things on a thing using slots (Orders, Messages)</td>
+		<td></td>
+	</tr><tr class="new">
+		<td></td>
+		<td>Get ID Sequence</td>
+		<td></td>
+		<td>Gets a sequence of IDs</td>
+		<td></td>
+	</tr><tr class="new">
+		<td></td>
+		<td>ID Sequence</td>
+		<td></td>
+		<td>A sequence of IDs and their last modified times</td>
+		<td></td>
 	</tr>
 	
 	<tr>
-		<td colspan="6" align="center"><b>Connecting</b></td>
+		<td colspan="5" align="center"><b>Connecting</b></td>
 	</tr><tr>
-		<td colspan="6" align="center">These frames are used for setting up the connection to a server.</td>
+		<td colspan="5" align="center">These frames are used for setting up the connection to a server.</td>
 	</tr><tr>
 		<td>3</td>
 		<td>Connect</td>
 		<td>ft02_Connect</td>
 		<td>Can I connect?</td>
-		<td>Alpha</td>
+		<td></td>
 	</tr><tr>
 		<td>4</td>
 		<td>Login</td>
 		<td>ft02_Login</td>
 		<td>Login with username/password</td>
-		<td>Alpha</td>
+		<td></td>
 	</tr><tr class="new">
 		<td>24</td>
 		<td>Redirect</td>
@@ -284,9 +314,9 @@
 	</tr>
 
 	<tr class="new">
-		<td colspan="6" align="center"><b>Feature Negotiation</b></td>
+		<td colspan="5" align="center"><b>Feature Negotiation</b></td>
 	</tr><tr class="new">
-		<td colspan="6" align="center">These frames are used for negotiation which features to use.</td>
+		<td colspan="5" align="center">These frames are used for negotiation which features to use.</td>
 	</tr><tr class="new">
 		<td>25</td>
 		<td>Get Features</td>
@@ -302,9 +332,9 @@
 	</tr>
 	
 	<tr class="new">
-		<td colspan="6" align="center"><b>Keep alive (Optional)</b></td>
+		<td colspan="5" align="center"><b>Keep alive (Optional)</b></td>
 	</tr><tr class="new">
-		<td colspan="6" align="center">
+		<td colspan="5" align="center">
 			These frames are used to keep a connection alive, these are often needed when using the
 			tunneling connections. (Some broken NAT implimentations also need this to keep open long
 			running, low bandwidth connections.) These frames only required to be implemented if HTTP 
@@ -319,69 +349,94 @@
 	</tr>
 	
 	<tr>
-		<td colspan="6" align="center"><b>Objects</b></td>
+		<td colspan="5" align="center"><b>Objects</b></td>
 	</tr><tr>
-		<td colspan="6" align="center">These frames are used for getting objects.</td>
+		<td colspan="5" align="center">These frames are used for getting objects.</td>
 	</tr><tr>
 		<td>5</td>
 		<td>Get Objects by ID</td>
 		<td>ft02_Object_GetById</td>
-		<td>Returns object with the IDs.</td>
-		<td>Bravo</td>
-	</tr><tr>
-		<td>6</td>
-		<td>Get Objects by Position</td>
-		<td>ft02_Object_GetByPos</td>
-		<td>Returns all objects within a sphere.</td>
-		<td>Bravo</td>
+		<td>Returns object with the given IDs.</td>
+		<td>Get with ID</td>
 	</tr><tr>
 		<td>7</td>
 		<td>Object</td>
 		<td>ft02_Object</td>
 		<td>Description of an Object</td>
-		<td>Bravo</td>
+		<td></td>
+	</tr><tr class="new">
+		<td></td>
+		<td>Get Object IDs</td>
+		<td></td>
+		<td></td>
+		<td>Get ID Sequence</td>
+	</tr><tr class="new">
+		<td></td>
+		<td>Get Object IDs by Position</td>
+		<td></td>
+		<td>Returns the IDs which are within a sphere.</td>
+		<td></td>
+	</tr><tr class="new">
+		<td></td>
+		<td>List of Object IDs</td>
+		<td></td>
+		<td>Gets a sequence of IDs.</td>
+		<td>ID Sequence</td>
 	</tr>
 	
 	<tr>
-		<td colspan="6" align="center"><b>Orders</b></td>
+		<td colspan="5" align="center"><b>Orders</b></td>
 	</tr><tr>
-		<td colspan="6" align="center">These frames are used for manipulating orders.</td>
+		<td colspan="5" align="center">These frames are used for manipulating orders.</td>
 	</tr><tr>
 		<td>8</td>
 		<td>Get Order Description</td>
 		<td>ft02_OrderDesc_Get</td>
 		<td>Returns a description of an order type</td>
-		<td>Charlie</td>
+		<td>Get with ID</td>
 	</tr><tr>
 		<td>9</td>
 		<td>Order Description</td>
 		<td>ft02_OrderDesc</td>
 		<td>Describes an order type and it's parameters</td>
-		<td>Charlie</td>
+		<td></td>
+	</tr><tr class="new">
+		<td></td>
+		<td>Get Order Description IDs</td>
+		<td></td>
+		<td></td>
+		<td>Get ID Sequence</td>
+	</tr><tr class="new">
+		<td></td>
+		<td>List of Order Description IDs</td>
+		<td></td>
+		<td>Gets a sequence of IDs.</td>
+		<td>ID Sequence</td>
+		
 	</tr><tr>
 		<td>10</td>
 		<td>Get Order</td>
 		<td>ft02_Order_Get</td>
 		<td>Returns a description of an order</td>
-		<td>Charlie</td>
+		<td>Get with ID and Slots</td>
 	</tr><tr>
 		<td>11</td>
 		<td>Order</td>
 		<td>ft02_Order</td>
 		<td>Description of an order</td>
-		<td>Charlie</td>
+		<td></td>
 	</tr><tr>
 		<td>12</td>
 		<td>Insert Order</td>
 		<td>ft02_Order_Insert</td>
 		<td>Insert order on object before slot</td>
-		<td>Charlie</td>
+		<td></td>
 	</tr><tr>
 		<td>13</td>
 		<td>Remove Order</td>
 		<td>ft02_Order_Remove</td>
 		<td>Remove an order from a slot of an object</td>
-		<td>Charlie</td>
+		<td>Get with ID and Slots</td>
 	</tr><tr class="new">
 		<td>28</td>
 		<td>Probe Order</td>
@@ -391,27 +446,27 @@
 	</tr>
 
 	<tr>
-		<td colspan="6" align="center"><b>Time</b></td>
+		<td colspan="5" align="center"><b>Time</b></td>
 	</tr><tr>
-		<td colspan="6" align="center">These frames are used to find out when the next turn will occur.</td>
+		<td colspan="5" align="center">These frames are used to find out when the next turn will occur.</td>
 	</tr><tr>
 		<td>14</td>
 		<td>Get Time remaining</td>
 		<td>ft02_Time_Remaining_Get</td>
 		<td>Get the amount of time before the end of turn</td>
-		<td>Echo</td>
+		<td></td>
 	</tr><tr>
 		<td>15</td>
 		<td>Time remaining</td>
 		<td>ft02_Time_Remaining</td>
 		<td>The amount of time before the end of turn</td>
-		<td>Echo</td>
+		<td></td>
 	</tr>
 
 	<tr>
-		<td colspan="6" align="center"><b>Messages</b></td>
+		<td colspan="5" align="center"><b>Messages</b></td>
 	</tr><tr>
-		<td colspan="6" align="center">
+		<td colspan="5" align="center">
 			These frames are used to manipulate the in game message boards. Each person has a
 			message board and there are some shared message boards.
 		</td>
@@ -420,104 +475,121 @@
 		<td>Get Boards</td>
 		<td>ft02_Board_Get</td>
 		<td>Get message boards the player can see.</td>
-		<td>Foxtrot</td>
+		<td>Get with ID</td>
 	</tr><tr>
 		<td>17</td>
 		<td>Board</td>
 		<td>ft02_Board</td>
 		<td>A Message.</td>
-		<td>Foxtrot</td>
+		<td></td>
+
 	</tr><tr class="new">
 		<td>39</td>
-		<td>Get List Of Boards</td>
+		<td>Get Board IDs</td>
 		<td>ft03_Board_List_Get</td>
-		<td>Gets a list of board ids that the player can see.<span class="fixme">FIXME: Does getting a list of IDs ever make sense? What about returning the ID + Last modified time?</span></td>
-		<td></td>
+		<td>Gets a list of board ids that the player can see.</span></td>
+		<td>Get ID Sequence</td>
 	</tr><tr class="new">
 		<td>40</td>
-		<td>List Of Boards</td>
+		<td>List Of Board IDs</td>
 		<td>ft03_Board_List</td>
 		<td>The list of board ids the player can see.</td>
-		<td></td>
+		<td>ID Sequence</td>
+
 	</tr><tr>
 		<td>18</td>
 		<td>Get Message</td>
 		<td>ft02_Message_Get</td>
 		<td>Get a Message from a board.</td>
-		<td>Foxtrot</td>
+		<td>Get with ID and Slots</td>
 	</tr><tr>
 		<td>19</td>
 		<td>Message</td>
 		<td>ft02_Message</td>
 		<td>A Message.</td>
-		<td>Foxtrot</td>
+		<td></td>
 	</tr><tr>
 		<td>20</td>
 		<td>Post Message</td>
 		<td>ft02_Message_Post</td>
 		<td>Post a message to a board.</td>
-		<td>Foxtrot</td>
+		<td></td>
 	</tr><tr>
 		<td>21</td>
 		<td>Remove Message</td>
 		<td>ft02_Message_Remove</td>
 		<td>Remove a message from a board.</td>
-		<td>Foxtrot</td>
+		<td>Get with ID and Slots</td>
 	</tr>
 
 	<tr>
-		<td colspan="6" align="center"><b>Resources</b></td>
+		<td colspan="5" align="center"><b>Resources</b></td>
 	</tr><tr>
-		<td colspan="6" align="center">These frames are used to get information about resources.</td>
+		<td colspan="5" align="center">These frames are used to get information about resources.</td>
 	</tr><tr>
 		<td>22</td>
 		<td>Get Resource Description</td>
 		<td>ft02_ResDesc_Get</td>
 		<td>Returns a description of an resource type</td>
-		<td>Foxtrot</td>
+		<td>Get with ID</td>
 	</tr><tr>
 		<td>23</td>
 		<td>Resource Description</td>
 		<td>ft02_ResDesc</td>
 		<td>Describes a resource</td>
-		<td>Foxtrot</td>
+		<td></td>
+		
 	</tr><tr class="new">
 		<td>41</td>
-		<td>Get List Of Resources</td>
+		<td>Get Resources IDs</td>
 		<td>ft03_ResDesc_List_Get</td>
-		<td>Gets a list of resource type ids, <span class="fixme">FIXME: Does getting a list of IDs ever make sense?</span></td>
-		<td></td>
+		<td>Gets a list of resource type ids.</td>
+		<td>Get ID Sequence</td>
 	</tr><tr class="new">
 		<td>42</td>
-		<td>List Of Resouces</td>
+		<td>List Of Resouces IDs</td>
 		<td>ft03_ResDesc_List</td>
-		<td>A list of resource type ids</td>
-		<td></td>
+		<td>A list of resource type ids.</td>
+		<td>ID Sequence</td>
 	</tr>
 	
 	<tr class="new">
-		<td colspan="6" align="center"><b>Design Manipulation</b></td>
+		<td colspan="5" align="center"><b>Design Manipulation</b></td>
 	</tr><tr class="new">
-		<td colspan="6" align="center">
+		<td colspan="5" align="center">
 		</td>
 	</tr><tr class="new">
 		<td>29</td>
 		<td>Get Category Description</td>
 		<td></td>
 		<td>Returns a description of an category type</td>
-		<td></td>
+		<td>Get with ID</td>
 	</tr><tr class="new">
 		<td>30</td>
 		<td>Category Description</td>
 		<td></td>
 		<td>Describes a category</td>
 		<td></td>
+
+	</tr><tr class="new">
+		<td></td>
+		<td>Get Category Description IDs</td>
+		<td></td>
+		<td>Gets a list of category description ids.</td>
+		<td>Get ID Sequence</td>
+	</tr><tr class="new">
+		<td></td>
+		<td>List Of Category Description IDs</td>
+		<td></td>
+		<td>A list of resource type ids.</td>
+		<td>ID Sequence</td>
+		
 	</tr><tr class="new">
 		<td>31</td>
 		<td>Get Component</td>
 		<td></td>
 		<td>Gets the details about a component</td>
-		<td></td>
+		<td>Get with ID</td>
 	</tr><tr class="new">
 		<td>32</td>
 		<td>Component</td>
@@ -535,13 +607,14 @@
 		<td>Remove Component</td>
 		<td></td>
 		<td>Removes a component</td>
-		<td></td>
+		<td>Get with ID</td>
 	</tr>
 
 	<tr class="new">
-		<td colspan="6" align="center"><b>Binary Data Manipulation</b></td>
+		<td colspan="5" align="center"><b>Binary Data Manipulation</b></td>
 	</tr><tr class="new">
-		<td colspan="6" align="center">
+		<td colspan="5" align="center">
+			<span class="fixme">Do we even need this anymore?</span>
 			These frames are used to get the URL for data.  The URLs should be for HTTP only.
 		</td>
 	</tr><tr class="new">
@@ -559,9 +632,9 @@
 	</tr>
 
 	<tr class="new">
-		<td colspan="6" align="center"><b>Players</b></td>
+		<td colspan="5" align="center"><b>Players</b></td>
 	</tr><tr class="new">
-		<td colspan="6" align="center">
+		<td colspan="5" align="center">
 			These frames are used to get information about other places/races.
 		</td>
 	</tr><tr class="new">
@@ -588,7 +661,6 @@
 	include "../bits/start_section.inc";
 ?>
 
-
 <h2>Data Frame formats</h2>
 <p>
 	The different types have different formats for the Data Frame. Any Data
@@ -596,6 +668,13 @@
 	The program should just ignore any extra data in the Data Frame which
 	it does not understand.
 </p>
+
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<h2>Generic Responses</h2>
 
 <h3>OK Frame</h3>
 <p>
@@ -637,6 +716,13 @@
 	</ul>
 	This frame will proceed a response which requires numerous frames to be complete.
 </p>
+
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<h2>Connecting</h2>
 
 <span class="new">
 <h3>Redirect Frame</h3>
@@ -688,6 +774,13 @@
 	run it to allow detection of encryption support.</span>
 </p>
 
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<h2>Feature Negotiation</h2>
+
 <span class="new">
 <h3>Get Features Frame</h3>
 <p>
@@ -715,6 +808,13 @@
 </p>
 </span>
 
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<h2>Keep Alive</h2>
+
 <span class="new">
 <h3>Ping Frame</h3>
 <p>
@@ -723,6 +823,13 @@
 	second should be sent and then only if no other data has been sent.
 </p>
 </span>
+
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<h2>Objects</h2>
 
 <h3>Get Object by ID Frame</h3>
 <p>
@@ -756,7 +863,7 @@
 		<li>a UInt32, number of orders currently on this object</li>
 		<li class="new">a UInt64, the last modified time</li>
 		<li>
-			2 by UInt32 of padding, for future expansion of common
+			<span class="new">2</span> by UInt32 of padding, for future expansion of common
 			attributes
 		</li>
 		<li>
@@ -780,6 +887,13 @@ Example:
 	This will return a bunch of Objects which are inside the sphere. If
 	a sphere size of zero is used all object at the point will be returned.
 </p>
+
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<h2>Orders</h2>
 
 <h3>Get Order Frame, Remove Order Frame</h3>
 <p>
@@ -993,6 +1107,13 @@ ignore any information in read only field (even if they are non-empty).
 </b><br>
 </p>
 
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<h2>Time</h2>
+
 <h3>Get Time Remaining Frame</h3>
 <p>
 	Get the time remaining before the end of turn. No data
@@ -1007,6 +1128,13 @@ ignore any information in read only field (even if they are non-empty).
 </p><p>
 	If the value is 0 then the end of turn has just started.
 </p>
+
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<h2>Messages</h2>
 
 <h3>Get Board Frame</h3>
 <p>
@@ -1043,7 +1171,8 @@ ignore any information in read only field (even if they are non-empty).
 	</ul>
 </p><p>
 	The list offset should be 0 for the first of the list. It is up to the client to make sure it has all board ids, as the 
-	resulting list might not be ordered.
+	resulting list might not be ordered. <span class="fixme">Can the list order change in between gets? How does the server
+	know that your contining the last lot?</span>
 </p>
 </span>
 
@@ -1055,7 +1184,8 @@ ignore any information in read only field (even if they are non-empty).
 		<li>a list of UInt32 board ids</li>
 	</ul>
 </p><p>
-	The ids are not necessarily in any order and the order can vary between frames.
+	The ids are not necessarily in any order and the order can vary between frames. <span class="fixme">See above about
+	Get List Of Boards.</span>
 </p>
 </span>
 
@@ -1092,7 +1222,8 @@ ignore any information in read only field (even if they are non-empty).
 		<li class="new">a list of as described in the Generic Reference System</li>
 	</ul>
 </p><p class="new">
-	Please note that messages should be immutable, once posted/created they should not change.
+	Please note that messages should be immutable, once posted/created they should not change. <span class="fixme">Maybe 
+	we should have a modified time, then we could remove this restriction?</span>
 </p>
 	
 <span class="new">
@@ -1186,6 +1317,13 @@ ignore any information in read only field (even if they are non-empty).
 </p>
 </span>
 
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<h2>Resources</h2>
+
 <h3>Get Resource Description Frame</h3>
 <p>
 	Get Resource Description frame consist of:
@@ -1217,6 +1355,7 @@ ignore any information in read only field (even if they are non-empty).
 		<li>a String, description of the resource</li>
 		<li>a UInt32, weight per unit of resource (0 for not applicable)</li>
 		<li>a UInt32, size per unit of resource (0 for not applicable)</li>
+		<li class="new">a UInt64, the last modified time of this resource description</li>
 	</ul>
 </p>
 
@@ -1230,7 +1369,7 @@ ignore any information in read only field (even if they are non-empty).
 	</ul>
 </p><p>
 	The list offset should be 0 for the first of the list. It is up to the client to make sure it has all resource type ids, as the 
-	resulting list might not be ordered.
+	resulting list might not be ordered. <span class="fixme">This has the same problems as Get List of Board.</span>
 </p>
 </span>
 
@@ -1245,6 +1384,13 @@ ignore any information in read only field (even if they are non-empty).
 	The ids are not necessarily in any order and the order can vary between frames.
 </p>
 </span>
+
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<h2>Design Manipulation</h2>
 
 <span class="new">
 <h3>Get Category Description Frame</h3>
@@ -1272,6 +1418,7 @@ ignore any information in read only field (even if they are non-empty).
 		<li>a UInt32, Category ID</li>
 		<li>a String, name of the category</li>
 		<li>a String, description of the category</li>
+		<li class="new">a UInt64, the last modified time of this category description</li>
 	</ul>
 </p>
 </span>
@@ -1386,6 +1533,13 @@ done in one step).
 </p>
 </span>
 
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<h2>Binary Data</h2>
+
 <span class="new">
 <h3>Get Data URL Frame</h3>
 <p>
@@ -1407,6 +1561,13 @@ done in one step).
 	</ul>
 </p>
 </span>
+
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<h2>Players</h2>
 
 <span class="new">
 <h3>Get Player Frame</h3>
@@ -1431,7 +1592,10 @@ done in one step).
 </p>
 </span>
 
-<hr>
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
 
 <h2>Example</h2>
 <p>The following is a simple example of the first interaction.</p>
@@ -1487,7 +1651,7 @@ done in one step).
 	include "../bits/start_section.inc";
 ?>
 
-<h2>TO DO</h2>
+<h2>TODO</h2>
 <p>
 	Stuff we have to be considered fixed...
 	<ul>
