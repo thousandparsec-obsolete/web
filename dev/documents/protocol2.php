@@ -651,7 +651,7 @@ Example:
                     <li>0x00000002 - Trading Partner</li>
                     <li>0x00000004 - Neutral</li>
                     <li>0x00000008 - Enemies</li>
-                    <li>0x00000016 - Non-player</li>
+                    <li>0x00000010 - Non-player</li>
                 </ul>
             </li>
           </ul>
