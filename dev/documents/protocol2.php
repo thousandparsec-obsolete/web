@@ -7,7 +7,7 @@
 <h1>Protocol Definition for Thousand Parsec</h1>
 <h3>Version 0.2</h3>
 
-<p>Last updated 24 December 2003.</p>
+<p>Last updated 18 January 2004.</p>
 
 <p>
 	This protocol definition is for the Thousand Parsec project. It
@@ -196,28 +196,36 @@
       <td>Returns an object with the same ID.</td>
       <td>Bravo</td>
     </tr>
+    
     <tr>
       <td>5</td>
-      <td>Get Objects by Position</td>
-      <td>&nbsp;</td>
-      <td>ft02_Object_GetByPos</td>
-      <td>Returns all objects within a sphere.</td>
-      <td>Bravo</td>
-    </tr>
-    <tr>
-      <td>6</td>
       <td>Object</td>
       <td>&nbsp;</td>
       <td>ft02_Object</td>
       <td>Description of an Object</td>
       <td>Bravo</td>
     </tr>
-	
+	<tr>
+      <td>6</td>
+      <td>Get Objects by Position</td>
+      <td>&nbsp;</td>
+      <td>ft02_Object_GetByPos</td>
+      <td>Returns all objects within a sphere.</td>
+      <td>Bravo</td>
+    </tr>
+	<tr>
+	  <td>7</td>
+	  <td>Object List</td>
+	  <td>&nbsp;</td>
+	  <td>ft02_Object_List</td>
+	  <td>A list of Objects</td>
+	  <td>Bravo</td>
+	</tr>
     <tr>
       <td colspan="6" align="center"><b>Orders</b></td>
     </tr>
     <tr>
-      <td>7</td>
+      <td>8</td>
       <td>Get Order Description</td>
       <td>&nbsp;</td>
       <td>ft02_OrderDesc_Get</td>
@@ -225,7 +233,7 @@
       <td>Charlie</td>
     </tr>
     <tr>
-      <td>8</td>
+      <td>9</td>
       <td>Order Description</td>
       <td>&nbsp;</td>
       <td>ft02_OrderDesc</td>
@@ -233,7 +241,7 @@
       <td>Charlie</td>
     </tr>
     <tr>
-      <td>9</td>
+      <td>10</td>
       <td>Get Order</td>
       <td>&nbsp;</td>
       <td>ft02_Order_Get</td>
@@ -241,7 +249,7 @@
       <td>Charlie</td>
     </tr>
     <tr>
-      <td>10</td>
+      <td>11</td>
       <td>Order</td>
       <td>&nbsp;</td>
       <td>ft02_Order</td>
@@ -249,7 +257,7 @@
       <td>Charlie</td>
     </tr>
     <tr>
-      <td>11</td>
+      <td>12</td>
       <td>Add Order</td>
       <td>&nbsp;</td>
       <td>ft02_Order_Add</td>
@@ -257,7 +265,7 @@
       <td>Charlie</td>
     </tr>
     <tr>
-      <td>12</td>
+      <td>13</td>
       <td>Remove Order</td>
       <td>&nbsp;</td>
       <td>ft02_Order_Remove</td>
@@ -265,54 +273,11 @@
       <td>Charlie</td>
     </tr>
 
-    <tr>
-      <td colspan="6" align="center"><b>Messages</b></td>
-    </tr>
-    <tr>
-      <td>13</td>
-      <td>Get Boards</td>
-      <td>&nbsp;</td>
-      <td>ft02_Board_Get</td>
-      <td>Get a list of message boards the player can see.</td>
-      <td>Foxtrot</td>
-    </tr>
-    <tr>
-      <td>14</td>
-      <td>Board</td>
-      <td>&nbsp;</td>
-      <td>ft02_Board</td>
-      <td>A Message.</td>
-      <td>Foxtrot</td>
-    </tr>
-    <tr>
-      <td>15</td>
-      <td>Get Message</td>
-      <td>&nbsp;</td>
-      <td>ft02_Message_Get</td>
-      <td>Get a Message from a board.</td>
-      <td>Foxtrot</td>
-    </tr>
-    <tr>
-      <td>16</td>
-      <td>Message</td>
-      <td>&nbsp;</td>
-      <td>ft02_Message</td>
-      <td>A Message.</td>
-      <td>Foxtrot</td>
-    </tr>
-    <tr>
-      <td>17</td>
-      <td>Post Message</td>
-      <td>&nbsp;</td>
-      <td>ft02_Message_Post</td>
-      <td>Post a message to a board.</td>
-      <td>Foxtrot</td>
-    </tr>
-    <tr>
+	<tr>
       <td colspan="6" align="center"><b>Time</b></td>
     </tr>
     <tr>
-      <td>18</td>
+      <td>14</td>
       <td>Get Time remaining</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -320,12 +285,56 @@
       <td>Echo</td>
     </tr>
     <tr>
-      <td>19</td>
+      <td>15</td>
       <td>Time remaining</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>The amount of time before the end of turn</td>
       <td>Echo</td>
+    </tr>
+
+    <tr>
+      <td colspan="6" align="center"><b>Messages</b></td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>Get Boards</td>
+      <td>&nbsp;</td>
+      <td>ft02_Board_Get</td>
+      <td>Get a list of message boards the player can see.</td>
+      <td>Foxtrot</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>Board</td>
+      <td>&nbsp;</td>
+      <td>ft02_Board</td>
+      <td>A Message.</td>
+      <td>Foxtrot</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>Get Message</td>
+      <td>&nbsp;</td>
+      <td>ft02_Message_Get</td>
+      <td>Get a Message from a board.</td>
+      <td>Foxtrot</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>Message</td>
+      <td>&nbsp;</td>
+      <td>ft02_Message</td>
+      <td>A Message.</td>
+      <td>Foxtrot</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>Post Message</td>
+      <td>&nbsp;</td>
+      <td>ft02_Message_Post</td>
+      <td>Post a message to a board.</td>
+      <td>Foxtrot</td>
     </tr>
 
     <tr>
