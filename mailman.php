@@ -30,7 +30,7 @@ foreach ($fetcher->headers as $key => $value) {
 
 ?>
 
-<?php $title = "Developers section" ?>
+<?php $title = "Mailing Lists" ?>
 
 <?php include "bits/start_page.inc" ?>
 <?php include "bits/start_section.inc" ?>
