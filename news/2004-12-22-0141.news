@@ -1,0 +1,16 @@
+
+<h2>libtpproto-cpp released, version 0.0.2</h2>
+<p>by Lee</p>
+<p>
+	I have just released the second version of libtpproto-cpp.  Release often!  I just discovered
+	valgrind, and had some fun running it over the library, so I have fixed many of the memory leaks
+	and other such bugs.  No interface changes and (sorry) still no documentation.
+</p>
+<p>
+	Be sure to read the README if you are going to use the library.  Any feedback would be helpful.
+	Documentation will appear soon.  There is a client using this library, called tpclient-cpptext. It
+	is in the cvs but is not complete yet...
+</p>
+<p>
+	So... 0.0.2 is on the downloads page.  The cvs module is libtpproto-cpp.  CVS tag: LIBTPPROTO_CPP_0_0_2.
+</p>
