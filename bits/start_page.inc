@@ -12,6 +12,7 @@
 a {  font-family: "Times New Roman", Times, serif; color: #00FF99; text-decoration: none}
 a.top_link {  font-family: "Times New Roman", Times, serif; color: #00FF99; text-decoration: none}
 .small { font-size: 10 }
+pre { font-family: Courier; }
 -->
 </style>
 

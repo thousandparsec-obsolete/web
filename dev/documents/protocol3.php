@@ -513,23 +513,6 @@
 		<td></td>
 	</tr>
 	
-	<tr class="new">
-		<td colspan="6" align="center"><b>Help</b></td>
-	</tr><tr class="new">
-		<td colspan="6" align="center">These packets are used to get help about server specific functions.</td>
-	</tr><tr class="new">
-		<td></td>
-		<td>Get Help</td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr><tr class="new">
-		<td></td>
-		<td>Help</td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
 </span>
 
 </table>
@@ -1062,7 +1045,7 @@ end of turn has just started.</p>
 	<ul class="new">
 		<li>(1, 6) would be a message about/from player 6</li>
 		<li>(0, 1) would be a system message</li>
-		<li>(-1, 1) would be a player joined message</li>
+		<li>(-1, 3) would be a player joined message</li>
 	</ul>
 </p>
 </span>
