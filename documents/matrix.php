@@ -17,7 +17,7 @@
 		<td align="center" bgcolor="#ff0000">Not working or Not implimented</td>
 	</tr>
 	<tr>
-		<td align="center" bgcolor="#000000">Unknown</td>
+		<td align="center" bgcolor="#000000">Unknown or NA</td>
 	</tr>
 </table>
 
@@ -217,7 +217,6 @@
 		<td align="center" bgcolor="#000000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
-</td>
 </table>
 
 <br>
