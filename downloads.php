@@ -66,6 +66,8 @@ function display($directory) {
 	All new python clients require this library to function.
 </p>
 <?php display("py-netlib/"); ?>
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
 
 <h2>C++ TP Protocol Library</h2>
 <p>
