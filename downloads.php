@@ -1,11 +1,8 @@
-<?php $title = "Downloads" ?>
+<?php $title = "Downloads" ; ?>
 
-<?php
+<?php $downloads = "downloads/"; ?>
 
-	$downloads = "downloads/"
-	
-?>
-
+<?php include "bits/func.inc" ?>
 <?php include "bits/start_page.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
@@ -15,22 +12,20 @@
 </p>
 <p>
 <?php 
-$d = array_reverse(dir($downloads . "tpserv*"));
 
-while ( false !== ($file = $d->read()) ) {
-    if ( is_file($downloads . $file) ) {
-	
-	# tpserv-0.0.1.tar.gz
-	list($trash, $goodness) = split("-", $file);
-	list($major, $minor, $revision, $tar, $compression) = split(".", $goodness);
+$dir = $downloads . "cpp-server/";
+$files = array_reverse(get_files($dir));
+
+foreach ($files as $file) {
+	list($trash, $goodness) = split("-", $file, 2);
+	list($major, $minor, $revision, $tar, $compression) = split("\.", $goodness, 5);
 ?>
 
 <p>
-	<a href="<?php echo $downloads . $file; ?>"> Version <?php echo $major . "." . $minor . "." . $revision ?></a> <?php echo $tar ?>/<?php echo $compression ?>, <?php echo filesize($downloads . $file)/1024 ?> KB
+	<a href="<?php echo $dir . $file; ?>"> Version <?php echo "$major.$minor.$revision"; ?></a> <?php echo "$tar/$compression"; ?>, <?php echo (int)(filesize($dir . $file)/1024) ?> KB
 </p>
 
 <?php
-    }
 }
 ?>
 </p>
@@ -44,6 +39,22 @@ while ( false !== ($file = $d->read()) ) {
 	Binaries for windows may be avalible at a later date. It's not a colorful as
 	the pygame client but it's more fully featured.
 </p>
+<?php 
 
+$dir = $downloads . "pywx-client/";
+$files = array_reverse(get_files($dir));
+
+foreach ($files as $file) {
+	list($trash, $goodness) = split("-", $file, 2);
+	list($major, $minor, $revision, $tar, $compression) = split("\.", $goodness, 5);
+?>
+
+<p>
+	<a href="<?php echo $dir . $file; ?>"> Version <?php echo "$major.$minor.$revision"; ?></a> <?php echo "$tar/$compression"; ?>, <?php echo (int)(filesize($dir . $file)/1024) ?> KB
+</p>
+
+<?php
+}
+?>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/end_page.inc" ?>

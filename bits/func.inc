@@ -12,7 +12,7 @@ function get_files($dir) {
 	    }
 	}
 
-	$files = array_reverse($files);
+#	$files = array_reverse($files);
 
 	return $files;
 
