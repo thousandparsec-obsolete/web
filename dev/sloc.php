@@ -3,7 +3,14 @@
 
 <?php include "bits/start_section.inc" ; ?>
 <center>
-<?php include "bits/sloc.inc" ; ?>
+<?php 
+
+if ($_SERVER['SERVER_NAME'] == 'www.thousandparsec.net')
+	include "bits/sloc.inc" ; 
+else
+	include "http://www.thousandparsec.net/dev/bits/sloc.inc" ;
+
+?>
 </center>
 <br>
 <br>
