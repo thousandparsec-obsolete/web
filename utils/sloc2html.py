@@ -20,10 +20,10 @@ if len(sys.argv) != 2:
 colors = { "python" : "blue",
            "perl" : "purple",
            "ansic" : "silver",
-	   "java" : "brown",
+	   "java" : "yellow",
            "cpp" : "green",
            "sh" : "red",
-	   "php" : "yellow",
+	   "php" : "brown",
 	   }
 
 print "<h1>Counted Source Lines of Code</h1>"

@@ -10,6 +10,7 @@
 <style type="text/css">
 <!--
 a {  font-family: "Times New Roman", Times, serif; color: #00FF99; text-decoration: none}
+a.top_link {  font-family: "Times New Roman", Times, serif; color: #00FF99; text-decoration: none}
 .small { font-size: 10 }
 -->
 </style>
@@ -33,42 +34,52 @@ a {  font-family: "Times New Roman", Times, serif; color: #00FF99; text-decorati
 <table width="100%" border="0" bordercolor="#FFFFFF">
 	<tr> 
 		<td bgcolor="#000000" align="center">
-			<a href="/tp/index.php">
+			<a class="top_link" href="/tp/index.php">
 				NEWS
 			</a>
 		</td>
 		<td bgcolor="#000000" align="center">
-			<a href="/tp/about.php">
+			<a class="top_link" href="/tp/about.php">
 				ABOUT
 			</a>
 		</td>
 		<td bgcolor="#000000" align="center">
-			<a href="/tp/documents.php">
+			<a class="top_link" href="/tp/screenshots.php">
+				SCREENSHOTS
+			</a>
+		</td>
+		<td bgcolor="#000000" align="center">
+			<a class="top_link" href="/tp/documents.php">
 				DOCUMENTS
 			</a>
 		</td>
 		<td bgcolor="#000000" align="center">
-			<a href="/tp/downloads.php">
+			<a class="top_link" href="/tp/downloads.php">
 				DOWNLOADS
 			</a>
 		</td>
 		<td bgcolor="#000000" align="center">
-			<a href="/tp/dev/index.php">
+			<a class="top_link" href="/tp/dev/index.php">
 				DEVELOPERS
 			</a>
 		</td>
 		<td bgcolor="#000000" align="center">
-			<a href="/tp/faq.php">
+			<a class="top_link" href="/tp/faq.php">
 				FAQ
 			</a>
 		</td>
 		<td bgcolor="#000000" align="center">
-			<a href="/tp/mailman.php/listinfo/">
+			<a class="top_link" href="/tp/mailman.php/listinfo/">
 				LISTS
 			</a>
 		</td>
 		<td bgcolor="#000000" align="center">
-			<a href="/tp/links.php">
+			<a class="top_link" href="/tp/forums">
+				FORUMS
+			</a>
+		</td>
+		<td bgcolor="#000000" align="center">
+			<a class="top_link" href="/tp/links.php">
 				LINKS
 			</a>
 		</td>
