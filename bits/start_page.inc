@@ -43,6 +43,9 @@ table {
 	width: 100%;
 	border: 0;
 	padding-top: 1em;
+}
+
+table tr {
 	background-color: #000000;
 }
 
