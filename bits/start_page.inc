@@ -68,5 +68,8 @@ a {  font-family: "Times New Roman", Times, serif; color: #00FF99; text-decorati
 		</td>
 	</tr>
 </table>
+
+<?php if (@ !nobreak) { ?>
 <br>
+<?php } ?>
 
