@@ -31,7 +31,7 @@ a {
 	text-decoration: none;
 }
 
-a:visted {
+a:visited {
 	color: #ffcc99;
 }
 
