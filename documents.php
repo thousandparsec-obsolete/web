@@ -1,6 +1,7 @@
 <?php $title = "Documents" ?>
 
 <?php include "bits/start_page.inc" ?>
+<!--
 <?php include "bits/start_section.inc" ?>
 
 	<p>
@@ -72,7 +73,7 @@
 	
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
-
+-->
     <p>
 		<font size="4">
 			Other
@@ -84,7 +85,9 @@
 	
 	<blockquote>
 		<p>
-			<a href="protocol.php">Protocol</a> document, describes the protocol.
+			<a href="protocol.php">Protocol</a> document, describes the protocol.<br>
+			<a href="protocol.php">Milestone</a> document, describes what we are aiming for when.<br>
+			<a href="protocol.php">Orders</a> document, describes possible orders that could be given in the game.<br>
 		</p>
 	</blockquote>
 
