@@ -20,7 +20,7 @@
 			</a>
 		</td>
 		<td bgcolor="#000000" align="center">
-			<a href="/cgi-bin/viewcvs.cgi/">
+			<a href="/tp/dev/viewcvs.php/">
 				WEB CVS
 			</a>
 		</td>
