@@ -37,8 +37,8 @@
 	</tr>
 	<tr>
 		<td>&nbsp;</td>
-		<td>pywx-client</td>
-		<td>pytext-client</td>
+		<td>tpclient-pywx</td>
+		<td>tpclient-pytext</td>
 		<td>pygame-client</td>
 		<td>none yet</td>
 	</tr>
@@ -98,7 +98,7 @@
 	</tr>
 	<tr>
 		<td>Can view boards?</td>
-		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
@@ -112,7 +112,7 @@
 	</tr>
 	<tr>
 		<td>Can tell when a turn will end?</td>
-		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
