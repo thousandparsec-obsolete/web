@@ -1,0 +1,14 @@
+
+<h2>TP-Server 0.0.4rc2 released</h2>
+<p>by Lee</p>
+<p>
+	I have just released 0.0.4rc2 of the TP-server.  The only change in
+	this version is the addition of support for the TP02 protocol, while
+	maintaining backward compatiblity with TP01.  Again, this is an 
+	untested release, any bugs should be reported to me or on the mailing 
+	list.
+</p>
+<p>
+	All the normal stuff.  CVS tag: CPP_SERVER_0_0_4RC2.  Tarball on the 
+	downloads page.
+</p>
