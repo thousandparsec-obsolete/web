@@ -695,6 +695,14 @@ Example:
 </table>
 </p>
 
+<h3>Get Time Remaining</h3>
+<p>Get the time remaining before the end of turn.  No data</p>
+
+<h3>Time Remaining</h3>
+<p>Contains one Int32, with the time in seconds before the next end
+of turn starts.  Can be sent at any time.  If the value is 0 then the
+end of turn has just started.</p>
+
 <h3>Get Resource Description</h3>
 <p>
     Get the Resource Description. 
