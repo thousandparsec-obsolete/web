@@ -35,7 +35,7 @@
 		<li>HTTP tunnel support</li>
 		<li>server-client negotiation of features</li>
 		<li>better support of offline operations</li>
-		<li>unicode support</li>
+		<li>Unicode support</li>
 		<li>modify on-server designs</li>
 		<li>download extra data (such as battle data or media)</li>
 	</ul>
@@ -78,8 +78,8 @@
 		padding necessary. 
 		<p><span class="new">
 		Previously all strings had to be terminate by a null character, this is no 
-		longer necessary. It is recommened that the null terminator is no longer
-		transmited. Later versions of the protocol will allow null characters to be
+		longer necessary. It is recommend that the null terminator is no longer
+		transmitted. Later versions of the protocol will allow null characters to be
 		transmitted in strings.
 		</span></p>
 	</li><li>
@@ -89,7 +89,7 @@
 </ul>
 <p class="new">
 	A client can connect to a TP server on the standard 6923 port and use the new
-	negotiation packets to find out if the server supports tunneling or ecrypted
+	negotiation packets to find out if the server supports tunneling or encrypted
 	access (and other optional features). The client is not required to do this however.
 </p>
 
@@ -102,7 +102,7 @@
 	This can easily be implemented on the server side by using the stunnel (http://www.stunnel.org/) 
 	program in front of a normal unencrypted TP server.
 </p><p>
-	On the client side SSL support will need to be added, the recommened way is to use 
+	On the client side SSL support will need to be added, the recommend way is to use 
 	library such as OpenSSL which will handle all the details for you.
 </p>
 </span>
@@ -135,7 +135,7 @@
 	URL requested is random to stop broken proxy servers from caching the connection.
 	Once the POST connection has been established a normal TP connection follows.
 </p><p>
-	An example implimentation of this can be found in py-netlib.
+	An example implementation of this can be found in py-netlib.
 </p>
 </span>
 
@@ -283,11 +283,11 @@
 	</tr>
 	
 	<tr class="new">
-		<td colspan="6" align="center"><b>Keepalive (Optional)</b></td>
+		<td colspan="6" align="center"><b>Keep alive (Optional)</b></td>
 	</tr><tr class="new">
 		<td colspan="6" align="center">
 			These packets are used to keep a connection alive, these are often needed when using the
-			tunneling connections. These packets only need to be implimented is HTTP or HTTPS tunneling
+			tunneling connections. These packets only need to be implemented is HTTP or HTTPS tunneling
 			is supported.
 		</td>
 	</tr><tr class="new">
@@ -392,7 +392,7 @@
 		<td colspan="6" align="center"><b>Messages</b></td>
 	</tr><tr>
 		<td colspan="6" align="center">
-			These packets are used to manipulate the ingame message boards. Each person has a
+			These packets are used to manipulate the in game message boards. Each person has a
 			message board and there are some shared message boards.
 		</td>
 	</tr><tr>
@@ -623,13 +623,13 @@
 	<ul>
 		<li>a List of UInt32, ID code of feature</li>
 	</ul>
-	The feature codes that are currently avalible,
+	The feature codes that are currently available,
 	<ul>
-		<li>0x1 - Secure Connection avalible on this port</li>
-		<li>0x2 - Secure Connection avalible on another port</li>
-		<li>0x3 - HTTP Tunneling avalible on this port</li>
-		<li>0x4 - HTTP Tunneling avalible on another port</li>
-		<li>0x5 - Support Keepalive packets</li>
+		<li>0x1 - Secure Connection available on this port</li>
+		<li>0x2 - Secure Connection available on another port</li>
+		<li>0x3 - HTTP Tunneling available on this port</li>
+		<li>0x4 - HTTP Tunneling available on another port</li>
+		<li>0x5 - Support Keep alive packets</li>
 	</ul>
 </p>
 </span>
@@ -819,7 +819,7 @@ Example:
 		<td>
 			<ul>
 			<li>a UInt32, read write, players id</li>
-			<li>a UInt32, read only, mask (ON bits are NOT allowed to choosen),
+			<li>a UInt32, read only, mask (ON bits are NOT allowed to chosen),
 				<ul>
 					<li>0x00000001 - Allies</li>
 					<li>0x00000002 - Trading Partner</li>
