@@ -25,7 +25,15 @@
 		</p>
 	</blockquote>
 
-
+	<p>
+		Game documentation
+	</p>
+	<blockquote>
+		<p>
+			<a href="documents/minisec.php">MiniSec documentation.</a> Documentation for the first TP game.<br>
+		</p>
+	</blockquote>
+	
 	<p>
 		Other documents
 	</p>

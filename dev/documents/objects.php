@@ -109,7 +109,7 @@ and a 64 bit integer as &lt;&lt;n&gt;&gt;</p>
 <p>A fleet has an owner, int32 Player ID.</p>
 <h4>Extra data</h4>
 <p>&lt;pid&gt;<br>Where pid is the player object that owns the fleet or -1 if not owned.</p>
-<p>[&lt;number&gt; &lt;type&gt;]<br>List of the number of ships in the fleet.<br>
+<p>[&lt;type&gt; &lt;number&gt;]<br>List of the number of ships in the fleet.<br>
 <br>
 Types are as follows.
 <ol>
