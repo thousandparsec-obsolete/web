@@ -11,15 +11,22 @@
 
 <p>
 	This protocol definition is for the Thousand Parsec project. It
-	is designed as a simple, easy to impliment protocol. It is desgined by
-	Lee Begg (and modifide by Tim Ansell) and any questions should be
-	directed at these two.
+	is designed as a simple, easy to implement protocol. It is designed by
+	Lee Begg (and modified by Tim Ansell) and any questions should be
+	directed at these two or the tp-devel mailing list.
 </p>
 
 <p>
-	This protocol will only change in a backward compatable way, with
+	This version of the protocol replaces the previous version (0.1) and
+	has improvements where we noticed we could have done better.  Any server
+	should try to remain backward compatible with version 0.1 for a period
+	to allow the clients to be ported gradually.
+</p>
+
+<p>
+	This protocol will only change in a backward compatible way, with
 	respect to current versions and revisions that the client(s) and
-	server are using. Any change that is not backward compatable will
+	server are using. Any change that is not backward compatible will
 	change the version number of the protocol.
 </p>
 
@@ -34,18 +41,17 @@
 	services on it.
 </p>
 <p>
-	All data will be 32 bit aligned. Strings will be prefixed by the 32
-	bit integer length (include null terminator) and then padded with nulls
-	('\0') to the next 32 bit boundary (if necessary). A list will be of 
+	Data does not need to be 32 bit aligned. Strings will be prefixed by the 32
+	bit integer length (include null terminator) with no padding necessary. A list will be of
 	only one type (ie int32 or int64) and be prefixed by an int32 for the
-	length of the list.
+	number of items in the list.
 <p>
 <p>
 	All integers are in Network Byte Order (Big Endian).
 </p>
 <p>
 	In this document a 32 bit integer is shown as &lt;n&gt; and a 64 bit
-	integer as &lt;&lt;n&gt;&gt;
+	integer as &lt;&lt;n&gt;&gt;.  ASCII text is shown as normal.
 </p>
 
 <?php
@@ -74,9 +80,17 @@
       <td>32 bits</td>
       <td>length * 8 bits</td>
     </tr>
+	<tr>
+		<td><b>Type</b></td>
+		<td>4 * char</td>
+		<td>UInt32</td>
+		<td>UInt32</td>
+		<td>UInt32</td>
+		<td>data</td>
+	</tr>
     <tr>
       <td><b>Description and notes</b></td>
-      <td>Always has value "TP02" ("TP" plus version number)</td>
+      <td>Always has value "TP02" ("TP" plus version number), no null terminator.</td>
 	  <td>
 		An autoincrementing number "sequence number". The sequence number
 		should alway be one more then the previous packets sequence number.
@@ -90,11 +104,16 @@
       <td>TP02</td>
 	  <td>2345</td>
       <td>2</td>
-      <td>24</td>
-      <td>&lt;5&gt;blah\0\0\0\0&lt;6&gt;blah2\0\0\0</td>
+      <td>21</td>
+      <td>&lt;5&gt;blah\0&lt;6&gt;blah2\0</td>
     </tr>
   </tbody>
 </table>
+</p>
+<p>
+	The Client may start with any sequence number except zero (0).  Server replies with have sequence numbers that
+	are the same as the sequence number on the operation they are a response to.  If the server
+	sends a frame that is not a response, the frames sequence number will be zero (0).
 </p>
 
 <?php
@@ -105,12 +124,15 @@
 <h2>Types</h2>
 <p>
 	There are a number of types that can be put in types field of the
-	packet. Even values are sent from the client, odd values from the
-	server. The types are listed below:
+	packet. There is no meaning in odd/even distinction in this version.
+	The types are listed below:
 </p>
 <p>
 	If there is no C++ enum value, it is not current implemented yet and
 	should be taken as advisory only.
+</p>
+<p>
+	<b>Warning:</b> these values have changed from version 0.1 to 0.2.
 
 <table border="1">
   <tbody>
@@ -120,7 +142,7 @@
       <td><b>Java Constant</b></td>
       <td><b>C++ enum</b></td>
       <td><b>Description</b></td>
-      <td><b>Milestone</b></td>
+      <td><b>ParsecStone</b></td>
     </tr>
 	
     <tr>
@@ -183,7 +205,7 @@
       <td>Bravo</td>
     </tr>
     <tr>
-      <td>5</td>
+      <td>6</td>
       <td>Object</td>
       <td>&nbsp;</td>
       <td>ft_Object</td>
@@ -195,7 +217,7 @@
       <td colspan="6" align="center"><b>Orders</b></td>
     </tr>
     <tr>
-      <td>6</td>
+      <td>7</td>
       <td>Get Order Description</td>
       <td>&nbsp;</td>
       <td>ft_OrderDesc_Get</td>
@@ -203,7 +225,7 @@
       <td>Charlie</td>
     </tr>
     <tr>
-      <td>7</td>
+      <td>8</td>
       <td>Order Description</td>
       <td>&nbsp;</td>
       <td>ft_OrderDesc</td>
@@ -211,7 +233,7 @@
       <td>Charlie</td>
     </tr>
     <tr>
-      <td>8</td>
+      <td>9</td>
       <td>Get Order</td>
       <td>&nbsp;</td>
       <td>ft_Order_Get</td>
@@ -219,7 +241,7 @@
       <td>Charlie</td>
     </tr>
     <tr>
-      <td>9</td>
+      <td>10</td>
       <td>Order</td>
       <td>&nbsp;</td>
       <td>ft_Order</td>
@@ -227,7 +249,7 @@
       <td>Charlie</td>
     </tr>
     <tr>
-      <td>10</td>
+      <td>11</td>
       <td>Add Order</td>
       <td>&nbsp;</td>
       <td>ft_Order_Add</td>
@@ -235,7 +257,7 @@
       <td>Charlie</td>
     </tr>
     <tr>
-      <td>11</td>
+      <td>12</td>
       <td>Remove Order</td>
       <td>&nbsp;</td>
       <td>ft_Order_Remove</td>
@@ -286,44 +308,11 @@
       <td>Post a message to a board.</td>
       <td>Charlie</td>
     </tr>
-
     <tr>
-      <td colspan="6" align="center"><b>Obsolete</b></td>
+      <td colspan="6" align="center"><b>Time</b></td>
     </tr>
     <tr>
-      <td>12</td>
-      <td>Get Outcome</td>
-      <td>&nbsp;</td>
-      <td>ft_Get_Outcome</td>
-      <td>Get the probable outcome of an order</td>
-      <td>Delta</td>
-    </tr>
-    <tr>
-      <td>13</td>
-      <td>Outcome</td>
-      <td>&nbsp;</td>
-      <td>ft_Outcome</td>
-      <td>The Outcome of an order in a slot on an object</td>
-      <td>Delta</td>
-    </tr>
-    <tr>
-      <td>14</td>
-      <td>Get Result</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>Get the result of some order or event</td>
-      <td>Echo</td>
-    </tr>
-    <tr>
-      <td>15</td>
-      <td>Result</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>The Result of an order or event</td>
-      <td>Echo</td>
-    </tr>
-    <tr>
-      <td>16</td>
+      <td>18</td>
       <td>Get Time remaining</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
@@ -331,13 +320,50 @@
       <td>Echo</td>
     </tr>
     <tr>
-      <td>17</td>
+      <td>19</td>
       <td>Time remaining</td>
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td>The amount of time before the end of turn</td>
       <td>Echo</td>
     </tr>
+
+    <tr>
+      <td colspan="6" align="center"><b>Obsolete</b></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>Get Outcome</td>
+      <td>&nbsp;</td>
+      <td>ft_Get_Outcome</td>
+      <td>Get the probable outcome of an order</td>
+      <td>Delta</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>Outcome</td>
+      <td>&nbsp;</td>
+      <td>ft_Outcome</td>
+      <td>The Outcome of an order in a slot on an object</td>
+      <td>Delta</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>Get Result</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>Get the result of some order or event</td>
+      <td>Echo</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>Result</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>The Result of an order or event</td>
+      <td>Echo</td>
+    </tr>
+    
 	
   </tbody>
 </table>
@@ -361,7 +387,6 @@
 <p>
 	The OK packet consists of:
 	<ol>
-		<li>a int32 sequence number (which packet caused this ok)</li> 
 		<li>
 			may contain a string (the string can be	safely ignored - 
 			however it may contain useful information for debugging purposes)
@@ -373,7 +398,6 @@
 <p>
 	A fail packet consists of:
 	<ol>
-		<li>a int32, sequence number (which packet caused this error)</li>
 		<li>a int32, error code</li>
 		<li>a text string, message of the error</li>
 	</ol>
@@ -382,6 +406,9 @@
 		<li></li>
 		<li></li>
 	</ol>
+	Exception: If the connect packet is not valid in any way shape or form, this
+	packet will not have a header.  (This does not affect clients as they should always get
+	the connect packet right.)
 </p>
 
 <h3>Connect Packet</h3>
@@ -426,14 +453,12 @@
 	An Object packet consits of:
 	
 	<ol>
-		<li>a int32, sequence number (which packet requested this object)</li>
 		<li>a int32, object ID</li>
 		<li>a int32, object type</li>
 		<li>a text string, name of object</li>
 		<li>unsigned int64, size of object (diameter)</li>
 		<li>3 by signed int64, position of object</li>
 		<li>3 by signed int64, velocity of object</li>
-		<li>3 by signed int64, acceleration of object</li>
 		<li>
 			a list of int32, object IDs of objects contained in the current
 			object
@@ -444,7 +469,7 @@
 		</li>
 		<li>a int32, number of orders currently on this object</li>
 		<li>
-			16 by 8bits of padding, for future expansion of common
+			4 by Uint32 of padding, for future expansion of common
 			attributes
 		</li>
 		<li>
@@ -453,7 +478,7 @@
 	</ol>
 
 Example:
-&lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\0\0\0\0&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
+&lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\00&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
 &lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
 &lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;0&gt;&lt;0&gt;
 
@@ -564,7 +589,7 @@ this protocol version (unless the protocol is revised).</p>
     <tr>
       <td>Client</td>
       <td>Login</td>
-      <td>&lt;5&gt;blah\0\0\0\0&lt;6&gt;blah2\0\0\0</td>
+      <td>&lt;5&gt;blah\0&lt;6&gt;blah2\0</td>
       <td>This is my username and password</td>
     </tr>
     <tr>
@@ -582,7 +607,7 @@ this protocol version (unless the protocol is revised).</p>
     <tr>
       <td>Server</td>
       <td>Object</td>
-      <td>&lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\0\0\0\0&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
+      <td>&lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\00&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
 &lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
 &lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;0&gt;&lt;0&gt;</td>
       <td>Universe object</td>
