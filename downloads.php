@@ -8,6 +8,7 @@
 <?php 
 
 function display($directory) {
+	global $downloads;
 
 	$dir = $downloads . $directory;
 	$files = @get_files($dir);
@@ -15,13 +16,12 @@ function display($directory) {
 	foreach ($files as $file) {
 		list($trash, $goodness) = split("-", $file, 2);
 		list($major, $minor, $revision, $tar, $compression) = split("\.", $goodness, 5);
-	?>
+	
+		$size = (int)(filesize($dir . $file)/1024);
 
-<p>
-	<a href="<?php echo $dir . $file; ?>"> Version <?php echo "$major.$minor.$revision"; ?></a> <?php echo "$tar/$compression"; ?>, <?php echo (int)(filesize($dir . $file)/1024) ?> KB
-</p>
-
-<?php
+		print "<p>\n";
+		print "	<a href=\"$dir$file\"> Version $major$minor$revision </a> $tar/$compression, $file KB \n";
+		print "</p>\n";
 	}
 }
 ?>
