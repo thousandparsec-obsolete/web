@@ -1,3 +1,4 @@
+TESTING ACTIVITY MAIL
 <?php $title = "News" ?>
 <?php include "bits/start_page.inc" ; ?>
 <?php include "bits/func.inc" ; ?>
