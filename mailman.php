@@ -56,6 +56,10 @@ $my_colors   = array('#444444', '#003355', '#666666', '#003355');
 
 $data = str_replace($real_colors, $my_colors, $data);
 
+// Remove headers
+$data = preg_replace(":<HTML>(.*\n)*\s*<BODY.*>:i", "", $data);
+$data = preg_replace(":</BODY>\n</HTML>\n:i", "", $data);
+
 preg_match_all ('/ name=(.+?) /i', $data, $matches);
 
 $i = 0;
