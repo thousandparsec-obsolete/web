@@ -51,11 +51,12 @@
 	In this document a
 </p>
 <ul>
+	<li>8 bit integer is shown as &gt;n&lt;</li>
 	<li>32 bit integer is shown as &lt;n&gt;</li>
 	<li>64 bit integer as &lt;&lt;n&gt;&gt;</li>
 	<li>A list is shown as &lt;length&gt;[item1, item2]</li>
-	<li><pre>ASCII text is shown as preformated text</pre></li>
-	<li><pre><i>Unicode text is shown as preformated italics</i></pre></li>
+	<li><pre>Unicode text is shown as preformatted text</pre></li>
+	<li><pre><i>Binary data is shown as preformatted italics</i></pre></li>
 	<li><span class="new">New features of this document are marked like this</span></li>
 </ul>
 
@@ -75,7 +76,7 @@
 		All integers are in Network Byte Order (Big Endian).
 	</li><li>
 		Strings will be prefixed by the 32 bit integer number of characters with no 
-		padding necessary. 
+		padding necessary. <span class="new">All strings will be transmitted in UTF-8.</span>
 		<p><span class="new">
 		Previously all strings had to be terminate by a null character, this is no 
 		longer necessary. It is recommend that the null terminator is no longer
@@ -194,6 +195,8 @@
 	zero (0). Server replies with have sequence numbers that are the same as the sequence
 	number on the operation they are a response to. If the server sends a frame that is not
 	a response, the frames sequence number will be zero (0).
+</p><p class="new">
+	No packet may be bigger then <b>10485760</b> bytes (10 megabytes) long.
 </p>
 
 <?php
@@ -455,55 +458,74 @@
 		<td colspan="6" align="center"><b>Design Manipulation</b></td>
 	</tr><tr class="new">
 		<td colspan="6" align="center">
-			These packets are used to manipulate designs. Designs are stored in design collections which 
-			group similar designs together. Many servers will even let you create your own design 
-			collections to use.
 		</td>
 	</tr><tr class="new">
 		<td></td>
-		<td>Get Design Collection</td>
+		<td>Get Component</td>
 		<td></td>
 		<td></td>
 		<td></td>
 	</tr><tr class="new">
 		<td></td>
-		<td>Design Collection</td>
+		<td>Component</td>
 		<td></td>
 		<td></td>
 		<td></td>
 	</tr><tr class="new">
 		<td></td>
-		<td>Insert Design Collection</td>
+		<td>Insert Component</td>
 		<td></td>
 		<td></td>
 		<td></td>
 	</tr><tr class="new">
 		<td></td>
-		<td>Remove Design Collection</td>
+		<td>Remove Component</td>
 		<td></td>
 		<td></td>
+		<td></td>
+	</tr>
+
+	<tr class="new">
+		<td colspan="6" align="center"><b>Binary Data Manipulation</b></td>
+	</tr><tr class="new">
+		<td colspan="6" align="center">
+			These packets are used to manipulate binary data stored by the server. Such binary data
+			could be battle descriptions or images. Because of the size restrictions of TP
+			frames only small amounts of binary data should ever be transmitted this way.
+		</td>
+	</tr><tr class="new">
+		<td></td>
+		<td>Get Data Header</td>
+		<td></td>
+		<td>Download the header for the binary data.</td>
 		<td></td>
 	</tr><tr class="new">
 		<td></td>
-		<td>Get Design</td>
+		<td>Get Data</td>
 		<td></td>
-		<td>Download a Design.</td>
-		<td></td>
-	</tr><tr class="new">
-		<td></td>
-		<td>Design</td>
-		<td></td>
-		<td></td>
+		<td>Download the header and the binary data.</td>
 		<td></td>
 	</tr><tr class="new">
 		<td></td>
-		<td>Insert Design</td>
+		<td>Remove Data</td>
+		<td></td>
+		<td>Remove the binary data from the server.</td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<td colspan="6" align="center"><b>Help</b></td>
+	</tr><tr>
+		<td colspan="6" align="center">These packets are used to get help about server specific functions.</td>
+	</tr><tr>
+		<td></td>
+		<td>Get Help</td>
 		<td></td>
 		<td></td>
 		<td></td>
-	</tr><tr class="new">
+	</tr><tr>
 		<td></td>
-		<td>Remove Design</td>
+		<td>Help</td>
 		<td></td>
 		<td></td>
 		<td></td>
@@ -903,7 +925,7 @@ ignore any information in read only field (even if they are non-empty).
 
 <h3>Time Remaining</h3>
 <p>Contains one UInt32, with the time in seconds before the next end
-of turn starts.	Can be sent at any time.	If the value is 0 then the
+of turn starts.	Can be sent at any time. If the value is 0 then the
 end of turn has just started.</p>
 
 <h3>Get Board Packet</h3>
@@ -949,23 +971,27 @@ end of turn has just started.</p>
 		<li>a String, Subject of the message</li>
 		<li>a String, Body of the message</li>
 		<li class="new">a UInt32, Turn the message was generated on</li>
-		<li class="new">a list of
-			<ul>
-				<li>a Int32, type of thing being referenced</li>
-				<li>a UInt32, the ID of the object being referenced</li>
-			</ul>
+		<li class="new">a list of as described in the Generic Reference System</li>
 		</li>
 	</ul>
-</p><p class="new">
+</p>
+	
+<span class="new">
+<h4>Generic Reference System</h4>
+<p class="new">
 	The new reference system is similar to the old type system but has been expanded to cover more features.
-	This means the reference system replaces the old type system. The type system will be removed at a later date.
-</p><p class="new">
+</p><p>
 	The reference system uses two integers to reference any object in the game. The first integer indicated what
-	type of thing is being referenced and the second gives the ID of the thing being referenced. For example
-	to reference the player 6 you would use (1, 6). As well the references system has a bunch of references which
-	point to "actions" (from example an order completing). As these do not refer to actual items in the game
-	the type is negative. The list of actions follows.
-</p><p class="new">
+	type of thing is being referenced and the second gives the ID of the thing being referenced. As well the 
+	references system has a bunch of references which point to "actions" (from example an order completing). 
+	As these do not refer to actual items in the game the type is negative.
+	<ul>
+		<li>a Int32, type of thing being referenced</li>
+		<li>a UInt32, the ID of the object being referenced</li>
+	</ul>
+</p><p>
+	The list of actions follows.
+</p><p>
 	The types used in the reference system are described below,
 	<ul class="new">
 		<li>-1000 - Server specific action reference</li>
@@ -981,21 +1007,22 @@ end of turn has just started.</p>
 		<li>4 - Order Instance (An actual order on an object, should also include an Object reference)</li>
 		<li>5 - Message</li>
 		<li>6 - Design</li>
-		<li>7 - Data</li>
+		<li>7 - Data (IE Battle data)</li>
 	</ul>
 	
-</p><p class="new">
+</p><p>
 	The special references are listed below,
 
-</p><p class="new">
+</p><p>
 	Misc
 	<ol>
 		<li class="new">System Message, this message is from a the internal game system</li>
 		<li class="new">Administration Message, this message is an important message from game administrators</li>
-		<li class="new">Attention Message, this message is flagged to be important</li>
+		<li class="new">Important Message, this message is flagged to be important</li>
+		<li class="new">Unimportant Message, this message is flagged as unimportant</li>
 	</ol>
 	
-</p><p class="new">
+</p><p>
 	Player Action
 	<ol>
 		<li class="new">Player Eliminated, this message refers to the elimination of a player from the game</li>
@@ -1003,7 +1030,7 @@ end of turn has just started.</p>
 		<li class="new">Player Joined, this message refers to a new player joining the game</li>
 	</ol>
 	
-</p><p class="new">
+</p><p>
 	Order Action
 	<ol>
 		<li>Order Completion, this message refers to a completion of an order</li>
@@ -1012,24 +1039,33 @@ end of turn has just started.</p>
 		<li class="new">Order Invalid, this message refers to an order which is invalid (IE Mine order on a fleet with no remote miners)</li>
 	</ol>
 
-</p><p class="new">
+</p><p>
 	Object Action
 	<ol>
 		<li class="new">Object Idle, this message refers to an object having nothing to do</li>
 	</ol>
 
-</p><p class="new">
-	Message
+</p><p>
+	Message Action
 	<ol>
 		<li class="new"></li>
 	</ol>
 	
-</p><p class="new">
-	Design
+</p><p>
+	Design Action
 	<ol>
 		<li class="new"></li>
 	</ol>
+	
+</p><p>
+	Examples:
+	<ul class="new">
+		<li>(1, 6) would be a message about/from player 6</li>
+		<li>(0, 1) would be a system message</li>
+		<li>(-1, 1) would be a player joined message</li>
+	</ul>
 </p>
+</span>
 
 <h3>Get Resource Description</h3>
 <p>
@@ -1057,11 +1093,79 @@ end of turn has just started.</p>
 	</ul>
 </p>
 
-<h3>Other Packets</h3>
+<span class="new">
+<h3>Component Packet, Insert Component packet</h3>
 <p>
-	All other data packets are not defined yet and shall be added to
-	this protocol version (unless the protocol is revised).
+	A Component packet consist of:
+	<ul>
+		<li>a UInt32, component ID</li>
+		<li>a UInt32, base component ID</li>
+		<li>a list of UInt32, component types</li>
+		<li>a String, name of component</li>
+		<li>
+			a list of,
+			<ul>
+				<li>a UInt32, component ID</li>
+				<li>a UInt32, number of the components</li>
+			</ul>
+		</li>
+		<li>a list as described in Component Language section</li>
+	</ul>
+</p><p>
+	A base component ID of zero means that this is a basic component and cannot
+	be modified or removed. The base component ID must either be zero or a basic 
+	component.
 </p>
+
+<h4>Component Language</h4>
+<p>
+	Components have a simple language for describing the components which can be
+	added to them. If this component cannot have anything added to it then it's 
+	this field should be empty. This language should only be taken as a guide to
+	what can and can't be added. 
+</p><p>
+	It is a simple Reverse Polish Notation logic. It has a very limited number of
+	operands and can refer to either part categories or individual part IDs.
+	This allows for complex instructions.
+</p><p>
+	This is encoded using a list of 3 integers.
+	<ul class="new">
+		<li>a UInt8, the operand</li>
+		<li>a UInt32, the number of components</li>
+		<li>a UInt32, the component category or ID</li>
+	</ul>
+</p><p>
+	The operands are as follows,
+	<ul class="new">
+		<li>0x1 - Component ID</li>
+		<li>0x2 - Component Category</li>
+		<li>0x3 - AND</li>
+		<li>0x4 - OR</li>
+		<li>0x5 - NOT</li>
+	</ul>
+</p><p>
+	For example
+<pre>
+Normal,
+(3 Electrical Type AND (2 Weapons Type OR 2 Cargo Type)) AND 1 Your
+
+RPN,
+AND AND (3 Electrical Type) OR (2 Weapons Type) (11 Cargo Type) (1 Your Engine) 
+
+Encoded,
+AND         AND         3 Elec       OR          2 Weapon     11 Cargo      1 Your Engine
++---------+ +---------+ +----------+ +---------+ +----------+ +-----------+ +-----------+
+>3< <0> <0> >3< <0> <0> >2< <3> <12> >4< <0> <0> >2< <2> <13> >2< <11> <11> >1< <1> <99>
+</pre>
+</p>
+
+<h4>How Component Creation Works</h4>
+<p>
+Component creation works creating a new component with the base component ID set to a basic component.
+The client can then add/remove sub-components to newly created component. (Of course this could be
+done in one step).
+</p>
+</span>
 
 <h2>Example</h2>
 <p>The following is a simple example of the first interaction.</p>
@@ -1129,6 +1233,8 @@ end of turn has just started.</p>
 		<li>Solve the -1 is an error condition yet using unsigned numbers</li>
 		<li>Figure out how to support renaming objects</li>
 		<li>Figure out a way for the opT_List_ID to "suggest" maximums as well as hard maximums</li>
+		<li>Maybe a generic "string getter" for category names</li>
+		<li>Help support?</li>
 		<li>Anything else I have forgotten</li>
 	</ul>
 </p>
