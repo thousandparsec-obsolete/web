@@ -1235,6 +1235,7 @@ ignore any information in read only field (even if they are non-empty).
 		<li>a UInt32, the number of times this component is in use</li>
 		<li>a list of UInt32, component types</li>
 		<li>a String, name of component</li>
+		<li>a String, description of component</li>
 		<li>
 			a list of,
 			<ul>
