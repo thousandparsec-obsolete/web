@@ -84,7 +84,7 @@
 	
 	<blockquote>
 		<p>
-			NONE
+			<a href="protocol.php">Protocol</a> document, describes the protocol.
 		</p>
 	</blockquote>
 

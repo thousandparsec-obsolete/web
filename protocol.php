@@ -213,16 +213,16 @@ protocol is revised).</p>
     <td>Server</td><td>Ok</td><td>&nbsp;</td><td>You can connect</td>
   </tr>
   <tr>
-    <td>Client</td><td>Login</td><td>&lt;4&gt;lee\0&lt;8&gt;blah2\0\0\0</td><td>This is my username and password</td>
+    <td>Client</td><td>Login</td><td>&lt;4&gt;lee\0&lt;6&gt;blah2\0\0\0</td><td>This is my username and password</td>
   </tr>
   <tr>
     <td>Server</td><td>Ok</td><td>&nbsp;</td><td>Username/password accepted</td>
   </tr>
   <tr>
-    <td>Client</td><td>Get Object</td><td>&lt;no defined yet&gt;</td><td>Get the Universe object</td>
+    <td>Client</td><td>Get Object</td><td>&lt;not defined yet&gt;</td><td>Get the Universe object</td>
   </tr>
   <tr>
-    <td>Server</td><td>Object</td><td>&lt;no defined yet&gt;</td><td>Universe object</td>
+    <td>Server</td><td>Object</td><td>&lt;not defined yet&gt;</td><td>Universe object</td>
   </tr>
 </table>
 </p>
