@@ -27,21 +27,23 @@
 ?>
 
 <h1>Client Support Matrix</h1>
-<p>Last updated 8 August 2004.</p>
+<p>Last updated 24 October 2004.</p>
 
 <table>
 	<tr>
 		<td>&nbsp;</td>
-		<td colspan=3><b>py-netlib</b></td>
+		<td colspan="3"><b>py-netlib</b></td>
+		<td><b>libtpproto-cpp</b></td>
 	</tr>
 	<tr>
 		<td>&nbsp;</td>
 		<td>pywx-client</td>
 		<td>pytext-client</td>
 		<td>pygame-client</td>
+		<td>none yet</td>
 	</tr>
 	<tr>
-		<td align="center" colspan=4>
+		<td align="center" colspan="5">
 			<b>Network Features</b>
 		</td>
 	</tr>
@@ -50,11 +52,13 @@
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ffff00">#</td>
 	</tr>
 	<tr>
 		<td>Can Login?</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
@@ -62,11 +66,13 @@
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
 		<td>Can view orders?</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
@@ -74,11 +80,13 @@
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
 		<td>Can remove orders?</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
@@ -86,15 +94,18 @@
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
 		<td>Can view messages?</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
 		<td>Can tell when a turn will end?</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
