@@ -7,7 +7,7 @@
 <h1>Protocol Definition for Thousand Parsec</h1>
 <h3>Version 0.2</h3>
 
-<p>Last updated 18 January 2004.</p>
+<p>Last updated 22 January 2004.</p>
 
 <p>
 	This protocol definition is for the Thousand Parsec project. It
@@ -215,10 +215,10 @@
     </tr>
 	<tr>
 	  <td>7</td>
-	  <td>Object List</td>
+	  <td>Object List Sequence Header</td>
 	  <td>&nbsp;</td>
-	  <td>ft02_Object_List</td>
-	  <td>A list of Objects</td>
+	  <td>ft02_Object_ListSeqHeader</td>
+	  <td>The number (uint32) of objects to expect as other frame replies to the same op</td>
 	  <td>Bravo</td>
 	</tr>
     <tr>
