@@ -6,7 +6,7 @@
 
 <h1>Protocol Definition for Thousand Parsec</h1>
 <h3>Version 0.1</h3>
-<p>Last updated 9 Mar 2003.</p>
+<p>Last updated 15 Apr 2003.</p>
 <p>This protocol definition is for the Thousand Parsec project.  It
 is designed as a simple, easy to impliment protocol.  It is desgined by Lee Begg and
 any questions should be directed to him.</p>
@@ -171,14 +171,14 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>Requests a description of an order</td>
     <td>Charlie</td>
   </tr>
-  <td>
+  <tr>
     <td>11</td>
     <td>Order Description</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>Describes an order and it's parameters</td>
     <td>Charlie</td>
-  </td>
+  </tr>
   <tr>
     <td>12</td>
     <td>Get Outcome</td>
