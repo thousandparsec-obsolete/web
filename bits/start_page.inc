@@ -36,7 +36,7 @@ a:visted {
 }
 
 .small { 
-	font-size: 10;
+	font-size: 8pt;
 }
 
 table {
