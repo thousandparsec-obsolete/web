@@ -4,7 +4,8 @@
   include "bits/start_section.inc";
 ?>
 
-<h1>Protocol Definition for Thousand Parsec, version 0.1.</h1>
+<h1>Protocol Definition for Thousand Parsec</h1>
+<h3>Version 0.1</h3>
 <p>Last updated 9 Mar 2003.</p>
 <p>This protocol definition is for the Thousand Parsec project.  It
 is designed as a simple, easy to impliment protocol.  It is desgined by Lee Begg and
@@ -232,11 +233,20 @@ future version.</p>
 <h3>Get Object Packet</h3>
 <p>Packet contains the int32 object ID of the object requested.  Object 0 is the top level Universe object.</p>
 <h3>Object Packet</h3>
-<p>An object packet contains: int32 object ID, int32 object type, string name, unsigned int64 size (diameter), 3 by signed int64
-position, 3 by signed int64 velocity, 3 by signed int64 acceleration, a list of int32 object IDs of objects contained in
-the current object, prefixed by the int32 of the number of items in the list, a list of int32 order types that the player
-can send to this object prefixed by the number of items in the list, and an int32 number of orders currently 
-on this object from the player.  After the number of orders, any type specific data is appended.  Example:
+<p>An object packet contains:
+<ol>
+	<li>int32 object ID, 
+	<li>int32 object type, 
+	<li>string name, 
+	<li>unsigned int64 size (diameter), 
+	<li>3 by signed int64 position, 
+	<li>3 by signed int64 velocity, 
+	<li>3 by signed int64 acceleration, 
+	<li>a list of int32 object IDs of objects contained in the current object, prefixed by the int32 of the number of items in the list,
+	<li>a list of int32 order types that the player can send to this object prefixed by the number of items in the list, 
+	<li>an int32 number of orders currently on this object from the player.
+</ol>
+After the number of orders, any type specific data is appended.  Example:
 &lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\0\0\0\0&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
 &lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
 &lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;0&gt;&lt;0&gt;</p>
