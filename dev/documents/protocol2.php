@@ -511,6 +511,10 @@ Example:
 	a sphere size of zero is used all object at the point will be returned.
 </p>
 
+<p>
+<b>Note:</b> Order type ID's below 1000 are reserved for orders defined 
+by the extended protocol specification.
+</p>
 
 <h3>Get Order Packet, Remove Order Packet</h3>
 
