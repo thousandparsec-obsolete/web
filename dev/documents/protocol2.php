@@ -7,7 +7,7 @@
 <h1>Protocol Definition for Thousand Parsec</h1>
 <h3>Version 0.2</h3>
 
-<p>Last updated 29 April 2004.</p>
+<p>Last updated 16 July 2004.</p>
 
 <p>
     This protocol definition is for the Thousand Parsec project. It
@@ -720,7 +720,7 @@ Example:
 <b>
 NOTE: read only fields should be transmitted by the client as 0, 
 empty lists or empty string to conserve bandwidth. The server will
-ignore any information in read only field (even if they are non-empy).
+ignore any information in read only field (even if they are non-empty).
 </b><br>
 </p>
 
@@ -781,7 +781,7 @@ end of turn has just started.</p>
 	Message types are "or"ed together to produce the type field.
 	<ol>
 		<li>Order Completion, this message refers to a completion of an order</li>
-		<li>Order Canceled, this message refers to the cancelation of an order</li>
+		<li>Order Canceled, this message refers to the cancellation of an order</li>
 		<li></li>
 	</ol>
 </p>
@@ -794,7 +794,7 @@ end of turn has just started.</p>
 <h3>Resource Description</h3>
 <p>
 	A Resource is something that things are build out of, or consumed 
-	in production of something (ie work units).
+	in production of something (IE work units).
 
     A Resource Description consist of:
     <ul>
@@ -865,6 +865,30 @@ end of turn has just started.</p>
     </tr>
   </tbody>
 </table>
+</p>
+
+<?php
+  include "../bits/end_section.inc";
+  include "../bits/start_section.inc";
+?>
+
+<h2>TODO</h2>
+<p>
+	Stuff we have to do before we can consider this protocol to be complete enough 
+	to move onto another version.
+</p>
+<p>
+	<ul>
+		<li>Figure out how to do masking for the opT_Object_ID Order Argument type (IE like opT_Object_Type)</li>
+		<li>Add references to Messages (IE This message refers to these objects/orders/players)</li>
+		<li>Add From to Messages</li>
+		<li>Add turn to the Message (IE the Turn the message was generated on).</li>
+		<li>Finish adding categories to Messages</li>
+		<li>Solve the -1 is an error condition yet using unsigned numbers</li>
+		<li>Figure out how to support renaming objects</li>
+		<li>Figure out a way for the opT_List_ID to "suggest" maximums as well as hard maximums</li>
+		<li>Anything else I have forgotten</li>
+	</ul>
 </p>
 
 <?php
