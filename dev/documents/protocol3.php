@@ -10,7 +10,6 @@
 -->
 </style>
 
-
 <h1>Protocol Definition for Thousand Parsec</h1>
 <h3>Version 0.3 (Draft)</h3>
 
@@ -627,8 +626,18 @@
 	<ul>
 		<li>a String, the URI of the new server to connect too</li>
 	</ul>
+</p><p>
 	This URI will be of the standard format. A server won't redirect to a different type of
 	service (IE If you using the tunnel service it will only redirect to another tunnel service).
+</p><p>
+	Example URIs:
+	<ul>
+		<li>tp://mithro.dyndns.org/ - Connect on standard tp port</li>
+		<li>tps://mithro.dyndns.org/ - Connect on standard tps port using SSL</li>
+		<li>tp://mithro.dyndns.org:6999/ - Connect on port 6999</li>
+		<li>http://mithro.dyndns.org/ - Connect using http tunneling</li>
+		<li>https://mithro.dyndns.org/ - Connect using https tunneling</li>
+	</ul>
 </p>
 </span>
 
@@ -653,6 +662,7 @@
 		<li>a String, the username of the player</li>
 		<li>a String, the password</li>
 	</ul>
+</p><p>
 	Currently the password will be transmitted in plain text. 
 	<span class="new">To avoid interception	SSL service should be used. Some
 	servers may refuse to authenticate on the unencrypted service and only
@@ -701,6 +711,7 @@
 	<ul>
 		<li>a list of UInt32, object IDs of the object requested</li>
 	</ul>
+</p><p>
 	An object ID of 0 is the top level Universe object.
 </p>
 
@@ -732,11 +743,12 @@
 			extra data, as defined by each object type
 		</li>
 	</ul>
-
+</p><p>
 Example:
 &lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\0&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
 &lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
 &lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;0&gt;&lt;0&gt;
+</p>
 
 <h3>Get Objects by Position Frame</h3>
 <p>
@@ -754,12 +766,18 @@ Example:
 	Get Order frame and Remove Order frame consist of:
 	<ul>
 		<li>a UInt32, id of object to be changed</li>
-		<li>a list of UInt32, slot numbers of orders to be sent/removed</li>
+		<li>a list of <span class="new">SInt32</span>, slot numbers of orders to be sent/removed</li>
+	</ul>
+</p><p class="new">
+	An empty slot list on Get will cause the server to return all orders, on Remove it will return an error. 
+</p><p class="new">
+	If a slot is -1 it means get the next order after the last one. For example,
+	<ul class="new">
+		<li>[-1, -1] will get the first and second orders</li>
+		<li>[2, -1] will get the third and fourth orders</li>
 	</ul>
 </p><p>
 	Note: You should send Remove Order slot numbers in decrementing value if you don't want strange things to happen. (IE 10, 4, 1)
-</p><p class="new">
-	Note: An empty slot list on Get will cause the server to return all orders, on Remove it will return an error.
 </p>
 
 <h3>Order Frame, Insert Order Frame</h3>
@@ -778,7 +796,7 @@ Example:
 		</ul>
 		<li>extra data, required by the order is appended to the end</li>
 	</ul>
-
+</p><p>
 	The extra data is defined by Order descriptions frames. The number of turns
 	and the size of the	resource list should be zero (0) when sent by the client.<br>
 	<br>
@@ -973,12 +991,18 @@ ignore any information in read only field (even if they are non-empty).
 <p>
 	A Get Board frame consist of:
 	<ul>
-		<li>a list of UInt32, Board IDs of the boards requested</li>
+		<li>a list of <span class="new">SInt32</span>, Board IDs of the boards requested</li>
 	</ul>
 </p><p>
 	A board ID of 0 is the special private (system) board for the current player.
 </p><p class="new">
-	Note: An empty list will cause the server to return all boards.
+	An empty list will cause the server to return all boards.
+</p><p class="new">
+	If an ID is -1 it means get the next board after the last one. For example,
+	<ul class="new">
+		<li>[-1, -1] will get the first and second boards</li>
+		<li>[2, -1] will get the third and fourth boards</li>
+	</ul>
 </p>
 
 <h3>Board Frame</h3>
@@ -997,12 +1021,18 @@ ignore any information in read only field (even if they are non-empty).
 	Get Message frame and Remove Message frame consist of:
 	<ul>
 		<li>a UInt32, id of board to be changed</li>
-		<li>a list of UInt32, slot numbers of orders to be sent/removed</li>
+		<li>a list of <span class="new">SInt32</span>, slot numbers of orders to be sent/removed</li>
+	</ul>
+</p><p class="new">
+	An empty slot list on Get will cause the server to return all messages, on Remove it will return an error.
+</p><p class="new">
+	If a slot is -1 it means get the next message after the last one. For example,
+	<ul class="new">
+		<li>[-1, -1] will get the first and second messages</li>
+		<li>[2, -1] will get the third and fourth messages</li>
 	</ul>
 </p><p>
 	Note: You should send Remove Message slot numbers in decrementing value if you don't want strange things to happen. (IE 10, 4, 1)
-</p><p class="new">
-	Note: An empty slot list on Get will cause the server to return all messages, on Remove it will return an error.
 </p>
 
 <h3>Message Frame, Post Message Frame</h3>
@@ -1115,10 +1145,16 @@ ignore any information in read only field (even if they are non-empty).
 <p>
 	Get Resource Description frame consist of:
 	<ul>
-		<li>a list of UInt32, Resource ID</li>
+		<li>a list of <span class="new">SInt32</span>, Resource ID</li>
 	</ul>
 </p><p class="new">
-	Note: An empty list will cause the server to return all resource descriptions.
+	An empty ID list on Get will cause the server to return all resource descriptions.
+</p><p class="new">
+	If an ID is -1 it means get the next resource descriptions after the last one. For example,
+	<ul class="new">
+		<li>[-1, -1] will get the first two resource descriptions</li>
+		<li>[2, -1] will get the the resource description number 2 and the first one after it</li>
+	</ul>
 </p>
 
 <h3>Resource Description Frame</h3>
@@ -1144,10 +1180,16 @@ ignore any information in read only field (even if they are non-empty).
 <p>
 	Get Category Description frame consist of:
 	<ul>
-		<li>a list of UInt32, Category IDs to get</li>
+		<li>a list of SInt32, Category IDs to get</li>
 	</ul>
 </p><p>
-	Note: An empty list will cause the server to return all category descriptions.
+	An empty ID list on Get will cause the server to return all category descriptions.
+</p><p>
+	If a ID is -1 it means get the next category descriptions after the last one. For example,
+	<ul class="new">
+		<li>[-1, -1] will get the first two category descriptions</li>
+		<li>[2, -1] will get the the category description number 2 and the first one after it</li>
+	</ul>
 </p>
 </span>
 
@@ -1168,12 +1210,18 @@ ignore any information in read only field (even if they are non-empty).
 <p>
 	Get Component and Remove Component frames consist of:
 	<ul>
-		<li>a list of UInt32, Category IDs to get or remove</li>
+		<li>a list of SInt32, Category IDs to get or remove</li>
 	</ul>
 </p><p>
-	Note: You should sent Remove ID numbers can be sent in any order (unlike other Get packets).
+	An empty ID list on Get will cause the server to return all components, on Remove it will return an error.
 </p><p>
-	Note: An empty list on Get will cause the server to return all components, on Remove it will cause an error.
+	If a ID is -1 it means get the next component after the last one. For example,
+	<ul class="new">
+		<li>[-1, -1] will get the first two components</li>
+		<li>[2, -1] will get the compnent number 2 and the first one after it</li>
+	</ul>
+</p><p>
+	Note: Remove ID numbers can be sent in any order (unlike other Get packets).
 </p>
 </span>
 
@@ -1273,6 +1321,14 @@ done in one step).
 	<ul>
 		<li>a list of UInt32, Data ID</li>
 	</ul>
+</p><p>
+	An empty ID list on Get and Get Header will cause the server to return all components, on Remove it will return an error.
+</p><p>
+	If a ID is -1 it means get the next data object after the last one. For example,
+	<ul class="new">
+		<li>[-1, -1] will get the first two data object</li>
+		<li>[2, -1] will get the data object number 2 and the first one after it</li>
+	</ul>
 </p>
 </span>
 
@@ -1361,6 +1417,7 @@ done in one step).
 		<li>Permissions to change your stuff? Not really needed for now...</li>
 		<li>Get range functions?</li>
 		<li>Anything else I have forgotten</li>
+		<li>Last modified time?</li>
 	</ul>
 </p>
 
