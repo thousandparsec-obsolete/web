@@ -3,7 +3,7 @@
 include "bits/snoopy.inc";
 $fetcher = new Snoopy;
 		
-$my_url = "/tp/dev/mailman.php";
+$my_url = "/tp/mailman.php";
 $real_short = "/cgi-bin/mailman";
 $real_url = "http://www.thousandparsec.net$real_short";
 
@@ -25,7 +25,6 @@ $data = $fetcher->results;
 foreach ($fetcher->headers as $key => $value) {
 	if (substr($value, 0, 11) == "Set-Cookie:") {
 		header ( str_replace($real_short, $my_url, $value) );
-		print str_replace($real_short, $my_url, $value);
 	}	
 }
 
