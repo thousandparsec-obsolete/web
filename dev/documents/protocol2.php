@@ -7,7 +7,7 @@
 <h1>Protocol Definition for Thousand Parsec</h1>
 <h3>Version 0.2</h3>
 
-<p>Last updated 18 Feburary 2004.</p>
+<p>Last updated 18 February 2004.</p>
 
 <p>
 	This protocol definition is for the Thousand Parsec project. It
@@ -43,7 +43,7 @@
 <p>
 	Data does not need to be 32 bit aligned. Strings will be prefixed by the 32
 	bit integer length (include null terminator) with no padding necessary. A list will be of
-	only one type (ie int32 or int64) and be prefixed by an int32 for the
+	only one type (IE int32 or int64) and be prefixed by an int32 for the
 	number of items in the list.
 <p>
 <p>
@@ -92,11 +92,11 @@
       <td><b>Description and notes</b></td>
       <td>Always has value "TP02" ("TP" plus version number), no null terminator.</td>
 	  <td>
-		An autoincrementing number "sequence number". The sequence number
+		An incrementing number "sequence number". The sequence number
 		should alway be one more then the previous packets sequence number.
       </td>
       <td>Type of data, see table below</td>
-      <td>Length of data in bytes, must be mutliple of 4</td>
+      <td>Length of data in bytes, must be multiplies of 4</td>
       <td>The data</td>
     </tr>
     <tr>
@@ -111,7 +111,7 @@
 </table>
 </p>
 <p>
-	The Client may start with any posative (it's an unsigned number) sequence number except 
+	The Client may start with any positive (it's an unsigned number) sequence number except 
 	zero (0).  Server replies with have sequence numbers that are the same as the sequence
 	number on the operation they are a response to.  If the server sends a frame that is not
 	a response, the frames sequence number will be zero (0).
@@ -414,8 +414,12 @@
 	</ol>
 	Current error codes consist of:
 	<ol>
-		<li></li>
-		<li></li>
+		<li>0 - Protocol Error, Something went wrong with the protocol</li>
+		<li>1 - Frame Error, One of the frames sent was bad</li>
+		<li>2 - Unavailable Permanently, This operation is unavailable</li>
+		<li>3 - Unavailable Temporarily, This operation is unavailable at this moment</li>
+		<li>4 - No such thing, The object/order does not exist</li>
+		<li>...</li>
 	</ol>
 	Exception: If the connect packet is not valid TP frame, this
 	packet will not be returned, instead a plain text string will be sent saying that the wrong
@@ -425,9 +429,9 @@
 
 <h3>Sequence Packet</h3>
 <p>
-	Sequence packet consits of:
+	Sequence packet consist of:
 	<ol>
-		<li>a uint32, giving the number of packets to follow</li>
+		<li>a UInt32, giving the number of packets to follow</li>
 	</ol>
 	This packet will proceed a response which requires numerous packets to be complete.
 </p>
@@ -449,41 +453,41 @@
 		<li>a text string, the username of the player</li>
 		<li>a text string, the password</li>
 	</ol>
-	Currently the password will be transmitted in plaintext, futher
+	Currently the password will be transmitted in plain text, further
 	security will be added in future version.
 </p>
 
 <h3>Get Object by ID Packet</h3>
 <p>
-	A Get Object by ID packet consits of:
+	A Get Object by ID packet consist of:
 	<ol>
-		<li>a list uint32, object IDs of the object requested<li>
+		<li>a list UInt32, object IDs of the object requested<li>
 	</ol>
 	An object ID of 0 is the top level Universe object.
 </p>
 
 <h3>Object Packet</h3>
 <p>
-	An Object packet consits of:
+	An Object packet consist of:
 	
 	<ol>
-		<li>a uint32, object ID</li>
-		<li>a uint32, object type</li>
+		<li>a UInt32, object ID</li>
+		<li>a UInt32, object type</li>
 		<li>a text string, name of object</li>
-		<li>a uint64, size of object (diameter)</li>
+		<li>a UInt64, size of object (diameter)</li>
 		<li>3 by int64, position of object</li>
 		<li>3 by int64, velocity of object</li>
 		<li>
-			a list of uint32, object IDs of objects contained in the current
+			a list of UInt32, object IDs of objects contained in the current
 			object
 		</li>
 		<li>
-			a list of uint32, order types that the player can send to this
+			a list of UInt32, order types that the player can send to this
 			object
 		</li>
-		<li>a uint32, number of orders currently on this object</li>
+		<li>a UInt32, number of orders currently on this object</li>
 		<li>
-			4 by uint32 of padding, for future expansion of common
+			4 by UInt32 of padding, for future expansion of common
 			attributes
 		</li>
 		<li>
@@ -498,10 +502,10 @@ Example:
 
 <h3>Get Objects by Position Packet</h3>
 <p>
-	A Get Objects by Position packet consits of:
+	A Get Objects by Position packet consist of:
 	<ol>
   		<li>3 by int64, giving the position of center the sphere</li>
-		<li>a uint64, giving the radius of the sphere</li>
+		<li>a UInt64, giving the radius of the sphere</li>
 	</ol>
 	This will return a bunch of Objects which are inside the sphere. If
 	a sphere size of zero is used all object at the point will be returned.
@@ -535,7 +539,7 @@ Example:
 	The Order Description packet contains: int32 order type, string
 	name, string description, int32 number of parameters and then of each
 	parameter:
-	string name, int32 typeID, string desc. The Parameter Types are given
+	string name, int32 type ID, string desc. The Parameter Types are given
 	below:
 <table>
   <tbody>
@@ -583,7 +587,7 @@ Example:
 <p>The Get Outcome data packet consists of int32 Object id and int32
 order slot number.</p>
 <h3>Outcome</h3>
-<p>The Outcome Frame contains int32 Objet id, int32 order slot number,
+<p>The Outcome Frame contains int32 Object id, int32 order slot number,
 int32 turns to completion,
 followed by more data to be specified in future.</p>
 <h3>Other Packets</h3>
