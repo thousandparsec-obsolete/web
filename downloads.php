@@ -42,7 +42,7 @@ function display($directory) {
 
 <h2>Python WxWindows client</h2>
 <p>
-	This client works with any computer which has wxPython and Python installed.<br>
+	This client works with any computer which has wxPython and Python installed.<br />
 	Binaries for windows may be avalible at a later date. It's not a colorful as
 	the pygame client but it's more fully featured.
 </p>
@@ -52,7 +52,7 @@ function display($directory) {
 
 <h2>Python Text client</h2>
 <p>
-	This client works with any computer which has Python and py-netlib installed.<br>
+	This client works with any computer which has Python and py-netlib installed.<br />
 	Binaries for windows may be avalible at a later date. It doesn't have all the 
 	pretty graphics but it is the first to get new features.
 </p>
@@ -62,7 +62,7 @@ function display($directory) {
 
 <h2>Python TP Network Library</h2>
 <p>
-	This library is used by all the new python clients to connect to TP servers.<br>
+	This library is used by all the new python clients to connect to TP servers.<br />
 	All new python clients require this library to function.
 </p>
 <?php display("py-netlib/"); ?>
