@@ -7,6 +7,7 @@
 <style type="text/css">
 <!--
 .new { color: #00FF00; }
+.fixme { color: #FF0000; }
 -->
 </style>
 
@@ -82,18 +83,28 @@
 		transmitted.
 		</span></p>
 	</li><li>
-		A list will be of only one type (IE Int32 or String) and be prefixed by an
+		<span class="fixme">FIXME: This is not correct, we have lists which are a set of 3
+		integers or a set of an integer and string.</span>
+		A list will be of only a one type (IE Int32 or String) and be prefixed by an
 		Int32 for the number of items in the list.
 	</li><li class="new">
 		Semi-signed Integers are integers which act like normal unsigned numbers except
 		that the biggest possible number is considered -1, this should equal the normal
 		signed representation for this number. These are noted as SInt&lt;Size&gt;.
+	</li><li class="new">
+		All times are in 64 bit Unix timestamp format in the timezone of UTC (with no 
+		daylight savings).
 	</li>
 </ul>
 <p class="new">
 	A client can connect to a TP server on the standard 6923 port and use the new
 	negotiation frames to find out if the server supports tunneling or encrypted
 	access (and other optional features). The client is not required to do this however.
+</p><p>
+	The server should close the connect straight after the response if the first frame
+	is a neogtiation frame.
+</p><p class="fixme">
+	FIXME: Should the above be the case?
 </p>
 
 <span class="new">
@@ -128,7 +139,7 @@
 	To support HTTP tunneling additions need to be added to both the client and server.
 	These changes are minimal however and only effect the connection setup.
 </p><p>
-	On a connection if the server finds a valid TP Connect frame normal connection occurs.
+	On a connection, if the server finds a valid TP Connect frame then a normal connection occurs.
 	Otherwise the server should wait until a valid POST request. The server should then
 	respond with the correct HTTP headers to cause the proxy to not cache the connection and
 	then continue with a normal TP connection.
@@ -194,9 +205,12 @@
 </table>
 </p><p>
 	The Client may start with any positive (it's an unsigned number) sequence number except 
-	zero (0). Server replies with have sequence numbers that are the same as the sequence
+	zero (0). Server replies have sequence numbers that are the same as the sequence
 	number on the operation they are a response to. If the server sends a frame that is not
 	a response, the frames sequence number will be zero (0).
+</p><p class="fixme">
+	FIXME: This number seems a bit large now that we are no longer moving large data via the TP protocol
+	but via HTTP or similar?
 </p><p class="new">
 	No frame may be bigger then <b>10485760</b> bytes (10 megabytes) long.
 </p>
@@ -292,8 +306,9 @@
 	</tr><tr class="new">
 		<td colspan="6" align="center">
 			These frames are used to keep a connection alive, these are often needed when using the
-			tunneling connections. These frames only need to be implemented is HTTP or HTTPS tunneling
-			is supported.
+			tunneling connections. (Some broken NAT implimentations also need this to keep open long
+			running, low bandwidth connections.) These frames only required to be implemented if HTTP 
+			or HTTPS tunneling is supported.
 		</td>
 	</tr><tr class="new">
 		<td>27</td>
@@ -416,7 +431,7 @@
 		<td>39</td>
 		<td>Get List Of Boards</td>
 		<td>ft03_Board_List_Get</td>
-		<td>Gets a list of board ids that the player can see.</td>
+		<td>Gets a list of board ids that the player can see.<span class="fixme">FIXME: Does getting a list of IDs ever make sense? What about returning the ID + Last modified time?</span></td>
 		<td></td>
 	</tr><tr class="new">
 		<td>40</td>
@@ -470,7 +485,7 @@
 		<td>41</td>
 		<td>Get List Of Resources</td>
 		<td>ft03_ResDesc_List_Get</td>
-		<td>Gets a list of resource type ids</td>
+		<td>Gets a list of resource type ids, <span class="fixme">FIXME: Does getting a list of IDs ever make sense?</span></td>
 		<td></td>
 	</tr><tr class="new">
 		<td>42</td>
@@ -739,8 +754,9 @@
 			object
 		</li>
 		<li>a UInt32, number of orders currently on this object</li>
+		<li class="new">a UInt64, the last modified time</li>
 		<li>
-			4 by UInt32 of padding, for future expansion of common
+			2 by UInt32 of padding, for future expansion of common
 			attributes
 		</li>
 		<li>
@@ -796,6 +812,10 @@ Example:
 	<br>
 	<b>Note:</b> Order type ID's below 1000 are reserved for orders defined 
 	by the extended protocol specification.
+	<br>
+	<b>Note:</b> Order's do not have a last modified time. Instead when an order changes
+	the object which they are on has it's last modified time updated. This is because orders
+	can change position and do all types of other weird stuff.
 </p>
 
 <span class="new">
@@ -839,6 +859,7 @@ Example:
 			<li>a UInt32, argument type ID</li>
 			<li>a String, description</li>
 		</ul>
+		<li class="new">a UInt64, the last time this description was modified</li>
 	</ul>
 	The Argument Types are given below: <br>
 <table cellpadding=5>
@@ -1005,7 +1026,11 @@ ignore any information in read only field (even if they are non-empty).
 		<li>a String, name of the Board</li>
 		<li>a String, description of the Board</li>
 		<li>a UInt32, number of messages on the Board</li>
+		<li class="new">a UInt64, the last modified time</li>
 	</ul>
+</p><p class="new">
+	<b>Note:</b>The last modified time should be updated everytime a message on the board
+	has changed.
 </p>
 
 <span class="new">
@@ -1039,9 +1064,9 @@ ignore any information in read only field (even if they are non-empty).
 	Get Message frame and Remove Message frame consist of:
 	<ul>
 		<li>a UInt32, id of board to be changed</li>
-		<li>a list of <span class="new">SInt32</span>, slot numbers of orders to be sent/removed</li>
+		<li>a list of <span class="new">SInt32</span>, slot numbers of messages to be sent/removed</li>
 	</ul>
-</p><p class="new">
+</p><p class="new"><span class="fixme">Shouldn't this be removed and use GetListOf stuff?</span>
 	An empty slot list on Get will cause the server to return all messages, on Remove it will return an error.
 </p><p class="new">
 	If a slot is -1 it means get the next message after the last one. For example,
@@ -1066,6 +1091,8 @@ ignore any information in read only field (even if they are non-empty).
 		<li class="new">a UInt32, Turn the message was generated on</li>
 		<li class="new">a list of as described in the Generic Reference System</li>
 	</ul>
+</p><p class="new">
+	Please note that messages should be immutable, once posted/created they should not change.
 </p>
 	
 <span class="new">
@@ -1165,7 +1192,7 @@ ignore any information in read only field (even if they are non-empty).
 	<ul>
 		<li>a list of <span class="new">SInt32</span>, Resource ID</li>
 	</ul>
-</p><p class="new">
+</p><p class="new"><span class="fixme">Shouldn't this be removed and use GetListOf stuff?</span>
 	An empty ID list on Get will cause the server to return all resource descriptions.
 </p><p class="new">
 	If an ID is -1 it means get the next resource descriptions after the last one. For example,
@@ -1226,7 +1253,7 @@ ignore any information in read only field (even if they are non-empty).
 	<ul>
 		<li>a list of SInt32, Category IDs to get</li>
 	</ul>
-</p><p>
+</p><p class="new"><span class="fixme">Shouldn't this be removed and use GetListOf stuff?</span>
 	An empty ID list on Get will cause the server to return all category descriptions.
 </p><p>
 	If a ID is -1 it means get the next category descriptions after the last one. For example,
@@ -1256,7 +1283,7 @@ ignore any information in read only field (even if they are non-empty).
 	<ul>
 		<li>a list of SInt32, Category IDs to get or remove</li>
 	</ul>
-</p><p>
+</p><p class="new"><span class="fixme">Shouldn't this be removed and use GetListOf stuff?</span>
 	An empty ID list on Get will cause the server to return all components, on Remove it will return an error.
 </p><p>
 	If a ID is -1 it means get the next component after the last one. For example,
