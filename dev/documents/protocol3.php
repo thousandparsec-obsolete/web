@@ -90,7 +90,7 @@
 </ul>
 <p class="new">
 	A client can connect to a TP server on the standard 6923 port and use the new
-	negotiation packets to find out if the server supports tunneling or encrypted
+	negotiation frames to find out if the server supports tunneling or encrypted
 	access (and other optional features). The client is not required to do this however.
 </p>
 
@@ -126,7 +126,7 @@
 	To support HTTP tunneling additions need to be added to both the client and server.
 	These changes are minimal however and only effect the connection setup.
 </p><p>
-	On a connection if the server finds a valid TP Connect packet normal connection occurs.
+	On a connection if the server finds a valid TP Connect frame normal connection occurs.
 	Otherwise the server should wait until a valid POST request. The server should then
 	respond with the correct HTTP headers to cause the proxy to not cache the connection and
 	then continue with a normal TP connection.
@@ -156,7 +156,7 @@
 		<td>Sequence Number</td>
 		<td>Type</td>
 		<td>Length</td>
-		<td>Data Packet</td>
+		<td>Data Frame</td>
 	</tr><tr>
 		<td><b>Sizes</b></td>
 		<td>32 bits</td>
@@ -176,7 +176,7 @@
 		<td>Always has value "TP02" ("TP" plus version number), no null terminator.</td>
 		<td>
 			An incrementing number "sequence number". The sequence number
-			should alway be one more then the previous packets sequence number.
+			should alway be one more then the previous frames sequence number.
 		</td>
 		<td>Type of data, see table below</td>
 		<td>Length of data in bytes</td>
@@ -196,7 +196,7 @@
 	number on the operation they are a response to. If the server sends a frame that is not
 	a response, the frames sequence number will be zero (0).
 </p><p class="new">
-	No packet may be bigger then <b>10485760</b> bytes (10 megabytes) long.
+	No frame may be bigger then <b>10485760</b> bytes (10 megabytes) long.
 </p>
 
 <?php
@@ -207,7 +207,7 @@
 <h2>Types</h2>
 <p>
 	There are a number of types that can be put in types field of the
-	packet. There is no meaning in odd/even distinction in this version.
+	frame. There is no meaning in odd/even distinction in this version.
 	The types are listed below:
 </p><p>
 <table border="1">
@@ -246,7 +246,7 @@
 	<tr>
 		<td colspan="6" align="center"><b>Connecting</b></td>
 	</tr><tr>
-		<td colspan="6" align="center">These packets are used for setting up the connection to a server.</td>
+		<td colspan="6" align="center">These frames are used for setting up the connection to a server.</td>
 	</tr><tr>
 		<td>3</td>
 		<td>Connect</td>
@@ -270,7 +270,7 @@
 	<tr class="new">
 		<td colspan="6" align="center"><b>Feature Negotiation</b></td>
 	</tr><tr class="new">
-		<td colspan="6" align="center">These packets are used for negotiation which features to use.</td>
+		<td colspan="6" align="center">These frames are used for negotiation which features to use.</td>
 	</tr><tr class="new">
 		<td></td>
 		<td>Get Features</td>
@@ -289,8 +289,8 @@
 		<td colspan="6" align="center"><b>Keep alive (Optional)</b></td>
 	</tr><tr class="new">
 		<td colspan="6" align="center">
-			These packets are used to keep a connection alive, these are often needed when using the
-			tunneling connections. These packets only need to be implemented is HTTP or HTTPS tunneling
+			These frames are used to keep a connection alive, these are often needed when using the
+			tunneling connections. These frames only need to be implemented is HTTP or HTTPS tunneling
 			is supported.
 		</td>
 	</tr><tr class="new">
@@ -304,7 +304,7 @@
 	<tr>
 		<td colspan="6" align="center"><b>Objects</b></td>
 	</tr><tr>
-		<td colspan="6" align="center">These packets are used for getting objects.</td>
+		<td colspan="6" align="center">These frames are used for getting objects.</td>
 	</tr><tr>
 		<td>5</td>
 		<td>Get Objects by ID</td>
@@ -328,7 +328,7 @@
 	<tr>
 		<td colspan="6" align="center"><b>Orders</b></td>
 	</tr><tr>
-		<td colspan="6" align="center">These packets are used for manipulating orders.</td>
+		<td colspan="6" align="center">These frames are used for manipulating orders.</td>
 	</tr><tr>
 		<td>8</td>
 		<td>Get Order Description</td>
@@ -376,7 +376,7 @@
 	<tr>
 		<td colspan="6" align="center"><b>Time</b></td>
 	</tr><tr>
-		<td colspan="6" align="center">These packets are used to find out when the next turn will occur.</td>
+		<td colspan="6" align="center">These frames are used to find out when the next turn will occur.</td>
 	</tr><tr>
 		<td>14</td>
 		<td>Get Time remaining</td>
@@ -395,7 +395,7 @@
 		<td colspan="6" align="center"><b>Messages</b></td>
 	</tr><tr>
 		<td colspan="6" align="center">
-			These packets are used to manipulate the in game message boards. Each person has a
+			These frames are used to manipulate the in game message boards. Each person has a
 			message board and there are some shared message boards.
 		</td>
 	</tr><tr>
@@ -439,7 +439,7 @@
 	<tr>
 		<td colspan="6" align="center"><b>Resources</b></td>
 	</tr><tr>
-		<td colspan="6" align="center">These packets are used to get information about resources.</td>
+		<td colspan="6" align="center">These frames are used to get information about resources.</td>
 	</tr><tr>
 		<td>22</td>
 		<td>Get Resource Description</td>
@@ -461,27 +461,39 @@
 		</td>
 	</tr><tr class="new">
 		<td></td>
+		<td>Get Category Description</td>
+		<td></td>
+		<td>Returns a description of an category type</td>
+		<td></td>
+	</tr><tr class="new">
+		<td></td>
+		<td>Category Description</td>
+		<td></td>
+		<td>Describes a category</td>
+		<td></td>
+	</tr><tr class="new">
+		<td></td>
 		<td>Get Component</td>
 		<td></td>
-		<td></td>
+		<td>Gets the details about a component</td>
 		<td></td>
 	</tr><tr class="new">
 		<td></td>
 		<td>Component</td>
 		<td></td>
-		<td></td>
+		<td>Describes a component</td>
 		<td></td>
 	</tr><tr class="new">
 		<td></td>
 		<td>Insert Component</td>
 		<td></td>
-		<td></td>
+		<td>Creates a new component out of existing components</td>
 		<td></td>
 	</tr><tr class="new">
 		<td></td>
 		<td>Remove Component</td>
 		<td></td>
-		<td></td>
+		<td>Removes a component</td>
 		<td></td>
 	</tr>
 
@@ -489,7 +501,7 @@
 		<td colspan="6" align="center"><b>Binary Data Manipulation</b></td>
 	</tr><tr class="new">
 		<td colspan="6" align="center">
-			These packets are used to manipulate binary data stored by the server. Such binary data
+			These frames are used to manipulate binary data stored by the server. Such binary data
 			could be battle descriptions or images. Because of the size restrictions of TP
 			frames only small amounts of binary data should ever be transmitted this way.
 		</td>
@@ -511,6 +523,18 @@
 		<td></td>
 		<td>Remove the binary data from the server.</td>
 		<td></td>
+	</tr><tr class="new">
+		<td></td>
+		<td>Data Header</td>
+		<td></td>
+		<td>Header for some arbitrary binary data.</td>
+		<td></td>
+	</tr><tr class="new">
+		<td></td>
+		<td>Data</td>
+		<td></td>
+		<td>Header and arbitrary binary data.</td>
+		<td></td>
 	</tr>
 	
 </span>
@@ -524,26 +548,26 @@
 ?>
 
 
-<h2>Data Packet formats</h2>
+<h2>Data Frame formats</h2>
 <p>
-	The different types have different formats for the Data Packet. Any Data
-	Packet may have be extended at any time in a backward compatible manner.
-	The program should just ignore any extra data in the Data Packet which
+	The different types have different formats for the Data Frame. Any Data
+	Frame may have be extended at any time in a backward compatible manner.
+	The program should just ignore any extra data in the Data Frame which
 	it does not understand.
 </p>
 
-<h3>OK Packet</h3>
+<h3>OK Frame</h3>
 <p>
-	The OK packet consists of:
+	The OK frame consists of:
 	<ul>
 		<li>a String, the string can be safely ignored - however it may 
 			contain useful information for debugging purposes)</li>
 	</ul>
 </p>
 
-<h3>Fail Packet</h3>
+<h3>Fail Frame</h3>
 <p>
-	A fail packet consists of:
+	A fail frame consists of:
 	<ul>
 		<li>a Int32, error code</li>
 		<li>a String, message of the error</li>
@@ -558,25 +582,25 @@
 		<li class="new">5 - Permission Denied, You don't have permission to do this operation</li>
 		<li>...</li>
 	</ul>
-	Exception: If the connect packet is not valid TP frame, this
-	packet will not be returned, instead a plain text string will be sent saying that the wrong
-	protocol has been used. A fail packet may be send if the wrong protocol version is detected.
-	This does not affect clients as they should always get the connect packet right.
+	Exception: If the connect frame is not valid TP frame, this
+	frame will not be returned, instead a plain text string will be sent saying that the wrong
+	protocol has been used. A fail frame may be send if the wrong protocol version is detected.
+	This does not affect clients as they should always get the connect frame right.
 </p>
 
-<h3>Sequence Packet</h3>
+<h3>Sequence Frame</h3>
 <p>
-	Sequence packet consist of:
+	Sequence frame consist of:
 	<ul>
-		<li>a UInt32, giving the number of packets to follow</li>
+		<li>a UInt32, giving the number of frames to follow</li>
 	</ul>
-	This packet will proceed a response which requires numerous packets to be complete.
+	This frame will proceed a response which requires numerous frames to be complete.
 </p>
 
 <span class="new">
-<h3>Redirect Packet</h3>
+<h3>Redirect Frame</h3>
 <p>
-	Redirect packet consist of:
+	Redirect frame consist of:
 	<ul>
 		<li>a String, the URI of the new server to connect too</li>
 	</ul>
@@ -585,23 +609,23 @@
 </p>
 </span>
 
-<h3>Connect Packet</h3>
+<h3>Connect Frame</h3>
 <p>
-	The Connect packet consists of:
+	The Connect frame consists of:
 	<ul>
 		<li>a String, a client identification string</li>
 	</ul>
 	The client identification string can be any string but will mostly
 	used to produce stats of who uses which client. The server may return 
-	either a OK, Fail or Redirect packet.
+	either a OK, Fail or Redirect frame.
 </p><p>
 	If the server wants to return a Redirect and the client only supports
 	the old protocol a Fail should be returned instead.
 </p>
 
-<h3>Login Packet</h3>
+<h3>Login Frame</h3>
 <p>
-	The Login packet consists of:
+	The Login frame consists of:
 	<ul>
 		<li>a String, the username of the player</li>
 		<li>a String, the password</li>
@@ -613,18 +637,18 @@
 </p>
 
 <span class="new">
-<h3>Get Features Packet</h3>
+<h3>Get Features Frame</h3>
 <p>
-	The Get Features Packet has no data.
-	Get the features this server supports. This packet can be sent before 
+	The Get Features frame has no data.
+	Get the features this server supports. This frame can be sent before 
 	Connect.
 </p>
 </span>
 
 <span class="new">
-<h3>Features Packet</h3>
+<h3>Features Frame</h3>
 <p>
-	The Features packet consists of:
+	The Features frame consists of:
 	<ul>
 		<li>a List of UInt32, ID code of feature</li>
 	</ul>
@@ -634,32 +658,32 @@
 		<li>0x2 - Secure Connection available on another port</li>
 		<li>0x3 - HTTP Tunneling available on this port</li>
 		<li>0x4 - HTTP Tunneling available on another port</li>
-		<li>0x5 - Support Keep alive packets</li>
+		<li>0x5 - Support Keep alive frames</li>
 	</ul>
 </p>
 </span>
 
 <span class="new">
-<h3>Ping Packet</h3>
+<h3>Ping Frame</h3>
 <p>
-	The ping packet is empty and is only used to keep a connection alive
-	that would possibly terminate otherwise. No more then 1 ping packet every 
+	The Ping frame is empty and is only used to keep a connection alive
+	that would possibly terminate otherwise. No more then 1 ping frame every 
 	second should be sent and then only if no other data has been sent.
 </p>
 </span>
 
-<h3>Get Object by ID Packet</h3>
+<h3>Get Object by ID Frame</h3>
 <p>
-	A Get Object by ID packet consist of:
+	A Get Object by ID frame consist of:
 	<ul>
 		<li>a list of UInt32, object IDs of the object requested</li>
 	</ul>
 	An object ID of 0 is the top level Universe object.
 </p>
 
-<h3>Object Packet</h3>
+<h3>Object Frame</h3>
 <p>
-	An Object packet consist of:
+	An Object frame consist of:
 	
 	<ul>
 		<li>a UInt32, object ID</li>
@@ -691,9 +715,9 @@ Example:
 &lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
 &lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;0&gt;&lt;0&gt;
 
-<h3>Get Objects by Position Packet</h3>
+<h3>Get Objects by Position Frame</h3>
 <p>
-	A Get Objects by Position packet consist of:
+	A Get Objects by Position frame consist of:
 	<ul>
 		<li>3 by Int64, giving the position of center the sphere</li>
 		<li>a UInt64, giving the radius of the sphere</li>
@@ -702,9 +726,9 @@ Example:
 	a sphere size of zero is used all object at the point will be returned.
 </p>
 
-<h3>Get Order Packet, Remove Order Packet</h3>
+<h3>Get Order Frame, Remove Order Frame</h3>
 <p>
-	Get Order packet and Remove Order packet consist of:
+	Get Order frame and Remove Order frame consist of:
 	<ul>
 		<li>a UInt32, id of object to be changed</li>
 		<li>a list of UInt32, slot numbers of orders to be sent/removed</li>
@@ -714,9 +738,9 @@ Example:
 	you don't want strange things to happen. (IE 10, 4, 1)
 </p>
 
-<h3>Order Packet, Insert Order packet</h3>
+<h3>Order Frame, Insert Order Frame</h3>
 <p>
-	A Order packet consist of:
+	A Order frame consist of:
 	<ul>
 		<li>a UInt32, Object ID of the order is on/to be placed on</li>
 		<li>a UInt32, Slot number of the order/to be put in, -1 will insert
@@ -731,7 +755,7 @@ Example:
 		<li>extra data, required by the order is appended to the end</li>
 	</ul>
 
-	The extra data is defined by Order descriptions packets. The number of turns
+	The extra data is defined by Order descriptions frames. The number of turns
 	and the size of the	resource list should be zero (0) when sent by the client.<br>
 	<br>
 	<b>Note:</b> Order type ID's below 1000 are reserved for orders defined 
@@ -739,9 +763,9 @@ Example:
 </p>
 
 <span class="new">
-<h3>Probe Order packet</h3>
+<h3>Probe Order Frame</h3>
 <p>
-	A Probe Order packet is an Insert order which doesn't take effect. 
+	A Probe Order frame is an Insert order which doesn't take effect. 
 	These probes should occur as if no orders currently exist on object and should 
 	have no side-effects.	
 	This is used to get the read-only fields for an order which is needed for good
@@ -752,14 +776,17 @@ Example:
 </p>
 </span>
 
-<h3>Describe Order Packet</h3>
+<h3>Describe Order Frame</h3>
 <p>
-	This packet contains a list of Int32 which are the order types to be described.
+	Describe Order frame consist of:
+	<ul>
+		<li>a list of UInt32, the order types to be described</li>
+	</ul>
 </p>
 
-<h3>Order Description Packet</h3>
+<h3>Order Description Frame</h3>
 <p>
-	The Order Description packet contains:
+	The Order Description frame contains:
 	<ul>
 		<li>a UInt32, order type</li>
 		<li>a String, name</li>
@@ -903,26 +930,33 @@ ignore any information in read only field (even if they are non-empty).
 </b><br>
 </p>
 
-<h3>Get Time Remaining</h3>
-<p>Get the time remaining before the end of turn. No data</p>
-
-<h3>Time Remaining</h3>
-<p>Contains one UInt32, with the time in seconds before the next end
-of turn starts.	Can be sent at any time. If the value is 0 then the
-end of turn has just started.</p>
-
-<h3>Get Board Packet</h3>
+<h3>Get Time Remaining Frame</h3>
 <p>
-	A Get Board packet consist of:
+	Get the time remaining before the end of turn. No data
+</p>
+
+<h3>Time Remaining Frame</h3>
+<p>
+	A Time Remaining frame consist of:
+	<ul>
+		<li>a UInt32, the time in seconds before the next end of turn starts</li>
+	</ul>
+</p><p>
+	If the value is 0 then the end of turn has just started.
+</p>
+
+<h3>Get Board Frame</h3>
+<p>
+	A Get Board frame consist of:
 	<ul>
 		<li>a list of UInt32, Board IDs of the boards requested</li>
 	</ul>
 	A board ID of 0 is the special private (system) board for the current player.
 </p>
 
-<h3>Board Packet</h3>
+<h3>Board Frame</h3>
 <p>
-	A Board packet consist of:
+	A Board frame consist of:
 	<ul>
 		<li>a UInt32, Board ID</li>
 		<li>a String, name of the Board</li>
@@ -931,9 +965,9 @@ end of turn has just started.</p>
 	</ul>
 </p>
 
-<h3>Get Message Packet, Remove Message Packet</h3>
+<h3>Get Message Frame, Remove Message Frame</h3>
 <p>
-	Get Message packet and Remove Message packet consist of:
+	Get Message frame and Remove Message frame consist of:
 	<ul>
 		<li>a UInt32, id of board to be changed</li>
 		<li>a list of UInt32, slot numbers of orders to be sent/removed</li>
@@ -943,9 +977,9 @@ end of turn has just started.</p>
 	you don't want strange things to happen. (IE 10, 4, 1)
 </p>
 
-<h3>Message Packet, Post Message packet</h3>
+<h3>Message Frame, Post Message Frame</h3>
 <p>
-	A Message packet consist of:
+	A Message frame consist of:
 	<ul>
 		<li>a UInt32, Board ID of the message is on/to be placed on</li>
 		<li>a UInt32, Slot number of the message/to be put in, 
@@ -1050,20 +1084,20 @@ end of turn has just started.</p>
 </p>
 </span>
 
-<h3>Get Resource Description</h3>
+<h3>Get Resource Description Frame</h3>
 <p>
-	Get Resource Description consist of:
+	Get Resource Description frame consist of:
 	<ul>
 		<li>a list of UInt32, Resource ID</li>
 	</ul>
 </p>
 
-<h3>Resource Description</h3>
+<h3>Resource Description Frame</h3>
 <p>
 	A Resource is something that things are build out of, or consumed 
 	in production of something (IE work units).
-
-	A Resource Description consist of:
+</p><p>
+	A Resource Description frame consist of:
 	<ul>
 		<li>a UInt32, Resource ID</li>
 		<li>a String, singular name of the resource</li>
@@ -1077,9 +1111,44 @@ end of turn has just started.</p>
 </p>
 
 <span class="new">
-<h3>Component Packet, Insert Component packet</h3>
+<h3>Get Category Description Frame</h3>
 <p>
-	A Component packet consist of:
+	Get Category Description frame consist of:
+	<ul>
+		<li>a list of UInt32, Category IDs to get</li>
+	</ul>
+</p>
+</span>
+
+<span class="new">
+<h3>Category Description Frame</h3>
+<p>
+	A Category Description frame consist of:
+	<ul>
+		<li>a UInt32, Category ID</li>
+		<li>a String, name of the category</li>
+		<li>a String, description of the category</li>
+	</ul>
+</p>
+</span>
+
+<span class="new">
+<h3>Get Component Frame, Remove Component Frame</h3>
+<p>
+	Get Component and Remove Component frames consist of:
+	<ul>
+		<li>a list of UInt32, Category IDs to get or remove</li>
+	</ul>
+</p><p>
+	Note: You should sent Remove Order slot numbers in decrementing value if
+	you don't want strange things to happen. (IE 10, 4, 1)
+</p>
+</span>
+
+<span class="new">
+<h3>Component Frame, Insert Component frame</h3>
+<p>
+	A Component frame and Insert Component frame consist of:
 	<ul>
 		<li>a UInt32, component ID</li>
 		<li>a UInt32, base component ID</li>
@@ -1103,7 +1172,9 @@ end of turn has just started.</p>
 	A component can only be modified or removed if it's base component ID is not
 	zero and the number of times it is in use is zero.
 </p>
+</span>
 
+<span class="new">
 <h4>Component Language</h4>
 <p>
 	Components have a simple language for describing the sub-components which can be
@@ -1133,6 +1204,9 @@ end of turn has just started.</p>
 </p><p>
 	For example
 </p>
+</span>
+
+<font face="courier">
 <pre>
 Normal,
 (3 Electrical Type AND (2 Weapons Type OR 2 Cargo Type)) AND 1 Your
@@ -1145,7 +1219,9 @@ AND         AND         3 Elec       OR          2 Weapon     11 Cargo      1 Yo
 +---------+ +---------+ +----------+ +---------+ +----------+ +-----------+ +-----------+
 >3< <0> <0> >3< <0> <0> >2< <3> <12> >4< <0> <0> >2< <2> <13> >2< <11> <11> >1< <1> <99>
 </pre>
+</font>
 
+<span class="new">
 <h4>How Component Creation Works</h4>
 <p>
 Component creation works creating a new component with the base component ID set to a basic component.
@@ -1154,13 +1230,42 @@ done in one step).
 </p>
 </span>
 
+<span class="new">
+<h3>Get Data Frame, Get Data Header Frame, Remove Data Frame</h3>
+<p>
+	Get Data frame, Get Data Header frame and Remove Data frame consist of:
+	<ul>
+		<li>a list of UInt32, Data ID</li>
+	</ul>
+</p>
+</span>
+
+<span class="new">
+<h3>Data Header Frame, Data Frame</h3>
+<p>
+	Data Header frame and Data frame consist of:
+	<ul>
+		<li>a UInt32, the Data Id</li>
+		<li>a UInt32, the turn the data was created</li>
+		<li>a String, the mime type of the data</li>
+		<li>a UInt32, the size of the data</li>
+		<li>a Binary Data, the actual data</li>
+	</ul>
+</p><p>
+	The only difference between a data frame and a data header frame is that the data header frame
+	has a zero length binary data section.
+</p>
+</span>
+
+<hr>
+
 <h2>Example</h2>
 <p>The following is a simple example of the first interaction.</p>
 <table>
 	<tr>
 		<td><b>From</b></td>
 		<td><b>type</b></td>
-		<td><b>Data Packet</b></td>
+		<td><b>Data Frame</b></td>
 		<td><b>Description</b></td>
 	</tr>
 	<tr>
