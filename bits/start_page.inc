@@ -69,7 +69,7 @@ a {  font-family: "Times New Roman", Times, serif; color: #00FF99; text-decorati
 	</tr>
 </table>
 
-<?php if (@ !nobreak) { ?>
+<?php if (@!$nobreak) { ?>
 <br>
 <?php } ?>
 
