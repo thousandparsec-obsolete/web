@@ -3,20 +3,19 @@
 <?php include "bits/start_page.inc" ?>
 <?php include "bits/start_section.inc" ?>
     <p>
-		<font size="4">
+		<h1>
 			User Documentation
-		</font>
+		</h1>
+		<a href="/tp/dev/documents.php">
+			Goto Developer Documentation
+		</a>
+	</p>
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+    <p>
 		<a href="/tp/documents/setup/howto.php">
 			HOWTO setup pywx-client under windows
 		</a>
 	</p>
-    <p>
-		<font size="4">
-			<a href="/tp/dev/documents.php">
-			Developer Documentation
-			</a>
-		</font>
-	</p>
-
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/end_page.inc" ?>
