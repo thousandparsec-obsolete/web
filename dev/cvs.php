@@ -18,7 +18,7 @@ If you use a <i>modulename</i> of <i>.</i> (thats a single full stop) you will g
 <p>In order to access a CVS repository, you must install a special piece of software called a CVS client; CVS clients are available for most any operating system.</p> 
 
 <p><br /><b>Anonymous CVS Access</b></p>
-<p>This project's CVS repository can be checked out through anonymous (pserver) CVS with the following instruction set. The module you wish to check out must be specified as the <i>modulename</i>. When prompted for a password for <i>cvsanon</i>, simply press the Enter key.  To determine the names of the modules created by this project, you may examine their CVS repository via the provided <a href="http://www.thousandparsec.net/tp/dev/viewcvs.php">web-based CVS repository viewer</a>.</p> 
+<p>This project's CVS repository can be checked out through anonymous (pserver) CVS with the following instruction set. The module you wish to check out must be specified as the <i>modulename</i>. When prompted for a password for <i>cvsanon</i>, simply press the Enter key.  To determine the names of the modules created by this project, you may examine their CVS repository via the provided <a href="http://www.thousandparsec.net/tp/dev/viewcvs.php/">web-based CVS repository viewer</a>.</p> 
 
 <p><tt>cvs -d:pserver:cvsanon@cvs.thousandparsec.net:/tp login
 <br>&nbsp;<br>
