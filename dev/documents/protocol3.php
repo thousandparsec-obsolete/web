@@ -85,6 +85,10 @@
 	</li><li>
 		A list will be of only one type (IE Int32 or String) and be prefixed by an
 		Int32 for the number of items in the list.
+	</li><li class="new">
+		Semi-signed Integers are integers which act like normal unsigned numbers except
+		that the biggest possible number is considered -1, this should equal the normal
+		signed representation for this number. These are noted as SInt[Size].
 	</li>
 </ul>
 <p class="new">
@@ -742,7 +746,7 @@ Example:
 	A Order frame consist of:
 	<ul>
 		<li>a UInt32, Object ID of the order is on/to be placed on</li>
-		<li>a UInt32, Slot number of the order/to be put in, -1 will insert
+		<li>a <span class="new">SInt32</span>, Slot number of the order/to be put in, -1 will insert
 			at the last position, otherwise it is inserted before the number</li>
 		<li>a UInt32, Order Type ID</li>
 		<li>a UInt32, (Read Only) The number of turns the order will take</li>
@@ -981,7 +985,7 @@ ignore any information in read only field (even if they are non-empty).
 	A Message frame consist of:
 	<ul>
 		<li>a UInt32, Board ID of the message is on/to be placed on</li>
-		<li>a UInt32, Slot number of the message/to be put in, 
+		<li>a <span class="new">SInt32</span>, Slot number of the message/to be put in, 
 			-1 will insert at the last position, otherwise it is inserted before the number</li>
 		<li>a list of UInt32, type of message (can be multiple types at once). <b class=new>This list is now obsolete and will be removed in future versions.</b></li>
 		<li>a String, Subject of the message</li>
@@ -1221,6 +1225,7 @@ Encoded,
 1 Your Engine 11 Cargo      2 Weapon     OR          3 Elec       AND         AND         
 +-----------+ +-----------+ +----------+ +---------+ +----------+ +---------+ +---------+ 
 >1< <1> <99>  >2< <11> <11> >2< <2> <13> >4< <0> <0> >2< <3> <12> >3< <0> <0> >3< <0> <0>
+</pre>
 </font>
 
 <span class="new">
@@ -1321,10 +1326,6 @@ done in one step).
 	to move onto another version.
 	<ul>
 		<li>Figure out how to do masking for the opT_Object_ID Order Argument type (IE like opT_Object_Type)</li>
-		<li>Add references to Messages (IE This message refers to these objects/orders/players)</li>
-		<li>Add From to Messages</li>
-		<li>Finish adding categories to Messages</li>
-		<li>Solve the -1 is an error condition yet using unsigned numbers</li>
 		<li>Figure out how to support renaming objects</li>
 		<li>Figure out a way for the opT_List_ID to "suggest" maximums as well as hard maximums</li>
 		<li>Maybe a generic "string getter" for category names</li>
