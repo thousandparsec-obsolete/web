@@ -158,7 +158,7 @@
 	<tr>
 		<td>Move</td>
 		<td align="center" bgcolor="#00ff00">#</td>
-		<td align="center" bgcolor="#ffff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 	</tr>
 	<tr>
 		<td>BuildFleet</td>
@@ -178,7 +178,7 @@
 	<tr>
 		<td>Colonise</td>
 		<td align="center" bgcolor="#000000">#</td>
-		<td align="center" bgcolor="#ffff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 	</tr>
 </table>
 
