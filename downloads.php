@@ -36,7 +36,7 @@ function display($directory) {
 <p>
 	This is the main server for Thousand Parsec.
 </p>
-<?php display("cpp-server/"); ?>
+<?php display("tpserver-server/"); ?>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
@@ -46,7 +46,7 @@ function display($directory) {
 	Binaries for windows may be avalible at a later date. It's not a colorful as
 	the pygame client but it's more fully featured.
 </p>
-<?php display("pywx-client/"); ?>
+<?php display("tpclient-pywx/"); ?>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
@@ -56,7 +56,7 @@ function display($directory) {
 	Binaries for windows may be avalible at a later date. It doesn't have all the 
 	pretty graphics but it is the first to get new features.
 </p>
-<?php display("pytext-client/"); ?>
+<?php display("tpclient-pytext/"); ?>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
