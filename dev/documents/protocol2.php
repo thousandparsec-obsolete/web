@@ -592,8 +592,8 @@ Example:
 			<li>a String, description</li>
 		</ul>
 	</ul>
-	The Argument Types are given below:  <b>NOTE: read only fields are currently not transmitted at any time</b>
-<table>
+	The Argument Types are given below: <br>
+<table cellpadding=5>
     <tr>
       <td><b>Name</b></td>
       <td><b>Int32 Code</b></td>
@@ -653,7 +653,7 @@ Example:
                     <li>0x00000008 - Enemies</li>
                     <li>0x00000016 - Non-player</li>
                 </ul>
-            <li>
+            </li>
           </ul>
       </td>
     </tr>
@@ -686,20 +686,26 @@ Example:
       </td>
     </tr>
     <tr>
-      <td>Resource List</td>
+      <td>List</td>
       <td>6</td>
-      <td>opT_Resource_List</td>
-      <td>A list of resources</td>
+      <td>opT_List</td>
+      <td>A list in which numerous objects can be selected</td>
       <td>
-        A list of:
-	<ul>
-	  <li>a UInt32, The resource ID</li>
-          <li>a UInt32, The units of that resource required</li>
-	</ul>
+	  	The possible selections, A list of:
+		<ul>
+			<li>a UInt32, read only, id of what can be selected</li>
+			<li>a String, read only, String Name of can be selected</li>
+			<li>a UInt32, read only, Maximum number of can to be selected</li>
+		</ul>
+		The selection, A list of:
+		<ul>
+		  <li>a UInt32, read write, id of the selection</li>
+          <li>a UInt32, read write, number of the selection</li>
+		</ul>
       </td>
     </tr>
-	
 </table>
+<b>NOTE: read only fields are transmitted by the as 0 and empty string.</b><br>
 </p>
 
 <h3>Get Time Remaining</h3>
