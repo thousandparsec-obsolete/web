@@ -167,7 +167,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>10</td>
     <td>Describe Order</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>ft_Describe_Order</td>
     <td>Requests a description of an order</td>
     <td>Charlie</td>
   </tr>
@@ -175,7 +175,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>11</td>
     <td>Order Description</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>ft_Order_Description</td>
     <td>Describes an order and it's parameters</td>
     <td>Charlie</td>
   </tr>
@@ -276,7 +276,7 @@ and is defined on a type by type basis.</p>
 <h3>Describe Order Packet</h3>
 <p>This packet contains a single int32, the order type to be described.</p>
 <h3>Order Description Packet</h3>
-<p>The Order Description packet contains: int32 order type, int32 number of parameters and then of each parameter:
+<p>The Order Description packet contains: int32 order type, sting name, string description, int32 number of parameters and then of each parameter:
 string name, int32 typeID, string desc.</p>
 <h3>Other Packets</h3>
 <p>All other data packets are not defined yet and shall be added to this protocol version (unless the 
