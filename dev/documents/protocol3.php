@@ -16,7 +16,7 @@
 
 <h2>WARNING: This document is under development, the current protocol is still version 0.2</h2>
 
-<p>Last updated 10 Feburary 2005.</p>
+<p>Last updated 10 February 2005.</p>
 
 <p>
 	This protocol definition is for the Thousand Parsec project. It
@@ -92,7 +92,7 @@
 		that the biggest possible number is considered -1, this should equal the normal
 		signed representation for this number. These are noted as SInt&lt;Size&gt;.
 	</li><li class="new">
-		All times are in 64 bit Unix timestamp format in the timezone of UTC (with no 
+		All times are in 64 bit Unix time stamp format in the timezone of UTC (with no 
 		daylight savings).
 	</li>
 </ul>
@@ -102,7 +102,7 @@
 	access (and other optional features). The client is not required to do this however.
 </p><p>
 	The server should close the connect straight after the response if the first frame
-	is a neogtiation frame.
+	is a negotiation frame.
 </p><p class="fixme">
 	FIXME: Should the above be the case?
 </p>
@@ -189,7 +189,7 @@
 		<td>Always has value "TP02" ("TP" plus version number), no null terminator.</td>
 		<td>
 			An incrementing number "sequence number". The sequence number
-			should alway be one more then the previous frames sequence number.
+			should always be one more then the previous frames sequence number.
 		</td>
 		<td>Type of data, see table below</td>
 		<td>Length of data in bytes</td>
@@ -238,7 +238,7 @@
 	<tr>
 		<td colspan="5" align="center"><b>Generic Responses</b></td>
 	</tr><tr>
-		<td colspan="5" align="center">These responses are the most common and generic that should be the first to be implimented.</td>
+		<td colspan="5" align="center">These responses are the most common and generic that should be the first to be implemented.</td>
 	</tr><tr>
 		<td>0</td>
 		<td>Ok</td>
@@ -336,7 +336,7 @@
 	</tr><tr class="new">
 		<td colspan="5" align="center">
 			These frames are used to keep a connection alive, these are often needed when using the
-			tunneling connections. (Some broken NAT implimentations also need this to keep open long
+			tunneling connections. (Some broken NAT implementations also need this to keep open long
 			running, low bandwidth connections.) These frames only required to be implemented if HTTP 
 			or HTTPS tunneling is supported.
 		</td>
@@ -375,6 +375,12 @@
 		<td>Get Object IDs by Position</td>
 		<td></td>
 		<td>Returns the IDs which are within a sphere.</td>
+		<td></td>
+	</tr><tr class="new">
+		<td></td>
+		<td>Get Object IDs by Container</td>
+		<td></td>
+		<td>Returns the Object IDs which are within an Object.</td>
 		<td></td>
 	</tr><tr class="new">
 		<td></td>
@@ -547,7 +553,7 @@
 		<td>Get ID Sequence</td>
 	</tr><tr class="new">
 		<td>42</td>
-		<td>List Of Resouces IDs</td>
+		<td>List Of Resources IDs</td>
 		<td>ft03_ResDesc_List</td>
 		<td>A list of resource type ids.</td>
 		<td>ID Sequence</td>
@@ -608,27 +614,6 @@
 		<td></td>
 		<td>Removes a component</td>
 		<td>Get with ID</td>
-	</tr>
-
-	<tr class="new">
-		<td colspan="5" align="center"><b>Binary Data Manipulation</b></td>
-	</tr><tr class="new">
-		<td colspan="5" align="center">
-			<span class="fixme">Do we even need this anymore?</span>
-			These frames are used to get the URL for data.  The URLs should be for HTTP only.
-		</td>
-	</tr><tr class="new">
-		<td>35</td>
-		<td>Get Data URL</td>
-		<td>ft03_Data_URL_Get</td>
-		<td>Download the URL for the binary data.</td>
-		<td></td>
-	</tr><tr class="new">
-		<td>36</td>
-		<td>Data_URL</td>
-		<td>ft03_Data_URL</td>
-		<td>URL for some arbitrary binary data.</td>
-		<td></td>
 	</tr>
 
 	<tr class="new">
@@ -716,6 +701,89 @@
 		<li>a UInt32, giving the number of frames to follow</li>
 	</ul>
 	This frame will proceed a response which requires numerous frames to be complete.
+</p>
+
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<h2>Base Frames</h2>
+<hr>
+
+<h3>Get with ID Frame</h3>
+<p>
+	A Get with ID frame consist of:
+	<ul>
+		<li>a list of UInt32, IDs of the things requested</li>
+	</ul>
+</p><p>
+	This packet is used to get things using their IDs. Such things would be
+	objects, message boards, etc.
+</p>
+
+<h3>Get with ID and Slot Frame</h3>
+<p>
+	Get with ID and Slot frame consist of:
+	<ul>
+		<li>a UInt32, id of base thing</li>
+		<li>a list of UInt32, slot numbers of contained things be requested</li>
+</ul>
+</p><p>
+	This packet is used to get things which are in "slots" on a parent. Examples 
+	would be orders (on objects), messages (on boards), etc.
+</p>
+
+<h3>Get ID Sequence</h3>
+<p>
+	Get ID Sequence frame consist of:
+	<ul>
+		<li>a SInt32, the sequence key</li>
+		<li>a UInt32, the starting number in the sequence</li>
+		<li>a UInt32, the number of IDs to get</li>
+	</ul>
+</p><p>
+	Requirements:
+	<ul>
+		<li>To start a sequence, the key of -1 should be sent in the first request</li>
+		<li>Subsequent requests in a sequence should use the key which is returned</li>
+		<li>All requests must be continuous and ascending</li>
+		<li>Only one sequence key can exist at any time, starting a new sequence causes the old one to be discarded</li>
+		<li>Key persist for only as long as the connection remains and there are IDs left in the sequence</li>
+	</ul>
+	Other Information:
+	<ul>
+		<li>
+			If a key becomes invalid because of some change on the server (IE the ID order changes because
+			of modification by another client) a Fail packet will be returned
+		</li><li>
+			If the client for a key requests any of the following a Fail packet will be returned
+			<ul>
+				<li>a range has already had any part already given (IE no overlaps)</li>
+				<li>a range specifies a range which starts below the ending (IE requesting from 6, 10 then 0 to 5)</li>
+				<li>a range is bigger then the remaining IDs left (IE requesting 6 when only 4 remain)</li>
+			</ul>
+		</li>
+	</ul>
+</p><p>
+	<b>Note:</b> All servers must follow all the requirements above even if the server could allow otherwise.
+</p>
+
+<h3>ID Sequence</h3>
+<p>
+	ID Sequence frame consist of:
+	<ul>
+		<li>a SInt32, the sequence key</li>
+		<li>a SInt32, the number of IDs remaining</li>
+		<li>a list of
+			<ul>
+				<li>a UInt32, the IDs</li>
+				<li>a UInt64, the last modified time of this ID</li>
+			</ul>
+		</li>
+	</ul>
+</p><p>
+	These IDs are not guaranteed to be in any order.
 </p>
 
 <?php
@@ -930,7 +998,7 @@ Example:
 	The extra data is defined by Order descriptions frames. The number of turns
 	and the size of the	resource list should be zero (0) when sent by the client.<br>
 	<br>
-	<b>Note:</b> Order type ID's below 1000 are reserved for orders defined 
+	<b>Note:</b> Order type IDs below 1000 are reserved for orders defined 
 	by the extended protocol specification.
 	<br>
 	<b>Note:</b> Order's do not have a last modified time. Instead when an order changes
@@ -1165,7 +1233,7 @@ ignore any information in read only field (even if they are non-empty).
 		<li class="new">a UInt64, the last modified time</li>
 	</ul>
 </p><p class="new">
-	<b>Note:</b>The last modified time should be updated everytime a message on the board
+	<b>Note:</b>The last modified time should be updated every time a message on the board
 	has changed.
 </p>
 
@@ -1180,7 +1248,7 @@ ignore any information in read only field (even if they are non-empty).
 </p><p>
 	The list offset should be 0 for the first of the list. It is up to the client to make sure it has all board ids, as the 
 	resulting list might not be ordered. <span class="fixme">Can the list order change in between gets? How does the server
-	know that your contining the last lot?</span>
+	know that your continuing the last lot?</span>
 </p>
 </span>
 
@@ -1203,14 +1271,6 @@ ignore any information in read only field (even if they are non-empty).
 	<ul>
 		<li>a UInt32, id of board to be changed</li>
 		<li>a list of <span class="new">SInt32</span>, slot numbers of messages to be sent/removed</li>
-	</ul>
-</p><p class="new"><span class="fixme">Shouldn't this be removed and use GetListOf stuff?</span>
-	An empty slot list on Get will cause the server to return all messages, on Remove it will return an error.
-</p><p class="new">
-	If a slot is -1 it means get the next message after the last one. For example,
-	<ul class="new">
-		<li>[-1, -1] will get the first and second messages</li>
-		<li>[2, -1] will get the third and fourth messages</li>
 	</ul>
 </p><p>
 	Note: You should send Remove Message slot numbers in decrementing value if you don't want strange things to happen. (IE 10, 4, 1)
@@ -1339,14 +1399,6 @@ ignore any information in read only field (even if they are non-empty).
 	<ul>
 		<li>a list of <span class="new">SInt32</span>, Resource ID</li>
 	</ul>
-</p><p class="new"><span class="fixme">Shouldn't this be removed and use GetListOf stuff?</span>
-	An empty ID list on Get will cause the server to return all resource descriptions.
-</p><p class="new">
-	If an ID is -1 it means get the next resource descriptions after the last one. For example,
-	<ul class="new">
-		<li>[-1, -1] will get the first two resource descriptions</li>
-		<li>[2, -1] will get the the resource description number 2 and the first one after it</li>
-	</ul>
 </p>
 
 <h3>Resource Description Frame</h3>
@@ -1409,14 +1461,6 @@ ignore any information in read only field (even if they are non-empty).
 	<ul>
 		<li>a list of SInt32, Category IDs to get</li>
 	</ul>
-</p><p class="new"><span class="fixme">Shouldn't this be removed and use GetListOf stuff?</span>
-	An empty ID list on Get will cause the server to return all category descriptions.
-</p><p>
-	If a ID is -1 it means get the next category descriptions after the last one. For example,
-	<ul class="new">
-		<li>[-1, -1] will get the first two category descriptions</li>
-		<li>[2, -1] will get the the category description number 2 and the first one after it</li>
-	</ul>
 </p>
 </span>
 
@@ -1439,14 +1483,6 @@ ignore any information in read only field (even if they are non-empty).
 	Get Component and Remove Component frames consist of:
 	<ul>
 		<li>a list of SInt32, Category IDs to get or remove</li>
-	</ul>
-</p><p class="new"><span class="fixme">Shouldn't this be removed and use GetListOf stuff?</span>
-	An empty ID list on Get will cause the server to return all components, on Remove it will return an error.
-</p><p>
-	If a ID is -1 it means get the next component after the last one. For example,
-	<ul class="new">
-		<li>[-1, -1] will get the first two components</li>
-		<li>[2, -1] will get the compnent number 2 and the first one after it</li>
 	</ul>
 </p><p>
 	Note: Remove ID numbers can be sent in any order (unlike other Get packets).
