@@ -7,7 +7,7 @@ cvs update -dP
 
 cd $CVSROOT/web/dev/documents/python/
 
-epydoc --html -o netlib-doc -v --private-css green netlib
+epydoc --html -o netlib-doc -v --private-css green --docformat plaintext netlib
 tar -zcvf py-netlib-doc-cvs.tar.gz netlib-doc/*
 
 # Run the sloc2html update
