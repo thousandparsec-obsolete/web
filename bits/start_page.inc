@@ -52,11 +52,6 @@ a {  font-family: "Times New Roman", Times, serif; color: #00FF99; text-decorati
 			</a>
 		</td>
 		<td bgcolor="#000000" align="center">
-			<a href="/tp/ext.php">
-				EXTENSIONS
-			</a>
-		</td>
-		<td bgcolor="#000000" align="center">
 			<a href="/tp/dev/index.php">
 				DEVELOPERS
 			</a>
