@@ -1,0 +1,35 @@
+
+<h2>py-netlib 0.0.5 released, pytext-client 0.0.2 released</h2>
+<p>by Mithro</p>
+<p>
+	I have just released py-netlib 0.0.5 and pytext-client 0.0.2 for
+	the general public.
+</p>
+<p> 
+	py-netlib is a library used by the python clients to access a 
+	Thousand Parsec server. Currently only the pytext-client is the
+	only user but pywx-client will be ported at some point. This 
+	means clients can just worry about doing the display of stuff
+	instead of having to worry about talking to the server.
+	<br>
+	Just download the zip or tar.gz and do a "python setup.py install"
+	<br>
+	This requires the latest CVS server revision to work correctly in 
+	all areas.
+</p>
+<p>
+	pytext-client is a text based client for Thousand Parsec. It's
+	mainly used for testing the server and py-netlib. It's a very
+	good debugging tool and should allow you to run automatic commands.
+	It supports most features including all current Orders and Objects.
+	If you have the read line module in your python it even supports
+	command line completion.
+	<br>
+	Just download the tar.gz and then do a "python main.py" or double
+	click the main.py under windows.
+</p>
+<p>
+	Please report any bugs to <a href="mailto: tp-devel AT thousandparsec DOT net">
+	tp-devel AT thousandparsec DOT net</a>. These releases havn't been
+	tested all that well, but the big Echo release is comming up.
+</p>
