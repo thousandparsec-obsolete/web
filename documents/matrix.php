@@ -122,7 +122,7 @@
 ?>
 
 <h1>Server Support Matrix</h1>
-<p>Last updated 02 October 2004.</p>
+<p>Last updated 24 October 2004.</p>
 
 <table>
 	<tr>
@@ -179,7 +179,7 @@
 	<tr>
 		<td>Attack</td>
 		<td align="center" bgcolor="#000000">#</td>
-		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 	</tr>
 	<tr>
 		<td>Merge/Split Fleet</td>
@@ -193,6 +193,7 @@
 	</tr>
 </table>
 
+<p>Note that Attack orders aren't needed, combat occurs when two fleets meet.</p>
 
 <?php
   include "../bits/end_section.inc";
