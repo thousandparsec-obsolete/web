@@ -20,6 +20,11 @@
 			</a>
 		</td>
 		<td bgcolor="#000000" align="center">
+			<a href="/tp/dev/cvs.php">
+				CVS
+			</a>
+		</td>
+		<td bgcolor="#000000" align="center">
 			<a href="/tp/dev/viewcvs.php/">
 				WEB CVS
 			</a>

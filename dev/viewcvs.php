@@ -26,7 +26,7 @@ $data = str_replace($viewcvs_url, $my_url, $data);
 $data = str_replace($viewcvs_short, $my_url, $data);
 
 // Put back any special stuff
-$data = str_replace("$my_url/cvs_root.tar.gz", "$viewcvs_short/cvs_root.tar.gz", $data);
+$data = str_replace("cvs_root.tar.gz", "$viewcvs_short/cvs_root.tar.gz", $data);
 $data = str_replace("$my_url/*checkout*", "$viewcvs_short/*checkout*", $data);
 $data = str_replace("images/logo.png", "$viewcvs_short/*docroot*/images/logo.png", $data);
 
