@@ -163,7 +163,7 @@
 	<tr>
 		<td>BuildFleet</td>
 		<td align="center" bgcolor="#ffff00">#</td>
-		<td align="center" bgcolor="#ffff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 	</tr>
 	<tr>
 		<td>Attack</td>
