@@ -160,6 +160,16 @@
 		<td align="center" bgcolor="#ffff00">#</td>
 		<td align="center" bgcolor="#ffff00">#</td>
 	</tr>
+	<tr>
+		<td>Attack</td>
+		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+	</tr>
+	<tr>
+		<td>Merge/Split Fleet</td>
+		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+	</tr>
 </table>
 
 
