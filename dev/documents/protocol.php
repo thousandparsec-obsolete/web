@@ -13,6 +13,8 @@ any questions should be directed to him.</p>
 <p>This protocol will only change in a backward compatable way, with respect to current versions and
 revisions that the client(s) and server are using.  Any change that is not backward compatable will
 change the version number of the protocol.</p>
+<p>This document has been superseded by <a href="protocol2.php">TP02 Protocol doc</a>. Support for
+TP01 will be removed from the server at ParseStone Echo.</p>
 
 <?php
   include "../bits/end_section.inc";

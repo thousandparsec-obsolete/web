@@ -274,7 +274,7 @@
       <td>&nbsp;</td>
       <td>ft02_Board_Get</td>
       <td>Get a list of message boards the player can see.</td>
-      <td>Charlie</td>
+      <td>Foxtrot</td>
     </tr>
     <tr>
       <td>14</td>
@@ -282,7 +282,7 @@
       <td>&nbsp;</td>
       <td>ft02_Board</td>
       <td>A Message.</td>
-      <td>Charlie</td>
+      <td>Foxtrot</td>
     </tr>
     <tr>
       <td>15</td>
@@ -290,7 +290,7 @@
       <td>&nbsp;</td>
       <td>ft02_Message_Get</td>
       <td>Get a Message from a board.</td>
-      <td>Charlie</td>
+      <td>Foxtrot</td>
     </tr>
     <tr>
       <td>16</td>
@@ -298,7 +298,7 @@
       <td>&nbsp;</td>
       <td>ft02_Message</td>
       <td>A Message.</td>
-      <td>Charlie</td>
+      <td>Foxtrot</td>
     </tr>
     <tr>
       <td>17</td>
@@ -306,7 +306,7 @@
       <td>&nbsp;</td>
       <td>ft02_Message_Post</td>
       <td>Post a message to a board.</td>
-      <td>Charlie</td>
+      <td>Foxtrot</td>
     </tr>
     <tr>
       <td colspan="6" align="center"><b>Time</b></td>
@@ -406,9 +406,10 @@
 		<li></li>
 		<li></li>
 	</ol>
-	Exception: If the connect packet is not valid in any way shape or form, this
-	packet will not have a header.  (This does not affect clients as they should always get
-	the connect packet right.)
+	Exception: If the connect packet is not valid TP frame, this
+	packet will not be returned, instead a plain text string will be sent saying that the wrong
+	protocol has been used. A fail packet may be send if the wrong protocol version is detected.
+	This does not affect clients as they should always get the connect packet right.
 </p>
 
 <h3>Connect Packet</h3>
