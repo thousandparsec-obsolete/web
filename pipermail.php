@@ -7,24 +7,19 @@
 
 $my_url = "/tp/pipermail.php";
 $piper_short = "/pipermail";
-$piper_url = "http://" . $_SERVER['SERVER_NAME'] . $piper_short;
+$piper_real = "http://www.thousandparsec.net$piper_short";
 
 // Include an rewrite the piper stuff
 $url = $_SERVER['REQUEST_URI'];
 $url = str_replace($my_url, '', $url);
 
-echo "<!-- real url = $piper_url$url -->";
-
-$handle = fopen($piper_url . $url, 'r');
+$handle = fopen($piper_real . $url, 'r');
 
 while (! feof($handle) ) {
 	$data = $data . fread($handle, 1024);
 }
 
-$data = preg_replace("-\"(.+)((\.mbox)|(\.txt))\"-", "/pipermail$url$1$2", $data);
-
-// $data = str_replace($piper_url, $my_url, $data);
-// $data = str_replace($piper_short, $my_url, $data);
+$data = preg_replace("-\"(.+)((\.mbox)|(\.txt))\"-", "$piper_real$url$1$2", $data);
 
 // Replace the listinfo ones
 $data = str_replace("/cgi-bin/mailman/", "/tp/mailman.php/", $data);

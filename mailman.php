@@ -5,11 +5,12 @@ $fetcher = new Snoopy;
 		
 $my_url = "/tp/mailman.php";
 $real_short = "/cgi-bin/mailman";
+$real_real = "http://www.thousandparsec.net$real_short";
 $real_url = "http://" . $_SERVER['SERVER_NAME'] . $real_short;
 
 // Include GET stuff
 $url = $_SERVER['REQUEST_URI'];
-$url = $real_url . str_replace($my_url, '', $url);
+$url = $real_real . str_replace($my_url, '', $url);
 
 // Include COOKIES stuff
 foreach ($_COOKIE as $key => $value) {
@@ -53,11 +54,11 @@ $my_colors   = array('#444444', '#003355', '#666666', '#003355');
 
 $data = str_replace($real_colors, $my_colors, $data);
 
-preg_match_all ("/name=\"(.+?)\"/", $data, $matches);
+preg_match_all ("/name=\"(.+?)\"/i", $data, $matches);
 
 $i = 0;
 foreach ($matches[1] as $key => $value) {
-	$from = '!name="' . $value . '"!';
+	$from = '!name="' . $value . '"!i';
 	$to = 'name="' . sprintf("%05d", $i) . str_replace($sfrom, $sto, $value) . '"';
 
 	$data = preg_replace($from, $to, $data, 1);
