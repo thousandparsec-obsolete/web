@@ -1,0 +1,13 @@
+
+<h2>TP-Server 0.0.5rc1 released</h2>
+<p>by Lee</p>
+<p>
+	I have just released 0.0.5rc1 of the TP-server.  End of Turn support
+	is in and working.  Nop and Move orders work on fleet objects. So
+	you now can explore a little bit.  The server will do End of Turn
+	every 10 minutes at the moment.
+</p>
+<p>
+	All the normal stuff.  CVS tag: CPP_SERVER_0_0_5RC1.  Tarball on the 
+	downloads page.
+</p>
