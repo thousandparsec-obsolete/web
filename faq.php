@@ -7,7 +7,7 @@
 	Table of contents:
 </p>
 <ol>
-	<li>General Questions</li>
+	<li>General Questions
 		<ol>
 			<li>
 				<a href="#1-1">
