@@ -15,7 +15,11 @@ function display($directory) {
 
 	foreach ($files as $file) {
 #		list($trash, $goodness) = split("-", $file, 2);
-		$goodness = substr($file, strrpos($file, '-')+1);
+		if ( substr($file, -4) == '.rpm' || substr($file, -4) == ".deb" ) 
+			$goodness = substr($file, strrchr($file, '-')+1);
+			$goodness = substr($goodness, strrchr($file, '-')+1);
+		else
+			$goodness = substr($file, strrchr($file, '-')+1);
 		
 		list($major, $minor, $revision, $tar, $compression) = split("\.", $goodness, 5);
 	
