@@ -513,17 +513,17 @@
 		<td></td>
 	</tr>
 	
-	<tr>
+	<tr class="new">
 		<td colspan="6" align="center"><b>Help</b></td>
-	</tr><tr>
+	</tr><tr class="new">
 		<td colspan="6" align="center">These packets are used to get help about server specific functions.</td>
-	</tr><tr>
+	</tr><tr class="new">
 		<td></td>
 		<td>Get Help</td>
 		<td></td>
 		<td></td>
 		<td></td>
-	</tr><tr>
+	</tr><tr class="new">
 		<td></td>
 		<td>Help</td>
 		<td></td>
@@ -1100,6 +1100,7 @@ end of turn has just started.</p>
 	<ul>
 		<li>a UInt32, component ID</li>
 		<li>a UInt32, base component ID</li>
+		<li>a UInt32, the number of times this component is in use</li>
 		<li>a list of UInt32, component types</li>
 		<li>a String, name of component</li>
 		<li>
@@ -1115,11 +1116,14 @@ end of turn has just started.</p>
 	A base component ID of zero means that this is a basic component and cannot
 	be modified or removed. The base component ID must either be zero or a basic 
 	component.
+</p><p>
+	A component can only be modified or removed if it's base component ID is not
+	zero and the number of times it is in use is zero.
 </p>
 
 <h4>Component Language</h4>
 <p>
-	Components have a simple language for describing the components which can be
+	Components have a simple language for describing the sub-components which can be
 	added to them. If this component cannot have anything added to it then it's 
 	this field should be empty. This language should only be taken as a guide to
 	what can and can't be added. 
@@ -1145,6 +1149,7 @@ end of turn has just started.</p>
 	</ul>
 </p><p>
 	For example
+</p>
 <pre>
 Normal,
 (3 Electrical Type AND (2 Weapons Type OR 2 Cargo Type)) AND 1 Your
@@ -1157,7 +1162,6 @@ AND         AND         3 Elec       OR          2 Weapon     11 Cargo      1 Yo
 +---------+ +---------+ +----------+ +---------+ +----------+ +-----------+ +-----------+
 >3< <0> <0> >3< <0> <0> >2< <3> <12> >4< <0> <0> >2< <2> <13> >2< <11> <11> >1< <1> <99>
 </pre>
-</p>
 
 <h4>How Component Creation Works</h4>
 <p>
