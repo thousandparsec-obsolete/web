@@ -2,7 +2,8 @@
 <h2>TP-Server 0.0.6 released</h2>
 <p>by Lee</p>
 <p>
-	That didn't take long.  I have just released 0.0.6 of the C++ TP-server. Any bugs to the mailing list please.  
+	That didn't take long.  I have just released 0.0.6 of the C++ TP-server bringing 
+	the server up to parasecstone (milestone) Foxtrot. Any bugs to the mailing list please.  
 	I have fixed build order support.  The first of my refactoring is in too.
 </p>
 <p>
