@@ -239,12 +239,12 @@ can send to this object prefixed by the number of items in the list, and an int3
 on this object from the player.  After the number of orders, any type specific data is appended.  Example:
 &lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\0\0\0\0&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
 &lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
-&lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;0gt;&lt;0&gt;</p>
+&lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;0&gt;&lt;0&gt;</p>
 <h3>Get Order Packet, Remove Order Packet</h3>
 <p>Get Order packet and Remove Order packet have the int32 id of the object it's on, and the int32 slot number the 
 order is in to be sent or removed.</p>
 <h3>Order Packet, Add Order packet</h3>
-<p>An Order Packet or Add Order packet has int32 Object ID of the object it's on (or to be put on), int 32 type, and 
+<p>An Order Packet or Add Order packet has int32 Object ID of the object it's on (or to be put on), int32 type, and
 which slot number it is in or should go in, -1 for last. Any extra data required by the order is appended to the end 
 and is defined on a type by type basis.</p>
 <h3>Other Packets</h3>
@@ -283,7 +283,7 @@ protocol is revised).</p>
     <td>Object</td>
     <td>&lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\0\0\0\0&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
       &lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
-      &lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;0gt;&lt;0&gt;</td>
+      &lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;0&gt;&lt;0&gt;</td>
     <td>Universe object</td>
   </tr>
 </table>
