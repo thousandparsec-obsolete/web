@@ -62,6 +62,11 @@ a {  font-family: "Times New Roman", Times, serif; color: #00FF99; text-decorati
 			</a>
 		</td>
 		<td bgcolor="#000000" align="center">
+			<a href="/tp/mailman.php/listinfo/">
+				LISTS
+			</a>
+		</td>
+		<td bgcolor="#000000" align="center">
 			<a href="/tp/links.php">
 				LINKS
 			</a>

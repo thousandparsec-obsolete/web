@@ -7,7 +7,7 @@
 
 $my_url = "/tp/dev/viewcvs.php";
 $viewcvs_short = "/cgi-bin/viewcvs.cgi";
-$viewcvs_url = "http://www.thousandparsec.net/$viewcvs_short";
+$viewcvs_url = "http://www.thousandparsec.net$viewcvs_short";
 
 
 // Include an rewrite the viewcvs stuff
@@ -24,7 +24,6 @@ while (! feof($handle) ) {
 
 $data = str_replace($viewcvs_url, $my_url, $data);
 $data = str_replace($viewcvs_short, $my_url, $data);
-$data = str_replace('"//', '"/', $data);
 
 // Put back any special stuff
 $data = str_replace("$my_url/cvs_root.tar.gz", "$viewcvs_short/cvs_root.tar.gz", $data);
