@@ -88,6 +88,7 @@
 			<a href="protocol.php">Protocol</a> document, describes the protocol.<br>
 			<a href="milestones.php">Milestones</a> document, describes what we are aiming for when.<br>
 			<a href="orders.php">Orders</a> document, describes possible orders that could be given in the game.<br>
+			<a href="objects.php">Objects</a> document.  Describes what extra data to expect at the end of object packets.<br>
 		</p>
 	</blockquote>
 
