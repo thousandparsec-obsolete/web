@@ -1,0 +1,18 @@
+
+<h2>TPServer-cpp 0.0.8 released</h2>
+<p>by Lee</p>
+<p>
+	First release with the new name!  Ok, so it's not that big a change, but still... Mithro will
+	post a news item shortly about all the renamings.
+</p>
+<p>
+	Changes to the server: added man page, removed compiler warnings, added MergeFleet, SplitFleet 
+	and Colonise orders (but only SplitFleet works), and the last of my refactoring for my project
+	(that finished 5 days ago).  Some documentation is making it's way onto the web, see the 
+	developer docs page, more soon.  Release 0.1.0 will be Minisec, and there will be only a few
+	more 0.0.x (maybe 0.0.9x if necessary).
+</p>
+<p>
+	All the normal stuff, just a little different this time.  CVS tag: TPSERVER_CPP_0_0_8.  
+	Tarball and pgp sig on the downloads page (I hope...).
+</p>
