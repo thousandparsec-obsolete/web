@@ -45,7 +45,8 @@ $my_colors   = array('#444444', '#003355', '#666666', '#003355');
 
 $data = str_replace($real_colors, $my_colors, $data);
 
-// Put back any special stuff
+// Archives stuff
+$data = str_replace("/pipermail", "/tp/pipermail.php", $data);
 
 echo $data;
 ?>
