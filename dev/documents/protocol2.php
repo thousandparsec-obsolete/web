@@ -608,9 +608,9 @@ Example:
       <td>Coordinates in absolute space. (Relative to the center of the Universe)</td>
       <td>
           <ul>
-            <li>Int 64, read write, X value</li>
-            <li>Int 64, read write, Y value</li>
-            <li>Int 64, read write, Z value</li>
+            <li>a Int64, read write, X value</li>
+            <li>a Int64, read write, Y value</li>
+            <li>a Int64, read write, Z value</li>
           </ul>
       </td>
     </tr>
@@ -621,8 +621,8 @@ Example:
       <td>The number of turns before something happens.</td>
       <td>
           <ul>
-            <li>Int 32, read write, number of turns</li>
-            <li>Int 32, read only, maximum number of turns</li>
+            <li>a Int32, read write, number of turns</li>
+            <li>a Int32, read only, maximum number of turns</li>
           </ul>
       </td>
     </tr>
@@ -633,7 +633,7 @@ Example:
       <td>An object's ID number.</td>
       <td>
           <ul>
-            <li>UInt 32, read write, objects id</li>
+            <li>a UInt32, read write, objects id</li>
           </ul>
       </td>
     </tr>
@@ -644,8 +644,8 @@ Example:
       <td>A player's ID number, Int32</td>
       <td>
           <ul>
-            <li>UInt 32, read write, players id</li>
-            <li>UInt 32, read only, mask (ON bits should be not be able to be selected),
+            <li>a UInt32, read write, players id</li>
+            <li>a UInt32, read only, mask (ON bits should be not be able to be selected),
                 <ul>
                     <li>0x00000001 - Allies</li>
                     <li>0x00000002 - Trading Partner</li>
@@ -664,10 +664,10 @@ Example:
       <td>Coordinates in absolute space relative to an object</td>
       <td>
           <ul>
-            <li>UInt 32, read write, ID of the object these coordinates are relative to</li>
-            <li>Int 64, read write, X value</li>
-            <li>Int 64, read write, Y value</li>
-            <li>Int 64, read write, Z value</li>
+            <li>a UInt32, read write, ID of the object these coordinates are relative to</li>
+            <li>a Int64, read write, X value</li>
+            <li>a Int64, read write, Y value</li>
+            <li>a Int64, read write, Z value</li>
           </ul>
       </td>
     </tr>
@@ -678,10 +678,10 @@ Example:
       <td>A number value from a range</td>
       <td>
           <ul>
-            <li>Int 32, read write, value</li>
-            <li>Int 32, read only, minimum value</li>
-            <li>Int 32, read only, maximum value</li>
-            <li>Int 32, read only, value to increment by</li>
+            <li>a Int32, read write, value</li>
+            <li>a Int32, read only, minimum value</li>
+            <li>a Int32, read only, maximum value</li>
+            <li>a Int32, read only, value to increment by</li>
           </ul>
       </td>
     </tr>
@@ -704,8 +704,24 @@ Example:
 		</ul>
       </td>
     </tr>
+    <tr>
+      <td>String</td>
+      <td>7</td>
+      <td>opT_String</td>
+      <td>A number textual string</td>
+      <td>
+          <ul>
+            <li>a Int 32, read only, maximum length of the string</li>
+            <li>a String, read write, the string</li>
+          </ul>
+      </td>
+    </tr>
 </table>
-<b>NOTE: read only fields are transmitted by the as 0 and empty string.</b><br>
+<b>
+NOTE: read only fields should be transmitted by the client as 0, 
+empty lists or empty string to conserve bandwidth. The server will
+ignore any information in read only field (even if they are non-empy).
+</b><br>
 </p>
 
 <h3>Get Time Remaining</h3>
