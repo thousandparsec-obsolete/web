@@ -13,6 +13,7 @@ tar -zcvf py-netlib-doc-cvs.tar.gz netlib-doc/*
 #create libtpproto-cpp docs.
 cd $CVSROOT/libtpproto-cpp/
 doxygen Doxyfile
+rm -fr libtpproto-cpp-doc
 mv docs libtpproto-cpp-doc
 tar czf libtpproto-cpp-doc-cvs.tar.gz libtpproto-cpp-doc
 mv libtpproto-cpp-doc-cvs.tar.gz libtpproto-cpp-doc/html/
