@@ -404,7 +404,7 @@
 		<td>16</td>
 		<td>Get Boards</td>
 		<td>ft02_Board_Get</td>
-		<td>Get a list of message boards the player can see.</td>
+		<td>Get message boards the player can see.</td>
 		<td>Foxtrot</td>
 	</tr><tr>
 		<td>17</td>
@@ -412,6 +412,18 @@
 		<td>ft02_Board</td>
 		<td>A Message.</td>
 		<td>Foxtrot</td>
+	</tr><tr>
+		<td>39</td>
+		<td>Get List Of Boards</td>
+		<td></td>
+		<td>Gets a list of board ids that the player can see.</td>
+		<td></td>
+	</tr><tr>
+		<td>40</td>
+		<td>List Of Boards</td>
+		<td></td>
+		<td>The list of board ids the player can see.</td>
+		<td></td>
 	</tr><tr>
 		<td>18</td>
 		<td>Get Message</td>
@@ -454,6 +466,18 @@
 		<td>ft02_ResDesc</td>
 		<td>Describes a resource</td>
 		<td>Foxtrot</td>
+	</tr><tr>
+		<td>41</td>
+		<td>Get List Of Resources</td>
+		<td></td>
+		<td>Gets a list of resource type ids</td>
+		<td></td>
+	</tr><tr>
+		<td>42</td>
+		<td>List Of Resouces</td>
+		<td></td>
+		<td>A list of resource type ids</td>
+		<td></td>
 	</tr>
 	
 	<tr class="new">
@@ -503,39 +527,19 @@
 		<td colspan="6" align="center"><b>Binary Data Manipulation</b></td>
 	</tr><tr class="new">
 		<td colspan="6" align="center">
-			These frames are used to manipulate binary data stored by the server. Such binary data
-			could be battle descriptions or images. Because of the size restrictions of TP
-			frames only small amounts of binary data should ever be transmitted this way.
+			These frames are used to get the URL for data.  The URLs should be for HTTP only.
 		</td>
 	</tr><tr class="new">
 		<td>35</td>
-		<td>Get Data Header</td>
-		<td>ft03_Data_Header_Get</td>
-		<td>Download the header for the binary data.</td>
+		<td>Get Data URL</td>
+		<td>ft03_Data_URL_Get</td>
+		<td>Download the URL for the binary data.</td>
 		<td></td>
 	</tr><tr class="new">
 		<td>36</td>
-		<td>Get Data</td>
-		<td>ft03_Data_Get</td>
-		<td>Download the header and the binary data.</td>
-		<td></td>
-	</tr><tr class="new">
-		<td>37</td>
-		<td>Remove Data</td>
-		<td>ft03_Data_Remove</td>
-		<td>Remove the binary data from the server.</td>
-		<td></td>
-	</tr><tr class="new">
-		<td>38</td>
-		<td>Data Header</td>
-		<td>ft03_Data_Header</td>
-		<td>Header for some arbitrary binary data.</td>
-		<td></td>
-	</tr><tr class="new">
-		<td>39</td>
-		<td>Data</td>
-		<td>ft03_Data</td>
-		<td>Header and arbitrary binary data.</td>
+		<td>Data_URL</td>
+		<td>ft03_Data_URL</td>
+		<td>URL for some arbitrary binary data.</td>
 		<td></td>
 	</tr>
 
@@ -546,13 +550,13 @@
 			These frames are used to get information about other places/races.
 		</td>
 	</tr><tr class="new">
-		<td>40</td>
+		<td>37</td>
 		<td>Get Player Data</td>
 		<td>ft03_Player_Get</td>
 		<td>Get the information about a player/race.</td>
 		<td></td>
 	</tr><tr class="new">
-		<td>41</td>
+		<td>38</td>
 		<td>Player Data</td>
 		<td>ft03_Player</td>
 		<td></td>
@@ -768,16 +772,6 @@ Example:
 		<li>a UInt32, id of object to be changed</li>
 		<li>a list of <span class="new">SInt32</span>, slot numbers of orders to be sent/removed</li>
 	</ul>
-</p><p class="new">
-	An empty slot list on Get will cause the server to return all orders, on Remove it will return an error. 
-</p><p class="new">
-	If a slot is -1 it means get the next order after the last one. For example,
-	<ul class="new">
-		<li>[-1, -1] will get the first and second orders</li>
-		<li>[2, -1] will get the third and fourth orders</li>
-	</ul>
-</p><p>
-	Note: You should send Remove Order slot numbers in decrementing value if you don't want strange things to happen. (IE 10, 4, 1)
 </p>
 
 <h3>Order Frame, Insert Order Frame</h3>
@@ -1001,14 +995,6 @@ ignore any information in read only field (even if they are non-empty).
 	</ul>
 </p><p>
 	A board ID of 0 is the special private (system) board for the current player.
-</p><p class="new">
-	An empty list will cause the server to return all boards.
-</p><p class="new">
-	If an ID is -1 it means get the next board after the last one. For example,
-	<ul class="new">
-		<li>[-1, -1] will get the first and second boards</li>
-		<li>[2, -1] will get the third and fourth boards</li>
-	</ul>
 </p>
 
 <h3>Board Frame</h3>
@@ -1021,6 +1007,32 @@ ignore any information in read only field (even if they are non-empty).
 		<li>a UInt32, number of messages on the Board</li>
 	</ul>
 </p>
+
+<span class="new">
+<h3>Get List Of Boards</h3>
+<p>
+	A Get List of Boards frame consists of:
+	<ul>
+		<li>a UInt32, the list offset to start at</li>
+		<li>a UInt32, maximum number of board ids to get</li>
+	</ul>
+</p><p>
+	The list offset should be 0 for the first of the list. It is up to the client to make sure it has all board ids, as the 
+	resulting list might not be ordered.
+</p>
+</span>
+
+<span class="new">
+<h3>List Of Boards</h3>
+<p>
+	A List of Boards frame consist of:
+	<ul>
+		<li>a list of UInt32 board ids</li>
+	</ul>
+</p><p>
+	The ids are not necessarily in any order and the order can vary between frames.
+</p>
+</span>
 
 <h3>Get Message Frame, Remove Message Frame</h3>
 <p>
@@ -1182,6 +1194,32 @@ ignore any information in read only field (even if they are non-empty).
 </p>
 
 <span class="new">
+<h3>Get List Of Resources</h3>
+<p>
+	A Get List of Resources frame consists of:
+	<ul>
+		<li>a UInt32, the list offset to start at</li>
+		<li>a UInt32, maximum number of resource type ids to get</li>
+	</ul>
+</p><p>
+	The list offset should be 0 for the first of the list. It is up to the client to make sure it has all resource type ids, as the 
+	resulting list might not be ordered.
+</p>
+</span>
+
+<span class="new">
+<h3>List Of Resources</h3>
+<p>
+	A List of Resources frame consist of:
+	<ul>
+		<li>a list of UInt32 resource ids</li>
+	</ul>
+</p><p>
+	The ids are not necessarily in any order and the order can vary between frames.
+</p>
+</span>
+
+<span class="new">
 <h3>Get Category Description Frame</h3>
 <p>
 	Get Category Description frame consist of:
@@ -1322,37 +1360,47 @@ done in one step).
 </span>
 
 <span class="new">
-<h3>Get Data Frame, Get Data Header Frame, Remove Data Frame</h3>
+<h3>Get Data URL Frame</h3>
 <p>
-	Get Data frame, Get Data Header frame and Remove Data frame consist of:
+	Get Data URL frame consist of:
 	<ul>
 		<li>a list of UInt32, Data ID</li>
-	</ul>
-</p><p>
-	An empty ID list on Get and Get Header will cause the server to return all components, on Remove it will return an error.
-</p><p>
-	If a ID is -1 it means get the next data object after the last one. For example,
-	<ul class="new">
-		<li>[-1, -1] will get the first two data object</li>
-		<li>[2, -1] will get the data object number 2 and the first one after it</li>
 	</ul>
 </p>
 </span>
 
 <span class="new">
-<h3>Data Header Frame, Data Frame</h3>
+<h3>Data URL Frame</h3>
 <p>
-	Data Header frame and Data frame consist of:
+	Data URL frame consist of:
 	<ul>
 		<li>a UInt32, the Data Id</li>
 		<li>a UInt32, the turn the data was created</li>
-		<li>a String, the mime type of the data</li>
-		<li>a UInt32, the size of the data</li>
-		<li>a Binary Data, the actual data</li>
+		<li>a String, the URL of the data.</li>
 	</ul>
-</p><p>
-	The only difference between a data frame and a data header frame is that the data header frame
-	has a zero length binary data section.
+</p>
+</span>
+
+<span class="new">
+<h3>Get Player Frame</h3>
+<p>
+	Get Player frame consist of:
+	<ul>
+		<li>a UInt32 list of player ids</li>
+	</ul>
+</p>
+</span>
+
+<span class="new">
+<h3>Player Frame</h3>
+<p>
+	A Player frame consists of:
+	<ul>
+		<li>a UInt32, the Player id</li>
+		<li>a String, the Player's name</li>
+		<li>a String, the Race's name</li>
+		<li>(more?)</li>
+	</ul>
 </p>
 </span>
 
@@ -1423,6 +1471,7 @@ done in one step).
 		<li>Help support?</li>
 		<li>Permissions to change your stuff? Not really needed for now...</li>
 		<li>Get range functions?</li>
+		<li>Multi-language support?</li>
 		<li>Anything else I have forgotten</li>
 		<li>Last modified time?</li>
 	</ul>
