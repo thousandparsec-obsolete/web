@@ -6,7 +6,7 @@
 
 <h1>Protocol Definition for Thousand Parsec</h1>
 <h3>Version 0.1</h3>
-<p>Last updated 15 Apr 2003.</p>
+<p>Last updated 2 May 2003.</p>
 <p>This protocol definition is for the Thousand Parsec project.  It
 is designed as a simple, easy to impliment protocol.  It is desgined by Lee Begg and
 any questions should be directed to him.</p>
@@ -183,7 +183,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>12</td>
     <td>Get Outcome</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>ft_Get_Outcome</td>
     <td>Get the probable outcome of an order</td>
     <td>Delta</td>
   </tr>
@@ -191,7 +191,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>13</td>
     <td>Outcome</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>ft_Outcome</td>
     <td>The Outcome of an order in a slot on an object</td>
     <td>Delta</td>
   </tr>
@@ -315,6 +315,11 @@ string name, int32 typeID, string desc.  The Parameter Types are given below:
     <td>&lt;id&gt;</td>
   </tr>
 </table></p>
+<h3>Get Outcome</h3>
+<p>The Get Outcome data packet consists of int32 Object id and int32 order slot number.</p>
+<h3>Outcome</h3>
+<p>The Outcome Frame contains int32 Objet id, int32 order slot number, int32 turns to completion,
+followed by more data to be specified in future.</p>
 <h3>Other Packets</h3>
 <p>All other data packets are not defined yet and shall be added to this protocol version (unless the 
 protocol is revised).</p>
