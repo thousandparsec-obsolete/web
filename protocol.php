@@ -251,16 +251,16 @@ future version.</p>
 <h3>Object Packet</h3>
 <p>An object packet contains:
 <ol>
-	<li>int32 object ID, 
-	<li>int32 object type, 
-	<li>string name, 
-	<li>unsigned int64 size (diameter), 
-	<li>3 by signed int64 position, 
-	<li>3 by signed int64 velocity, 
-	<li>3 by signed int64 acceleration, 
-	<li>a list of int32 object IDs of objects contained in the current object, prefixed by the int32 of the number of items in the list,
-	<li>a list of int32 order types that the player can send to this object prefixed by the number of items in the list, 
-	<li>an int32 number of orders currently on this object from the player.
+	<li>int32 object ID,</li>
+	<li>int32 object type,</li>
+	<li>string name,</li>
+	<li>unsigned int64 size (diameter),</li>
+	<li>3 by signed int64 position,</li>
+	<li>3 by signed int64 velocity,</li>
+	<li>3 by signed int64 acceleration,</li>
+	<li>a list of int32 object IDs of objects contained in the current object, prefixed by the int32 of the number of items in the list,</li>
+	<li>a list of int32 order types that the player can send to this object prefixed by the number of items in the list,</li>
+	<li>an int32 number of orders currently on this object from the player.</li>
 </ol>
 After the number of orders, any type specific data is appended.  Example:
 &lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\0\0\0\0&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
@@ -276,8 +276,45 @@ and is defined on a type by type basis.</p>
 <h3>Describe Order Packet</h3>
 <p>This packet contains a single int32, the order type to be described.</p>
 <h3>Order Description Packet</h3>
-<p>The Order Description packet contains: int32 order type, sting name, string description, int32 number of parameters and then of each parameter:
-string name, int32 typeID, string desc.</p>
+<p>The Order Description packet contains: int32 order type, string name, string description, int32 number of parameters and then of each parameter:
+string name, int32 typeID, string desc.  The Parameter Types are given below:
+<table>
+  <tr>
+    <td><b>Name</b></td>
+    <td><b>Int32 Code</b></td>
+    <td><b>C++ Enum</b></td>
+    <td><b>Description</b></td>
+    <td><b>Expected Format</b></td>
+  </tr>
+  <tr>
+    <td>Absolute Space Coordinates</td>
+    <td>0</td>
+    <td>opT_Space_Coord</td>
+    <td>Coordinates in absolute space, three int64: x, y, z</td>
+    <td>&lt;&lt;x&gt;&gt; &lt;&lt;y&gt;&gt; &lt;&lt;z&gt;&gt;</td>
+  </tr>
+  <tr>
+    <td>Time</td>
+    <td>1</td>
+    <td>opT_Time</td>
+    <td>The number of turns before something happens, int32.</td>
+    <td>&lt;n&gt;</td>
+  </tr>
+  <tr>
+    <td>Object</td>
+    <td>2</td>
+    <td>opT_Object_ID</td>
+    <td>An object's ID number, unsigned int32.</td>
+    <td>&lt;id&gt;</td>
+  </tr>
+  <tr>
+    <td>Player</td>
+    <td>3</td>
+    <td>opT_Player_ID</td>
+    <td>A player's ID number, int32</td>
+    <td>&lt;id&gt;</td>
+  </tr>
+</table></p>
 <h3>Other Packets</h3>
 <p>All other data packets are not defined yet and shall be added to this protocol version (unless the 
 protocol is revised).</p>
