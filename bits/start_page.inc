@@ -146,8 +146,8 @@ table.menu a {
 		</td><td>
 			<a href="/tp/mailman.php/listinfo/">Lists</a>
 		</td><td>
-			<a href="/tp/forums">Forums</a>
-		</td><td>
+<!--			<a href="/tp/forums">Forums</a>
+		</td><td> -->
 			<a href="/tp/links.php">Links</a>
 		</td>
 	</tr>
