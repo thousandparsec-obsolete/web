@@ -165,6 +165,22 @@ Even values are sent from the client, odd values from the server. The types are 
   </tr>
   <tr>
     <td>10</td>
+    <td>Describe Order</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Requests a description of an order</td>
+    <td>Charlie</td>
+  </tr>
+  <td>
+    <td>11</td>
+    <td>Order Description</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>Describes an order and it's parameters</td>
+    <td>Charlie</td>
+  </td>
+  <tr>
+    <td>12</td>
     <td>Get Outcome</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -172,7 +188,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>Delta</td>
   </tr>
   <tr>
-    <td>11</td>
+    <td>13</td>
     <td>Outcome</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -180,7 +196,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>Delta</td>
   </tr>
   <tr>
-    <td>12</td>
+    <td>14</td>
     <td>Get Result</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -188,7 +204,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>Echo</td>
   </tr>
   <tr>
-    <td>13</td>
+    <td>15</td>
     <td>Result</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -196,7 +212,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>Echo</td>
   </tr>
   <tr>
-    <td>14</td>
+    <td>16</td>
     <td>Get Time remaining</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -204,7 +220,7 @@ Even values are sent from the client, odd values from the server. The types are 
     <td>Echo</td>
   </tr>
   <tr>
-    <td>15</td>
+    <td>17</td>
     <td>Time remaining</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
@@ -257,6 +273,11 @@ order is in to be sent or removed.</p>
 <p>An Order Packet or Add Order packet has int32 Object ID of the object it's on (or to be put on), int32 type, and
 which slot number it is in or should go in, -1 for last. Any extra data required by the order is appended to the end 
 and is defined on a type by type basis.</p>
+<h3>Describe Order Packet</h3>
+<p>This packet contains a single int32, the order type to be described.</p>
+<h3>Order Description Packet</h3>
+<p>The Order Description packet contains: int32 order type, int32 number of parameters and then of each parameter:
+string name, int32 typeID, string desc.</p>
 <h3>Other Packets</h3>
 <p>All other data packets are not defined yet and shall be added to this protocol version (unless the 
 protocol is revised).</p>
