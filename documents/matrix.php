@@ -27,7 +27,7 @@
 ?>
 
 <h1>Client Support Matrix</h1>
-<p>Last updated 28 June 2004.</p>
+<p>Last updated 8 August 2004.</p>
 
 <table>
 	<tr>
@@ -142,7 +142,7 @@
 	<tr>
 		<td>Message Boards</td>
 		<td align="center" bgcolor="#00ff00">#</td>
-		<td align="center" bgcolor="#ffff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 	</tr>
 
 	<tr>
