@@ -653,7 +653,7 @@
 <h2>Base Frames</h2>
 <hr>
 
-<a name="GetWithID"><h3>Get with ID Frame</h3>
+<a name="GetWithID"></a><h3>Get with ID Frame</h3>
 <p>
 	A Get with ID frame consist of:
 	<ul>
@@ -664,7 +664,7 @@
 	objects, message boards, etc.
 </p>
 
-<a name="GetWithIDandSlot"><h3>Get with ID and Slot Frame</h3>
+<a name="GetWithIDandSlot"></a><h3>Get with ID and Slot Frame</h3>
 <p>
 	Get with ID and Slot frame consist of:
 	<ul>
@@ -679,7 +679,7 @@
 	value if you don't want strange things to happen. (IE 10, 4, 1)
 </p>
 
-<a name="GetIDSequence"><h3>Get ID Sequence</h3>
+<a name="GetIDSequence"></a><h3>Get ID Sequence</h3>
 <p>
 	Get ID Sequence frame consist of:
 	<ul>
@@ -714,7 +714,7 @@
 	<b>Note:</b> All servers must follow all the requirements above even if the server could allow otherwise.
 </p>
 
-<a name="IDSequence"><h3>ID Sequence</h3>
+<a name="IDSequence"></a><h3>ID Sequence</h3>
 <p>
 	ID Sequence frame consist of:
 	<ul>
