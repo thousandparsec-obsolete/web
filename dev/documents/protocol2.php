@@ -7,7 +7,7 @@
 <h1>Protocol Definition for Thousand Parsec</h1>
 <h3>Version 0.2</h3>
 
-<p>Last updated 18 February 2004.</p>
+<p>Last updated 26 April 2004.</p>
 
 <p>
     This protocol definition is for the Thousand Parsec project. It
