@@ -1,0 +1,30 @@
+
+<h2>pywx-client windows screenshots</h2>
+<p>by Mithro</p>
+<p>
+	This is pywx-client running under windows. As you can see under windows it
+	uses a MDI interface. I'm yet to decide if it works well enough - might just
+	switch to using the same style as linux.
+</p>
+<p>
+	<ul>
+		<li><a href="./screenshots/pywx-client-windows.png">Screenshot of Windows</a></li>
+	</ul>
+</p>
+<br>
+<h2>py-server</h2>
+<p>by Mithro</p>
+<p>
+	As well there is a new server written in python. This server is mainly to test
+	out py-netlib and other functionality. However it already rivals cpp-server in
+	terms of functionality. (Doesn't python rock :). Some of the current feature are:
+	<ul>
+		<li>Persistant universe.</li>
+		<li>Move and NOp orders which actually work.</li>
+		<li>Dynamically define orders via the database.</li>
+		<li>Support for in-game Message boards.</li>
+	</ul>
+	<br>
+	It however is very slow as it doesn't even try to be fast in anyway so don't
+	go trying to run a 1000 player game off of it :)
+</p>

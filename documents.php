@@ -6,6 +6,9 @@
 		<font size="4">
 			User Documentation
 		</font>
+		<a href="/tp/documents/setup/howto.php">
+			HOWTO setup pywx-client under windows
+		</a>
 	</p>
     <p>
 		<font size="4">
