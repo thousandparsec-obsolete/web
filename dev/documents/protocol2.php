@@ -7,7 +7,7 @@
 <h1>Protocol Definition for Thousand Parsec</h1>
 <h3>Version 0.2</h3>
 
-<p>Last updated 26 April 2004.</p>
+<p>Last updated 28 April 2004.</p>
 
 <p>
     This protocol definition is for the Thousand Parsec project. It
@@ -557,7 +557,8 @@ Example:
     	<li>extra data, required by the order is appended to the end</li>
     </ul>
 
-	The extra data is defined by Order descriptions packets.<br>
+	The extra data is defined by Order descriptions packets. The number of turns and the size of the
+	resource list should be zero (0) when sent by the client.<br>
 	<br>
 	<b>Note:</b> Order type ID's below 1000 are reserved for orders defined 
 	by the extended protocol specification.
@@ -584,7 +585,7 @@ Example:
 			<li>a String, description</li>
 		</ul>
 	</ul>
-	The Argument Types are given below:
+	The Argument Types are given below:  <b>NOTE: read only fields are currently not transmitted at any time</b>
 <table>
     <tr>
       <td><b>Name</b></td>
@@ -677,6 +678,20 @@ Example:
           </ul>
       </td>
     </tr>
+    <tr>
+      <td>Resource List</td>
+      <td>6</td>
+      <td>opT_Resource_List</td>
+      <td>A list of resources</td>
+      <td>
+        A list of:
+	<ul>
+	  <li>a UInt32, The resource ID</li>
+          <li>a UInt32, The units of that resource required</li>
+	</ul>
+      </td>
+    </tr>
+	
 </table>
 </p>
 
