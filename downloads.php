@@ -14,12 +14,12 @@ function display($directory) {
 	$files = @get_files($dir);
 
 	foreach ($files as $file) {
-#		list($trash, $goodness) = split("-", $file, 2);
-		if ( substr($file, -4) == '.rpm' || substr($file, -4) == ".deb" ) 
-			$goodness = substr($file, strrchr($file, '-')+1);
-			$goodness = substr($goodness, strrchr($file, '-')+1);
-		else
-			$goodness = substr($file, strrchr($file, '-')+1);
+		if ( substr($file, -4) == '.rpm' || substr($file, -4) == ".deb" ) {
+			$second = strrpos(substr($file, 0, strrpos($file, '-')-1), '-');
+			$goodness = substr($file, $second+1);
+		} else {
+			$goodness = substr($file, strrpos($file, '-')+1);
+		}
 		
 		list($major, $minor, $revision, $tar, $compression) = split("\.", $goodness, 5);
 	
