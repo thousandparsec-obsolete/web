@@ -4,9 +4,8 @@
 <p>
 	The webpage has been updated and now uses PHP for templates.
 	I've added a "<a href="/tp/milestones.php">milestones</a>" document
-	which describes our target milestones.<br>
+	which describes our target milestones.
+</p><p>
 	I've also added a "<a href="/tp/orders.php">orders</a>" document
 	which describes possible orders to be added to the game.
 </p>
-	
-
