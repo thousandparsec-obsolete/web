@@ -1,3 +1,4 @@
+<?php $title = "News" ?>
 <?php include "bits/start_page.inc" ; ?>
 
 <?php
