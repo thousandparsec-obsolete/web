@@ -1,0 +1,15 @@
+
+<h2>TP-Server 0.0.3 released</h2>
+<p>by Lee</p>
+<p>
+	I have just tagged and released 0.0.3 of the Thousand Parsec
+	Server.  The tag in the CVS is CPP_SERVER_0_0_3.
+	You can download it from <a href="downloads.php">here</a>.
+</p>
+<p>
+	The server now describes orders when asked, and objects define 
+	what orders they can perform on a pre player basis and will accept
+	orders which can also be removed.  This means that
+	the server is at Milestone Charlie.
+</p>
+
