@@ -711,7 +711,7 @@
 	</tr><tr class="row1 new">
 		<td class="numeric">? - 44</td>
 		<td><a href="#ListOfCategoryDescriptionIDs_Desc">List Of Category Description IDs</a></td>
-		<td>A list of resource type ids.</td>
+		<td>A list of category description type ids.</td>
 		<td>ID Sequence</td>
 		
 	</tr><tr class="row0 new">
@@ -734,6 +734,18 @@
 		<td><a href="#RemoveComponent_Desc">Remove Component</a></td>
 		<td>Removes a component</td>
 		<td>Get with ID</td>
+
+	</tr><tr class="row0 new">
+		<td class="numeric">? - 49</td>
+		<td><a href="#GetComponentIDs_Desc">Get Component IDs</a></td>
+		<td>Gets a list of component ids.</td>
+		<td>Get ID Sequence</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">? - 50</td>
+		<td><a href="#ListOfComponentIDs_Desc">List Of Component IDs</a></td>
+		<td>A list of component ids.</td>
+		<td>ID Sequence</td>
+
 	</tr>
 
 </table>
@@ -800,6 +812,8 @@
 	<tr class="row1"><td class="numeric">46</td><td>Component</td></tr>
 	<tr class="row0"><td class="numeric">47</td><td>Insert Component</td></tr>
 	<tr class="row1"><td class="numeric">48</td><td>Remove Component</td></tr>
+	<tr class="row0"><td class="numeric">49</td><td>Get Component IDs</td></tr>
+	<tr class="row1"><td class="numeric">50</td><td>List Of Component IDs</td></tr>
 </table>
 
 <?php
@@ -865,6 +879,7 @@
 	<ul>
 		<li>a UInt32, giving the number of frames to follow</li>
 	</ul>
+</p><p>
 	This frame will proceed a response which requires numerous frames to be complete.
 </p>
 
@@ -1047,8 +1062,9 @@
 <p>
 	The Features frame consists of:
 	<ul>
-		<li>a List of UInt32, ID code of feature</li>
+		<li>a list of UInt32, list of available features</li>
 	</ul>
+</p><p>
 	The feature codes that are currently available,
 	<ul>
 		<li>0x1 - Secure Connection available on this port</li>
@@ -1057,12 +1073,16 @@
 		<li>0x4 - HTTP Tunneling available on another port</li>
 		<li>0x5 - Support Keep alive frames</li>
 	</ul>
-</p><p class="fixme">
-	What about optimizations? Some "features" which could be supported are,
-	<ul class="fixme">
-		<li>?? - Order IDs, All ID Sequences are in descending last modified 
-			order. This would allow the client only download IDs which have 
-			changed by stopping as soon as instead of having to iterate over all IDs.</li>
+</p><p>
+	Optimizations are features which allow the clients to take certain shortcuts.
+	All optimization are highly optional. Optimizations have ids greater then 0xffff,
+	<ul>
+		<li>0x10000 - Sends Object ID Sequences in decending modified time order</li>
+		<li>0x10001 - Sends Order Description ID Sequences in decending modified time order</li>
+		<li>0x10002 - Sends Board ID Sequences in decending modified time order</li>
+		<li>0x10003 - Sends Resource Description ID Sequences in decending modified time order</li>
+		<li>0x10004 - Sends Category Description ID Sequences in decending modified time order</li>
+		<li>0x10005 - Sends Component ID Sequences in decending modified time order</li>
 	</ul>
 </p>
 </span>
@@ -1299,7 +1319,7 @@
 	<tr class="row0">
 		<td>List</td>
 		<td class="numeric">6</td>
-		<td>A list in which numerous objects can be selected</td>
+		<td>A list in which numerous items can be selected</td>
 		<td>
 			The possible selections, A list of:
 			<ul>
@@ -1322,6 +1342,40 @@
 			<ul>
 				<li>a Int 32, read only, maximum length of the string</li>
 				<li>a String, read write, the string</li>
+			</ul>
+		</td>
+	</tr>
+	<tr class="row0">
+		<td>Generic Reference</td>
+		<td class="numeric">8</td>
+		<td>A reference to something.</td>
+		<td>
+			<ul>
+				<li>A read write reference, as describe in the <a href="#GenericReferenceSystem">Generic Reference System</a> section.</li>
+				<li>The valid reference types, A list of:
+					<ul>
+						<li>a UInt32, read only, id of valid reference types</li>
+					</ul>
+				</li>
+			</ul>
+		</td>
+	</tr>
+	<tr class="row1">
+		<td>Generic Reference List</td>
+		<td class="numeric">9</td>
+		<td>A list of reference to something.</td>
+		<td>
+			<ul>
+				<li>A read write list of,
+					<ul>
+						<li>A reference, as describe in the <a href="#GenericReferenceSystem">Generic Reference System</a> section.</li>
+					</ul>
+				</li>
+				<li>The valid reference types, A list of:
+					<ul>
+						<li>a UInt32, read only, id of valid reference types</li>
+					</ul>
+				</li>
 			</ul>
 		</td>
 	</tr>
@@ -1506,37 +1560,39 @@
 	
 <span class="new">
 <a name="GenericReferenceSystem"></a>
-<h4>Generic Reference System</h4>
+<h2>Generic Reference System</h2>
 <p class="new">
 	The new reference system is similar to the old type system but has been expanded to cover more features.
 </p><p>
 	The reference system uses two integers to reference any object in the game. The first integer indicated what
-	type of thing is being referenced and the second gives the ID of the thing being referenced. As well the 
-	references system has a bunch of references which point to "actions" (from example an order completing). 
-	As these do not refer to actual items in the game the type is negative.
+	type of thing is being referenced and the second gives the ID of the thing being referenced.
+</p><p>
 	<ul>
 		<li>a Int32, type of thing being referenced</li>
 		<li>a UInt32, the ID of the object being referenced</li>
 	</ul>
 </p><p>
-	The list of actions follows.
+	As well the references system has a bunch of references which point to "actions" (from example an order 
+	completing). As these do not refer to actual items in the game the type is negative.
 </p><p>
 	The types used in the reference system are described below,
 	<ul class="new">
 		<li>-1000 - Server specific action reference</li>
-		<li>-5 - Design action reference</li>
-		<li>-4 - Message action reference</li>
-		<li>-3 - Order action special reference</li>
-		<li>-2 - Object action reference</li>
-		<li>-1 - Player action reference</li>
+		<li>-5? - Design action reference</li>
+		<li>-4? - Player action reference</li>
+		<li>-3? - Message action reference</li>
+		<li>-2 - Order action special reference</li>
+		<li>-1 - Object action reference</li>
 		<li>0 - Misc special reference</li>
-		<li>1 - Player</li>
-		<li>2 - Object</li>
-		<li>3 - Order Type (IE A type of order)</li>
-		<li>4 - Order Instance (An actual order on an object, should also include an Object reference)</li>
-		<li>5 - Message</li>
-		<li>6 - Design</li>
-		<li>7 - Data (IE Battle data)</li>
+		<li>1 - Object</li>
+		<li>2 - Order Type (IE A type of order)</li>
+		<li>3 - Order Instance (An actual order on an object, should also include an Object reference)</li>
+		<li>4 - Board</li>
+		<li>5 - Message (Should also include a Board reference)</li>
+		<li>6 - Resource Description</li>
+		<li>7 - Player</li>
+		<li>8? - Category</li>
+		<li>9? - Component</li>
 	</ul>
 	
 </p><p>
@@ -1546,7 +1602,7 @@
 	Misc
 	<ol>
 		<li class="new">System Message, this message is from a the internal game system</li>
-		<li class="new">Administration Message, this message is an important message from game administrators</li>
+		<li class="new">Administration Message, this message is an message from game administrators</li>
 		<li class="new">Important Message, this message is flagged to be important</li>
 		<li class="new">Unimportant Message, this message is flagged as unimportant</li>
 	</ol>
@@ -1572,18 +1628,6 @@
 	Object Action
 	<ol>
 		<li class="new">Object Idle, this message refers to an object having nothing to do</li>
-	</ol>
-
-</p><p>
-	Message Action
-	<ol>
-		<li class="new"></li>
-	</ol>
-	
-</p><p>
-	Design Action
-	<ol>
-		<li class="new"></li>
 	</ol>
 	
 </p><p>
@@ -1768,8 +1812,24 @@
 </span>
 
 <span class="new">
+<a name="GetComponentIDs_Desc"></a>
+<h3>Get Component IDs</h3>
+<p>
+	See <a href="#GetIDSequence_Desc">Get ID Sequence</a>
+</p>
+</span>
+
+<span class="new">
+<a name="ListOfComponentIDs_Desc"></a>
+<h3>List Of Component IDs</h3>
+<p>
+	See <a href="#IDSequence">ID Sequence</a>
+</p>
+</span>
+
+<span class="new">
 <a name="ComponentLanguage"></a>
-<h4>Component Language</h4>
+<h2>Component Language</h2>
 <p>
 	Components have a simple language for describing the sub-components which can be
 	added to them. If this component cannot have anything added to it then it's 
@@ -1821,7 +1881,7 @@ Encoded,
 
 <span class="new">
 <a name="HowComponentCreationWorks"></a>
-<h4>How Component Creation Works</h4>
+<h2>How Component Creation Works</h2>
 <p>
 Component creation works creating a new component with the base component ID set to a basic component.
 The client can then add/remove sub-components to newly created component. (Of course this could be
@@ -1898,8 +1958,8 @@ done in one step).
 		<li>Figure out a way for the opT_List_ID to "suggest" maximums as well as hard maximums</li>
 		<li>Help support?</li>
 		<li>Permissions to change your stuff? Not really needed for now...</li>
-		<li>Get range functions?</li>
 		<li>Multi-language support?</li>
+		<li>Add Research support</li>
 		<li>Anything else I have forgotten</li>
 	</ul>
 </p>

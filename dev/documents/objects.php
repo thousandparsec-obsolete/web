@@ -5,7 +5,7 @@
 ?>
 
 <h1>Object Definition for Thousand Parsec</h1>
-<p>Last updated 17 May 2003.</p>
+<p>Last updated 24 March 2004.</p>
 <p>The document outlines the various objects in the TP universe and the extra data associated with them.</p>
 <p>These definitions will only change in a backward compatable way.  Any change that is not backward 
 compatable will change the Object Type Numbers affected by the change.</p>
@@ -27,29 +27,29 @@ and a 64 bit integer as &lt;&lt;n&gt;&gt;</p>
 
 <h2>Object Types</h2>
 <p>There are many in game Object types.  Each has an object type number, as shown in the table below:
-<table border="1">
+<table class="tabular">
   <tr>
-    <td><b>Type Number</b></td>
-    <td><b>Object Type</b></td>
+    <th>Type Number</th>
+    <th>Object Type</th>
   </tr>
-  <tr>
-    <td>0</td>
+  <tr class="row0">
+    <td class="numeric">0</td>
     <td>Universe</td>
   </tr>
-  <tr>
-    <td>1</td>
+  <tr class="row1">
+    <td class="numeric">1</td>
     <td>Galaxy</td>
   </tr>
-  <tr>
-    <td>2</td>
+  <tr class="row0">
+    <td class="numeric">2</td>
     <td>Star System</td>
   </tr>
-  <tr>
-    <td>3</td>
+  <tr class="row1">
+    <td class="numeric">3</td>
     <td>Planet</td>
   </tr>
-  <tr>
-    <td>4</td>
+  <tr class="row0">
+    <td class="numeric">4</td>
     <td>Fleet</td>
   </tr>
 </table>
@@ -64,7 +64,9 @@ and a 64 bit integer as &lt;&lt;n&gt;&gt;</p>
 <p>The Universe is the top level object, everyone can always get it.  It does not handle much itself.</p>
 <p>It only has one piece of data, that is the int32 turn number, also know as the year since game start.</p>
 <h4>Extra data</h4>
-<p>&lt;nn&gt;<br>Where nn is the year/turn number.</p>
+<ul>
+	<li>a UInt32, the current year/turn number</li>
+</ul>
 
 <?php
   include "../bits/end_section.inc";
@@ -97,7 +99,17 @@ and a 64 bit integer as &lt;&lt;n&gt;&gt;</p>
 <p>A planet is any body in space which is very large and naturally occuring.</p>
 <p>Planet objects have int32 Player id, which is the owner of the planet.</p>
 <h4>Extra data</h4>
-<p>&lt;pid&gt;<br>Where pid is the player object that owns the planet or -1 if not owned.</p>
+<ul>
+	<li>a SInt32, the id of the player who "owns" this planet or -1 if not owned or unknown</li>
+	<li>a list of,
+		<ul class="new">
+			<li>a UInt32, the resource id</li>
+			<li>a UInt32, the units of this resource on the "surface"</li>
+			<li>a UInt32, the maximum units of this resource remaining which are minable</li>
+			<li>a UInt32, the maximum units of this resource remaining which are inaccessable</li>
+		</ul>
+	</li>
+</ul>
 
 <?php
   include "../bits/end_section.inc";
@@ -108,17 +120,16 @@ and a 64 bit integer as &lt;&lt;n&gt;&gt;</p>
 <p>A fleet is a collection of ships.  Many different ships can make up a fleet.</p>
 <p>A fleet has an owner, int32 Player ID.</p>
 <h4>Extra data</h4>
-<p>&lt;pid&gt;<br>Where pid is the player object that owns the fleet or -1 if not owned.</p>
-<p>[&lt;type&gt; &lt;number&gt;]<br>List of the number of ships in the fleet.<br>
-<br>
-Types are as follows.
-<ol>
-	<li>Scout Ship</li>
-	<li>Frigate Ship</li>
-	<li>Battle Ship</li>
-</ol>
-</p>
-<p>&lt;damage&gt;<br>The amount of damage the fleet currently has.</p>
+<ul>
+	<li>a SInt32, the id of the player who owns this fleet or -1 if not owned or unknown</p>
+	<li>a list of,
+		<ul>
+			<li>a UInt32, the type of the ship</li>
+			<li>a Uint32, the number of the ships in the fleet</li>
+		</ul>
+	</li>
+	<li>a UInt32, the amount of damage the fleet currently has</li>
+</ul>
 
 <?php
   include "../bits/end_section.inc";
