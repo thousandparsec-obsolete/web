@@ -32,8 +32,13 @@ a {  font-family: "Times New Roman", Times, serif; color: #00FF99; text-decorati
 <table width="100%" border="0" bordercolor="#FFFFFF">
 	<tr> 
 		<td bgcolor="#000000" align="center">
-			<a href="/tp/index.html">
-				HOME
+			<a href="/tp/index.php">
+				NEWS
+			</a>
+		</td>
+		<td bgcolor="#000000" align="center">
+			<a href="/tp/about.php">
+				ABOUT
 			</a>
 		</td>
 		<td bgcolor="#000000" align="center">
