@@ -1,5 +1,5 @@
 <?php
-  $title = "Object Definition for Thousand Parsec";
+  $title = "Feature Matrix for Thousand Parsec";
   include "../bits/start_page.inc";
   include "../bits/start_section.inc";
 ?>
@@ -127,7 +127,7 @@
 	<tr>
 		<td>Persistant Universe</td>
 		<td align="center" bgcolor="#ff0000">#</td>
-		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 
 	<tr>
@@ -148,7 +148,7 @@
 	<tr>
 		<td>Build</td>
 		<td align="center" bgcolor="#ffff00">#</td>
-		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#ffff00">#</td>
 	</tr>
 </table>
 
