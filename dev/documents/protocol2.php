@@ -572,11 +572,19 @@ Example:
 
 <h3>Order Description Packet</h3>
 <p>
-    The Order Description packet contains: Int32 order type, string
-    name, string description, Int32 number of parameters and then of each
-    parameter:
-    string name, Int32 type ID, string description. The Parameter Types are given
-    below:
+    The Order Description packet contains:
+	<ul>
+		<li>a UInt32, order type</li>
+		<li>a String, name</li>
+		<li>a String, description</li>
+		<li>a list of</li>
+		<ul>
+    		<li>a String, argument name</li>
+			<li>a UInt32, argument type ID</li>
+			<li>a String, description</li>
+		</ul>
+	</ul>
+	The Argument Types are given below:
 <table>
     <tr>
       <td><b>Name</b></td>
