@@ -807,21 +807,15 @@ Example:
 <span class="new">
 <h3>Probe Order Frame</h3>
 <p>
-	A Probe Order frame gets an order (or orders) as if they were already on an object. 
+	A Probe Order frame gets an order as if the order given was put in the object's order queue. 
 	These probes should occur as if no orders currently exist on object and should 
-	have no side-effects.	
+	have no side-effects.
 	This is used to get the read-only fields for an order which is needed for good
 	offline operation.
 </p>
 <p>
-	The data in this frame is:
-	<ul>
-		<li>UInt32 Object id, the object that the order might be placed on.</li>
-		<li>list of UInt32, the order types to probe on the object.</li>
-	</ul>
-</p>
-<p>
-	The server replies with the Order frames as if they were already on the object. Fail frames are possible
+	The data in this frame is the same as an Insert Order frame.
+	The server replies with the Order frame as if they were already on the object. Fail frames are possible
 	if the order type is not allowed, or the object or order type doesn't exist.
 </p>
 <p>
