@@ -1,5 +1,5 @@
 <?php
-  $title = "Protocol Definition Ver 0.1";
+  $title = "Protocol Definition Ver 0.2";
   include "../bits/start_page.inc";
   include "../bits/start_section.inc";
 ?>
@@ -17,7 +17,7 @@
 </p>
 
 <p>
-	This version of the protocol replaces the previous version (0.1) and
+	This version of the protocol replaces the <a href="protocol.php">previous version (0.1)</a> and
 	has improvements where we noticed we could have done better.  Any server
 	should try to remain backward compatible with version 0.1 for a period
 	to allow the clients to be ported gradually.
@@ -152,7 +152,7 @@
       <td>0</td>
       <td>Ok</td>
       <td>&nbsp;</td>
-      <td>ft_OK</td>
+      <td>ft02_OK</td>
       <td>Ok, continue or passed</td>
       <td>Alpha</td>
     </tr>
@@ -160,11 +160,11 @@
       <td>1</td>
       <td>Fail</td>
       <td>&nbsp;</td>
-      <td>ft_Fail</td>
+      <td>ft02_Fail</td>
       <td>Failed, stop or impossible</td>
       <td>Alpha</td>
     </tr>
-	
+
     <tr>
       <td colspan="6" align="center"><b>Connecting</b></td>
     </tr>
@@ -172,7 +172,7 @@
       <td>2</td>
       <td>Connect</td>
       <td>&nbsp;</td>
-      <td>ft_Connect</td>
+      <td>ft02_Connect</td>
       <td>Can I connect?</td>
       <td>Alpha</td>
     </tr>
@@ -180,7 +180,7 @@
       <td>3</td>
       <td>Login</td>
       <td>&nbsp;</td>
-      <td>ft_Login</td>
+      <td>ft02_Login</td>
       <td>Login with username/password</td>
       <td>Alpha</td>
     </tr>
@@ -192,7 +192,7 @@
       <td>4</td>
       <td>Get Object by ID</td>
       <td>&nbsp;</td>
-      <td>ft_Object_Get</td>
+      <td>ft02_Object_Get</td>
       <td>Returns an object with the same ID.</td>
       <td>Bravo</td>
     </tr>
@@ -200,7 +200,7 @@
       <td>5</td>
       <td>Get Objects by Position</td>
       <td>&nbsp;</td>
-      <td>ft_Object_GetByPos</td>
+      <td>ft02_Object_GetByPos</td>
       <td>Returns all objects within a sphere.</td>
       <td>Bravo</td>
     </tr>
@@ -208,7 +208,7 @@
       <td>6</td>
       <td>Object</td>
       <td>&nbsp;</td>
-      <td>ft_Object</td>
+      <td>ft02_Object</td>
       <td>Description of an Object</td>
       <td>Bravo</td>
     </tr>
@@ -220,7 +220,7 @@
       <td>7</td>
       <td>Get Order Description</td>
       <td>&nbsp;</td>
-      <td>ft_OrderDesc_Get</td>
+      <td>ft02_OrderDesc_Get</td>
       <td>Returns a description of an order type</td>
       <td>Charlie</td>
     </tr>
@@ -228,7 +228,7 @@
       <td>8</td>
       <td>Order Description</td>
       <td>&nbsp;</td>
-      <td>ft_OrderDesc</td>
+      <td>ft02_OrderDesc</td>
       <td>Describes an order type and it's parameters</td>
       <td>Charlie</td>
     </tr>
@@ -236,7 +236,7 @@
       <td>9</td>
       <td>Get Order</td>
       <td>&nbsp;</td>
-      <td>ft_Order_Get</td>
+      <td>ft02_Order_Get</td>
       <td>Returns a description of an order</td>
       <td>Charlie</td>
     </tr>
@@ -244,7 +244,7 @@
       <td>10</td>
       <td>Order</td>
       <td>&nbsp;</td>
-      <td>ft_Order</td>
+      <td>ft02_Order</td>
       <td>Description of an order</td>
       <td>Charlie</td>
     </tr>
@@ -252,7 +252,7 @@
       <td>11</td>
       <td>Add Order</td>
       <td>&nbsp;</td>
-      <td>ft_Order_Add</td>
+      <td>ft02_Order_Add</td>
       <td>Add order to an object in a slot</td>
       <td>Charlie</td>
     </tr>
@@ -260,7 +260,7 @@
       <td>12</td>
       <td>Remove Order</td>
       <td>&nbsp;</td>
-      <td>ft_Order_Remove</td>
+      <td>ft02_Order_Remove</td>
       <td>Remove an order from a slot of an object</td>
       <td>Charlie</td>
     </tr>
@@ -272,7 +272,7 @@
       <td>13</td>
       <td>Get Boards</td>
       <td>&nbsp;</td>
-      <td>ft_Board_Get</td>
+      <td>ft02_Board_Get</td>
       <td>Get a list of message boards the player can see.</td>
       <td>Charlie</td>
     </tr>
@@ -280,7 +280,7 @@
       <td>14</td>
       <td>Board</td>
       <td>&nbsp;</td>
-      <td>ft_Board</td>
+      <td>ft02_Board</td>
       <td>A Message.</td>
       <td>Charlie</td>
     </tr>
@@ -288,7 +288,7 @@
       <td>15</td>
       <td>Get Message</td>
       <td>&nbsp;</td>
-      <td>ft_Message_Get</td>
+      <td>ft02_Message_Get</td>
       <td>Get a Message from a board.</td>
       <td>Charlie</td>
     </tr>
@@ -296,7 +296,7 @@
       <td>16</td>
       <td>Message</td>
       <td>&nbsp;</td>
-      <td>ft_Message</td>
+      <td>ft02_Message</td>
       <td>A Message.</td>
       <td>Charlie</td>
     </tr>
@@ -304,7 +304,7 @@
       <td>17</td>
       <td>Post Message</td>
       <td>&nbsp;</td>
-      <td>ft_Message_Post</td>
+      <td>ft02_Message_Post</td>
       <td>Post a message to a board.</td>
       <td>Charlie</td>
     </tr>
@@ -478,8 +478,8 @@
 	</ol>
 
 Example:
-&lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\00&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
-&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
+&lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\0&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
+&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
 &lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;0&gt;&lt;0&gt;
 
 <h3>Get Order Packet, Remove Order Packet</h3>
@@ -607,8 +607,8 @@ this protocol version (unless the protocol is revised).</p>
     <tr>
       <td>Server</td>
       <td>Object</td>
-      <td>&lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\00&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
-&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
+      <td>&lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\0&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
+&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
 &lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;0&gt;&lt;0&gt;</td>
       <td>Universe object</td>
     </tr>
