@@ -711,7 +711,7 @@
 <h2>Base Frames</h2>
 <hr>
 
-<h3>Get with ID Frame</h3>
+<a name="GetWithID"><h3>Get with ID Frame</h3>
 <p>
 	A Get with ID frame consist of:
 	<ul>
@@ -722,7 +722,7 @@
 	objects, message boards, etc.
 </p>
 
-<h3>Get with ID and Slot Frame</h3>
+<a name="GetWithIDandSlot"><h3>Get with ID and Slot Frame</h3>
 <p>
 	Get with ID and Slot frame consist of:
 	<ul>
@@ -732,9 +732,12 @@
 </p><p>
 	This packet is used to get things which are in "slots" on a parent. Examples 
 	would be orders (on objects), messages (on boards), etc.
+</p><p>
+	<b>Note:</b> If this is really a Remove frame then slot numbers should be in decrementing 
+	value if you don't want strange things to happen. (IE 10, 4, 1)
 </p>
 
-<h3>Get ID Sequence</h3>
+<a name="GetIDSequence"><h3>Get ID Sequence</h3>
 <p>
 	Get ID Sequence frame consist of:
 	<ul>
@@ -769,7 +772,7 @@
 	<b>Note:</b> All servers must follow all the requirements above even if the server could allow otherwise.
 </p>
 
-<h3>ID Sequence</h3>
+<a name="IDSequence"><h3>ID Sequence</h3>
 <p>
 	ID Sequence frame consist of:
 	<ul>
@@ -906,12 +909,7 @@
 
 <h3>Get Object by ID Frame</h3>
 <p>
-	A Get Object by ID frame consist of:
-	<ul>
-		<li>a list of UInt32, object IDs of the object requested</li>
-	</ul>
-</p><p>
-	An object ID of 0 is the top level Universe object.
+	See <a href="#GetWithID">Get With ID</a>
 </p>
 
 <h3>Object Frame</h3>
@@ -971,11 +969,7 @@ Example:
 
 <h3>Get Order Frame, Remove Order Frame</h3>
 <p>
-	Get Order frame and Remove Order frame consist of:
-	<ul>
-		<li>a UInt32, id of object to be changed</li>
-		<li>a list of <span class="new">SInt32</span>, slot numbers of orders to be sent/removed</li>
-	</ul>
+	See <a href="#GetWithIDandSlot">Get With ID and Slot</a>
 </p>
 
 <h3>Order Frame, Insert Order Frame</h3>
@@ -1175,10 +1169,10 @@ Example:
 	</tr>
 </table>
 <b>
-NOTE: read only fields should be transmitted by the client as 0, 
+NOTE:</b> read only fields should be transmitted by the client as 0, 
 empty lists or empty string to conserve bandwidth. The server will
 ignore any information in read only field (even if they are non-empty).
-</b><br>
+<br>
 </p>
 
 <?php
@@ -1214,12 +1208,7 @@ ignore any information in read only field (even if they are non-empty).
 
 <h3>Get Board Frame</h3>
 <p>
-	A Get Board frame consist of:
-	<ul>
-		<li>a list of <span class="new">SInt32</span>, Board IDs of the boards requested</li>
-	</ul>
-</p><p>
-	A board ID of 0 is the special private (system) board for the current player.
+	See <a href="#GetWithID">Get With ID</a>
 </p>
 
 <h3>Board Frame</h3>
@@ -1238,42 +1227,22 @@ ignore any information in read only field (even if they are non-empty).
 </p>
 
 <span class="new">
-<h3>Get List Of Boards</h3>
+<h3>Get Board IDs</h3>
 <p>
-	A Get List of Boards frame consists of:
-	<ul>
-		<li>a UInt32, the list offset to start at</li>
-		<li>a UInt32, maximum number of board ids to get</li>
-	</ul>
-</p><p>
-	The list offset should be 0 for the first of the list. It is up to the client to make sure it has all board ids, as the 
-	resulting list might not be ordered. <span class="fixme">Can the list order change in between gets? How does the server
-	know that your continuing the last lot?</span>
+	See <a href="#GetIDSequence">Get ID Sequence</a>
 </p>
 </span>
 
 <span class="new">
-<h3>List Of Boards</h3>
+<h3>List Of Board IDs</h3>
 <p>
-	A List of Boards frame consist of:
-	<ul>
-		<li>a list of UInt32 board ids</li>
-	</ul>
-</p><p>
-	The ids are not necessarily in any order and the order can vary between frames. <span class="fixme">See above about
-	Get List Of Boards.</span>
+	See <a href="#IDSequence">ID Sequence</a>
 </p>
 </span>
 
 <h3>Get Message Frame, Remove Message Frame</h3>
 <p>
-	Get Message frame and Remove Message frame consist of:
-	<ul>
-		<li>a UInt32, id of board to be changed</li>
-		<li>a list of <span class="new">SInt32</span>, slot numbers of messages to be sent/removed</li>
-	</ul>
-</p><p>
-	Note: You should send Remove Message slot numbers in decrementing value if you don't want strange things to happen. (IE 10, 4, 1)
+	See <a href="#GetWithIDandSlot">Get With ID and Slot</a>
 </p>
 
 <h3>Message Frame, Post Message Frame</h3>
@@ -1395,10 +1364,7 @@ ignore any information in read only field (even if they are non-empty).
 
 <h3>Get Resource Description Frame</h3>
 <p>
-	Get Resource Description frame consist of:
-	<ul>
-		<li>a list of <span class="new">SInt32</span>, Resource ID</li>
-	</ul>
+	See <a href="#GetWithID">Get With ID</a>
 </p>
 
 <h3>Resource Description Frame</h3>
@@ -1420,29 +1386,18 @@ ignore any information in read only field (even if they are non-empty).
 	</ul>
 </p>
 
+
 <span class="new">
-<h3>Get List Of Resources</h3>
+<h3>Get Resource Description IDs</h3>
 <p>
-	A Get List of Resources frame consists of:
-	<ul>
-		<li>a UInt32, the list offset to start at</li>
-		<li>a UInt32, maximum number of resource type ids to get</li>
-	</ul>
-</p><p>
-	The list offset should be 0 for the first of the list. It is up to the client to make sure it has all resource type ids, as the 
-	resulting list might not be ordered. <span class="fixme">This has the same problems as Get List of Board.</span>
+	See <a href="#GetIDSequence">Get ID Sequence</a>
 </p>
 </span>
 
 <span class="new">
-<h3>List Of Resources</h3>
+<h3>List Of Resource Description IDs</h3>
 <p>
-	A List of Resources frame consist of:
-	<ul>
-		<li>a list of UInt32 resource ids</li>
-	</ul>
-</p><p>
-	The ids are not necessarily in any order and the order can vary between frames.
+	See <a href="#IDSequence">ID Sequence</a>
 </p>
 </span>
 
@@ -1457,10 +1412,7 @@ ignore any information in read only field (even if they are non-empty).
 <span class="new">
 <h3>Get Category Description Frame</h3>
 <p>
-	Get Category Description frame consist of:
-	<ul>
-		<li>a list of SInt32, Category IDs to get</li>
-	</ul>
+	See <a href="#GetWithID">Get With ID</a>
 </p>
 </span>
 
@@ -1480,12 +1432,7 @@ ignore any information in read only field (even if they are non-empty).
 <span class="new">
 <h3>Get Component Frame, Remove Component Frame</h3>
 <p>
-	Get Component and Remove Component frames consist of:
-	<ul>
-		<li>a list of SInt32, Category IDs to get or remove</li>
-	</ul>
-</p><p>
-	Note: Remove ID numbers can be sent in any order (unlike other Get packets).
+	See <a href="#GetWithID">Get With ID</a>
 </p>
 </span>
 
@@ -1584,46 +1531,13 @@ done in one step).
 	include "../bits/start_section.inc";
 ?>
 
-<h2>Binary Data</h2>
-<hr>
-
-<span class="new">
-<h3>Get Data URL Frame</h3>
-<p>
-	Get Data URL frame consist of:
-	<ul>
-		<li>a list of UInt32, Data ID</li>
-	</ul>
-</p>
-</span>
-
-<span class="new">
-<h3>Data URL Frame</h3>
-<p>
-	Data URL frame consist of:
-	<ul>
-		<li>a UInt32, the Data Id</li>
-		<li>a UInt32, the turn the data was created</li>
-		<li>a String, the URL of the data.</li>
-	</ul>
-</p>
-</span>
-
-<?php
-	include "../bits/end_section.inc";
-	include "../bits/start_section.inc";
-?>
-
 <h2>Players</h2>
 <hr>
 
 <span class="new">
 <h3>Get Player Frame</h3>
 <p>
-	Get Player frame consist of:
-	<ul>
-		<li>a UInt32 list of player ids</li>
-	</ul>
+	See <a href="#GetWithID">Get With ID</a>
 </p>
 </span>
 
@@ -1637,7 +1551,11 @@ done in one step).
 		<li>a String, the Race's name</li>
 		<li>(more?)</li>
 	</ul>
+</p><p class="fixme">
+	FIXME: Should this include details about a race? What happens if a player controls more then
+	once race? What if a player can have partial control over an allies race? What about player govoners?
 </p>
+
 </span>
 
 <?php
