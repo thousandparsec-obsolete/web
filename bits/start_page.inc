@@ -10,100 +10,124 @@
 
 <style type="text/css">
 <!--
-a {  
-	font-family: "Times New Roman", Times, serif; 
-	color: #00FF99; 
-	text-decoration: none
+
+body {
+	background-color: #000000;
+	background-image: url(/tp/graphics/background.jpg);
+	color: #ffffff;
 }
 
-a.top_link {
-	font-family: "Times New Roman", Times, serif;
-	color: #00FF99; 
-	text-decoration: none
-}
-
-.small { 
-	font-size: 10
+p {
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 pre { 
 	font-family: Courier; 
 }
+
+a {  
+	font-family: Times, serif; 
+	color: #00ff99; 
+	text-decoration: none;
+}
+
+a:visted {
+	color: #ffcc99;
+}
+
+.small { 
+	font-size: 10;
+}
+
+table {
+	width: 100%;
+	border: 0;
+	padding-top: 1em;
+}
+
+table td {
+	border: 0;
+	background-color: #000000;
+	padding: 0 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+h1 {
+	border-bottom: 3px solid;
+}
+
+h2 {
+	border-bottom: 2px solid;
+}
+
+h3 {
+	border-bottom: 1px solid;
+}
+
+/* Menus */
+div#header_main {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 36pt;
+	text-align: center;
+	padding-top: 10px;
+}
+
+div#header_quote {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+table.menu {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+table.menu td {
+	padding: 1px;
+	text-align: center;
+}
+
+table.menu a {
+	font-variant: small-caps;
+}
+
 -->
 </style>
 
 </head>
 
-<body bgcolor="#000000" text="#FFFFFF" background="/tp/graphics/background.jpg" link="#00CCCC" vlink="#FFCC99">
+<body>
 
-<div align="center"> 
-	<p>
-		<font color="#FFFFFF" face="Arial, Helvetica, sans-serif" size="7">
-			Thousand Parsec
-		</font><br>
-    		<font color="#FFFFFF" face="Arial, Helvetica, sans-serif" size="2">
-			A journey of a thousand parsec starts with a single step
-		</font>
-	</p>
-</div>
+<div id="header_main">Thousand Parsec</div>
+<div id="header_quote">A journey of a thousand parsec starts with a single step</div>
 
-
-<table width="100%" border="0" bordercolor="#FFFFFF">
+<table class="menu">
 	<tr> 
-		<td bgcolor="#000000" align="center">
-			<a class="top_link" href="/tp/index.php">
-				NEWS
-			</a>
-		</td>
-		<td bgcolor="#000000" align="center">
-			<a class="top_link" href="/tp/about.php">
-				ABOUT
-			</a>
-		</td>
-		<td bgcolor="#000000" align="center">
-			<a class="top_link" href="/tp/screenshots.php">
-				SCREENSHOTS
-			</a>
-		</td>
-		<td bgcolor="#000000" align="center">
-			<a class="top_link" href="/tp/documents.php">
-				DOCUMENTS
-			</a>
-		</td>
-		<td bgcolor="#000000" align="center">
-			<a class="top_link" href="/tp/downloads.php">
-				DOWNLOADS
-			</a>
-		</td>
-		<td bgcolor="#000000" align="center">
-			<a class="top_link" href="/tp/dev/index.php">
-				DEVELOPERS
-			</a>
-		</td>
-		<td bgcolor="#000000" align="center">
-			<a class="top_link" href="/tp/faq.php">
-				FAQ
-			</a>
-		</td>
-		<td bgcolor="#000000" align="center">
-			<a class="top_link" href="/tp/mailman.php/listinfo/">
-				LISTS
-			</a>
-		</td>
-		<td bgcolor="#000000" align="center">
-			<a class="top_link" href="/tp/forums">
-				FORUMS
-			</a>
-		</td>
-		<td bgcolor="#000000" align="center">
-			<a class="top_link" href="/tp/links.php">
-				LINKS
-			</a>
+		<td>
+			<a href="/tp/index.php">News</a>
+		</td><td>
+			<a href="/tp/about.php">About</a>
+		</td><td>
+			<a href="/tp/screenshots.php">Screenshots</a>
+		</td><td>
+			<a href="/tp/documents.php">Documents</a>
+		</td><td>
+			<a href="/tp/downloads.php">Downloads</a>
+		</td><td>
+			<a href="/tp/dev/index.php">Developers</a>
+		</td><td>
+			<a href="/tp/faq.php">FAQ</a>
+		</td><td>
+			<a href="/tp/mailman.php/listinfo/">Lists</a>
+		</td><td>
+			<a href="/tp/forums">Forums</a>
+		</td><td>
+			<a href="/tp/links.php">Links</a>
 		</td>
 	</tr>
 </table>
-
-<?php if (@!$nobreak) { ?>
-<br>
-<?php } ?>
-

@@ -1,33 +1,16 @@
-
-<?php $nobreak=true ?>
 <?php include dirname(__FILE__) . "/../../bits/start_page.inc" ?>
 
-<table width="100%" border="0" bordercolor="#FFFFFF">
+<table class="menu">
 	<tr> 
-		<td bgcolor="#000000" align="center">
-			<a href="/tp/dev/index.php">
-				HOME
-			</a>
-		</td>
-		<td bgcolor="#000000" align="center">
-			<a href="/tp/dev/documents.php">
-				DOCUMENTS
-			</a>
-		</td>
-		<td bgcolor="#000000" align="center">
-			<a href="/tp/dev/sloc.php">
-				CODE BREAKDOWN
-			</a>
-		</td>
-		<td bgcolor="#000000" align="center">
-			<a href="/tp/dev/cvs.php">
-				CVS
-			</a>
-		</td>
-		<td bgcolor="#000000" align="center">
-			<a href="/tp/dev/viewcvs.php/">
-				WEB CVS
-			</a>
+		<td>
+			<a href="/tp/dev/index.php">Home</a>
+		</td><td>
+			<a href="/tp/dev/documents.php">Documents</a>
+		</td><td>
+			<a href="/tp/dev/sloc.php">Code Breakdown</a>
+		</td><td>
+			<a href="/tp/dev/cvs.php">CVS</a>
+		</td><td>
+			<a href="/tp/dev/viewcvs.php/">Web CVS</a>
 		</td>
 </table>
-<br>

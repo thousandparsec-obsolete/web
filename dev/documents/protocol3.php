@@ -203,9 +203,6 @@
 	zero (0). Server replies have sequence numbers that are the same as the sequence
 	number on the operation they are a response to. If the server sends a frame that is not
 	a response, the frames sequence number will be zero (0).
-</p><p class="fixme">
-	FIXME: This number seems a bit large now that we are no longer moving large data via the TP protocol
-	but via HTTP or similar?
 </p><p class="new">
 	No frame may be bigger then <b>1048576</b> bytes (1 megabytes) long.
 </p>
@@ -602,7 +599,6 @@
 ?>
 
 <h2>Generic Responses</h2>
-<hr>
 
 <h3>OK Frame</h3>
 <p>
@@ -651,7 +647,6 @@
 ?>
 
 <h2>Base Frames</h2>
-<hr>
 
 <a name="GetWithID"></a><h3>Get with ID Frame</h3>
 <p>
@@ -737,7 +732,6 @@
 ?>
 
 <h2>Connecting</h2>
-<hr>
 
 <span class="new">
 <h3>Redirect Frame</h3>
@@ -795,7 +789,6 @@
 ?>
 
 <h2>Feature Negotiation</h2>
-<hr>
 
 <span class="new">
 <h3>Get Features Frame</h3>
@@ -830,7 +823,6 @@
 ?>
 
 <h2>Keep Alive</h2>
-<hr>
 
 <span class="new">
 <h3>Ping Frame</h3>
@@ -847,7 +839,6 @@
 ?>
 
 <h2>Objects</h2>
-<hr>
 
 <h3>Get Object by ID Frame</h3>
 <p>
@@ -907,7 +898,6 @@ Example:
 ?>
 
 <h2>Orders</h2>
-<hr>
 
 <h3>Get Order Frame, Remove Order Frame</h3>
 <p>
@@ -1113,7 +1103,6 @@ ignore any information in read only field (even if they are non-empty).
 ?>
 
 <h2>Time</h2>
-<hr>
 
 <h3>Get Time Remaining Frame</h3>
 <p>
@@ -1136,7 +1125,6 @@ ignore any information in read only field (even if they are non-empty).
 ?>
 
 <h2>Messages</h2>
-<hr>
 
 <h3>Get Board Frame</h3>
 <p>
@@ -1292,7 +1280,6 @@ ignore any information in read only field (even if they are non-empty).
 ?>
 
 <h2>Resources</h2>
-<hr>
 
 <h3>Get Resource Description Frame</h3>
 <p>
@@ -1339,7 +1326,6 @@ ignore any information in read only field (even if they are non-empty).
 ?>
 
 <h2>Design Manipulation</h2>
-<hr>
 
 <span class="new">
 <h3>Get Category Description Frame</h3>
@@ -1464,7 +1450,6 @@ done in one step).
 ?>
 
 <h2>Players</h2>
-<hr>
 
 <span class="new">
 <h3>Get Player Frame</h3>
@@ -1555,6 +1540,7 @@ done in one step).
 	<ul>
 		<li>Figure out how to do masking for the opT_Object_ID Order Argument type (IE like opT_Object_Type)</li>
 		<li>Figure out how to support renaming objects</li>
+		<li>Figure out how to support object descriptions (ie similar to order stuff)</li>
 		<li>Figure out a way for the opT_List_ID to "suggest" maximums as well as hard maximums</li>
 		<li>Maybe a generic "string getter" for category names</li>
 		<li>Help support?</li>
@@ -1563,6 +1549,7 @@ done in one step).
 		<li>Multi-language support?</li>
 		<li>Anything else I have forgotten</li>
 		<li>Last modified time?</li>
+		<li>Add a table of contents</li>
 	</ul>
 </p>
 
