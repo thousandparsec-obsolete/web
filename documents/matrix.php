@@ -129,6 +129,16 @@
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
+	<tr>
+		<td>Protocol (version)</td>
+		<td align="center" bgcolor="#00ff00">2</td>
+		<td align="center" bgcolor="#00ff00">2</td>
+	</tr>
+	<tr>
+		<td>Message Boards</td>
+		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+	</tr>
 
 	<tr>
 		<td align="center" colspan=3>
