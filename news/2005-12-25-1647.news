@@ -1,0 +1,17 @@
+
+<h2>libtpproto-cpp released, version 0.0.3</h2>
+<p>by Lee</p>
+<p>
+	I have just released the third version of libtpproto-cpp.  Release often!  This is the long
+	promised documentation release.  The only change is the addition of doxygen comments and the
+	change in version number. Make doc will run doxygen to create the documentation in html format
+	(in docs/html) and latex (in doc/latex where you can run make to create the docs in dvi format.)
+</p>
+<p>
+	Be sure to read the README if you are going to use the library.  Any feedback would be helpful.
+	Documentation can be created with <q>make doc</q>, and will appear on the website soon.  There is a 
+	client using this library, called tpclient-cpptext. It is in the cvs but is not complete yet...
+</p>
+<p>
+	So... 0.0.3 is on the downloads page.  The cvs module is libtpproto-cpp.  CVS tag: LIBTPPROTO_CPP_0_0_3.
+</p>
