@@ -903,7 +903,7 @@
 	<ul>
 		<li>a SInt32, the sequence key</li>
 		<li>a UInt32, the starting number in the sequence</li>
-		<li>a UInt32, the number of IDs to get</li>
+		<li>a SInt32, the number of IDs to get</li>
 	</ul>
 </p><p>
 	Requirements:
@@ -917,6 +917,8 @@
 	Other Information:
 	<ul>
 		<li>
+			If the number of IDs to get is -1, then all (remaining) IDs should be returned.
+		</li><li>
 			If a key becomes invalid because of some change on the server (IE the ID order changes because
 			of modification by another client) a Fail packet will be returned
 		</li><li>
