@@ -1,0 +1,16 @@
+
+<h2>TP-Server 0.0.6rc1 released</h2>
+<p>by Lee</p>
+<p>
+	I have just released 0.0.6rc1 of the C++ TP-server. Any bugs to the mailing list please.  I know,
+	this is not the weekend after the last release.  This release added build orders and hopefully
+	matches the protocol spec again (read only fields).  Some work for minisec is also present.
+</p>
+<p>
+	All the normal stuff.  CVS tag: CPP_SERVER_0_0_6RC1.  Tarball on the 
+	downloads page.
+</p>
+<p>
+  I am doing some work on cpp-server for a university project, so hopefully I will have some developer docs
+  soon, as well as having a good refactor of the design itself.
+</p>
