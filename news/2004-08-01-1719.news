@@ -1,0 +1,11 @@
+
+<h2>TP-Server 0.0.6 released</h2>
+<p>by Lee</p>
+<p>
+	That didn't take long.  I have just released 0.0.6 of the C++ TP-server. Any bugs to the mailing list please.  
+	I have fixed build order support.  The first of my refactoring is in too.
+</p>
+<p>
+	All the normal stuff.  CVS tag: CPP_SERVER_0_0_6.  Tarball and pgp sig on the 
+	downloads page.
+</p>
