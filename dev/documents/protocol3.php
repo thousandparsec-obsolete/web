@@ -15,7 +15,7 @@
 
 <h2>WARNING: This document is under development, the current protocol is still version 0.2</h2>
 
-<p>Last updated 5 November 2004.</p>
+<p>Last updated 10 Feburary 2005.</p>
 
 <p>
 	This protocol definition is for the Thousand Parsec project. It
