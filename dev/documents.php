@@ -38,8 +38,8 @@
 	</p>
 	<blockquote>
 		<p>
-			Current cvs <a href="docuements/libtpproto-cpp/">libtpproto-cpp client side c++ library</a> documentation. Also available 
-			in html and latex in a <a href="documents/libtpproto-cpp-doc-cvs.tar.gz">tarball</a>.
+			Current cvs <a href="documents/libtpproto-cpp/">libtpproto-cpp client side c++ library</a> documentation. Also available 
+			in html and latex in a <a href="documents/libtpproto-cpp/libtpproto-cpp-doc-cvs.tar.gz">tarball</a>.
 		</p>
 	</blockquote>
 
