@@ -4,7 +4,7 @@
 <p>
 	I have just tagged and released 0.0.1 of the Thousand Parsec
 	Server, written in C++.  The tag in the CVS is CPP_SERVER_0_0_1.
-	You can download it from <a href="download.php">here</a>.
+	You can download it from <a href="downloads.php">here</a>.
 </p>
 <p>
 	The server currently support the initial parts of TP01 Protocol,
