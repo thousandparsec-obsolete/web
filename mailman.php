@@ -56,12 +56,18 @@ $my_colors   = array('#444444', '#003355', '#666666', '#003355');
 
 $data = str_replace($real_colors, $my_colors, $data);
 
-preg_match_all ("/name=\"(.+?)\"/i", $data, $matches);
+preg_match_all ('/ name=(.+?) /i', $data, $matches);
 
 $i = 0;
+$prev = "";
 foreach ($matches[1] as $key => $value) {
-	$from = '!name="' . $value . '"!i';
-	$to = 'name="' . sprintf("%05d", $i) . str_replace($sfrom, $sto, $value) . '"';
+	if ($prev == $value)
+		$i -= 1;
+	else
+		$prev = $value;
+
+	$from = '/name=' . $value . '/i';
+	$to = 'name="' . sprintf("%05d", $i) . str_replace($sfrom, $sto, str_replace('"', '', $value)) . '"';
 
 	$data = preg_replace($from, $to, $data, 1);
 
@@ -73,8 +79,5 @@ $data = str_replace("/pipermail", "/tp/pipermail.php", $data);
 
 echo $data;
 ?>
-
-
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/end_page.inc" ?>
-

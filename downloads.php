@@ -36,7 +36,7 @@ function display($directory) {
 <p>
 	This is the main server for Thousand Parsec.
 </p>
-<?php display("tpserver-server/"); ?>
+<?php display("tpserver-cpp/"); ?>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
