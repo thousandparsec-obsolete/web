@@ -15,11 +15,11 @@
 	</li>
 	<li>
 		Jump drive<br>
-			  Jump drives jump directly to the destination without parseing through
-			  the points inbetween. They take a long time to charge and without
-			  "space anchors" never really turn up at the extact destination.
+			  Jump drives jump directly to the destination without passing through
+			  the points in-between. They take a long time to charge and without
+			  "space anchors" never really turn up at the exact destination.
 			  How long the engine charges for increases the accuracy. Longer
-			  distances have less acurracy. Most distances have a "minimum"
+			  distances have less accuracy. Most distances have a "minimum"
 			  charge time.
 			  Requires: Destination, ChargeTime
 	</li>
@@ -27,14 +27,14 @@
 		Link drives<br>
 			  Use "holes" in space to go from one system to another. These drives
 			  just open the holes which already exist. (At higher tech levels
-			  "holes" can be created and destoryied).
+			  "holes" can be created and destroyed).
 			  Requires: Hole to enter
 	</li>
 	<li>
 		Grav accel drives<br>
 			  As used by packet accelerators, once in transit no course change can
 			  be made. These drives don't use any fuel at all, how ever ships are
-			  damanged in transport. Max speed is determined by the maximum damanage
+			  damaged in transport. Max speed is determined by the maximum damage
 			  the ship can withstand.
 			  Requires: Destination, Speed
 	</li>
@@ -43,9 +43,9 @@
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
-<h2>Colonise</h2>
+<h2>Colonize</h2>
 <p>
-	Colonise the currently orbiting planet.
+	Colonize the currently orbiting planet.
 </p>
 
 <?php include "bits/end_section.inc" ?>
@@ -53,7 +53,7 @@
 
 <h2>Deploy space station</h2>
 <p>
-	Like colonise but deploys a space station. Used for races which can't exist
+	Like colonize but deploys a space station. Used for races which can't exist
 	on a planet.
 </p>
 
@@ -71,7 +71,7 @@
 <h2>Create "hole"</h2>
 <p>
 	Create a "hole" from this system to the target system.
-	Longer distances require exponentionally more energy.
+	Longer distances require exponentially more energy.
 </p>
 
 <?php include "bits/end_section.inc" ?>
@@ -122,5 +122,5 @@
 
 <h2>Lay defense</h2>
 <p>
-	Lay mines or sentinal defense systems at location
+	Lay mines or sentinel defense systems at location
 </p>
