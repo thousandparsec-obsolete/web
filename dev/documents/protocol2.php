@@ -663,20 +663,6 @@ by the extended protocol specification.
       <td>5</td>
       <td>opT_Range</td>
       <td>A number value from a range</td>
-    A Order packet consist of:
-    <ul>
-        <li>a UInt32, Object ID of the order is on/to be placed on</li>
-        <li>a UInt32, Slot number of the order/to be put in, -1 will insert
-			at the last position, otherwise it is inserted before the number</li>
-        <li>a UInt32, (Read Only) The number of turns the order will take</li>
-        <li>a list of</li>
-        <li>a String, The singular name of the resource</li>
-        <li>a String, The plural name of the resource</li>
-		<ul>
-	        <li>a UInt32, The resource ID</li>
-	        <li>a UInt32, The units of that resource required</li>
-		</ul>
-    </ul>
       <td>
           <ul>
             <li>Int 32, read write, value</li>
