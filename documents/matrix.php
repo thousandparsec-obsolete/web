@@ -32,12 +32,13 @@
 <table>
 	<tr>
 		<td>&nbsp;</td>
-		<td colspan="3"><b>py-netlib</b></td>
+		<td colspan="4"><b>py-netlib</b></td>
 		<td><b>libtpproto-cpp</b></td>
 		<td><b>Java (no lib yet)</b></td>
 	</tr>
 	<tr>
 		<td>&nbsp;</td>
+		<td>(library)</td>
 		<td>tpclient-pywx</td>
 		<td>tpclient-pytext</td>
 		<td>pygame-client</td>
@@ -46,12 +47,13 @@
 	</tr>
 	<tr>
 	        <td>&nbsp;</td>
-		<td align="center" colspan="5">
+		<td align="center" colspan="6">
 			<b>Network Features</b>
 		</td>
 	</tr>
 	<tr>
 		<td>IPv6 support</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#000000">#</td>
@@ -62,12 +64,14 @@
 		<td>Can Connect?</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
 		<td>Can Login?</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
@@ -78,12 +82,14 @@
 		<td>Can view objects?</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
 		<td>Can view orders?</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
@@ -94,12 +100,14 @@
 		<td>Can add orders?</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
 		<td>Can remove orders?</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
@@ -110,6 +118,7 @@
 		<td>Can view boards?</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
@@ -118,12 +127,14 @@
 		<td>Can view messages?</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
 		<td>Can tell when a turn will end?</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
