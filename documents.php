@@ -72,8 +72,8 @@
 	</blockquote>
 	
 <?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
 -->
+<?php include "bits/start_section.inc" ?>
     <p>
 		<font size="4">
 			Other
