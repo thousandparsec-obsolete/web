@@ -7,7 +7,7 @@
 <h1>Protocol Definition for Thousand Parsec</h1>
 <h3>Version 0.2</h3>
 
-<p>Last updated 24 October 2004.</p>
+<p>Last updated 5 November 2004.</p>
 
 <p>
     This protocol definition is for the Thousand Parsec project. It
@@ -366,44 +366,6 @@
       <td>Describes a resource</td>
       <td>Foxtrot</td>
     </tr>
-
-    <tr>
-      <td colspan="6" align="center"><b>Obsolete</b></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Get Outcome</td>
-      <td>&nbsp;</td>
-      <td>ft_Get_Outcome</td>
-      <td>Get the probable outcome of an order</td>
-      <td>Delta</td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Outcome</td>
-      <td>&nbsp;</td>
-      <td>ft_Outcome</td>
-      <td>The Outcome of an order in a slot on an object</td>
-      <td>Delta</td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Get Result</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>Get the result of some order or event</td>
-      <td>Echo</td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Result</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>The Result of an order or event</td>
-      <td>Echo</td>
-    </tr>
-    
-    
 </table>
 </p>
 
