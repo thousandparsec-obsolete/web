@@ -7,8 +7,7 @@
 
 $my_url = "/tp/dev/viewcvs.php";
 $viewcvs_short = "/cgi-bin/viewcvs.cgi";
-$viewcvs_url = "http://www.thousandparsec.net$viewcvs_short";
-
+$viewcvs_url = "http://" . $_SERVER['SERVER_NAME'] . $viewcvs_short;
 
 // Include an rewrite the viewcvs stuff
 $url = $_SERVER['REQUEST_URI'];

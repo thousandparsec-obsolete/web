@@ -5,7 +5,7 @@ $fetcher = new Snoopy;
 		
 $my_url = "/tp/mailman.php";
 $real_short = "/cgi-bin/mailman";
-$real_url = "http://www.thousandparsec.net$real_short";
+$real_url = "http://" . $_SERVER['SERVER_NAME'] . $real_short;
 
 // Include GET stuff
 $url = $_SERVER['REQUEST_URI'];
