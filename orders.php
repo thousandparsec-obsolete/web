@@ -44,6 +44,16 @@
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
+<h2>Build</h2>
+<p>
+	Build something. Planets can build planety facilities and ships with 
+	surface to space capability. Space stations (and construction ships)
+	can build ships which can fit in their docks.
+</p>
+
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
 <h2>Colonize</h2>
 <p>
 	Colonize the currently orbiting planet.
@@ -52,7 +62,7 @@
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
-<h2>Deploy space station</h2>
+<h2>Colonize using Space Station</h2>
 <p>
 	Like colonize but deploys a space station. Used for races which can't exist
 	on a planet.
@@ -61,7 +71,17 @@
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
-<h2>Deploy space anchor</h2>
+<h2>Deploy, Space Station</h2>
+<p>
+	Unpack a stationary space device.
+	This also include sensors and communication relays (as they are just space
+	station commonents).
+</p>
+
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
+<h2>Deploy, Space Anchor</h2>
 <p>
 	Create a space anchor so that jump ships can reliably jump to this location
 </p>
@@ -87,6 +107,10 @@
 <?php include "bits/start_section.inc" ?>
 
 <h2>Transport</h2>
+<p>
+	You can only transfer to a planet if it has a space station or the ship has
+	ground to space capability.
+</p>
 <ul>
 	<li>
 		Pickup<br>
