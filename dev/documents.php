@@ -20,7 +20,7 @@
 	</p>
 	<blockquote>
 		<p>
-			<a href="documents/cpp-server">C++ Server Documentation.</a> Documentation for the C++ server.<br>
+			<a href="documents/tpserver-cpp">C++ Server Documentation.</a> Documentation for tpserver-cpp.<br>
 		</p>
 	</blockquote>
 
