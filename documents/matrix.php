@@ -247,13 +247,13 @@
 ?>
 
 <h1>Server Support Matrix</h1>
-<p>Last updated 24 October 2004.</p>
+<p>Last updated 07 November 2004.</p>
 
 <table>
 	<tr>
 		<td>&nbsp;</td>
 		<td>py-server</td>
-		<td>cpp-server</td>
+		<td>tpserver-cpp</td>
 	</tr>
 	<tr>
 		<td align="center" colspan=3>
@@ -283,7 +283,7 @@
 	<tr>
 		<td>Postable Message Boards</td>
 		<td align="center" bgcolor="#ff0000">#</td>
-		<td align="center" bgcolor="#ffff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 	</tr>
 	<tr>
 		<td>MiniSec Combat</td>
