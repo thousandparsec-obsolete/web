@@ -66,9 +66,9 @@
 
 <h2>Basics</h2>
 <p>
-	TP will use, TCP port 6923 for unencrypted access and TCP port 6924 for encrypted
+	TP will use, TCP port 6923 for unencrypted access <span class="new">and TCP port 6924 for encrypted
 	access. The server can also be run on port 80 for unencrypted access and 443 for
-	encrypted access.
+	encrypted access.</span>
 </p>
 <ul>
 	<li>
