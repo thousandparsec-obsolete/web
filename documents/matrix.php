@@ -111,7 +111,7 @@
 ?>
 
 <h1>Server Support Matrix</h1>
-<p>Last updated 25 September 2004.</p>
+<p>Last updated 02 October 2004.</p>
 
 <table>
 	<tr>
@@ -158,7 +158,7 @@
 	<tr>
 		<td>Move</td>
 		<td align="center" bgcolor="#00ff00">#</td>
-		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#ffff00">#</td>
 	</tr>
 	<tr>
 		<td>BuildFleet</td>
@@ -173,7 +173,7 @@
 	<tr>
 		<td>Merge/Split Fleet</td>
 		<td align="center" bgcolor="#000000">#</td>
-		<td align="center" bgcolor="#ffff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 	</tr>
 	<tr>
 		<td>Colonise</td>
