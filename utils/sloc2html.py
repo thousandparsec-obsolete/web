@@ -7,6 +7,10 @@ import sys
 NAME = "sloc2html"
 VERSION = "0.0.1"
 
+import signal
+# Die if we havn't finished in 30 seconds
+signal.alarm(30)
+
 if len(sys.argv) != 2:
     print "Usage:"
     print "\t" + sys.argv[0] + " <sloc output file>"
