@@ -15,7 +15,7 @@ function display($directory) {
 
 	foreach ($files as $file) {
 #		list($trash, $goodness) = split("-", $file, 2);
-		$goodness = substr($file, strrpos($file, '-'));
+		$goodness = substr($file, strrpos($file, '-')+1);
 		
 		list($major, $minor, $revision, $tar, $compression) = split("\.", $goodness, 5);
 	
