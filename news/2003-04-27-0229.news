@@ -1,0 +1,27 @@
+
+<h2>pywx-client 0.0.3 released</h2>
+<p>by Mithro</p>
+<p>
+	I have just tagged and released 0.0.3 of the Thousand Parsec
+	Client.  The tag in the CVS is PYWX_CLIENT_0_0_3.
+	You can download it from <a href="downloads.php">here</a>.
+	However the 0.0.3 server did not actually implement order
+	properly. But progress of the server has continued and this
+	bug is no longer a problem but can't be fixed on the tagged
+	version. I have created a special 0.0.3 release which does
+	do the orders properly.	This is NOT the same as the tagged
+	version.
+</p>
+<p>
+	I have to admit I have cheated. As the server doesn't
+	actually store any information about orders the client
+	doesn't	allow entering of arguments, it just sends 
+	defaults. This will be fixed soon but I'm going to target 
+	the 0.0.4 server so I needed to release this. There are
+	many new internal fixes (as well as hacks :). There has
+	also been some more documentation. I'm slowly whipping
+	this client into shape :)
+</p>
+<p>
+	Well it's time for me to be in bed (it's 2:34am).
+</p>
