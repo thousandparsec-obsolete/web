@@ -1208,16 +1208,19 @@ ignore any information in read only field (even if they are non-empty).
 <font face="courier">
 <pre>
 Normal,
-(3 Electrical Type AND (2 Weapons Type OR 2 Cargo Type)) AND 1 Your
+(3 Electrical Type AND (2 Weapons Type OR 2 Cargo Type)) AND 1 Your Engine
 
-RPN,
+PN,
 AND AND (3 Electrical Type) OR (2 Weapons Type) (11 Cargo Type) (1 Your Engine) 
 
+RPN,
+(1 Your Engine) (11 Cargo Type) (2 Weapons Type) OR (3 Electrical Type) AND AND
+
 Encoded,
-AND         AND         3 Elec       OR          2 Weapon     11 Cargo      1 Your Engine
-+---------+ +---------+ +----------+ +---------+ +----------+ +-----------+ +-----------+
->3< <0> <0> >3< <0> <0> >2< <3> <12> >4< <0> <0> >2< <2> <13> >2< <11> <11> >1< <1> <99>
-</pre>
+
+1 Your Engine 11 Cargo      2 Weapon     OR          3 Elec       AND         AND         
++-----------+ +-----------+ +----------+ +---------+ +----------+ +---------+ +---------+ 
+>1< <1> <99>  >2< <11> <11> >2< <2> <13> >4< <0> <0> >2< <3> <12> >3< <0> <0> >3< <0> <0>
 </font>
 
 <span class="new">
