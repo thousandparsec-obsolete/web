@@ -7,7 +7,7 @@
 <h1>Protocol Definition for Thousand Parsec</h1>
 <h3>Version 0.2</h3>
 
-<p>Last updated 16 July 2004.</p>
+<p>Last updated 24 October 2004.</p>
 
 <p>
     This protocol definition is for the Thousand Parsec project. It
@@ -96,7 +96,7 @@
         should alway be one more then the previous packets sequence number.
       </td>
       <td>Type of data, see table below</td>
-      <td>Length of data in bytes, must be multiplies of 4</td>
+      <td>Length of data in bytes</td>
       <td>The data</td>
     </tr>
     <tr>
