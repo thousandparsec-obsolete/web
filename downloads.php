@@ -14,13 +14,15 @@ function display($directory) {
 	$files = @get_files($dir);
 
 	foreach ($files as $file) {
-		list($trash, $goodness) = split("-", $file, 2);
+#		list($trash, $goodness) = split("-", $file, 2);
+		$goodness = substr($file, strrpos($file, '-'));
+		
 		list($major, $minor, $revision, $tar, $compression) = split("\.", $goodness, 5);
 	
 		$size = (int)(filesize($dir . $file)/1024);
 
 		print "<p>\n";
-		print "	<a href=\"$dir$file\"> Version $major$minor$revision </a> $tar/$compression, $file KB \n";
+		print "	<a href=\"$dir$file\"> Version $major.$minor.$revision </a> $tar/$compression, $size KB \n";
 		print "</p>\n";
 	}
 }
