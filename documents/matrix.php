@@ -48,6 +48,13 @@
 		</td>
 	</tr>
 	<tr>
+		<td>IPv6 support</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
+	</tr>
+	<tr>
 		<td>Can Connect?</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
@@ -147,7 +154,7 @@
 	</tr>
 	<tr>
 		<td>IPv6 support</td>
-		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 	</tr>
 	<tr>
