@@ -66,6 +66,15 @@ function display($directory) {
 	All new python clients require this library to function.
 </p>
 <?php display("py-netlib/"); ?>
+
+<h2>C++ TP Protocol Library</h2>
+<p>
+	The library libtpproto-cpp is a client side library written in C++ for TP.  It
+	is fully featured and can be easily extended in a number of ways including
+	logging, socket to the server and async frame handling.
+</p>
+<?php display("libtpproto-cpp/"); ?>
+
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/end_page.inc" ?>
 
