@@ -7,6 +7,7 @@
 
 $my_url = "/tp/dev/viewcvs.php";
 $viewcvs_short = "/cgi-bin/viewcvs.cgi";
+$viewcvs_real = "http://www.thousandparsec.net$viewcvs_short";
 $viewcvs_url = "http://" . $_SERVER['SERVER_NAME'] . $viewcvs_short;
 
 // Include an rewrite the viewcvs stuff
@@ -15,7 +16,7 @@ $url = str_replace($my_url, '', $url);
 
 echo "<!-- real url = $url -->";
 
-$handle = fopen($viewcvs_url . $url, 'r');
+$handle = fopen($viewcvs_real . $url, 'r');
 
 while (! feof($handle) ) {
 	$data = $data . fread($handle, 1024);
