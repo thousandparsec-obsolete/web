@@ -1,0 +1,14 @@
+
+<h2>TP-Server 0.0.4 released</h2>
+<p>by Lee</p>
+<p>
+	I have just released 0.0.4 of the TP-server.  No real changes have
+	been made.  TP02 support has been fix, and IPv6 support has been
+	added.  There may be issues with orders as the TP02 Protocol frames
+	for them have not been reviewed yet, dash releases might be released
+	if needed.
+</p>
+<p>
+	All the normal stuff.  CVS tag: CPP_SERVER_0_0_4.  Tarball on the 
+	downloads page.
+</p>
