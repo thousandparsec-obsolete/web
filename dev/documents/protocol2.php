@@ -7,7 +7,7 @@
 <h1>Protocol Definition for Thousand Parsec</h1>
 <h3>Version 0.2</h3>
 
-<p>Last updated 22 January 2004.</p>
+<p>Last updated 18 Feburary 2004.</p>
 
 <p>
 	This protocol definition is for the Thousand Parsec project. It
@@ -111,9 +111,12 @@
 </table>
 </p>
 <p>
-	The Client may start with any sequence number except zero (0).  Server replies with have sequence numbers that
-	are the same as the sequence number on the operation they are a response to.  If the server
-	sends a frame that is not a response, the frames sequence number will be zero (0).
+	The Client may start with any posative (it's an unsigned number) sequence number except 
+	zero (0).  Server replies with have sequence numbers that are the same as the sequence
+	number on the operation they are a response to.  If the server sends a frame that is not
+	a response, the frames sequence number will be zero (0).
+</p>
+<p>	
 </p>
 
 <?php
@@ -164,12 +167,20 @@
       <td>Failed, stop or impossible</td>
       <td>Alpha</td>
     </tr>
+    <tr>
+      <td>2</td>
+      <td>Sequence</td>
+      <td>&nbsp;</td>
+      <td>ft02_Sequence</td>
+      <td>Multiple frames will follow</td>
+      <td>Alpha</td>
+    </tr>
 
     <tr>
       <td colspan="6" align="center"><b>Connecting</b></td>
     </tr>
     <tr>
-      <td>2</td>
+      <td>3</td>
       <td>Connect</td>
       <td>&nbsp;</td>
       <td>ft02_Connect</td>
@@ -177,7 +188,7 @@
       <td>Alpha</td>
     </tr>
     <tr>
-      <td>3</td>
+      <td>4</td>
       <td>Login</td>
       <td>&nbsp;</td>
       <td>ft02_Login</td>
@@ -189,20 +200,11 @@
       <td colspan="6" align="center"><b>Objects</b></td>
     </tr>
     <tr>
-      <td>4</td>
-      <td>Get Object by ID</td>
-      <td>&nbsp;</td>
-      <td>ft02_Object_Get</td>
-      <td>Returns an object with the same ID.</td>
-      <td>Bravo</td>
-    </tr>
-    
-    <tr>
       <td>5</td>
-      <td>Object</td>
+      <td>Get Objects by ID</td>
       <td>&nbsp;</td>
-      <td>ft02_Object</td>
-      <td>Description of an Object</td>
+      <td>ft02_Object_GetById</td>
+      <td>Returns object with the IDs.</td>
       <td>Bravo</td>
     </tr>
 	<tr>
@@ -213,14 +215,14 @@
       <td>Returns all objects within a sphere.</td>
       <td>Bravo</td>
     </tr>
-	<tr>
-	  <td>7</td>
-	  <td>Object List Sequence Header</td>
-	  <td>&nbsp;</td>
-	  <td>ft02_Object_ListSeqHeader</td>
-	  <td>The number (uint32) of objects to expect as other frame replies to the same op</td>
-	  <td>Bravo</td>
-	</tr>
+    <tr>
+      <td>7</td>
+      <td>Object</td>
+      <td>&nbsp;</td>
+      <td>ft02_Object</td>
+      <td>Description of an Object</td>
+      <td>Bravo</td>
+    </tr>
     <tr>
       <td colspan="6" align="center"><b>Orders</b></td>
     </tr>
@@ -421,9 +423,23 @@
 	This does not affect clients as they should always get the connect packet right.
 </p>
 
+<h3>Sequence Packet</h3>
+<p>
+	Sequence packet consits of:
+	<ol>
+		<li>a uint32, giving the number of packets to follow</li>
+	</ol>
+	This packet will proceed a response which requires numerous packets to be complete.
+</p>
+
 <h3>Connect Packet</h3>
 <p>
-	No Data Packet. The length is zero.
+	The Connect packet consists of:
+	<ol>
+		<li>a text string, a client identification string</li>
+	</ol>
+	The client identification string can be any string but will mostly
+	used to produce stats of who uses which client.
 </p>
 
 <h3>Login Packet</h3>
@@ -441,45 +457,33 @@
 <p>
 	A Get Object by ID packet consits of:
 	<ol>
-		<li>a int32, object ID of the object requested<li>
+		<li>a list uint32, object IDs of the object requested<li>
 	</ol>
 	An object ID of 0 is the top level Universe object.
 </p>
-
-<h3>Get Objects by Position Packet</h3>
-<p>
-	A Get Objects by Position packet consits of:
-	<ol>
-  		<li>3 by signed int64, giving the position of center the sphere</li>
-		<li>a unsigned int64, giving the radius of the sphere</li>
-	</ol>
-	This will return a bunch of Objects which are inside the sphere. If
-	a sphere size of zero is used all object at the point will be returned.
-</p>
-
 
 <h3>Object Packet</h3>
 <p>
 	An Object packet consits of:
 	
 	<ol>
-		<li>a int32, object ID</li>
-		<li>a int32, object type</li>
+		<li>a uint32, object ID</li>
+		<li>a uint32, object type</li>
 		<li>a text string, name of object</li>
-		<li>unsigned int64, size of object (diameter)</li>
-		<li>3 by signed int64, position of object</li>
-		<li>3 by signed int64, velocity of object</li>
+		<li>a uint64, size of object (diameter)</li>
+		<li>3 by int64, position of object</li>
+		<li>3 by int64, velocity of object</li>
 		<li>
-			a list of int32, object IDs of objects contained in the current
+			a list of uint32, object IDs of objects contained in the current
 			object
 		</li>
 		<li>
-			a list of int32, order types that the player can send to this
+			a list of uint32, order types that the player can send to this
 			object
 		</li>
-		<li>a int32, number of orders currently on this object</li>
+		<li>a uint32, number of orders currently on this object</li>
 		<li>
-			4 by Uint32 of padding, for future expansion of common
+			4 by uint32 of padding, for future expansion of common
 			attributes
 		</li>
 		<li>
@@ -491,6 +495,18 @@ Example:
 &lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\0&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
 &lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
 &lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;0&gt;&lt;0&gt;
+
+<h3>Get Objects by Position Packet</h3>
+<p>
+	A Get Objects by Position packet consits of:
+	<ol>
+  		<li>3 by int64, giving the position of center the sphere</li>
+		<li>a uint64, giving the radius of the sphere</li>
+	</ol>
+	This will return a bunch of Objects which are inside the sphere. If
+	a sphere size of zero is used all object at the point will be returned.
+</p>
+
 
 <h3>Get Order Packet, Remove Order Packet</h3>
 
