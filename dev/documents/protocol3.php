@@ -575,10 +575,70 @@
 		<td>Get with ID</td>
 	</tr>
 
-</span>
-
 </table>
 </p>
+
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<h2>ID List</h2>
+
+<table class="tabular">
+	<tr class="row0"><td class="numeric"> -</td><td>Get with ID</td></tr>
+	<tr class="row1"><td class="numeric"> -</td><td>Get with ID and Slots</td></tr>
+	<tr class="row0"><td class="numeric"> -</td><td>Get ID Sequence</td></tr>
+	<tr class="row1"><td class="numeric"> -</td><td>ID Sequence</td></tr>
+	<tr class="row0"><td class="numeric"> 0</td><td>Ok</td></tr>
+	<tr class="row1"><td class="numeric"> 1</td><td>Fail</td></tr>
+	<tr class="row0"><td class="numeric"> 2</td><td>Sequence</td></tr>
+	<tr class="row1"><td class="numeric"> 3</td><td>Connect</td></tr>
+	<tr class="row0"><td class="numeric"> 4</td><td>Login</td></tr>
+	<tr class="row1"><td class="numeric"> 5</td><td>Get Objects by ID</td></tr>
+	<tr class="row0"><td class="numeric"> 7</td><td>Object</td></tr>
+	<tr class="row1"><td class="numeric"> 8</td><td>Get Order Description</td></tr>
+	<tr class="row0"><td class="numeric"> 9</td><td>Order Description</td></tr>
+	<tr class="row1"><td class="numeric">10</td><td>Get Order</td></tr>
+	<tr class="row0"><td class="numeric">11</td><td>Order</td></tr>
+	<tr class="row1"><td class="numeric">12</td><td>Insert Order</td></tr>
+	<tr class="row0"><td class="numeric">13</td><td>Remove Order</td></tr>
+	<tr class="row1"><td class="numeric">14</td><td>Get Time remaining</td></tr>
+	<tr class="row0"><td class="numeric">15</td><td>Time remaining</td></tr>
+	<tr class="row1"><td class="numeric">16</td><td>Get Boards</td></tr>
+	<tr class="row0"><td class="numeric">17</td><td>Board</td></tr>
+	<tr class="row1"><td class="numeric">18</td><td>Get Message</td></tr>
+	<tr class="row0"><td class="numeric">19</td><td>Message</td></tr>
+	<tr class="row1"><td class="numeric">20</td><td>Post Message</td></tr>
+	<tr class="row0"><td class="numeric">21</td><td>Remove Message</td></tr>
+	<tr class="row1"><td class="numeric">22</td><td>Get Resource Description</td></tr>
+	<tr class="row0"><td class="numeric">23</td><td>Resource Description</td></tr>
+	<tr class="row1"><td class="numeric">24</td><td>Redirect</td></tr>
+	<tr class="row0"><td class="numeric">25</td><td>Get Features</td></tr>
+	<tr class="row1"><td class="numeric">26</td><td>Available Features</td></tr>
+	<tr class="row0"><td class="numeric">27</td><td>Ping</td></tr>
+	<tr class="row1"><td class="numeric">28</td><td>Get Object IDs</td></tr>
+	<tr class="row0"><td class="numeric">29</td><td>Get Object IDs by Position</td></tr>
+	<tr class="row1"><td class="numeric">30</td><td>Get Object IDs by Container</td></tr>
+	<tr class="row0"><td class="numeric">31</td><td>List of Object IDs</td></tr>
+	<tr class="row1"><td class="numeric">32</td><td>Get Order Description IDs</td></tr>
+	<tr class="row0"><td class="numeric">33</td><td>List of Order Description IDs</td></tr>
+	<tr class="row1"><td class="numeric">34</td><td>Probe Order</td></tr>
+	<tr class="row0"><td class="numeric">35</td><td>Get Board IDs</td></tr>
+	<tr class="row1"><td class="numeric">36</td><td>List Of Board IDs</td></tr>
+	<tr class="row0"><td class="numeric">37</td><td>Get Resources IDs</td></tr>
+	<tr class="row1"><td class="numeric">38</td><td>List Of Resources IDs</td></tr>
+	<tr class="row0"><td class="numeric">39</td><td>Get Player Data</td></tr>
+	<tr class="row1"><td class="numeric">40</td><td>Player Data</td></tr>
+	<tr class="row0"><td class="numeric">41</td><td>Get Category Description</td></tr>
+	<tr class="row1"><td class="numeric">42</td><td>Category Description</td></tr>
+	<tr class="row0"><td class="numeric">43</td><td>Get Category Description IDs</td></tr>
+	<tr class="row1"><td class="numeric">44</td><td>List Of Category Description IDs</td></tr>
+	<tr class="row0"><td class="numeric">45</td><td>Get Component</td></tr>
+	<tr class="row1"><td class="numeric">46</td><td>Component</td></tr>
+	<tr class="row0"><td class="numeric">47</td><td>Insert Component</td></tr>
+	<tr class="row1"><td class="numeric">48</td><td>Remove Component</td></tr>
+</table>
 
 <?php
 	include "../bits/end_section.inc";

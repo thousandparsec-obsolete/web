@@ -43,12 +43,24 @@ table {
 	width: 100%;
 	border: 0;
 	padding-top: 1em;
+	background-color: #000000;
 }
 
 table td {
 	border: 0;
-	background-color: #000000;
 	padding: 0 1em;
+}
+
+table td.numeric {
+	text-align: right;
+}
+
+table.tabular tr.row0 {
+	background-color: #111111;
+}
+
+table.tabular tr.row1 {
+	background-color: #222222;
 }
 
 h1, h2, h3, h4, h5, h6 {
