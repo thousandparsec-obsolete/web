@@ -7,7 +7,7 @@
 <h1>Protocol Definition for Thousand Parsec</h1>
 <h3>Version 0.2</h3>
 
-<p>Last updated 28 April 2004.</p>
+<p>Last updated 29 April 2004.</p>
 
 <p>
     This protocol definition is for the Thousand Parsec project. It
@@ -282,7 +282,7 @@
       <td>14</td>
       <td>Get Time remaining</td>
       <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      <td>ft02_Time_Remaining_Get</td>
       <td>Get the amount of time before the end of turn</td>
       <td>Echo</td>
     </tr>
@@ -290,7 +290,7 @@
       <td>15</td>
       <td>Time remaining</td>
       <td>&nbsp;</td>
-      <td>&nbsp;</td>
+      <td>ft02_Time_Remaining</td>
       <td>The amount of time before the end of turn</td>
       <td>Echo</td>
     </tr>
