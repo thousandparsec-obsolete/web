@@ -218,358 +218,358 @@
 	frame. There is no meaning in odd/even distinction in this version.
 	The types are listed below:
 </p><p>
-<table border="1">
+<table class="tabular">
 	<tr>
-		<td><b>Value</b></td>
-		<td><b>Name</b></td>
-		<td><b>Description</b></td>
-		<td><b>Base</b></td>
+		<th>Value</th>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Base</th>
 	</tr>
 	
 	<tr>
-		<td colspan="4" align="center"><b>Generic Responses</b></td>
+		<th colspan="4">Generic Responses</th>
 	</tr><tr>
-		<td colspan="4" align="center">These responses are the most common and generic that should be the first to be implemented.</td>
-	</tr><tr>
-		<td>0</td>
+		<td colspan="4" class="desc">These responses are the most common and generic that should be the first to be implemented.</td>
+	</tr><tr class="row0">
+		<td class="numeric">0</td>
 		<td>Ok</td>
 		<td>Ok, continue or passed</td>
 		<td></td>
-	</tr><tr>
-		<td>1</td>
+	</tr><tr class="row1">
+		<td class="numeric">1</td>
 		<td>Fail</td>
 		<td>Failed, stop or impossible</td>
 		<td></td>
-	</tr><tr>
-		<td>2</td>
+	</tr><tr class="row0">
+		<td class="numeric">2</td>
 		<td>Sequence</td>
 		<td>Multiple frames will follow</td>
 		<td></td>
 	</tr>
 
 	<tr class="new">
-		<td colspan="4" align="center"><b>Base Packets</b></td>
+		<th colspan="4">Base Packets</th>
 	</tr><tr class="new">
-		<td colspan="4" align="center">These packets don't really exist but are the common parts of other packets.</td>
-	</tr><tr class="new">
-		<td>-</td>
+		<td colspan="4" class="desc">These packets don't really exist but are the common parts of other packets.</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">-</td>
 		<td>Get with ID</td>
 		<td>Gets things using ids (Objects, Boards)</td>
 		<td></td>
-	</tr><tr class="new">
-		<td>-</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">-</td>
 		<td>Get with ID and Slots</td>
 		<td>Gets things on a thing using slots (Orders, Messages)</td>
 		<td></td>
-	</tr><tr class="new">
-		<td>-</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">-</td>
 		<td>Get ID Sequence</td>
 		<td>Gets a sequence of IDs</td>
 		<td></td>
-	</tr><tr class="new">
-		<td>-</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">-</td>
 		<td>ID Sequence</td>
 		<td>A sequence of IDs and their last modified times</td>
 		<td></td>
 	</tr>
 	
 	<tr>
-		<td colspan="4" align="center"><b>Connecting</b></td>
+		<th colspan="4">Connecting</th>
 	</tr><tr>
-		<td colspan="4" align="center">These frames are used for setting up the connection to a server.</td>
-	</tr><tr>
-		<td>3</td>
+		<td colspan="4" class="desc">These frames are used for setting up the connection to a server.</td>
+	</tr><tr class="row0">
+		<td class="numeric">3</td>
 		<td>Connect</td>
 		<td>Can I connect?</td>
 		<td></td>
-	</tr><tr>
-		<td>4</td>
+	</tr><tr class="row1">
+		<td class="numeric">4</td>
 		<td>Login</td>
 		<td>Login with username/password</td>
 		<td></td>
-	</tr><tr class="new">
-		<td>24</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">24</td>
 		<td>Redirect</td>
 		<td>Redirects a client to a different server.</td>
 		<td></td>
 	</tr>
 
 	<tr class="new">
-		<td colspan="4" align="center"><b>Feature Negotiation</b></td>
+		<th colspan="4">Feature Negotiation</th>
 	</tr><tr class="new">
-		<td colspan="4" align="center">These frames are used for negotiation which features to use.</td>
-	</tr><tr class="new">
-		<td>25</td>
+		<td colspan="4" class="desc">These frames are used for negotiation which features to use.</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">25</td>
 		<td>Get Features</td>
 		<td>Get the features available on this server.</td>
 		<td></td>
-	</tr><tr class="new">
-		<td>26</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">26</td>
 		<td>Available Features</td>
 		<td>The features available on this server.</td>
 		<td></td>
 	</tr>
 	
 	<tr class="new">
-		<td colspan="4" align="center"><b>Keep alive (Optional)</b></td>
+		<th colspan="4">Keep alive (Optional)</th>
 	</tr><tr class="new">
-		<td colspan="4" align="center">
+		<td colspan="4" class="desc">
 			These frames are used to keep a connection alive, these are often needed when using the
 			tunneling connections. (Some broken NAT implementations also need this to keep open long
 			running, low bandwidth connections.) These frames only required to be implemented if HTTP 
 			or HTTPS tunneling is supported.
 		</td>
-	</tr><tr class="new">
-		<td>27</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">27</td>
 		<td>Ping</td>
 		<td>Get the server to respond with a OK request.</td>
 		<td></td>
 	</tr>
 	
 	<tr>
-		<td colspan="4" align="center"><b>Objects</b></td>
+		<th colspan="4">Objects</th>
 	</tr><tr>
-		<td colspan="4" align="center">These frames are used for getting objects.</td>
-	</tr><tr>
-		<td>5</td>
+		<td colspan="4" class="desc">These frames are used for getting objects.</td>
+	</tr><tr class="row0">
+		<td class="numeric">5</td>
 		<td>Get Objects by ID</td>
 		<td>Returns object with the given IDs.</td>
 		<td>Get with ID</td>
-	</tr><tr>
-		<td>7</td>
+	</tr><tr class="row1">
+		<td class="numeric">7</td>
 		<td>Object</td>
 		<td>Description of an Object</td>
 		<td></td>
-	</tr><tr class="new">
-		<td>28</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">28</td>
 		<td>Get Object IDs</td>
 		<td></td>
 		<td>Get ID Sequence</td>
-	</tr><tr class="new">
-		<td>29</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">29</td>
 		<td>Get Object IDs by Position</td>
 		<td>Returns the IDs which are within a sphere.</td>
 		<td></td>
-	</tr><tr class="new">
-		<td>30</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">30</td>
 		<td>Get Object IDs by Container</td>
 		<td>Returns the Object IDs which are within an Object.</td>
 		<td></td>
-	</tr><tr class="new">
-		<td>31</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">31</td>
 		<td>List of Object IDs</td>
 		<td>Gets a sequence of IDs.</td>
 		<td>ID Sequence</td>
 	</tr>
 	
 	<tr>
-		<td colspan="4" align="center"><b>Orders</b></td>
+		<th colspan="4">Orders</th>
 	</tr><tr>
-		<td colspan="4" align="center">These frames are used for manipulating orders.</td>
-	</tr><tr>
-		<td>8</td>
+		<td colspan="4" class="desc">These frames are used for manipulating orders.</td>
+	</tr><tr class="row0">
+		<td class="numeric">8</td>
 		<td>Get Order Description</td>
 		<td>Returns a description of an order type</td>
 		<td>Get with ID</td>
-	</tr><tr>
-		<td>9</td>
+	</tr><tr class="row1">
+		<td class="numeric">9</td>
 		<td>Order Description</td>
 		<td>Describes an order type and it's parameters</td>
 		<td></td>
-	</tr><tr class="new">
-		<td>32</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">32</td>
 		<td>Get Order Description IDs</td>
 		<td></td>
 		<td>Get ID Sequence</td>
-	</tr><tr class="new">
-		<td>33</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">33</td>
 		<td>List of Order Description IDs</td>
 		<td>Gets a sequence of IDs.</td>
 		<td>ID Sequence</td>
 		
-	</tr><tr>
-		<td>10</td>
+	</tr><tr class="row0">
+		<td class="numeric">10</td>
 		<td>Get Order</td>
 		<td>Returns a description of an order</td>
 		<td>Get with ID and Slots</td>
-	</tr><tr>
-		<td>11</td>
+	</tr><tr class="row1">
+		<td class="numeric">11</td>
 		<td>Order</td>
 		<td>Description of an order</td>
 		<td></td>
-	</tr><tr>
-		<td>12</td>
+	</tr><tr class="row0">
+		<td class="numeric">12</td>
 		<td>Insert Order</td>
 		<td>Insert order on object before slot</td>
 		<td></td>
-	</tr><tr>
-		<td>13</td>
+	</tr><tr class="row1">
+		<td class="numeric">13</td>
 		<td>Remove Order</td>
 		<td>Remove an order from a slot of an object</td>
 		<td>Get with ID and Slots</td>
-	</tr><tr class="new">
-		<td>34</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">34</td>
 		<td>Probe Order</td>
 		<td>Returns an order object which would be created if this was an Insert order</td>
 		<td></td>
 	</tr>
 
 	<tr>
-		<td colspan="4" align="center"><b>Time</b></td>
+		<th colspan="4">Time</th>
 	</tr><tr>
-		<td colspan="4" align="center">These frames are used to find out when the next turn will occur.</td>
-	</tr><tr>
-		<td>14</td>
+		<td colspan="4" class="desc">These frames are used to find out when the next turn will occur.</td>
+	</tr><tr class="row0">
+		<td class="numeric">14</td>
 		<td>Get Time remaining</td>
 		<td>Get the amount of time before the end of turn</td>
 		<td></td>
-	</tr><tr>
-		<td>15</td>
+	</tr><tr class="row1">
+		<td class="numeric">15</td>
 		<td>Time remaining</td>
 		<td>The amount of time before the end of turn</td>
 		<td></td>
 	</tr>
 
 	<tr>
-		<td colspan="4" align="center"><b>Messages</b></td>
+		<th colspan="4">Messages</th>
 	</tr><tr>
-		<td colspan="4" align="center">
+		<td colspan="4" class="desc">
 			These frames are used to manipulate the in game message boards. Each person has a
 			message board and there are some shared message boards.
 		</td>
-	</tr><tr>
-		<td>16</td>
+	</tr><tr class="row0">
+		<td class="numeric">16</td>
 		<td>Get Boards</td>
 		<td>Get message boards the player can see.</td>
 		<td>Get with ID</td>
-	</tr><tr>
-		<td>17</td>
+	</tr><tr class="row1">
+		<td class="numeric">17</td>
 		<td>Board</td>
 		<td>A Message.</td>
 		<td></td>
 
-	</tr><tr class="new">
-		<td>35</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">35</td>
 		<td>Get Board IDs</td>
 		<td>Gets a list of board ids that the player can see.</span></td>
 		<td>Get ID Sequence</td>
-	</tr><tr class="new">
-		<td>36</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">36</td>
 		<td>List Of Board IDs</td>
 		<td>The list of board ids the player can see.</td>
 		<td>ID Sequence</td>
 
-	</tr><tr>
-		<td>18</td>
+	</tr><tr class="row0">
+		<td class="numeric">18</td>
 		<td>Get Message</td>
 		<td>Get a Message from a board.</td>
 		<td>Get with ID and Slots</td>
-	</tr><tr>
-		<td>19</td>
+	</tr><tr class="row1">
+		<td class="numeric">19</td>
 		<td>Message</td>
 		<td>A Message.</td>
 		<td></td>
-	</tr><tr>
-		<td>20</td>
+	</tr><tr class="row0">
+		<td class="numeric">20</td>
 		<td>Post Message</td>
 		<td>Post a message to a board.</td>
 		<td></td>
-	</tr><tr>
-		<td>21</td>
+	</tr><tr class="row1">
+		<td class="numeric">21</td>
 		<td>Remove Message</td>
 		<td>Remove a message from a board.</td>
 		<td>Get with ID and Slots</td>
 	</tr>
 
 	<tr>
-		<td colspan="4" align="center"><b>Resources</b></td>
+		<th colspan="4">Resources</th>
 	</tr><tr>
-		<td colspan="4" align="center">These frames are used to get information about resources.</td>
-	</tr><tr>
-		<td>22</td>
+		<td colspan="4" class="desc">These frames are used to get information about resources.</td>
+	</tr><tr class="row0">
+		<td class="numeric">22</td>
 		<td>Get Resource Description</td>
 		<td>Returns a description of an resource type</td>
 		<td>Get with ID</td>
-	</tr><tr>
-		<td>23</td>
+	</tr><tr class="row1">
+		<td class="numeric">23</td>
 		<td>Resource Description</td>
 		<td>Describes a resource</td>
 		<td></td>
 		
-	</tr><tr class="new">
-		<td>37</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">37</td>
 		<td>Get Resources IDs</td>
 		<td>Gets a list of resource type ids.</td>
 		<td>Get ID Sequence</td>
-	</tr><tr class="new">
-		<td>38</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">38</td>
 		<td>List Of Resources IDs</td>
 		<td>A list of resource type ids.</td>
 		<td>ID Sequence</td>
 	</tr>
 
 	<tr class="new">
-		<td colspan="4" align="center"><b>Players</b></td>
+		<th colspan="4">Players</th>
 	</tr><tr class="new">
-		<td colspan="4" align="center">
+		<td colspan="4" class="desc">
 			These frames are used to get information about other places/races.
 		</td>
-	</tr><tr class="new">
-		<td>39</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">39</td>
 		<td>Get Player Data</td>
 		<td>Get the information about a player/race.</td>
 		<td></td>
-	</tr><tr class="new">
-		<td>40</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">40</td>
 		<td>Player Data</td>
 		<td></td>
 		<td></td>
 	</tr>
 	
 	<tr class="new">
-		<td colspan="4" align="center"><b>Design Manipulation</b></td>
+		<th colspan="4">Design Manipulation</th>
 	</tr><tr class="new">
-		<td colspan="4" align="center">
+		<td colspan="4" class="desc">
 		</td>
-	</tr><tr class="new">
-		<td>? - 41</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">? - 41</td>
 		<td>Get Category Description</td>
 		<td>Returns a description of an category type</td>
 		<td>Get with ID</td>
-	</tr><tr class="new">
-		<td>? - 42</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">? - 42</td>
 		<td>Category Description</td>
 		<td>Describes a category</td>
 		<td></td>
 
-	</tr><tr class="new">
-		<td>? - 43</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">? - 43</td>
 		<td>Get Category Description IDs</td>
 		<td>Gets a list of category description ids.</td>
 		<td>Get ID Sequence</td>
-	</tr><tr class="new">
-		<td>? - 44</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">? - 44</td>
 		<td>List Of Category Description IDs</td>
 		<td>A list of resource type ids.</td>
 		<td>ID Sequence</td>
 		
-	</tr><tr class="new">
-		<td>? - 45</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">? - 45</td>
 		<td>Get Component</td>
 		<td>Gets the details about a component</td>
 		<td>Get with ID</td>
-	</tr><tr class="new">
-		<td>? - 46</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">? - 46</td>
 		<td>Component</td>
 		<td>Describes a component</td>
 		<td></td>
-	</tr><tr class="new">
-		<td>? - 47</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">? - 47</td>
 		<td>Insert Component</td>
 		<td>Creates a new component out of existing components</td>
 		<td></td>
-	</tr><tr class="new">
-		<td>? - 48</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">? - 48</td>
 		<td>Remove Component</td>
 		<td>Removes a component</td>
 		<td>Get with ID</td>

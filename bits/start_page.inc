@@ -55,6 +55,12 @@ table td.numeric {
 	text-align: right;
 }
 
+table th {
+	border: 0;
+	font-weight: bold;
+	padding-top: 1em;
+}
+
 table.tabular tr.row0 {
 	background-color: #111111;
 }
