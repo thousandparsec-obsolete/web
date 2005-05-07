@@ -535,12 +535,12 @@
 	</tr><tr class="row0 new">
 		<td class="numeric">32</td>
 		<td><a href="#GetOrderDescriptionIDs_Desc">Get Order Description IDs</a></td>
-		<td></td>
+		<td>Gets a sequence of order type IDs.</td>
 		<td>Get ID Sequence</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">33</td>
 		<td><a href="#ListOfOrderDescriptionIDs_Desc">List of Order Description IDs</a></td>
-		<td>Gets a sequence of IDs.</td>
+		<td>A sequence of order type IDs.</td>
 		<td>ID Sequence</td>
 		
 	</tr><tr class="row0">
