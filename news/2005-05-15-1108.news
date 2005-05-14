@@ -1,0 +1,12 @@
+
+<h2>TPServer-cpp 0.1.1 released.</h2>
+<p>by Lee</p>
+<p>
+	This release adds almost all of TP03, and a few other improvements which you can find in the changelog or
+	cvs commit history. The server is still running minisec rules. Missing from TP03 is designs and components, 
+	and the secure and tunneling sockets.
+</p>
+<p>
+	TPServer-cpp 0.1.1 is on the downloads page. The CVS module is tpserver-cpp and the tag is 
+	TPSERVER_CPP_0_1_1. Feedback and suggestions are always welcome.
+</p>
