@@ -11,6 +11,7 @@
 
 <FONT COLOR="#008200">Version 2 changes are marked in green.</FONT><BR>
 <FONT COLOR="#008284">Version 3 changes are marked in blue.</FONT><BR>
+<font color="#FFCC99">Version 4 changes are marked in burlywood.</font><br>
 <BR>
 The aim is to allow all designs to be made client side without any interaction with the server. This should make the designing experience much more pleasant for the user. If all goes well a similar scheme may be extended to the order stuff.<BR>
 <BR>
@@ -51,8 +52,8 @@ Each Component has the following structure,
 <UL>
     <LI>a UInt32, the ID of the Component 
     <LI>a list of UInt32, IDs of Categories the Component is in 
-    <LI>a String, name of the component</LI>
-    <LI>a String, description of the component</LI>
+    <LI><font color="#FFCC99">a String, name of the component</font></LI>
+    <LI><font color="#FFCC99">a String, description of the component</font></LI>
     <LI>a String, NCL Add function 
     <BLOCKQUOTE>
         A NCL function which is called when adding this component to a design. If the component is allowed to be added to <FONT COLOR="#0000ff">a design then the function should return a pair with True and a string to be displayed, otherwise it should return a pair with false and a string which describes the reason for not being able to add the component. The function is given the design object which it is being added to. </FONT><BR>
@@ -177,15 +178,15 @@ Each Design has,
 <UL>
     <LI>a UInt32, the ID of the Design 
     <LI>a list of UInt32, IDs of Categories the Design is in 
-    <LI>a String, the name of the design</LI>
-    <LI>a String, a description of the design</LI>
+    <LI><font color="#FFCC99">a String, the name of the design</font></LI>
+    <LI><font color="#FFCC99">a String, a description of the design</font></LI>
     <LI><FONT COLOR="#008200">a SInt32</FONT>, the number of times the Design is in use 
-    <LI><FONT COLOR="#008200">a SInt32, the owner of the Design</FONT> 
+    <LI><FONT COLOR="#008200">a <font color="#FFCC99">UInt32</font>, the owner of the Design</FONT> 
     <LI>a list of UInt32, IDs of the Components which are in a Design
 </UL>
 <B><FONT COLOR="#008200">Notes:</FONT></B><BR>
 <FONT COLOR="#008200">If the design is unusable then the number of times in use will be -1.</FONT><BR>
-<FONT COLOR="#008200">If the owner is unknown the field will be -1, otherwise it will be the ID of the player who owns the design.</FONT><BR>
+<FONT COLOR="#008200">If the owner is unknown the field will be <font color="#FFCC99">0</font>, otherwise it will be the ID of the player who owns the design.</FONT><BR>
 <BR>
 <BR>
 <BR>
