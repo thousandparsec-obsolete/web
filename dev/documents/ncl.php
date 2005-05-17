@@ -10,8 +10,8 @@
 <?php include "../bits/start_section.inc" ?>
 
 <FONT COLOR="#008200">Version 2 changes are marked in green.</FONT><BR>
-<FONT COLOR="#008284">Version 3 changes are marked in blue.</FONT><BR>
-<font color="#FFCC99">Version 4 changes are marked in burlywood.</font><br>
+<FONT COLOR="#0000FF">Version 3 changes are marked in blue.</FONT><BR>
+<font color="#FFFF00">Version 4 changes are marked in yellow.</font><br>
 <BR>
 The aim is to allow all designs to be made client side without any interaction with the server. This should make the designing experience much more pleasant for the user. If all goes well a similar scheme may be extended to the order stuff.<BR>
 <BR>
@@ -52,8 +52,8 @@ Each Component has the following structure,
 <UL>
     <LI>a UInt32, the ID of the Component 
     <LI>a list of UInt32, IDs of Categories the Component is in 
-    <LI><font color="#FFCC99">a String, name of the component</font></LI>
-    <LI><font color="#FFCC99">a String, description of the component</font></LI>
+    <LI><font color="#FFFF00">a String, name of the component</font></LI>
+    <LI><font color="#FFFF00">a String, description of the component</font></LI>
     <LI>a String, NCL Add function 
     <BLOCKQUOTE>
         A NCL function which is called when adding this component to a design. If the component is allowed to be added to <FONT COLOR="#0000ff">a design then the function should return a pair with True and a string to be displayed, otherwise it should return a pair with false and a string which describes the reason for not being able to add the component. The function is given the design object which it is being added to. </FONT><BR>
@@ -84,7 +84,10 @@ Each Component has the following structure,
     </BLOCKQUOTE>
     <LI>a list of 
     <BLOCKQUOTE>
-        a UInt32, ID of the property this is a String, NCL Property function <BR>
+        <UL>
+        <LI>a UInt32, ID of the property this is</LI>
+	<LI>a String, NCL Property function</LI>
+	</UL><BR>
         <BLOCKQUOTE>
             A NCL function which is called to work out the amount this component contributes to a property. It should return a valid number. It is given the current design.<BR>
             <BR>
@@ -104,8 +107,8 @@ Each Component has the following structure,
 <BLOCKQUOTE>
     <BLOCKQUOTE>
         <BLOCKQUOTE>
-            <B>This function can not depend on any property which has an order which is less then or equal to this property. </B><BR>
-            For example if the &quot;firepower&quot; property was order 1 and the &quot;cloaking&quot; property was order 0, then the cloaking property can not depend on the firepower property. This would mean the &quot;Sheep Skin&quot; would be an invalid component. This is needed to stop circular dependency such as,<BR>
+            <B>This function can not depend on any property which has <font color="#FFFF00">a rank</font> which is less then or equal to this property. </B><BR>
+            For example if the &quot;firepower&quot; property was <font color="#FFFF00">rank</font> 1 and the &quot;cloaking&quot; property was <font color="#FFFF00">rank</font> 0, then the cloaking property can not depend on the firepower property. This would mean the &quot;Sheep Skin&quot; would be an invalid component. This is needed to stop circular dependency such as,<BR>
             <BLOCKQUOTE>
                 &quot;Blaster&quot;, only provides firepower if the ship has no shields<BR>
                 &quot;Sheep Skin&quot;, only provides shields if the ship has no firepower 
@@ -119,7 +122,7 @@ Each Component has the following structure,
 Each Property has, 
 <UL>
     <LI>a UInt32, ID of the Property 
-    <LI>a UInt32, order of the property (IE the order the properties are calculated in) 
+    <LI>a UInt32, <font color="#FFFF00">rank</font> of the property (IE the order the properties are calculated in) 
     <LI>a String, the name of the Property 
     <LI>a String, a description of the Property 
     <LI>a String, NCL Display function, 
@@ -128,7 +131,7 @@ Each Property has,
         <BR>
         <FONT COLOR="#008200">It is important that the function is not dependent on the list being in any order. If order is required the function must first sort it. (For example calling with [10, 4, 5] should return the same result as calling with [5, 4, 10] or [4, 5, 10].)</FONT><BR>
         <BR>
-        <B><FONT COLOR="#008200">This function can not depend on any property which has an order which is less then or equal to this property. </FONT></B><BR>
+        <B><FONT COLOR="#008200">This function can not depend on any property which has <font color="#FFFF00">a rank</font> which is less then or equal to this property. </FONT></B><BR>
         <BR>
         A simple linear example which displays &quot;10 PSI&quot;,<BR>
         <BLOCKQUOTE>
@@ -178,15 +181,21 @@ Each Design has,
 <UL>
     <LI>a UInt32, the ID of the Design 
     <LI>a list of UInt32, IDs of Categories the Design is in 
-    <LI><font color="#FFCC99">a String, the name of the design</font></LI>
-    <LI><font color="#FFCC99">a String, a description of the design</font></LI>
+    <LI><font color="#FFFF00">a String, the name of the design</font></LI>
+    <LI><font color="#FFFF00">a String, a description of the design</font></LI>
     <LI><FONT COLOR="#008200">a SInt32</FONT>, the number of times the Design is in use 
-    <LI><FONT COLOR="#008200">a <font color="#FFCC99">UInt32</font>, the owner of the Design</FONT> 
+    <LI><FONT COLOR="#008200">a <font color="#FFFF00">UInt32</font>, the owner of the Design</FONT> 
     <LI>a list of UInt32, IDs of the Components which are in a Design
+    <LI><font color="#FFFF00">a String, the concaternation of error strings from the component add NCL function (read only)</font></LI>
+    <LI><font color="#FFFF00">a (read only) list of
+      <UL>
+        <LI>a UInt32, Property ID</LI>
+	<LI>a String, the text string of the value of the property</LI>
+      </UL></font></LI>
 </UL>
 <B><FONT COLOR="#008200">Notes:</FONT></B><BR>
 <FONT COLOR="#008200">If the design is unusable then the number of times in use will be -1.</FONT><BR>
-<FONT COLOR="#008200">If the owner is unknown the field will be <font color="#FFCC99">0</font>, otherwise it will be the ID of the player who owns the design.</FONT><BR>
+<FONT COLOR="#008200">If the owner is unknown the field will be <font color="#FFFF00">0</font>, otherwise it will be the ID of the player who owns the design.</FONT><BR>
 <BR>
 <BR>
 <BR>
@@ -198,8 +207,8 @@ Each Category has,
 <UL>
     <LI>a UInt32, ID of the Category 
     <LI>a String, the name of the Category 
-    <LI>a UInt32, the type of the Category (Component, Design, Property) 
-    <LI>a list of UInt32, IDs of the things in the Category
+    <LI><font color="#FFFF00">a list of UInt32, IDs of Designs in the category</font></LI>
+    <LI><font color="#FFFF00">a list of UInt32, IDs of Components in the category</font></LI>
 </UL>
 <H1>
 <B><FONT SIZE="6"><FONT COLOR="#008200">How to Calculate?</FONT></FONT></B>
@@ -210,18 +219,18 @@ Each Category has,
 <H4>
 <B><FONT COLOR="#008200">Step 1.</FONT></B>
 </H4>
-<FONT COLOR="#008200">Loop over all the components in a design and collect their properties into a list ordered on their order.</FONT><BR>
+<FONT COLOR="#008200">Loop over all the components in a design and collect their properties into a list ordered on their <font color="#FFFF00">rank</font>.</FONT><BR>
 <BR>
 <FONT COLOR="#008200">The following code in pseudo-python should serve as an example,</FONT> 
 <PRE>
 <FONT COLOR="#008200">properties = {}</FONT>
 <FONT COLOR="#008200">for component in components:</FONT>
 <FONT COLOR="#008200">&nbsp;&nbsp;&nbsp; for propertyvalue in component.properties:</FONT>
-<FONT COLOR="#008200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; order = propertyvalue.property.order</FONT>
-<FONT COLOR="#008200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if not properties.has_key(order):</FONT>
-<FONT COLOR="#008200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; properties[order] = []</FONT>
-<FONT COLOR="#008200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if propertyvalue.property not in properties[order]:</FONT>
-<FONT COLOR="#008200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; properties[order].append(propertyvalue.property)</FONT>
+<FONT COLOR="#008200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#FFFF00">rank</font> = propertyvalue.property.<font color="#FFFF00">rank</font></FONT>
+<FONT COLOR="#008200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if not properties.has_key(<font color="#FFFF00">rank</font>):</FONT>
+<FONT COLOR="#008200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; properties[<font color="#FFFF00">rank</font>] = []</FONT>
+<FONT COLOR="#008200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if propertyvalue.property not in properties[<font color="#FFFF00">rank</font>]:</FONT>
+<FONT COLOR="#008200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; properties[<font color="#FFFF00">rank</font>].append(propertyvalue.property)</FONT>
 </PRE>
 <FONT COLOR="#008200">With the following input,</FONT> 
 <PRE>
@@ -233,7 +242,7 @@ Each Category has,
 <FONT COLOR="#008200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PropertyValue(RechargeTime)]&gt;</FONT>
 <FONT COLOR="#008200">] </FONT>
 
-<FONT COLOR="#008200"># Where EnergyPerYear and RequiredEnergy are both order 1 and RechargeTime is order 2</FONT>
+<FONT COLOR="#008200"># Where EnergyPerYear and RequiredEnergy are both <font color="#FFFF00">rank</font> 1 and RechargeTime is <font color="#FFFF00">rank</font> 2</FONT>
 </PRE>
 <FONT COLOR="#008200">You get the following output</FONT> 
 <PRE>
