@@ -133,7 +133,7 @@
 
 <h5>4.2.3 Sequencing</h5>
 <p>
-	TPCL does not have seperate <span class="tpcl">begin</a> statement. All
+	TPCL does not have separate <span class="tpcl">begin</a> statement. All
 	functions which have implicit begins still retain the normal behavior.
 	This is because there are no cases in TPCL where a begin by itself
 	makes sense.
@@ -162,7 +162,7 @@
 <h3>5 Expressions</h3>
 <h4>5.1 Programs</h4>
 <p>
-	TPCL is typically never stored in files or entered interactivally. TPCL
+	TPCL is typically never stored in files or entered interactively. TPCL
 	has no "top-level" as normally found in Scheme program.
 </p>
 
@@ -185,20 +185,20 @@
 
 <h5>6.2.1 Numerical Types</h5>
 <p>
-	TPCL only has a single numerical type which is equivelent to Schemes
+	TPCL only has a single numerical type which is equivalent to Schemes
 	<span class="tpcl">real</span>.
 </p>
 
 <h5>6.2.2 Exactness</h5>
 <p>
-	As TPCL has only reals exactness make no sense. No exactness functions
+	As TPCL has only Reals exactness make no sense. No exactness functions
 	are available.
 </p>
 
 <h5>6.2.3 Implementation Restrictions</h5>
 <p>
 	TPCL requires that IEEE 64-bit floating point standards be followed for
-	reals.
+	Reals.
 </p>
 
 <h5>6.2.4 Syntax of Numerical Constants</h5>
@@ -210,13 +210,13 @@
 <h5> 6.2.5 Numerical operations</h5>
 <p>
 	TPCL does not have some operations described in this section.  TPCL
-	does not have optional operations, an avalible operations must be
-	implimented.
+	does not have optional operations, an available operations must be
+	implemented.
 </p><p>
 	Note that some of the definitions are slightly different because of
-	the fact that only reals exist in TPCL.
+	the fact that only Reals exist in TPCL.
 </p><p>
-	Avalible:
+	Available:
 	<ul>
 		<li>(number? obj)</li>
 		<li>(real? obj)</li>
@@ -262,7 +262,7 @@
 		<li>(sqrt z)</li>
 		<li>(expt z1 z2)</li>
 	</ul>
-	Not Avalible:
+	Not Available:
 	<ul>
 		<li>(complex? obj)</li>
     	<li>(rational? obj)</li>
@@ -337,7 +337,7 @@
 <h4>6.6 Input and output</h4>
 <p>
 	TPCL does not include any input or output support. No function found in
-	this section is avalible.
+	this section is available.
 </p>
 
 
