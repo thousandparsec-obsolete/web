@@ -185,7 +185,7 @@ Each Design has,
 </UL>
 <B><FONT COLOR="#008200">Notes:</FONT></B><BR>
 <FONT COLOR="#008200">If the design is unusable then the number of times in use will be -1.</FONT><BR>
-<FONT COLOR="#008200">If the owner is unknown the field will be -1, if the player owns the design then it will be zero, otherwise it will be the ID of the player who owns the design.</FONT><BR>
+<FONT COLOR="#008200">If the owner is unknown the field will be -1, otherwise it will be the ID of the player who owns the design.</FONT><BR>
 <BR>
 <BR>
 <BR>

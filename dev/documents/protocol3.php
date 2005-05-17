@@ -1705,7 +1705,7 @@
 <p>
 	See <a href="#GetwithID_Desc">Get With ID</a>
 </p>
-<p>Note: Getting id 0 will return the current player</p>
+<p>Note: Getting id 0 will return the current player and the returned player object will have the correct player id set.</p>
 </span>
 
 <span class="new">
