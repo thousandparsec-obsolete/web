@@ -685,7 +685,7 @@ function is given the design object which it is being added to. </FONT>
 (lambda (design)</FONT> <BR>
 
 	    <FONT COLOR="#0000ff">
-&nbsp;&nbsp;&nbsp; (if (&gt; design.radiation 1)</FONT> <BR>
+&nbsp;&nbsp;&nbsp; (if (&gt; (designtype.radiation design) 1)</FONT> <BR>
 
 	    <FONT COLOR="#0000ff">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cons #t &quot;&quot;)</FONT>
@@ -713,7 +713,7 @@ provides shields on unarmed ships.</FONT> <BR>
 (lambda (design)</FONT> <BR>
 
 	    <FONT COLOR="#0000ff">
-&nbsp;&nbsp;&nbsp; (if (&gt; design.firepower 1)</FONT> <BR>
+&nbsp;&nbsp;&nbsp; (if (&gt; (designtype.firepower design) 1)</FONT> <BR>
 
 	    <FONT COLOR="#0000ff">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cons #t &quot;Sheep Skin
@@ -767,7 +767,7 @@ a list of
 
 		(lambda (design)<BR>
 
-		&nbsp;&nbsp;&nbsp; (if (&gt; design.firepower 0)
+		&nbsp;&nbsp;&nbsp; (if (&gt; (designtype.firepower design) 0)
 		0 100))<BR>
 
 	    </BLOCKQUOTE>
