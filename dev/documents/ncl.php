@@ -913,7 +913,7 @@ acceleration,</span> <BR>
 (lambda (design, bits)</span> <BR>
 
 	    <span class="v2">
-&nbsp;&nbsp;&nbsp; (let ((n (/ design.force design.mass)))</span> <BR>
+&nbsp;&nbsp;&nbsp; (let ((n (/ (designtype.force design) (designtype.mass design))))</span> <BR>
 
 	    <span class="v2">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cons n (string-append n &quot;
@@ -937,7 +937,7 @@ calculates the cloaking,</span> <BR>
 (lambda (design, bits)</span> <BR>
 
 	    <span class="v2">
-&nbsp;&nbsp;&nbsp; (let ((n (/ (apply + bits) design.mass)))</span> <BR>
+&nbsp;&nbsp;&nbsp; (let ((n (/ (apply + bits) (designtype.mass design)))</span> <BR>
 
 	    <span class="v2">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (set! n (/ n (n+1)))</span>
@@ -1053,69 +1053,34 @@ their properties into a list ordered on their order.</span> <BR>
 an example,</span>
 
 <PRE>
-
-<span class="v2"> properties = {}</span>
-
-<span class="v2"> for component in components:</span>
-
-<span class="v2"> &nbsp;&nbsp;&nbsp; for propertyvalue in
-component.properties:</span>
-
-<span class="v2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; order =
-propertyvalue.property.order</span>
-
-<span class="v2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if not
-properties.has_key(order):</span>
-
-<span class="v2">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-properties[order] = []</span>
-
-<span class="v2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if
-propertyvalue.property not in properties[order]:</span>
-
-<span class="v2">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-properties[order].append(propertyvalue.property)</span>
-
+ properties = {}
+ for component in components:
+     for propertyvalue in component.properties:
+         order = propertyvalue.property.order
+         if not properties.has_key(order):
+             properties[order] = []
+         if propertyvalue.property not in properties[order]:
+             properties[order].append(propertyvalue.property)
 </PRE>
 
 <span class="v2"> With the following input,</span>
 
 <PRE>
-
-<span class="v2"> components = [</span>
-
-<span class="v2"> &nbsp; &lt;Large Solar Sail [</span>
-
-<span class="v2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-PropertyValue(EnergyPerYear)]&gt;</span>
-
-<span class="v2"> &nbsp; &lt;Large Jump Engine [</span>
-
-<span class="v2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-PropertyValue(RequiredEnergy),</span>
-
-<span class="v2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-PropertyValue(RechargeTime)]&gt;</span>
-
-<span class="v2"> ] </span>
-
-
-<span class="v2"> # Where EnergyPerYear and RequiredEnergy are both
-order 1 and RechargeTime is order 2</span>
-
+ components = [
+   &lt;Large Solar Sail [
+       PropertyValue(EnergyPerYear)]&gt;
+   &lt;Large Jump Engine [
+       PropertyValue(RequiredEnergy),
+       PropertyValue(RechargeTime)]&gt;
+ ] 
+ # Where EnergyPerYear and RequiredEnergy are both order 1 and RechargeTime is order 2
 </PRE>
 
 <span class="v2"> You get the following output</span>
 
 <PRE>
-
-<span class="v2"> { 1: [Property(EnergyPerYear),
-Property(RequiredEnergy)],</span>
-
-<span class="v2"> &nbsp; 2: [Property(RechargeTime)]}</span>
-
+ { 1: [Property(EnergyPerYear), Property(RequiredEnergy)],
+   2: [Property(RechargeTime)]}
 </PRE>
 
 <H4>
@@ -1142,52 +1107,24 @@ the property with the property values.</span> <BR>
 serve as an example,</span>
 
 <PRE>
+ keys = properties.keys()
+ keys.sort()
 
-<span class="v2"> keys = properties.keys()</span>
+ for key in keys:
+     for property in properties[key]:
+         bits = []
 
-<span class="v2"> keys.sort()</span>
+         # This evaluates the property value for each component
+         for component in components:
+             if component.has_property(property):
+                 bits.append(component.get_property(property.name).eval(design))
 
+         # This evaluates the overall value of the property
+         value, text = property.eval(design, bits)
+         setattr(design, property.name, value)
 
-<span class="v2"> for key in keys:</span>
-
-<span class="v2"> &nbsp;&nbsp;&nbsp; for property in
-properties[key]:</span>
-
-<span class="v2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bits =
-[]</span>
-
-
-<span class="v2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # This
-evaluates the property value for each component</span>
-
-<span class="v2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for component
-in components:</span>
-
-<span class="v2">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-if component.has_property(property):</span>
-
-<span class="v2">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-bits.append(component.get_property(property.name).eval(design))</span>
-
-
-<span class="v2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # This
-evaluates the overall value of the property</span>
-
-<span class="v2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; value,
-text = property.eval(design, bits)</span>
-
-<span class="v2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-setattr(design, property.name, value)</span>
-
-
-<span class="v2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Do
-something with the property text here...</span>
-
-<span class="v2"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-do_something(text)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
-
+         # Do something with the property text here...
+         do_something(text)        
 </PRE>
 
 <BR>
