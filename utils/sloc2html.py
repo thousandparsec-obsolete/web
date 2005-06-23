@@ -24,6 +24,7 @@ colors = { "python" : "blue",
            "cpp" : "green",
            "sh" : "red",
 	   "php" : "brown",
+	   "lisp" : "#FFB23E",
 	   }
 
 print "<h1>Counted Source Lines of Code</h1>"
