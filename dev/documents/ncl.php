@@ -864,7 +864,7 @@ an order which is less then or equal to this property. </span> </B> <BR>
 	    &nbsp;&nbsp;&nbsp; (let ((n (apply + bits)))<BR>
 
 	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cons n
-	    (string-append n &quot; PSI&quot;))<BR>
+	    (string-append (number-&gt;string n) &quot; PSI&quot;))<BR>
 
 	    &nbsp;&nbsp;&nbsp; )<BR>
 
@@ -884,15 +884,15 @@ an order which is less then or equal to this property. </span> </B> <BR>
 	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cond <BR>
 
 	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	    ((&lt; n 100) (cons n (string-append n &quot; grams&quot;))
+	    ((&lt; n 100) (cons n (string-append (number-&gt;string n) &quot; grams&quot;))
 	    )<BR>
 
 	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	    ((&lt; n 1000) (cons (/ n 100) (string-append n &quot;
+	    ((&lt; n 1000) (cons (/ n 100) (string-append (number-&gt;string n) &quot;
 	    kilograms&quot;)) )<BR>
 
 	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	    ((&lt; n 10000) (cons (/ n 1000) (string-append n &quot;
+	    ((&lt; n 10000) (cons (/ n 1000) (string-append (number-&gt;string n) &quot;
 	    tons&quot;)) )<BR>
 
 	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )<BR>
@@ -916,7 +916,7 @@ acceleration,</span> <BR>
 &nbsp;&nbsp;&nbsp; (let ((n (/ (designtype.force design) (designtype.mass design))))</span> <BR>
 
 	    <span class="v2">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cons n (string-append n &quot;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cons n (string-append (number-&gt;string n) &quot;
 m/s^2&quot;))</span> <BR>
 
 	    <span class="v2">
@@ -944,7 +944,7 @@ calculates the cloaking,</span> <BR>
 <BR>
 
 	    <span class="v2">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cons n (string-append n &quot;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cons n (string-append (number-&gt;string n) &quot;
 %&quot;))</span> <BR>
 
 	    <span class="v2">
