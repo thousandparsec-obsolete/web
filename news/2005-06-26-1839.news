@@ -1,0 +1,21 @@
+
+<h2>Welcome Summer of Code Coders!</h2>
+<p>by Mithro</p>
+<p>
+	Just like to Welcome all the new coders, who sadly didn't win a stripend from
+	Google in the Summer of Code competition, but have instead decided to help out
+	with this project!
+</p><p>
+	We might not be able to give you a massive stripend but you'll have loads of 
+	fun here helping out on a cool project.	We all know that you where the good 
+	ones anyway :P
+</p><p>
+	If you have any questions feel free to ask! Both the 
+	<a href="http://www.thousandparsec.net/tp/lists.php">mailing lists</a> and on
+	IRC (<a href="irc://irc.worldforge.org/#tp">main server</a>, 
+	<a href="irc://irc.freenode.org/#tp">backup server</a>).
+</p><p>
+	On a side note I have also fixed up the IRC bots. CIA is now back (yay for CVS
+	commit messages!) and we have a new tpb bot which does a bunch of cool things 
+	(including relaying between our backup and main server).
+</p>
