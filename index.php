@@ -7,7 +7,13 @@
 $news = "news/";
 $files = get_files($news);
 
+$i = 0;
 foreach($files as $file) {
+	if ($i > 10)
+		break;
+	else
+		$i++;
+
 	include "bits/start_section.inc";
 	include($news . $file);
 ?>
