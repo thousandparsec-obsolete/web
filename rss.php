@@ -12,7 +12,18 @@
 $news = "news/";
 $files = get_files($news);
 
+$i = 0;
 foreach($files as $file) {
+	if ($i == 0) { ?>
+    <lastBuildDate><?php echo substr($file, 0, -10); ?>T<?php echo substr($file, -9, -7); ?>:<?php echo substr($file, -7, -5); ?>:00-00:00</lastBuildDate>
+<?php
+	}
+
+	if ($i > 10)
+		break;
+	else
+		$i += 1;
+
 	# Read in the file
 	$haystack = file_get_contents($news . $file);
 
