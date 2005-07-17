@@ -19,7 +19,7 @@
 		still version 0.2
 	</span>
 </h4>
-<p>Last updated 21 March 2005.</p>
+<p>Last updated 15 July 2005.</p>
 
 <?php
 	include "../bits/end_section.inc";
@@ -135,13 +135,50 @@
 			</li>
 			<li><a href="#DesignManipulation">Design Manipulation</a>
 				<ul>
+					<li><a href="#Categories">Categories</a>
+						<ul>
+							<li><a href="#GetCategory_Desc">Get Category Frame</a></li>
+							<li><a href="#Category_Desc">Category Frame</a></li>
+							<li><a href="#AddCategory_Desc">Add Category Frame</a></li>
+							<li><a href="#RemoveCategory_Desc">Remove Category Frame</a></li>
+							<li><a href="#GetCategoryIDs_Desc">Get Category IDs Frame</a></li>
+							<li><a href="#ListOfCategoryIDs_Desc">List Of Category IDs Frame</a></li>
+						</ul>
+					</li>
+					<li><a href="#Designs">Designs</a>
+						<ul>
+							<li><a href="#GetDesign_Desc">Get Design Frame</a></li>
+							<li><a href="#Design_Desc">Design Frame</a></li>
+							<li><a href="#AddDesign_Desc">Add Design Frame</a></li>
+							<li><a href="#ModifyDesign_Desc">Modify Design Frame</a></li>
+							<li><a href="#RemoveDesign_Desc">Remove Design Frame</a></li>
+							<li><a href="#GetDesignIDs_Desc">Get Design IDs Frame</a></li>
+							<li><a href="#ListOfDesignIDs_Desc">List Of Design IDs Frame</a></li>
+						</ul>
+					</li>
+					<li><a href="#Components">Components</a>
+						<ul>
+							<li><a href="#GetComponent_Desc">Get Component Frame</a></li>
+							<li><a href="#Component_Desc">Component Frame</a></li>
+							<li><a href="#GetComponentIDs_Desc">Get Component IDs Frame</a></li>
+							<li><a href="#ListOfComponentIDs_Desc">List Of Component IDs Frame</a></li>
+						</ul>
+					</li>
+					<li><a href="Properties">Properties</a>
+						<ul>
+							<li><a href="#GetProperty_Desc">Get Property Frame</a></li>
+							<li><a href="#Property_Desc">Property Frame</a></li>
+							<li><a href="#GetPropertyIDs_Desc">Get Property IDs Frame</a></li>
+							<li><a href="#ListOfPropertyIDs_Desc">List Of Property IDs Frame</a></li>
+						</ul>
+					</li>
 				</ul>
 			</li>
 		</ul>
 	</li>
 	<li><a href="#OrderArgumentTypes">Order Argument Types</a></li>
 	<li><a href="#GenericReferenceSystem">Generic Reference System</a></li>
-	<li><a href="#ComponentLanguage">Component Language</a></li>
+	<li><a href="ncl.php">New Component Language (separate document)</a></li>
 </ul>
 
 <?php
@@ -690,60 +727,130 @@
 		<th colspan="4"><a href="#DesignManipulation">Design Manipulation</a></th>
 	</tr><tr class="new">
 		<td colspan="4" class="desc">
-			These are the frames required to manipulate the ship etc design.
+			These are the frames required to manipulate designs (such as those for ships
+			or Weapons).
 		</td>
-	</tr><tr class="row0 new">
-		<td class="numeric">? - 41</td>
-		<td><a href="#GetCategoryDescription_Desc">Get Category Description</a></td>
-		<td>Returns a description of an category type</td>
-		<td>Get with ID</td>
-	</tr><tr class="row1 new">
-		<td class="numeric">? - 42</td>
-		<td><a href="#CategoryDescription_Desc">Category Description</a></td>
-		<td>Describes a category</td>
-		<td></td>
 
 	</tr><tr class="row0 new">
-		<td class="numeric">? - 43</td>
-		<td><a href="#GetCategoryDescriptionIDs_Desc">Get Category Description IDs</a></td>
-		<td>Gets a list of category description ids.</td>
+		<td class="numeric">41</td>
+		<td><a href="#GetCategory_Desc">Get Category</a></td>
+		<td>Get the details about a category</td>
+		<td>Get with ID</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">42</td>
+		<td><a href="#Category_Desc">Category</a></td>
+		<td>Describes a category</td>
+		<td></td>
+	</tr><tr class="row0 new">
+		<td class="numeric">43</td>
+		<td><a href="#AddCategory_Desc">Add Category</a></td>
+		<td>Adds a new category</td>
+		<td>Category</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">44</td>
+		<td><a href="#RemoveCategory_Desc">Remove Category</a></td>
+		<td>Remove a category</td>
+		<td>Get with ID</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">45</td>
+		<td><a href="#GetCategoryIDs_Desc">Get Category IDs</a></td>
+		<td>Gets a list of category ids.</td>
 		<td>Get ID Sequence</td>
 	</tr><tr class="row1 new">
-		<td class="numeric">? - 44</td>
-		<td><a href="#ListOfCategoryDescriptionIDs_Desc">List Of Category Description IDs</a></td>
-		<td>A list of category description type ids.</td>
+		<td class="numeric">46</td>
+		<td><a href="#ListOfCategoryIDs_Desc">List Of Category IDs</a></td>
+		<td>A list of category type ids.</td>
 		<td>ID Sequence</td>
-		
+	</tr>
+
+	<tr class="new">
+		<td colspan="4">&nbsp;</td>
+	</tr>
+	
 	</tr><tr class="row0 new">
-		<td class="numeric">? - 45</td>
+		<td class="numeric">47</td>
+		<td><a href="#GetDesign_Desc">Get Design</a></td>
+		<td>Get the details about a design</td>
+		<td>Get with ID</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">48</td>
+		<td><a href="#Design_Desc">Design</a></td>
+		<td>Describes a design</td>
+		<td></td>
+	</tr><tr class="row0 new">
+		<td class="numeric">49</td>
+		<td><a href="#AddDesign_Desc">Add Design</a></td>
+		<td>Adds a new design</td>
+		<td>Design</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">50</td>
+		<td><a href="#ModifyDesign_Desc">Modify Design</a></td>
+		<td>Modifies an old design</td>
+		<td>Design</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">51</td>
+		<td><a href="#RemoveDesign_Desc">Remove Design</a></td>
+		<td>Remove a design</td>
+		<td>Design</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">52</td>
+		<td><a href="#GetDesignIDs_Desc">Get Design IDs</a></td>
+		<td>Gets a list of design ids.</td>
+		<td>Get ID Sequence</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">53</td>
+		<td><a href="#ListOfDesignIDs_Desc">List Of Design IDs</a></td>
+		<td>A list of design type ids.</td>
+		<td>ID Sequence</td>
+	
+	<tr class="new">
+		<td colspan="4">&nbsp;</td>
+	</tr>
+
+	</tr><tr class="row1 new">
+		<td class="numeric">54</td>
 		<td><a href="#GetComponent_Desc">Get Component</a></td>
 		<td>Gets the details about a component</td>
 		<td>Get with ID</td>
-	</tr><tr class="row1 new">
-		<td class="numeric">? - 46</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">55</td>
 		<td><a href="#Component_Desc">Component</a></td>
 		<td>Describes a component</td>
 		<td></td>
-	</tr><tr class="row0 new">
-		<td class="numeric">? - 47</td>
-		<td><a href="#InsertComponent_Desc">Insert Component</a></td>
-		<td>Creates a new component out of existing components</td>
-		<td></td>
 	</tr><tr class="row1 new">
-		<td class="numeric">? - 48</td>
-		<td><a href="#RemoveComponent_Desc">Remove Component</a></td>
-		<td>Removes a component</td>
-		<td>Get with ID</td>
-
-	</tr><tr class="row0 new">
-		<td class="numeric">? - 49</td>
+		<td class="numeric">56</td>
 		<td><a href="#GetComponentIDs_Desc">Get Component IDs</a></td>
 		<td>Gets a list of component ids.</td>
 		<td>Get ID Sequence</td>
-	</tr><tr class="row1 new">
-		<td class="numeric">? - 50</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">57</td>
 		<td><a href="#ListOfComponentIDs_Desc">List Of Component IDs</a></td>
 		<td>A list of component ids.</td>
+		<td>ID Sequence</td>
+
+	<tr class="new">
+		<td colspan="4">&nbsp;</td>
+	</tr>
+
+	</tr><tr class="row1 new">
+		<td class="numeric">54</td>
+		<td><a href="#GetProperty_Desc">Get Property</a></td>
+		<td>Gets the details about a property</td>
+		<td>Get with ID</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">55</td>
+		<td><a href="#Property_Desc">Property</a></td>
+		<td>Describes a property</td>
+		<td></td>
+	</tr><tr class="row1 new">
+		<td class="numeric">56</td>
+		<td><a href="#GetPropertyIDs_Desc">Get Property IDs</a></td>
+		<td>Gets a list of property ids.</td>
+		<td>Get ID Sequence</td>
+	</tr><tr class="row0 new">
+		<td class="numeric">57</td>
+		<td><a href="#ListOfPropertyIDs_Desc">List Of Property IDs</a></td>
+		<td>A list of property ids.</td>
 		<td>ID Sequence</td>
 
 	</tr>
@@ -760,10 +867,10 @@
 <h2>Frame ID List</h2>
 
 <table class="tabular">
-	<tr class="row0"><td class="numeric"> -</td><td>Get with ID</td></tr>
-	<tr class="row1"><td class="numeric"> -</td><td>Get with ID and Slots</td></tr>
-	<tr class="row0"><td class="numeric"> -</td><td>Get ID Sequence</td></tr>
-	<tr class="row1"><td class="numeric"> -</td><td>ID Sequence</td></tr>
+	<tr class="row0 new"><td class="numeric"> -</td><td>Get with ID</td></tr>
+	<tr class="row1 new"><td class="numeric"> -</td><td>Get with ID and Slots</td></tr>
+	<tr class="row0 new"><td class="numeric"> -</td><td>Get ID Sequence</td></tr>
+	<tr class="row1 new"><td class="numeric"> -</td><td>ID Sequence</td></tr>
 	<tr class="row0"><td class="numeric"> 0</td><td>Ok</td></tr>
 	<tr class="row1"><td class="numeric"> 1</td><td>Fail</td></tr>
 	<tr class="row0"><td class="numeric"> 2</td><td>Sequence</td></tr>
@@ -787,33 +894,44 @@
 	<tr class="row0"><td class="numeric">21</td><td>Remove Message</td></tr>
 	<tr class="row1"><td class="numeric">22</td><td>Get Resource Description</td></tr>
 	<tr class="row0"><td class="numeric">23</td><td>Resource Description</td></tr>
-	<tr class="row1"><td class="numeric">24</td><td>Redirect</td></tr>
-	<tr class="row0"><td class="numeric">25</td><td>Get Features</td></tr>
-	<tr class="row1"><td class="numeric">26</td><td>Available Features</td></tr>
-	<tr class="row0"><td class="numeric">27</td><td>Ping</td></tr>
-	<tr class="row1"><td class="numeric">28</td><td>Get Object IDs</td></tr>
-	<tr class="row0"><td class="numeric">29</td><td>Get Object IDs by Position</td></tr>
-	<tr class="row1"><td class="numeric">30</td><td>Get Object IDs by Container</td></tr>
-	<tr class="row0"><td class="numeric">31</td><td>List of Object IDs</td></tr>
-	<tr class="row1"><td class="numeric">32</td><td>Get Order Description IDs</td></tr>
-	<tr class="row0"><td class="numeric">33</td><td>List of Order Description IDs</td></tr>
-	<tr class="row1"><td class="numeric">34</td><td>Probe Order</td></tr>
-	<tr class="row0"><td class="numeric">35</td><td>Get Board IDs</td></tr>
-	<tr class="row1"><td class="numeric">36</td><td>List Of Board IDs</td></tr>
-	<tr class="row0"><td class="numeric">37</td><td>Get Resources IDs</td></tr>
-	<tr class="row1"><td class="numeric">38</td><td>List Of Resources IDs</td></tr>
-	<tr class="row0"><td class="numeric">39</td><td>Get Player Data</td></tr>
-	<tr class="row1"><td class="numeric">40</td><td>Player Data</td></tr>
-	<tr class="row0"><td class="numeric">41</td><td>Get Category Description</td></tr>
-	<tr class="row1"><td class="numeric">42</td><td>Category Description</td></tr>
-	<tr class="row0"><td class="numeric">43</td><td>Get Category Description IDs</td></tr>
-	<tr class="row1"><td class="numeric">44</td><td>List Of Category Description IDs</td></tr>
-	<tr class="row0"><td class="numeric">45</td><td>Get Component</td></tr>
-	<tr class="row1"><td class="numeric">46</td><td>Component</td></tr>
-	<tr class="row0"><td class="numeric">47</td><td>Insert Component</td></tr>
-	<tr class="row1"><td class="numeric">48</td><td>Remove Component</td></tr>
-	<tr class="row0"><td class="numeric">49</td><td>Get Component IDs</td></tr>
-	<tr class="row1"><td class="numeric">50</td><td>List Of Component IDs</td></tr>
+	<tr class="row1 new"><td class="numeric">24</td><td>Redirect</td></tr>
+	<tr class="row0 new"><td class="numeric">25</td><td>Get Features</td></tr>
+	<tr class="row1 new"><td class="numeric">26</td><td>Available Features</td></tr>
+	<tr class="row0 new"><td class="numeric">27</td><td>Ping</td></tr>
+	<tr class="row1 new"><td class="numeric">28</td><td>Get Object IDs</td></tr>
+	<tr class="row0 new"><td class="numeric">29</td><td>Get Object IDs by Position</td></tr>
+	<tr class="row1 new"><td class="numeric">30</td><td>Get Object IDs by Container</td></tr>
+	<tr class="row0 new"><td class="numeric">31</td><td>List of Object IDs</td></tr>
+	<tr class="row1 new"><td class="numeric">32</td><td>Get Order Description IDs</td></tr>
+	<tr class="row0 new"><td class="numeric">33</td><td>List of Order Description IDs</td></tr>
+	<tr class="row1 new"><td class="numeric">34</td><td>Probe Order</td></tr>
+	<tr class="row0 new"><td class="numeric">35</td><td>Get Board IDs</td></tr>
+	<tr class="row1 new"><td class="numeric">36</td><td>List Of Board IDs</td></tr>
+	<tr class="row0 new"><td class="numeric">37</td><td>Get Resources IDs</td></tr>
+	<tr class="row1 new"><td class="numeric">38</td><td>List Of Resources IDs</td></tr>
+	<tr class="row0 new"><td class="numeric">39</td><td>Get Player Data</td></tr>
+	<tr class="row1 new"><td class="numeric">40</td><td>Player Data</td></tr>
+	<tr class="row0 new"><td class="numeric">41</td><td>Get Category</td></tr>
+	<tr class="row1 new"><td class="numeric">42</td><td>Category</td></tr>
+	<tr class="row0 new"><td class="numeric">43</td><td>Add Category</td></tr>
+	<tr class="row1 new"><td class="numeric">44</td><td>Remove Category</td></tr>
+	<tr class="row0 new"><td class="numeric">45</td><td>Get Category IDs</td></tr>
+	<tr class="row1 new"><td class="numeric">46</td><td>List Of Category IDs</td></tr>
+	<tr class="row0 new"><td class="numeric">47</td><td>Get Design</td></tr>
+	<tr class="row1 new"><td class="numeric">48</td><td>Design</td></tr>
+	<tr class="row0 new"><td class="numeric">49</td><td>Add Design</td></tr>
+	<tr class="row1 new"><td class="numeric">50</td><td>Modify Design</td></tr>
+	<tr class="row0 new"><td class="numeric">51</td><td>Remove Design</td></tr>
+	<tr class="row1 new"><td class="numeric">52</td><td>Get Design IDs</td></tr>
+	<tr class="row0 new"><td class="numeric">53</td><td>List Of Design IDs</td></tr>
+	<tr class="row1 new"><td class="numeric">54</td><td>Get Component</td></tr>
+	<tr class="row0 new"><td class="numeric">55</td><td>Component</td></tr>
+	<tr class="row1 new"><td class="numeric">56</td><td>Get Component IDs</td></tr>
+	<tr class="row0 new"><td class="numeric">57</td><td>List Of Component IDs</td></tr>
+	<tr class="row1 new"><td class="numeric">54</td><td>Get Property</td></tr>
+	<tr class="row0 new"><td class="numeric">55</td><td>Property</td></tr>
+	<tr class="row1 new"><td class="numeric">56</td><td>Get Property IDs</td></tr>
+	<tr class="row0 new"><td class="numeric">57</td><td>List Of Property IDs</td></tr>
 </table>
 
 <?php
@@ -1072,17 +1190,18 @@
 		<li>0x3 - HTTP Tunneling available on this port</li>
 		<li>0x4 - HTTP Tunneling available on another port</li>
 		<li>0x5 - Support Keep alive frames</li>
+		<li>0x6 - Support server side property calculation</li>
 	</ul>
 </p><p>
 	Optimizations are features which allow the clients to take certain shortcuts.
 	All optimization are highly optional. Optimizations have ids greater then 0xffff,
 	<ul>
-		<li>0x10000 - Sends Object ID Sequences in decending modified time order</li>
-		<li>0x10001 - Sends Order Description ID Sequences in decending modified time order</li>
-		<li>0x10002 - Sends Board ID Sequences in decending modified time order</li>
-		<li>0x10003 - Sends Resource Description ID Sequences in decending modified time order</li>
-		<li>0x10004 - Sends Category Description ID Sequences in decending modified time order</li>
-		<li>0x10005 - Sends Component ID Sequences in decending modified time order</li>
+		<li>0x10000 - Sends Object ID Sequences in descending modified time order</li>
+		<li>0x10001 - Sends Order Description ID Sequences in descending modified time order</li>
+		<li>0x10002 - Sends Board ID Sequences in descending modified time order</li>
+		<li>0x10003 - Sends Resource Description ID Sequences in descending modified time order</li>
+		<li>0x10004 - Sends Category Description ID Sequences in descending modified time order</li>
+		<li>0x10005 - Sends Component ID Sequences in descending modified time order</li>
 	</ul>
 </p>
 </span>
@@ -1733,48 +1852,110 @@
 <a name="DesignManipulation"></a>
 <h2>Design Manipulation</h2>
 
+<a name="Categories"></a>
+
 <span class="new">
-<a name="GetCategoryDescription_Desc"></a>
-<h3>Get Category Description Frame</h3>
+<a name="GetCategory_Desc"></a>
+<a name="RemoveCategory_Desc"></a>
+<h3>Get Category Frame, Remove Category Frame</h3>
 <p>
 	See <a href="#GetwithID_Desc">Get With ID</a>
 </p>
 </span>
 
 <span class="new">
-<a name="CategoryDescription_Desc"></a>
-<h3>Category Description Frame</h3>
+<a name="Category_Desc"></a>
+<a name="AddCategory_Desc"></a>
+<h3>Category Frame, Add Category Frame</h3>
 <p>
-	A Category Description frame consist of:
+	A Category frame consist of:
 	<ul>
 		<li>a UInt32, Category ID</li>
+		<li>a UInt64, the last modified time of this category description</li>
 		<li>a String, name of the category</li>
 		<li>a String, description of the category</li>
-		<li class="new">a UInt64, the last modified time of this category description</li>
 	</ul>
 </p>
 </span>
 
 <span class="new">
-<a name="GetCategoryDescriptionIDs_Desc"></a>
-<h3>Get Category Description IDs</h3>
+<a name="GetCategoryIDs_Desc"></a>
+<h3>Get Category IDs</h3>
 <p>
 	See <a href="#GetIDSequence_Desc">Get ID Sequence</a>
 </p>
 </span>
 
 <span class="new">
-<a name="ListOfCategoryDescriptionIDs_Desc"></a>
-<h3>List Of Category Description IDs</h3>
+<a name="ListOfCategoryIDs_Desc"></a>
+<h3>List Of Category IDs</h3>
 <p>
 	See <a href="#IDSequence">ID Sequence</a>
 </p>
 </span>
 
+<a name="Designs"></a>
+
+<span class="new">
+<a name="GetDesign_Desc"></a>
+<a name="RemoveDesign_Desc"></a>
+<h3>Get Design Frame, Remove Design Frame</h3>
+<p>
+	See <a href="#GetwithID_Desc">Get With ID</a>
+</p>
+</span>
+
+<span class="new">
+<a name="Design_Desc"></a>
+<a name="AddDesign_Desc"></a>
+<a name="ModifyDesign_Desc"></a>
+<h3>Design Frame, Add Design Frame, Modify Design Frame</h3>
+<p>
+	A Design frame consist of:
+	<ul>
+		<li>a UInt32, Design ID</li>
+		<li>a UInt64, the last modified time of this design description</li>
+		<li>a list of UInt32, categories this design is in</li>
+		<li>a String, name of the design</li>
+		<li>a String, description of the design</li>
+		<li>a SInt32, number of times the design is in use</li>
+		<li>a UInt32, owner of the design</li>
+		<li>a String, human readable feedback on the design</li>
+		<li>
+			a list of,
+				<ul>
+					<li>a UInt32, property id</li>
+					<li>a UInt32, property value</li>
+					<li>a String, property display string</li>
+				</ul>
+		</li>
+	</ul>
+</p><p>
+	<b>Note:</b> If usage is -1, then the design is unusable.
+</p>
+</span>
+
+<span class="new">
+<a name="GetDesignIDs_Desc"></a>
+<h3>Get Design IDs</h3>
+<p>
+	See <a href="#GetIDSequence_Desc">Get ID Sequence</a>
+</p>
+</span>
+
+<span class="new">
+<a name="ListOfDesignIDs_Desc"></a>
+<h3>List Of Design IDs</h3>
+<p>
+	See <a href="#IDSequence">ID Sequence</a>
+</p>
+</span>
+
+<a name="Components"></a>
+
 <span class="new">
 <a name="GetComponent_Desc"></a>
-<a name="RemoveComponent_Desc"></a>
-<h3>Get Component Frame, Remove Component Frame</h3>
+<h3>Get Component Frame</h3>
 <p>
 	See <a href="#GetwithID_Desc">Get With ID</a>
 </p>
@@ -1782,33 +1963,24 @@
 
 <span class="new">
 <a name="Component_Desc"></a>
-<a name="InsertComponent_Desc"></a>
-<h3>Component Frame, Insert Component frame</h3>
+<h3>Component Frame</h3>
 <p>
-	A Component frame and Insert Component frame consist of:
+	A Component frame consist of:
 	<ul>
 		<li>a UInt32, component ID</li>
-		<li>a UInt32, base component ID</li>
-		<li>a UInt32, the number of times this component is in use</li>
-		<li>a list of UInt32, component types</li>
-		<li>a String, name of component</li>
-		<li>a String, description of component</li>
+		<li>a UInt64, the last modified time of this component</li>
+		<li>a list of UInt32, categories this component is in</li>
+		<li>a String, name of the component</li>
+		<li>a String, description of the component</li>
+		<li>a String, TPCL "Requirements" function (see <a href="ncl.php#Func_Requirements">TPCL Document</a> for more information)</li>
 		<li>
-			a list of,
-			<ul>
-				<li>a UInt32, component ID</li>
-				<li>a UInt32, number of the components</li>
-			</ul>
+			a list of
+				<ul>
+					<li>a UInt32, Property ID</li>
+					<li>a String, TPCL "Property Value" function (see <a href="ncl.php#Func_PropertyValue">TPCL Document</a> for more information)</li>
+				</ul>
 		</li>
-		<li>a list as described in Component Language section</li>
 	</ul>
-</p><p>
-	A base component ID of zero means that this is a basic component and cannot
-	be modified or removed. The base component ID must either be zero or a basic 
-	component.
-</p><p>
-	A component can only be modified or removed if it's base component ID is not
-	zero and the number of times it is in use is zero.
 </p>
 </span>
 
@@ -1828,65 +2000,46 @@
 </p>
 </span>
 
+<a name="Properties"></a>
+
 <span class="new">
-<a name="ComponentLanguage"></a>
-<h2>Component Language</h2>
+<a name="GetProperty_Desc"></a>
+<h3>Get Property Frame</h3>
 <p>
-	Components have a simple language for describing the sub-components which can be
-	added to them. If this component cannot have anything added to it then it's 
-	this field should be empty. This language should only be taken as a guide to
-	what can and can't be added. 
-</p><p>
-	It is a simple Reverse Polish Notation logic. It has a very limited number of
-	operands and can refer to either part categories or individual part IDs.
-	This allows for complex instructions.
-</p><p>
-	This is encoded using a list of 3 integers.
-	<ul class="new">
-		<li>a UInt8, the operand</li>
-		<li>a UInt32, the number of components</li>
-		<li>a UInt32, the component category or ID</li>
-	</ul>
-</p><p>
-	The operands are as follows,
-	<ul class="new">
-		<li>0x1 - Component ID</li>
-		<li>0x2 - Component Category</li>
-		<li>0x3 - AND</li>
-		<li>0x4 - OR</li>
-		<li>0x5 - NOT</li>
-	</ul>
-</p><p>
-	For example
+	See <a href="#GetwithID_Desc">Get With ID</a>
 </p>
 </span>
 
-<font face="courier">
-<pre>
-Normal,
-(3 Electrical Type AND (2 Weapons Type OR 2 Cargo Type)) AND 1 Your Engine
-
-PN,
-AND AND (3 Electrical Type) OR (2 Weapons Type) (11 Cargo Type) (1 Your Engine) 
-
-RPN,
-(1 Your Engine) (11 Cargo Type) (2 Weapons Type) OR (3 Electrical Type) AND AND
-
-Encoded,
-
-1 Your Engine 11 Cargo      2 Weapon     OR          3 Elec       AND         AND         
-+-----------+ +-----------+ +----------+ +---------+ +----------+ +---------+ +---------+ 
->1< <1> <99>  >2< <11> <11> >2< <2> <13> >4< <0> <0> >2< <3> <12> >3< <0> <0> >3< <0> <0>
-</pre>
-</font>
+<span class="new">
+<a name="Property_Desc"></a>
+<h3>Property Frame</h3>
+<p>
+	A Property frame consist of:
+	<ul>
+		<li>a UInt32, property ID</li>
+		<li>a UInt64, the last modified time of this property</li>
+		<li>a list of UInt32, categories this property is in</li>
+		<li>a UInt32, rank of the property</li>
+		<li>a String, name of the property</li>
+		<li>a String, description of the property</li>
+		<li>a String, TPCL "Calculate" function (see <a href="ncl.php#Func_PropertyCalculate">TPCL Document</a> for more information)</li>
+	</ul>
+</p>
+</span>
 
 <span class="new">
-<a name="HowComponentCreationWorks"></a>
-<h2>How Component Creation Works</h2>
+<a name="GetPropertyIDs_Desc"></a>
+<h3>Get Property IDs</h3>
 <p>
-Component creation works creating a new component with the base component ID set to a basic component.
-The client can then add/remove sub-components to newly created component. (Of course this could be
-done in one step).
+	See <a href="#GetIDSequence_Desc">Get ID Sequence</a>
+</p>
+</span>
+
+<span class="new">
+<a name="ListOfPropertyIDs_Desc"></a>
+<h3>List Of Property IDs</h3>
+<p>
+	See <a href="#IDSequence">ID Sequence</a>
 </p>
 </span>
 

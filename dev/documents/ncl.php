@@ -12,7 +12,7 @@
 <?php include "../bits/start_section.inc" ?>
 
 <h1>Thousand Parsec Component Language</h1>
-<p> Last updated: 16 May 2005</p>
+<p> Last updated: 15 July 2005</p>
 
 <?php include "../bits/end_section.inc" ?>
 <?php include "../bits/start_section.inc" ?>
@@ -54,15 +54,51 @@
 
 <h2>Key</h2>
 <ul>
-	<li class="v2">Version 2 changes are marked in green.</li>
-	<li class="v3">Version 3 changes are marked in blue.</li>
-	<li class="nclcode">NCL code is marked like this.</li>
+	<li class="nclcode">TPCL code is marked like this.</li>
 </ul>
 
 <?php include "../bits/end_section.inc" ?>
 <?php include "../bits/start_section.inc" ?>
 
-<h2>????</h2>
+<h2>Quick Overview</h2>
+
+<p>
+	TPCL has the followings types,
+
+<ul>
+	<li>Reals, Implemented be implemented so that precision is that of a standard double
+	<li>Booleans, 
+	<li>Chars and Strings, All Strings are in UTF-8
+	<li>Pairs and Lists
+	<li>Design Structure
+</ul>
+
+	TPCL does not support the following normal schemetypes,</span>
+
+<ul>
+	<li>Rationals, Rational numbers are not supported, use Reals instead
+	<li>Complex, Complex numbers are not supported, use a Pair of Reals instead
+	<li>Vectors, Vectors are not supported, use Lists instead
+	<li>Integers, Integers are not supported, use Reals instead
+	<li>Object/Classes, there should be no use for these as TPCL is only for small functions with no persistent state
+</ul>
+
+</p><p>
+	TPCL also does not include the following normal scheme
+	features,
+
+	<ul>
+		<li>Ability to define new structures
+		<li>Any input or output (include all functions related to input and output)
+		<li>Macros
+	</ul>
+</p>
+
+
+<?php include "../bits/end_section.inc" ?>
+<?php include "../bits/start_section.inc" ?>
+
+<h2>Details</h2>
 
 <p>
 	TPCL is based on the Scheme <a href="put link here">R5RS standard</a>.
@@ -265,7 +301,7 @@
 	Not Available:
 	<ul>
 		<li>(complex? obj)</li>
-    	<li>(rational? obj)</li>
+		<li>(rational? obj)</li>
 		<li>(integer? obj)</li>
 		<li>(exact? obj)</li>
 		<li>(inexact? obj)</li>
@@ -281,8 +317,10 @@
 	</ul>
 </p>
 
-<H3> 6.2.6 Numerical Input and Output</H3>
-    Not implemented.
+<h5> 6.2.6 Numerical Input and Output</h5>
+<p>
+	Not implemented.
+</p>
 
 <h5> 6.3.1 Booleans</h5>
 <p>
@@ -348,897 +386,364 @@
 	<ul>
 		<li>rad-&gt;deg : (num -&gt; num)
 			<p>Converts radians into degrees</p></li>
-    	<li>deg-&gt;rad : (num -&gt; num)
+		<li>deg-&gt;rad : (num -&gt; num)
 			<p>Converts degrees into radians</p></li>
 
-    	<li>logt : (num num -&gt; num)
+		<li>logt : (num num -&gt; num)
 			<p>Inverse of the expt function</p></li>
-<TT> <span class="v3"> pi : real</span> </TT>
 
-    <BLOCKQUOTE>
-
-	<span class="v3">
-pi to exactly 12 decimal places</span>
- <BR>
-
-    </BLOCKQUOTE>
-
-
-    <LI>
-<TT> <span class="v3"> e : real</span> </TT>
-
-    <BLOCKQUOTE>
-
-	<span class="v3">
-e to exactly 12 decimal places</span>
-
-    </BLOCKQUOTE>
-
-<BR>
-
-<UL>
-
-    <LI>
-<TT> <span class="v3"> append : ((listof any) ... -&gt; (listof
-any))</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> assq : (x (listof (cons x y)) -&gt; (union false
-(cons x y)))</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> caaar : ((cons (cons (cons w (listof z)) (listof
-y)) (listof x)) -&gt; w)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> caadr : ((cons (cons (cons w (listof z)) (listof
-y)) (listof x)) -&gt; (listof z))</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> caar : ((cons (cons z (listof y)) (listof x))
--&gt; z)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> cadar : ((cons (cons w (cons z (listof y)))
-(listof x)) -&gt; z)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> cadddr : ((listof y) -&gt; y)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> caddr : ((cons w (cons z (cons y (listof x))))
--&gt; y)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> cadr : ((cons z (cons y (listof x))) -&gt;
-y)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> car : ((cons y (listof x)) -&gt; y)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> cdaar : ((cons (cons (cons w (listof z)) (listof
-y)) (listof x)) -&gt; (listof z))</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> cdadr : ((cons w (cons (cons z (listof y))
-(listof x))) -&gt; (listof y))</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> cdar : ((cons (cons z (listof y)) (listof x)) -&gt;
-(listof y))</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> cddar : ((cons (cons w (cons z (listof y)))
-(listof x)) -&gt; (listof y))</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> cdddr : ((cons w (cons z (cons y (listof x))))
--&gt; (listof x))</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> cddr : ((cons z (cons y (listof x))) -&gt;
-(listof x))</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> cdr : ((cons y (listof x)) -&gt; (listof x))</span>
-</TT>
-
-    <LI>
-<TT> <span class="v3"> cons : (x (listof x) -&gt; (listof x))</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> cons? : (any -&gt; boolean)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> eighth : ((listof y) -&gt; y)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> empty? : (any -&gt; boolean)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> first : ((cons y (listof x)) -&gt; y)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> length : (list -&gt; number)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> list : (any ... (listof any) -&gt; (listof
-any))</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> list : (any ... -&gt; (listof any))</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> list* : (any ... (listof any) -&gt; (listof
-any))</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> list-ref : ((listof x) natural-number -&gt;
-x)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> list? : (any -&gt; boolean)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> member : (any list -&gt; (union false list))</span>
-</TT>
-
-    <LI>
-<TT> <span class="v3"> memq : (any list -&gt; (union false list))</span>
-</TT>
-
-    <LI>
-<TT> <span class="v3"> memv : (any list -&gt; (union false list))</span>
-</TT>
-
-    <LI>
-<TT> <span class="v3"> null : empty</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> null? : (any -&gt; boolean)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> pair? : (any -&gt; boolean)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> rest : ((cons y (listof x)) -&gt; (listof
-x))</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> reverse : (list -&gt; list)</span> </TT>
-
-</UL>
-
-<LI> <I> <TT> <span class="v3"> Strings</span> </TT> </I>
-
-<UL>
-
-    <LI>
-<TT> <span class="v3"> format : (string any ... -&gt; string)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> list-&gt;string : ((listof char) -&gt;
-string)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> make-string : (nat char -&gt; string)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> string-append : (string ... -&gt; string)</span>
-</TT>
-
-    <LI>
-<TT> <span class="v3"> string-copy : (string -&gt; string)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> string-length : (string -&gt; nat)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> string-ref : (string nat -&gt; char)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> string? : (any -&gt; boolean)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> substring : (string nat nat -&gt; string)</span>
-</TT>
-
-</UL>
-
-<LI> <I> <TT> <span class="v3"> Misc</span> </TT> </I>
-
-<UL>
-
-    <LI>
-<TT> <span class="v3"> =~ : (real real non-negative-real -&gt;
-boolean)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> eq? : (any any -&gt; boolean)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> equal? : (any any -&gt; boolean)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> equal~? : (any any non-negative-real -&gt;
-boolean)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> eqv? : (any any -&gt; boolean)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> error : (symbol string -&gt; void)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> identity : (any -&gt; any)</span> </TT>
-
-    <LI>
-<TT> <span class="v3"> struct? : (any -&gt; boolean)</span> </TT>
-
-</UL>
+		<span class="fixme">
+		<li>pi : real
+			<p>pi to exactly 12 decimal places</p></li>
+			
+		<li>e : real
+			<p>e to exactly 12 decimal places</p></li>
+	</ul>
+	<ul class="fixme">
+		<li>append : ((listof any) ... -&gt; (listofany))</li>
+		<li>assq : (x (listof (cons x y)) -&gt; (union false (cons x y)))</li>
+		<li>caaar : ((cons (cons (cons w (listof z)) (listof y)) (listof x)) -&gt; w)</li>
+		<li>caadr : ((cons (cons (cons w (listof z)) (listof y)) (listof x)) -&gt; (listof z))</li> 
+		<li>caar : ((cons (cons z (listof y)) (listof x)) -&gt; z)</li> 
+		<li>cadar : ((cons (cons w (cons z (listof y))) (listof x)) -&gt; z)</li>
+		<li>cadddr : ((listof y) -&gt; y)</li>
+		<li>caddr : ((cons w (cons z (cons y (listof x)))) -&gt; y)</li> 
+		<li>cadr : ((cons z (cons y (listof x))) -&gt; y)</li> 
+		<li>car : ((cons y (listof x)) -&gt; y)</li>
+		<li>cdaar : ((cons (cons (cons w (listof z)) (listof y)) (listof x)) -&gt; (listof z))</li> 
+		<li>cdadr : ((cons w (cons (cons z (listof y)) (listof x))) -&gt; (listof y))</li> 
+		<li>cdar : ((cons (cons z (listof y)) (listof x)) -&gt; (listof y))</li> 
+		<li>cddar : ((cons (cons w (cons z (listof y))) (listof x)) -&gt; (listof y))</li> 
+		<li>cdddr : ((cons w (cons z (cons y (listof x)))) -&gt; (listof x))</li> 
+		<li>cddr : ((cons z (cons y (listof x))) -&gt; (listof x))</li> 
+		<li>cdr : ((cons y (listof x)) -&gt; (listof x))</li>
+		<li>cons : (x (listof x) -&gt; (listof x))</li>
+		<li>cons? : (any -&gt; boolean)</li>
+		<li>eighth : ((listof y) -&gt; y)</li>
+		<li>empty? : (any -&gt; boolean)</li>
+		<li>first : ((cons y (listof x)) -&gt; y)</li> 
+		<li>length : (list -&gt; number)</li>
+		<li>list : (any ... (listof any) -&gt; (listof any))</li> 
+		<li>list : (any ... -&gt; (listof any))</li>
+		<li>list* : (any ... (listof any) -&gt; (listof any))</li> 
+		<li>list-ref : ((listof x) natural-number -&gt; x)</li>
+		<li>list? : (any -&gt; boolean)</li> 
+		<li>member : (any list -&gt; (union false list))</li>
+		<li>memq : (any list -&gt; (union false list))</li>
+		<li>memv : (any list -&gt; (union false list))</li>
+		<li>null : empty</li> 
+		<li>null? : (any -&gt; boolean)</li> 
+		<li>pair? : (any -&gt; boolean)</li> 
+		<li>rest : ((cons y (listof x)) -&gt; (listof x))</li> 
+		<li>reverse : (list -&gt; list)</li>
+	</ul>
+	<I>Strings</I>
+	<ul class="fixme">
+		<li>format : (string any ... -&gt; string)</li> 
+		<li>list-&gt;string : ((listof char) -&gt; string)</li> 
+		<li>make-string : (nat char -&gt; string)</li> 
+		<li>string-append : (string ... -&gt; string)</li>
+		<li>string-copy : (string -&gt; string)</li> 
+		<li>string-length : (string -&gt; nat)</li> 
+		<li>string-ref : (string nat -&gt; char)</li> 
+		<li>string? : (any -&gt; boolean)</li> 
+		<li>substring : (string nat nat -&gt; string)</li>
+	</ul>
+	<I>Misc</I>
+	<ul class="fixme">
+		<li>=~ : (real real non-negative-real -&gt; boolean)</li> 
+		<li>eq? : (any any -&gt; boolean)</li> 
+		<li>equal? : (any any -&gt; boolean)</li> 
+		<li>equal~? : (any any non-negative-real -&gt; boolean)</li> 
+		<li>eqv? : (any any -&gt; boolean)</li> 
+		<li>error : (symbol string -&gt; void)</li> 
+		<li>identity : (any -&gt; any)</li> 
+		<li>struct? : (any -&gt; boolean)</li> 
+	</ul>
 
 <?php include "../bits/end_section.inc" ?>
 <?php include "../bits/start_section.inc" ?>
 
-<BR>
-
-<BR>
-
-<BR>
-
-<BR>
-
-
+<a name="Func_Requirement"></a>
+<h2>TPCL Requirement function</h2>
+<p class="small"><a href="protocol3.php#Components">Look here</a> for more information about components.</p>
 
 <p>
+	This TPCL function is called (on all components which are in a design)
+	when adding a new component is added to a design. 
 </p><p>
-This language will be referred to as the &quot;New Component
-Language&quot; (or NCL for short). Where there is not enough information
-in this specification please refer to the R5RS Scheme standard for more
-information.&nbsp; All NCL functions are deterministic, this means that
-given the same input they will produce the same output.<BR>
+	If the component is  allowed to be added to a design then the function 
+	should return a pair with True and a string to be displayed (empty strings 
+	are acceptable), otherwise it should return a pair with false and a string 
+	which describes the reason for not being able to add the component. 
+</p><p>
+	The function is given a design object which has appears as if the 
+	component was already added. 
+</p><p>
 
-<BR>
+<h3>Examples</h3>
 
-There are 4 parts to the Component/Design stuff, <UL>
-
-    <LI>
-Components,
-    <BLOCKQUOTE>
-
-	The base building blocks for building designs
-    </BLOCKQUOTE>
-
-    <LI>
-Properties,
-    <BLOCKQUOTE>
-
-	Numerical values which describe aspects of designs and components
-    </BLOCKQUOTE>
-
-    <LI>
-Categories,
-    <BLOCKQUOTE>
-
-	An organization unit for grouping components/designs/properties
-    </BLOCKQUOTE>
-
-    <LI>
-Designs,
-    <BLOCKQUOTE>
-
-	A combination of Components into a useful object
-    </BLOCKQUOTE>
-
-</UL>
-
-<H1>
-
-<B> <FONT SIZE="6"> Components</FONT> </B>
-
-</H1>
-
-<BR>
-
-Each Component has the following structure, <UL>
-
-    <LI>
-a UInt32, the ID of the Component
-    <LI>
-a list of UInt32, IDs of Categories the Component is in
-    <LI>
-a String, NCL Add function
-    <BLOCKQUOTE>
-
-	A NCL function which is called when adding this component to
-	a design. If the component is allowed to be added to <FONT
-	COLOR="#0000ff">
-a design then the function should return a pair with True and a string to
-be displayed, otherwise it should return a pair with false and a string
-which describes the reason for not being able to add the component. The
-function is given the design object which it is being added to. </FONT>
-<BR>
-
-	<BR>
-
+<p>
 	The most basic case which always allows this component to be
-	added,<BR>
+	added,
+<pre class="nclcode">
+(lambda (design)
+	(cons #t ""))
+</pre>
+</p>
 
-	<BLOCKQUOTE>
-
-	    <FONT COLOR="#0000ff">
-(lambda (design) </FONT> <BR>
-
-	    <FONT COLOR="#0000ff">
-&nbsp;&nbsp;&nbsp; (cons #t &quot;&quot;))</FONT> <BR>
-
-	</BLOCKQUOTE>
-
+<p>
 	An more advanced case would be the &quot;Personal Pod&quot;
 	which cannot be added to any Design where the radiation level
-	is above one.<BR>
+	is above one.
+<pre class="nclcode">
+(lambda (design)
+	(if (&gt; (designtype.radiation design) 1)
+		(cons #t &quot;&quot;)
+		(cons #f &quot;Radiation Level is too high for Personal Pod to be added&quot;)
+	)
+)
+</pre>
+</p>
 
-	<BLOCKQUOTE>
+<p>
+	Another example would be the &quot;Sheep Skin&quot; component which only
+	provides shields on unarmed ships.
+<pre class="nclcode">
+(lambda (design)
+	(if (&gt; (designtype.firepower design) 1)
+		(cons #t &quot;Sheep Skin cannot provide shields as the ship is armed&quot;)
+		(cons #t &quot;&quot;)
+	)
+)
+</pre>
+</p>
 
-	    <FONT COLOR="#0000ff">
-(lambda (design)</FONT> <BR>
 
-	    <FONT COLOR="#0000ff">
-&nbsp;&nbsp;&nbsp; (if (&gt; (designtype.radiation design) 1)</FONT> <BR>
+<a name="Func_PropertyValue"></a>
+<h2>TPCL Property Value function</h2>
+<p class="small">
+	<a href="protocol3.php#Components">Look here</a> for more information about components.
+	<a href="protocol3.php#Properties">Look here</a> for more information about properties.
+</p>
 
-	    <FONT COLOR="#0000ff">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cons #t &quot;&quot;)</FONT>
-<BR>
+<p>
+	A TPCL function which is called to work out the amount this component contributes to a property. It should return a valid number. It is given the current design.
+</p>
 
-	    <FONT COLOR="#0000ff">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cons #f &quot;Radiation
-Level is too high for Personal Pod to be added&quot;)</FONT> <BR>
+<h3>Examples</h3>
 
-	    <FONT COLOR="#0000ff">
-&nbsp;&nbsp;&nbsp; )</FONT> <BR>
+<p>
+	The most basic case where the component has a constant value for this property,
+<pre class="nclcode">
+(lambda (design)
+	1)
+</pre>
+</p>
 
-	    <FONT COLOR="#0000ff">
-)</FONT> <BR>
+<p>
+	A more advanced example would be the &quot;Sheep Skin&quot; component will only have a cloaking effect if the design has no firepower.
 
-	</BLOCKQUOTE>
+<pre class="nclcode">
+(lambda (design)
+	(if (&gt; (designtype.firepower design) 0)
+		0 100))
+</pre>
 
-	<FONT COLOR="#0000ff">
-Another example would be the &quot;Sheep Skin&quot; component which only
-provides shields on unarmed ships.</FONT> <BR>
+<p>
+	This function can not depend on any property which has an rank which
+	is less then or equal to this property.
+</p><p>
+	For example if the &quot;firepower&quot; property was
+	order 1 and the &quot;cloaking&quot; property was order 0,
+	then the cloaking property can not depend on the firepower
+	property. This would mean the &quot;Sheep Skin&quot; would
+	be an invalid component. This is needed to stop circular
+	dependency such as,
 
-	<BLOCKQUOTE>
+	<ul>
+		<li>&quot;Blaster&quot;, only provides firepower if the ship has no shields</li>
+		<li>&quot;Sheep Skin&quot;, only provides shields if the ship has no firepower</li>
+	</ul>
+</p>
 
-	    <FONT COLOR="#0000ff">
-(lambda (design)</FONT> <BR>
 
-	    <FONT COLOR="#0000ff">
-&nbsp;&nbsp;&nbsp; (if (&gt; (designtype.firepower design) 1)</FONT> <BR>
+<a name="Func_PropertyCalculate"></a>
+<h2>TPCL Property Calculate function</h2>
+<p class="small"><a href="protocol3.php#Properties">Look here</a> for more information about properties.</p>
 
-	    <FONT COLOR="#0000ff">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cons #t &quot;Sheep Skin
-cannot provide shields as the ship is armed&quot;)</FONT> <BR>
-
-	    <FONT COLOR="#0000ff">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cons #t &quot;&quot;)</FONT>
-<BR>
-
-	    <FONT COLOR="#0000ff">
-&nbsp;&nbsp;&nbsp; )</FONT> <BR>
-
-	    <FONT COLOR="#0000ff">
-)</FONT>
-
-	</BLOCKQUOTE>
-
-    </BLOCKQUOTE>
-
-    <LI>
-a list of
-    <BLOCKQUOTE>
-
-	a UInt32, ID of the property this is a String, NCL Property
-	function <BR>
-
-	<BLOCKQUOTE>
-
-	    A NCL function which is called to work out the amount this
-	    component contributes to a property. It should return a
-	    valid number. It is given the current design.<BR>
-
-	    <BR>
-
-	    The most basic case where the component has a constant value
-	    for this property,<BR>
-
-	    <BLOCKQUOTE>
-
-		(lambda (design)<BR>
-
-		&nbsp;&nbsp;&nbsp; 1) <BR>
-
-	    </BLOCKQUOTE>
-
-	    A more advanced example would be the &quot;Sheep Skin&quot;
-	    component will only have a cloaking effect if the design
-	    has no firepower.<BR>
-
-	    <BLOCKQUOTE>
-
-		(lambda (design)<BR>
-
-		&nbsp;&nbsp;&nbsp; (if (&gt; (designtype.firepower design) 0)
-		0 100))<BR>
-
-	    </BLOCKQUOTE>
-
-	</BLOCKQUOTE>
-
-    </BLOCKQUOTE>
-
-</UL>
-
-<BLOCKQUOTE>
-
-    <BLOCKQUOTE>
-
-	<BLOCKQUOTE>
-
-	    <B>
-This function can not depend on any property which has an order which
-is less then or equal to this property. </B> <BR>
-
-	    For example if the &quot;firepower&quot; property was
-	    order 1 and the &quot;cloaking&quot; property was order 0,
-	    then the cloaking property can not depend on the firepower
-	    property. This would mean the &quot;Sheep Skin&quot; would
-	    be an invalid component. This is needed to stop circular
-	    dependency such as,<BR>
-
-	    <BLOCKQUOTE>
-
-		&quot;Blaster&quot;, only provides firepower if the ship
-		has no shields<BR>
-
-		&quot;Sheep Skin&quot;, only provides shields if the
-		ship has no firepower
-	    </BLOCKQUOTE>
-
-	</BLOCKQUOTE>
-
-    </BLOCKQUOTE>
-
-</BLOCKQUOTE>
-
-<H1>
-
-<B> <FONT SIZE="6"> Properties</FONT> </B>
-
-</H1>
-
-Each Property has, <UL>
-
-    <LI>
-a UInt32, ID of the Property
-    <LI>
-a UInt32, order of the property (IE the order the properties are
-calculated in)
-    <LI>
-a String, the name of the Property
-    <LI>
-a String, a description of the Property
-    <LI>
-a String, NCL Display function,
-    <BLOCKQUOTE>
-
-	A NCL function which is called to work out how to display the
-	property. It should return a pair which contains the actual
+<p>
+	A TPCL function which is called to work out how to display the
+	property.
+</p><p>
+	It should return a pair which contains the actual
 	value and a string which will be displayed (The string could be
 	anything from &quot;3.39 psi&quot; to &quot;35 Sheep of Possible
-	100 Sheep&quot;). <span class="v2">
-It is called with the current design and a list containing the value
-each component contributes to the property. </span> <BR>
+	100 Sheep&quot;). 
+</p><p>
+	It is called with the current design and a list containing the value
+	each component contributes to the property.
+</p><p>
+	It is important that the function is not dependent on the list being in
+	any order. If order is required the function must first sort it. (For
+	example calling with [10, 4, 5] should return the same result as calling
+	with [5, 4, 10] or [4, 5, 10].)
+</p><p>
+	This function can not depend on any property which has
+	an rank which is less then or equal to this property.
+</p>
 
-	<BR>
 
-	<span class="v2">
-It is important that the function is not dependent on the list being in
-any order. If order is required the function must first sort it. (For
-example calling with [10, 4, 5] should return the same result as calling
-with [5, 4, 10] or [4, 5, 10].)</span> <BR>
+<h3>Examples</h3>
 
-	<BR>
+<p>
+	A simple linear example which displays &quot;10 PSI&quot;,
+	
+<pre class="nclcode">
+(lambda (design, bits)
+	(let ((n (apply + bits)))
+		(cons n
+			(string-append (number-&gt;string n) &quot; PSI&quot;)
+		)
+	)
+)
+</pre>
+</p>
 
-	<B>
-<span class="v2"> This function can not depend on any property which has
-an order which is less then or equal to this property. </span> </B> <BR>
-
-	<BR>
-
-	A simple linear example which displays &quot;10 PSI&quot;,<BR>
-
-	<BLOCKQUOTE>
-
-	    (lambda (design, bits)<BR>
-
-	    &nbsp;&nbsp;&nbsp; (let ((n (apply + bits)))<BR>
-
-	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cons n
-	    (string-append (number-&gt;string n) &quot; PSI&quot;))<BR>
-
-	    &nbsp;&nbsp;&nbsp; )<BR>
-
-	    )<BR>
-
-	</BLOCKQUOTE>
-
+<p>
 	A more advanced linear example which displays different units
-	depending on the value of the input<BR>
+	depending on the value of the input
 
-	<BLOCKQUOTE>
+<pre class="nclcode">
+(lambda (design, bits)
+	(let ((n (apply + bits)))
+		(cond			  
+			((&lt; n 100) (cons n (string-append n &quot; grams&quot;)) )  
+			((&lt; n 1000) (cons (/ n 100) (string-append n &quot; kilograms&quot;)) )
+			((&lt; n 10000) (cons (/ n 1000) (string-append n &quot; tons&quot;)) )
+		)
+	)
+)
+</pre>
+</p>
 
-	    (lambda (design, bits)<BR>
+<p>
+	A compound example which depends only on other properties, calculates
+	acceleration,
 
-	    &nbsp;&nbsp;&nbsp; (let ((n (apply + bits)))<BR>
+<pre class="nclcode">
+(lambda (design, bits)
+	(let ((n (/ (designtype.force design) (designtype.mass design))))
+		(cons n (string-append n &quot; m/s^2&quot;))
+	)
+)
+</pre>
+</p>
 
-	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cond <BR>
+<p>
+	A compound example which depends on both other properties and the bits,
+	calculates the cloaking,
 
-	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	    ((&lt; n 100) (cons n (string-append (number-&gt;string n) &quot; grams&quot;))
-	    )<BR>
+<pre class="nclcode">
+(lambda (design, bits)
+	(let ((n (/ (apply + bits) (designtype.mass design)))
+		(set! n (/ n (n+1)))
+		(cons n (string-append (number-&gt;string n) &quot; %&quot;))
+	)
+)
+</pre>
+</p>
 
-	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	    ((&lt; n 1000) (cons (/ n 100) (string-append (number-&gt;string n) &quot;
-	    kilograms&quot;)) )<BR>
+<h1>Implmentation Tips</h1>
 
-	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	    ((&lt; n 10000) (cons (/ n 1000) (string-append (number-&gt;string n) &quot;
-	    tons&quot;)) )<BR>
+<p>
+	At first figuring out how to calculate all this seems
+	hard, but it turns out to be quite easy.
+</p><p>
+	Firstly we need to understand the difference between the a Property 
+	and the PropertyValue on each component. A PropertyValue evaluates to
+	the value of the property for a specific component. A Property takes 
+	a list of values (that evaluating PropertyValues has produced) and 
+	calculates the overall value of the property for the design. 
+</p><p>
+	With this in mind it is easy to see how to calculate the design.
 
-	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; )<BR>
+<h3>Step 1</h3>
 
-	    &nbsp;&nbsp;&nbsp; )<BR>
+<p>
+	Loop over all the components in a design and collect
+	their properties into a list ordered on their order.
+</p><p>
+	The following code in pseudo-python should serve as
+	an example,
 
-	    )<BR>
-
-	</BLOCKQUOTE>
-
-	<span class="v2">
-A compound example which depends only on other properties, calculates
-acceleration,</span> <BR>
-
-	<BLOCKQUOTE>
-
-	    <span class="v2">
-(lambda (design, bits)</span> <BR>
-
-	    <span class="v2">
-&nbsp;&nbsp;&nbsp; (let ((n (/ (designtype.force design) (designtype.mass design))))</span> <BR>
-
-	    <span class="v2">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cons n (string-append (number-&gt;string n) &quot;
-m/s^2&quot;))</span> <BR>
-
-	    <span class="v2">
-&nbsp;&nbsp;&nbsp; )</span> <BR>
-
-	    <span class="v2">
-)</span> <BR>
-
-	</BLOCKQUOTE>
-
-	<span class="v2">
-A compound example which depends on both other properties and the bits,
-calculates the cloaking,</span> <BR>
-
-	<BLOCKQUOTE>
-
-	    <span class="v2">
-(lambda (design, bits)</span> <BR>
-
-	    <span class="v2">
-&nbsp;&nbsp;&nbsp; (let ((n (/ (apply + bits) (designtype.mass design)))</span> <BR>
-
-	    <span class="v2">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (set! n (/ n (n+1)))</span>
-<BR>
-
-	    <span class="v2">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cons n (string-append (number-&gt;string n) &quot;
-%&quot;))</span> <BR>
-
-	    <span class="v2">
-&nbsp;&nbsp;&nbsp; )</span> <BR>
-
-	    <span class="v2">
-)</span> <BR>
-
-	</BLOCKQUOTE>
-
-	<BR>
-
-    </BLOCKQUOTE>
-
-</UL>
-
-<H1>
-
-<B> <FONT SIZE="6"> Designs</FONT> </B>
-
-</H1>
-
-<BR>
-
-Each Design has, <UL>
-
-    <LI>
-a UInt32, the ID of the Design
-    <LI>
-a list of UInt32, IDs of Categories the Design is in
-    <LI>
-<span class="v2"> a SInt32</span> , the number of times the Design is
-in use
-    <LI>
-<span class="v2"> a SInt32, the owner of the Design</span>
-
-    <LI>
-a list of UInt32, IDs of the Components which are in a Design </UL>
-
-<B> <span class="v2"> Notes:</span> </B> <BR>
-
-<span class="v2"> If the design is unusable then the number of times in
-use will be -1.</span> <BR>
-
-<span class="v2"> If the owner is unknown the field will be -1, if the
-player owns the design then it will be zero, otherwise it will be the
-ID of the player who owns the design.</span> <BR>
-
-<BR>
-
-<BR>
-
-<BR>
-
-<BR>
-
-<H1>
-
-<B> <FONT SIZE="6"> Categories</FONT> </B>
-
-</H1>
-
-Each Category has, <UL>
-
-    <LI>
-a UInt32, ID of the Category
-    <LI>
-a String, the name of the Category
-    <LI>
-a UInt32, the type of the Category (Component, Design, Property)
-    <LI>
-a list of UInt32, IDs of the things in the Category </UL>
-
-<H1>
-
-<B> <FONT SIZE="6"> <span class="v2"> How to Calculate?</FONT> </span>
-</B>
-
-</H1>
-
-<span class="v2"> At first figuring out how to calculate all this seems
-hard, but it turns out to be quite easy. </span> <BR>
-
-<BR>
-
-<span class="v2"> Firstly we need to understand the difference
-between the base Property and the PropertyValue on each component. A
-PropertyValue evaluates to the value of the property for a specific
-to a component. A Property takes a list of values that evaluating
-PropertyValues has produced and calculates the value of the property for
-the whole design. With this in mind it is easy to see how to calculate
-the design.</span>
-
-<H4>
-
-<B> <span class="v2"> Step 1.</span> </B>
-
-</H4>
-
-<span class="v2"> Loop over all the components in a design and collect
-their properties into a list ordered on their order.</span> <BR>
-
-<BR>
-
-<span class="v2"> The following code in pseudo-python should serve as
-an example,</span>
-
-<PRE>
+<pre class="code">
  properties = {}
  for component in components:
-     for propertyvalue in component.properties:
-         order = propertyvalue.property.order
-         if not properties.has_key(order):
-             properties[order] = []
-         if propertyvalue.property not in properties[order]:
-             properties[order].append(propertyvalue.property)
-</PRE>
+	 for propertyvalue in component.properties:
+		 order = propertyvalue.property.order
+		 if not properties.has_key(order):
+			 properties[order] = []
+		 if propertyvalue.property not in properties[order]:
+			 properties[order].append(propertyvalue.property)
+</pre>
 
-<span class="v2"> With the following input,</span>
+	With the following input,
 
-<PRE>
+<pre class="code">
  components = [
    &lt;Large Solar Sail [
-       PropertyValue(EnergyPerYear)]&gt;
+	   PropertyValue(EnergyPerYear)]&gt;
    &lt;Large Jump Engine [
-       PropertyValue(RequiredEnergy),
-       PropertyValue(RechargeTime)]&gt;
+	   PropertyValue(RequiredEnergy),
+	   PropertyValue(RechargeTime)]&gt;
  ] 
  # Where EnergyPerYear and RequiredEnergy are both order 1 and RechargeTime is order 2
-</PRE>
+</pre>
 
-<span class="v2"> You get the following output</span>
+	You get the following output
 
-<PRE>
+<pre class="code">
  { 1: [Property(EnergyPerYear), Property(RequiredEnergy)],
    2: [Property(RechargeTime)]}
-</PRE>
+</pre>
 
-<H4>
+<h3>Step 2</h3>
 
-<B> <span class="v2"> Step 2:</span> </B>
+<p>
+	Create an empty &quot;design&quot; storage object
+</p>
 
-</H4>
+<h3>Step 3</h3>
 
-<span class="v2"> Create an empty &quot;design&quot; storage object</span>
+<p>
+	Loop over the newly created collection, for each
+	property, evaluate the property value for each component and then evaluate
+	the property with the property values.
+</p></p>
+	Something like the below pseudo-python code should serve as an example,
 
-<H4>
-
-<B> <span class="v2"> Step 3:</span> </B>
-
-</H4>
-
-<span class="v2"> Loop over the newly created collection, for each
-property, evaluate the property value for each component and then evaluate
-the property with the property values.</span> <BR>
-
-<BR>
-
-<span class="v2"> Something like the below pseudo-python code should
-serve as an example,</span>
-
-<PRE>
+<pre class="code">
  keys = properties.keys()
  keys.sort()
 
  for key in keys:
-     for property in properties[key]:
-         bits = []
+	 for property in properties[key]:
+		 bits = []
 
-         # This evaluates the property value for each component
-         for component in components:
-             if component.has_property(property):
-                 bits.append(component.get_property(property.name).eval(design))
+		 # This evaluates the property value for each component
+		 for component in components:
+			 if component.has_property(property):
+				 bits.append(component.get_property(property.name).eval(design))
 
-         # This evaluates the overall value of the property
-         value, text = property.eval(design, bits)
-         setattr(design, property.name, value)
+		 # This evaluates the overall value of the property
+		 value, text = property.eval(design, bits)
+		 setattr(design, property.name, value)
 
-         # Do something with the property text here...
-         do_something(text)        
-</PRE>
-
-<BR>
-
-
-<H1>
-
-<span class="v3"> New Component Language</span> <BR>
-
-</H1>
-
-<BR>
-
-<BR>
-<BR>
-
-<BR>
-
-
-<span class="v3"> The NCL has the followings types,</span>
-
-<UL>
-
-    <LI>
-<span class="v3"> Reals, Implemented be implemented so that precision
-is that of a standard double</span>
-
-    <LI>
-<span class="v3"> Booleans, </span>
-
-    <LI>
-<span class="v3"> Chars and Strings, All Strings are in UTF-8</span>
-
-    <LI>
-<span class="v3"> Pairs and Lists, </span>
-
-    <LI>
-<span class="v3"> Design Structure, </span>
-
-</UL>
-
-<span class="v3"> NCL does not support the following normal scheme
-types,</span>
-
-<UL>
-
-    <LI>
-<span class="v3"> Rationals, Rational numbers are not supported, use
-Reals instead </span>
-
-    <LI>
-<span class="v3"> Complex, Complex numbers are not supported, use a Pair
-of Reals instead</span>
-
-    <LI>
-<span class="v3"> Vectors, Vectors are not supported, use Lists
-instead</span>
-
-    <LI>
-<span class="v3"> Integers, Integers are not supported, use Reals
-instead</span>
-
-    <LI>
-<span class="v3"> Object/Classes, there should be no use for these as
-NCL is only for small functions with no persistent state</span>
-
-</UL>
-
-<BR>
-
-<span class="v3"> NCL also does not include the following normal scheme
-features,</span>
-
-<UL>
-
-    <LI>
-<span class="v3"> Ability to define new structures</span>
-
-    <LI>
-<span class="v3"> Any input or output (include all functions related to
-input and output)</span>
-
-    <LI>
-<span class="v3"> Macros</span>
-
-</UL>
-
-<BR>
-
-<span class="v3"> NCL does not include the following standard scheme
-functions,</span>
- <BR>
-
-<BR>
-
-<BR>
-
-<BR>
-
-<BR>
-
-<H3>
-
-
-<TT> <span class="v3"> ......... still more to come........... </span>
-</TT> <BR>
-
-<BR>
-
-<TT> <span class="v3"> Have to define the language more
-specifically.</span> </TT> <BR>
-
-<BR>
-
+		 # Do something with the property text here...
+		 do_something(text)		
+</pre>
+</p>
 
 <?php
 	include "../bits/end_section.inc"; include "../bits/end_page.inc";
