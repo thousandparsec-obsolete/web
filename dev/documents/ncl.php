@@ -577,9 +577,9 @@
 	property.
 </p><p>
 	It should return a pair which contains the actual
-	value and a string which will be displayed (The string could be
-	anything from &quot;3.39 psi&quot; to &quot;35 Sheep of Possible
-	100 Sheep&quot;). 
+	value and a formatted string (as describe by the protocol3.php document)
+	which will be displayed (The string could be anything from &quot;3.39 psi&quot;
+	to &quot;35 Sheep of Possible 100 Sheep&quot;). 
 </p><p>
 	It is called with the current design and a list containing the value
 	each component contributes to the property.

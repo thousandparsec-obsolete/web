@@ -258,6 +258,12 @@
 		transmitted.
 		</p>
 	</li><li class="new">
+		Formatted Strings are exactly like normal strings but use the structured
+		text method for formatting their contents. For a complete description of structured
+		text please see the following <a href="">document</a>. This allows display of
+		color, underline, super/subscript and much more. It is also easy to convert to 
+		plain text or HTML.
+	</li><li class="new">
 		Semi-signed Integers are integers which act like normal unsigned numbers except
 		that the biggest possible number is considered -1, this should equal the normal
 		signed representation for this number. These are noted as SInt&lt;Size&gt;.
@@ -1625,7 +1631,7 @@
 	<ul>
 		<li>a UInt32, Board ID</li>
 		<li>a String, name of the Board</li>
-		<li>a String, description of the Board</li>
+		<li>a Formatted String, description of the Board</li>
 		<li>a UInt32, number of messages on the Board</li>
 		<li class="new">a UInt64, the last modified time</li>
 	</ul>
@@ -1666,9 +1672,8 @@
 		<li>a UInt32, Board ID of the message is on/to be placed on</li>
 		<li>a <span class="new">SInt32</span>, Slot number of the message/to be put in, 
 			-1 will insert at the last position, otherwise it is inserted before the number</li>
-		<li>a list of UInt32, type of message (can be multiple types at once). <b class=new>This list is now obsolete and will be removed in future versions.</b></li>
-		<li>a String, Subject of the message</li>
-		<li>a String, Body of the message</li>
+		<li>a Formatted String, Subject of the message</li>
+		<li>a Formatted String, Body of the message</li>
 		<li class="new">a UInt32, Turn the message was generated on</li>
 		<li class="new">a list of as described in the Generic Reference System</li>
 	</ul>
@@ -1782,11 +1787,11 @@
 	A Resource Description frame consist of:
 	<ul>
 		<li>a UInt32, Resource ID</li>
-		<li>a String, singular name of the resource</li>
-		<li>a String, plural name of the resource</li>
-		<li>a String, singular name of the resources unit</li>
-		<li>a String, plural name of the resources unit</li>
-		<li>a String, description of the resource</li>
+		<li>a Formatted String, singular name of the resource</li>
+		<li>a Formatted String, plural name of the resource</li>
+		<li>a Formatted String, singular name of the resources unit</li>
+		<li>a Formatted String, plural name of the resources unit</li>
+		<li>a Formatted String, description of the resource</li>
 		<li>a UInt32, weight per unit of resource (0 for not applicable)</li>
 		<li>a UInt32, size per unit of resource (0 for not applicable)</li>
 		<li class="new">a UInt64, the last modified time of this resource description</li>
@@ -1872,8 +1877,8 @@
 	<ul>
 		<li>a UInt32, Category ID</li>
 		<li>a UInt64, the last modified time of this category description</li>
-		<li>a String, name of the category</li>
-		<li>a String, description of the category</li>
+		<li>a Formatted String, name of the category</li>
+		<li>a Formatted String, description of the category</li>
 	</ul>
 </p>
 </span>
@@ -1916,17 +1921,24 @@
 		<li>a UInt32, Design ID</li>
 		<li>a UInt64, the last modified time of this design description</li>
 		<li>a list of UInt32, categories this design is in</li>
-		<li>a String, name of the design</li>
-		<li>a String, description of the design</li>
+		<li>a Formatted String, name of the design</li>
+		<li>a Formatted String, description of the design</li>
 		<li>a SInt32, number of times the design is in use</li>
 		<li>a UInt32, owner of the design</li>
-		<li>a String, human readable feedback on the design</li>
+		<li>
+			a list of,
+				<ul>
+					<li>a UInt32, component id</li>
+					<li>a UInt32, the number of components</li>
+				</ul>
+		</li>
+		<li>a Formatted String, human readable feedback on the design</li>
 		<li>
 			a list of,
 				<ul>
 					<li>a UInt32, property id</li>
 					<li>a UInt32, property value</li>
-					<li>a String, property display string</li>
+					<li>a Formatted String, property display string</li>
 				</ul>
 		</li>
 	</ul>
@@ -1970,8 +1982,8 @@
 		<li>a UInt32, component ID</li>
 		<li>a UInt64, the last modified time of this component</li>
 		<li>a list of UInt32, categories this component is in</li>
-		<li>a String, name of the component</li>
-		<li>a String, description of the component</li>
+		<li>a Formatted String, name of the component</li>
+		<li>a Formatted String, description of the component</li>
 		<li>a String, TPCL "Requirements" function (see <a href="ncl.php#Func_Requirements">TPCL Document</a> for more information)</li>
 		<li>
 			a list of
@@ -2020,9 +2032,11 @@
 		<li>a UInt64, the last modified time of this property</li>
 		<li>a list of UInt32, categories this property is in</li>
 		<li>a UInt32, rank of the property</li>
-		<li>a String, name of the property</li>
-		<li>a String, description of the property</li>
+		<li>a String, name of the property (must be a valid tpcl identifier)</li>
+		<li>a Formatted String, display name of the property</li>
+		<li>a Formatted String, description of the property</li>
 		<li>a String, TPCL "Calculate" function (see <a href="ncl.php#Func_PropertyCalculate">TPCL Document</a> for more information)</li>
+		<li>a String, TPCL "Requirements" function (see <a href="ncl.php#Func_Requirements">TPCL Document</a> for more information)</li>
 	</ul>
 </p>
 </span>
