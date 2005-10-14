@@ -1207,7 +1207,9 @@
 		<li>0x10002 - Sends Board ID Sequences in descending modified time order</li>
 		<li>0x10003 - Sends Resource Description ID Sequences in descending modified time order</li>
 		<li>0x10004 - Sends Category Description ID Sequences in descending modified time order</li>
-		<li>0x10005 - Sends Component ID Sequences in descending modified time order</li>
+		<li>0x10005 - Sends Design ID Sequences in descending modified time order</li>
+		<li>0x10006 - Sends Component ID Sequences in descending modified time order</li>
+		<li>0x10007 - Sends Property ID Sequences in descending modified time order</li>
 	</ul>
 </p>
 </span>
@@ -1924,7 +1926,7 @@
 		<li>a Formatted String, name of the design</li>
 		<li>a Formatted String, description of the design</li>
 		<li>a SInt32, number of times the design is in use</li>
-		<li>a UInt32, owner of the design</li>
+		<li>a SInt32, owner of the design</li>
 		<li>
 			a list of,
 				<ul>
@@ -1937,13 +1939,15 @@
 			a list of,
 				<ul>
 					<li>a UInt32, property id</li>
-					<li>a UInt32, property value</li>
+					<li>a Int64, property value</li>
 					<li>a Formatted String, property display string</li>
 				</ul>
 		</li>
 	</ul>
 </p><p>
 	<b>Note:</b> If usage is -1, then the design is unusable.
+</p><p>
+	<b>Note:</b> If owner is -1, then the design is owned by an unknown player (or not owned by anyone).
 </p>
 </span>
 
