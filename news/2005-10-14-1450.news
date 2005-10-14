@@ -1,0 +1,21 @@
+
+<h2>More Progress!</h2>
+<p>by Mithro</p>
+<p>
+	I have been at the <a href="http://www.linux-kongress.org/2005/">Linux Kongress</a> for
+	the last week. This means that a lot of changes have happened to tpclient-pywx.
+</p><p>
+	The bad news is that I had/have broken a lot of things, so anyone who wants to actually
+	use the client should use the CVS tag TPCLIENT_PYWX_0_0_10.
+</p><p>
+	The good news is that a lot of serious bugs/feature problems that existed in tpclient-pywx
+	have been fixed. This includes the network subsystem (meaning the windows will no longer 
+	freeze) and the configuration system which is now easy to extend and add new preferences.
+</p><p>
+	Other COOL features which I forgot to announce, tpserver-py has embedded the pyscheme 
+	interpreter and can do server side calculation of Design properties.
+</p><p>
+	I believe that Lee will be doing a new release of tpserver-cpp sometimes soon and it
+	similarly has new support using mzscheme.
+</p>
+	
