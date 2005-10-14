@@ -1939,7 +1939,6 @@
 			a list of,
 				<ul>
 					<li>a UInt32, property id</li>
-					<li>a Int64, property value</li>
 					<li>a Formatted String, property display string</li>
 				</ul>
 		</li>
