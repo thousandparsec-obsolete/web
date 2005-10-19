@@ -12,5 +12,7 @@
 			<a href="/tp/dev/cvs.php">CVS</a>
 		</td><td>
 			<a href="/tp/dev/viewcvs.php/">Web CVS</a>
+		</td><td>
+			<a href="http://sourceforge.net/tracker/?group_id=132078&atid=723099">Bugs</a>
 		</td>
 </table>
