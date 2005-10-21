@@ -1674,6 +1674,7 @@
 		<li>a UInt32, Board ID of the message is on/to be placed on</li>
 		<li>a <span class="new">SInt32</span>, Slot number of the message/to be put in, 
 			-1 will insert at the last position, otherwise it is inserted before the number</li>
+		<li>a list UInt32, type of message, <span class="new">ignored as of TP03 - should be empty list</span></li>
 		<li>a Formatted String, Subject of the message</li>
 		<li>a Formatted String, Body of the message</li>
 		<li class="new">a UInt32, Turn the message was generated on</li>
