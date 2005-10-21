@@ -1,0 +1,24 @@
+
+<h2>New releases!</h2>
+<p>by Mithro</p>
+<p>
+	After much work I'm happy to announce new releases of libtpproto-py (version 0.1.0) and 
+	tpclient-pywx (version 0.1.0). There is also the first release of tpserver-py (version 
+	0.1.0). This this release does not contain  binary packages because the latest version
+	of the TP protocol is still in development.
+</p><p>
+	The new release of libtproto-py adds support for the 0.3 version of the protocol.
+</p><p>
+	With the new release of tpclient-pywx, large portions of the window code have been
+	rewritten, a new config system has been implemented and there have been major changes
+	in the network handling code.
+</p><p>
+	tpserver-py has been in CVS for quite a long time. The server is design with a KISS
+	principle and facilitates rapid prototyping of concepts. It uses a simple SQL back end
+	and is totally written in python. It supports all of the current 0.3 protocol, including
+	server side generation of design properties. It has full support for the MiniSec and is
+	designed to make it easy to add new rule sets. Support for SQLite back end is also
+	been planned.
+</p><p>
+	All the new releases can be found on the <a href="/tp/downloads.php">download page.</a>
+</p>
