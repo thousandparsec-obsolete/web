@@ -32,19 +32,50 @@ function display($directory) {
 }
 ?>
 
+<h2>Mirrors</h2>
+<p>
+	All files are are mirrored on
+	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078">SourceForge here</a>. 
+	The SourceForge mirror also includes a complete archive of released files.
+</p>
+
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
 <h2>C++ Server</h2>
 <p>
 	This is the main server for Thousand Parsec.
+</p><p>
+	Archives of <b>unsupported</b> old previous versions can be found on
+	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078&package_id=153889">SourceForge here</a>.
 </p>
 <?php display("tpserver-cpp/"); ?>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
-<h2>Python WxWindows client</h2>
+<h2>Python Server</h2>
 <p>
-	This client works with any computer which has wxPython and Python installed.<br />
-	Binaries for windows may be avalible at a later date. It's not a colorful as
-	the pygame client but it's more fully featured.
+	This is a server for Thousand Parsec written in Python and using a SQL back end.
+</p>
+<?php display("tpserver-py/"); ?>
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
+<h2>Python wxWidgets client</h2>
+<p>
+	This client should work on any computer which has wxPython and Python installed.
+	The following operating systems are officially supported,
+</p><p>
+	<ul>
+		<li>MacOS X</li>
+		<li>Debian</li>
+		<li>Ubuntu</li>
+		<li>Windows 2000</li>
+		<li>Windows XP</li>
+	</ul>
+</p><p>
+	Archives of <b>unsupported</b> old previous versions can be found on
+	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078&package_id=153890">SourceForge here</a>.
 </p>
 <?php display("tpclient-pywx/"); ?>
 <?php include "bits/end_section.inc" ?>
@@ -52,18 +83,24 @@ function display($directory) {
 
 <h2>Python Text client</h2>
 <p>
-	This client works with any computer which has Python and py-netlib installed.<br />
-	Binaries for windows may be avalible at a later date. It doesn't have all the 
-	pretty graphics but it is the first to get new features.
+	This client works with any computer which has Python and the python network library
+	installed. This client can only be checked out of CVS at the moment.
+</p><p>
+	Archives of <b>unsupported</b> old previous versions can be found on
+	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078&package_id=153889">SourceForge here</a>.
 </p>
-<?php display("tpclient-pytext/"); ?>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
 <h2>Python TP Network Library</h2>
 <p>
-	This library is used by all the new python clients to connect to TP servers.<br />
-	All new python clients require this library to function.
+	This library is used by all the python applications to communicate over the network.
+</p><p>
+	All python clients and servers <b>require</b> this library to function. Windows 
+	binaries do not require a separate download, the library is include in the binary.
+</p><p>
+	Archives of <b>unsupported</b> old previous versions can be found on
+	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078&package_id=153888">SourceForge here</a>.
 </p>
 <?php display("py-netlib/"); ?>
 <?php include "bits/end_section.inc" ?>
@@ -79,4 +116,3 @@ function display($directory) {
 
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/end_page.inc" ?>
-
