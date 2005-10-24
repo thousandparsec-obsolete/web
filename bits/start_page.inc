@@ -25,6 +25,12 @@ pre {
 	font-family: Courier; 
 }
 
+pre.code {
+	font-family : courier new;
+	font-size : 10pt;
+	border-bottom : 1px dotted black;
+}
+
 a {  
 	font-family: Times, serif; 
 	color: #00ff99; 
@@ -130,6 +136,8 @@ table.menu a {
 <table class="menu">
 	<tr> 
 		<td>
+			<a href="/tp/gettingstarted.php"><b>Getting Started</b></a>
+		</td><td>
 			<a href="/tp/index.php">News</a>
 		</td><td>
 			<a href="/tp/about.php">About</a>
@@ -146,8 +154,6 @@ table.menu a {
 		</td><td>
 			<a href="/tp/mailman.php/listinfo/">Lists</a>
 		</td><td>
-<!--			<a href="/tp/forums">Forums</a>
-		</td><td> -->
 			<a href="/tp/links.php">Links</a>
 		</td>
 	</tr>
