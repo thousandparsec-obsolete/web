@@ -19,7 +19,7 @@
 		still version 0.2
 	</span>
 </h4>
-<p>Last updated 15 July 2005.</p>
+<p>Last updated 24 October 2005.</p>
 
 <?php
 	include "../bits/end_section.inc";
@@ -199,7 +199,7 @@
 <p>
 	This version of the protocol extends the <a href="protocol2.php">previous
 	version (0.2)</a>. It should be mostly backwards compatible with the previous
-	version. It extends the protocol to include the following abilities
+	version. It extends (or clarifies) the protocol to include the following abilities
 	
 	<ul>
 		<li>SSL support</li>
@@ -208,7 +208,6 @@
 		<li>better support of offline operations</li>
 		<li>Unicode support</li>
 		<li>modify on-server designs</li>
-		<li>download extra data (such as battle data or media)</li>
 	</ul>
 </p>
 
