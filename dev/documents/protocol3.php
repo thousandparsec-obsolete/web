@@ -1244,6 +1244,13 @@
 <p>
 	See <a href="#GetwithID_Desc">Get With ID</a>
 </p>
+<a name="GetObjectByPos_Desc"></a>
+<h3>Get Objects by Position Frame</h3>
+<p class="new">
+	This frame type is deprecated in TP03, see TP02 protocol documentation 
+	for compatibility frame format. Clients and servers that also support
+	TP02 must implement this frame.
+</p>
 
 <a name="Object_Desc"></a>
 <h3>Object Frame</h3>
@@ -1288,6 +1295,7 @@
 </p>
 </span>
 
+<span class="new">
 <a name="GetObjectIDsByPosition_Desc"></a>
 <h3>Get Object IDs by Position Frame</h3>
 <p>
@@ -1296,10 +1304,11 @@
 		<li>3 by Int64, giving the position of center the sphere</li>
 		<li>a UInt64, giving the radius of the sphere</li>
 	</ul>
-</p><p class="new">
+</p><p>
 	This will return an ID Sequence which contains all the object IDs which are inside the sphere. If
 	a sphere size of zero is used all object IDs at the point will be returned.
 </p>
+</span>
 
 <span class="new">
 <a name="GetObjectIDsByContainer_Desc"></a>
