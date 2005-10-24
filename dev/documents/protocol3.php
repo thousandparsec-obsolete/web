@@ -933,10 +933,10 @@
 	<tr class="row0 new"><td class="numeric">55</td><td>Component</td></tr>
 	<tr class="row1 new"><td class="numeric">56</td><td>Get Component IDs</td></tr>
 	<tr class="row0 new"><td class="numeric">57</td><td>List Of Component IDs</td></tr>
-	<tr class="row1 new"><td class="numeric">54</td><td>Get Property</td></tr>
-	<tr class="row0 new"><td class="numeric">55</td><td>Property</td></tr>
-	<tr class="row1 new"><td class="numeric">56</td><td>Get Property IDs</td></tr>
-	<tr class="row0 new"><td class="numeric">57</td><td>List Of Property IDs</td></tr>
+	<tr class="row1 new"><td class="numeric">58</td><td>Get Property</td></tr>
+	<tr class="row0 new"><td class="numeric">59</td><td>Property</td></tr>
+	<tr class="row1 new"><td class="numeric">60</td><td>Get Property IDs</td></tr>
+	<tr class="row0 new"><td class="numeric">61</td><td>List Of Property IDs</td></tr>
 </table>
 
 <?php
