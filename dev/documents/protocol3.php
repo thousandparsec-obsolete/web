@@ -838,22 +838,22 @@
 	</tr>
 
 	</tr><tr class="row1 new">
-		<td class="numeric">54</td>
+		<td class="numeric">58</td>
 		<td><a href="#GetProperty_Desc">Get Property</a></td>
 		<td>Gets the details about a property</td>
 		<td>Get with ID</td>
 	</tr><tr class="row0 new">
-		<td class="numeric">55</td>
+		<td class="numeric">59</td>
 		<td><a href="#Property_Desc">Property</a></td>
 		<td>Describes a property</td>
 		<td></td>
 	</tr><tr class="row1 new">
-		<td class="numeric">56</td>
+		<td class="numeric">60</td>
 		<td><a href="#GetPropertyIDs_Desc">Get Property IDs</a></td>
 		<td>Gets a list of property ids.</td>
 		<td>Get ID Sequence</td>
 	</tr><tr class="row0 new">
-		<td class="numeric">57</td>
+		<td class="numeric">61</td>
 		<td><a href="#ListOfPropertyIDs_Desc">List Of Property IDs</a></td>
 		<td>A list of property ids.</td>
 		<td>ID Sequence</td>
