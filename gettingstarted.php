@@ -34,7 +34,11 @@
 	At the moment you most probably want tpclient-pywx as it's the only client in 
 	active development. You should <b>always</b> get the latest version of the 
 	client because older versions tend to lack important features and have more
-	bugs. Below is instructions on how to install tpclient-pywx
+	bugs. Below is instructions on how to install tpclient-pywx.
+</p><p>
+	If you are a console junky you can also use tpclient-pytext, however this
+	client is far from polished. You can find instructions for installing this
+	client in the developer section.
 </p>
 
 <h2>Installing tpclient-pywx on Debian or Ubuntu</h2>
@@ -74,12 +78,52 @@
 	</li>
 </ul>
 
+
+
 <h2>Installing tpclient-pywx on RPM systems</h2>
 <p>
 	
 </p>
 
 
+<?php include "bits/end_section.inc" ; ?>
+<?php include "bits/start_section.inc" ; ?>
+
+<h1>I want to develop a game!</h1>
+
+<h2>Installing tpclient-pytext on Debian or Ubuntu</h2>
+<p>
+	Do NOT use tpclient-pytext unless you are weird.....
+</p>
+<ul>
+	<li>
+		Firstly you need to install Python and the Python development packages.
+		<pre class="code">
+	apt-get install python
+	apt-get install python-dev
+		</pre>
+	</li><li>
+		You also need to install <a href="http://excess.org/urwid/">Urwid</a>. Follow the
+		instructions found <a href="http://excess.org/urwid/#htoc7">here</a>.
+	</li><li>
+		Next you need to get and setup <b>libtpproto-py</b> and <b>tpclient-pytext</b>
+		<pre class="code">
+	# Install CVS if you don't already have it
+	apt-get install cvs 
+	
+	# Check the stuff out of CVS
+	cvs -d:pserver:cvsanon@cvs.thousandparsec.net:/tp login
+	cvs -z3 -d:pserver:cvsanon@cvs.thousandparsec.net:/tp co libtpproto-py tpclient-pytext setup.sh
+
+	# Setup the stuff for out of tree building
+	./setup.sh
+
+	# Run tpclient-pytext
+	cd tpclient-pytext
+	python tpclient-pytext
+		</pre>
+	</li>
+</ul>
 
 <?php include "bits/end_section.inc" ; ?>
 

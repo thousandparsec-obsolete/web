@@ -45,6 +45,10 @@ p.small {
 	font-size: 8pt;
 }
 
+div.small { 
+	font-size: 8pt;
+}
+
 table {
 	width: 100%;
 	border: 0;
@@ -153,6 +157,8 @@ table.menu a {
 			<a href="/tp/faq.php">FAQ</a>
 		</td><td>
 			<a href="/tp/mailman.php/listinfo/">Lists</a>
+		</td><td>
+			<a href="http://www.thousandparsec.net/forums/">Forums</a>
 		</td><td>
 			<a href="/tp/links.php">Links</a>
 		</td>
