@@ -18,6 +18,10 @@ mv docs libtpproto-cpp-doc
 tar czf libtpproto-cpp-doc-cvs.tar.gz libtpproto-cpp-doc
 mv libtpproto-cpp-doc-cvs.tar.gz libtpproto-cpp-doc/html/
 
+# Create any new thumbnails
+cd $CVSROOT/web/screenshots
+./makethumbs.sh
+
 # Run the sloc2html update
 cd $CVSROOT/web/utils
 exec ./sloc2html.sh
