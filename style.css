@@ -8,8 +8,8 @@ p {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-pre { 
-	font-family: Courier; 
+pre {
+	font-family: Courier;
 }
 
 pre.code {
@@ -18,9 +18,9 @@ pre.code {
 	border-bottom : 1px dotted black;
 }
 
-a {  
-	font-family: Times, serif; 
-	color: #00ff99; 
+a {
+	font-family: Times, serif;
+	color: #00ff99;
 	text-decoration: none;
 }
 
@@ -28,11 +28,11 @@ a:visited {
 	color: #ffcc99;
 }
 
-p.small { 
+p.small {
 	font-size: 8pt;
 }
 
-div.small { 
+div.small {
 	font-size: 8pt;
 }
 
@@ -47,3 +47,69 @@ table tr {
 }
 
 table td {
+	border: 0;
+	padding: 0 1em;
+}
+
+table td.numeric {
+	text-align: right;
+}
+
+table th {
+	border: 0;
+	font-weight: bold;
+	padding-top: 1em;
+}
+
+table.tabular tr.row0 {
+	background-color: #111111;
+}
+
+table.tabular tr.row1 {
+	background-color: #222222;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 {
+	border-bottom: 3px solid;
+}
+
+h2 {
+	border-bottom: 2px solid;
+}
+
+h3 {
+	border-bottom: 1px solid;
+}
+
+/* Menus */
+div#header_main {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 36pt;
+	text-align: center;
+	padding-top: 10px;
+}
+
+div#header_quote {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+table.menu {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+table.menu td {
+	padding: 1px;
+	text-align: center;
+}
+
+table.menu a {
+	font-variant: small-caps;
+}
