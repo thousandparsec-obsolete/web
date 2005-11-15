@@ -247,7 +247,7 @@
 ?>
 
 <h1>Server Support Matrix</h1>
-<p>Last updated 07 November 2004.</p>
+<p>Last updated 16 November 2005.</p>
 
 <table>
 	<tr>
@@ -268,7 +268,7 @@
 	<tr>
 		<td>Protocol (version)</td>
 		<td align="center" bgcolor="#00ff00">2</td>
-		<td align="center" bgcolor="#00ff00">2</td>
+		<td align="center" bgcolor="#00ff00">3</td>
 	</tr>
 	<tr>
 		<td>IPv6 support</td>
@@ -296,12 +296,12 @@
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
-		<td>Componet Design</td>
+		<td>Ship Design</td>
 		<td align="center" bgcolor="#ff0000">#</td>
-		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ffff00">#</td>
 	</tr>
 	<tr>
-		<td>Ship Design</td>
+		<td>Missile Design</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
