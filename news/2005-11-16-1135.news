@@ -1,0 +1,13 @@
+
+<h2>TPServer-cpp 0.1.2 released.</h2>
+<p>by Lee</p>
+<p>
+	Tpserver-cpp now has full TP03 support (all non-optional bits).  Designs are supported, which means that currently
+        this depends on MzScheme.  Other improvements have been made, such as being able to set the address and
+        port the server listens on, and settings improvements ready for the next steps.  Minisec is still the game that
+        is supported.
+</p>
+<p>
+	TPServer-cpp 0.1.2 is on the downloads page and will be on SF shortly too. The CVS module is tpserver-cpp and the tag is 
+	TPSERVER_CPP_0_1_2. Feedback and suggestions are always welcome.
+</p>
