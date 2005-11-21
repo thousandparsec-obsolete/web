@@ -1,0 +1,13 @@
+
+<h2>Libtpproto-cpp 0.1.0 released.</h2>
+<p>by Lee</p>
+<p>
+	Libtpproto-cpp  now has full TP03 support (all non-optional bits).  Massive changes to the design of the library
+	have made me push up the version number.
+        Main thing has been spliting the high level and low level interfaces apart, and providing a cleaner interface
+	to the game.
+</p>
+<p>
+	Libtpproto-cpp 0.1.0 is on the downloads page and on SF downloads. The CVS module is libtpproto-cpp and the tag is 
+	LIBTPPROTO_CPP_0_1_0. Feedback and suggestions are always welcome.
+</p>
