@@ -85,11 +85,37 @@
 	
 </p>
 
+<?php include "bits/end_section.inc" ; ?>
+<?php include "bits/start_section.inc" ; ?>
+
+<h1 id="admin">I want to run a game!</h1>
+<p>There are two servers that can be used, tpserver-py and tpserver-cpp.</p>
+<h2>Tpserver-py</h2>
+<p>Instructions coming soon.</p>
+
+<h2>Tpserver-cpp</h2>
+<p>The tpserver-cpp is written in C++. It should compile and run under most unix-like operating systems (Linux, MacOS X, *BSD). No 
+binaries are currently supplied.</p>
+<p>To build from source, follow these steps:</p>
+<i>
+<li>Install the dependencies: autotools (autoconf, autoheader, automake, aclocal), libreadline, MzScheme. Don't forget to install dev packages for libraries.</li>
+<li>Optionally, install the optional dependencies.
+  <ul><li>libmysql-client (and dev package) if you want to use a MySQL server for the persistence backend. You might want a 
+	server too. (0.1.3 onward)</li></ul></li>
+<li>Download the sources from <a href="http://www.thousandparsec.net/tp/downloads.php">Thousand Parsec Download page</a> or from <a href="http://sourceforge.net/project/showfiles.php?group_id=132078&amp;package_id=145028">Sourceforge downloads</a>.</li>
+<li>Extract the tar.gz file.</li>
+<li>Enter the created directory.</li>
+<li>Run <pre class="code">./configure</pre>. To see what build options are available run <pre class="code">./configure --help</pre>.</li>
+<li>Build with make. <pre class="code">make</pre></li>
+<li>As root (or administrator user) run <pre class="code">make install</pre>. The executable, static data and man page are installed. They can be uninstalled with <pre class="code">make uninstall</pre>.</li>
+<li>To start server, run <pre class="code">tpserver-cpp</pre>.</li>
+</ol>
+<p>Tpserver-cpp has a number of command line arguments (and in future, config files).</p>
 
 <?php include "bits/end_section.inc" ; ?>
 <?php include "bits/start_section.inc" ; ?>
 
-<h1>I want to develop a game!</h1>
+<h1 id="developer">I want to develop a game!</h1>
 
 <h2>Installing tpclient-pytext on Debian or Ubuntu</h2>
 <p>
@@ -124,6 +150,20 @@
 		</pre>
 	</li>
 </ul>
+
+<h2>Tpserver-cpp rulesets</h2>
+<p>The tpserver-cpp game server supports plug-in rulesets that define new games.  The interface inside tpserver-cpp isn't very
+stable yet. Please talk to Lee by email or on IRC.</p>
+
+<h2>Libtpproto-cpp clientside protocol library</h2>
+<p>A client-side protocol and game interface library called libtpproto-cpp is under development. If you want to write a game in
+C++ you should use this library. Online documentation is available on the 
+<a href="http://www.thousandparsec.net/tp/dev/documents/libtpproto-cpp/">libtpproto-cpp documentation</a> page. Any feedback on
+the library or assistance programming it will be very helpful.</p>
+
+<h2>Tpserver-cpp</h2>
+<p>There are a number of small tasks in the <a href="http://sourceforge.net/tracker/?group_id=132078&atid=723099">TP bugs tracker</a> on 
+Sourceforge that a new programmer could start on.</p>
 
 <?php include "bits/end_section.inc" ; ?>
 
