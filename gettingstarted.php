@@ -59,6 +59,10 @@
 		<pre class="code">
 	apt-get install python-wxgtk2.6
 		</pre>
+		<b>Note:</b> If you have wxPython 2.4 installed make sure you update to the latest version by doing a 
+		<pre class="code">
+		apt-get install python-wxgtk2.4
+		</pre>
 	</li><li>
 		Next you need to install <b>libtpproto-py</b>
 		<ol>

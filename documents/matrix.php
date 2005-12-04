@@ -32,7 +32,7 @@
 <table cellpadding=3>
 	<tr>
 		<td>&nbsp;</td>
-		<td colspan="4"><b>py-netlib</b></td>
+		<td colspan="4"><b>libtpproto-py</b></td>
 		<td colspan="2"><b>libtpproto-cpp</b></td>
 		<td><b>(none)</b></td>
 	</tr>
