@@ -34,10 +34,13 @@ foreach($files as $file) {
 	preg_match_all("|<p>by (.*?)</p>|i",$haystack,$author);
 
 	$haystack = str_replace(array($title[0][0], $author[0][0]), "", $haystack);
+	//leave full urls as they are
+	$haystack = preg_replace('!<a.*?href\s*=[\'"\s]http://*(.*?)[\'"\s]*>(.*?)</a>!', '\2 - \1', $haystack);
 	$haystack = preg_replace('!<a.*?href\s*=[\'"\s]*(.*?)[\'"\s]*>(.*?)</a>!', '\2 - http://www.thousandparsec.net/tp/\1', $haystack);
 	$haystack = str_replace(array("/tp//tp/", "/./"), array("/tp/", "/"), $haystack);
 	$haystack = preg_replace('!\s*\n\s*!', "\n", $haystack);
 	$haystack = strip_tags( $haystack );
+	$haystack = htmlspecialchars($haystack);
 	$haystack = preg_replace('!\n\n+!', "\n\n", $haystack);
 	$body = $haystack;
 
