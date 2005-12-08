@@ -8,7 +8,7 @@
 </p>
 <p>
 	I would be very happy if should you would like to help out. There are many low priority bugs in the
-	<a href="http://sourceforge.net/tracker/?group_id=132078&atid=723099">TP bug tracker</a> that would be
+	<a href="http://sourceforge.net/tracker/?group_id=132078&amp;atid=723099">TP bug tracker</a> that would be
 	suitable for someone wanting to get into game server programming in c++ (there are many bugs 
 	for the clients, protocol libraries and servers in both languages which a newbie could have a go at.)
 </p>
