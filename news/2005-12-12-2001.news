@@ -1,0 +1,13 @@
+
+<h2>TPServer-cpp 0.2.0 released.</h2>
+<p>by Lee</p>
+<p>
+	Tpserver-cpp continues to progress. As mentioned in the previous news, tpserver-cpp now has a MySQL backend
+	that allows all game data to be stored. Also added to this release is tps and https sockets, and improvements
+	to the console. A few bug fixes too.
+</p>
+<p>
+	TPServer-cpp 0.2.0 is on the downloads page and is on our SF downloads page too. The CVS module is 
+	tpserver-cpp and the tag is 
+	TPSERVER_CPP_0_2_0. Feedback and suggestions are always welcome.
+</p>
