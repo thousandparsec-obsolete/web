@@ -1,0 +1,16 @@
+
+<h2>Transition from CVS to Darcs.</h2>
+<p>by Lee</p>
+<p>
+	Thousand Parsec is changing the Revision Control System we use to track changes to our source code. We are 
+	moving to <a href="http://www.darcs.net/">Darcs</a>, which is much more modern and better suits our needs.
+	The source code has been moved already, and the website will be moved soon. There will be a short period when
+	there won't be any updates to the website. This message might be the last change made to the website before 
+	the change over to darcs for the website itself.  The only possible change could be the next release some of 
+	the python modules, depending on how things go. A news item will be posted when the change over has happened.
+	
+</p>
+<p>
+	The Darcs repositories have the full history of changes made to our source, and all the tags that have been made.
+	Web CVS and anonymous CVS access might not be available for some time on the new site.
+</p>
