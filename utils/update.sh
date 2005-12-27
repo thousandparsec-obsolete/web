@@ -1,28 +1,24 @@
 #! /bin/sh
 
-CVSROOT="/var/www/thousandparsec/cvs/"
-
-cd $CVSROOT
-cvs update -dP
+DARCSROOT="/var/www/thousandparsec/repos/"
 
 #create py-netlib docs.
-cd $CVSROOT/web/dev/documents/python/
+cd $DARCSROOT/web/dev/documents/python/
 epydoc --html -o libtpproto-py-doc -v --private-css green --docformat plaintext netlib
 tar -zcvf libtpproto-py-doc-cvs.tar.gz libtpproto-py-doc/*
 
 #create libtpproto-cpp docs.
-cd $CVSROOT/libtpproto-cpp/
+cd $DARCSROOT/libtpproto-cpp/
 doxygen Doxyfile
-rm -fr libtpproto-cpp-doc
-mv docs libtpproto-cpp-doc
-tar czf libtpproto-cpp-doc-cvs.tar.gz libtpproto-cpp-doc
-mv libtpproto-cpp-doc-cvs.tar.gz libtpproto-cpp-doc/html/
+cd ..
+tar czf libtpproto-cpp-doc-cvs.tar.gz libtpproto-cpp/docs/
+mv libtpproto-cpp-doc-cvs.tar.gz libtpproto-cpp/docs/* $DARCSROOT/web/dev/documents/libtpproto-cpp/
 
 # Create any new thumbnails
-cd $CVSROOT/web/screenshots
+cd $DARCSROOT/web/screenshots
 ./makethumbs.sh
 
 # Run the sloc2html update
-cd $CVSROOT/web/utils
+cd $DARCSROOT/web/utils
 exec ./sloc2html.sh
 
