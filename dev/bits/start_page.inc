@@ -9,10 +9,12 @@
 		</td><td>
 			<a href="/tp/dev/sloc.php">Code Breakdown</a>
 		</td><td>
-			<a href="/tp/dev/cvs.php">CVS</a>
+			<a href="/tp/dev/rcs.php">Source Code</a>
+		</td><td>
+			<a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi">Darcs Web</a>
 		</td><td>
 			<a href="/tp/dev/viewcvs.php/">Web CVS</a>
 		</td><td>
-			<a href="http://sourceforge.net/tracker/?group_id=132078&atid=723099">Bugs</a>
+			<a href="http://sourceforge.net/tracker/?group_id=132078&amp;atid=723099">Bugs</a>
 		</td>
 </table>
