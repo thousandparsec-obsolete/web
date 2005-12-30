@@ -85,11 +85,12 @@ function display($directory) {
 <h2>C++ Server</h2>
 <p>
 	This is the main server for Thousand Parsec.
-</p><p>
+</p>
+<?php display("tpserver-cpp/"); ?>
+<p>
 	Archives of <b>unsupported</b> old previous versions can be found on
 	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078&package_id=153889">SourceForge here</a>.
 </p>
-<?php display("tpserver-cpp/"); ?>
 <?php include "bits/end_section.inc" ?>
 
 <?php include "bits/start_section.inc" ?>
@@ -113,11 +114,12 @@ function display($directory) {
 		<li>Windows 2000</li>
 		<li>Windows XP</li>
 	</ul>
-</p><p>
+</p>
+<?php display("tpclient-pywx/"); ?>
+<p>
 	Archives of <b>unsupported</b> old previous versions can be found on
 	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078&package_id=153890">SourceForge here</a>.
 </p>
-<?php display("tpclient-pywx/"); ?>
 <?php include "bits/end_section.inc" ?>
 
 <?php include "bits/start_section.inc" ?>
@@ -152,11 +154,12 @@ function display($directory) {
 </p><p>
 	You do <b>not</b> require this library if you are using a prebuild binary or the
 	inplace version of the client.
-</p><p>
+</p>
+<?php display("py-netlib/"); ?>
+<p>
 	Archives of <b>unsupported</b> old previous versions can be found on
 	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078&package_id=153888">SourceForge here</a>.
 </p>
-<?php display("py-netlib/"); ?>
 <?php include "bits/end_section.inc" ?>
 
 <?php include "bits/start_section.inc" ?>
