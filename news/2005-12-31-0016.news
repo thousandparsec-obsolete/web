@@ -1,0 +1,13 @@
+
+<h2>New tpclient-pywx release!</h2>
+<p>by Mithro</p>
+<p>
+	After a large number of fixes I am proud to announce the next release of tpclient-pywx.
+</p><p>
+	The most important features of this release are binaries for 
+	<a href="/tp/downloads/tpclient-pywx/tpclient-pywx-0.1.1.setup.exe">Windows</a> and there 
+	will soon been a Mac OS X binary too. There are also numerous bug fixes and new 
+	functionality. For more comprehensive list of changes see the Darcs or CVS logs.
+</p><p>
+	Everyone should upgrade right away!
+</p>
