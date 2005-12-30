@@ -142,7 +142,7 @@ function display($directory) {
 	You do <b>not</b> require this library if you are using a prebuild binary or the
 	inplace version of the client.
 </p>
-<?php // display("libtpclient-py/"); ?>
+<?php display("libtpclient-py/"); ?>
 <?php include "bits/end_section.inc" ?>
 
 <?php include "bits/start_section.inc" ?>
