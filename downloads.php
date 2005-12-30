@@ -44,7 +44,7 @@ function display($directory) {
 			$revision = substr($revision, 0, $pos);
 		if ($previous != "$major.$minor.$revision") {
 			print " <tr>\n";
-			print "   <th colspan='3'><h3>Version $major.$minor.$revision</h3></th>\n";
+			print "   <th colspan='3' style='padding-top: 0;'><h3>Version $major.$minor.$revision</h3></th>\n";
 			print " </tr>\n";
 			$previous = "$major.$minor.$revision";
 		}
