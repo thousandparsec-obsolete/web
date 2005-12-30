@@ -13,22 +13,62 @@ function display($directory) {
 	$dir = $downloads . $directory;
 	$files = @get_files($dir);
 
+	print "<table class='tabular' style='width: auto;'>\n";
+
+	$i = 0;
 	foreach ($files as $file) {
-		if ( substr($file, -4) == '.rpm' || substr($file, -4) == ".deb" ) {
+		$tail = substr($file, -4);
+	
+		if ($tail == '.asc' || $tail == '.sig')
+			continue;
+		if ($tail == '.rpm' || $tail == ".deb" ) {
 			$second = strrpos(substr($file, 0, strrpos($file, '-')-1), '-');
 			$goodness = substr($file, $second+1);
 		} else {
 			$goodness = substr($file, strrpos($file, '-')+1);
 		}
-		
-		list($major, $minor, $revision, $tar, $compression) = split("\.", $goodness, 5);
 	
 		$size = (int)(filesize($dir . $file)/1024);
+		
+		unset($tar);
+		if (substr_count($goodness, ".") > 3) {
+			$result = split("\.", strrev($goodness), 5);
+			list($compression, $tar, $revision, $minor, $major) = array_map('strrev',$result);
+		} else {
+			$result = split("\.", strrev($goodness), 4);
+			list($compression, $revision, $minor, $major) = array_map('strrev',$result);
+		}
+		
+		$pos = strpos($revision, '-');
+		if ($pos !== False)
+			$revision = substr($revision, 0, $pos);
+		if ($previous != "$major.$minor.$revision") {
+			print " <tr>\n";
+			print "   <th colspan='3'><h3>Version $major.$minor.$revision</h3></th>\n";
+			print " </tr>\n";
+			$previous = "$major.$minor.$revision";
+		}
 
-		print "<p>\n";
-		print "	<a href=\"$dir$file\"> Version $major.$minor.$revision </a> $tar/$compression, $size KB \n";
-		print "</p>\n";
+		print " <tr class=\"row{$i}\">\n";
+		$i = ($i+1) % 2; 
+
+		if (isset($tar))
+			print " <td><a href='$dir$file'>$tar/$compression</a></td>\n";
+		else
+			print " <td><a href='$dir$file'>$compression</a></td>\n";
+		print " <td class='numeric'>$size KB</td>\n";
+
+		if (file_exists("$dir$file.asc"))
+			print "	 <td><a href='$dir$file.asc'><i>Signature</i></a></td>\n";
+		else if (file_exists("$dir$file.sig"))
+			print "	 <td><a href='$dir$file.sig'><i>Signature</i></a></td>\n";
+		else
+			print "  <td></td>\n";
+
+		print " </tr>\n";
+		
 	}
+	print "</table>\n";
 }
 ?>
 
@@ -51,16 +91,16 @@ function display($directory) {
 </p>
 <?php display("tpserver-cpp/"); ?>
 <?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
 
+<?php include "bits/start_section.inc" ?>
 <h2>Python Server</h2>
 <p>
 	This is a server for Thousand Parsec written in Python and using a SQL back end.
 </p>
 <?php display("tpserver-py/"); ?>
 <?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
 
+<?php include "bits/start_section.inc" ?>
 <h2>Python wxWidgets client</h2>
 <p>
 	This client should work on any computer which has wxPython and Python installed.
@@ -79,8 +119,8 @@ function display($directory) {
 </p>
 <?php display("tpclient-pywx/"); ?>
 <?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
 
+<?php include "bits/start_section.inc" ?>
 <h2>Python Text client</h2>
 <p>
 	This client works with any computer which has Python and the python network library
@@ -90,22 +130,36 @@ function display($directory) {
 	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078&package_id=153889">SourceForge here</a>.
 </p>
 <?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
 
+<?php include "bits/start_section.inc" ?>
+<h2>Python TP Client library</h2>
+<p>
+	This library is used by all the more complicated python applications to share
+	common code.
+</p><p>
+	You do <b>not</b> require this library if you are using a prebuild binary or the
+	inplace version of the client.
+</p>
+<?php // display("libtpclient-py/"); ?>
+<?php include "bits/end_section.inc" ?>
+
+<?php include "bits/start_section.inc" ?>
 <h2>Python TP Network Library</h2>
 <p>
 	This library is used by all the python applications to communicate over the network.
 </p><p>
-	All python clients and servers <b>require</b> this library to function. Windows 
-	binaries do not require a separate download, the library is include in the binary.
+	All python clients and servers <b>require</b> this library to function. 
+</p><p>
+	You do <b>not</b> require this library if you are using a prebuild binary or the
+	inplace version of the client.
 </p><p>
 	Archives of <b>unsupported</b> old previous versions can be found on
 	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078&package_id=153888">SourceForge here</a>.
 </p>
 <?php display("py-netlib/"); ?>
 <?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
 
+<?php include "bits/start_section.inc" ?>
 <h2>C++ TP Protocol Library</h2>
 <p>
 	The library libtpproto-cpp is a client side library written in C++ for TP.  It
@@ -113,6 +167,6 @@ function display($directory) {
 	logging, socket to the server and async frame handling.
 </p>
 <?php display("libtpproto-cpp/"); ?>
-
 <?php include "bits/end_section.inc" ?>
+
 <?php include "bits/end_page.inc" ?>
