@@ -7,7 +7,7 @@
 
 $my_url = "/tp/pipermail.php";
 $piper_short = "/pipermail";
-$piper_real = "http://www.thousandparsec.net$piper_short";
+$piper_real = "http://mail.thousandparsec.net$piper_short";
 
 // Include an rewrite the piper stuff
 $url = $_SERVER['REQUEST_URI'];
