@@ -15,7 +15,7 @@
 	future we hope other developers create there own games using Thousand Parsec.
 </p><p>
 	Before we can give you instructions on what to do, we need to figure out
-	which part of Thousand Parsec you are intrested in. Click the Link below
+	which part of Thousand Parsec you are interested in. Click the Link below
 	which best describes you.
 	<ul>
 		<li><a href="#gamer">I want to actually play a game!</a></li>
@@ -36,16 +36,19 @@
 	client because older versions tend to lack important features and have more
 	bugs. Below is instructions on how to install tpclient-pywx.
 </p><p>
-	If you are a console junky you can also use tpclient-pytext, however this
+	If you are a console junkie you can also use tpclient-pytext, however this
 	client is far from polished. You can find instructions for installing this
 	client in the developer section.
 </p>
 
+<h2>Installing tpclient-pywx on Windows</h2>
+<p>
+	Just download the setup/exe version from the download page and run it!
+</p>
 
 <h2>Installing tpclient-pywx on Debian or Ubuntu</h2>
-
 <p>
-	First you need to install the prerequistest for tpclient-pywx not developed by the Thousand Parsec project.
+	First you need to install the prerequisites for tpclient-pywx not developed by the Thousand Parsec project.
 </p>
 <ul>
 	<li>
