@@ -80,26 +80,6 @@ function display($directory) {
 </p>
 
 <?php include "bits/end_section.inc" ?>
-<?php include "bits/start_section.inc" ?>
-
-<h2>C++ Server</h2>
-<p>
-	This is the main server for Thousand Parsec.
-</p>
-<?php display("tpserver-cpp/"); ?>
-<p>
-	Archives of <b>unsupported</b> old previous versions can be found on
-	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078&package_id=153889">SourceForge here</a>.
-</p>
-<?php include "bits/end_section.inc" ?>
-
-<?php include "bits/start_section.inc" ?>
-<h2>Python Server</h2>
-<p>
-	This is a server for Thousand Parsec written in Python and using a SQL back end.
-</p>
-<?php display("tpserver-py/"); ?>
-<?php include "bits/end_section.inc" ?>
 
 <?php include "bits/start_section.inc" ?>
 <h2>Python wxWidgets client</h2>
@@ -182,6 +162,27 @@ function display($directory) {
 	logging, socket to the server and async frame handling.
 </p>
 <?php display("libtpproto-cpp/"); ?>
+<?php include "bits/end_section.inc" ?>
+
+<?php include "bits/start_section.inc" ?>
+
+<h2>C++ Server</h2>
+<p>
+	This is the main server for Thousand Parsec.
+</p>
+<?php display("tpserver-cpp/"); ?>
+<p>
+	Archives of <b>unsupported</b> old previous versions can be found on
+	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078&package_id=153889">SourceForge here</a>.
+</p>
+<?php include "bits/end_section.inc" ?>
+
+<?php include "bits/start_section.inc" ?>
+<h2>Python Server</h2>
+<p>
+	This is a server for Thousand Parsec written in Python and using a SQL back end.
+</p>
+<?php display("tpserver-py/"); ?>
 <?php include "bits/end_section.inc" ?>
 
 <?php include "bits/end_page.inc" ?>

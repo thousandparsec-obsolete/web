@@ -41,13 +41,17 @@
 	client in the developer section.
 </p>
 
+
 <h2>Installing tpclient-pywx on Debian or Ubuntu</h2>
+
+<p>
+	First you need to install the prerequistest for tpclient-pywx not developed by the Thousand Parsec project.
+</p>
 <ul>
 	<li>
-		Firstly you need to install Python and the Python development packages.
+		Firstly you need to install Python package.
 		<pre class="code">
 	apt-get install python
-	apt-get install python-dev
 		</pre>
 	</li><li>
 		You also need to install NumArray
@@ -61,20 +65,19 @@
 		</pre>
 		<b>Note:</b> If you have wxPython 2.4 installed make sure you update to the latest version by doing a 
 		<pre class="code">
-		apt-get install python-wxgtk2.4
+	apt-get install python-wxgtk2.4
 		</pre>
-	</li><li>
-		Next you need to install <b>libtpproto-py</b>
-		<ol>
-			<li>Download the tar.gz from <a href="http://www.thousandparsec.net/tp/downloads.php">here</a></li>
-			<li>Extract the tar.gz</li>
-			<li>Enter the newly created directory</li>
-			<li>As <b>root</b> run <pre class="code">python setup.py install</pre></li>
-		</ol>
+	</li>
+</ul>
+
+<p>
+	Next you need to install tpclient-pywx. 
+</p>
+<ul>	
 	</li><li>
 		Now all you need to do is get <b>tpclient-pywx</b>
 		<ol>
-			<li>Download the tar.gz from <a href="http://www.thousandparsec.net/tp/downloads.php">here</a></li>
+			<li>Download the "inplace" version tar.gz from <a href="http://www.thousandparsec.net/tp/downloads.php">here</a></li>
 			<li>Extract the tar.gz</li>
 			<li>Enter the newly created directory</li>
 			<li>Run <pre class="code">./tpclient-pywx</pre></li>
@@ -83,11 +86,6 @@
 </ul>
 
 
-
-<h2>Installing tpclient-pywx on RPM systems</h2>
-<p>
-	
-</p>
 
 <?php include "bits/end_section.inc" ; ?>
 <?php include "bits/start_section.inc" ; ?>
