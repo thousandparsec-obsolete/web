@@ -114,6 +114,18 @@ function display($directory) {
 		<li>Windows 2000</li>
 		<li>Windows XP</li>
 	</ul>
+</p><p>
+	If you want to download and play with the client, use the following files for each
+	operating system,
+	<ul>
+		<li>Windows - use the setup/exe</li>
+		<li>Unsupported Linux (non RPM) - use the inplace version</li>
+		<li>Unsupported Linux (RPM) - use the RPM version, you will also need the RPMs
+		of libtpclient-py and libtpproto-py</li>
+		<li>Supported Linux - use the inplace version for the time being until debs
+		appear in the distribution</li>
+		<li>MacOS X - use the inplace version until a package is available</li>
+	</ul>
 </p>
 <?php display("tpclient-pywx/"); ?>
 <p>
@@ -152,7 +164,7 @@ function display($directory) {
 </p><p>
 	All python clients and servers <b>require</b> this library to function. 
 </p><p>
-	You do <b>not</b> require this library if you are using a prebuild binary or the
+	You do <b>not</b> require this library if you are using a prebuilt binary or the
 	inplace version of the client.
 </p>
 <?php display("py-netlib/"); ?>
