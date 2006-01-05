@@ -5,8 +5,12 @@ $fetcher = new Snoopy;
 		
 $my_url = "/tp/mailman.php";
 $real_short = "/cgi-bin/mailman";
-$real_real = "http://mail.thousandparsec.net$real_short";
-$real_url = "http://" . $_SERVER['SERVER_NAME'] . $real_short;
+
+$real_host = "mail.thousandparsec.net";
+$my_host = $_SERVER['SERVER_NAME'];
+
+$real_real = "http://$real_host$real_short";
+$real_url = "http://$my_host$real_short";
 
 // Include GET stuff
 $url = $_SERVER['REQUEST_URI'];
@@ -80,6 +84,7 @@ foreach ($matches[1] as $key => $value) {
 
 // Archives stuff
 $data = str_replace("/pipermail", "/tp/pipermail.php", $data);
+$data = str_replace($real_host, $my_host, $data);
 
 echo $data;
 ?>
