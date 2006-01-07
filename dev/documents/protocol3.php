@@ -9,6 +9,20 @@
 .new { color: #00ff00; }
 .fixme { color: #ff0000; }
 .inote { color: #ffff00; }
+
+ul.response {
+	margin-top: 0.5em;
+	margin-bottom: 0.25em;
+	font-size: 8pt;
+	padding-left: 0.25em;
+}
+
+ul.response ul {
+	margin-top: 0em;
+	margin-bottom: 0em;
+	padding-left: 1em;
+}
+
 -->
 </style>
 
@@ -403,18 +417,28 @@
 	frame. There is no meaning in odd/even distinction in this version.
 	The types are listed below:
 </p><p>
+	Note: Direction is defined as C2S (Client sent to Server) and S2C (Server
+	to client).
+</p><p>
+	Note: Valid Responses are the frames that a server can return for this
+	C2S action. If the field is a dash refer to the base class.
+</p><p>
+	FIXME: These Valid Responses should be links.
+<p>
 <table class="tabular">
 	<tr>
 		<th>Value</th>
 		<th>Name</th>
 		<th>Description</th>
 		<th>Base</th>
+		<th>Dir</th>
+		<th>Response</th>
 	</tr>
 	
 	<tr>
-		<th colspan="4"><a href="#GenericResponses">Generic Responses</a></th>
+		<th colspan="6"><a href="#GenericResponses">Generic Responses</a></th>
 	</tr><tr>
-		<td colspan="4" class="desc">
+		<td colspan="6" class="desc">
 			These responses are the most common and generic that should be the 
 			first to be implemented.
 		</td>
@@ -423,22 +447,28 @@
 		<td><a href="#Ok_Desc">Ok</a></td>
 		<td>Ok, continue or passed</td>
 		<td></td>
+		<td>S2C</td>
+		<td>-</td>
 	</tr><tr class="row1">
 		<td class="numeric">1</td>
 		<td><a href="#Fail_Desc">Fail</a></td>
 		<td>Failed, stop or impossible</td>
 		<td></td>
+		<td>S2C</td>
+		<td>-</td>
 	</tr><tr class="row0">
 		<td class="numeric">2</td>
 		<td><a href="#Sequence_Desc">Sequence</a></td>
 		<td>Multiple frames will follow</td>
 		<td></td>
+		<td>S2C</td>
+		<td>-</td>
 	</tr>
 
 	<tr class="new">
-		<th colspan="4"><a href="#BaseFrames">Base Frames</a></th>
+		<th colspan="6"><a href="#BaseFrames">Base Frames</a></th>
 	</tr><tr class="new">
-		<td colspan="4" class="desc">
+		<td colspan="6" class="desc">
 			These packets don't really exist but are the common parts of other 
 			packets.
 		</td>
@@ -447,27 +477,58 @@
 		<td><a href="#GetwithID_Desc">Get with ID</a></td>
 		<td>Gets things using ids (Objects, Boards)</td>
 		<td></td>
+		<td>C2S</td>
+		<td>
+			<ul class="response">
+				<li>Sequence 
+					<ul class="response">
+						<li>Frame of type requested</li>
+						<li>Fail frame</li>
+					</ul></li>
+				<li>Fail frame</li>
+			</ul>
+		</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">-</td>
 		<td><a href="#GetwithIDandSlot_Desc">Get with ID and Slots</a></td>
 		<td>Gets things on a thing using slots (Orders, Messages)</td>
 		<td></td>
+		<td>C2S</td>
+		<td>
+			<ul class="response">
+				<li>Sequence 
+					<ul class="response">
+						<li>Frame of type requested</li>
+						<li>Fail frame</li>
+					</ul></li>
+				<li>Fail frame</li>
+			</ul>
+		</td>
 	</tr><tr class="row0 new">
 		<td class="numeric">-</td>
 		<td><a href="#GetIDSequence_Desc">Get ID Sequence</a></td>
 		<td>Gets a sequence of IDs</td>
 		<td></td>
+		<td>C2S</td>
+		<td>
+			<ul class="response">
+				<li>ID Sequence of type requested</li>
+				<li>Fail frame</li>
+			</ul>
+		</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">-</td>
 		<td><a href="#IDSequence_Desc">ID Sequence</a></td>
 		<td>A sequence of IDs and their last modified times</td>
 		<td></td>
+		<td>S2C</td>
+		<td>-</td>
 	</tr>
 	
 	<tr>
-		<th colspan="4"><a href="#Connecting">Connecting</a></th>
+		<th colspan="6"><a href="#Connecting">Connecting</a></th>
 	</tr><tr>
-		<td colspan="4" class="desc">
+		<td colspan="6" class="desc">
 			These frames are used for setting up the connection to a server.
 		</td>
 	</tr><tr class="row0">
@@ -475,22 +536,40 @@
 		<td><a href="#Connect_Desc">Connect</a></td>
 		<td>Can I connect?</td>
 		<td></td>
+		<td>C2S</td>
+		<td>
+			<ul class="response">
+				<li>Okay frame</li>
+				<li>Fail frame</li>
+				<li>Redirect frame</li>
+			</ul>
+		</td>
 	</tr><tr class="row1">
 		<td class="numeric">4</td>
 		<td><a href="#Login_Desc">Login</a></td>
 		<td>Login with username/password</td>
 		<td></td>
+		<td>C2S</td>
+		<td>
+			<ul class="response">
+				<li>Okay frame</li>
+				<li>Fail frame</li>
+				<li>Redirect frame</li>
+			</ul>
+		</td>
 	</tr><tr class="row0 new">
 		<td class="numeric">24</td>
 		<td><a href="#Redirect_Desc">Redirect</a></td>
 		<td>Redirects a client to a different server.</td>
 		<td></td>
+		<td>S2C</td>
+		<td>-</td>
 	</tr>
 
 	<tr class="new">
-		<th colspan="4"><a href="#FeatureNegotiation">Feature Negotiation</a></th>
+		<th colspan="6"><a href="#FeatureNegotiation">Feature Negotiation</a></th>
 	</tr><tr class="new">
-		<td colspan="4" class="desc">
+		<td colspan="6" class="desc">
 			These frames are used for negotiation which features to use.
 		</td>
 	</tr><tr class="row0 new">
@@ -498,17 +577,26 @@
 		<td><a href="#GetFeatures_Desc">Get Features</a></td>
 		<td>Get the features available on this server.</td>
 		<td></td>
+		<td>C2S</td>
+		<td>
+			<ul class="response">
+				<li>Available Features frame</li>
+				<li>Fail frame</li>
+			</ul>
+		</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">26</td>
 		<td><a href="#Features_Desc">Available Features</a></td>
 		<td>The features available on this server.</td>
 		<td></td>
+		<td>S2C</td>
+		<td>-</td>
 	</tr>
 	
 	<tr class="new">
-		<th colspan="4"><a href="#KeepAlive">Keep alive</a> (Optional)</th>
+		<th colspan="6"><a href="#KeepAlive">Keep alive</a> (Optional)</th>
 	</tr><tr class="new">
-		<td colspan="4" class="desc">
+		<td colspan="6" class="desc">
 			These frames are used to keep a connection alive, these are often
 			needed when using the tunneling connections. (Some broken NAT 
 			implementations also need this to keep open long running, low 
@@ -520,48 +608,76 @@
 		<td><a href="#Ping_Desc">Ping</a></td>
 		<td>Get the server to respond with a OK request.</td>
 		<td></td>
+		<td>C2S</td>
+		<td>
+			<ul class="response">
+				<li>Okay frame</li>
+			</ul>
+		</td>
 	</tr>
 	
 	<tr>
-		<th colspan="4"><a href="#Objects">Objects</a></th>
+		<th colspan="6"><a href="#Objects">Objects</a></th>
 	</tr><tr>
-		<td colspan="4" class="desc">These frames are used for getting objects.</td>
+		<td colspan="6" class="desc">These frames are used for getting objects.</td>
 	</tr><tr class="row0">
 		<td class="numeric">5</td>
 		<td><a href="#GetObjectsByID_Desc">Get Objects by ID</a></td>
 		<td>Returns object with the given IDs.</td>
 		<td>Get with ID</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row1">
 		<td class="numeric">7</td>
 		<td><a href="#Object_Desc">Object</a></td>
 		<td>Description of an Object</td>
 		<td></td>
+		<td>S2C</td>
+		<td>-</td>
 	</tr><tr class="row0 new">
 		<td class="numeric">28</td>
 		<td><a href="#GetObjectIDs_Desc">Get Object IDs</a></td>
 		<td></td>
 		<td>Get ID Sequence</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">29</td>
 		<td><a href="#GetObjectIDsByPosition_Desc">Get Object IDs by Position</a></td>
 		<td>Returns the IDs which are within a sphere.</td>
 		<td></td>
+		<td>C2S</td>
+		<td>
+			<ul class="response">
+				<li>ID Sequence of Objects IDs</li>
+				<li>Fail frame</li>
+			</ul>
+		</td>
 	</tr><tr class="row0 new">
 		<td class="numeric">30</td>
 		<td><a href="#GetObjectIDsByContainer_Desc">Get Object IDs by Container</a></td>
 		<td>Returns the Object IDs which are within an Object.</td>
 		<td></td>
+		<td>C2S</td>
+		<td>
+			<ul class="response">
+				<li>ID Sequence of Objects IDs</li>
+				<li>Fail frame</li>
+			</ul>
+		</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">31</td>
 		<td><a href="#ListOfObjectIDs_Desc">List of Object IDs</a></td>
-		<td>Gets a sequence of IDs.</td>
+		<td>A sequence of object IDs.</td>
 		<td>ID Sequence</td>
+		<td>-</td>
+		<td>-</td>
 	</tr>
 	
 	<tr>
-		<th colspan="4"><a href="#Orders">Orders</a></th>
+		<th colspan="6"><a href="#Orders">Orders</a></th>
 	</tr><tr>
-		<td colspan="4" class="desc">
+		<td colspan="6" class="desc">
 			These frames are used for manipulating orders.
 		</td>
 	</tr><tr class="row0">
@@ -569,53 +685,86 @@
 		<td><a href="#GetOrderDescription_Desc">Get Order Description</a></td>
 		<td>Returns a description of an order type</td>
 		<td>Get with ID</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row1">
 		<td class="numeric">9</td>
 		<td><a href="#OrderDescription_Desc">Order Description</a></td>
 		<td>Describes an order type and it's parameters</td>
 		<td></td>
+		<td>S2C</td>
+		<td>-</td>
 	</tr><tr class="row0 new">
 		<td class="numeric">32</td>
 		<td><a href="#GetOrderDescriptionIDs_Desc">Get Order Description IDs</a></td>
 		<td>Gets a sequence of order type IDs.</td>
 		<td>Get ID Sequence</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">33</td>
 		<td><a href="#ListOfOrderDescriptionIDs_Desc">List of Order Description IDs</a></td>
 		<td>A sequence of order type IDs.</td>
 		<td>ID Sequence</td>
+		<td>-</td>
+		<td>-</td>
 		
 	</tr><tr class="row0">
 		<td class="numeric">10</td>
 		<td><a href="#GetOrder_Desc">Get Order</a></td>
 		<td>Returns a description of an order</td>
 		<td>Get with ID and Slots</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row1">
 		<td class="numeric">11</td>
 		<td><a href="#Order_Desc">Order</a></td>
 		<td>Description of an order</td>
 		<td></td>
+		<td>S2C</td>
+		<td>-</td>
 	</tr><tr class="row0">
 		<td class="numeric">12</td>
 		<td><a href="#InsertOrder_Desc">Insert Order</a></td>
 		<td>Insert order on object before slot</td>
 		<td></td>
+		<td>C2S</td>
+		<td>
+			<!-- FIXME: Should this return the newly changed order? It would be much better if it did. -->
+			<ul class="response">
+				<li>Okay frame</li>
+				<li>Fail frame</li>
+			</ul>
+		</td>
 	</tr><tr class="row1">
 		<td class="numeric">13</td>
 		<td><a href="#RemoveOrder_Desc">Remove Order</a></td>
 		<td>Remove an order from a slot of an object</td>
 		<td>Get with ID and Slots</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row0 new">
 		<td class="numeric">34</td>
 		<td><a href="#ProbeOrder_Desc">Probe Order</a></td>
 		<td>Returns an order object which would be created if this was an Insert order</td>
 		<td></td>
+		<td>C2S</td>
+		<td>
+			<ul class="response">
+				<li>Sequence 
+					<ul class="response">
+						<li>Order created with values requested</li>
+						<li>Fail frame</li>
+					</ul></li>
+				<li>Fail frame</li>
+			</ul>
+		</td>
 	</tr>
 
 	<tr>
-		<th colspan="4"><a href="#Time">Time</a></th>
+		<th colspan="6"><a href="#Time">Time</a></th>
 	</tr><tr>
-		<td colspan="4" class="desc">
+		<td colspan="6" class="desc">
 			These frames are used to find out when the next turn will occur.
 		</td>
 	</tr><tr class="row0">
@@ -623,17 +772,25 @@
 		<td><a href="#GetTimeRemaining_Desc">Get Time Remaining</a></td>
 		<td>Get the amount of time before the end of turn</td>
 		<td></td>
+		<td>C2S</td>
+		<td>
+			<ul class="response">
+				<li>Okay frame</li>
+			</ul>
+		</td>
 	</tr><tr class="row1">
 		<td class="numeric">15</td>
 		<td><a href="#TimeRemaining_Desc">Time remaining</a></td>
 		<td>The amount of time before the end of turn</td>
 		<td></td>
+		<td>S2C</td>
+		<td>-</td>
 	</tr>
 
 	<tr>
-		<th colspan="4"><a href="#Messages">Messages</a></th>
+		<th colspan="6"><a href="#Messages">Messages</a></th>
 	</tr><tr>
-		<td colspan="4" class="desc">
+		<td colspan="6" class="desc">
 			These frames are used to manipulate the in game message boards. Each person
 			has a message board and there are some shared message boards.
 		</td>
@@ -642,49 +799,70 @@
 		<td><a href="#GetBoards_Desc">Get Boards</a></td>
 		<td>Get message boards the player can see.</td>
 		<td>Get with ID</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row1">
 		<td class="numeric">17</td>
 		<td><a href="#Board_Desc">Board</a></td>
 		<td>A Message.</td>
 		<td></td>
+		<td>S2C</td>
+		<td>-</td>
 
 	</tr><tr class="row0 new">
 		<td class="numeric">35</td>
 		<td><a href="#GetBoardIDs_Desc">Get Board IDs</a></td>
 		<td>Gets a list of board ids that the player can see.</span></td>
 		<td>Get ID Sequence</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">36</td>
 		<td><a href="#ListOfBoardIDs_Desc">List Of Board IDs</a></td>
 		<td>The list of board ids the player can see.</td>
 		<td>ID Sequence</td>
+		<td>-</td>
+		<td>-</td>
 
 	</tr><tr class="row0">
 		<td class="numeric">18</td>
 		<td><a href="#GetMessage_Desc">Get Message</a></td>
 		<td>Get a Message from a board.</td>
 		<td>Get with ID and Slots</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row1">
 		<td class="numeric">19</td>
 		<td><a href="#Message_Desc">Message</a></td>
 		<td>A Message.</td>
 		<td></td>
+		<td>S2C</td>
+		<td>-</td>
 	</tr><tr class="row0">
 		<td class="numeric">20</td>
 		<td><a href="#PostMessage_Desc">Post Message</a></td>
 		<td>Post a message to a board.</td>
 		<td></td>
+		<td>C2S</td>
+		<td>
+			<ul class="response">
+				<li>Okay frame</li>
+				<li>Fail frame</li>
+			</ul>
+		</td>
 	</tr><tr class="row1">
 		<td class="numeric">21</td>
 		<td><a href="#RemoveMessage_Desc">Remove Message</a></td>
 		<td>Remove a message from a board.</td>
 		<td>Get with ID and Slots</td>
+		<td>-</td>
+		<td>-</td>
 	</tr>
 
 	<tr>
-		<th colspan="4"><a href="#Resources">Resources</a></th>
+		<th colspan="6"><a href="#Resources">Resources</a></th>
 	</tr><tr>
-		<td colspan="4" class="desc">
+		<td colspan="6" class="desc">
 			These frames are used to get information about resources.
 		</td>
 	</tr><tr class="row0">
@@ -692,28 +870,36 @@
 		<td><a href="#GetResourceDescription_Desc">Get Resource Description</a></td>
 		<td>Returns a description of an resource type</td>
 		<td>Get with ID</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row1">
 		<td class="numeric">23</td>
 		<td><a href="#ResourceDescription_Desc">Resource Description</a></td>
 		<td>Describes a resource</td>
 		<td></td>
+		<td>S2C</td>
+		<td>-</td>
 		
 	</tr><tr class="row0 new">
 		<td class="numeric">37</td>
 		<td><a href="#GetResourceDescriptionIDs_Desc">Get Resource Description IDs</a></td>
 		<td>Gets a list of resource type ids.</td>
 		<td>Get ID Sequence</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">38</td>
 		<td><a href="#ListOfResourceDescriptionIDs_Desc">List Of Resource Description IDs</a></td>
 		<td>A list of resource type ids.</td>
 		<td>ID Sequence</td>
+		<td>-</td>
+		<td>-</td>
 	</tr>
 
 	<tr class="new">
-		<th colspan="4"><a href="#Players">Players</a></th>
+		<th colspan="6"><a href="#Players">Players</a></th>
 	</tr><tr class="new">
-		<td colspan="4" class="desc">
+		<td colspan="6" class="desc">
 			These frames are used to get information about other places/races.
 		</td>
 	</tr><tr class="row0 new">
@@ -721,17 +907,26 @@
 		<td><a href="#GetPlayerData_Desc">Get Player Data</a></td>
 		<td>Get the information about a player/race.</td>
 		<td></td>
+		<td>C2S</td>
+		<td>
+			<ul class="response">
+				<li>Player Data frame</li>
+				<li>Fail frame</li>
+			</ul>
+		</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">40</td>
 		<td><a href="#PlayerData_Desc">Player Data</a></td>
 		<td></td>
 		<td></td>
+		<td>S2C</td>
+		<td>-</td>
 	</tr>
 	
 	<tr class="new">
-		<th colspan="4"><a href="#DesignManipulation">Design Manipulation</a></th>
+		<th colspan="6"><a href="#DesignManipulation">Design Manipulation</a></th>
 	</tr><tr class="new">
-		<td colspan="4" class="desc">
+		<td colspan="6" class="desc">
 			These are the frames required to manipulate designs (such as those for ships
 			or Weapons).
 		</td>
@@ -741,35 +936,47 @@
 		<td><a href="#GetCategory_Desc">Get Category</a></td>
 		<td>Get the details about a category</td>
 		<td>Get with ID</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">42</td>
 		<td><a href="#Category_Desc">Category</a></td>
 		<td>Describes a category</td>
 		<td></td>
+		<td>S2C</td>
+		<td>-</td>
 	</tr><tr class="row0 new">
 		<td class="numeric">43</td>
 		<td><a href="#AddCategory_Desc">Add Category</a></td>
 		<td>Adds a new category</td>
 		<td>Category</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">44</td>
 		<td><a href="#RemoveCategory_Desc">Remove Category</a></td>
 		<td>Remove a category</td>
 		<td>Get with ID</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row0 new">
 		<td class="numeric">45</td>
 		<td><a href="#GetCategoryIDs_Desc">Get Category IDs</a></td>
 		<td>Gets a list of category ids.</td>
 		<td>Get ID Sequence</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">46</td>
 		<td><a href="#ListOfCategoryIDs_Desc">List Of Category IDs</a></td>
 		<td>A list of category type ids.</td>
 		<td>ID Sequence</td>
+		<td>-</td>
+		<td>-</td>
 	</tr>
 
 	<tr class="new">
-		<td colspan="4">&nbsp;</td>
+		<td colspan="6">&nbsp;</td>
 	</tr>
 	
 	</tr><tr class="row0 new">
@@ -777,39 +984,53 @@
 		<td><a href="#GetDesign_Desc">Get Design</a></td>
 		<td>Get the details about a design</td>
 		<td>Get with ID</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">48</td>
 		<td><a href="#Design_Desc">Design</a></td>
 		<td>Describes a design</td>
 		<td></td>
+		<td>S2C</td>
+		<td>-</td>
 	</tr><tr class="row0 new">
 		<td class="numeric">49</td>
 		<td><a href="#AddDesign_Desc">Add Design</a></td>
 		<td>Adds a new design</td>
 		<td>Design</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">50</td>
 		<td><a href="#ModifyDesign_Desc">Modify Design</a></td>
 		<td>Modifies an old design</td>
 		<td>Design</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row0 new">
 		<td class="numeric">51</td>
 		<td><a href="#RemoveDesign_Desc">Remove Design</a></td>
 		<td>Remove a design</td>
 		<td>Design</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">52</td>
 		<td><a href="#GetDesignIDs_Desc">Get Design IDs</a></td>
 		<td>Gets a list of design ids.</td>
 		<td>Get ID Sequence</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row0 new">
 		<td class="numeric">53</td>
 		<td><a href="#ListOfDesignIDs_Desc">List Of Design IDs</a></td>
 		<td>A list of design type ids.</td>
 		<td>ID Sequence</td>
+		<td>-</td>
+		<td>-</td>
 	
 	<tr class="new">
-		<td colspan="4">&nbsp;</td>
+		<td colspan="6">&nbsp;</td>
 	</tr>
 
 	</tr><tr class="row1 new">
@@ -817,24 +1038,32 @@
 		<td><a href="#GetComponent_Desc">Get Component</a></td>
 		<td>Gets the details about a component</td>
 		<td>Get with ID</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row0 new">
 		<td class="numeric">55</td>
 		<td><a href="#Component_Desc">Component</a></td>
 		<td>Describes a component</td>
 		<td></td>
+		<td>S2C</td>
+		<td>-</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">56</td>
 		<td><a href="#GetComponentIDs_Desc">Get Component IDs</a></td>
 		<td>Gets a list of component ids.</td>
 		<td>Get ID Sequence</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row0 new">
 		<td class="numeric">57</td>
 		<td><a href="#ListOfComponentIDs_Desc">List Of Component IDs</a></td>
 		<td>A list of component ids.</td>
 		<td>ID Sequence</td>
+		<td>-</td>
+		<td>-</td>
 
 	<tr class="new">
-		<td colspan="4">&nbsp;</td>
+		<td colspan="6">&nbsp;</td>
 	</tr>
 
 	</tr><tr class="row1 new">
@@ -842,21 +1071,29 @@
 		<td><a href="#GetProperty_Desc">Get Property</a></td>
 		<td>Gets the details about a property</td>
 		<td>Get with ID</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row0 new">
 		<td class="numeric">59</td>
 		<td><a href="#Property_Desc">Property</a></td>
 		<td>Describes a property</td>
 		<td></td>
+		<td>S2C</td>
+		<td>-</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">60</td>
 		<td><a href="#GetPropertyIDs_Desc">Get Property IDs</a></td>
 		<td>Gets a list of property ids.</td>
 		<td>Get ID Sequence</td>
+		<td>-</td>
+		<td>-</td>
 	</tr><tr class="row0 new">
 		<td class="numeric">61</td>
 		<td><a href="#ListOfPropertyIDs_Desc">List Of Property IDs</a></td>
 		<td>A list of property ids.</td>
 		<td>ID Sequence</td>
+		<td>-</td>
+		<td>-</td>
 
 	</tr>
 
