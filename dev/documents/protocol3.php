@@ -485,6 +485,7 @@ ul.response ul {
 						<li>Frame of type requested</li>
 						<li>Fail frame</li>
 					</ul></li>
+				<li>Frame of type requested</li>
 				<li>Fail frame</li>
 			</ul>
 		</td>
@@ -501,6 +502,7 @@ ul.response ul {
 						<li>Frame of type requested</li>
 						<li>Fail frame</li>
 					</ul></li>
+				<li>Frame of type requested</li>
 				<li>Fail frame</li>
 			</ul>
 		</td>
@@ -950,8 +952,13 @@ ul.response ul {
 		<td><a href="#AddCategory_Desc">Add Category</a></td>
 		<td>Adds a new category</td>
 		<td>Category</td>
-		<td>-</td>
-		<td>-</td>
+		<td>C2S</td>
+		<td>
+			<ul class="response">
+				<li>Ok frame</li>
+				<li>Fail frame</li>
+			</ul>
+		</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">44</td>
 		<td><a href="#RemoveCategory_Desc">Remove Category</a></td>
@@ -998,20 +1005,30 @@ ul.response ul {
 		<td><a href="#AddDesign_Desc">Add Design</a></td>
 		<td>Adds a new design</td>
 		<td>Design</td>
-		<td>-</td>
-		<td>-</td>
+		<td>C2S</td>
+		<td>
+			<ul class="response">
+				<li>Design frame</li>
+				<li>Fail frame</li>
+			</ul>
+		</td>
 	</tr><tr class="row1 new">
 		<td class="numeric">50</td>
 		<td><a href="#ModifyDesign_Desc">Modify Design</a></td>
 		<td>Modifies an old design</td>
 		<td>Design</td>
-		<td>-</td>
-		<td>-</td>
+		<td>C2S</td>
+		<td>
+			<ul class="response">
+				<li>Design frame</li>
+				<li>Fail frame</li>
+			</ul>
+		</td>
 	</tr><tr class="row0 new">
 		<td class="numeric">51</td>
 		<td><a href="#RemoveDesign_Desc">Remove Design</a></td>
 		<td>Remove a design</td>
-		<td>Design</td>
+		<td>Get with ID</td>
 		<td>-</td>
 		<td>-</td>
 	</tr><tr class="row1 new">
