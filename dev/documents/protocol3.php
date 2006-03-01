@@ -955,7 +955,7 @@ ul.response ul {
 		<td>C2S</td>
 		<td>
 			<ul class="response">
-				<li>Ok frame</li>
+				<li>Category frame</li>
 				<li>Fail frame</li>
 			</ul>
 		</td>
@@ -2140,11 +2140,13 @@ ul.response ul {
 <p>
 	A Category frame consist of:
 	<ul>
-		<li>a UInt32, Category ID</li>
+		<li>a SInt32, Category ID</li>
 		<li>a UInt64, the last modified time of this category description</li>
 		<li>a Formatted String, name of the category</li>
 		<li>a Formatted String, description of the category</li>
 	</ul>
+</p><p>
+	<b>Note:</b> If adding a category send the ID as -1. The last modified time will be ignored.
 </p>
 </span>
 
@@ -2205,6 +2207,15 @@ ul.response ul {
 					<li>a Formatted String, property display string</li>
 				</ul>
 		</li>
+	</ul>
+</p><p>
+	<b>Note:</b> If adding a design send the ID as -1. The following fields will be ignored by the server 
+	so should be transmitted as empty (although not required to be),
+	<ul>
+		<li>last modified time</li>
+		<li>number of times in use</li>
+		<li>feedback string</li>
+		<li>property list</li>
 	</ul>
 </p><p>
 	<b>Note:</b> If usage is -1, then the design is unusable.
