@@ -2146,7 +2146,10 @@ ul.response ul {
 		<li>a Formatted String, description of the category</li>
 	</ul>
 </p><p>
-	<b>Note:</b> If adding a category send the ID as -1. The last modified time will be ignored.
+	<b>Note:</b> If adding a category send the ID as -1. The returned Category frame will contain 
+	the ID of the newly added category.
+</p><p>
+	<b>Note:</b> If adding the last modified time will be ignored.
 </p>
 </span>
 
@@ -2209,8 +2212,11 @@ ul.response ul {
 		</li>
 	</ul>
 </p><p>
-	<b>Note:</b> If adding a design send the ID as -1. The following fields will be ignored by the server 
-	so should be transmitted as empty (although not required to be),
+	<b>Note:</b> If adding a design send the ID as -1. The returned Design frame will contain the ID of 
+	the newly added design.
+</p><p>
+	<b>Note:</b> If adding the following fields will be ignored by the server so should be transmitted as
+	empty (although not required to be),
 	<ul>
 		<li>last modified time</li>
 		<li>number of times in use</li>
