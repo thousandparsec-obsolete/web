@@ -2,6 +2,9 @@
 <?php include "bits/start_page.inc" ; ?>
 
 <?php include "bits/start_section.inc" ; ?>
+<table>
+	<tr>
+		<td>
 <h1>Getting Started!</h1>
 <p>
 	Thousand Parsec is a rather large project so it is easy to get confused 
@@ -23,6 +26,12 @@
 		<li><a href="#developer">I want to develop a game!</a></li>
 	</ul>
 </p>
+		</td><td>
+			<img style="text-align: right;" src="graphics/lizard.png" />
+			<p class="caption">Most races don't survive finding out what lizard men eat.</p>
+		</td>
+	</tr>
+</table>
 <?php include "bits/end_section.inc" ; ?>
 <?php include "bits/start_section.inc" ; ?>
 <a name="gamer"></a>
