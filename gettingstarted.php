@@ -13,13 +13,13 @@
 	it is a frame work for creating a similar group of games. Some of the games,
 	such as our first demo game <a href="/tp/dev/documents/minisec.php">MiniSec</a>,
 	are developed by the Thousand Parsec developers themselves. In the near 
-	future we hope other developers create there own games using Thousand Parsec.
+	future we hope that other developers will create their own games using Thousand Parsec.
 </p><p>
 	Some examples of games which Thousand Parsec draws ideas from are,
 <a href="http://www.faqs.org/faqs/games/stars/newsgroup-faq/">Stars!</a>, 
 <a href="http://www.vgaplanets.com/">VGA Planets</a>,
 <a href="http://moo3.quicksilver.com/">Master of Orion</a> and
-<a href="http://www.galciv.com/">Galactic Civilizations.</a>
+<a href="http://www.galciv.com/">Galactic Civilizations</a>.
 	These games are often called 4 X's from the main phases found in the games,
 	eXplore, eXpand, eXploit and eXterminate.
 
@@ -69,7 +69,7 @@
 	At the moment you most probably want tpclient-pywx as it's the only client in 
 	active development. You should <b>always</b> get the latest version of the 
 	client because older versions tend to lack important features and have more
-	bugs. Below is instructions on how to install tpclient-pywx.
+	bugs. Below are instructions on how to install tpclient-pywx.
 </p><p>
 	If you are a console junkie you can also use tpclient-pytext, however this
 	client is far from polished. You can find instructions for installing this
