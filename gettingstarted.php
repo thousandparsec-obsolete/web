@@ -1,21 +1,47 @@
 <?php $title = "Getting Started!" ?>
 <?php include "bits/start_page.inc" ; ?>
-
 <?php include "bits/start_section.inc" ; ?>
-<table>
-	<tr>
-		<td>
-<h1>Getting Started!</h1>
+<h1>About</h1>
 <p>
-	Thousand Parsec is a rather large project so it is easy to get confused 
-	when first starting out. This page has instructions on how to get started
-	with Thousand Parsec.
+	Thousand Parsec is a framework for turn based space empire building games.
 </p><p>
 	It is important to understand that Thousand Parsec is <b>not</b> a game by itself,
 	it is a frame work for creating a similar group of games. Some of the games,
 	such as our first demo game <a href="/tp/dev/documents/minisec.php">MiniSec</a>,
 	are developed by the Thousand Parsec developers themselves. In the near 
 	future we hope other developers create there own games using Thousand Parsec.
+</p><p>
+	Some examples of games which Thousand Parsec draws ideas from are,
+<a href="http://www.faqs.org/faqs/games/stars/newsgroup-faq/">Stars!</a>, 
+<a href="http://www.vgaplanets.com/">VGA Planets</a>,
+<a href="http://moo3.quicksilver.com/">Master of Orion</a> and
+<a href="http://www.galciv.com/">Galactic Civilizations.</a>
+	These games are often called 4 X's from the main phases found in the games,
+	eXplore, eXpand, eXploit and eXterminate.
+
+	If you haven't heard of them, other games which are a bit similar include,
+<a href="http://www.civ3.com/">Civilisation</a>, 
+<a href="http://www.mightandmagic.com/">Hero's of Might and Magic</a> and
+<a href="http://www.blizzard.com/starcraft/">Starcraft</a>.
+</p><p>
+	Thousand Parsec includes everything you need for
+	<ul>
+		<li>play any of the currently running games,</li>
+		<li>set up your own game using already designed games, and</li>
+		<li>building your own space empire building game.</li>
+	</ul>
+	As Thousand Parsec is a rather large project it is easy to get confused 
+	when first starting out. This page has instructions on how to get started
+	with Thousand Parsec.
+</p>
+<?php include "bits/end_section.inc" ; ?>
+<?php include "bits/start_section.inc" ; ?>
+<table>
+	<tr>
+		<td>
+<h1>Getting Started!</h1>
+<p>
+</p><p>
 </p><p>
 	Before we can give you instructions on what to do, we need to figure out
 	which part of Thousand Parsec you are interested in. Click the Link below
@@ -96,8 +122,6 @@
 		</ol>
 	</li>
 </ul>
-
-
 
 <?php include "bits/end_section.inc" ; ?>
 <?php include "bits/start_section.inc" ; ?>

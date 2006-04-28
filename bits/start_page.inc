@@ -23,8 +23,6 @@
 			<a href="/tp/index.php">News</a>
 			<a href="/tp/rss.php"><img src="/tp/graphics/rss.gif" width=18 height=7 border=0 alt="[XML]"></a>
 		</td><td>
-			<a href="/tp/about.php">About</a>
-		</td><td>
 			<a href="/tp/screenshots.php">Screenshots</a>
 		</td><td>
 			<a href="/tp/documents.php">Documents</a>
