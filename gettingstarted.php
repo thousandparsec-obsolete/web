@@ -1,6 +1,10 @@
 <?php $title = "Getting Started!" ?>
 <?php include "bits/start_page.inc" ; ?>
 <?php include "bits/start_section.inc" ; ?>
+<table>
+	<tr>
+		<td>
+
 <h1>About</h1>
 <p>
 	Thousand Parsec is a framework for turn based space empire building games.
@@ -34,15 +38,9 @@
 	when first starting out. This page has instructions on how to get started
 	with Thousand Parsec.
 </p>
-<?php include "bits/end_section.inc" ; ?>
-<?php include "bits/start_section.inc" ; ?>
-<table>
-	<tr>
-		<td>
+
 <h1>Getting Started!</h1>
 <p>
-</p><p>
-</p><p>
 	Before we can give you instructions on what to do, we need to figure out
 	which part of Thousand Parsec you are interested in. Click the Link below
 	which best describes you.
@@ -52,6 +50,8 @@
 		<li><a href="#developer">I want to develop a game!</a></li>
 	</ul>
 </p>
+
+
 		</td><td>
 			<img style="text-align: right;" src="graphics/lizard.png" />
 			<p class="caption">Most races don't survive finding out what lizard men eat.</p>
