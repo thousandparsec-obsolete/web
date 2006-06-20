@@ -12,8 +12,8 @@
 </head>
 <body>
 
-<?php include(dirname(__FILE__) . "/../tmp/sf-bugs.inc"); ?>
-<?php include(dirname(__FILE__) . "/../tmp/sf-todo.inc"); ?>
+<?php @include(dirname(__FILE__) . "/../tmp/sf-bugs.inc"); ?>
+<?php @include(dirname(__FILE__) . "/../tmp/sf-todo.inc"); ?>
 
 <div class="header"><img src="/tp/graphics/logo.png" alt="Thousand Parsec Logo" /></div>
 <table class="menu">
