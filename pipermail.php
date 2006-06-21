@@ -19,7 +19,7 @@ while (! feof($handle) ) {
 	$data = $data . fread($handle, 1024);
 }
 
-$data = preg_replace("-\"(.+)((\.mbox)|(\.txt))\"-", "$piper_real$url$1$2", $data);
+$data = preg_replace("-\"(.+)((\.mbox)|(\.txt)|(\.gz))\"-", "$piper_real$url$1$2", $data);
 
 // Replace the listinfo ones
 $data = str_replace("/cgi-bin/mailman/", "/tp/mailman.php/", $data);
