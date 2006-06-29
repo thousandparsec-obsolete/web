@@ -1,7 +1,7 @@
 #! /bin/sh
 
 if [ "x$DARCSROOT" = "x" ]; then
-	DARCSROOT="/var/www/thousandparsec/repos/"
+	DARCSROOT="/var/www/thousandparsec/tp"
 fi
 
 cd $DARCSROOT
