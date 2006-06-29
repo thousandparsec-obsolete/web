@@ -1,4 +1,4 @@
 
 <table>
-	<tr> 
-		<td> 
+	<tr>
+		<td>

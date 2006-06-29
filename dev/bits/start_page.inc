@@ -1,4 +1,5 @@
-<?php include dirname(__FILE__) . "/../../bits/start_page.inc" ?>
+<?php  include dirname(__FILE__) . "/../../bits/start_page.inc" ?>
+<?php @include dirname(__FILE__) . "/../../tmp/sf-stats.inc" ?>
 
 <table class="menu">
 	<tr> 
@@ -16,7 +17,7 @@
 			<a href="/tp/dev/viewcvs.php/">Web CVS</a> -->
 		</td><td>
 			<a href="http://sourceforge.net/tracker/?group_id=132078&amp;atid=723099">
-				Bugs (<?php echo $bugs_open?> open)
+				Bugs (<?php echo $sf_bugs_open?> open)
 			</a>
 		</td>
 </table>
