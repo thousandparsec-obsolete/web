@@ -6,7 +6,7 @@
 	</a>
 </p><p class="small" style="text-align: center">
 	Thousand Parsec, TP and the golden wreath logo are all trademarks of, MITHIS in 
-	Australia and Lee Beggs in New Zealand. Some rights reserved.
+	Australia and Lee Begg in New Zealand. Some rights reserved.
 </p>
 </span>
 
