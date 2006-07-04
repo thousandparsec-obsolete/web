@@ -1,7 +1,7 @@
 <?php $title = "Getting Started!" ?>
 <?php include "bits/start_page.inc" ; ?>
 <?php include "bits/start_section.inc" ; ?>
-<table>
+<table class="borderless">
 	<tr>
 		<td>
 

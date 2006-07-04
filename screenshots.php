@@ -32,7 +32,6 @@ div.withtooltip:hover span:hover{display:none;}
 <?php include "bits/start_section.inc" ?>
 <?php 
 
-
 function display($directory) {
 	$files = @get_files_by_date($directory);
  

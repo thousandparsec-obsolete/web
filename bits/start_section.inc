@@ -1,4 +1,1 @@
-
-<table>
-	<tr>
-		<td>
+<div class="section">
