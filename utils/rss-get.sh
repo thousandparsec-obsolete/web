@@ -67,7 +67,8 @@ export repositories="
  tpclient-pywx
  tpsai-py
  tpserver-cpp
- tpserver-py"
+ tpserver-py
+ web"
 
 if [ ! -d $TMP/darcs ]; then
 	mkdir $TMP/darcs
