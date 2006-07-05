@@ -33,7 +33,7 @@
 			<a href="/tp/documents.php">Documents</a>
 		</td><td<?php echo $title == 'Downloads' ? ' class="active"' : ''; ?>>
 			<a href="/tp/downloads.php">Downloads</a>
-		</td><td<?php echo $title == 'Developers' ? ' class="active"' : ''; ?>>
+		</td><td<?php echo $developer_section ? ' class="active"' : ''; ?>>
 			<a href="/tp/dev/index.php">Developers</a>
 		</td><td<?php echo $title == 'FAQ' ? ' class="active"' : ''; ?>>
 			<a href="/tp/faq.php">FAQ</a>

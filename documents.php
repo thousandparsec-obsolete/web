@@ -13,11 +13,6 @@
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
     <p>
-		<a href="/tp/documents/setup/howto.php">
-			HOWTO setup pywx-client under windows
-		</a>
-	</p>
-    <p>
 		<a href="/tp/documents/matrix.php">
 			Client and Server Feature Matrix
 		</a>

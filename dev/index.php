@@ -1,4 +1,4 @@
-<?php $title = "Developers section" ?>
+<?php $title = "Developers Home" ?>
 
 <?php include "bits/start_page.inc" ?>
 <?php include "bits/start_section.inc" ?>

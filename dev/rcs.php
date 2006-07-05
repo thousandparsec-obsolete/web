@@ -1,4 +1,4 @@
-<?php $title = "How to access Thousand Parsec source code" ?>
+<?php $title = "Source Code" ?>
 <?php include "bits/start_page.inc" ; ?>
 
 <?php include "bits/start_section.inc"; ?>
