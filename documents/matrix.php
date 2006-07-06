@@ -267,7 +267,7 @@
 	</tr>
 	<tr>
 		<td>Protocol (version)</td>
-		<td align="center" bgcolor="#00ff00">2</td>
+		<td align="center" bgcolor="#00ff00">3</td>
 		<td align="center" bgcolor="#00ff00">3</td>
 	</tr>
 	<tr>
@@ -297,12 +297,12 @@
 	</tr>
 	<tr>
 		<td>Ship Design</td>
-		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ffff00">#</td>
 		<td align="center" bgcolor="#ffff00">#</td>
 	</tr>
 	<tr>
 		<td>Missile Design</td>
-		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ffff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 
