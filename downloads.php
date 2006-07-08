@@ -178,6 +178,14 @@ function display($directory) {
 <?php include "bits/end_section.inc" ?>
 
 <?php include "bits/start_section.inc" ?>
+<h2>C++ TP Readline library</h2>
+<p>
+  This library is used by tpserver-cpp to provide the console interface.
+</p>
+<?php display("libtprl/"); ?>
+<?php include "bits/end_section.inc" ?>
+
+<?php include "bits/start_section.inc" ?>
 <h2>Python Server</h2>
 <p>
 	This is a server for Thousand Parsec written in Python and using a SQL back end.
