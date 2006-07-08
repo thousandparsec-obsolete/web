@@ -28,7 +28,7 @@ foreach($files as $file) {
 	<b class="small"><a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi">Latest Developments:</a></b><br />
 	<span class="small">On: <?php echo strtr($darcs[0]['when'], array('T' => ' ', 'Z' => ' ')); ?></span><br /> 
 	<span class="small">By: <?php echo preg_replace('/@[A-Za-z0-9.-]*/' , '@...', $darcs[0]['whom']); ?></span><br /> 
-	<span class="small">To: <?php echo substr($darcs[0]['where'], strrpos($darcs[0]['where'], '/')+1, -3); ?></span><br />
+	<span class="small">To: <?php echo substr($darcs[0]['where'], strrpos($darcs[0]['where'], '/')+1, -4); ?></span><br />
 	<span class="ultrasmall">Comment:</span><br /><span class="small"><?php echo $darcs[0]['title']; ?></span><br />
 </div>
 
@@ -36,7 +36,7 @@ foreach($files as $file) {
 	<b class="small"><a href="http://dir.gmane.org/search.php?match=gmane.comp.games.tp">Posts to ML:</a></b><br />
 	<span class="small">On: <?php echo strtr($lists[0]['when'], array('T' => ' ', 'Z' => ' ')); ?></span><br /> 
 	<span class="small">By: <?php echo preg_replace('/@[A-Za-z0-9.-]*/' , '@...', $lists[0]['whom']); ?></span><br /> 
-	<span class="small">To: <?php echo substr($lists[0]['where'], strrpos($lists[0]['where'], '/')+1, -3); ?></span><br />
+	<span class="small">To: <?php echo substr($lists[0]['where'], strrpos($lists[0]['where'], '/')+1, -4); ?></span><br />
 	<span class="ultrasmall">Topic:</span><br /><span class="small"><?php echo $lists[0]['title']; ?></span><br />
 	<table class="small" style="margin-left: auto; margin-right: auto;">
 		<tr>
