@@ -1,0 +1,13 @@
+
+<h2>TPServer-cpp 0.3.0 released.</h2>
+<p>by Lee</p>
+<p>
+	Yes! A significant release!  Tpserver=cpp now supports dynamically loading modules (rulesets, persistence
+	methods, and tpscheme implementations).  Other improvements include console and config file setup of
+	games, and resource descriptions in game. A few bug fixes too. And installs correctly.
+</p>
+<p>
+	TPServer-cpp 0.3.0 is on the downloads page and is on our SF downloads page too. The Darcs repo is 
+	tpserver-cpp and the tag is 
+	TPSERVER_CPP_0_3_0. Feedback and suggestions are always welcome.
+</p>
