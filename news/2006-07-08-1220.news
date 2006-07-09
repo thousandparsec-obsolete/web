@@ -2,9 +2,9 @@
 <h2>Initial libtprl released.</h2>
 <p>by Lee</p>
 <p>
-	Because I wan't able to find a good readline library for C++, I have written my own. While it doesn't
+	Because I wasn't able to find a good readline library for C++, I have written my own. While it doesn't
 	support everything yet, it does have both blocking and non-blocking interfaces, basic help, aliases and
-	categories. Missing is command commpletion and most of the documentation.  The next release of 
+	categories. Missing is command completion and most of the documentation.  The next release of 
 	tpserver-cpp depends on this library.
 </p>
 <p>
