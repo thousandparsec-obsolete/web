@@ -34,7 +34,7 @@ items.each {|item| item[:when] = DateTime.parse(item[:when]).to_s }
 items = items[0,5]
 
 def php_string(value)
-  "'" + value.to_s.gsub(/'/, "\\'") + "'"
+  "'" + value.to_s.gsub(/'/, "\\\\'") + "'"
 end
 
 puts "<?php\n$#{prefix} = array("
