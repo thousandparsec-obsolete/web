@@ -1,0 +1,13 @@
+
+<h2>Libtprl 0.1.0 released.</h2>
+<p>by Lee</p>
+<p>
+	Completion was less invasive than I thought it might be, so here is libtprl 0.1.0.  This release
+	gives completions for commands and subcommands. All 0.1.x releases will be interface compatable 
+	(if there are any). Hopefully documentation makes it in soon.
+</p>
+<p>
+	Libtprl 0.1.0 is on the downloads page and is on our SF downloads page too. The Darcs repo is 
+	libtprl and the tag is 
+	libtprl_0_1_0. Feedback and suggestions are always welcome.
+</p>
