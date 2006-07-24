@@ -2,29 +2,18 @@
 <?php include "bits/start_page.inc" ; ?>
 <?php include "bits/func.inc" ; ?>
 
-<div class="section" style="padding-top: 0.1em; padding-bottom: 0.1em;">
-<p style="text-align: center">Don't know what Thousand Parsec is or want more information? <a href="gettingstarted.php">Start Here</a>.</p>
-</div>
+<div id="gs">Don't know what Thousand Parsec is or want more information? <a href="/tp/gettingstarted.php">Start Here</a></div>
 
-<table class="borderless boxes">
-	<tr>
-		<td>
-<?php
-$news = "news/";
-$files = get_files($news);
-
-$i = 0;
-foreach($files as $file) {
-	if ($i == 2) { ?>
-
-		</td><td class="boxes">
+<div id="columns">
+<div id="right">
+<?php include "bits/start_section.inc"; ?> 
 
 <?php include(dirname(__FILE__) . "/tmp/fm-stats.inc"); ?>
 <?php include(dirname(__FILE__) . "/tmp/sf-stats.inc"); ?>
 <?php include(dirname(__FILE__) . "/tmp/darcs.inc"); ?>
 <?php include(dirname(__FILE__) . "/tmp/lists.inc"); ?>
 
-<div class="box">
+<div class="stats">
 	<b class="small"><a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi">Latest Developments:</a></b><br />
 	<span class="small">On: <?php echo strtr($darcs[0]['when'], array('T' => ' ', 'Z' => ' ')); ?></span><br /> 
 	<span class="small">By: <?php echo preg_replace('/@[A-Za-z0-9.-]*/' , '@...', $darcs[0]['whom']); ?></span><br /> 
@@ -32,7 +21,7 @@ foreach($files as $file) {
 	<span class="ultrasmall">Comment:</span><br /><span class="small"><?php echo $darcs[0]['title']; ?></span><br />
 </div>
 
-<div class="box">
+<div class="stats">
 	<b class="small"><a href="http://dir.gmane.org/search.php?match=gmane.comp.games.tp">Posts to ML:</a></b><br />
 	<span class="small">On: <?php echo strtr($lists[0]['when'], array('T' => ' ', 'Z' => ' ')); ?></span><br /> 
 	<span class="small">By: <?php echo preg_replace('/@[A-Za-z0-9.-]*/' , '@...', $lists[0]['whom']); ?></span><br /> 
@@ -60,7 +49,7 @@ foreach($files as $file) {
 	</table>
 </div>
 
-<div class="box" style="
+<div class="stats" style="
 	background-repeat: no-repeat;
 	background-image: url(/tp/tmp/fm-stats-small.png);
 	background-position: right center;
@@ -69,13 +58,15 @@ foreach($files as $file) {
 	<span class="small">Rating:</span>          <?php echo $fm_rating; ?>/10.00<br />
 	<span class="small">Vitality Rank:</span>   <?php echo $fm_vitality_rank; ?><br />
 	<span class="small">Popularity Rank:</span> <?php echo $fm_popularity_rank; ?><br />
-<!--	<span class="small">Vitality:</span>   <?php echo $fm_vitality_percent; ?>%,
+<!--
+	<span class="small">Vitality:</span>   <?php echo $fm_vitality_percent; ?>%,
 	<span class="small">Rank</span>        <?php echo $fm_vitality_rank; ?><br />
 	<span class="small">Popularity:</span> <?php echo $fm_popularity_percent; ?>%, 
-	<span class="small">Rank</span>        <?php echo $fm_popularity_rank; ?><br /> -->
+	<span class="small">Rank</span>        <?php echo $fm_popularity_rank; ?><br /> 
+-->
 </div>
 
-<div class="box">
+<div class="stats">
 	<table class="small" style="width: 100%;">
 		<tr>
 			<td style="text-align: left;">
@@ -94,22 +85,28 @@ foreach($files as $file) {
 	</table>
 </div>
 
-		</td>
-	</tr>
-</table>
-<?php }
+<?php include "bits/end_section.inc"; ?> 
+</div><!-- End Right -->
 
+<div id="left">
+<?php
+$news = "news/";
+$files = get_files($news);
+
+$i = 0;
+include "bits/start_section.inc";
+foreach($files as $file) {
 	if ($i > 10)
 		break;
 	else
 		$i++;
 
-	include "bits/start_section.inc";
-	include($news . $file); ?>
-	<p class="small">Posted: <?php echo substr($file, 0, -5); ?></p>
-<?php
-	include "bits/end_section.inc";
+	include($news . $file); 
+	echo "<h6>Posted: ". substr($file, 0, -5) . "</h6>\n";
 }
+include "bits/end_section.inc";
 ?>
+</div><!-- End Left -->
+</div><!-- End Columns -->
 
 <?php include "bits/end_page.inc" ; ?>
