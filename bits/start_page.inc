@@ -11,6 +11,13 @@
 <meta name="Keywords" content="" />
 <meta name="Robots" content="All" />
 
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/tp/js/pngfix.js"></script>
+<style type="text/css">
+   behavior:url("/tp/js/csshover.htc");
+</style>
+<![endif]-->
+
 <link rel="shortcut icon" href="/tp/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" media="screen" href="/tp/style.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="/tp/parsec.css" />
@@ -21,7 +28,10 @@
 <body>
 <div id="wrapper">
 
-<div id="banner"><h1>Thousand Parsec: <?php echo $title; ?></h1></div>
+<div id="banner">
+	<h1>Thousand Parsec: <?php echo $title; ?></h1>
+	<img src="/tp/img/logo_t.png" />
+</div>
 
 <ul id="navigation">
 <li>
@@ -56,3 +66,4 @@
 </li>
 </ul>
 
+<div id="content">
