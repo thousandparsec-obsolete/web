@@ -5,6 +5,7 @@
 <div id="gs">Don't know what Thousand Parsec is or want more information? <a href="/tp/gettingstarted.php">Start Here</a></div>
 
 <div id="columns">
+
 <div id="right">
 <?php include "bits/start_section.inc"; ?> 
 
@@ -89,12 +90,12 @@
 </div><!-- End Right -->
 
 <div id="left">
+<?php include "bits/start_section.inc"; ?> 
 <?php
 $news = "news/";
 $files = get_files($news);
 
 $i = 0;
-include "bits/start_section.inc";
 foreach($files as $file) {
 	if ($i > 10)
 		break;
@@ -103,10 +104,10 @@ foreach($files as $file) {
 
 	include($news . $file); 
 	echo "<h6>Posted: ". substr($file, 0, -5) . "</h6>\n";
-}
-include "bits/end_section.inc";
-?>
+}?>
+<?php include "bits/end_section.inc"; ?> 
 </div><!-- End Left -->
+
 </div><!-- End Columns -->
 
 <?php include "bits/end_page.inc" ; ?>

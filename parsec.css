@@ -12,7 +12,7 @@
 	margin: 0;
 }
 body { 
-	background-color: #000000;
+	background-color: #ffffff;
 	color: #FFFFFF;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 11px;
@@ -29,7 +29,7 @@ a {
 #wrapper {
 	width: 100%;
 	margin: 0 auto;
-	background-color: #000000;
+	/* background-color: #000000; */
 	color: #FFFFFF;
 	height: auto;
 	padding: 0;
@@ -93,102 +93,101 @@ a {
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*\
 | Left Column                                 |
 \*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
 #columns {
+	width:100%;
 	position: relative;
 }
-
-/*	width: 280px; */
 #left {
-	position: absolute;
-	top: 0;	left: 0;
-
-	padding: 0 10px 0 10px;
-	margin-right: 230px;
-
-	height: auto;
-	width: auto;
+	margin: 0 230px 0 0; 
 }
-
 #right {
+	width:  220px;
+
+	float: right;
 	position: absolute;
-	top: 0;	right: 0;
+	right: 0;
+}
 
-	padding: 0 10px 0 10px;
-	margin: 0;
+.box {
+	width:100%;
+	position: relative;
+}
+.box_left {
+	background:url(img/box-mid-left.png) repeat-y top left;
+	position: relative;
+}
+.box_right {
+	background:url(img/box-mid-right.png) repeat-y top right;
+	position: relative;
+}
+.box_top {
+	background:url(img/box-top-middle.png) repeat-x top left;
+	height: 30px;
+	margin: 0 30px 0 30px; 
+}
+.box_bottom {
+	background:url(img/box-btm-middle.png) repeat-x bottom left; 
+	height: 30px;
+	margin: 0 30px 0 30px;
+}
+.box_top_left {
+	background:url(img/box-top-left.png) no-repeat top left;
 
-	height: auto;
-	width: 220px;
+	height: 30px;
+	width:  30px;
+
+	float: left; 
+	position: absolute;
+	left: 0;
+}
+.box_top_right {
+	background:url(img/box-top-right.png) no-repeat top right;
+
+	height: 30px;
+	width:  30px;
 
 	float: right;
+	position: absolute;
+	right: 0;
 }
+.box_bottom_left {
+	background:url(img/box-btm-left.png) no-repeat top left;
 
-.box-top {
-	background-image: url(/tp/img/box-top-middle.png);
 	height: 30px;
-	width: 100%;
-}
-.box-top-left {
-	background-image: url(/tp/img/box-top-left.png);
-	height: 30px;
-	width: 30px;
+	width:  30px;
 
-	float: left;
+	float: left; 
+	position: absolute;
+	left: 0;
 }
-.box-top-right {
-	background-image: url(/tp/img/box-top-right.png);
+.box_bottom_right {
+	background:url(img/box-btm-right.png) no-repeat top right;
+
 	height: 30px;
-	width: 30px;
+	width:  30px;
 
 	float: right;
+	position: absolute;
+	right: 0;
 }
 
-.box-btm {
-	background-image: url(/tp/img/box-btm-middle.png);
-	height: 30px;
-	width: 100%;
-}
-.box-btm-left {
-	background-image: url(/tp/img/box-btm-left.png);
-	height: 30px;
-	width: 30px;
-	float: left;
-}
-.box-btm-right {
-	background-image: url(/tp/img/box-btm-right.png);
-	height: 30px;
-	width: 30px;
-	float: right;
+/*
+ * An 1px vertical padding is added to prevent the bg image
+ * being discontinued due to inner block element's margins
+ */
+.box_content {
+	margin:  0px 10px;
+	padding: 1px 0px;
+
+	background-color: black;
 }
 
-.box-mid {
-	position: relative; 
-	height: auto;
-	width: 100%;
-	background-color: #000000;
-}
-.box-mid-middle {
-	margin: 0 15px 0 15px;
-}
-.box-mid-left {
-	position: absolute; 
-	top: 0; left: 0; 
-	height: 100%;
-	width: 10px;
-	background-image: url(/tp/img/box-mid-left.png);
-}
-.box-mid-right {
-	position: absolute; 
-	top: 0; right: 0; 
-	height: 100%;
-	width: 10px;
-	background-image: url(/tp/img/box-mid-right.png);
-}
-
-.box-mid p {
+.box_content p {
 	margin: 10px 0;
 }
 
-.box-mid h1 {
+.box_content h1 {
 	color: #E1870D;
 	background-color: #000000;
 	font-size: 20px;
@@ -196,7 +195,7 @@ a {
 	padding-top: 1em;
 	border-bottom: 1px solid #333333;
 }
-.box-mid h2 {
+.box_content h2 {
 	color: #E1870D;
 	background-color: #000000;
 	font-size: 14px;
@@ -226,13 +225,16 @@ img.sforge {
 | Footer                                      |
 \*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 #footer {
+	clear: both;
+
 	width: 100%;
 	height: 30px;
-	background-color: #000000;
+
+	background-color: red; /* #000000; */
 	color: #333333;
-	clear: both;
 	text-align: center;
 	line-height: 30px;
+
 	margin: 0;
 	padding: 0;
 }

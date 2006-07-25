@@ -1,7 +1,7 @@
-	</div><!-- End box-mid-middle -->
-	<div class="box-mid-right"></div>
-</div><!-- End box-mid -->
-<div class="box-btm">
-	<div class="box-btm-left"></div>
-	<div class="box-btm-right"></div>
+			</div>
+		</div>
+	</div>
+	<div class="box_bottom_left"></div>
+	<div class="box_bottom_right"></div>
+	<div class="box_bottom"></div>
 </div>
