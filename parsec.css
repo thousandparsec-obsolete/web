@@ -15,7 +15,7 @@ body {
 	background-color: black;
 	color: #FFFFFF;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 11px;
+	font-size: 12pt;
 	margin: 0;
 	padding: 0;
 }
@@ -76,7 +76,7 @@ a {
 	text-align: center;
 	background-image: url(/tp/img/nav.jpg);
 	text-decoration: none;
-	font-size: 12px;
+	font-size: 12pt;
 	padding: 0;
 }
 #navigation li a.on {
@@ -92,7 +92,7 @@ a {
 	height: 28px;
 	background-image: url(/tp/img/nav.jpg);
 	background-repeat: repeat-x;
-	font-size: 12px;
+	font-size: 12pt;
 	line-height: 28px;
 }
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*\
@@ -208,7 +208,7 @@ a {
 #content h1 {
 	color: #E1870D;
 	background-color: #000000;
-	font-size: 20px;
+	font-size: 20pt;
 	width: 90%;
 	padding-top: 1em;
 	border-bottom: 1px solid #333333;
@@ -217,7 +217,7 @@ a {
 #content h2 {
 	color: #E1870D;
 	background-color: #000000;
-	font-size: 14px;
+	font-size: 14pt;
 	width: 70%;
 /*	padding-top: 1em;*/
 	border-bottom: 1px solid #333333;
