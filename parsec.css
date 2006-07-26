@@ -15,7 +15,7 @@ body {
 	background-color: black;
 	color: #FFFFFF;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12pt;
+	font-size: 10pt;
 	margin: 0;
 	padding: 0;
 }
@@ -76,7 +76,7 @@ a {
 	text-align: center;
 	background-image: url(/tp/img/nav.jpg);
 	text-decoration: none;
-	font-size: 12pt;
+	font-size: 10pt;
 	padding: 0;
 }
 #navigation li a.on {
@@ -210,7 +210,7 @@ a {
 	background-color: #000000;
 	font-size: 20pt;
 	width: 90%;
-	padding-top: 1em;
+	padding-top: 0.5em;
 	border-bottom: 1px solid #333333;
 }
 
@@ -226,6 +226,7 @@ a {
 #content h6 {
 	color: #66CC99;
 	background-color: #000000;
+	font-size: 6pt;
 	width: 50%;
 	padding-bottom: 2em;
 }
