@@ -22,6 +22,12 @@
 <link rel="stylesheet" type="text/css" media="screen" href="/tp/style.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="/tp/parsec.css" />
 
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">
+_uacct = "UA-737789-1";
+urchinTracker();
+</script>
+
 <title>Thousand Parsec : <?php echo $title ?></title>
 
 </head>
