@@ -15,6 +15,23 @@
 <?php include(dirname(__FILE__) . "/tmp/lists.inc"); ?>
 
 <div class="stats">
+<?php 
+	$suggestion = $todo[array_rand($todo)];
+	$suggestion['summary'] = str_ireplace(
+		array('Create ', 'Design ', 'Develop ', 'Fix '), 
+		array('Creating ', 'Designing ', 'Developing ', 'Fixing '),
+		$suggestion['summary']);
+ ?>
+<a href="<?php echo $suggestions['url']; ?>">
+	<?php if ($suggestion['owner'] == 'nobody') { ?>
+	Why not help out by <?php echo $suggestion['summary']; ?>?
+	<?php } else { ?>
+	<?php echo $suggestion['owner']; ?> is helping out by <?php echo $suggestion['summary']; ?>, why not lend a hand?
+	<?php } ?>
+</a>
+</div>
+
+<div class="stats">
 	<b class="small"><a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi">Latest Developments:</a></b><br />
 	<span class="small">On: <?php echo strtr($darcs[0]['when'], array('T' => ' ', 'Z' => ' ')); ?></span><br /> 
 	<span class="small">By: <?php echo preg_replace('/@[A-Za-z0-9.-]*/' , '@...', $darcs[0]['whom']); ?></span><br /> 

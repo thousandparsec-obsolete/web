@@ -18,6 +18,10 @@ cat $TMP/sf.rss | grep "Developers on project: " | sed -e's/.*Developers on proj
 wget "http://sourceforge.net/project/stats/graph/detail-graph.php?group_id=132078&ugn=thousandparsec&type=sfweb&mode=week&graph=2" -O $TMP/sf-stats.png
 convert -resize 50x27 $TMP/sf-stats.png $TMP/sf-stats-small.png
 
+# Download the tracker information
+ruby $DARCSROOT/utils/sftodo.rb > $TMP/sf-todo.inc
+
+# Download the freshmeat rss details
 find $TMP/fm.rss -mtime +1 -exec rm '{}' ';'
 if [ ! -e $TMP/fm.rss ]; then
 	# Download the freshmeat rss details
