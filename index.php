@@ -18,7 +18,7 @@
 <div class="stats">
 <?php 
 	$suggestion = $todo[array_rand($todo)];
-	$suggestion['summary'] = str_ireplace(
+	$suggestion['summary'] = str_replace(
 		array('Create ', 'Design ', 'Develop ', 'Fix '), 
 		array('Creating ', 'Designing ', 'Developing ', 'Fixing '),
 		$suggestion['summary']);
