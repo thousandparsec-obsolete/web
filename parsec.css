@@ -143,10 +143,12 @@ a {
 	position: relative;
 }
 .box_left {
-	background:url(img/box-mid-left.png) repeat-y top left;
+	background-color: black;
+	background: url(img/box-mid-left.png) repeat-y top left;
 	position: relative;
 }
 .box_right {
+	background-color: black;
 	background:url(img/box-mid-right.png) repeat-y top right;
 	position: relative;
 }
