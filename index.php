@@ -11,6 +11,7 @@
 
 <?php include(dirname(__FILE__) . "/tmp/fm-stats.inc"); ?>
 <?php include(dirname(__FILE__) . "/tmp/sf-stats.inc"); ?>
+<?php include(dirname(__FILE__) . "/tmp/sf-todo.inc"); ?>
 <?php include(dirname(__FILE__) . "/tmp/darcs.inc"); ?>
 <?php include(dirname(__FILE__) . "/tmp/lists.inc"); ?>
 

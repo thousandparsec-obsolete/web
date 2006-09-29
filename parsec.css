@@ -83,6 +83,27 @@ a {
 	color: #FFFFFF;
 	background-color: #000000;
 }
+
+.menu {
+	width: 100%;
+	height: 28px;
+}
+
+.menu td {
+	background-image: url(/tp/img/nav.jpg);
+	margin: 0 2px 0 2px;
+	text-align: center;
+}
+.menu td a {
+	line-height: 30px;
+	height: 28px;
+	text-decoration: none;
+	font-size: 10pt;
+	padding: 0;
+}
+.menu td a.on {
+	color: #ffffff;
+}
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*\
 | Getting Started                             |
 \*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/

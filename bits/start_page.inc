@@ -39,37 +39,39 @@ urchinTracker();
 	<img src="/tp/img/logo_t.png" />
 </div>
 
-<ul id="navigation">
-<li>
+<table class="menu">
+<tr>
+	<td>
 	<a href="/tp/gettingstarted.php"
 		class="<?php echo $title == 'Getting Started' ? 'on' : ''; ?>"><b>Getting Started</b></a>
-</li><li>
+</td><td>
 	<a href="/tp/index.php"
 		class="<?php echo $title == 'News' ? 'on' : ''; ?>">News</a>
-</li><li>
+</td><td>
 	<a href="/tp/screenshots.php"
 		class="<?php echo $title == 'Screenshots' ? 'on' : ''; ?>">Screenshots</a>
-</li><li>
+</td><td>
 	<a href="/tp/documents.php"
 		class="<?php echo $title == 'Documents' ? 'on' : ''; ?>">Documents</a>
-</li><li>
+</td><td>
 	<a href="/tp/downloads.php"
 		class="<?php echo $title == 'Downloads' ? 'on' : ''; ?>">Downloads</a>
-</li><li>
+</td><td>
 	<a href="/tp/dev/index.php"
 		class="<?php echo $developer_section ? 'on' : ''; ?>">Developers</a>
-</li><li>
+</td><td>
 	<a href="/tp/faq.php"
 		class="<?php echo $title == 'FAQ' ? 'on' : ''; ?>">FAQ</a>
-</li><li>
+</td><td>
 	<a href="/tp/mailman.php/listinfo/"
 		class="<?php echo $title == 'Lists' ? 'on' : ''; ?>">Lists</a>
-<!-- </li><li>
+<!-- </td><td>
 	<a href="/forums" class="">Forums</a> -->
-</li><li>
+</td><td>
 	<a href="/tp/links.php"
 		class="<?php echo $title == 'Links' ? 'on' : ''; ?>">Links</a>
-</li>
-</ul>
+	</td>
+</tr>
+</table>
 
 <div id="content">
