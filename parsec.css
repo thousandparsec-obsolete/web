@@ -54,37 +54,6 @@ a {
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*\
 | Navigation                                  |
 \*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-#navigation {
-	height: 28px;
-	margin: 10px 0 10px 0;
-	width: 100%;
-	line-height: 28px;
-	padding: 0 0 0 0;
-}
-#navigation li {
-	float: left;
-	margin: 0;
-	height: 28px;
-	width: 11%;
-	list-style-type: none;
-	padding: 0; 
-}
-#navigation li a {
-	display: block;
-	margin: 0 2px 0 2px;
-	line-height: 30px;
-	height: 28px;
-	text-align: center;
-	background-image: url(/tp/img/nav.jpg);
-	text-decoration: none;
-	font-size: 10pt;
-	padding: 0;
-}
-#navigation li a.on {
-	color: #FFFFFF;
-	background-color: #000000;
-}
-
 .menu {
 	width: 100%;
 	height: 28px;
