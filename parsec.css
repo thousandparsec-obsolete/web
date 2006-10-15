@@ -198,7 +198,7 @@ a {
 
 #content h1 {
 	color: #E1870D;
-	background-color: #000000;
+	/* background-color: #000000; */
 	font-size: 20pt;
 	width: 90%;
 	border-bottom: 1px solid #333333;
@@ -206,7 +206,7 @@ a {
 
 #content h2 {
 	color: #E1870D;
-	background-color: #000000;
+	/* background-color: #000000; */
 	font-size: 14pt;
 	width: 70%;
 /*	padding-top: 1em;*/
@@ -215,7 +215,7 @@ a {
 
 #content h6 {
 	color: #66CC99;
-	background-color: #000000;
+	/* background-color: #000000; */
 	font-size: 6pt;
 	width: 50%;
 	padding-bottom: 2em;
