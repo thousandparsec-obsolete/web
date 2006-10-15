@@ -23,7 +23,7 @@
 		array('Creating ', 'Designing ', 'Developing ', 'Fixing '),
 		$suggestion['summary']);
  ?>
-<a href="<?php echo $suggestions['url']; ?>">
+<a href="http://www.sf.net<?php echo $suggestion['url']; ?>">
 	<?php if ($suggestion['owner'] == 'nobody') { ?>
 	Why not help out by <?php echo $suggestion['summary']; ?>?
 	<?php } else { ?>
