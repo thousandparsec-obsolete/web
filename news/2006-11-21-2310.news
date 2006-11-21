@@ -3,7 +3,7 @@
 <p>by Lee</p>
 <p>
 	Bug fixes mostly this time. The most significant was the build orders not working bug. A number of 
-	configuring problems were fixed too. New features include new http tunneling sockets, account frame
+	configuring problems were fixed too. New features include new http tunnelling sockets, account frame
 	handling and settings, and the start of the code for MTSec.
 </p>
 <p>
