@@ -21,6 +21,7 @@
 <link rel="shortcut icon" href="/tp/favicon.ico" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" media="screen" href="/tp/style.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="/tp/parsec.css" />
+<link rel="alternate" type="application/rss+xml" title="Thousand Parsec News" href="http://www.thousandparsec.net/tp/rss.php" />
 
 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
 <script type="text/javascript">
