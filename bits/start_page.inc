@@ -7,8 +7,8 @@
 
 <meta name="Author" content="Web Design Copyright (c) 2006 Donovan 'Riyonuk' Hernandez - http://riyonuk.no-ip.org/" />
 <meta name="Copyright" content="" />
-<meta name="Description" content="" />
-<meta name="Keywords" content="" />
+<meta name="Description" content="A framework for developing turn-based space empire building games" />
+<meta name="Keywords" content="strategy, strategies, games, 4x, turn, free, open, source, stars, galactic, civilizations, space, linux" />
 <meta name="Robots" content="All" />
 
 <!--[if lt IE 7.]>
