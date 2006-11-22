@@ -33,7 +33,7 @@ ul.response ul {
 		still version 0.2
 	</span>
 </h4>
-<p>Last updated 24 October 2005.</p>
+<p>Last updated 22 November 2006.</p>
 
 <?php
 	include "../bits/end_section.inc";
@@ -79,6 +79,7 @@ ul.response ul {
 					<li><a href="#Redirect_Desc">Redirect Frame</a></li>
 					<li><a href="#Connect_Desc">Connect Frame</a></li>
 					<li><a href="#Login_Desc">Login Frame</a></li>
+					<li><a href="#AccountCreate_Desc">Account Create Frame</a></li>
 				</ul>
 			</li>
 			<li><a href="#FeatureNegotiation">Feature Negotiation</a>
@@ -566,6 +567,18 @@ ul.response ul {
 		<td></td>
 		<td>S2C</td>
 		<td>-</td>
+	</tr><tr class="row1 new">
+		<td class="numeric">62</td>
+		<td><a href="#Account_Create_Desc">Account Create</a></td>
+		<td>Creates an account with the given username, password, email and comment.</td>
+		<td></td>
+		<td>C2S</td>
+		<td>
+			<ul class="response">
+				<li>Okay frame</li>
+				<li>Fail frame</li>
+			</ul>
+		</td>
 	</tr>
 
 	<tr class="new">
@@ -1191,6 +1204,7 @@ ul.response ul {
 	<tr class="row0 new"><td class="numeric">59</td><td>Property</td></tr>
 	<tr class="row1 new"><td class="numeric">60</td><td>Get Property IDs</td></tr>
 	<tr class="row0 new"><td class="numeric">61</td><td>List Of Property IDs</td></tr>
+	<tr class="row1 new"><td class="numeric">62</td><td>Account Create</td></tr>
 </table>
 
 <?php
@@ -1414,6 +1428,26 @@ ul.response ul {
 	servers may refuse to authenticate on the unencrypted service and only
 	run it to allow detection of encryption support.</span>
 </p>
+
+<span class="new">
+<a name="Account_Create_Desc"></a>
+<h3>Account Create Frame</h3>
+<p>
+	The Account Create frame consists of:
+	<ul>
+		<li>a String, the username of the player</li>
+		<li>a String, the password</li>
+		<li>a String, the email address of the player</li>
+		<li>a String, a comment</li>
+	</ul>
+</p><p>
+        Currently the password will be transmitted in plain text.
+        To avoid interception SSL service should be used. Some
+        servers may refuse to authenticate on the unencrypted service and only
+        run it to allow detection of encryption support.
+</p>
+</span>
+
 
 <?php
 	include "../bits/end_section.inc";
