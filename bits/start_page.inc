@@ -66,8 +66,8 @@ urchinTracker();
 </td><td>
 	<a href="/tp/mailman.php/listinfo/"
 		class="<?php echo $title == 'Lists' ? 'on' : ''; ?>">Lists</a>
-<!-- </td><td>
-	<a href="/forums" class="">Forums</a> -->
+</td><td>
+	<a href="/forums" class="">Forums</a> 
 </td><td>
 	<a href="/tp/links.php"
 		class="<?php echo $title == 'Links' ? 'on' : ''; ?>">Links</a>
