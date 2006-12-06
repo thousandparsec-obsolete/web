@@ -11,7 +11,7 @@
 }
 body { 
 	background-color: black;
-/*	background-image: url(/tp/img/background.jpg); */
+	background-image: url(/tp/img/background.jpg); 
 	color: #FFFFFF;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10pt;
@@ -116,16 +116,16 @@ a {
 }
 .box_right {
 	background-color: black;
-	background:url(img/box-mid-right.png) repeat-y top right;
+	background: url(img/box-mid-right.png) repeat-y top right;
 	position: relative;
 }
 .box_top {
-	background:url(img/box-top-middle_t.png) repeat-x top left;
+	background: url(img/box-top-middle_t.png) repeat-x top left;
 	height: 30px;
 	margin: 0 30px 0 30px; 
 }
 .box_bottom {
-	background:url(img/box-btm-middle_t.png) repeat-x bottom left; 
+	background: url(img/box-btm-middle_t.png) repeat-x bottom left; 
 	height: 30px;
 	margin: 0 30px 0 30px;
 }
@@ -175,10 +175,8 @@ a {
  * being discontinued due to inner block element's margins
  */
 .box_content {
-	margin:  0px 20px;
-	padding: 1px 0px;
-
-/*	0px 20px 0px 20px; */
+	margin:  0px 10px;
+	padding: 1px 10px;
 
 	background-color: black;
 }
