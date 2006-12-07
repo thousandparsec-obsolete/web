@@ -11,6 +11,7 @@ TMP=$DARCSROOT/tmp
 wget "http://sourceforge.net/export/rss2_projsummary.php?group_id=132078&go" -O $TMP/sf.rss
 # Post process the rss details
 echo "<?php " > $TMP/sf-stats.inc
+cat $TMP/sf.rss | grep "Ranking:" | sed -e's/.*: Ranking: \(.*\), Activity.*/$sf_ranking="\1";/' >> $TMP/sf-stats.inc
 cat $TMP/sf.rss | grep "Tracker: Bugs" | sed -e's/.*: Bugs (\(.*\) open\/\(.*\) total).*/$sf_bugs_open="\1"; $sf_bugs_closed="\2";/' >> $TMP/sf-stats.inc
 cat $TMP/sf.rss | grep "Tracker: Todo" | sed -e's/.*: Todo (\(.*\) open\/\(.*\) total).*/$sf_todo_open="\1"; $sf_todo_closed="\2";/' >> $TMP/sf-stats.inc
 cat $TMP/sf.rss | grep "Developers on project: " | sed -e's/.*Developers on project: \(.*\)<.*/$sf_devs="\1";/' >> $TMP/sf-stats.inc

@@ -94,6 +94,10 @@
 				<a href="http://sourceforge.net/project/stats/detail.php?group_id=132078&amp;ugn=thousandparsec&amp;mode=week&amp;type=sfweb">
 					<img src="/tp/tmp/sf-stats-small.png" alt="SF Page Hits Graph" /></a></td>
 		</tr><tr>
+			<td style="text-align: left"><span class="small">Ranking:</span> 
+				<?php echo $sf_ranking < 1000 ? "<b>$sf_ranking</b>\n" : "$sf_ranking\n"?>
+			</td>
+		</tr><tr>
 			<td style="text-align: left; padding-right: 2em;">
 				<span class="small">Bugs:</span> <?php echo $sf_bugs_open . "/" . $sf_bugs_closed; ?></td>
 		</tr><tr>
