@@ -115,18 +115,32 @@
 <?php include "bits/start_section.inc"; ?> 
 <?php
 $news = "news/";
-$files = get_files($news);
 
-$i = 0;
-foreach($files as $file) {
-	if ($i > 10)
-		break;
-	else
-		$i++;
-
-	include($news . $file); 
+$file = $news.basename($_SERVER['PATH_INFO']).".news";
+if (file_exists($file)) {
+	include($file);
 	echo "<h6>Posted: ". substr($file, 0, -5) . "</h6>\n";
-}?>
+} else {
+	$files = get_files($news);
+
+	$i = 0;
+	foreach($files as $file) {
+		$fshort = substr($file, 0, -5);
+
+		if ($i > 10)
+			break;
+		else
+			$i++;
+
+		$haystack = file_get_contents($news . $file);
+		$haystack = str_replace("<h2>", "<a href='/tp/news.php/$fshort'><h2>", $haystack);
+		$haystack = str_replace("</h2>", "</h2></a>", $haystack);
+
+		echo $haystack;
+		echo "<h6>Posted: ". substr($file, 0, -5) . "</h6>\n";
+	}
+}
+?>
 <?php include "bits/end_section.inc"; ?> 
 </div><!-- End Left -->
 

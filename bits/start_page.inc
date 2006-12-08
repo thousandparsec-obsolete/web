@@ -46,8 +46,11 @@ urchinTracker();
 	<a href="/tp/gettingstarted.php"
 		class="<?php echo $title == 'Getting Started' ? 'on' : ''; ?>"><b>Getting Started</b></a>
 </td><td>
-	<a href="/tp/index.php"
+	<a href="/tp/news.php"
 		class="<?php echo $title == 'News' ? 'on' : ''; ?>">News</a>
+	<a href="/tp/rss.php">
+		<img src="/tp/img/service_links/feed.png" alt="RSS Feed">
+	</a>
 </td><td>
 	<a href="/tp/screenshots.php"
 		class="<?php echo $title == 'Screenshots' ? 'on' : ''; ?>">Screenshots</a>
