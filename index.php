@@ -19,8 +19,8 @@
 <?php 
 	$suggestion = $todo[array_rand($todo)];
 	$suggestion['summary'] = str_replace(
-		array('Create ', 'Design ', 'Develop ', 'Fix '), 
-		array('Creating ', 'Designing ', 'Developing ', 'Fixing '),
+		array('Create ', 'Design ', 'Develop ', 'Fix ', 'Add ',), 
+		array('Creating ', 'Designing ', 'Developing ', 'Fixing ', 'Adding '),
 		$suggestion['summary']);
  ?>
 <a href="http://www.sf.net<?php echo $suggestion['url']; ?>">
