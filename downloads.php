@@ -37,6 +37,7 @@ function display($directory) {
 
 		# Figure out the ending of this file
 		$formatmap = array(
+			".dmg"			=> "Mac DMG",
 			".zip"			=> "zip",
 			".tar.gz"		=> "tar/gz",
 			".tar.bz2"		=> "tar/bz2",
