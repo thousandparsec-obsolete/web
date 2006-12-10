@@ -63,7 +63,6 @@ export repositories="
  libtpproto-py
  libtpproto-rb
  libtpproto2-py
- media
  tpclient-cpptext
  tpclient-java
  tpclient-pygame
