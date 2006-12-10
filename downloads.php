@@ -6,6 +6,17 @@
 <?php include "bits/start_page.inc" ?>
 <?php include "bits/start_section.inc" ?>
 <?php 
+function mycmp($a, $b) {
+	if (strcmp($a['version'], $b['version']) === 0) {
+		if (strlen($a['versiontype']) > 0 || strlen($b['versiontype']) > 0) {
+			// Check the super minor
+ 			return strcmp($b['versiontype'], $a['versiontype']);
+		} else {
+ 			return strcmp($b['versionminor'], $a['versionminor']);
+		}
+	}
+	return strcmp($b['version'], $a['version']);
+}
 
 function display($directory) {
 	global $downloads;
@@ -16,57 +27,106 @@ function display($directory) {
 	print "<table class='tabular' style='width: auto;'>\n";
 
 	$i = 0;
+
+
+	$details = array();
 	foreach ($files as $file) {
 		$tail = substr($file, -4);
-	
 		if ($tail == '.asc' || $tail == '.sig')
 			continue;
-		if ($tail == '.rpm' || $tail == ".deb" ) {
-			$second = strrpos(substr($file, 0, strrpos($file, '-')-1), '-');
-			$goodness = substr($file, $second+1);
-		} else {
-			$goodness = substr($file, strrpos($file, '-')+1);
+
+		# Figure out the ending of this file
+		$formatmap = array(
+			".zip"			=> "zip",
+			".tar.gz"		=> "tar/gz",
+			".tar.bz2"		=> "tar/bz2",
+			".win32.exe"	=> "setup/exe",
+			"-setup.exe"	=> "setup/exe",
+			"-py2.3.egg"	=> "py2.3/egg",
+			"-py2.4.egg"	=> "py2.4/egg",
+			"-py2.5.egg"	=> "py2.5/egg",
+			"-noarch.rpm"	=> "noarch/rpm",
+		);
+
+		$ending = "";
+		$type   = "";
+		foreach ($formatmap as $ending => $type) {
+			$pos = strpos($file, $ending);
+			if ($pos !== false)
+				break;
+		}		
+		$version = substr($file, 0, strlen($file)-strlen($ending));
+		
+		# See if there is a subversion
+		$versiontype  = "";
+		$versionminor = "";
+		if (strrpos($version, '-') > strrpos($version, '.')) {
+			$versionminor = substr(substr($version, strrpos($version, '-')), 1);
+			$version = substr($version, 0, strlen($version)-strlen($versionminor)-1);
+
+			# Is this a string version?
+			if (!is_numeric($versionminor)) {
+				$versiontype  = $versionminor;
+				$versionminor = "";
+			}
 		}
-	
+
+		# Get the other versions
+		$version = substr($version, strrpos($version, '-')+1);
+
 		$size = (int)(filesize($dir . $file)/1024);
-		
-		unset($tar);
-		if (substr_count($goodness, ".") > 3) {
-			$result = split("\.", strrev($goodness), 5);
-			list($compression, $tar, $revision, $minor, $major) = array_map('strrev',$result);
-		} else {
-			$result = split("\.", strrev($goodness), 4);
-			list($compression, $revision, $minor, $major) = array_map('strrev',$result);
-		}
-		
-		$pos = strpos($revision, '-');
-		if ($pos !== False)
-			$revision = substr($revision, 0, $pos);
-		if ($previous != "$major.$minor.$revision") {
+
+		# Does a signature exist?
+		if (file_exists("$dir$file.asc"))
+			$signature = "$dir$file.asc";
+		else if (file_exists("$dir$file.sig"))
+			$signature = "$dir$file.sig";
+		else
+			$signature = "";
+
+		$details[] = array(
+			'file'			=> $file, 
+			'size'			=> $size, 
+			'type'			=> $type, 
+			'version'		=> $version, 
+			'versiontype'	=> $versiontype,
+			'versionminor'	=> $versionminor,
+			'signature'		=> $signature,
+		);
+	}
+
+	# FIXME: Only take only the one with a largest versiontype
+	usort($details, "mycmp");
+
+	print "<table class='tabular' style='width: auto;'>";
+	foreach ($details as $detail) {
+		$version = ucfirst($detail['versiontype'])." Version {$detail['version']}";
+		if ($previous != $version) {
 			print " <tr>\n";
-			print "   <th colspan='3' style='padding-top: 0;'><h3>Version $major.$minor.$revision</h3></th>\n";
+			print "   <th colspan='3' style='padding-top: 0;'><h3>$version</h3></th>\n";
 			print " </tr>\n";
-			$previous = "$major.$minor.$revision";
 		}
+		$previous = $version;
 
 		print " <tr class=\"row{$i}\">\n";
 		$i = ($i+1) % 2; 
 
-		if (isset($tar))
-			print " <td><a href='$dir$file'>$tar/$compression</a></td>\n";
-		else
-			print " <td><a href='$dir$file'>$compression</a></td>\n";
-		print " <td class='numeric'>$size KB</td>\n";
+		print " <td>{$detail['type']}</td>\n";
+		print " <td class='numeric'>{$detail['size']} KB</td>\n";
 
-		if (file_exists("$dir$file.asc"))
-			print "	 <td><a href='$dir$file.asc'><i>Signature</i></a></td>\n";
-		else if (file_exists("$dir$file.sig"))
-			print "	 <td><a href='$dir$file.sig'><i>Signature</i></a></td>\n";
+		if (strlen($detail['signature']) > 0)
+			print "	 <td><a href='$dir{$detail['signature']}'><i>Signature</i></a></td>\n";
 		else
 			print "  <td></td>\n";
 
-		print " </tr>\n";
+		print " <td><a href='$dir{$detail['file']}'>";
+		print "		<img src='img/logo-micro.png'>\n";
+		print "		Download from this host</a></td>\n";
+		print " <td><a href='http://downloads.sourceforge.net/thousandparsec/{$detail['file']}'>\n";
+		print "		<img src='img/service_links/sf.png'>\n";
+		print "		Download from Sourceforge Mirrors</a></td>\n";
 		
+		print " </tr>\n";		
 	}
 	print "</table>\n";
 }
@@ -147,7 +207,7 @@ function display($directory) {
 	You do <b>not</b> require this library if you are using a prebuilt binary or the
 	inplace version of the client.
 </p>
-<?php display("py-netlib/"); ?>
+<?php display("libtpproto-py/"); ?>
 <p>
 	Archives of <b>unsupported</b> old previous versions can be found on
 	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078&package_id=153888">SourceForge here</a>.
