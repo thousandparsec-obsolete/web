@@ -72,7 +72,7 @@ function display($directory) {
 		}
 
 		# Get the other versions
-		$version = substr($version, strrpos($version, '-')+1);
+		$version = substr($version, max(strrpos($version, '_'), strrpos($version, '-'))+1);
 
 		$size = (int)(filesize($dir . $file)/1024);
 
