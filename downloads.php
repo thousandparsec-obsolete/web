@@ -143,6 +143,7 @@ function display($directory) {
 <?php include "bits/end_section.inc" ?>
 
 <?php include "bits/start_section.inc" ?>
+<a name="tpclient-pywx"></a>
 <h2>Python wxWidgets client</h2>
 <p>
 	This client should work on any computer which has wxPython and Python installed.
@@ -176,6 +177,7 @@ function display($directory) {
 <?php include "bits/end_section.inc" ?>
 
 <?php include "bits/start_section.inc" ?>
+<a name="tpclient-pytext"></a>
 <h2>Python Text client</h2>
 <p>
 	This client works with any computer which has Python and the python network library
@@ -187,6 +189,7 @@ function display($directory) {
 <?php include "bits/end_section.inc" ?>
 
 <?php include "bits/start_section.inc" ?>
+<a name="libtpclient-py"></a>
 <h2>Python TP Client library</h2>
 <p>
 	This library is used by all the more complicated python applications to share
@@ -199,6 +202,7 @@ function display($directory) {
 <?php include "bits/end_section.inc" ?>
 
 <?php include "bits/start_section.inc" ?>
+<a name="libtpproto-py"></a>
 <h2>Python TP Network Library</h2>
 <p>
 	This library is used by all the python applications to communicate over the network.
@@ -216,6 +220,7 @@ function display($directory) {
 <?php include "bits/end_section.inc" ?>
 
 <?php include "bits/start_section.inc" ?>
+<a name="libtpproto-cpp"></a>
 <h2>C++ TP Protocol Library</h2>
 <p>
 	The library libtpproto-cpp is a client side library written in C++ for TP.  It
@@ -226,7 +231,7 @@ function display($directory) {
 <?php include "bits/end_section.inc" ?>
 
 <?php include "bits/start_section.inc" ?>
-
+<a name="tpserver-cpp"></a>
 <h2>C++ Server</h2>
 <p>
 	This is the main server for Thousand Parsec.
@@ -239,6 +244,7 @@ function display($directory) {
 <?php include "bits/end_section.inc" ?>
 
 <?php include "bits/start_section.inc" ?>
+<a name="libtprl"></a>
 <h2>C++ TP Readline library</h2>
 <p>
   This library is used by tpserver-cpp to provide the console interface.
@@ -247,11 +253,25 @@ function display($directory) {
 <?php include "bits/end_section.inc" ?>
 
 <?php include "bits/start_section.inc" ?>
+<a name="tpserver-py"></a>
 <h2>Python Server</h2>
 <p>
 	This is a server for Thousand Parsec written in Python and using a SQL back end.
 </p>
 <?php display("tpserver-py/"); ?>
 <?php include "bits/end_section.inc" ?>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <?php include "bits/end_page.inc" ?>
