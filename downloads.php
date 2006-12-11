@@ -123,7 +123,8 @@ function display($directory) {
 		print " <td><a href='$dir{$detail['file']}'>";
 		print "		<img src='img/logo-micro.png'>\n";
 		print "		Download from this host</a></td>\n";
-		print " <td><a href='http://downloads.sourceforge.net/thousandparsec/{$detail['file']}'>\n";
+		#print " <td><a href='http://downloads.sourceforge.net/thousandparsec/{$detail['file']}'>\n";
+		print " <td><a href='http://sourceforge.net/project/downloading.php?group_id=132078&filename={$detail['file']}'>\n";
 		print "		<img src='img/service_links/sf.png'>\n";
 		print "		Download from Sourceforge Mirrors</a></td>\n";
 		
