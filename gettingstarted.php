@@ -81,6 +81,11 @@
 	Just download the setup/exe version from the download page and run it!
 </p>
 
+<h2>Installing tpclient-pywx on Mac OS X</h2>
+<p>
+	Just download the Mac DMG version from the download page and double click on it!
+</p>
+
 <h2>Installing tpclient-pywx on Debian or Ubuntu</h2>
 <p>
 	First you need to install the prerequisites for tpclient-pywx not developed by the Thousand Parsec project.
