@@ -1,0 +1,115 @@
+<style>
+
+.highlight {
+	font-weight: bold;
+	display: block;
+}
+
+span.highlight {
+	color: #E1870D;
+}
+
+a.highlight {
+	color: #00FF99;
+}
+
+ul.highlights {
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+ul.requirements {
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+ul.requirements li {
+	list-style: none;
+}
+ul.requirements li li {
+	list-style: square;
+}
+
+li {
+	list-style: square;
+	padding-bottom: 0.5em;
+}
+</style>
+
+<h2>Massive tpclient-pywx 0.2.0 released!</h2>
+<p>by Mithro</p>
+<p>
+After a massive amount of work, Thousand Parsec is proud to announce that the
+next version (0.2.0) of its primary client is now available.  
+</p>
+<p>
+There have been massive changes to the client's back end code and quite a few UI
+improvements. Some off the highlights are:
+<ul class="highlights">
+ <li><span class="highlight">Request Pipelineing</span>
+Faster downloads on fast connections and on connections with high ping
+times.</li> 
+
+ <li><span class="highlight">Automatic Media Downloading</span>
+The client will now download the required media of the web.</li>
+
+ <li><span class="highlight">Animated Planet Graphics</span>
+There are now cool animated planet graphics and other graphics displayed in the
+information screen.</li>
+
+ <li><span class="highlight">Account Creation Support</span>
+You can now create an account on servers straight from the client.</li>
+
+ <li><span class="highlight">Design Support</span>
+You can now create ships, torpedoes or any other object that the server
+supports. Properties and requirements of designs are calculated
+locally using a Scheme based language called tpcl.</li>
+
+ <li><span class="highlight">Message Reference Support</span>
+Servers can now say that messages refer to certain objects and the GOTO button
+will take you to them.</li>
+
+ <li><span class="highlight">Better Caching</span>
+Better support for universe caching and only downloading what has changed.</li>
+
+</ul>
+</p><p>
+This release also includes <a href="/tp/downloads.php#tpclient-pywx">binaries
+for windows and binaries for Mac OS X</a>. The binaries have the following
+requirements: 
+</p><p>
+<ul class="requirements">
+	<li><span class="highlight">Windows</span>
+	<ul>
+		<li>Windows 98 or greater</li>
+		<li>50mb disk space</li>
+		<li>1024x768 screen or greater</li>
+	</ul></li>
+	<li><span class="highlight">Mac OS X</span>
+	<ul>
+		<li>Mac OS X 10.3.8 or higher, 10.4.1 or higher is preferred</li>
+		<li>200mb disk space</li>
+		<li>1024x768 screen or greater</li>
+	</ul></li>
+</ul>
+</p><p>
+There are also two permanent demonstration servers. The servers have the
+following properties: 
+</p><p>
+<ul class="requirements">
+	<li><a href="tps://guest:guest@demo1.thousandparsec.net/" class="highlight">
+			demo1.thousandparsec.net</a>
+	<ul>
+		<li>5 minute turns</li>
+		<li>Restarted every day</li>
+		<li>MiniSec rule set</li>
+	</ul></li>
+	<li><a href="tps://guest:guest@demo2.thousandparsec.net/" class="highlight">
+			demo2.thousandparsec.net</a>
+	<ul>
+		<li>6 hour turns</li>
+		<li>Restarted when somebody takes over 80% of the universe</li>
+		<li>Partial MTSec rule set</li>
+	</ul></li>
+</ul>
+</p>
