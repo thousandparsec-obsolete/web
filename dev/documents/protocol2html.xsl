@@ -3,7 +3,7 @@
   xmlns:xsl='http://www.w3.org/1999/XSL/Transform'
   xmlns:xlink="http://www.w3.org/1999/xlink" >
 
-  <xsl:output method="html" omit-xml-declaration="yes" encoding="UTF-8" standalone="no" media-type="text/html" indent="yes" />
+  <xsl:output method="xml" omit-xml-declaration="yes" encoding="UTF-8" standalone="no" media-type="text/html" indent="yes" />
 
   <xsl:template match="protocol">
     <xsl:element name="h2">
@@ -14,6 +14,12 @@
       <xsl:attribute name="class"><xsl:text>TOC</xsl:text></xsl:attribute>
       <xsl:apply-templates select="descendant::packet" mode="toc" />
     </xsl:element>
+    <xsl:processing-instruction name="php">
+
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+
+    </xsl:processing-instruction>
     <xsl:element name="h2">
       <xsl:attribute name="id"><xsl:text>Summary</xsl:text></xsl:attribute>
       <xsl:text>Summary</xsl:text>
@@ -30,6 +36,12 @@
       </xsl:element>
       <xsl:apply-templates select="descendant::packet" mode="summary" />
     </xsl:element>
+    <xsl:processing-instruction name="php">
+
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+
+    </xsl:processing-instruction>
     <xsl:element name="h2">
       <xsl:attribute name="id"><xsl:text>Packets</xsl:text></xsl:attribute>
       <xsl:text>Packets</xsl:text>
@@ -48,9 +60,9 @@
     <xsl:if test="child::structure">
 	<xsl:element name="p">
 	<xsl:text>The </xsl:text><xsl:value-of select="@name"/><xsl:text> frame consists of:</xsl:text>
+	</xsl:element>
 	<xsl:element name="ul">
 		<xsl:apply-templates select="child::structure/*" mode="description"/>
-	</xsl:element>
 	</xsl:element>
     </xsl:if>
     <xsl:if test="child::note">
