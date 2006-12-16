@@ -25,4 +25,5 @@
 				Bugs (<?php echo $sf_bugs_open?> open)
 			</a>
 		</td>
+	</tr>
 </table>

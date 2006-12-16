@@ -1,4 +1,4 @@
-<div><!-- End content -->
+</div><!-- End content -->
 
 <div id="footer">
 Web Design Copyright (c) <a href="http://riyonuk.no-ip.org/">Donovan &quot;Riyonuk&quot; Hernandez</a> -
