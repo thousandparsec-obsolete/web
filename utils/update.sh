@@ -18,6 +18,9 @@ mv libtpproto-cpp-doc-cvs.tar.gz libtpproto-cpp/docs/* $DARCSROOT/web/dev/docume
 cd $DARCSROOT/web/screenshots
 ./makethumbs.sh
 
+#generate content of protocolxml.php from darcs
+xsltproc $DARCSROOT/web/dev/documents/protocol2html.xsl $DARCSROOT/libtpproto2-py/protocol.xml > $DARCSROOT/web/dev/bits/protocolxml.inc
+
 # Run the sloc2html update
 cd $DARCSROOT/web/utils
 exec ./sloc2html.sh
