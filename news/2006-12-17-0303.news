@@ -1,0 +1,19 @@
+<h2>Updated inplace version of tpclient-pywx 0.2.0</h2>
+<p>by Mithro</p>
+<p>
+Well, I stuffed up. tpclient-pywx accidentally required setuptools to be 
+installed. This has been fixed and I have uploaded the latest inplace version.
+</p><p>
+If you downloaded the inplace version before today and are getting errors such
+as those shown below, please redownload the file. <b>Make sure that your web 
+browser has not cached the download.</b>
+<pre style="background-color: #111111; padding-left: 4em;">
+No module named pkg_resources
+No module named pkg_resources
+The following requirements where not met
+['tp.netlib', 'tp.client']
+['tp.netlib', 'tp.client']
+</pre>
+</p><p>
+This problem does not effect users of the Windows or Mac binaries.
+</p>
