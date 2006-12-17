@@ -151,11 +151,21 @@ function display($directory) {
 	The following operating systems are officially supported,
 </p><p>
 	<ul>
-		<li>MacOS X</li>
 		<li>Debian</li>
-		<li>Ubuntu</li>
-		<li>Windows 2000</li>
-		<li>Windows XP</li>
+		<li>Ubuntu</li><br />
+        <li><span class="highlight">Windows</span>
+        <ul>
+                <li>Windows 98 or greater, Windows 2000 or XP preferred</li>
+                <li>50mb disk space</li>
+                <li>1024x768 screen or greater</li>
+        </ul><br /></li>
+        <li><span class="highlight">Mac OS X</span>
+        <ul>
+				<li>Runs on Intel- and PowerPC-based Mac computers</li>
+                <li>Mac OS X 10.3.8 or higher, 10.4.1 or higher is preferred</li>
+                <li>200mb disk space</li>
+                <li>1024x768 screen or greater</li>
+        </ul><br /></li>
 	</ul>
 </p><p>
 	If you want to download and play with the client, use the following files for each
@@ -261,18 +271,18 @@ function display($directory) {
 </p>
 <?php display("tpserver-py/"); ?>
 <?php include "bits/end_section.inc" ?>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 <?php include "bits/end_page.inc" ?>
