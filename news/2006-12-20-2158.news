@@ -1,0 +1,13 @@
+
+<h2>Libtprl 0.1.1 released.</h2>
+<p>by Lee</p>
+<p>
+	Bug fix version for configuration/install issues and wrong include order issues. No changes to
+	the actual library. All 0.1.x releases will be interface compatable. Hopefully documentation 
+	makes it in soon.
+</p>
+<p>
+	Libtprl 0.1.1 is on the downloads page and is on our SF downloads page too. The Darcs repo is 
+	libtprl and the tag is 
+	libtprl_0_1_1. Feedback and suggestions are always welcome.
+</p>
