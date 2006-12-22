@@ -57,14 +57,23 @@
     <xsl:element name="p">
       <xsl:value-of select="description"/>
     </xsl:element>
+    <xsl:element name="p">
+      <xsl:if test="@base">
+	<xsl:text>The frame starts with the </xsl:text><xsl:value-of select="@base" /><xsl:text> frame. </xsl:text>
+      </xsl:if>
+      <xsl:if test="child::structure">
+	<xsl:text>The </xsl:text><xsl:value-of select="@name"/><xsl:text> frame</xsl:text>
+	<xsl:if test="@base"><xsl:text> then</xsl:text></xsl:if>
+	<xsl:text> consists of:</xsl:text>
+      </xsl:if>
+    </xsl:element>
     <xsl:if test="child::structure">
-	<xsl:element name="p">
-	<xsl:text>The </xsl:text><xsl:value-of select="@name"/><xsl:text> frame consists of:</xsl:text>
-	</xsl:element>
-	<xsl:element name="ul">
-		<xsl:apply-templates select="child::structure/*" mode="description"/>
-	</xsl:element>
+      <xsl:element name="ul">
+	<xsl:apply-templates select="child::structure/*" mode="description"/>
+      </xsl:element>
     </xsl:if>
+    
+    
     <xsl:if test="child::note">
       <xsl:element name="p">
         <xsl:value-of select="note" disable-output-escaping="yes" />
