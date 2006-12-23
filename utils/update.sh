@@ -12,6 +12,7 @@ cd $DARCSROOT/libtpproto-cpp/
 doxygen Doxyfile
 cd ..
 tar czf libtpproto-cpp-doc-cvs.tar.gz libtpproto-cpp/docs/
+rm -fr $DARCSROOT/web/dev/documents/libtpproto-cpp/
 mv libtpproto-cpp-doc-cvs.tar.gz libtpproto-cpp/docs/* $DARCSROOT/web/dev/documents/libtpproto-cpp/
 
 # Create any new thumbnails
