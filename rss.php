@@ -62,6 +62,8 @@ $body
 	<img src='/tp/img/service_links/delicious.png' alt='delicious' /> delicious</a>
 - <a href='http://digg.com/submit?phase=2&amp;url=$url' title='Digg this post on digg.com.' rel='nofollow'>
 	<img src='/tp/img/service_links/digg.png' alt='digg' /> digg</a>
+- <a href='http://reddit.com/submit?url=$url&title=$title_url' title='Submit this post to reddit.com.' rel='nofollow'>
+	<img src='/tp/img/service_links/reddit.png' alt='reddit.com' /> reddit</a>
 <!--
 - <a href='http://technorati.com/cosmos/search.html?url=http://www.thousandparsec.net/' title='Search Technorati for links to this post.' rel='nofollow'>
 	<img src='/tp/img/service_links/technorati.png' alt='technorati' /> technorati</a></div> -->"; 
