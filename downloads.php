@@ -5,6 +5,18 @@
 <?php include "bits/func.inc" ?>
 <?php include "bits/start_page.inc" ?>
 <?php include "bits/start_section.inc" ?>
+
+<style>
+th.heading {
+	color: #E1870D;
+	width: 90%;
+	border-bottom: 1px solid #333333;
+	text-align: left;
+	padding-bottom: 0px;
+}
+</style>
+
+
 <?php 
 function mycmp($a, $b) {
 	if (strcmp($a['version'], $b['version']) === 0) {
@@ -100,11 +112,27 @@ function display($directory) {
 	usort($details, "mycmp");
 
 	print "<table class='tabular' style='width: auto;'>";
+
 	foreach ($details as $detail) {
+		$sversion = "{$detail['version']}";
+		if ($sprevious != $sversion) {
+			if (strlen($sprevious) == 0) {
+				print "<tr>";
+				print "   <th colspan='5' class='heading'><h3>Current Version</h3></th>\n";
+				print "</tr>";
+			} else if (!$older) {
+				print "<tr>";
+				print "   <th colspan='5' class='heading' style='padding-top: 50px;'><h3>Older Versions</h3></th>\n";
+				print "</tr>";
+				$older = true;
+			}
+		}
+		$sprevious = $sversion;
+
 		$version = ucfirst($detail['versiontype'])." Version {$detail['version']}";
 		if ($previous != $version) {
 			print " <tr>\n";
-			print "   <th colspan='3' style='padding-top: 0;'><h3>$version</h3></th>\n";
+			print "   <th colspan='3' style='padding-top: 0;'><h4>$version</h4></th>\n";
 			print " </tr>\n";
 		}
 		$previous = $version;
@@ -128,7 +156,8 @@ function display($directory) {
 		print "		<img src='img/service_links/sf.png'>\n";
 		print "		Download from Sourceforge Mirrors</a></td>\n";
 		
-		print " </tr>\n";		
+		print " </tr>\n";
+
 	}
 	print "</table>\n";
 }
