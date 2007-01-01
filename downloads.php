@@ -239,6 +239,10 @@ function display($directory) {
 	inplace version of the client.
 </p>
 <?php display("libtpclient-py/"); ?>
+<p>
+	Archives of <b>unsupported</b> old previous versions can be found on
+	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078&package_id=214276">SourceForge here</a>.
+</p>
 <?php include "bits/end_section.inc" ?>
 
 <?php include "bits/start_section.inc" ?>
