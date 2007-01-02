@@ -21,6 +21,11 @@
 			</li>
             <li>
 				<a href="#1-3">
+					On which operating system can I play Thousand Parsec?
+				</a>
+			</li>
+            <li>
+				<a href="#1-4">
 					TP for my Bunghole!
 				</a>
 			</li>
@@ -74,7 +79,19 @@ more information on the <a href="/tp/gettingstarted.php">Getting Started</a> pag
 <?php include "bits/start_section.inc" ?>
 
 <a name="1-3"></a>
-<h2>1.3 TP for my Bunghole!</h2>
+<h2>1.3 On which operating system can I play Thousand Parsec?</h2>
+<p>
+	This depends on the client you are using to play the game. Thousand Parsec is
+a free and open source project so clients can be made for any operating system. Currently
+the most usable client is wxPython based client (tpclient-pywx). It is known to run
+on GNU/Linux, Mac OS X and Windows.
+</p>
+
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
+<a name="1-4"></a>
+<h2>1.4 TP for my Bunghole!</h2>
 <p>
 	We are in no way related to Bevis and Butthead. The show sucks, get over it already.
 </p>
