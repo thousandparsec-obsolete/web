@@ -10,7 +10,21 @@
 	These links are to sites which are directly related to Thousand Parsec.
 </p>
 <ul>
-	<li>No links currently available.</li>
+	<li>
+		<a href="http://sourceforge.net/projects/thousandparsec/">
+			Thousand Parsec on SourceForge.net
+		</a>
+	</li>
+	<li>
+		<a href="http://freshmeat.net/projects/tp/">
+			Thousand Parsec on Freshmeat.net
+		</a>
+	</li>
+	<li>
+		<a href="http://en.wikipedia.org/wiki/Thousand_Parsec">
+			Thousand Parsec on Wikipedia
+		</a>
+	</li>
 </ul>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
@@ -73,7 +87,7 @@
 	<li>
 		<a href="http://www.crisium.com/stars/index.html">
 			Stars! 
-		</a>
+		</a> (offline)
 		<p>
 			Stars! is a similar game to what we are trying to create. It's a decent 
 			game and there is a playable demo. Link is the official website, "Waypoint Zero". 
