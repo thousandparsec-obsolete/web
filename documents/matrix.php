@@ -234,17 +234,6 @@
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
-		<td>Can view weapon/ship designs?</td>
-		<td align="center" bgcolor="#000000">#</td>
-		<td align="center" bgcolor="#ff0000">#</td>
-		<td align="center" bgcolor="#ff0000">#</td>
-		<td align="center" bgcolor="#ff0000">#</td>
-		<td align="center" bgcolor="#000000">#</td>
-		<td align="center" bgcolor="#ff0000">#</td>
-		<td align="center" bgcolor="#ff0000">#</td>
-		<td align="center" bgcolor="#ff0000">#</td>
-	</tr>
-	<tr>
 		<td>Can view battles?</td>
 		<td align="center" bgcolor="#000000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
