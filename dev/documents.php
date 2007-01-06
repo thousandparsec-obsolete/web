@@ -44,6 +44,15 @@
 	</blockquote>
 
 	<p>
+		Parsek Client Documentation
+	</p>
+	<blockquote>
+		<p>
+			<a href="documents/parsek/">Development documentation for Parsek</a>, a KDE 4 client for Thousand Parsec games.
+		</p>
+	</blockquote>
+
+	<p>
 		Game documentation
 	</p>
 	<blockquote>
