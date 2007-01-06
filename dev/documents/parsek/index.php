@@ -16,7 +16,7 @@
 <h2>What is Parsek?</h2>
 <p>Parsek is one of the clients for Thousand Parsec games. It is designed to run in <a href="http://www.kde.org/" target="_blank" title="K Desktop Environment">KDE</a> 4.x desktop environment.
 This version of KDE is currently under development and is planned to be released somehere in the middle of 2007.
-Like most of the KDE 4 applications, Parsek is programmed in C++ and uses <a href="http://www.trolltech.com/products/qt" target="_blank" title="Troltech Qt 4">Qt 4.2</a> and KDE 4 libraries. In
+Like most of the KDE 4 applications, Parsek is programmed in C++ and uses <a href="http://www.trolltech.com/products/qt" target="_blank" title="Trolltech Qt 4">Qt 4.2</a> and KDE 4 libraries. In
 addition it also uses <a href="http://www.thousandparsec.net/tp/dev/documents/libtpproto-cpp/html/" title="Thousand Parsec C++ protocol library documentation">libtpproto-cpp</a> library, which provides functions needed to communicate with Thousand
 Parsec game servers.</p>
 
