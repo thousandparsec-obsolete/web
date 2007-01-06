@@ -33,7 +33,7 @@
 	<tr>
 		<td>&nbsp;</td>
 		<td colspan="4"><b>libtpproto-py</b></td>
-		<td colspan="2"><b>libtpproto-cpp</b></td>
+		<td colspan="3"><b>libtpproto-cpp</b></td>
 		<td><b>(none)</b></td>
 	</tr>
 	<tr>
@@ -44,11 +44,12 @@
 		<td>pygame-client</td>
 		<td>(library)</td>
 		<td>tpclient-cpptext</td>
+		<td>Parsek</td>
 		<td>TPJava</td>
 	</tr>
 	<tr>
 		<td>&nbsp;</td>
-		<td align="center" colspan="7">
+		<td align="center" colspan="8">
 			<b>Network Features</b>
 		</td>
 	</tr>
@@ -58,6 +59,7 @@
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#000000">#</td>
@@ -70,6 +72,7 @@
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
@@ -78,6 +81,7 @@
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
@@ -91,6 +95,7 @@
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
 		<td>Can view orders?</td>
@@ -101,6 +106,7 @@
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
 		<td>Can add orders?</td>
@@ -109,6 +115,7 @@
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
@@ -121,6 +128,7 @@
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
 		<td>Can view boards?</td>
@@ -131,6 +139,7 @@
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
 		<td>Can view messages?</td>
@@ -138,6 +147,7 @@
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
@@ -150,12 +160,14 @@
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 	<tr>
 		<td>Can tell when a turn will end?</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#00ff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
@@ -169,6 +181,7 @@
 		<td align="center" bgcolor="#ffff00">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
 		<td>Can upload weapon/ship designs?</td>
@@ -177,6 +190,7 @@
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ffff00">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
@@ -189,10 +203,11 @@
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
 		<td>&nbsp;</td>
-		<td align="center" colspan="7">
+		<td align="center" colspan="8">
 			<b>Other Features</b>
 		</td>
 	</tr>
@@ -205,15 +220,6 @@
 		<td align="center" bgcolor="#000000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
-	</tr>
-	<tr>
-		<td>Can view weapon/ship designs?</td>
-		<td align="center" bgcolor="#000000">#</td>
-		<td align="center" bgcolor="#ff0000">#</td>
-		<td align="center" bgcolor="#ff0000">#</td>
-		<td align="center" bgcolor="#ff0000">#</td>
-		<td align="center" bgcolor="#000000">#</td>
-		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
 	<tr>
@@ -223,6 +229,18 @@
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+	</tr>
+	<tr>
+		<td>Can view weapon/ship designs?</td>
+		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
@@ -233,6 +251,7 @@
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#000000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 		<td align="center" bgcolor="#ff0000">#</td>
 	</tr>
