@@ -3,6 +3,8 @@
 <?php include "bits/func.inc" ; ?>
 
 <div id="gs">Don't know what Thousand Parsec is or want more information? <a href="/tp/gettingstarted.php">Start Here</a></div>
+<div style="height: 5px;"></div>
+<div id="gs">Want to win cool prizes? Why not join the <a href="/tp/comp.php">AI Programming Competition?</a></div>
 
 <div id="columns">
 

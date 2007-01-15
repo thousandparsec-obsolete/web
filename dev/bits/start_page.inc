@@ -27,3 +27,6 @@
 		</td>
 	</tr>
 </table>
+
+<div id="gs">Want to win cool prizes? Why not join the <a href="/tp/comp.php">AI Programming Competition?</a></div>
+
