@@ -32,6 +32,7 @@
 		<ul>
 			<li><a href="#email">Email Contact</a></li>
 			<li><a href="#list">Mailing List</a></li>
+			<li><a href="#forum">Web Forum</a></li>
 		</ul>
 	</li>
 	<li><a href="#terms">Other Terms</a></li>
@@ -41,6 +42,14 @@
 <?php include "bits/start_section.inc" ; ?>
 <a name="news"></a>
 <h2>News</h2>
+
+<h2>Forum setup!</h2>
+<p>by Mithro</p>
+<p>
+I've setup a <a href="http://www.thousandparsec.net/forums/viewforum.php?f=6">Forum</a> 
+linked to the <a href="http://www.thousandparsec.net/tp/mailman.php/listinfo/tp-comp">tp-comp mailing list</a>.
+It works just like the other mailing lists/forums.
+</p>
 
 <p>
 	News about the competition will go here.
@@ -196,6 +205,11 @@
 	You can also join the mailing list which you can discuss how totally 
 	kick arse your AI is. You can also organise test games and other stuff.
 	<a href="http://www.thousandparsec.net/tp/mailman.php/listinfo/tp-comp">List can be found here.</a>
+</p><p>
+	<a name="forum"></a>
+	<h4>Forum</h4>
+	There is also an <a href="http://www.thousandparsec.net/forums/viewforum.php?f=6">internet forum</a>
+	which is linked to the mailing list like other forums.
 </p>
 
 <?php include "bits/end_section.inc" ; ?>
