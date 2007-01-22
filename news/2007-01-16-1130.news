@@ -5,12 +5,12 @@ I'm happy to announce that Thousand Parsec is running a AI Programming
 Competition. There are quite a few really cool <a href="http://www.thousandparsec.net/tp/comp.php">prizes</a>
 and a good place to pick up some Thousand Parsec swag!
 </p><p>
-If you have any interest in the AI programming I would recommend giving it 
+If you have any interest in AI programming I would recommend giving it 
 a go. Thousand Parsec games offer a very different environment for AI's 
 from a standard game. As well, AI's are standard clients, so it can't cheat 
-even if it wanted too.
+even if it wanted to.
 </p><p>
-You can free to use any Open Source language to write your AI, however
+You are free to use any Open Source language to write your AI, however
 as Python, C++ and Ruby already have semi-working protocol libraries 
 they are a good place to start.
 </p><p>

@@ -11,7 +11,7 @@
 <h1>Winning</h1>
 
 <p>The game is won by destroying the other player
-totally. You loose if you get destroyed :).</p>
+totally. You lose if you get destroyed :).</p>
 
 <?php include "../bits/end_section.inc" ?>
 <?php include "../bits/start_section.inc" ?>
@@ -22,7 +22,7 @@ totally. You loose if you get destroyed :).</p>
 <ul>
 	<li>Weapons - Escapes if it wins a match</li>
 	<li>Moves - 3 units per turn</li>
-	<li>Amour - 2 HP</li>
+	<li>Armour - 2 HP</li>
 	<li>Build - 1 Turn</li>
 </ul>
 
@@ -30,7 +30,7 @@ totally. You loose if you get destroyed :).</p>
 <ul>
 	<li>Weapon - 2 HP Damage on Win, Fires First</li>
 	<li>Moves - 2 units per turn</li>
-	<li>Amour - 4 HP</li>
+	<li>Armour - 4 HP</li>
 	<li>Build - 2 Turns</li>
 	<li>Special - Can colonise a planet</li>
 </ul>
@@ -39,7 +39,7 @@ totally. You loose if you get destroyed :).</p>
 <ul>
 	<li>Weapon - 3 HP Damage on Win, 1 HP Damage on Draw</li>
 	<li>Moves - 1 units per turn</li>
-	<li>Amour - 6 HP</li>
+	<li>Armour - 6 HP</li>
 	<li>Build - 4 Turns</li>
 </ul>
 
