@@ -27,12 +27,7 @@ ul.response ul {
 </style>
 
 <h1>Protocol Definition for Thousand Parsec</h1>
-<h4>Version 0.3 (Draft) 
-	<span class="fixme">
-		WARNING: This document is under development, the current protocol is 
-		still version 0.2
-	</span>
-</h4>
+<h4>Version 0.3 (Final)</h4>
 <p>Last updated 22 November 2006.</p>
 
 <?php

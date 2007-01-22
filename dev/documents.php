@@ -68,7 +68,7 @@
 	
 	<blockquote>
 		<p>
-			<a href="documents/protocol3.php">Protocol</a> document, describes the protocol (version 3). The previous 2 versions of the protocol can be found <a href="documents/protocol2.php">here</a> and <a href="documents/protocol.php">here</a>.<br>
+			<a href="documents/protocol3.php">Protocol</a> document, describes the protocol (version 3). The older, no longer supported versions of the protocol can be found <a href="documents/protocol2.php">here (tp02)</a> and <a href="documents/protocol.php">here (tp01)</a>.<br>
 			<a href="documents/parsecstones.php">Parsecstones</a> document, describes what we are aiming for when.<br>
 			<a href="documents/orders.php">Orders</a> document, describes possible orders that could be given in the game.<br>
 			<a href="documents/objects.php">Objects</a> document, describes what extra data to expect at the end of object packets.<br>
