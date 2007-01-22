@@ -26,7 +26,7 @@
 			</li>
             <li>
 				<a href="#1-4">
-					TP for my Bunghole!
+					Can I only make/build/play turn based space strategy games?
 				</a>
 			</li>
 		</ol>
@@ -62,7 +62,7 @@
 <a name="1-1"></a>
 <h2>1.1 What is Thousand Parsec?</h2>
 <p>
-	Thousand Parsec is a turn based space empire building game. You can find out 
+	Thousand Parsec is a framework to build turn based space empire building game. You can find out 
 more information on the <a href="/tp/gettingstarted.php">Getting Started</a> page.
 </p>
 
@@ -91,9 +91,12 @@ on GNU/Linux, Mac OS X and Windows.
 <?php include "bits/start_section.inc" ?>
 
 <a name="1-4"></a>
-<h2>1.4 TP for my Bunghole!</h2>
+<h2>1.4 Can I only make/build/play turn based space strategy games?</h2>
 <p>
-	We are in no way related to Bevis and Butthead. The show sucks, get over it already.
+	While this is was we are primarily working on, other genre of turn based games
+	might be possible. Have a look at the <a href="dev/documents/protocol3.php">protocol document</a>
+	to see if it would capture your design. Note that there is still a lot of procotol development, and
+	we are still adding concepts.
 </p>
 
 <?php include "bits/end_section.inc" ?>
@@ -118,6 +121,7 @@ You have a choice of 3 options, you can email us on the
 <a href="/tp/mailman.php/listinfo/">mailing lists</a>. You can post to the <a href="/forums">forums</a>
 or you can join us on <a href="irc://irc.freenode.org/#tp">IRC</a>.
 </p>
+<p>If you want to contract the founders, email <a href="mailto:mithro@mithis.com">Tim</a> or <a href="mailto:llnz@paradise.net.nz">Lee</a>.</p>
 <?php include "bits/end_section.inc" ?>
 <br />
 <br />
