@@ -41,7 +41,15 @@
 <?php include "bits/end_section.inc" ; ?>
 <?php include "bits/start_section.inc" ; ?>
 <a name="news"></a>
-<h2>News</h2>
+<h1>News</h1>
+
+<h2>End date wrong!</h2>
+<p>by Mithro</p>
+<p>
+It looks like I stuffed up, the due date for entries is the <b>31st of March</b> not the 1st of March. This
+gives you a whole extra month to make your AI even better.
+</p>
+<h6>Monday, 22nd Jan 2007</h6>
 
 <h2>Forum setup!</h2>
 <p>by Mithro</p>
@@ -50,14 +58,10 @@ I've setup a <a href="http://www.thousandparsec.net/forums/viewforum.php?f=6">Fo
 linked to the <a href="http://www.thousandparsec.net/tp/mailman.php/listinfo/tp-comp">tp-comp mailing list</a>.
 It works just like the other mailing lists/forums.
 </p>
-
-<p>
-	News about the competition will go here.
-</p>
+<h6>Friday, 19th Jan 2007</h6>
 
 <?php include "bits/end_section.inc" ; ?>
 <?php include "bits/start_section.inc" ; ?>
-
 
 <a name="prizes"></a>
 <h2>Prizes</h2>
@@ -190,7 +194,7 @@ It works just like the other mailing lists/forums.
 <a name="submit"></a>
 <h2>Submission Details</h2>
 <p>
-	All submissions must be in before 00:01 on the 1st of March 2007 (UTC).
+	All submissions must be in before 00:01 on the 31st of March 2007 (UTC).
 </p><p>
 	Submission Details will be released closer to the closing date.
 </p><p>
