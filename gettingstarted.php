@@ -144,10 +144,12 @@
 binaries are currently supplied.</p>
 <p>To build from source, follow these steps:</p>
 <ol>
-<li>Install the dependencies: autotools (autoconf, autoheader, automake, aclocal), libreadline, MzScheme. Don't forget to install dev packages for libraries.</li>
+<li>Install the dependencies: autotools (autoconf, autoheader, automake, aclocal), libtprl, and MzScheme or guile. Don't forget to install dev packages for libraries.</li>
 <li>Optionally, install the optional dependencies.
   <ul><li>libmysql-client (and dev package) if you want to use a MySQL server for the persistence backend. You might want a 
-	server too. (0.1.3 onward)</li></ul></li>
+	server too. (0.1.3 onward)</li>
+      <li>libgnutls (and dev package) if you want secure sockets.</li>
+  </ul></li>
 <li>Download the sources from <a href="http://www.thousandparsec.net/tp/downloads.php">Thousand Parsec Download page</a> or from <a href="http://sourceforge.net/project/showfiles.php?group_id=132078&amp;package_id=145028">Sourceforge downloads</a>.</li>
 <li>Extract the tar.gz file.</li>
 <li>Enter the created directory.</li>
@@ -156,7 +158,9 @@ binaries are currently supplied.</p>
 <li>As root (or administrator user) run <pre class="code">make install</pre>. The executable, static data and man page are installed. They can be uninstalled with <pre class="code">make uninstall</pre></li>
 <li>To start server, run <pre class="code">tpserver-cpp</pre></li>
 </ol>
-<p>Tpserver-cpp has a number of command line arguments (and in future, config files).</p>
+<p>Tpserver-cpp has a number of command line arguments and config files. A man page is 
+  provided and a sample config file is in the source package. The console when the server 
+  starts has a number of commands, and has help and tab completion.</p>
 
 <?php include "bits/end_section.inc" ; ?>
 <?php include "bits/start_section.inc" ; ?>
