@@ -32,8 +32,8 @@
 \#
 \.cvsignore$
 (^|/)Thumbs\.db$
-(^|/)dev/documents/python/libtpproto-py-doc
-(^|/)dev/documents/libtpproto-cpp
+(^|/)dev/documents/python($|/)
+(^|/)dev/documents/libtpproto-cpp($|/)
 (^|/)dev/bits/sloc.inc
-(^|/)screenshots/thumbs
-(^|/)tmp
+(^|/)screenshots/thumbs($|/)
+(^|/)tmp($|/)

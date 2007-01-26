@@ -7,35 +7,41 @@
 			Developer Documentation
 		</h2>
 	</p>
-	<p>
+	<h4>
 		General Documentation
-	</p>
+	</h4>
 	<blockquote>
 		<p>
-			<a href="documents/helping.php">Howto help for the unmotivated.</a> Document explaining simple things which people with little time or motivation can help out with.<br>
+			<a href="documents/helping.php">Howto help for the unmotivated.</a> Document explaining simple things which people with little time or motivation can help out with.<br />
 		</p>
 	</blockquote>
-	<p>
-		Server documentation
-	</p>
+	<h4>
+		Server Documentation
+	</h4>
 	<blockquote>
 		<p>
-			<a href="documents/tpserver-cpp">C++ Server Documentation.</a> Documentation for tpserver-cpp.<br>
-		</p>
-	</blockquote>
-
-	<p>
-		Python documentation
-	</p>
-	<blockquote>
-		<p>
-			<a href="documents/python/netlib-doc/">TP Python Network Library.</a> Documentation for Thousand Parsec python network library. Can also be downloaded from <a href="documents/python/py-netlib-doc-cvs.tar.gz">here</a><br>
+			<a href="documents/tpserver-cpp">C++ Server Documentation.</a> Documentation for tpserver-cpp.<br />
 		</p>
 	</blockquote>
 
-	<p>
+	<h4>
+		Python Documentation
+	</h4>
+	<blockquote>
+		<p>
+			<a href="documents/python/netlib/libtpproto-py-doc">Python Network Library.</a> Documentation for Thousand Parsec python network library. Can also be downloaded from <a href="documents/python/netlib/libtpproto-py-doc.tar.gz">here</a>.<br />
+		</p>
+		<p>
+			<a href="documents/python/stable/python-tp-doc">Stable Client Helper Library</a> (and Python Network Library). Documentation for the stable version of the Python Client helper library. Can also be downloaded from <a href="documents/python/stable/python-tp-doc.tar.gz">here</a>.<br />
+		</p>
+		<p>
+			<a href="documents/python/dev/python-tp-doc">Development Client Helper Library</a> (and Python Network Library). Documentation for the development version of the Python Client helper library. Can also be downloaded from <a href="documents/python/dev/python-tp-doc.tar.gz">here</a>.<br />
+		</p>
+	</blockquote>
+
+	<h4>
 		Libtpproto-cpp Documentation
-	</p>
+	</h4>
 	<blockquote>
 		<p>
 			Current cvs <a href="documents/libtpproto-cpp/">libtpproto-cpp client side c++ library</a> documentation. Also available 
@@ -43,36 +49,36 @@
 		</p>
 	</blockquote>
 
-	<p>
+	<h4>
 		Parsek Client Documentation
-	</p>
+	</h4>
 	<blockquote>
 		<p>
 			<a href="documents/parsek/">Development documentation for Parsek</a>, a KDE 4 client for Thousand Parsec games.
 		</p>
 	</blockquote>
 
-	<p>
-		Game documentation
-	</p>
+	<h4>
+		Game Documentation
+	</h4>
 	<blockquote>
 		<p>
-			<a href="documents/minisec.php">MiniSec documentation.</a> Documentation for the first TP game.<br>
-			<a href="documents/mtsec.php">MTSec documentation.</a> Documentation for the second TP game.<br>
+			<a href="documents/minisec.php">MiniSec documentation.</a> Documentation for the first TP game.<br />
+			<a href="documents/mtsec.php">MTSec documentation.</a> Documentation for the second TP game.<br />
 		</p>
 	</blockquote>
 	
-	<p>
-		Other documents
-	</p>
+	<h4>
+		Other Documents
+	</h4>
 	
 	<blockquote>
 		<p>
-			<a href="documents/protocol3.php">Protocol</a> document, describes the protocol (version 3). The older, no longer supported versions of the protocol can be found <a href="documents/protocol2.php">here (tp02)</a> and <a href="documents/protocol.php">here (tp01)</a>.<br>
-			<a href="documents/parsecstones.php">Parsecstones</a> document, describes what we are aiming for when.<br>
-			<a href="documents/orders.php">Orders</a> document, describes possible orders that could be given in the game.<br>
-			<a href="documents/objects.php">Objects</a> document, describes what extra data to expect at the end of object packets.<br>
-			<a href="documents/turn.php">Turn</a> document, describes what order things happen when a turn is executed.<br>
+			<a href="documents/protocol3.php">Protocol</a> document, describes the protocol (version 3). The older, no longer supported versions of the protocol can be found <a href="documents/protocol2.php">here (tp02)</a> and <a href="documents/protocol.php">here (tp01)</a>.<br />
+			<a href="documents/parsecstones.php">Parsecstones</a> document, describes what we are aiming for when.<br />
+			<a href="documents/orders.php">Orders</a> document, describes possible orders that could be given in the game.<br />
+			<a href="documents/objects.php">Objects</a> document, describes what extra data to expect at the end of object packets.<br />
+			<a href="documents/turn.php">Turn</a> document, describes what order things happen when a turn is executed.<br />
 		</p>
 	</blockquote>
 

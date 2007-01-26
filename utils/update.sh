@@ -2,10 +2,16 @@
 
 DARCSROOT="/var/www/thousandparsec/repos/"
 
-#create py-netlib docs.
-cd $DARCSROOT/web/dev/documents/python/
-epydoc --html -o libtpproto-py-doc -v --private-css green --docformat plaintext netlib
-tar -zcvf libtpproto-py-doc-cvs.tar.gz libtpproto-py-doc/*
+#create the stable version of tp.* documents.
+cd $DARCSROOT/web/dev/documents/python/netlib
+epydoc --html -o libtpproto-py-doc -v --private-css green --docformat plaintext tp
+tar -zcvf libtpproto-py-doc.tar.gz python-tp-doc/*
+cd $DARCSROOT/web/dev/documents/python/stable
+epydoc --html -o python-tp-doc -v --private-css green --docformat plaintext tp
+tar -zcvf python-tp-doc.tar.gz python-tp-doc/*
+cd $DARCSROOT/web/dev/documents/python/dev
+epydoc --html -o python-tp-doc -v --private-css green --docformat plaintext tp
+tar -zcvf python-tp-doc.tar.gz python-tp-doc/*
 
 #create libtpproto-cpp docs.
 cd $DARCSROOT/libtpproto-cpp/
