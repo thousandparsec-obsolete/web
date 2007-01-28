@@ -6,11 +6,11 @@
 <h6>Last updated: 28 Jan 2006 - For AI Competition</h6>
 <p>
 MiniSec is a very simple testing game for Thousand Parsec. It is designed to 
-exercises many of the basic features of the Thousand Parsec framework. Some
+exercise many of the basic features of the Thousand Parsec framework. Some
 of these features are,
 <ul>
 	<li>Ability to give orders.</li>
-	<li>Messages results from actions.</li>
+	<li>Messages result from actions.</li>
 	<li>Simple combat.</li>
 </ul>
 </p><p>
@@ -42,7 +42,7 @@ Programming competition</a>.</p>
 
 <p>
 The game is won by destroying all other players. The definition of 
-players being destroy is server (or even game) dependent. Some possible 
+players being destroyed is server (or even game) dependent. Some possible 
 definitions are as follows:
 <ul>
 	<li>All your planets are destroyed. (This is the definition used in the AI competition.)</li>
@@ -70,7 +70,7 @@ You lose if you get destroyed :).
 	<tr><td>Special</td><td>Gives the fleet a chance to escape if the fleet wins a match</td></tr>
 </table>
 <p>
-Scout ships allow your fleet's to escape harm. When your ships win a combat 
+Scout ships allow your fleets to escape harm. When your ships win a combat 
 round they will have a chance to escape. The formula for this chance is as follows
 
 <table style="text-align: center;">
@@ -121,15 +121,15 @@ the speed of Frigates (the slowest ships).
 </table>
 <p>
 Frigates are the primary ships in the MiniSec universe. Able to do some 
-damage and being quite hardy they are also the only ship which can colonise
+damage and being quite hardy. They are also the only ship which can colonise
 an unpopulated planet.
 </p><p>
 The extra space taken up by the colonisation module means that there isn't
 much space left for the engines making frigates the slowest moving of all
 ships.
 </p><p>
-On Frigate is used for every planet colonised. For example, a fleet of 3 
-Frigates and 2 Battleships try to colonise a planet. The fleet would now
+One Frigate is used for every planet colonised. For example, a fleet of 3 
+Frigates and 2 Battleships tries to colonise a planet. The fleet would now
 only have 2 Frigates and 2 Battleships.
 </p>
 
@@ -144,29 +144,29 @@ only have 2 Frigates and 2 Battleships.
 </table>
 <p>
 Battleships are the largest and most hardy ship in the MiniSec universe.
-They have so much firepower that they even when a draw occurs they 
+They have so much firepower that even when a draw occurs they 
 are able to do some damage.
 </p><p>
 Battleships also have huge engines, which means even though they are
-much bigger and more armed then frigates they can move faster.
+much bigger and more armed than frigates they can move faster.
 </p>
 
 <a name="planets"></a>
 <h3>Planets</h3>
 <p>
 Colonised Planets can also participate in combat with anti-ship batteries.
-Each battery is equivalent to a battleships and can be destroy separately.
+Each battery is equivalent to a battleship and can be destroyed separately.
 This means they also behave exactly as multiple battleships.
 </p><p>
 Normal planets are considered to be equivalent to <b>2 battleships</b>. Home
-world planets (The planet you start with at the beginning of the game) is
+world planet (The planet you start with at the beginning of the game) is
 considered <b>5 battleships</b>.
 </p><p>
-An example, when a planet suffers 6 HP of damage a battery is destroy,
-this means that the amount of damage it does on a win is reduced by 3HP 
-(exactly like a one battleship being destroy in normal battle).
+An example, when a planet suffers 6 HP of damage a battery is destroyed,
+this means that the amount of damage planet does on a win is reduced by 3HP 
+(exactly like a one battleship being destroyed in normal battle).
 </p><p>
-When a planet looses a battle is becomes unpopulated.
+When a planet loses a battle is becomes unpopulated.
 </p>
 
 <a name="fleets"></a>
@@ -212,7 +212,7 @@ it in the same turn.
 
 <a name="combat"></a>
 <h2>Combat</h2>
-<h3>When it occurs?</h3>
+<h3>When does it occur?</h3>
 <p>
 Combat occurs when two enemies are at the same location. Combat can only occur
 between any number of parties at the same time. 
@@ -224,14 +224,14 @@ occurs, they will be merged for the period of combat.
 </p><p>
 During combat the fleets play rounds of rock, paper, scissors against each 
 other. Each fleet selects rock, paper or scissors at random. Damage is then 
-delt by the winning side to the loosing side. 
+delt by the winning side to the losing side. 
 </p><p>
 Damage is always assigned in whole lots. For example, a Battleship does 3HP 
-damage on each shot, however it can still only destory 1 Scout each turn (as 
+damage on each shot, however it can still only destroy 1 Scout each turn (as 
 the overflow is lost).
 </p><p>
 Damage is always assigned to the least damaged strongest enemy ships first. 
-If there are multiple choices one (of the possible choices) is choosen is at 
+If there are multiple choices one (of the possible choices) is chosen is at 
 random.
 </p>
 <h3>Winning Combat</h3>
@@ -248,6 +248,7 @@ destroyed batteries).
 <?php include "../bits/end_section.inc" ?>
 <?php include "../bits/start_section.inc" ?>
 
+<a name="example"></a>
 <h2>Example of combat</h2>
 <p>
 Fleet 1 = 2 Battleships<br />
@@ -307,7 +308,7 @@ Damage Numbers
 		<td>Scissors</td>
 		<td>Paper</td>
 		<td>Fleet 1</td><td>(Scissors beats Paper)</td>
-		<td>Fleet 1 does 3 lots of 3 damage<br />Destorys 1 frigate</td>
+		<td>Fleet 1 does 3 lots of 3 damage<br />Destroys 1 frigate</td>
 		<td>4-4-4</td>
 		<td>4(2)-3-0-0</td>
 	</tr>
