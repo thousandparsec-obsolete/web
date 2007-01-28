@@ -35,9 +35,9 @@ urchinTracker();
 <body>
 <div id="wrapper">
 
-<div id="banner">
+<a href="/tp/"><div id="banner">
 	<h1>Thousand Parsec: <?php echo $title; ?></h1>
-	<img src="/tp/img/logo_t.png" alt="Thousand Parsec Logo" />
+	<img src="/tp/img/logo_t.png" alt="Thousand Parsec Logo" /></a>
 </div>
 
 <table class="menu">
