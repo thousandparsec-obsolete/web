@@ -43,6 +43,13 @@ MTSec will <b>NOT</b> include the following features:
 	<li><a href="#combat">Combat</a></li>
 	<li><a href="#example">Example of combat</a></li>
 </ul>
+
+<h2>TODO</h2>
+<ul>
+	<li>Hit points for ships</li>
+	<li>Damage from explosiveness</li>
+	<li>Formula for sending of production points</li>
+</ul>
 <?php include "../bits/end_section.inc" ?>
 <?php include "../bits/start_section.inc" ?>
 
@@ -98,6 +105,7 @@ certain resources, others are poor in every resource.
 Production points are used to both mine resources and to convert resources
 into ships and weapons. Production points are first used to try and satisfy
 Orders in the queue, any left over points are then used to mine sources.
+All production points must be used every turn.
 </p><p>
 For an example how this works you can see the example at the end of the
 Economy section.
@@ -521,3 +529,5 @@ the ship are lost.
 
 <?php include "../bits/end_section.inc" ?>
 <?php include "../bits/end_page.inc" ?>
+
+
