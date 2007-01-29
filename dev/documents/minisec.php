@@ -3,7 +3,7 @@
 <?php include "../bits/start_page.inc" ?>
 <?php include "../bits/start_section.inc" ?>
 <h1>MiniSec</h1>
-<h6>Last updated: 28 Jan 2006 - For AI Competition</h6>
+<h6>Last updated: 28 Jan 2007 - For AI Competition</h6>
 <p>
 MiniSec is a very simple testing game for Thousand Parsec. It is designed to 
 exercise many of the basic features of the Thousand Parsec framework. Some
@@ -14,7 +14,7 @@ of these features are,
 	<li>Simple combat.</li>
 </ul>
 </p><p>
-MiniSec was updated on the 28th of January 2006 to make it easier to understand
+MiniSec was updated on the 28th of January 2007 to make it easier to understand
 (and a little more advanced) for the <a href="/tp/comp.php">Thousand Parsec AI 
 Programming competition</a>.</p>
 
@@ -214,7 +214,7 @@ it in the same turn.
 <h2>Combat</h2>
 <h3>When does it occur?</h3>
 <p>
-Combat occurs when two enemies are at the same location. Combat can only occur
+Combat occurs when two enemies are at the same location. Combat can occur
 between any number of parties at the same time. 
 </p>
 <h3>The process</h3>
