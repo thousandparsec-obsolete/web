@@ -23,7 +23,6 @@ capabilities:
 MTSec will <b>NOT</b> include the following features:
 <ul>
 	<li>Research (Creating and finding new technologies, etc).</li>
-	<li>Transportation of resources.</li>
 </ul>
 </p>
 <h2>Table of Contents</h2>
@@ -49,6 +48,8 @@ MTSec will <b>NOT</b> include the following features:
 	<li>Hit points for ships</li>
 	<li>Damage from explosiveness</li>
 	<li>Formula for sending of production points</li>
+	<li>Scrapping ships?</li>
+	<li>Transportation of resources??.</li>
 </ul>
 <?php include "../bits/end_section.inc" ?>
 <?php include "../bits/start_section.inc" ?>
