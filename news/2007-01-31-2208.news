@@ -5,10 +5,10 @@
 	Massive update this time, hence the new minor number (version 1.0.0 will support everything I think should be 
 	in a game). A number of cool new features, including metaserver and mdns-sd support, parameterised Orders,
 	better setting change notifications, server only wakes up when it needs to, timers, and bug fixes. 
-	See the ChangeLog and/or the darcs history for more.
+	See the ChangeLog and/or the <a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=tpserver-cpp;a=shortlog">darcs history</a> for more.
 </p>
 <p>
-	TPServer-cpp 0.4.0 is on the downloads page and will be on our SF downloads page soon. The Darcs repo is 
+	TPServer-cpp 0.4.0 is on the <a href="http://www.thousandparsec.net/tp/downloads.php#tpserver-cpp">downloads page</a> and will be on our SF downloads page soon. The Darcs repo is 
 	tpserver-cpp and the tag is 
 	TPSERVER_CPP_0_4_0. Feedback and suggestions are always welcome.
 </p>
