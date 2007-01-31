@@ -9,11 +9,11 @@
 <p> 
 Missile and Torpedo Wars (MTSec) is the second playable "milestone" game.
 MTSec is designed to exercise some of the more advanced features that 
-Thousand Parsec games can exhibit. MTSec built on the feature incorporated
+Thousand Parsec games can exhibit. MTSec builds on the feature set incorporated
  in MiniSec, the first playable  "milestone" game, which can be found 
 <a href="/tp/dev/documents/minisec.php">here</a>.
 </p><p>
-MTSec is specifically designed to add demonstrated the following 
+MTSec is specifically designed to add and demonstrate the following 
 capabilities:
 <ul>
 	<li>Advanced Design Capabilities.</li>
@@ -29,18 +29,18 @@ MTSec will <b>NOT</b> include the following features:
 <ul>
 	<li><a href="#story">Story</a></li>
 	<li><a href="#winning">Winning</a></li>
+	<li><a href="#economy">Economy</a></li>
+	<ul>
+		<li><a href="#economy_resources">Resources</a></li>
+		<li><a href="#economy_examples">Examples</a></li>
+	</ul>
 	<li><a href="#ships">Ships</a></li>
 	<ul>
-		<li><a href="#scout">Scout</a></li>
-		<li><a href="#frigate">Frigate</a></li>
-		<li><a href="#battleship">Battleship</a></li>
-		<li><a href="#planets">Planets</a></li>
-		<li><a href="#fleets">Fleets</a></li>
+		<li><a href="#ships_types">Ship Types</a></li>
+		<li><a href="#ships_weapons">Weapons</a></li>
+		<li><a href="#ships_components">Other Componenets</a></li>
 	</ul>
-	<li><a href="#building">Building</a></li>
-	<li><a href="#colonising">Colonising</a></li>
 	<li><a href="#combat">Combat</a></li>
-	<li><a href="#example">Example of combat</a></li>
 </ul>
 
 <h2>TODO</h2>
@@ -93,6 +93,7 @@ You lose if you get destroyed :).
 <?php include "../bits/end_section.inc" ?>
 <?php include "../bits/start_section.inc" ?>
 
+<a name="economy"></a>
 <h2>Economy</h2>
 <p>
 Unlike MiniSec, planets in MTSec are not all equal. The two major changes are
@@ -141,6 +142,7 @@ a scout takes 6 production points to produce, while an Argonaut will take
 100 production points to produce.
 </p>
 
+<a name="economy_resources"></a>
 <h3>Resources</h3>
 <p>
 There following resources exist in MTSec. Resources are used to make all
@@ -194,6 +196,7 @@ For example:
 </ul>
 </p>
 
+<a name="economy_examples"></a>
 <h3>Examples</h3>
 
 <h4>Example: No Orders - 1 resource</h4>
@@ -235,79 +238,7 @@ NOp orders can also be used to force all production points for that turn to go t
 <?php include "../bits/end_section.inc" ?>
 <?php include "../bits/start_section.inc" ?>
 
-<h1>Combat</h1>
-
-<h2>When does it occur?</h2>
-<p>
-Combat occurs when two enemies are at the same location. Combat can occur
-between any number of parties at the same time. 
-</p>
-<h2>The process</h2>
-<p>
-Like MiniSec, if two fleets owned by the same player are at the same location 
-when combat occurs, they will be merged for the period of combat.
-</p><p>
-Each ship fires it's weapons. All weapons are fired simultaneously, and 
-damage is then resolved simultaneously too. This means that both a ship 
-and it's destroyer can be destroyed in one turn.
-</p><p>
-</p>
-
-<h2>Resolving Damage</h2>
-<p>
-Resolving damage is quite complicated. Each amount of damage is considered
-a whole block. Damage is resolved from the largest block downwards. The damage
-is then applied to the ship with the most hit points.
-</p><p>
-For example:
-Damage to be applied
-<ul>
-	<li>8HP of Damage</li>
-	<li>5HP of Damage</li>
-	<li>3HP of Damage</li>
-</ul>
-Ships to apply damage to.
-<ul>
-	<li>Battleship - 11 HP</li>
-	<li>Damaged Battleship - 6HP left</li>
-	<li>Scout - 2HP</li>
-</ul>
-The damage is applied the following way,
-<ul>
-	<li>8HP is applied to the Battleship - reducing it's HP to 3HP</li>
-	<li>5HP is applied to the Damaged Battleship (as it now has the most HP) - reducing it to 1HP</li>
-	<li>3HP is applied to the Battleship (as it now has the most HP) - reducing it to 0HP and destroying it.</li>
-</ul>
-</p>
-
-<h3>Armour</h3>
-<p>
-Amour directly reduces a percentage of the damage which would be applied to 
-a ship from torpedoes. Missile damage goes straight through the armour.
-</p><p>
-For example, a ship has 30% Armour would reduce damage by 30% rounded up. 
-IE 8HPs of damage would be reduced to 5HP (8-ceil(8*0.3)).
-</p>
-
-<h3>Dodge</h3>
-<p>
-Dodge prevents damage from taking effect. Only damage from torpedo's can
-be dodged. The chance of dodging a torpedo is determined by the
-following formula:
-<blockquote>
-	Chance to dodge = Minimum(Torpedo Size / (Ship Size/Ship Speed), 100) %
-</blockquote>
-</p>
-
-<h3>Capacity</h3>
-<p>
-A ship only has a limited supply of missiles or torpedo's. Each time a ship
-fires a weapon, one is subtracted from it's stores. A weapon can then be
-restocked at friendly planets.
-</p>
-
-<?php include "../bits/end_section.inc" ?>
-<?php include "../bits/start_section.inc" ?>
+<a name="ships"></a>
 <h1>Ships</h1>
 <p>Ships are how you fight your wars.</p>
 
@@ -328,6 +259,7 @@ The other important ship stats are:
 	<li> Speed, How fast a ship is - Also dictates how good you are at dodging torpedoes.</li>
 </ul>
 
+<a name="ships_types"></a>
 <h2>Ship Types</h2>
 <p>
 There are 10 ship types. Most of the lighter ships have a normal and 
@@ -443,6 +375,7 @@ The types are listed below in order of size:
 <tr><td align="right">Argonaut 				</td><td align="center">8		</td><td align="center">1000	</td></tr>
 </table>
 
+<a name="ships_weapons"></a>
 <h2>Weapons</h2>
 <p>
 There are five types of missiles and six types of torpedoes. Each different weapon can 
@@ -494,7 +427,7 @@ Like missile each torpedo can only destroy one ship at a time.
 	<tr><td align="right">Xi      </td><td align="center">200</td></tr>
 </table>
 
-<h2>Number of Weapons</h2>
+<h3>Number of Weapons</h3>
 <p>
 All Ships can only carry a single type of missile or torpedo. For example,
 a ship could carry two different Omega torpedoes, but not an Omega torpedo
@@ -514,6 +447,7 @@ hold can be calculated using the following formula:
 </blockquote>
 </p>
 
+<a name="ships_components"></a>
 <h2>Other Components</h2>
 <h3>Armour</h3>
 <p>
@@ -526,6 +460,80 @@ Armour is just plating put on the ship. Armour takes 10 units of space for every
 A colonisation module takes up 100 units of space. It allows a ship to colonise
 a planet. The ship is destroy in the colonisation process all resources used in 
 the ship are lost.
+</p>
+
+<?php include "../bits/end_section.inc" ?>
+<?php include "../bits/start_section.inc" ?>
+
+<h1>Combat</h1>
+
+<h2>When does it occur?</h2>
+<p>
+Combat occurs when two enemies are at the same location. Combat can occur
+between any number of parties at the same time. 
+</p>
+<h2>The process</h2>
+<p>
+Like MiniSec, if two fleets owned by the same player are at the same location 
+when combat occurs, they will be merged for the period of combat.
+</p><p>
+Each ship fires it's weapons. All weapons are fired simultaneously, and 
+damage is then resolved simultaneously too. This means that both a ship 
+and it's destroyer can be destroyed in one turn.
+</p><p>
+</p>
+
+<h2>Resolving Damage</h2>
+<p>
+Resolving damage is quite complicated. Each amount of damage is considered
+a whole block. Damage is resolved from the largest block downwards. The damage
+is then applied to the ship with the most hit points.
+</p><p>
+For example:
+Damage to be applied
+<ul>
+	<li>8HP of Damage</li>
+	<li>5HP of Damage</li>
+	<li>3HP of Damage</li>
+</ul>
+Ships to apply damage to.
+<ul>
+	<li>Battleship - 11 HP</li>
+	<li>Damaged Battleship - 6HP left</li>
+	<li>Scout - 2HP</li>
+</ul>
+The damage is applied the following way,
+<ul>
+	<li>8HP is applied to the Battleship - reducing it's HP to 3HP</li>
+	<li>5HP is applied to the Damaged Battleship (as it now has the most HP) - reducing it to 1HP</li>
+	<li>3HP is applied to the Battleship (as it now has the most HP) - reducing it to 0HP and destroying it.</li>
+</ul>
+</p>
+
+<h3>Armour</h3>
+<p>
+Amour directly reduces a percentage of the damage which would be applied to 
+a ship from torpedoes. Missile damage goes straight through the armour.
+</p><p>
+For example, a ship has 30% Armour would reduce damage by 30% rounded up. 
+IE 8HPs of damage would be reduced to 5HP (8-ceil(8*0.3)).
+</p>
+
+<h3>Dodge</h3>
+<p>
+Dodge prevents damage from taking effect. Only damage from torpedo's can
+be dodged. The chance of dodging a torpedo is determined by the
+following formula:
+<blockquote>
+	Chance to dodge = Minimum(Torpedo Size / (Ship Size/Ship Speed), 100) %
+</blockquote>
+</p>
+
+<h3>Capacity</h3>
+<p>
+A ship only has a limited supply of missiles or torpedo's. Each time a ship
+fires a weapon, one is subtracted from it's stores. A weapon can then be
+restocked at friendly planets.
 </p>
 
 <?php include "../bits/end_section.inc" ?>
