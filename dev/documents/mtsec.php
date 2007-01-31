@@ -84,7 +84,7 @@ definitions are as follows:
 <ul>
 	<li>All your planets are destroyed.</li>
 	<li>Your home world is destroyed.</li>
-	<li>All your planets are destroyed and you have no frigates.</li>
+	<li>All your planets are destroyed and you have no ship carying the colonisation module.</li>
 	<li>All your planets and fleets are destroyed.</li>
 </ul>
 You lose if you get destroyed :).
