@@ -68,7 +68,7 @@ lying about.
 </p><p>
 However you aren't the only fledgling race to exist, others too are now racing to lay 
 claim to the galaxy. In fact you will have to continue the war that had just ended to
-ensure your own races survival!
+ensure your own race's survival!
 </p>
 
 <?php include "../bits/end_section.inc" ?>
@@ -78,7 +78,7 @@ ensure your own races survival!
 <h2>Winning</h2>
 
 <p>
-Like MiniSec the game is won by destroying all other players. The definition of
+Like in MiniSec, the game is won by destroying all other players. The definition of
 players being destroyed is server (or even game) dependent. Some possible 
 definitions are as follows:
 <ul>
@@ -94,9 +94,9 @@ You lose if you get destroyed :).
 <?php include "../bits/start_section.inc" ?>
 
 <a name="economy"></a>
-<h2>Economy</h2>
+<h1>Economy</h1>
 <p>
-Unlike MiniSec, planets in MTSec are not all equal. The two major changes are
+Unlike in MiniSec, planets in MTSec are not all equal. The two major changes are
 the longer you control a planet the more production capability it has. 
 As well, not all planets have the same resources. Some planets are rich in 
 certain resources, others are poor in every resource.
@@ -132,7 +132,7 @@ the number will always be round down.
 </p>
 <h4>Build Weapons</h4>
 <p>
-Each weapon takes one production point to produce. Plus it also consumed the 
+Each weapon takes one production point to produce. Plus it also consumes the 
 resources to produce the weapon.
 </p>
 <h4>Build Ships</h4>
@@ -143,18 +143,18 @@ a scout takes 6 production points to produce, while an Argonaut will take
 </p>
 
 <a name="economy_resources"></a>
-<h3>Resources</h3>
+<h2>Resources</h2>
 <p>
 There following resources exist in MTSec. Resources are used to make all
 types of explosives.
 
 <table>
 <tr>
-	<td align="right">Name</td>
-	<td align="center">Size per kt</td>
-	<td align="center">Rarity</td>
-	<td align="center">Explosiveness per kt</td>
-	<td align="center">Description</td>
+	<th align="right">Name</th>
+	<th align="center">Size per kt</th>
+	<th align="center">Rarity</th>
+	<th align="center">Explosiveness per kt</th>
+	<th align="center">Description</th>
 </tr>
 
 <tr><td align="right">Uranium 			</td><td align="center">4	</td><td align="center">Common 			</td><td align="center">1	</td><td align="center">Most basic nuclear explosive</td></tr>
@@ -197,7 +197,7 @@ For example:
 </p>
 
 <a name="economy_examples"></a>
-<h3>Examples</h3>
+<h2>Examples</h2>
 
 <h4>Example: No Orders - 1 resource</h4>
 <ul>
@@ -247,7 +247,7 @@ NOp orders can also be used to force all production points for that turn to go t
 All ships have 3 stats used in combat:
 </p>
 <ul>
-	<li> Hit Points, The amount of damage a ship can take</li>
+	<li> Hit Points (HP), The amount of damage a ship can take</li>
 	<li> Armour, A defensive quality (which reduces damage from incoming weapons)</li>
 	<li> Weapons, The type of missile/torpedo a ship has</li>
 </ul>
@@ -263,7 +263,7 @@ The other important ship stats are:
 <h2>Ship Types</h2>
 <p>
 There are 10 ship types. Most of the lighter ships have a normal and 
-battle variety. The battle variety is generally has more armor but are
+battle variety. The battle variety generally has more armor but is
 slower.
 </p><p>
 The types are listed below in order of size:
@@ -290,7 +290,7 @@ The types are listed below in order of size:
 		Advanced Battle Scout
 		<p>
 			The advanced battle scout uses advanced technology to pack a bigger punch
-			into a smaller and faster package. There speed makes them deadly against torpedo
+			into a smaller and faster package. Their speed makes them deadly against torpedo
 			based ships but are still relatively weak against missile technologies.
 		</p>
 	</li>
@@ -298,8 +298,8 @@ The types are listed below in order of size:
 	<li>
 		Frigate
 		<p>
-			What a frigate doesn't have in its stats is made up by the cheapness they can be 
-			produced. Numbers of frigates can easily destroy larger ships. They also advantageous
+			What a frigate doesn't have in its stats is made up by the cheapness it can be 
+			produced at. Numbers of frigates can easily destroy larger ships. They're also advantageous
 			against torpedoes as only one ship can be destroyed per torpedo.
 		</p>
 	</li>
@@ -316,14 +316,14 @@ The types are listed below in order of size:
 		Destroyer
 		<p>
 			Destroyers are the main offensive weapon in any fleet. More expensive then frigates
-			they have much larger armor are can withstand a battering. 
+			they have much larger armor and can withstand a battering. 
 		</p>
 	</li>
 
 	<li>
 		Battle Destroyer
 		<p>
-			Battle Destroyers are a poor mans battleship. Smaller groups of battle destroyers can
+			Battle Destroyers are a poor man's battleship. Smaller groups of battle destroyers can
 			easily devastate larger groups of destroyers (have more firepower and armor) and can 
 			hold their own against similar number of battleships. Their biggest drawback is their 
 			speed, this is because the smaller engines (compared to battleships) strain to provide
@@ -334,18 +334,18 @@ The types are listed below in order of size:
 	<li>
 		Battleship
 		<p>
-			Battleships are hugely armor and armed. Able to dispatch huge numbers of missiles
-			or torpedo in a very short period. Even a single battleship can quickly turn the
+			Battleships are hugely armored and armed. Able to dispatch huge numbers of missiles
+			or torpedoes in a very short period. Even a single battleship can quickly turn the
 			tide in a battle. These ships are also surprisingly fast due to the huge engines.
-			However without support battleships can easily fall prey to torpedoes.
+			However, without support battleships can easily fall prey to torpedoes.
 		</p>
 	</li>
 
 	<li>		
 		Dreadnought
 		<p>
-			Dreadnoughts are the largest movable ship available. They are so large that equipping 
-			with engines is a huge problem, this means that they are extremely slow. No other ship
+			Dreadnoughts are the largest movable ships available. They are so large that equipping 
+			with engines is a huge problem. This means that they are extremely slow. No other ship
 			can boast about so much firepower in one package.
 		</p>
 	</li>
@@ -354,7 +354,7 @@ The types are listed below in order of size:
 		Argonaut
 		<p>
 			These ships, commonly called "death stars", are so big that they can't break orbit
-			of the planet they are constructed on. Normally considers a space station instead of a
+			of the planet they are constructed on. Normally considered a space station instead of a
 			ship they hail doom on any ship trying to attack the planet they orbit. They however
 			are unable to avoid even the slowest moving torpedo's.
 		</p>
@@ -362,7 +362,7 @@ The types are listed below in order of size:
 </ul>
 
 <table>
-<tr><td align="right">Name 					</td><td align="center">Speed	</td><td align="center">Size	</td></tr>
+<tr><th align="right">Name 					</th><th align="center">Speed	</th><th align="center">Size	</th></tr>
 <tr><td align="right">Scout					</td><td align="center">100		</td><td align="center">60		</td></tr>
 <tr><td align="right">Battle Scout			</td><td align="center">75		</td><td align="center">88		</td></tr>
 <tr><td align="right">Advanced Battle Scout	</td><td align="center">86		</td><td align="center">133		</td></tr>
@@ -383,7 +383,7 @@ carry a different amount of explosives. Missiles can only carry a single type of
 explosive material, torpedoes can carry a mixture of explosive materials. 
 </p><p>
 The resources needed for the super structure of the weapon is insignificant compared
-to the resources for the explosives, this means that the amount of explosives determines 
+to the resources for the explosives. This means that the amount of explosives determines 
 what is actually required to build the weapon.
 </p><p>
 The formula to calculate the amount of explosive material that can fit in a weapon
@@ -401,7 +401,7 @@ a missile.
 Each missile can only destroy one ship at a time.
 </p>
 <table>
-	<tr><td align="right" width="100">Name</td><td align="center" width="100">Size</td></tr>
+	<tr><th align="right" width="100">Name</th><th align="center" width="100">Size</th></tr>
 	<tr><td align="right">Alpha  </td><td align="center">3 </td></tr>
 	<tr><td align="right">Beta   </td><td align="center">6 </td></tr>
 	<tr><td align="right">Gamma  </td><td align="center">8 </td></tr>
@@ -418,7 +418,7 @@ torpedoes can be dodged.
 Like missile each torpedo can only destroy one ship at a time.
 </p>
 <table>
-	<tr><td align="right" width="100">Name</td><td align="center" width="100">Size</td></tr>
+	<tr><th align="right" width="100">Name</th><th align="center" width="100">Size</th></tr>
 	<tr><td align="right">Omega   </td><td align="center">40 </td></tr>
 	<tr><td align="right">Upsilon </td><td align="center">60 </td></tr>
 	<tr><td align="right">Tau     </td><td align="center">80 </td></tr>
@@ -434,8 +434,8 @@ a ship could carry two different Omega torpedoes, but not an Omega torpedo
 and a Upsilon Torpedo. This is because a ship is created with launch tubes
 of only one size and hence is unable to launch other sizes.
 </p><p>
-Each missiles/torpedoes takes up space in a ship. Each missile takes up
-the equivalent size while torpedoes take up a quarter of their side.
+Each missile/torpedo takes up space in a ship. Each missile takes up
+the equivalent size while torpedoes take up a quarter of their size.
 
 For example, the maximum number of missiles and torpedoes a ship can 
 hold can be calculated using the following formula:
@@ -465,6 +465,7 @@ the ship are lost.
 <?php include "../bits/end_section.inc" ?>
 <?php include "../bits/start_section.inc" ?>
 
+<a name="combat"></a>
 <h1>Combat</h1>
 
 <h2>When does it occur?</h2>
@@ -474,10 +475,10 @@ between any number of parties at the same time.
 </p>
 <h2>The process</h2>
 <p>
-Like MiniSec, if two fleets owned by the same player are at the same location 
+Like in MiniSec, if two fleets owned by the same player are at the same location 
 when combat occurs, they will be merged for the period of combat.
 </p><p>
-Each ship fires it's weapons. All weapons are fired simultaneously, and 
+Each ship fires its weapons. All weapons are fired simultaneously, and 
 damage is then resolved simultaneously too. This means that both a ship 
 and it's destroyer can be destroyed in one turn.
 </p><p>
@@ -515,13 +516,13 @@ The damage is applied the following way,
 Amour directly reduces a percentage of the damage which would be applied to 
 a ship from torpedoes. Missile damage goes straight through the armour.
 </p><p>
-For example, a ship has 30% Armour would reduce damage by 30% rounded up. 
+For example, a ship has 30% Armour which would reduce damage by 30% rounded up. 
 IE 8HPs of damage would be reduced to 5HP (8-ceil(8*0.3)).
 </p>
 
 <h3>Dodge</h3>
 <p>
-Dodge prevents damage from taking effect. Only damage from torpedo's can
+Dodge prevents damage from taking effect. Only damage from torpedoes can
 be dodged. The chance of dodging a torpedo is determined by the
 following formula:
 <blockquote>
@@ -531,8 +532,8 @@ following formula:
 
 <h3>Capacity</h3>
 <p>
-A ship only has a limited supply of missiles or torpedo's. Each time a ship
-fires a weapon, one is subtracted from it's stores. A weapon can then be
+A ship only has a limited supply of missiles or torpedoes. Each time a ship
+fires a weapon, one is subtracted from its stores. A weapon can then be
 restocked at friendly planets.
 </p>
 
