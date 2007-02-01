@@ -38,7 +38,7 @@ MTSec will <b>NOT</b> include the following features:
 	<ul>
 		<li><a href="#ships_types">Ship Types</a></li>
 		<li><a href="#ships_weapons">Weapons</a></li>
-		<li><a href="#ships_components">Other Componenets</a></li>
+		<li><a href="#ships_components">Components</a></li>
 	</ul>
 	<li><a href="#combat">Combat</a></li>
 </ul>
@@ -84,7 +84,7 @@ definitions are as follows:
 <ul>
 	<li>All your planets are destroyed.</li>
 	<li>Your home world is destroyed.</li>
-	<li>All your planets are destroyed and you have no ship carying the colonisation module.</li>
+	<li>All your planets are destroyed and you have no ship carrying the colonisation module.</li>
 	<li>All your planets and fleets are destroyed.</li>
 </ul>
 You lose if you get destroyed :).
@@ -386,7 +386,8 @@ The resources needed for the super structure of the weapon is insignificant comp
 to the resources for the explosives. This means that the amount of explosives determines 
 what is actually required to build the weapon.
 </p><p>
-The formula to calculate the amount of explosive material that can fit in a weapon
+Explosives can only be carried in whole amounts. The formula to calculate the amount of 
+explosive material that can fit in a weapon
 <blockquote>
 	Amount of explosive material = Floor( Missile Size / Explosive Size )
 </blockquote>
@@ -427,39 +428,50 @@ Like missile each torpedo can only destroy one ship at a time.
 	<tr><td align="right">Xi      </td><td align="center">200</td></tr>
 </table>
 
-<h3>Number of Weapons</h3>
-<p>
-All Ships can only carry a single type of missile or torpedo. For example,
-a ship could carry two different Omega torpedoes, but not an Omega torpedo
-and a Upsilon Torpedo. This is because a ship is created with launch tubes
-of only one size and hence is unable to launch other sizes.
-</p><p>
-Each missile/torpedo takes up space in a ship. Each missile takes up
-the equivalent size while torpedoes take up a quarter of their size.
-
-For example, the maximum number of missiles and torpedoes a ship can 
-hold can be calculated using the following formula:
-<blockquote>
-	Number of Missiles = Floor(Ship Size / Missile Size)
-</blockquote>
-<blockquote>
-	Number of Torpedoes = Floor(Ship Size / (Torpedo Size/4))
-</blockquote>
-</p>
-
 <a name="ships_components"></a>
-<h2>Other Components</h2>
-<h3>Armour</h3>
+<h2>Components</h2>
 <p>
-Armour is just plating put on the ship. Armour takes 10 units of space for every
-0.1% of armour.
-</p>
-
-<h3>Colonisation Module</h3>
-<p>
-A colonisation module takes up 100 units of space. It allows a ship to colonise
-a planet. The ship is destroy in the colonisation process all resources used in 
-the ship are lost.
+A ship is made up of components. The main component is the hull which 
+determines the ship's type and number of other components which can
+be place in the ship.
+</p><p>
+Each hull has a "size", this property dictates how much space is
+available for components to be put in. Each component will take up
+a certain amount of space equal to it's size. Any combination of
+components which fits within a ship is allowed (fractional amounts
+are not allowed).
+</p><p>
+The following components exist:
+<table>
+	<tr><th>Component Name</th><th>Component Size</th><th>Abilities</th></tr>
+	<tr>
+		<td>Launch Tube</td>
+		<td>Same size as the missile/torpedo it will contain. (IE A tube to launch "Alpha Missiles" is size 3)</td>
+		<td>Allows ship to launch one missile each round in combat. Allows ship to store one torpedo/missile.</td>
+	</tr>
+	<tr>
+		<td>Missile Rack</td>
+		<td>Same size as the missile it will contain.</td>
+		<td>Allows ship to store 2 missiles.</td>
+	</tr>
+	<tr>
+		<td>Torpedo Rack</td>
+		<td>Same size as the torpedo it will contain.</td>
+		<td>Allows ship to store 4 torpedoes.</td>
+	</tr>
+	<tr>
+		<td>Armor</td>
+		<td>10 units</td>
+		<td>Reduces the damage taken by 0.1%.</td>
+	</tr>
+	<tr>
+		<td>Colonisation Module</td>
+		<td>100 units</td>
+		<td>Allows ship to colonise a planet. Each extra colonisation module 
+			on the ship means the planet produces 1 extra production point 
+			from the round it was colonised.</td>
+	</tr>
+</table>
 </p>
 
 <?php include "../bits/end_section.inc" ?>
@@ -539,5 +551,7 @@ restocked at friendly planets.
 
 <?php include "../bits/end_section.inc" ?>
 <?php include "../bits/end_page.inc" ?>
+
+
 
 
