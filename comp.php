@@ -43,11 +43,79 @@
 <a name="news"></a>
 <h1>News</h1>
 
+<h2>Help for all you AI coders</h2>
+<p>by Mithro</p>
+<p>
+There have been a lot of interesting updates which should help you produce an
+even better AI. There have been a lot of interesting updates which should help
+you produce an even better AI.
+</p><p>
+<h3>Rusty Russel on Wesnoth's AI</h3>
+The first update is a high quality video of the AI section of Rusty's Gaming
+Miniconf talk. You can find the video 
+<a href="/~tim/rusty-ai.ogg">here</a>. You can also find the full talk and the
+other talk from the Gaming Miniconf at the following locations.
+<ul>
+	<li><a href="http://mirror.linux.org.au/linux.conf.au/2007/video/tuesday/">Direct download from LCA Video mirror (low quality version only)</a> or</li>
+	<li><a href="http://lester.mithis.com/~bittorrent/">Bittorrents (high quality and low quality)</a></li>
+</ul>
+</p>
+<p>
+<h3>MiniSec Battle Simulator</h3>
+As part if trying to fix MiniSec support in <a href="/tp/downloads.php#tpserver-py">tpserver-py</a>
+I've had to redo the Battle Simulator. It now <b>runs standalone</b> from the
+server infrastructure. You can download the required file
+<a href="http://darcs.thousandparsec.net/repos/tpserver-py/tp/server/rules/minisec/actions/FleetCombat.py">directly</a> or 
+<a href="/tp/dev/rcs.php">check out tpserver-py from darcs</a>. 
+It should be useful for getting a feel for how battles occur.
+</p><p>
+<b>WARNING:</b>This simulator is not exactly the same as the code running in
+tpserver-cpp (which will be used in the competition battles).
+</p>
+<p>
+<h3>tpserver-cpp config file</h3>
+Lee has created a server config file which produces a situation that will be
+very similar to the final config. You can get a copy of this config file 
+<a href="/~tim/ai_comp.conf">here</a>.
+</p>
+
+</p><p>
+<h3>Rusty Russel on Wesnoth's AI</h3>
+The first update is a high quality video of the AI section of Rusty's Gaming
+Miniconf talk. You can find the video 
+<a href="/~tim/rusty-ai.ogg">here</a>. You can also find the full talk and the
+other talk from the Gaming Miniconf at the following locations.
+<ul>
+	<li><a href="http://mirror.linux.org.au/linux.conf.au/2007/video/tuesday/">Direct download from LCA Video mirror (low quality version only)</a> or</li>
+	<li><a href="http://lester.mithis.com/~bittorrent/">Bittorrents (high quality and low quality)</a></li>
+</ul>
+</p>
+<p>
+<h3>MiniSec Battle Simulator</h3>
+As part if trying to fix MiniSec support in <a href="/tp/downloads.php#tpserver-py">tpserver-py</a>
+I've had to redo the Battle Simulator. It now <b>runs standalone</b> from the
+server infrastructure. You can download the required file
+<a href="http://darcs.thousandparsec.net/repos/tpserver-py/tp/server/rules/minisec/actions/FleetCombat.py">directly</a> or 
+<a href="/tp/dev/rcs.php">check out tpserver-py from darcs</a>. 
+It should be useful for getting a feel for how battles occur.
+</p><p>
+<b>WARNING:</b>This simulator is not exactly the same as the code running in
+tpserver-cpp (which will be used in the competition battles).
+</p>
+<p>
+<h3>tpserver-cpp config file</h3>
+Lee has created a server config file which produces a situation that will be
+very similar to the final config. You can get a copy of this config file 
+<a href="/~tim/ai_comp.conf">here</a>.
+</p>
+<h6>Friday, 2nd Feb 2007</h6>
+
 <h2>End date wrong!</h2>
 <p>by Mithro</p>
 <p>
-It looks like I stuffed up, the due date for entries is the <b>31st of March</b> not the 1st of March. This
-gives you a whole extra month to make your AI even better.
+It looks like I stuffed up, the due date for entries is the <b>31st of March</b>
+not the 1st of March. This gives you a whole extra month to make your AI even
+better.
 </p>
 <h6>Monday, 22nd Jan 2007</h6>
 
@@ -212,7 +280,7 @@ It works just like the other mailing lists/forums.
 </p><p>
 	<a name="forum"></a>
 	<h4>Forum</h4>
-	There is also an <a href="http://www.thousandparsec.net/forums/viewforum.php?f=6">internet forum</a>
+	There is also an <a href="http://www.thousandparsec.net/forums/viewforum.php?f=6">Internet forum</a>
 	which is linked to the mailing list like other forums.
 </p>
 
@@ -233,15 +301,15 @@ It works just like the other mailing lists/forums.
 	All code must be released under an OSI approved Open Source License which 
 	is GPL compatible.
 </p><p>
-	All AI clients must run via normal client connections. Intergrating with the
+	All AI clients must run via normal client connections. Integrating with the
 	server is not an option.
 </p><p>
 	All code must be run on Ubuntu Dapper Drake using only tools and libraries
 	with OSI approved licenses. (For example, Don't use Java functions which are 
-	not implimented in the free versions.)
+	not implemented in the free versions.)
 </p><p>
 	Any programming language which can runs on Ubuntu Dapper Drake and has
-	an implimentation with an OSI approved license can be used. Note however
+	an implementation with an OSI approved license can be used. Note however
 	that some languages naturally rate low on the Readability category. 
 </p><p>
 	Judges or their close family will not be allowed to participate.

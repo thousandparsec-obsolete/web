@@ -1,0 +1,36 @@
+
+<h2>Help for all you AI coders.</h2>
+<p>by Mithro</p>
+<p>
+There have been a lot of interesting updates which should help you produce an
+even better AI. You have less then two months left now, so get hacking! The due
+date is the <b>31st of March</b>.
+</p><p>
+<h3>Rusty Russel on Wesnoth's AI</h3>
+The first update is a high quality video of the AI section of Rusty's Gaming
+Miniconf talk. You can find the video 
+<a href="/~tim/rusty-ai.ogg">here</a>. You can also find the full talk and the
+other talk from the Gaming Miniconf at the following locations.
+<ul>
+	<li><a href="http://mirror.linux.org.au/linux.conf.au/2007/video/tuesday/">Direct download from LCA Video mirror (low quality version only)</a> or</li>
+	<li><a href="http://lester.mithis.com/~bittorrent/">Bittorrents (high quality and low quality)</a></li>
+</ul>
+</p>
+<p>
+<h3>MiniSec Battle Simulator</h3>
+As part if trying to fix MiniSec support in <a href="/tp/downloads.php#tpserver-py">tpserver-py</a>
+I've had to redo the Battle Simulator. It now <b>runs standalone</b> from the
+server infrastructure. You can download the required file
+<a href="http://darcs.thousandparsec.net/repos/tpserver-py/tp/server/rules/minisec/actions/FleetCombat.py">directly</a> or 
+<a href="/tp/dev/rcs.php">check out tpserver-py from darcs</a>. 
+It should be useful for getting a feel for how battles occur.
+</p><p>
+<b>WARNING:</b>This simulator is not exactly the same as the code running in
+tpserver-cpp (which will be used in the competition battles).
+</p>
+<p>
+<h3>tpserver-cpp config file</h3>
+Lee has created a server config file which produces a situation that will be
+very similar to the final config. You can get a copy of this config file 
+<a href="/~tim/ai_comp.conf">here</a>.
+</p>
