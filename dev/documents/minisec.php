@@ -156,7 +156,8 @@ much bigger and more armed than frigates they can move faster.
 <p>
 Colonised Planets can also participate in combat with anti-ship batteries.
 Each battery is equivalent to a battleship and can be destroyed separately.
-This means they also behave exactly as multiple battleships.
+Planets behave exactly as multiple battleships except they are the last
+items to be targeted.
 </p><p>
 Normal planets are considered to be equivalent to <b>2 battleships</b>. Home
 world planet (The planet you start with at the beginning of the game) is
