@@ -26,7 +26,7 @@ cd $DARCSROOT/web/screenshots
 ./makethumbs.sh
 
 #generate content of protocolxml.php from darcs
-xsltproc $DARCSROOT/web/dev/documents/protocol2html.xsl $DARCSROOT/libtpproto2-py/protocol.xml > $DARCSROOT/web/dev/bits/protocolxml.inc
+xsltproc $DARCSROOT/web/dev/documents/protocol2html.xsl $DARCSROOT/documents/protocol/protocol.xml > $DARCSROOT/web/dev/bits/protocolxml.inc
 
 # Run the sloc2html update
 cd $DARCSROOT/web/utils
