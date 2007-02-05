@@ -25,6 +25,11 @@
 			Thousand Parsec on Wikipedia
 		</a>
 	</li>
+	<li>
+		<a href="http://wiki.gible.net/index.php?title=Thousand_Parsec">
+			Thousand Parsec on Stars!wiki
+		</a>
+	</li>
 </ul>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
