@@ -30,6 +30,11 @@
 			Thousand Parsec on Stars!wiki
 		</a>
 	</li>
+	<li>
+		<a href="http://www.frappr.com/thousandparsec">
+			Thousand Parsec Frappr Map
+		</a> (see where developers and players come from)
+	</li>
 </ul>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
