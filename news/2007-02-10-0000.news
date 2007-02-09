@@ -12,5 +12,7 @@
 <p>
 	Libtprl 0.1.2 is on the downloads page and is on our SF downloads page too. The Darcs repo is 
 	libtprl and the tag is 
-	LIBTPRL_0_1_2. Feedback and suggestions are always welcome.
+	LIBTPRL_0_1_2a. Feedback and suggestions are always welcome.
 </p>
+<p>Update: I made a little mistake, but caught it quickly. Please contact me if you start having strange bugs
+after installing the new library. C++ library versioning is not fun.</p>
