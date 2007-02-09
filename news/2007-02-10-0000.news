@@ -4,9 +4,9 @@
 <p>
 	Changes to the actual library this time. New methods added and some small cleanup. Added were
 	methods for getting the current commandset, setting whether readline catches signals, redisplaying
-	the line and force rdisplaying the line, and setting the finish of completions (disabling the filename
+	the line and force redisplaying the line, and setting the finish of completions (disabling the filename
 	completion).
-	All 0.1.x releases will be interface compatable. Hopefully documentation 
+	All 0.1.x releases will be interface compatible. Hopefully documentation 
 	makes it in soon.
 </p>
 <p>
