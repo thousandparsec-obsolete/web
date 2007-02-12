@@ -35,6 +35,7 @@
 			<li><a href="#forum">Web Forum</a></li>
 		</ul>
 	</li>
+	<li><a href="#links">Helpful Links</a></li>
 	<li><a href="#terms">Other Terms</a></li>
 </ul>
 
@@ -42,6 +43,14 @@
 <?php include "bits/start_section.inc" ; ?>
 <a name="news"></a>
 <h1>News</h1>
+
+<h2>New Links Section</h2>
+<p>by Mithro</p>
+<p>
+I have added a new Links section to this page which should make it easier to
+find all the helpful libraries which already exist.
+</p>
+<h6>Friday, 12nd Feb 2007</h6>
 
 <h2>Help for all you AI coders</h2>
 <p>by Mithro</p>
@@ -253,6 +262,101 @@ It works just like the other mailing lists/forums.
 	There is also an <a href="http://www.thousandparsec.net/forums/viewforum.php?f=6">Internet forum</a>
 	which is linked to the mailing list like other forums.
 </p>
+
+<a name="links"></a>
+<h2>Links</h2>
+<p>
+	This is just a general AI programming competition. You can use any language,
+Python, C++, Ruby, Haskel (even Perl). Some languages will be easier to use
+however as they have protocol libraries already written for them. Below is a
+list of useful links sorted by language.
+</p>
+<h3>All</h3>
+<dl>
+	<dt><a href="/tp/dev/documents/minisec.php">MiniSec Definition Documentation</a></dt>
+	<dd>Defines the rules the game will be run by.</dd>
+	<dt><a href="/tp/dev/documents/protocol3.php">TP Protocol Spec (03)</a></dt>
+	<dd>Defines how to talk to the game servers.</dd>
+	<dt><a href="/tp/dev/documents/objects.php">Object Descriptions</a></dt>
+	<dd>Defines what objects exist in the universe and what properties they have
+on them.</dd>
+</dl>
+
+<h3>Python</h3>
+<dl>
+	<dt><h4>Python Thousand Parsec Protocol Library</h4></dt>
+<dd>A library for connecting to Thousand Parsec servers and issuing commands.
+Works in both blocking and non-blocking mode.
+	<dl>
+		<dt><a href="/tp/downloads.php#libtpproto-py">Stable Version</a></dt>
+<dd>The current stable version of the library.</dd>
+		<dt><a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=libtpproto-py;a=tree">Darcs Repository</a></dt>
+<dd>The latest, yet to be released code.</dd>
+		<dt><a href="/tp/dev/documents/python/netlib/libtpproto-py-doc/">Online Documentation</a><dt>
+<dd>The latest documentation. Can also be downloaded <a href="/tp/dev/documents/python/netlib/libtpproto-py-doc.tar.gz">here</a>.</dd>
+	</dl>
+</dd>
+
+	<dt><h4>Python Thousand Parsec Client Helper Library</h4></dt>
+<dd>A library which provides a bunch of useful tools for working with Thousand
+Parsec servers. Including:
+	<ul>
+		<li>Incremental Download using a reloadable cache.</li>
+		<li>Threading for Network, Finding Servers, etc.</li>
+		<li>Support for MVC type systems.</li>
+	</ul>
+	<dl>
+		<dt><a href="/tp/downloads.php#libtpclient-py">Stable Version</a></dt>
+<dd>The current stable version of the library.</dd>
+		<dt><a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=libtpclient-py;a=tree">Stable Darcs Repository</a></dt>
+<dd>The latest, yet to be released code.</dd>
+		<dt><a href="/tp/dev/documents/python/stable/python-tp-doc">Stable Documentation</a><dt>
+<dd>The latest documentation. Can also be downloaded <a
+href="/tp/dev/documents/python/stable/python-tp-doc.tar.gz">here</a>.</dd>
+
+		<dt><a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=libtpclient-py-dev;a=tree">Unstable Darcs Repository</a></dt>
+<dd>The latest code including a bunch of changes which break a lot of
+things.</dd>
+		<dt><a href="/tp/dev/documents/python/dev/python-tp-doc">Unstable Documentation</a><dt>
+<dd>Documentation for the unstable version. Can also be downloaded <a
+href="/tp/dev/documents/python/dev/python-tp-doc.tar.gz">here</a>.</dd>
+	</dl>
+
+	<dt><h4>Python Simple AI Example</h4></dt>
+<dd>A simple AI which I started but never got around to finishing. Uses
+libtpclient-py.
+	<dl>
+		<dt><a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=tpsai-py;a=tree">Darcs Repository</a></dt>
+		<dd></dd>
+	</dl>
+
+</dd>
+</dl>
+
+<h3>C++</h3>
+<dl>
+	<dt><h4>C++ Thousand Parsec Client Protocol Library</h4></dt>
+<dd>A library for connecting to Thousand Parsec servers and issuing commands.
+	<dl>
+		<dt><a href="/tp/downloads.php#libtpproto-cpp">Stable Version</a></dt>
+<dd>The current stable version of the library.</dd>
+		<dt><a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=libtpproto-cpp;a=tree">Darcs Repository</a></dt>
+<dd>The latest, yet to be released code.</dd>
+		<dt><a href="/tp/dev/documents/libtpproto-cpp/html/">Online Documentation</a><dt>
+<dd>The latest documentation. Can also be downloaded <a
+href="/tp/dev/documents/libtpproto-cpp/libtpproto-cpp-doc-cvs.tar.gz">here</a>.</dd>
+</dl>
+</dd>
+
+	<dt><h4>C++ Text Client</h4></dt>
+<dd>A simple client which uses the C++ Protocol Library.
+	<dl>
+		<dt><a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=tpclient-cpptext;a=tree">Darcs Repository</a></dt>
+<dd>The latest, yet to be released code.</dd>
+	</dl>
+</dd>
+
+</dl>
 
 <?php include "bits/end_section.inc" ; ?>
 <?php include "bits/start_section.inc" ; ?>
