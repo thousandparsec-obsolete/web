@@ -1479,6 +1479,7 @@ ul.response ul {
 		<li>0x4 - HTTP Tunneling available on another port</li>
 		<li>0x5 - Support Keep alive frames</li>
 		<li>0x6 - Support server side property calculation</li>
+		<li>0x3E8 - Account creation is allowed</li>
 	</ul>
 </p><p>
 	Optimizations are features which allow the clients to take certain shortcuts.
