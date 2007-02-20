@@ -28,7 +28,7 @@ ul.response ul {
 
 <h1>Protocol Definition for Thousand Parsec</h1>
 <h4>Version 0.3 (Final)</h4>
-<p>Last updated 22 November 2006.</p>
+<p>Last updated 20 February 2007.</p>
 
 <?php
 	include "../bits/end_section.inc";
