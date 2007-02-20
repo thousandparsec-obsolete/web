@@ -1298,8 +1298,6 @@ ul.response ul {
 		<li>a list of UInt32, slot numbers of contained things be requested</li>
 	</ul>
 </p><p>
-	An empty list means you should return all slots.
-</p><p>
 	This packet is used to get things which are in "slots" on a parent. Examples 
 	would be orders (on objects), messages (on boards), etc.
 </p><p>
