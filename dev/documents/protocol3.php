@@ -375,7 +375,7 @@ ul.response ul {
 		<td>data</td>
 	</tr><tr>
 		<td><b>Description and notes</b></td>
-		<td>Always has value "TP02" ("TP" plus version number), no null terminator.</td>
+		<td>Always has value "TP03" ("TP" plus version number), no null terminator.</td>
 		<td>
 			An incrementing number "sequence number". The sequence number
 			should always be one more then the previous frames sequence number.
@@ -389,7 +389,7 @@ ul.response ul {
 		<td>2345</td>
 		<td>2</td>
 		<td>21</td>
-		<td>&lt;5&gt;blah\0&lt;6&gt;blah2\0</td>
+		<td>&lt;4&gt;blah&lt;5&gt;blah2</td>
 	</tr>
 </table>
 </p><p>
@@ -2397,7 +2397,7 @@ ul.response ul {
 	<tr>
 		<td>Client</td>
 		<td>Login</td>
-		<td>&lt;5&gt;blah\0&lt;6&gt;blah2\0</td>
+		<td>&lt;4&gt;blah&lt;5&gt;blah2</td>
 		<td>This is my username and password</td>
 	</tr>
 	<tr>
@@ -2415,7 +2415,7 @@ ul.response ul {
 	<tr>
 		<td>Server</td>
 		<td>Object</td>
-		<td>&lt;0&gt;&lt;0&gt;&lt;9&gt;Universe\0&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
+		<td>&lt;0&gt;&lt;0&gt;&lt;8&gt;Universe&lt;&lt;2^64-1&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
 &lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;&lt;&lt;0&gt;&gt;
 &lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;0&gt;&lt;0&gt;</td>
 		<td>Universe object</td>
