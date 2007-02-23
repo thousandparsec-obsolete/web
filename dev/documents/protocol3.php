@@ -1754,12 +1754,20 @@ ul.response ul {
 	<tr class="row1">
 		<td>String</td>
 		<td class="numeric">7</td>
-		<td>A number textual string</td>
+		<td>A string which includes a maximum specified length.</td>
 		<td>
 			<ul>
-				<li>a Int 32, read only, maximum length of the string</li>
+				<li>a UInt32, read only, maximum length of the string</li>
 				<li>a String, read write, the string</li>
 			</ul>
+<p class="inote">
+Be very careful with this type of argument. It is very easy to confuse the 
+maximum length of the string with the actual length of the string.
+</p><p class="example">
+Example: <pre>&lt;1024&gt; &lt;5&gt; Hello</pre>
+This means that the maximum string length is 1024, and the actual string is
+the 5 character string "Hello".
+</p>
 		</td>
 	</tr>
 	<tr class="row0">
@@ -2343,7 +2351,7 @@ ul.response ul {
 		<li>a UInt64, the last modified time of this property</li>
 		<li>a list of UInt32, categories this property is in</li>
 		<li>a UInt32, rank of the property</li>
-		<li>a String, name of the property (must be a valid tpcl identifier)</li>
+		<li>a String, name of the property (must be a valid TPCL identifier)</li>
 		<li>a Formatted String, display name of the property</li>
 		<li>a Formatted String, description of the property</li>
 		<li>a String, TPCL "Calculate" function (see <a href="ncl.php#Func_PropertyCalculate">TPCL Document</a> for more information)</li>
