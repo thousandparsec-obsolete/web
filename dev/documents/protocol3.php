@@ -1673,8 +1673,8 @@ ul.response ul {
 		<td>The number of turns before something happens.</td>
 		<td>
 			<ul>
-				<li>a Int32, read write, number of turns</li>
-				<li>a Int32, read only, maximum number of turns</li>
+				<li>a UInt32, read write, number of turns</li>
+				<li>a UInt32, read only,  maximum number of turns</li>
 			</ul>
 		</td>
 	</tr>
