@@ -1,0 +1,18 @@
+
+<h2>TPServer-cpp 0.4.1 released.</h2>
+<p>by Lee</p>
+<p>
+	Another big update, mostly bug fixes and small improvements.
+	There are so many little things, go check 
+	the Change Log or darcs shortlog. Big things include:
+	non-blocking tps and https sockets, Mersenne Twister
+	random number generator, better console, support for 
+	guile 1.8, more portable using libltdl. Mithro even has 
+	it running under cygwin for windows (unsupported though).  
+	See the ChangeLog and/or the darcs history for more.
+</p>
+<p>
+	TPServer-cpp 0.4.1 is on the downloads page and will be on our SF downloads page soon. The Darcs repo is 
+	tpserver-cpp and the tag is 
+	TPSERVER_CPP_0_4_1. Feedback and suggestions are always welcome.
+</p>
