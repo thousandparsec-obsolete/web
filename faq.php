@@ -42,6 +42,11 @@
 						I found a bug!
 					</a>
 				</li>
+				<li>
+					<a href="#3-2">
+						Nothing happens when a new turn starts
+					</a>
+				</li>
 			</ol>
 	</li>
 	<li>
@@ -110,6 +115,13 @@ If you don't think you can use the bug tracker just send an email to the
 <a href="/tp/mailman.php/listinfo/">mailing lists</a> or post on the <a href="/forums">forums</a>.
 </p><p>
 Telling us on IRC will increase the likelyhood of the bug getting forgotten!
+</p>
+<a name="3-2"></a>
+<h2>3.2 Nothing happens when a new turn starts</h2>
+<p>
+When a new turn starts the new status of the game is only computed on the server. This new state of the game
+is currently not automatically downloaded by Thousand Parsec client. To update the status you need to select
+the command <em>Download the Universe</em> from the <em>File</em> menu.
 </p>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
