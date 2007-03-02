@@ -31,6 +31,16 @@
 		</a>
 	</li>
 	<li>
+		<a href="http://swik.net/Thousand-Parsec">
+			Thousand Parsec on SWiK
+		</a>
+	</li>
+	<li>
+		<a href="http://www.ohloh.net/projects/3679">
+			Thousand Parsec on Ohloh
+		</a>
+	</li>
+	<li>
 		<a href="http://www.frappr.com/thousandparsec">
 			Thousand Parsec Frappr Map
 		</a> (see where developers and players come from)
