@@ -7,6 +7,9 @@ fi
 cd $DARCSROOT
 TMP=$DARCSROOT/tmp
 
+# Download the latest metaserver stats
+wget "http://metaserver.thousandparsec.net/?action=badge" -O $TMP/meta.inc
+
 # Download the sourceforge rss details (for bugs, etc)
 wget "http://sourceforge.net/export/rss2_projsummary.php?group_id=132078&go" -O $TMP/sf.rss
 # Post process the rss details

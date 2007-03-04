@@ -35,6 +35,11 @@
 </div>
 
 <div class="stats">
+	<b class="small"><a href="http://metaserver.thousandparsec.net/">Current Game Stats:</a></b><br />
+	<?php include(dirname(__FILE__) . "/tmp/meta.inc"); ?>
+</div>
+
+<div class="stats">
 	<b class="small"><a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi">Latest Developments:</a></b><br />
 	<span class="small">On: <?php echo strtr($darcs[0]['when'], array('T' => ' ', 'Z' => ' ')); ?></span><br /> 
 	<span class="small">By: <?php echo preg_replace('/@[A-Za-z0-9.-]*/' , '@...', $darcs[0]['whom']); ?></span><br /> 
@@ -70,21 +75,7 @@
 	</table>
 </div>
 
-<div class="stats" style="
-	background-repeat: no-repeat;
-	background-image: url(/tp/tmp/fm-stats-small.png);
-	background-position: right center;
-	padding-right: 28px;">
-	<b class="small"><a href="http://freshmeat.net/project-stats/view/43366/">Freshmeat Stats:</a></b><br />
-	<span class="small">Rating:</span>          <?php echo $fm_rating; ?>/10.00<br />
-	<span class="small">Vitality Rank:</span>   <?php echo $fm_vitality_rank; ?><br />
-	<span class="small">Popularity Rank:</span> <?php echo $fm_popularity_rank; ?><br />
-<!--
-	<span class="small">Vitality:</span>   <?php echo $fm_vitality_percent; ?>%,
-	<span class="small">Rank</span>        <?php echo $fm_vitality_rank; ?><br />
-	<span class="small">Popularity:</span> <?php echo $fm_popularity_percent; ?>%, 
-	<span class="small">Rank</span>        <?php echo $fm_popularity_rank; ?><br /> 
--->
+<div class="stats">
 </div>
 
 <div class="stats">
@@ -108,6 +99,27 @@
 			<td style="text-align: left"><span class="small">Devs:</span> <?php echo $sf_devs; ?></td>
 		</tr>
 	</table>
+</div>
+
+<div class="stats" style="
+	background-repeat: no-repeat;
+	background-image: url(/tp/tmp/fm-stats-small.png);
+	background-position: right center;
+	padding-right: 28px;">
+	<b class="small"><a href="http://freshmeat.net/project-stats/view/43366/">Freshmeat Stats:</a></b><br />
+	<span class="small">Rating:</span>          <?php echo $fm_rating; ?>/10.00<br />
+	<span class="small">Vitality Rank:</span>   <?php echo $fm_vitality_rank; ?><br />
+	<span class="small">Popularity Rank:</span> <?php echo $fm_popularity_rank; ?><br />
+<!--
+	<span class="small">Vitality:</span>   <?php echo $fm_vitality_percent; ?>%,
+	<span class="small">Rank</span>        <?php echo $fm_vitality_rank; ?><br />
+	<span class="small">Popularity:</span> <?php echo $fm_popularity_percent; ?>%, 
+	<span class="small">Rank</span>        <?php echo $fm_popularity_rank; ?><br /> 
+-->
+</div>
+
+<div class="stats" style="text-align: center">
+<SCRIPT type='text/javascript' language='JavaScript' src='http://www.ohloh.net/projects/3679;badge_js'></SCRIPT>
 </div>
 
 <?php include "bits/end_section.inc"; ?> 
