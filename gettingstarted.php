@@ -77,6 +77,10 @@
 	If you are a console junkie you can also use tpclient-pytext, however this
 	client is far from polished. You can find instructions for installing this
 	client in the developer section.
+</p><p>
+	After you have installed a client you should then head over to the 
+	<a href="http://metaserver.thousandparsec.net">metaserver</a> which lists all
+	the currently running public servers.
 </p>
 
 <h2>Installing tpclient-pywx on Windows</h2>

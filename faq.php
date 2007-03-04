@@ -47,6 +47,11 @@
 						Nothing happens when a new turn starts
 					</a>
 				</li>
+				<li>
+					<a href="#3-3">
+						Where can I find a server?
+					</a>
+				</li>
 			</ol>
 	</li>
 	<li>
@@ -116,6 +121,8 @@ If you don't think you can use the bug tracker just send an email to the
 </p><p>
 Telling us on IRC will increase the likelyhood of the bug getting forgotten!
 </p>
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
 <a name="3-2"></a>
 <h2>3.2 Nothing happens when a new turn starts</h2>
 <p>
@@ -125,7 +132,16 @@ the command <em>Download the Universe</em> from the <em>File</em> menu.
 </p>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
-
+<a name="3-3"></a>
+<h2>3.3 Where can I find a server?</h2>
+<p>
+The best place to start looking is the <a href="http://metaserver.thousandparsec.net">metaserver</a>.
+It keeps an uptodate list of all the currently active public servers.
+</p><p>
+You can also try downloading and running your own server. 
+</p>
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
 <a name="4-1"></a>
 <h2>4.1 How can I contact you?</h2>
 <p>
