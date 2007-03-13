@@ -33,7 +33,10 @@ urchinTracker();
 
 </head>
 <body>
+<!--
+Commented out because it was causing loading issues on slow links.
 <script type='text/javascript' src='http://track3.mybloglog.com/js/jsserv.php?mblID=2007020216243388'></script>
+-->
 <div id="wrapper">
 
 <a href="/tp/"><div id="banner">
