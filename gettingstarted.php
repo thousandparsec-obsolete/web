@@ -113,9 +113,26 @@
 		<pre class="code">
 	apt-get install python-wxgtk2.6
 		</pre>
-		<b>Note:</b> If you have wxPython 2.4 installed make sure you update to the latest version by doing a 
+		<b>Note:</b> If you have wxPython 2.4 installed make sure you update to
+the latest version by doing a 
 		<pre class="code">
 	apt-get install python-wxgtk2.4
+		</pre>
+	</li>
+	</li><li>
+		For best performance and the most functionality it is recommended you
+install the following.  
+		<pre class="code">
+	apt-get install python-gettext
+	apt-get install python-pysco
+	apt-get install python-pyopenssl
+	apt-get install python-imaging
+		</pre>
+		If you are running a <a href="http://www.gnome.org">Gnome</a> or gtk
+system (which you are if you are running Ubuntu) it is also recommended you
+installed the following.  
+		<pre class="code">
+	apt-get install python-gconf
 		</pre>
 	</li>
 </ul>
@@ -127,7 +144,7 @@
 	</li><li>
 		Now all you need to do is get <b>tpclient-pywx</b>
 		<ol>
-			<li>Download the "inplace" version tar.gz from <a href="http://www.thousandparsec.net/tp/downloads.php">here</a></li>
+			<li>Download the <b>"inplace"</b> version tar.gz from <a href="/tp/downloads.php#tpclient-pywx">here</a></li>
 			<li>Extract the tar.gz</li>
 			<li>Enter the newly created directory</li>
 			<li>Run <pre class="code">./tpclient-pywx</pre></li>
@@ -154,7 +171,7 @@ binaries are currently supplied.</p>
 	server too. (0.1.3 onward)</li>
       <li>libgnutls (and dev package) if you want secure sockets.</li>
   </ul></li>
-<li>Download the sources from <a href="http://www.thousandparsec.net/tp/downloads.php">Thousand Parsec Download page</a> or from <a href="http://sourceforge.net/project/showfiles.php?group_id=132078&amp;package_id=145028">Sourceforge downloads</a>.</li>
+<li>Download the sources from <a href="/tp/downloads.php">Thousand Parsec Download page</a> or from <a href="http://sourceforge.net/project/showfiles.php?group_id=132078&amp;package_id=145028">Sourceforge downloads</a>.</li>
 <li>Extract the tar.gz file.</li>
 <li>Enter the created directory.</li>
 <li>Run <pre class="code">./configure</pre> To see what build options are available run <pre class="code">./configure --help</pre></li>
@@ -212,7 +229,7 @@ stable yet. Please talk to Lee by email or on IRC.</p>
 <h2>Libtpproto-cpp clientside protocol library</h2>
 <p>A client-side protocol and game interface library called libtpproto-cpp is under development. If you want to write a game in
 C++ you should use this library. Online documentation is available on the 
-<a href="http://www.thousandparsec.net/tp/dev/documents/libtpproto-cpp/">libtpproto-cpp documentation</a> page. Any feedback on
+<a href="/tp/dev/documents/libtpproto-cpp/">libtpproto-cpp documentation</a> page. Any feedback on
 the library or assistance programming it will be very helpful.</p>
 
 <h2>Tpserver-cpp</h2>

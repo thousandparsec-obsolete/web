@@ -200,14 +200,15 @@ function display($directory) {
 	If you want to download and play with the client, use the following files for each
 	operating system,
 	<ul>
-		<li>Windows - use the setup/exe</li>
-		<li>Unsupported Linux (non RPM) - use the inplace version</li>
-		<li>Unsupported Linux (RPM) - use the RPM version, you will also need the RPMs
-		of libtpclient-py and libtpproto-py</li>
-		<li>Supported Linux - use the inplace version for the time being until debs
+		<li>Windows - use the setup/exe like any other windows application.</li>
+		<li>MacOS X - use the dmg package like any other mac application.<br /></li>
+		<li>Unsupported Linux - use the <b>inplace</b> version</li>
+		<li>Supported Linux - use the <b>inplace</b> version for the time being until debs
 		appear in the distribution</li>
-		<li>MacOS X - use the inplace version until a package is available</li>
 	</ul>
+	If is highly recommend to use versions marked <b>"inplace"</b>. These
+packages have all the Thousand Parsec developed dependencies needed to run the
+application.
 </p>
 <?php display("tpclient-pywx/"); ?>
 <p>
