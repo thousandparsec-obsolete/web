@@ -571,38 +571,42 @@ be figured out.
 
 <h2>Object property</h2>
 
-<h3>Locational Properties</h3>
+<h4>Locational Properties</h4>
 <p>
 These are properties which describe where an object is on a starmap (and where
 they are going). Things like wormholes could have multiple positions.
 </p>
 
-<h3>Descriptional Properties</h3>
+<h4>Descriptional Properties</h4>
 <p>
 These are properties which are for the players information when making
 decisions. As far as the client is concerned they don't have any effect on the
 game. These would include things like "Name", "Description", etc.
 </p>
 
-<h3>Habitation Properties</h3>
+<h4>Habitation Properties</h4>
 <p>
 These are properties which describe if a race can survive at an object. Things
 like temperature, atmosphere, etc. They are most likely to be found on planets. 
+</p><p>
+Many of these descriptional properties can be edited (like changing a name)
+without affected the game at all. It might be nice to be able to edit them
+without sending the whole object.
 </p>
 
-<h3>Resource Properties</h3>
+<h4>Resource Properties</h4>
 <p>
 These describe what is available to be used/mined/etc at a location.  Found
 generally on planets, asteroid fields, 
 </p>
 
-<h3>Goodness Properties</h3>
+<h4>Goodness Properties</h4>
 <p>
 These describe how good X is at doing something. For example production
 capability or population size.
 </p>
 
-<h3>Order Queues</h3>
+<h4>Order Queues</h4>
 <p>
 Currently we only have one order queue. There is no real reason an object
 couldn't have multiple order queue's. 
@@ -611,9 +615,49 @@ This could be used for where you want a separate "Build Queue" to an "Action
 Queue". It could also be used on ships where you have an "Battle Queue" which
 specifies what the fleet should do in battle (IE Attack hard for X turns, run
 away).
+</p><p>
+Another option would be a "Default Order Queue". IE If you wanted new fleets to
+have a "move to x", "remote mine" default order queue.
+</p><p>
+I think the client should handling "Order Queue"s which only have one type of
+order specially. 
+</p><p>
+Maybe order queues could also have a possible "limit" on the number of orders
+can be put in them.
+</p><p>
+I was thinking per planet. IE A planet could have the following order queues (on
+one particular server).
+</p><p>
+<ol>
+ <li>Build Queue    - Things to build, Order Types (Build Fleet, Build
+Infrastructure, Nop)</li>
+ <li>Priority Queue - What the planet should concentrate on, (Nop, Research,
+Production, Defence)</li>
+ <li>New Fleet Queue - What orders are given to a new fleet (Any order valid to
+a fleet this planet can build - IE Move, Remote Mine, Create Minefield, Merge
+Fleet.)</li>
+</ol>
+</p><p>
+We could also have a "hidden" object which could has queues to be use for planet
+defaults or something.
+</p><p>
+Each queue specifies (on each object) which type of order is allowed in
+that queue. (Rather then the current per object order types.)
+</p><p>
+Maybe order queues could also have a possible "limit" on the number of orders
+can be put in them.
+</p><p> 
+Not hard to do either. Although most of the time, the limit will be one of these
+things:
+<ul> 
+	<li>- the human player's patience entering the orders</li>
+	<li>- the resources at the object (fuel, supplies (endurance), or other
+normal resources)</li>
+	<li> - boredom</li>
+</ul>
 </p>
 
-
+<h3>Property types</h3>
 <p>Properties also have a general type,
 <ul>
   <li>Text Property - Just a string, HTML or some other Formatted String,
@@ -633,7 +677,21 @@ value is and where it is heading. This could be used for production capability
 (which is likely to be non-linear).</li>
 </ul>
 
+<pre>
+I was thinking a cut back version of the current common attributes.
 
+  * a UInt32, object ID
+      * a UInt32, object type
+      * a String, name of object
+      * a String, description of the object
+      * a list of UInt32, object IDs of objects contained in the current
+        object 
+      * a UInt64, the last modified time
+      * x by UInt32 of padding, for future expansion of common
+        attributes 
+      * 
+      * extra data, as defined by each object description
+</pre>
 
 <?php
 	include "../bits/end_section.inc";
