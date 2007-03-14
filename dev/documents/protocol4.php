@@ -147,32 +147,22 @@ version.</dd>
 	include "../bits/start_section.inc";
 ?>
 
-<h2>Server Location Protocol</h2>
+<h2>Server Location (Meta) Protocol</h2>
 
 <p>
 There are two parts to server location. The first is finding servers on a local
 network, for this ZeroConf is used. The second is finding servers on the
-internet, for this a metaserver is used. The protocol used in both situations is
-basically the same, the transport mechanism is just a little different.
-</p>
-
-<p>
-In hopes of making it easier for people to find and actually play games
-I have been working on automatic server discovery. There are two parts
-to this,
-<ul>
-	<li>local LAN discovery</li>
-	<li>metaserver discovery</li>
-</ul>
+Internet, for this a <a
+href="http://metaserver.thousandparsec.net/">metaserver</a> is used. The
+protocol used in both situations is basically the same, the transport mechanism
+is just a little different.
 </p><p>
-The unit of discovery is not server as one might first jump to but a "game".
-Each game has a set of "locations" which is can be found at.
+The unit of discovery is not "a server" as one might first think, rather it is
+"a game". Each game has a set of "locations" which is can be found at.
+</p><p>
+"A game" is describe by the following properties
 </p>
-
-<p>
-A game record has the following details,
-</p>
-<p>Required Parameters:</p>
+<h4>Required Parameters</h4>
 <table>
 	<tr>
 		<td>tp</td>
@@ -191,8 +181,7 @@ A game record has the following details,
 		<td>version of the ruleset</td>
 	</tr>
 </table>
-
-<p>Optional parameters:</p>
+<h4>Optional parameters</h4>
 <table>
 	<tr>
 		<td>plys</td>
@@ -233,6 +222,7 @@ A game record has the following details,
 	</tr>
 </table>
 
+<h4>Location Parameters</h4>
 <p>A location is specified as a tuple of:</p>
 <table>
 	<tr>
@@ -249,33 +239,87 @@ A game record has the following details,
 		<td>The port of the server</td>
 	</tr>
 </table>
+
+<h2>Local LAN Discovery</h2>
+
 <p>
 Local LAN discovery is being done with ZeroConf MDNS. Each server should
-advertise a record PER GAME. The location details are automatically
-discovered. The required and optional parameters should be found in the
-TXT record.
+advertise a record PER GAME (per location). The location details are
+automatically discovered. The required and optional parameters should be found
+in the TXT record.
 </p>
+
+<h2>Internet Discovery</h2>
+
+<h3>Registration</h3>
 <p>
-A metaserver exists at metaserver.thousandparsec.net, to register a new
-server you must send either a HTTP get or post request with the require
-parameters. Each location is specified by doing the following
+There are two ways to register with a Metaserver. The primary Thousand Parsec
+Metaserver can be found at <a
+href="metaserver.thousandparsec.net">metaserver.thousandparsec.net</a>.
+</p><p>
+When registering with a metaserver you must also send a "key", if the game with
+this name has never been seen before the "key" will be stored. The key must then
+be sent for all updates for that game name to take effect.
+</p><p>
+The server should send a registration/update request at least once every 10
+minutes. A server which hasn't send a request in the last 10 minutes will be
+removed from the list of known servers. A server should send a
+registration/update request no more then once every 5 minutes.
+</p>
+
+<h4>HTTP Registration</h4>
+<p>
+To register a new game you must send either a HTTP GET or POST request with the
+require parameters. 
+</p><p>
+To encode locations in a game you append a number to the text fields, IE
+<pre>
 type0, dns0, ip0, port0 - details for first location
 type1, dns1, ip1, port1 - details for second location
-</p>
-<p>
-You must also send a "key", if the game with this name has never been
-seen before the "key" will be stored. The key must then be sent for all
-updates to take effect.
+</pre>
 </p><p>
 An example (using get) would be the following,
-http://metaserver.thousandparsec.net/?action=update&tp=0.3,0.2&key=mykey&server=0.3.0&name=MyGame1&sertype=tpserver-cpp&rule=MiniSec&rulever=0.1&type0=tp&dns0=mithro.dyndns.org&ip0=203.122.246.117&port0=8000
+<a href="http://metaserver.thousandparsec.net/?action=update&amp;tp=0.3,0.2&amp;key=mykey&amp;server=0.3.0&amp;name=MyGame1&amp;sertype=tpserver-cpp&amp;rule=MiniSec&amp;rulever=0.1&amp;type0=tp&amp;dns0=mithro.dyndns.org&amp;ip0=203.122.246.117&amp;port0=8000">url</a>
 </p><p>
-All parameters are sanity checked but most are treated as a string.
+One request should be sent for each game. The HTTP Registration supports
+HTTP/1.1 keep alive, so they can be sent in one connection.
 </p><p>
-To get the details about which servers exist the client should get the
-following page.
-http://metaserver.thousandparsec.net/?action=get
+On a protocol or other HTTP error, the metaserver will return a plain text
+response with the appropriate error code. (IE 404 Not Found.)
 </p><p>
+Other errors should be returned using a tp04 Fail frame.
+</p>
+
+<h4>TCP Registration</h4>
+<p>
+To register a new game you must connect to the metaserver on port XXXX. There
+you send a tp04 Sequence frame describing the number of games you are about to send.
+You then send the tp04 Game frames.
+</p>
+
+<h4>UDP Registration</h4>
+<p>
+To register a new game you send a single UDP frame to the metaserver on port
+XXXX. The UDP frame will contain a single tp04 Game frame.
+</p>
+
+<h3>Discovery</h3>
+
+<h4>HTTP Discovery (Optional)</h4>
+<p>
+To get the details about which servers exist the client should send a HTTP Get
+request to the metaserver.
+</p><p>
+An example of this is "http://metaserver.thousandparsec.net/?action=get".
+</p>
+
+<h4>TCP Discovery</h4>
+<p>
+To get the details about which games exist the client should connect to the
+metaserver on port XXXX. It should then then send a Get Games frame.
+</p>
+
+<p>
 The server will return in the body of the message a Sequence frame
 telling the number of "Game" frames to come. Game frames are described
 as follows,
@@ -302,15 +346,6 @@ as follows,
 	   <li> a UInt32,         Optional param int value</li>
 	</ul></li>
 </ul>
-</p><p>
-I plan for the metaserver to eventually support sending packets directly
-without using HTTP (IE connect to port xxxx and send a game frame -
-maybe even a UDP connectionless method), but for now it's just easier to
-do it over HTTP.
-</p><p>
-The metaserver also has a "human" mode, just browse to
-http://metaserver.thousandparsec.net/ and you should get a webpage
-listing the the servers with clickable URLs.
 </p>
 <?php
 	include "../bits/end_section.inc";
