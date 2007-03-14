@@ -675,12 +675,12 @@ I was thinking per planet. IE A planet could have the following order queues (on
 one particular server).
 </p><p>
 <ol>
- <li>Build Queue    - Things to build, Order Types (Build Fleet, Build
+	<li>Build Queue    - Things to build, Order Types (Build Fleet, Build
 Infrastructure, Nop)</li>
- <li>Priority Queue - What the planet should concentrate on, (Nop, Research,
+	<li>Priority Queue - What the planet should concentrate on, (Nop, Research,
 Production, Defence)</li>
- <li>New Fleet Queue - What orders are given to a new fleet (Any order valid to
-a fleet this planet can build - IE Move, Remote Mine, Create Minefield, Merge
+	<li>New Fleet Queue - What orders are given to a new fleet (Any order valid
+to a fleet this planet can build - IE Move, Remote Mine, Create Minefield, Merge
 Fleet.)</li>
 </ol>
 </p><p>
@@ -718,9 +718,6 @@ design, etc)</li>
   <li>List Property - Lists a bunch of other properties (IE Resources would be a
 list of reference properties?)</li>
   <li>Choice Property - Can make a choice of something.</li>
-  <li>Graph Property - Some type of graph, with the location where the current
-value is and where it is heading. This could be used for production capability
-(which is likely to be non-linear).</li>
 </ul>
 
 <pre>
@@ -730,11 +727,9 @@ I was thinking a cut back version of the current common attributes.
       * a UInt32, object type
       * a String, name of object
       * a String, description of the object
-      * a list of UInt32, object IDs of objects contained in the current
-        object 
+      * a list of UInt32, object IDs of objects contained in the current object 
       * a UInt64, the last modified time
-      * x by UInt32 of padding, for future expansion of common
-        attributes 
+      * x by UInt32 of padding, for future expansion of common attributes 
       * 
       * extra data, as defined by each object description
 </pre>
@@ -819,16 +814,23 @@ and each instance of the object has it's own value.</p>
 	<ul>
 		<li><b>On the Object</b>
 		<ul>
+			<li>UInt32, Queue ID</li>
 			<li>UInt32, Current number of orders on this object</li>
-			<li>List of UInt32, Order ID's which are valid in this queue</li>
+			<li>List of UInt32, Order Type (Description) ID's which are valid in
+this queue</li> 
 		</ul></li>
 
 		<li><b>On the Object Description</b>
 		<ul>
 			<li>UInt32, Number of the slots the queue</li>
-			<li>UInt32, Queue ID</li>
 		</ul></li>
 	</ul>
+	<p>
+	The "default" order queue (IE The most use queue) should have the same ID as
+the object it is on. Other order queue's can have any ID but the ID should not
+be the same as an object ID (as it would conflict with the information above).
+How servers solve this problem is up to them.
+	</p></li>
 </ul>
 
 <h3>Descriptional</h3>
@@ -872,7 +874,7 @@ and each instance of the object has it's own value.</p>
 		</ul></li>
 	</ul></li>
 
-    <li>Enumeration
+    <li>Enumeration (Argument)
 	<ul>
 		<li><b>On the Object</b>
 		<ul>
@@ -905,8 +907,10 @@ graph</li>
 				<li>dB (10*log(x^2)) </li>
 				<li>??? </li>
 			</ol></li>
+			<li>A String, the X axis label</li>
 			<li>Enumeration, the Type of the Y axis (same as above) 
-			<li>a List of 
+			<li>a List of (which are the points on the graph)
+			<li>A String, the Y axis label</li>
 			<ul>
 				<li>UInt32, The X value</li>
 				<li>UInt32, The Y value</li>
@@ -944,6 +948,107 @@ range</li>
 	<li>String</li>
 	<li>Settable String</li>
 </ul>
+
+<p>
+Examples:
+<pre>
+
+Planet Description
+ 0, "Where", "Position and heading of the Planet"
+	- POSITION, [], "Position", "Current Position of the Planet"
+	- VELOCITY, [], "Velocity", "Current Velocity of the Planet"
+	- ACCELERATION, [], "Acceleration", "Current Acceleration of the Planet"
+
+ 1, "Resources", "Resources available on the Planet",
+	- LIST
+		- GRS, [], "Resource", "The Resource"
+		- INTEGER, [], "Surface", "Amount of the resource on surface"
+		- INTEGER, [], "Minable", "Amount of the resource which can be mined"
+		- INTEGER, [], "Availiable", "Amount of the resource which might be mined given better technology"
+	- TURNS, "Age", "Age of this information"
+
+ 2, "Owner", "Person who owns the Planet",
+	- GRS, [], "Player", "Player who owns the planet"
+	- TURNS, "Age", "Age of this information"
+
+ 3, "Production", "Current production capabilities of the planet."
+	- GRAPH, [], "Workers", "The number of workers in factories", 
+		Linear, "Workers", 
+		Linear, "Production Points per Factory", 
+		[[0,0], [10,5], [20, 7], [30, 8], [40, 9], [50, 10]]
+    - INTEGER, [], "Factories", "Number of factories on this planet",  
+	- INTEGER, [], "Production Points", "Number of production points this planet produces each turn",
+	- TURNS, "Age", "Age of this information"
+A few actual planets,
+<pre>
+ 0, PlanetType, "Tim's Planet", "Tim's magnificent planet!", [], 11:45am 2006-07-10, 
+
+	- 10000, 10000, 10000, 0, 0, 0, 0, 0, 0
+
+	- 3 [
+		- GRS(Resource, 100 - Kryptonite), 100, 400000, 0
+		- GRS(Resource, 56 - Uranium), 10, 1000000, 770000
+	], 0
+
+	- GRS(Player, 100 - Tim), 0
+
+	- 3, 5,   12, 12,  39, 41
+</pre>
+<p>
+The first line is the stuff for Group 0 (Where) - It says this object was seen
+last turn at 10000, 10000, 10000 going nowhere.  
+
+The second line is the stuff for Group 1 (Resources) - It says that there
+is 100 units of Kryptonite on the surface, while only 10 units of Uranium on
+the surface. There is also 400,000 units of minable Kryptonite and 1 million
+units of minable uranium. Lastly there is no more kryptonite I might be able to
+access but there are 770,000 units of uranium which might be accessible.
+
+The third line is the stuff for Group 2 (Owner) - It says that I own the planet.
+
+The four line is the stuff for Group 3 (Production) - It says that I'm
+currently have 3 "Workers", producing 6 points of production per factory.
+Things are also going well, in the fact that it will soon be 5 workers giving
+10 production points per factory. It is also saying that there are 12
+factories, but I'm not in line to produce any more. I'm also producing 39
+production points a turn (and it soon will be 41). (3*12 != 39 - Maybe I'm
+getting a bonus production points?).
+
+It would probably be displayed in the client like the following,
+<table>
+	<tr>
+		<th colspan='4' style='text-align: left'>[+] Where</th>
+	</tr><tr>
+		<td>&nbsp;</td><td>Position</td><td>1000, 1000, 1000</td><td>[GOTO]</td>
+	</tr><tr>
+		<td>&nbsp;</td><td>Velocity</td><td>0, 0, 0</td><td></td>
+	</tr><tr>
+		<td>&nbsp;</td><td>Acceleration</td><td>0, 0, 0</td><td></td>
+	</tr><tr>
+		<th colspan='4' style='text-align: left'>[+] Resources</th>
+	</tr><tr>
+		<td>&nbsp;</td><td>Kryptonite</td><td>Surface: 0, Minable: 400,000, Other: 0</td><td></td>
+	</tr><tr>
+		<td>&nbsp;</td><td>Uranium</td><td>Surface: 0, Minable: 1,000,000, Other: 770,000</td><td></td>
+	</tr><tr>
+		<th colspan='4' style='text-align: left'>[+] Owner</th>
+	</tr><tr>
+		<td>&nbsp;</td><td>Player</td><td>Tim Ansell</td><td>[MESSAGE]</td>
+	</tr><tr>
+		<th colspan='4' style='text-align: left'>[+] Production</th>
+	</tr><tr>
+		<td>&nbsp;</td><td>Workers</td><td><img src="protocol4-graph.png"></td><td></td>
+	</tr><tr>
+		<td>&nbsp;</td><td>Factories</td><td>12</td><td></td>
+	</tr><tr>
+		<td>&nbsp;</td><td>Production Points</td><td>39</td><td></td>
+
+</table>		
+	
+
+</pre>
+
+</p>
 
 <?php
 	include "../bits/end_section.inc";
