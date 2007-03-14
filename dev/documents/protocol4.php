@@ -1,0 +1,528 @@
+<?php
+	$title = "Protocol Discussion Ver 0.4";
+	include "../bits/start_page.inc";
+	include "../bits/start_section.inc";
+?>
+
+<style type="text/css">
+<!--
+.new { color: #00ff00; }
+.fixme { color: #ff0000; }
+.inote { color: #ffff00; }
+
+ul.response {
+	margin-top: 0.5em;
+	margin-bottom: 0.25em;
+	font-size: 8pt;
+	padding-left: 0.25em;
+}
+
+ul.response ul {
+	margin-top: 0em;
+	margin-bottom: 0em;
+	padding-left: 1em;
+}
+
+-->
+</style>
+
+<h1>Protocol Discussions for Version 0.4</h1>
+<p>
+	Unlike previous versions of the protocol, the version 0.4 will be total
+specified in an XML specification. The main purpose of this document is to collect
+ideas until they are fully implemented in the XML specification.
+</p><p>
+<b>THIS IS NOT A PROTOCOL SPECIFICATION!</b>
+</p>
+
+<h2>Currently in tp03</h2>
+<p>The current version of the protocol currently has the following features. As
+tp04 is being built on top of tp03 it will also include these features.</p>
+
+<dl>
+	<dt>Dynamic Orders</dt>
+<dd>Thousand Parsec servers can define new orders and clients can automatically
+discover these orders and show the user quite a bit of detail about what
+arguments should be given to the order.</dd>
+
+	<dt>Comprehensive Design Support with tpcl</dt>
+<dd>Designing things is a very important part of most empire building games.
+tp03 includes support for building designs out of "components", these components
+dynamical describe their properties and requirements. They can be either
+calculated on the server or calculated on the client. It is quite possible to
+have components which require other components, forbid other components via
+either specific exclusion</dd>
+
+	<dt>Dynamic Resources</dt>
+<dd>Resources which are used for doing things are dynamical described by the
+server.</dd>
+
+	<dt>Message and Board system</dt>
+<dd>Support for a wide variety of messages including referencing objects related
+to a message (IE This message came from this object). Servers can also have both
+private and public boards.</dd>
+
+	<dt>Partial Design Discover</dt>
+ <dd>Although no server currently implements a system where as you can only
+discover partial information about enemy designs, this option is total
+supported.</dd> 
+
+</dl> 
+
+<h2>New to tp04</h2>
+<dl>
+
+	<dt>Full XML protocol specification</dt> 
+<dd>The protocol will be completely specified in an XML document. This will
+allow more dynamic languages (such as Python, Ruby and PHP) to read in the
+protocol document and dynamical create the correct data. This doesn't mean
+our good documentation is going away (for those people who want to implement it
+the "hard way"), instead it will be more accurate and contain better
+linking, lot more useful tables and even an index.  The documentation will all
+be generated using XSLT from the protocol XML document so it will also always be
+current.</dd> 
+
+	<dt>Meta Protocol definition</dt> 
+<dd>A definition on how to talk the "meta protocol", IE talking to
+the metaserver and find local games will be specified. It will be almost
+identical to the current protocol specified separately.</dd> 
+
+	<dt>Filter Support</dt> 
+<dd>The protocol will support filters such as encryption and compression (or
+even a 32bit aligned strings filter), there will be a way to negotiate which
+filters to use.</dd>
+
+	<dt>Difference Support</dt>
+<dd>The protocol will include (and servers will be required to support) a
+proper method for downloading "what has changed" lists. This will be
+extended from the current "get id sequence" stuff but made so it
+doesn't require downloading every single ID in the universe to find out
+the differences.</dd>
+
+	<dt>Dynamic Objects</dt>
+<dd>Like how servers can define new a interesting order types, with tp04
+servers will also be able to do the same for objects. A wide variety of object
+properties types will exist, from Graph like properties to just plain strings.
+This will rapidly allow many more advanced rulesets to exist.  
+	<dl>
+		<dt>Old Data support</dt>
+<dd>As a side effect of Dynamic Objects, object properties will be able to be
+"aged". This means that if you could detect/determine the value in the past, but
+can't determine the value now, the client will be able to understand this.</dd>
+
+		<dt>Multiple Instruction queue support</dt>
+<dd>As another side effect of Dynamic Objects, objects will be able to have
+multiple instruction queues. These will allow for things like "standing
+battle orders" and "research queues" (and probably plenty of other things I
+can't think of at this very moment).</dd> 
+
+		<dt>Media support</dt> 
+<dd>The current "media support" is just a hack in tpclient-pywx. The
+dynamic objects will allow proper specification of what media should be used for
+objects and such.</dd> 
+	</dl> 
+</dd>
+
+	<dt>Research support</dt>
+ <dd>The protocol will include support for figuring out which "Research options"
+are available. It will support a wide range of research methods too (from
+researching for a specific object, to researching researching in a general
+area).</dd>
+
+	<dt>EOT Support</dt>
+<dd>There will be support for things like saying "I'm Done" and "Please end the
+turn now.". This will mean we are no longer just stuck with the EOT at a certain
+time problem like in tpserver-cpp (or when admin runs a special program like in
+tpserver-py).</dd>
+
+	<dt>Frame Type Versions</dt>
+<dd>Support for changing frames (in a backward compatible way) separately. This
+will allow better updates of the protocol without having to do a complete new
+version.</dd>
+
+</dl>
+
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<h2>Server Location Protocol</h2>
+
+<p>
+There are two parts to server location. The first is finding servers on a local
+network, for this ZeroConf is used. The second is finding servers on the
+internet, for this a metaserver is used. The protocol used in both situations is
+basically the same, the transport mechanism is just a little different.
+</p>
+
+<p>
+In hopes of making it easier for people to find and actually play games
+I have been working on automatic server discovery. There are two parts
+to this,
+<ul>
+	<li>local LAN discovery</li>
+	<li>metaserver discovery</li>
+</ul>
+</p><p>
+The unit of discovery is not server as one might first jump to but a "game".
+Each game has a set of "locations" which is can be found at.
+</p>
+
+<p>
+A game record has the following details,
+</p>
+<p>Required Parameters:</p>
+<table>
+	<tr>
+		<td>tp</td>
+		<td>comma seperated list of version strings (0.3, 0.2)</td>
+	</tr><tr>
+		<td>server</td>
+		<td>version of the server</td>
+	</tr><tr>
+		<td>servtype</td>
+		<td>server type (tpserver-cpp, tpserver-py)</td>
+	</tr><tr>
+		<td>rule</td>
+		<td>ruleset name (MiniSec, TPSec, MyCustomRuleset)</td>
+	</tr><tr>
+		<td>rulever</td>
+		<td>version of the ruleset</td>
+	</tr>
+</table>
+
+<p>Optional parameters:</p>
+<table>
+	<tr>
+		<td>plys</td>
+		<td>1</td>
+		<td>number of players in the game</td>
+	</tr><tr>
+		<td>cons</td>
+		<td>2</td>
+		<td>number of clients currently connected</td>
+	</tr><tr>
+		<td>objs</td>
+		<td>3</td>
+		<td>number of "objects" in the game universe</td>
+	</tr><tr>
+		<td>admin</td>
+		<td>4</td>
+		<td>admin email address</td>
+	</tr><tr>
+		<td>cmt</td>
+		<td>5</td>
+		<td>comment about the game</td>
+	</tr><tr>
+		<td>next</td>
+		<td>6</td>
+		<td>unixtime stamp (GMT) when next turn is generated</td>
+	</tr><tr>
+		<td>ln</td>
+		<td>7</td>
+		<td>human readable name of the sever</td>
+	</tr><tr>
+		<td>turn</td>
+		<td>8</td>
+		<td>the current turn the game is at</td>
+	</tr><tr>
+		<td>prd</td>
+		<td>9</td>
+		<td>the time between turns in seconds</td>
+	</tr>
+</table>
+
+<p>A location is specified as a tuple of:</p>
+<table>
+	<tr>
+		<td>protocol</td>
+		<td>tp, tps, tphttp, tphttps</td>
+	</tr><tr>
+		<td>dns</td>
+		<td>A resolvable name of the server</td>
+	</tr><tr>
+		<td>ip</td>
+		<td>Resolved ip address of the server</td>
+	</tr><tr>
+		<td>port</td>
+		<td>The port of the server</td>
+	</tr>
+</table>
+<p>
+Local LAN discovery is being done with ZeroConf MDNS. Each server should
+advertise a record PER GAME. The location details are automatically
+discovered. The required and optional parameters should be found in the
+TXT record.
+</p>
+<p>
+A metaserver exists at metaserver.thousandparsec.net, to register a new
+server you must send either a HTTP get or post request with the require
+parameters. Each location is specified by doing the following
+type0, dns0, ip0, port0 - details for first location
+type1, dns1, ip1, port1 - details for second location
+</p>
+<p>
+You must also send a "key", if the game with this name has never been
+seen before the "key" will be stored. The key must then be sent for all
+updates to take effect.
+</p><p>
+An example (using get) would be the following,
+http://metaserver.thousandparsec.net/?action=update&tp=0.3,0.2&key=mykey&server=0.3.0&name=MyGame1&sertype=tpserver-cpp&rule=MiniSec&rulever=0.1&type0=tp&dns0=mithro.dyndns.org&ip0=203.122.246.117&port0=8000
+</p><p>
+All parameters are sanity checked but most are treated as a string.
+</p><p>
+To get the details about which servers exist the client should get the
+following page.
+http://metaserver.thousandparsec.net/?action=get
+</p><p>
+The server will return in the body of the message a Sequence frame
+telling the number of "Game" frames to come. Game frames are described
+as follows,
+</p><p>
+<ul>
+	<li> a string,           (name)     Game name</li>
+	<li> a string,           (key)      Empty on receive</li>
+	<li> a list of Strings,  (tp)       List of protocol versions supported</li>
+	<li> a string,           (server)   Server Version</li>
+	<li> a string,           (servtype) Server Type</li>
+	<li> a string,           (rule)     Ruleset Name</li>
+	<li> a string,           (rulever)  Ruleset version</li>
+	<li> a list of,
+	<ul>
+	   <li> a string,        (type)     Connection type (tp, tps, ...)</li>
+	   <li> a string,        (dns)      Resolvable DNS name</li>
+	   <li> a string,        (ip)       IP Address</li>
+	   <li> a UInt32,        (port)     Port to connect on</li>
+	</ul></li>
+	<li> a list of,
+	<ul>
+	   <li> a id,             Optional param id</li>
+	   <li> a string,         Optional param string value</li>
+	   <li> a UInt32,         Optional param int value</li>
+	</ul></li>
+</ul>
+</p><p>
+I plan for the metaserver to eventually support sending packets directly
+without using HTTP (IE connect to port xxxx and send a game frame -
+maybe even a UDP connectionless method), but for now it's just easier to
+do it over HTTP.
+</p><p>
+The metaserver also has a "human" mode, just browse to
+http://metaserver.thousandparsec.net/ and you should get a webpage
+listing the the servers with clickable URLs.
+</p>
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<p>
+Formatted Strings are exactly like normal strings but use the structured text
+method for formatting their contents. For a complete description of structured
+text please see the following <a href="">document</a>. This allows display of
+color, underline, super/subscript and much more. It is also easy to convert to
+plain text or HTML.
+</p>
+
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<h2>Frames which are obsolete</h2>
+<table class="tabular">
+</table>
+
+<h2>Frames which have changed</h2>
+<table class="tabular">
+	<tr class="row0 new"><td class="numeric"> -</td><td>Get ID Sequence</td></tr>
+	<tr class="row1"><td class="numeric"> 1</td><td>Fail</td></tr>
+	<tr class="row1 new"><td class="numeric">26</td><td>Available Features</td></tr>
+	<tr class="row1 new"><td class="numeric">40</td><td>Player Data</td></tr>
+</table>
+
+<h2>Frames which haven't changed</h2>
+ 
+<table class="tabular">
+	<tr class="row0 new"><td class="numeric"> -</td><td>Get with ID</td></tr>
+	<tr class="row1 new"><td class="numeric"> -</td><td>Get with ID and Slots</td></tr>
+	<tr class="row1 new"><td class="numeric"> -</td><td>ID Sequence</td></tr>
+	<tr class="row0"><td class="numeric"> 0</td><td>Ok</td></tr>
+	<tr class="row0"><td class="numeric"> 2</td><td>Sequence</td></tr>
+	<tr class="row1"><td class="numeric"> 3</td><td>Connect</td></tr>
+	<tr class="row0"><td class="numeric"> 4</td><td>Login</td></tr>
+	<tr class="row1"><td class="numeric"> 5</td><td>Get Objects by ID</td></tr>
+	<tr class="row0"><td class="numeric"> 7</td><td>Object</td></tr>
+	<tr class="row1"><td class="numeric"> 8</td><td>Get Order Description</td></tr>
+	<tr class="row0"><td class="numeric"> 9</td><td>Order Description</td></tr>
+	<tr class="row1"><td class="numeric">10</td><td>Get Order</td></tr>
+	<tr class="row0"><td class="numeric">11</td><td>Order</td></tr>
+	<tr class="row1"><td class="numeric">12</td><td>Insert Order</td></tr>
+	<tr class="row0"><td class="numeric">13</td><td>Remove Order</td></tr>
+	<tr class="row1"><td class="numeric">14</td><td>Get Time remaining</td></tr>
+	<tr class="row0"><td class="numeric">15</td><td>Time remaining</td></tr>
+	<tr class="row1"><td class="numeric">16</td><td>Get Boards</td></tr>
+	<tr class="row0"><td class="numeric">17</td><td>Board</td></tr>
+	<tr class="row1"><td class="numeric">18</td><td>Get Message</td></tr>
+	<tr class="row0"><td class="numeric">19</td><td>Message</td></tr>
+	<tr class="row1"><td class="numeric">20</td><td>Post Message</td></tr>
+	<tr class="row0"><td class="numeric">21</td><td>Remove Message</td></tr>
+	<tr class="row1"><td class="numeric">22</td><td>Get Resource Description</td></tr>
+	<tr class="row0"><td class="numeric">23</td><td>Resource Description</td></tr>
+	<tr class="row1 new"><td class="numeric">24</td><td>Redirect</td></tr>
+	<tr class="row0 new"><td class="numeric">25</td><td>Get Features</td></tr>
+	<tr class="row0 new"><td class="numeric">27</td><td>Ping</td></tr>
+	<tr class="row1 new"><td class="numeric">28</td><td>Get Object IDs</td></tr>
+	<tr class="row0 new"><td class="numeric">29</td><td>Get Object IDs by Position</td></tr>
+	<tr class="row1 new"><td class="numeric">30</td><td>Get Object IDs by Container</td></tr>
+	<tr class="row0 new"><td class="numeric">31</td><td>List of Object IDs</td></tr>
+	<tr class="row1 new"><td class="numeric">32</td><td>Get Order Description IDs</td></tr>
+	<tr class="row0 new"><td class="numeric">33</td><td>List of Order Description IDs</td></tr>
+	<tr class="row1 new"><td class="numeric">34</td><td>Probe Order</td></tr>
+	<tr class="row0 new"><td class="numeric">35</td><td>Get Board IDs</td></tr>
+	<tr class="row1 new"><td class="numeric">36</td><td>List Of Board IDs</td></tr>
+	<tr class="row0 new"><td class="numeric">37</td><td>Get Resources IDs</td></tr>
+	<tr class="row1 new"><td class="numeric">38</td><td>List Of Resources IDs</td></tr>
+	<tr class="row0 new"><td class="numeric">39</td><td>Get Player Data</td></tr>
+	<tr class="row0 new"><td class="numeric">41</td><td>Get Category</td></tr>
+	<tr class="row1 new"><td class="numeric">42</td><td>Category</td></tr>
+	<tr class="row0 new"><td class="numeric">43</td><td>Add Category</td></tr>
+	<tr class="row1 new"><td class="numeric">44</td><td>Remove Category</td></tr>
+	<tr class="row0 new"><td class="numeric">45</td><td>Get Category IDs</td></tr>
+	<tr class="row1 new"><td class="numeric">46</td><td>List Of Category IDs</td></tr>
+	<tr class="row0 new"><td class="numeric">47</td><td>Get Design</td></tr>
+	<tr class="row1 new"><td class="numeric">48</td><td>Design</td></tr>
+	<tr class="row0 new"><td class="numeric">49</td><td>Add Design</td></tr>
+	<tr class="row1 new"><td class="numeric">50</td><td>Modify Design</td></tr>
+	<tr class="row0 new"><td class="numeric">51</td><td>Remove Design</td></tr>
+	<tr class="row1 new"><td class="numeric">52</td><td>Get Design IDs</td></tr>
+	<tr class="row0 new"><td class="numeric">53</td><td>List Of Design IDs</td></tr>
+	<tr class="row1 new"><td class="numeric">54</td><td>Get Component</td></tr>
+	<tr class="row0 new"><td class="numeric">55</td><td>Component</td></tr>
+	<tr class="row1 new"><td class="numeric">56</td><td>Get Component IDs</td></tr>
+	<tr class="row0 new"><td class="numeric">57</td><td>List Of Component IDs</td></tr>
+	<tr class="row1 new"><td class="numeric">58</td><td>Get Property</td></tr>
+	<tr class="row0 new"><td class="numeric">59</td><td>Property</td></tr>
+	<tr class="row1 new"><td class="numeric">60</td><td>Get Property IDs</td></tr>
+	<tr class="row0 new"><td class="numeric">61</td><td>List Of Property IDs</td></tr>
+	<tr class="row1 new"><td class="numeric">62</td><td>Account Create</td></tr>
+</table>
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<a name="Fail_Desc">
+</a><h3>Fail Frame</h3>
+<p>
+	A fail frame consists of:
+	<ul>
+		<li>a Int32, error code</li>
+		<li>a String, message of the error</li>
+	</ul>
+	Current error codes consist of:
+	<ul>
+		<li>0 - Protocol Error, Something went wrong with the protocol</li>
+		<li>1 - Frame Error, One of the frames sent was bad</li>
+		<li>2 - Unavailable Permanently, This operation is unavailable</li>
+		<li>3 - Unavailable Temporarily, This operation is unavailable at this moment</li>
+		<li>4 - No such thing, The object/order/message does not exist</li>
+		<li class="new">5 - Permission Denied, You don't have permission to do this operation</li>
+		<li>...</li>
+	</ul>
+	Exception: If the connect frame is not valid TP frame, this
+	frame will not be returned, instead a plain text string will be sent saying that the wrong
+	protocol has been used. A fail frame may be send if the wrong protocol version is detected.
+	This does not affect clients as they should always get the connect frame right.
+</p>
+
+
+<a name="FeatureNegotiation"></a>
+<h2>Feature Negotiation</h2>
+
+<span class="new">
+<a name="GetFeatures_Desc"></a>
+<h3>Get Features Frame</h3>
+<p>
+	The Get Features frame has no data.
+	Get the features this server supports. This frame can be sent before 
+	Connect.
+</p>
+</span>
+
+<span class="new">
+<a name="Features_Desc"></a>
+<h3>Features Frame</h3>
+<p>
+	The Features frame consists of:
+	<ul>
+		<li>a list of UInt32, list of available features</li>
+	</ul>
+</p><p>
+	The feature codes that are currently available,
+	<ul>
+		<li>0x1 - Secure Connection available on this port</li>
+		<li>0x2 - Secure Connection available on another port</li>
+		<li>0x3 - HTTP Tunneling available on this port</li>
+		<li>0x4 - HTTP Tunneling available on another port</li>
+		<li>0x5 - Support Keep alive frames</li>
+		<li>0x6 - Support server side property calculation</li>
+		<li>0x3E8 - Account creation is allowed</li>
+	</ul>
+</p><p>
+	Optimizations are features which allow the clients to take certain shortcuts.
+	All optimization are highly optional. Optimizations have ids greater then 0xffff,
+	<ul>
+		<li>0x10000 - Sends Object ID Sequences in descending modified time order</li>
+		<li>0x10001 - Sends Order Description ID Sequences in descending modified time order</li>
+		<li>0x10002 - Sends Board ID Sequences in descending modified time order</li>
+		<li>0x10003 - Sends Resource Description ID Sequences in descending modified time order</li>
+		<li>0x10004 - Sends Category Description ID Sequences in descending modified time order</li>
+		<li>0x10005 - Sends Design ID Sequences in descending modified time order</li>
+		<li>0x10006 - Sends Component ID Sequences in descending modified time order</li>
+		<li>0x10007 - Sends Property ID Sequences in descending modified time order</li>
+	</ul>
+</p>
+</span>
+
+<a name="Object_Desc"></a>
+<h3>Object Frame</h3>
+<p>
+	An Object frame consist of:
+	
+	<ul>
+		<li>a UInt32, object ID</li>
+		<li>a UInt32, object type</li>
+		<li>a String, name of object</li>
+		<li>a UInt64, size of object (diameter)</li>
+		<li>3 by Int64, position of object</li>
+		<li>3 by Int64, velocity of object</li>
+		<li>
+			a list of UInt32, object IDs of objects contained in the current
+			object
+		</li>
+		<li>
+			a list of UInt32, order types that the player can send to this
+			object
+		</li>
+		<li>a UInt32, number of orders currently on this object</li>
+		<li class="new">a UInt64, the last modified time</li>
+		<li>
+			<span class="new">2</span> by UInt32 of padding, for future expansion of
+			common attributes
+		</li>
+		<li>
+			extra data, as defined by each object type
+		</li>
+	</ul>
+</p><p class="inote">
+	Note: The number of orders should be the number of orders the person can see on the
+	object. Not the total number of orders on the object. 
+</p>
+
+
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/end_page.inc";
+?>
