@@ -212,12 +212,16 @@ The unit of discovery is not "a server" as one might first think, rather it is
 		<td>7</td>
 		<td>human readable name of the sever</td>
 	</tr><tr>
-		<td>turn</td>
+		<td>sn</td>
 		<td>8</td>
+		<td>short (computer) name of the sever</td>
+	</tr><tr>
+		<td>turn</td>
+		<td>9</td>
 		<td>the current turn the game is at</td>
 	</tr><tr>
 		<td>prd</td>
-		<td>9</td>
+		<td>10</td>
 		<td>the time between turns in seconds</td>
 	</tr>
 </table>
@@ -247,6 +251,9 @@ Local LAN discovery is being done with ZeroConf MDNS. Each server should
 advertise a record PER GAME (per location). The location details are
 automatically discovered. The required and optional parameters should be found
 in the TXT record.
+</p><p>
+The service name should be the "ln" parameter. The "sn" should then be sent as
+an optional parameter.
 </p>
 
 <h2>Internet Discovery</h2>
@@ -325,7 +332,7 @@ telling the number of "Game" frames to come. Game frames are described
 as follows,
 </p><p>
 <ul>
-	<li> a string,           (name)     Game name</li>
+	<li> a string,           (name)     Game (short) name</li>
 	<li> a string,           (key)      Empty on receive</li>
 	<li> a list of Strings,  (tp)       List of protocol versions supported</li>
 	<li> a string,           (server)   Server Version</li>
@@ -474,7 +481,8 @@ Client  -- connect -----&gt;  Server
  --- filters are activated here ---
 </pre>
 </p><p>
-If SSL filter is used it should always be the outer most filter.
+If SSL filter is used it should always be the outer most filter. There should
+only be one compression filter in use.
 </p>
 
 <h2>EOT Notification</h2>
@@ -780,7 +788,7 @@ and each instance of the object has it's own value.</p>
 
 <h3>Positioning</h3>
 <ul>
-    <li>Position (Velocity, Acceleration)
+    <li>Position, Velocity or Acceleration
 	<ul>
 		<li><b>On the Object</b>
 		<ul>
@@ -806,6 +814,7 @@ and each instance of the object has it's own value.</p>
 			<li>None</li>
 		</ul></li>
 	</ul></li>
+
 </ul>
 
 <h3>Telling things what to do?</h3>
@@ -892,8 +901,7 @@ How servers solve this problem is up to them.
 		<li><b>On the Object</b>
 		<ul>
 			<li>UInt32, the value on the graph</li>
-			<li>UInt32, the current &quot;heading&quot; of the value of the
-graph</li>
+			<li>UInt32, the current &quot;heading&quot; of the value of the graph</li>
 		</ul></li>
 
 		<li><b>On the Object Description</b>
@@ -908,9 +916,9 @@ graph</li>
 				<li>??? </li>
 			</ol></li>
 			<li>A String, the X axis label</li>
-			<li>Enumeration, the Type of the Y axis (same as above) 
-			<li>a List of (which are the points on the graph)
+			<li>Enumeration, the Type of the Y axis (same as above)</li>
 			<li>A String, the Y axis label</li>
+			<li>a List of (which are the points on the graph)
 			<ul>
 				<li>UInt32, The X value</li>
 				<li>UInt32, The Y value</li>
@@ -976,12 +984,15 @@ Planet Description
 		Linear, "Workers", 
 		Linear, "Production Points per Factory", 
 		[[0,0], [10,5], [20, 7], [30, 8], [40, 9], [50, 10]]
-    - INTEGER, [], "Factories", "Number of factories on this planet",  
+	- INTEGER, [], "Factories", "Number of factories on this planet",  
 	- INTEGER, [], "Production Points", "Number of production points this planet produces each turn",
 	- TURNS, "Age", "Age of this information"
-A few actual planets,
+</pre>
+
+<p>A few actual planets,</p>
 <pre>
- 0, PlanetType, "Tim's Planet", "Tim's magnificent planet!", [], 11:45am 2006-07-10, 
+
+0, PlanetType, "Tim's Planet", "Tim's magnificent planet!", [], 11:45am 2006-07-10, 
 
 	- 10000, 10000, 10000, 0, 0, 0, 0, 0, 0
 
@@ -1062,23 +1073,33 @@ It would probably be displayed in the client like the following,
 	<ul>
 		<li>a Int32, error code</li>
 		<li>a String, message of the error</li>
+		<li>List of GRS, Describes what the error message refers to</li>
 	</ul>
 	Current error codes consist of:
 	<ul>
 		<li>0 - Protocol Error, Something went wrong with the protocol</li>
 		<li>1 - Frame Error, One of the frames sent was bad</li>
 		<li>2 - Unavailable Permanently, This operation is unavailable</li>
-		<li>3 - Unavailable Temporarily, This operation is unavailable at this moment</li>
+		<li>3 - Unavailable Temporarily, This operation is unavailable at this moment (IE The server is currently overloaded)</li>
 		<li>4 - No such thing, The object/order/message does not exist</li>
-		<li class="new">5 - Permission Denied, You don't have permission to do this operation</li>
-		<li>...</li>
+		<li>5 - Permission Denied, You don't have permission to do this operation</li>
+		<li class="new">6 - Permission Denied, You don't have permission to access this object/order/message</li>
+		<li class="new">7 - Gone Permanently, The object/order/message has been destroyed or similar</li>
+		<li class="new">8 - Gone Temporarily, The object/order/message has been obscured from your view</li>
+		<li class="new">9 - Version not Supported, The server doesn't support that version of the packet</li>
+		<li class="new">10 - Version not Supported, The server doesn't support that version of the packet</li>
+		<li class="new">11 - Version not Supported, The server doesn't support that version of the packet</li>
+		<li class="new">12 - Version not Supported, The server doesn't support that version of the packet</li>
 	</ul>
-	Exception: If the connect frame is not valid TP frame, this
-	frame will not be returned, instead a plain text string will be sent saying that the wrong
-	protocol has been used. A fail frame may be send if the wrong protocol version is detected.
-	This does not affect clients as they should always get the connect frame right.
+Exception: If the connect frame is not valid TP frame, this frame will not be
+returned, instead a plain text string will be sent saying that the wrong
+protocol has been used. A fail frame may be send if the wrong protocol version
+is detected.  This does not affect clients as they should always get the
+connect frame right.
+</p><p class="note">
+The server needs to be careful that it doesn't disclose extra information by
+returning different fail codes.
 </p>
-
 
 <a name="FeatureNegotiation"></a>
 <h2>Feature Negotiation</h2>
