@@ -520,19 +520,17 @@ no longer exist.
 
 <h2>Frame type Versioning</h2>
 <p>
-The TP03 header will be changed to a "TP&lt;major byte&gt;&lt;minor byte&gt;".
-The major byte is the version of the protocol (IE 1 - tp01, 2 - tp02, 3 - tp03,
-4 - tp04).
+The TP03 header will be changed to a "TP&lt;protocol version byte&gt;&lt; frame
+version byte&gt;". The bytes are in binary not ASCII.
 </p><p>
-Minor byte is the minor revision of the frame. As new versions of frames are
-added the minor byte will be incremented. (They all start at zero.)
-</p><p>
-A frame will not change in an non-backwards compatible way within a major
+As new versions of frames are added the frame version byte will be incremented.
+(They all start at zero for the first release of a major protocol version.) A
+frame will not change in an non-backwards compatible way within a major
 protocol.
 </p><p>
-The major byte can be 3, for tp03 with frame type versioning and header and all
-minor bytes are 0. tp04 with major 4 and minor 0 is the same as tp03 with new
-header.
+Although this frame type versioning was only introduced in tp04 protocol. The
+method can be used by tp03 clients with a protocol version byte set to 3 and 
+frame version byte set to 0.
 </p>
 
 <h2>Object Parametrisation/Last seen</h2>
