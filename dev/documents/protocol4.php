@@ -563,6 +563,78 @@ technology is an anti-dependency. How these dependencies are described is yet to
 be figured out.
 </p>
 
+
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<h2>Object property</h2>
+
+<h3>Locational Properties</h3>
+<p>
+These are properties which describe where an object is on a starmap (and where
+they are going). Things like wormholes could have multiple positions.
+</p>
+
+<h3>Descriptional Properties</h3>
+<p>
+These are properties which are for the players information when making
+decisions. As far as the client is concerned they don't have any effect on the
+game. These would include things like "Name", "Description", etc.
+</p>
+
+<h3>Habitation Properties</h3>
+<p>
+These are properties which describe if a race can survive at an object. Things
+like temperature, atmosphere, etc. They are most likely to be found on planets. 
+</p>
+
+<h3>Resource Properties</h3>
+<p>
+These describe what is available to be used/mined/etc at a location.  Found
+generally on planets, asteroid fields, 
+</p>
+
+<h3>Goodness Properties</h3>
+<p>
+These describe how good X is at doing something. For example production
+capability or population size.
+</p>
+
+<h3>Order Queues</h3>
+<p>
+Currently we only have one order queue. There is no real reason an object
+couldn't have multiple order queue's. 
+</p><p>
+This could be used for where you want a separate "Build Queue" to an "Action
+Queue". It could also be used on ships where you have an "Battle Queue" which
+specifies what the fleet should do in battle (IE Attack hard for X turns, run
+away).
+</p>
+
+
+<p>Properties also have a general type,
+<ul>
+  <li>Text Property - Just a string, HTML or some other Formatted String,
+etc.</li>
+  <li>Integer Property - Just a plan number.</li>
+  <li>Range Property - Some type of range, for example the bars in Stars!
+habitability.</li>
+  <li>Gauge Property - Some type of thing which fills up, like the fuel bars or
+the cargo bar in Stars!</li>
+  <li>Reference Property - Refers to something else (for example a player, a
+design, etc)</li>
+  <li>List Property - Lists a bunch of other properties (IE Resources would be a
+list of reference properties?)</li>
+  <li>Choice Property - Can make a choice of something.</li>
+  <li>Graph Property - Some type of graph, with the location where the current
+value is and where it is heading. This could be used for production capability
+(which is likely to be non-linear).</li>
+</ul>
+
+
+
 <?php
 	include "../bits/end_section.inc";
 	include "../bits/start_section.inc";
