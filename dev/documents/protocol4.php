@@ -461,52 +461,54 @@ and an ID which says "All other players finished".
 
 <h2>Media</h2>
 <p>
-The Game frame will be extended to have a "base media" URL. All other
-media URL that are sent will be relative to this URL. 
+The Game frame will be extended to have a "base media" URL. All other media URL
+that are sent will be relative to this URL. 
 </p><p>
-Each media server will provide a "media.gz" which includes a file
-listing as follows
+Each media server will provide a "media.gz" which includes a file listing as
+follows
 <pre>
 &lt;filename&gt; &lt;size&gt; &lt;last modtime&gt; &lt;checksum&gt;
 </pre>
-URLs will not specify the file type. It is up to the client to choose
-the file type. (For example PNG, MNG, etc)
+URLs will not specify the file type. It is up to the client to choose the file
+type. (For example PNG, MNG, etc)
 </p>
 
 <h2>Difference support</h2>
 <p>
-The Get ID's frames will have a "from" field added. This is a SInt64
-which is the timestamp to get changes from. If it is -1 then it should
-be all objects.
+The Get ID's frames will have a "from" field added. This is a SInt64 which is
+the timestamp to get changes from. If it is -1 then it should be all objects.
 </p><p>
-It is important to note that the Get ID's frame when called with a valid
-time stamp, the server should send ID's for objects which may have been
-destroyed or no longer exist.
+It is important to note that the Get ID's frame when called with a valid time
+stamp, the server should send ID's for objects which may have been destroyed or
+no longer exist.
 </p>
 
 <h2>Frame type Versioning</h2>
 <p>
-The TP03 header will be changed to a "TP&lt;major byte&gt;&lt;minor byte&gt;". The
-major byte is the version of the protocol (for example 1, 2, 3, 4).
+The TP03 header will be changed to a "TP&lt;major byte&gt;&lt;minor byte&gt;".
+The major byte is the version of the protocol (for example 1, 2, 3, 4).
 </p><p>
-Minor byte is the minor revision of the frame. As new versions of frames
-are added the minor byte will be incremented. (They all start at zero.)
+Minor byte is the minor revision of the frame. As new versions of frames are
+added the minor byte will be incremented. (They all start at zero.)
 </p><p>
-A frame will not change in an non-backwards compatible way within a
-major protocol.
+A frame will not change in an non-backwards compatible way within a major
+protocol.
+</p><p>
+The major byte can be 3, for tp03 with frame type versioning and header and all
+minor bytes are 0. tp04 with major 4 and minor 0 is the same as tp03 with new
+header.
 </p>
 
 <h2>Object Parametrisation/Last seen</h2>
 <p>
-It was decided that Last seen ended up to not be needed on anything
-except objects. The new Object parametrisation (as describe in other
-emails) includes support for Last Seen.
+It was decided that Last seen ended up to not be needed on anything except
+objects. The new Object parametrisation (as describe in other emails) includes
+support for Last Seen.
 </p><p>
-One important property is the Order Queue. 
-Order Queue's will have their own ID which the Order frames will now
-refer to (instead of using Object ID's). For this to be backwards
-compatible the default order queue will always have the same ID as the
-Object ID.
+One important property is the Order Queue.  Order Queue's will have their own ID
+which the Order frames will now refer to (instead of using Object ID's). For
+this to be backwards compatible the default order queue will always have the
+same ID as the Object ID.
 </p><p>
 Properties will be grouped.
 </p>
@@ -514,37 +516,42 @@ Properties will be grouped.
 <h2>History Support</h2>
 <p>
 History support will wait till tp05.
+</p><p>
+But should be stored server side in preparation for tp05.
 </p>
 
 <h2>Settable information</h2>
 <p>
-Object settable information will be done by sending the full object to
-be consistent with other things such as Designs and Orders. The object
+Object settable information will be done by sending the full object to be
+consistent with other things such as Designs and Orders. The object
 parametrisation will describe if fields are user modifiable.
 </p>
 
 <h2>Virtual Hosting/Game Frames</h2>
 <p>
-A new "Get Games" frame will exist. This will return the same frames
-which the metaserver currently returns.
+A new "Get Games" frame will exist. This will return the same frames which the
+metaserver currently returns.
 </p><p>
-Virtual Hosting support will use the current @ system. Servers which
-only support one game should ignore everything after the first @.
+Virtual Hosting support will use the current @ system. Servers which only
+support one game should ignore everything after the first @.
 </p>
 
 <h2>Async Frames</h2>
 <p>
-If something changes on the server is can send a frame at any time
-saying so. This is mainly used when a creating a Design might add a new
-component. (For example, creating a new Torpedo design would create a
-new Torpedo component.)
+If something changes on the server is can send a frame at any time saying so.
+This is mainly used when a creating a Design might add a new component. (For
+example, creating a new Torpedo design would create a new Torpedo component.)
+</p><p>
+Currently only components are on this list (other than the time remaining
+frames). Once research/technology is implemented, there could be others.  I
+would rather have a set list.
 </p>
 
 <h2>Research / Technology Frames</h2>
 <p>
-A new frame will be added which describes things which can be
-researched. The standard get ids, etc frames will be added for these
-objects. This frame will have at least the following,
+A new frame will be added which describes things which can be researched. The
+standard get ids, etc frames will be added for these objects. This frame will
+have at least the following,
 <ul>
 	<li>Name</li>
 	<li>Description</li>
@@ -552,8 +559,8 @@ objects. This frame will have at least the following,
 brings</li>
 </ul>
 Each technology which describe which technology it depends on and which
-technology is an anti-dependency. How these dependencies are described
-is yet to be figured out.
+technology is an anti-dependency. How these dependencies are described is yet to
+be figured out.
 </p>
 
 <?php
