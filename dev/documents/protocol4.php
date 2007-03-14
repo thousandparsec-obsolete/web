@@ -408,6 +408,154 @@ plain text or HTML.
 	<tr class="row0 new"><td class="numeric">61</td><td>List Of Property IDs</td></tr>
 	<tr class="row1 new"><td class="numeric">62</td><td>Account Create</td></tr>
 </table>
+
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
+
+<h2>Protocol "Filter" Negotiation</h2>
+<p>
+Filter negotiation will be performed in the following way.
+
+<ul>
+  <li>Extra Id's will be added to the features frame to add different
+filters.</li>
+  <li>The client will choose which filters are used.</li>
+  <li>Server has "right of refusal".</li>
+  <li>Filter negotiation can not be pipelined.</li>
+  <li>New "Set Filters" frame will be created.</li>
+</ul>
+</p><p>
+An example session would be as follows,
+
+<pre>
+Client  -- connect -----&gt;  Server
+        &lt;- okay ---------
+        -- get features &gt;
+        &lt;-- features ----
+        -- set filters -&gt;
+        &lt;-- okay --------
+ --- filters are activated here ---
+</pre>
+</p><p>
+If SSL filter is used it should always be the outer most filter.
+</p>
+
+<h2>EOT Notification</h2>
+<p>
+A new frame will be added to allow clients to request that a turn be ended. The
+Time Remaining frame will had a new field added which explains why this Time
+Remaining frame was sent.
+</p><p>
+This should allow the following cases,
+<ul>
+	<li>EOT when everyone finished.</li>
+	<li>EOT at timeout.</li>
+	<li>EOT after short timeout when majority finished.</li>
+</ul>
+For example, say 6 players are playing. After 4 players submit "Finished"
+frames, the other players get a "Time Remaining frame" with, say, 2 minutes left
+and an ID which says "All other players finished".
+</p>
+
+<h2>Media</h2>
+<p>
+The Game frame will be extended to have a "base media" URL. All other
+media URL that are sent will be relative to this URL. 
+</p><p>
+Each media server will provide a "media.gz" which includes a file
+listing as follows
+<pre>
+&lt;filename&gt; &lt;size&gt; &lt;last modtime&gt; &lt;checksum&gt;
+</pre>
+URLs will not specify the file type. It is up to the client to choose
+the file type. (For example PNG, MNG, etc)
+</p>
+
+<h2>Difference support</h2>
+<p>
+The Get ID's frames will have a "from" field added. This is a SInt64
+which is the timestamp to get changes from. If it is -1 then it should
+be all objects.
+</p><p>
+It is important to note that the Get ID's frame when called with a valid
+time stamp, the server should send ID's for objects which may have been
+destroyed or no longer exist.
+</p>
+
+<h2>Frame type Versioning</h2>
+<p>
+The TP03 header will be changed to a "TP&lt;major byte&gt;&lt;minor byte&gt;". The
+major byte is the version of the protocol (for example 1, 2, 3, 4).
+</p><p>
+Minor byte is the minor revision of the frame. As new versions of frames
+are added the minor byte will be incremented. (They all start at zero.)
+</p><p>
+A frame will not change in an non-backwards compatible way within a
+major protocol.
+</p>
+
+<h2>Object Parametrisation/Last seen</h2>
+<p>
+It was decided that Last seen ended up to not be needed on anything
+except objects. The new Object parametrisation (as describe in other
+emails) includes support for Last Seen.
+</p><p>
+One important property is the Order Queue. 
+Order Queue's will have their own ID which the Order frames will now
+refer to (instead of using Object ID's). For this to be backwards
+compatible the default order queue will always have the same ID as the
+Object ID.
+</p><p>
+Properties will be grouped.
+</p>
+
+<h2>History Support</h2>
+<p>
+History support will wait till tp05.
+</p>
+
+<h2>Settable information</h2>
+<p>
+Object settable information will be done by sending the full object to
+be consistent with other things such as Designs and Orders. The object
+parametrisation will describe if fields are user modifiable.
+</p>
+
+<h2>Virtual Hosting/Game Frames</h2>
+<p>
+A new "Get Games" frame will exist. This will return the same frames
+which the metaserver currently returns.
+</p><p>
+Virtual Hosting support will use the current @ system. Servers which
+only support one game should ignore everything after the first @.
+</p>
+
+<h2>Async Frames</h2>
+<p>
+If something changes on the server is can send a frame at any time
+saying so. This is mainly used when a creating a Design might add a new
+component. (For example, creating a new Torpedo design would create a
+new Torpedo component.)
+</p>
+
+<h2>Research / Technology Frames</h2>
+<p>
+A new frame will be added which describes things which can be
+researched. The standard get ids, etc frames will be added for these
+objects. This frame will have at least the following,
+<ul>
+	<li>Name</li>
+	<li>Description</li>
+	<li>Generic Reference System List of things which this technology
+brings</li>
+</ul>
+Each technology which describe which technology it depends on and which
+technology is an anti-dependency. How these dependencies are described
+is yet to be figured out.
+</p>
+
 <?php
 	include "../bits/end_section.inc";
 	include "../bits/start_section.inc";
