@@ -575,6 +575,18 @@ be figured out.
 <p>
 These are properties which describe where an object is on a starmap (and where
 they are going). Things like wormholes could have multiple positions.
+</p><p>
+Thinking about it, we really only need two: Free space (3d) and "bound". In 
+most cases, we don't need to specify where they are bound to.
+</p><p>
+So either the 3 int64 position, or a uint32 object id that the object is bound 
+to.
+</p>
+
+<h4>Time properties</h4>
+<p>
+Describe which turn something has occured or when something will occur. In
+turns.
 </p>
 
 <h4>Descriptional Properties</h4>
