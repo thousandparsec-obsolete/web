@@ -521,7 +521,8 @@ no longer exist.
 <h2>Frame type Versioning</h2>
 <p>
 The TP03 header will be changed to a "TP&lt;major byte&gt;&lt;minor byte&gt;".
-The major byte is the version of the protocol (for example 1, 2, 3, 4).
+The major byte is the version of the protocol (IE 1 - tp01, 2 - tp02, 3 - tp03,
+4 - tp04).
 </p><p>
 Minor byte is the minor revision of the frame. As new versions of frames are
 added the minor byte will be incremented. (They all start at zero.)
