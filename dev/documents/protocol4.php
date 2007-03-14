@@ -740,6 +740,212 @@ I was thinking a cut back version of the current common attributes.
       * extra data, as defined by each object description
 </pre>
 
+<h1>Common Stuff</h1>
+<ul>
+    <li>a UInt32, Object ID </li>
+    <li>a UInt32, Object type </li>
+    <li>a String, Name of object </li>
+    <li>a String, Description of the object </li>
+    <li>a list of UInt32, Object IDs of objects contained in the current object </li>
+    <li>a UInt64, The last modified time </li>
+    <li>x by UInt32 of padding, for future expansion of common attributes</li>
+</ul>
+
+<h1>Descriptions Stuff</h1>
+<ul>
+    <li>A List of
+	<ul>
+		<li>UInt32, Property Group ID</li>
+		<li>A String, Object Property Group Name</li>
+		<li>A String, Object Property Group Description</li>
+		<li>A List of
+		<ul>
+			<li>UInt32, Object Property Type,</li>
+			<li>List of UInt32, Object Property Categories</li>
+			<li>A String, Object Property Name</li>
+			<li>A String, Object Property Description</li>
+			<li>?? UInt32, Number of bytes of &quot;extra&quot; details ??</li>
+		</ul>
+	</ul></li>
+</ul>
+<p>
+Each object will have a list of properties groups (which are a list of
+properties) they have.
+</p><p>
+The properties will be divided into groups so that multiple properties can be
+put together, for example to have a property which describes a position 6 turns
+ago you would have a Time Property and Position property in one group.
+</p>
+
+<h2>Property Types</h2>
+<p>
+Each property type has a two parts, arguments which are part of the description
+and arguments which are different for each object. For example, a range would
+have a possible maximum, possible minimum - which are part of the description,
+and each instance of the object has it's own value.</p>
+
+<h3>Positioning</h3>
+<ul>
+    <li>Position (Velocity, Acceleration)
+	<ul>
+		<li><b>On the Object</b>
+		<ul>
+			<li>3 * Int64, Position of Object</li>
+			<li>UInt64, Object ID this position is relative to</li>
+		</ul></li>
+
+		<li><b>On the Object Description</b>
+		<ul>
+			<li>None</li>
+		</ul></li>
+	</ul></li>
+
+    <li>Bound Position
+	<ul>
+		<li><b>On the Object</b>
+		<ul>
+			<li>Int32, Object Slot Position </li>
+			<li>UInt64, Object ID that this Object is bound too </li>
+		</ul></li>
+		<li><b>On the Object Description</b>
+		<ul>
+			<li>None</li>
+		</ul></li>
+	</ul></li>
+</ul>
+
+<h3>Telling things what to do?</h3>
+<ul>
+    <li>&quot;Order Queue&quot;
+	<ul>
+		<li><b>On the Object</b>
+		<ul>
+			<li>UInt32, Current number of orders on this object</li>
+			<li>List of UInt32, Order ID's which are valid in this queue</li>
+		</ul></li>
+
+		<li><b>On the Object Description</b>
+		<ul>
+			<li>UInt32, Number of the slots the queue</li>
+			<li>UInt32, Queue ID</li>
+		</ul></li>
+	</ul>
+</ul>
+
+<h3>Descriptional</h3>
+<ul>
+    <li>Reference
+	<ul>
+		<li><b>On the Object</b>
+		<ul>
+			<li>A reference as described by the Generic Reference System.</li>
+		</ul></li>
+
+		<li><b>On the Object Description</b>
+		<ul>
+			<li>?Acceptable references?</li>
+        </ul></li>
+	</ul>
+
+    <li>Time (Turn)
+	<ul>
+		<li><b>On the Object</b>
+		<ul>
+			<li>A UInt64, The Turn</li>
+		</ul></li>
+
+		<li><b>On the Object Description</b>
+		<ul>
+			<li>None</li>
+		</ul></li>
+	</ul></li>
+
+    <li>Time (Real)
+	<ul>
+		<li><b>On the Object</b>
+		<ul>
+			<li>A UInt64, A Unix timestamp in UTC</li>
+		</ul></li>
+
+		<li><b>On the Object Description</b>
+		<ul>
+			<li>None</li>
+		</ul></li>
+	</ul></li>
+
+    <li>Enumeration
+	<ul>
+		<li><b>On the Object</b>
+		<ul>
+			<li>UInt32, the actual choice</li>
+		</ul></li>
+
+		<li><b>On the Object Description</b>
+		<ul>
+			<li>A list of Strings, the text value of the enumeration value</li>
+		</ul></li>
+	</ul></li>
+
+    <li>Graph
+	<ul>
+		<li><b>On the Object</b>
+		<ul>
+			<li>UInt32, the value on the graph</li>
+			<li>UInt32, the current &quot;heading&quot; of the value of the
+graph</li>
+		</ul></li>
+
+		<li><b>On the Object Description</b>
+		<ul>
+			<li>Enumeration, the Type of the X axis 
+			<ol>
+				<li>Linear </li>
+				<li>Logarithmic Base 2 </li>
+				<li>Logarithmic Base 8 </li>
+				<li>Logarithmic Base 10 </li>
+				<li>dB (10*log(x^2)) </li>
+				<li>??? </li>
+			</ol></li>
+			<li>Enumeration, the Type of the Y axis (same as above) 
+			<li>a List of 
+			<ul>
+				<li>UInt32, The X value</li>
+				<li>UInt32, The Y value</li>
+			</ul></li>
+		</ul></li>
+	</ul></li>
+
+    <li>Range
+	<ul>
+		<li><b>On the Object</b>
+		<ul>
+			<li>Int64, the value</li>
+			<li>Int64, the current &quot;heading&quot; of the value of the
+range</li>
+		</ul></li>
+
+		<li><b>On the Object Description</b>
+		<ul>
+			<li>Int64, Smallest possible value</li>
+			<li>Int64, Largest possible value</li>
+			<li>Int32, Smallest Delta (IE Step Size)</li> 
+			<li>Enumeration, a transform type for the value
+			<ol>
+				<li>Linear </li>
+				<li>Logarithmic Base 2 </li>
+				<li>Logarithmic Base 8 </li>
+				<li>Logarithmic Base 10 </li>
+				<li>dB (10*log(x^2)) </li>
+				<li>??? </li>
+			</ol></li>
+		</ul></li>
+	</ul></li>
+
+	
+	<li>String</li>
+	<li>Settable String</li>
+</ul>
+
 <?php
 	include "../bits/end_section.inc";
 	include "../bits/start_section.inc";
