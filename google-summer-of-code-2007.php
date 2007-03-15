@@ -1,6 +1,6 @@
 <?php $title = "Google Summer of Code 2007" ?>
-<?php include "/bits/start_page.inc" ?>
-<?php include "/bits/start_section.inc" ?>
+<?php include "bits/start_page.inc" ?>
+<?php include "bits/start_section.inc" ?>
 
 <h1>Google Summer of Code 2007</h1>
 <h6>Last updated: 15 March 2007</h6>
@@ -8,6 +8,9 @@
 <p>Thousand Parsec is one of the mentoring organisations for Google Summer of Code 2007.
 This is a great chance for all students to work on a cool open source game project during
 the summer of 2007, have fun and earn some money during the process.</p>
+
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
 
 <h2>Ideas</h2>
 
@@ -33,6 +36,9 @@ easiest way to start playing the game.</p>
 
 <p>For additional ideas we encourage students to look at
 <a href="http://sourceforge.net/tracker/?group_id=132078&atid=829724">Thousand Parsec TODO list</a>.</p>
+
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
 
 <h2>Important dates</h2>
 <dl>
@@ -63,5 +69,5 @@ easiest way to start playing the game.</p>
 
 </dl>
 
-<?php include "/bits/end_section.inc" ?>
-<?php include "/bits/end_page.inc" ?>
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/end_page.inc" ?>
