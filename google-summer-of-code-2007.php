@@ -304,7 +304,7 @@ interface as the new game features are created and the internal architecture cha
 	</tr><tr>
 		<td><h4>More Information</h4></td>
 		<td>
-			<a href="http://www.postgresql.org/">PostgresSQL</a>
+			<a href="http://www.postgresql.org/">PostgresSQL</a><br />
 			<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1678819&group_id=132078&atid=829724">SF Todo Tracker Item</a>.
 		</td>
 	</tr><tr>
@@ -330,7 +330,7 @@ interface as the new game features are created and the internal architecture cha
 	</tr><tr>
 		<td><h4>More Information</h4></td>
 		<td>
-			<a href="http://www.sqlite.org/">SQLlite</a>
+			<a href="http://www.sqlite.org/">SQLlite</a><br />
 			<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1678819&group_id=132078&atid=829724">SF Todo Tracker Item</a>.
 		</td>
 	</tr><tr>
