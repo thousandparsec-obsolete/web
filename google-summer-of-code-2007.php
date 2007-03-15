@@ -5,7 +5,8 @@
 <h1>Google Summer of Code 2007</h1>
 <h6>Last updated: 15 March 2007</h6>
 
-<p>Thousand Parsec is one of the mentoring organisations for Google Summer of Code 2007.
+<p>Thousand Parsec is one of the mentoring organisations for
+<a href="http://code.google.com/soc/" target="_blank">Google Summer of Code 2007</a>.
 This is a great chance for all students to work on a cool open source game project during
 the summer of 2007, have fun and earn some money during the process.</p>
 
