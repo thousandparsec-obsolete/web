@@ -15,9 +15,17 @@ the summer of 2007, have fun and earn some money during the process.</p>
 
 <h2>Ideas</h2>
 
-<p>Below are some of the ideas and suggestion for students who are interested in joining
+<p>
+Below are some of the ideas and suggestion for students who are interested in joining
 Thousand Parsec project. The list is not definitive and any student is more than welcome
-to come up with their own idea to work on.</p>
+to come up with their own idea to work on. Initiative is a very good skill.
+</p><p style='font-size: 18px'>
+The list is not definitive and any student is more than welcome to come up with their own
+idea to work on. Initiative is a skill which will rate highly when selecting projects.
+Feel free to come up with your own projects.  
+</p><p>For additional ideas we encourage students to look at
+<a href="http://sourceforge.net/tracker/?group_id=132078&atid=829724">Thousand Parsec TODO list</a>.</p>
+
 
 <table>
 	<tr>
@@ -191,6 +199,30 @@ interface as the new game features are created and the internal architecture cha
 
 <table>
 	<tr>
+		<td colspan="2"><h3>Create a ruleset development Enviroment</h3></td>
+	</tr><tr>
+		<td colspan="2">
+<p>
+Scheme is quite a hard language to work write. Create an IDE which makes it easy to create
+new components and properties (and develop the scheme code to go with it).
+</p>
+		</td>
+	</tr><tr>
+		<td><h4>More Information</h4></td>
+		<td>
+<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1652210&group_id=132078&atid=829724">[1652210] - Add long term stats to Metaserver</a><br />
+<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1652205&group_id=132078&atid=829724">[1652205] - Add match making service to the Metaserver.</a><br />
+<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1652204&group_id=132078&atid=829724">[1652204] - Add RSS Feeds to the Metaserver.</a><br />
+<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1586115&group_id=132078&atid=829724">[1652209] - Clean up Metaserver code.</a><br />
+		</td>
+	</tr><tr>
+		<td><h4>Required Skills</h4></td>
+		<td>Some PHP skills (or other Web development skills).</td>
+	</tr>
+</table>
+
+<table>
+	<tr>
 		<td colspan="2"><h3>Improve the metaserver - make it standalone</h3></td>
 	</tr><tr>
 		<td colspan="2">
@@ -224,8 +256,6 @@ Some features would include:
 	</tr>
 </table>
 
-<p>For additional ideas we encourage students to look at
-<a href="http://sourceforge.net/tracker/?group_id=132078&atid=829724">Thousand Parsec TODO list</a>.</p>
 
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
