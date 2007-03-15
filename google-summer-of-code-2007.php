@@ -1,6 +1,6 @@
 <?php $title = "Google Summer of Code 2007" ?>
-<?php include "../bits/start_page.inc" ?>
-<?php include "../bits/start_section.inc" ?>
+<?php include "/bits/start_page.inc" ?>
+<?php include "/bits/start_section.inc" ?>
 
 <h1>Google Summer of Code 2007</h1>
 <h6>Last updated: 15 March 2007</h6>
@@ -63,5 +63,5 @@ easiest way to start playing the game.</p>
 
 </dl>
 
-<?php include "../bits/end_section.inc" ?>
-<?php include "../bits/end_page.inc" ?>
+<?php include "/bits/end_section.inc" ?>
+<?php include "/bits/end_page.inc" ?>
