@@ -405,21 +405,25 @@ Some features would include:
     <ul>
         <li>E-mail: <a href="mailto:mithro NOSPAM mithis PLEASE com">jlp@holodeck1.com</a></li>
         <li>Jabber: <a href="xmpp:mithro@gmail.org">mithro@gmail.org</a></li>
+		<li>Responsible for: All Python Code (tpserver-py, tpclient-py, libtp*-py), Metaserver</li>
     </ul></li>
 <li>Lee Begg (llnz)
     <ul>
         <li>E-mail: <a href="mailto:llnz NOSPAM paradise PLEASE net.nz">llnz AT paradise DOT net DOT nz</a></li>
         <li>Jabber: <a href="xmpp:llnz@jabber.org">llnz@jabber.org</a></li>
+		<li>Responsible for: All C++ Server (tpserver-cpp, libtpproto-cpp)</li>
     </ul></li>
 <li>Jure Repinc (JLP)
     <ul>
         <li>E-mail: <a href="mailto:jlp NOSPAM holodeck1 PLEASE com">jlp@holodeck1.com</a></li>
         <li>Jabber: <a href="xmpp:jlp@jabber.org">jlp@jabber.org</a></li>
+		<li>Responsible for: parsek, General client Development</li>
     </ul></li>
 <li>Brett Nash (nash)
     <ul>
         <li>E-mail: <a href="">jlp@holodeck1.com</a></li>
         <li>Jabber: <a href=""></a></li>
+		<li>Responsible for: AI, General client Development</li>
     </ul></li>
 </ul>
 
