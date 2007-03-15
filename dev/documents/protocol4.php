@@ -605,13 +605,12 @@ technology is an anti-dependency. How these dependencies are described is yet to
 be figured out.
 </p>
 
-
 <?php
 	include "../bits/end_section.inc";
 	include "../bits/start_section.inc";
 ?>
 
-<h2>Object property</h2>
+<h2>Object Property Discussion</h2>
 
 <h4>Locational Properties</h4>
 <p>
@@ -728,19 +727,12 @@ list of reference properties?)</li>
   <li>Choice Property - Can make a choice of something.</li>
 </ul>
 
-<pre>
-I was thinking a cut back version of the current common attributes.
+<?php
+	include "../bits/end_section.inc";
+	include "../bits/start_section.inc";
+?>
 
-  * a UInt32, object ID
-      * a UInt32, object type
-      * a String, name of object
-      * a String, description of the object
-      * a list of UInt32, object IDs of objects contained in the current object 
-      * a UInt64, the last modified time
-      * x by UInt32 of padding, for future expansion of common attributes 
-      * 
-      * extra data, as defined by each object description
-</pre>
+<h2>Object Property Definition</h2>
 
 <h3>Object Frame</h3>
 <ul>
@@ -791,6 +783,13 @@ Each property type has a two parts, arguments which are part of the description
 and arguments which are different for each object. For example, a range would
 have a possible maximum, possible minimum - which are part of the description,
 and each instance of the object has it's own value.</p>
+
+<p class="fixme">
+Order Descriptions don't need anything extra - instead everything is specified
+on the order. Maybe we should do this with Objects too? This would mean that
+there could be a lot of duplication of data (IE Graph) but would be more
+flexible.
+</p>
 
 <h3>Positioning</h3>
 <ul>
@@ -844,7 +843,9 @@ this queue</li>
 	The "default" order queue (IE The most use queue) should have the same ID as
 the object it is on. Other order queue's can have any ID but the ID should not
 be the same as an object ID (as it would conflict with the information above).
-How servers solve this problem is up to them.
+How servers solve this problem is up to them. 
+</p><p class="fixme">
+	If Queue IDs are only a UInt32 then you can only have 1 queue per object.
 	</p></li>
 </ul>
 
