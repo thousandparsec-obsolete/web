@@ -434,8 +434,8 @@ at least 60% of the code has proper testing.
 		</td>
 	</tr><tr>
 		<td><h4>More Information</h4></td>
-			<a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=libtpproto-py;a=summary">libtpproto-py</a>
 		<td>
+			<a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=libtpproto-py;a=summary">libtpproto-py</a>
 		</td>
 	</tr><tr>
 		<td><h4>Required Skills</h4></td>
