@@ -173,6 +173,19 @@ Feel free to come up with your own projects.
 <a href="http://sourceforge.net/tracker/?group_id=132078&atid=829724">Thousand Parsec TODO list</a>.</p>
 
 
+<h2>Project Table of Contents</h2>
+<ul>
+	<li>Implement MTSec game in one server</li>
+	<li>Web based client</li>
+	<li>Develop a 3D Client (or improve tpclient-pyogre)</li>
+	<li>Write a PostgreSQL persistence module for tpserver-cpp</li>
+	<li>Write a SQLlite persistence module for tpserver-cpp</li>
+	<li>Create a "Ruleset" development Environment</li>
+	<li>Improve the metaserver - make it standalone</li>
+</ul>
+
+<br /><br />
+
 <table>
 	<tr>
 		<td colspan="2"><h2>Implement MTSec game in one server</h2></td>
