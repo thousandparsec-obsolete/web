@@ -748,6 +748,8 @@ I was thinking a cut back version of the current common attributes.
     <li>a UInt32, Object type </li>
     <li>a String, Name of object </li>
     <li>a String, Description of the object </li>
+	<li>a SInt32, Object ID that is this object's parent. -1 On the top level
+object.</li>
     <li>a list of UInt32, Object IDs of objects contained in the current object </li>
     <li>a UInt64, The last modified time </li>
     <li>x by UInt32 of padding, for future expansion of common attributes</li>
