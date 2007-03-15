@@ -184,6 +184,8 @@ Feel free to come up with your own projects.
 	<li>Create a "Ruleset" development Environment</li>
 	<li>Improve the metaserver - make it standalone</li>
 	<li>Write a protocol compliance test suite</li>
+	<li>Add testing to libtpproto-py</li>
+	<li>Improve wxWidget's pyAUI</li>
 </ul>
 
 <br /><br />
@@ -412,11 +414,68 @@ bunch of tests and report on it's compliance.
 	</tr><tr>
 		<td><h4>More Information</h4></td>
 		<td>
-			<a href="/tp/dev/documnets/protocol3.php">Protocol 3</a><br />
+			<a href="/tp/dev/documents/protocol3.php">Protocol 3</a><br />
 		</td>
 	</tr><tr>
 		<td><h4>Required Skills</h4></td>
 		<td>Some experience with testing is a must</td>
+	</tr>
+</table>
+
+<table>
+	<tr>
+		<td colspan="2"><h2>Add testing to libtpproto-py</h2></td>
+	</tr><tr>
+		<td colspan="2">
+<p>
+The python library currently as no testing. It's your job to write enough tests that
+at least 60% of the code has proper testing.
+</p>
+		</td>
+	</tr><tr>
+		<td><h4>More Information</h4></td>
+			<a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=libtpproto-py;a=summary">libtpproto-py</a>
+		<td>
+		</td>
+	</tr><tr>
+		<td><h4>Required Skills</h4></td>
+		<td>Some experience with unit testing and Python is a must</td>
+	</tr>
+</table>
+
+
+<table>
+	<tr>
+		<td colspan="2"><h2>Improve wxWidget's pyAUI</h2></td>
+	</tr><tr>
+		<td colspan="2">
+<p>
+The next version of tpclient-pywx, the primary Thousand Parsec client is heavily dependent
+on pyAUI. There are a bunch of improvements which could be added to make pyAUI even
+better. Some examples are,
+<ul>
+	<li>Minimise button support</li>
+	<li>Add better way to align the windows initially</li>
+	<li>Add better support for using floating MDI children under Windows</li>
+	<li>Add support for "fly out" windows (IE Windows which only show themselves when
+moused over)</li>
+	<li>Tab-based MDI classes (see C++ AUI)</li>
+	<li>Vertical Title bars</li>
+</ul>
+
+Feel free to add more ideas, a good place to look is <a
+href="http://www.kirix.com/community/forums/viewforum.php?f=15">wxAUI Forums</a>.
+</p>
+		</td>
+	</tr><tr>
+		<td><h4>More Information</h4></td>
+		<td>
+			<a href="http://xoomer.alice.it/infinity77/eng/PyAUI.html">PyAUI</a><br />
+			<a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=tpclient-pywx-dev;a=summary">tpclient-pywx Development Branch</a>
+		</td>
+	</tr><tr>
+		<td><h4>Required Skills</h4></td>
+		<td>Good Python skills is a must</td>
 	</tr>
 </table>
 
