@@ -328,24 +328,7 @@ interface as the new game features are created and the internal architecture cha
 
 <table>
 	<tr>
-		<td colspan="2"><h2>Improve the XSLT document generation</h2></td>
-	</tr><tr>
-		<td colspan="2">
-		</td>
-	</tr><tr>
-		<td><h4>More Information</h4></td>
-		<td>
-			<a href="">MTSec Documentation</a>
-		</td>
-	</tr><tr>
-		<td><h4>Required Skills</h4></td>
-		<td></td>
-	</tr>
-</table>
-
-<table>
-	<tr>
-		<td colspan="2"><h2>Create a ruleset development Enviroment</h2></td>
+		<td colspan="2"><h2>Create a "Ruleset" development Environment</h2></td>
 	</tr><tr>
 		<td colspan="2">
 <p>
@@ -356,14 +339,12 @@ new components and properties (and develop the scheme code to go with it).
 	</tr><tr>
 		<td><h4>More Information</h4></td>
 		<td>
-<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1652210&group_id=132078&atid=829724">[1652210] - Add long term stats to Metaserver</a><br />
-<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1652205&group_id=132078&atid=829724">[1652205] - Add match making service to the Metaserver.</a><br />
-<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1652204&group_id=132078&atid=829724">[1652204] - Add RSS Feeds to the Metaserver.</a><br />
-<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1586115&group_id=132078&atid=829724">[1652209] - Clean up Metaserver code.</a><br />
+<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1586115&group_id=132078&atid=829724">[1586115] - Create a component editor.</a><br />
 		</td>
 	</tr><tr>
 		<td><h4>Required Skills</h4></td>
-		<td>Some PHP skills (or other Web development skills).</td>
+		<td>Scheme or Lisp programming skills a good advantage but not required.
+Experience with a GUI toolkit (GTK, Qt, wxWindows) would also be a bonus.</td>
 	</tr>
 </table>
 
