@@ -49,8 +49,8 @@ easiest way to start playing the game.</p>
     </ul>
 <li>Lee Begg (llnz)</li>
     <ul>
-        <li>E-mail:</li>
-        <li>Jabber:</li>
+        <li>E-mail: <a href="mailto:llnz@paradise.net.nz">llnz@paradise.net.nz</a></li>
+        <li>Jabber: <a href="xmpp:llnz@jabber.org">llnz@jabber.org</a></li>
     </ul>
 <li>Jure Repinc (JLP)</li>
     <ul>
