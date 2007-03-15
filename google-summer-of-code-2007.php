@@ -9,6 +9,151 @@
 <a href="http://code.google.com/soc/" target="_blank">Google Summer of Code 2007</a>.
 This is a great chance for all students to work on a cool open source game project during
 the summer of 2007, have fun and earn some money during the process.</p>
+</p><p>
+This page highlights ideas and suggestions for student proposals for 2007.
+</p>
+
+<h2>Contents</h2>
+<ul>
+	<li><a href="#Students"> 			Students</a></li>
+	<li><a href="#Writing_Proposals"> 	Writing Proposals</a></li>
+	<li><a href="#Selection_Criteria"> 	Selection Criteria</a></li>
+	<li><a href="#Questions"> 			Questions</a></li>
+	<li><a href="#General_Ideas"> 		General Ideas</a>
+	<li><a href="#Bonus_Points"> 		Bonus Points</a></li>
+	<li><a href="#Mentors"> 			Mentors</a></li>
+	<li><a href="#Deadlines"> 			Deadlines and Dates</a></li>
+	<li><a href="#External_Links"> 		External Links</a></li>
+	<li><a href="#Thanks"> 				Thanks</a></li>
+</ul>
+</td>
+
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
+<a name="Students"></a><h2>Students</h2>
+<p>
+If you find an <a href="#General_Ideas">idea listed below</a> that you like or have your
+own idea for a Creative Commons-related open source project, we encourage you to
+read up about the <a href="/tp/gettingstarted.php">Getting Started Page</a>, <a
+href="#Questions" title="">ask questions</a>, and then include the following in your
+proposal: </p>
+<ol>
+	<li>detailed description / design document</li>
+	<li>an approximate schedule (timeline)</li>
+	<li>brief description of past projects (including open source) that you've participated in</li>
+	<li>brief resume/bio/contact information</li>
+</ol>
+
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
+<a name="Writing_Proposals"></a><h2> Writing Proposals </h2>
+<p>
+The following links detail successful general ways to write a Summer of Code Proposal:
+</p>
+<ul>
+	<li>
+		<a href="http://inkscape.org/wiki/index.php/SOC_Writing_Project_Proposals">HOWTO Write Project Proposals</a>
+	</li><li>
+		<a href="http://inkscape.org/wiki/index.php/SOC_Accepted_Proposals">Inkscape's Accepted Proposals</a>
+	</li><li>
+		<a href="http://www.internet2.edu/~shalunov/writing/soc2005.html">Internet2 Experience</a>
+	</li><li>
+		<a href="http://summer.cs.pdx.edu/?q=node/12">Portland State University Experience</a>
+	</li><li>
+		<a href="http://venge.net/monotone/summerofcode.html">http://venge.net/monotone/summerofcode.html</a>
+	</li><li>
+		<a href="http://www.internet2.edu/~shalunov/tmp/rwatson-soc.txt">http://www.internet2.edu/~shalunov/tmp/rwatson-soc.txt</a>
+	</li>
+</ul>
+<p>
+Please read <a href="http://code.google.com/soc/studentfaq.html">Google's Summer of Code
+Student FAQ</a> and <a href="#Selection_Criteria">advice from past participants</a> as you
+create your proposal. Good luck!  
+</p>
+
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
+<a name="Selection_Criteria"></a><h2> Selection Criteria </h2>
+<p>
+The following gives some indication of some of the things we are looking for. There will
+probably be some subjective elements to it, but it's hoped that by trying to quantify the
+decision process, it'll help people understand why their application was or was not
+accepted.
+</p>
+<ul>
+	<li>
+Proposal is longer than a few sentences. We need some meat in the proposal in order to
+even consider it.  
+
+	</li><li>
+Proposer has contacted us prior to the submission. This demonstrates a definite interest
+in Thousand Parsec and proves an ability to communicate with us.
+
+	</li><li>
+Proposer knows the appropriate programming language(s).
+
+	</li><li>
+Proposer shows evidence of being able to create software. Our goal is to help programmers
+become good at Open Source, not to teach non-programmers how to program.
+
+	</li><li>
+Proposal is well written. While we don't expect perfect English, we do expect that the
+proposer took time to spell check, proofread it, organize it logically, and use
+comprehendable grammar.
+
+	</li><li>
+Proposal demonstrates understanding of subject matter. We expect the proposer to do some
+research, ask questions, and gain some understanding of the project they're proposing.
+This gives us confidence that they'll be able to complete the project successfully.
+
+	</li><li>
+Proposal shows creativity. We like to see someone thinking outside the box, including
+proposing ideas for projects we hadn't listed.
+
+	</li><li>
+Proposal is the only submission for the given task. Many proposals focus on the same few
+tasks, so if you're the only person proposing to do a given project, that weighs in your
+favor.
+
+	</li><li>
+Proposal shows implementation planning. If the author has broken the work out into a task
+list, it shows that they know what they'll be doing.
+
+	</li><li>
+Proposal scope is realistic. 2 months goes fast. Proposals that are promising too much are
+unlikely to be completed in a timely fashion. 
+	</li>
+</ul>
+<p>
+The following are conditions that result in automatic rejection:
+</p>
+<ul>
+    <li>Reject: Group project proposed. Google has specified that groups MAY NOT
+participate. Individuals only.</li>
+    <li>Reject: Proposer is not a student. Requirement of the program.</li>
+</ul>
+
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
+<a name="Questions"></a><h2> Questions </h2>
+<ol>
+	<li> 
+		Read up the developer section <a href="/tp/dev/index.php">/tp/dev/index.php</a>
+	</li><li> 
+		Join the 
+			<a href="http://localhost/tp/mailman.php/listinfo/" title="Mailing Lists">mailing lists</a> or
+			<a href="http://localhost/forums" title="Forums">web forums</a> 
+		(they are connected so you don't need to join both) and ask questions
+	</li><li>
+		Join the 
+			<a href="irc://irc.freenode.org/#tp" title="#tp on FreeNode">Thousand Parsec chat channel</a>, 
+		#tp, on irc.freenode.net.
+	</li>
+</ol>
 
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
@@ -256,11 +401,10 @@ Some features would include:
 	</tr>
 </table>
 
-
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
-<h2>Mentors</h2>
+<a name="Mentors"></a><h2>Mentors</h2>
 <ul>
 <li>Tim Ansell (mithro)</li>
     <ul>
@@ -282,7 +426,7 @@ Some features would include:
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
-<h2>Important dates</h2>
+<a name="Deadlines"></a><h2>Deadlines and Dates</h2>
 <dl>
 
 <dt>March 14</dt>
@@ -310,6 +454,39 @@ Some features would include:
 <dd>Final evaluation deadline; Google begins issuing student and mentoring organization payments</dd>
 
 </dl>
+
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
+<a name="External_Links"></a><h2>External Links</h2>
+<ul>
+	<li>
+		<a href="http://code.google.com/soc/">Google Summer of Code (SoC)</a>
+	</li><li> 
+		<a href="http://code.google.com/soc/studentfaq.html">Google SoC FAQ</a>
+	</li>
+</ul>
+
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
+<a name="Thanks"></a><h2>Thanks</h2>
+<p>
+	We would like to thank the following people,
+<ul>
+	<li>
+		<a href="http://wiki.creativecommons.org/Summer_of_Code">Creative Commons</a> - a
+lot of the information in this document was adapted from their Summer of Code page.
+	</li><li>
+		<a href="http://wiki.inkscape.org/wiki/index.php/Googles_Summer_Of_Code_2007">Inkscape</a> -
+the Inkscape project also has a large amount of stuff which was useful in creating this
+page.
+	</li><li>
+		<a href="http://code.google.com/">Google</a> - without Google this wouldn't even be
+possible.</a> 
+	</li>
+</ul>
+</p>
 
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/end_page.inc" ?>
