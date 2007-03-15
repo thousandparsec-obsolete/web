@@ -1157,7 +1157,11 @@ This will only occur when there is a protocol version mismatch. As frame
 versions are backwards compatible there should not be a failure.
 </p></li>
 
-		<li class="fixme">10 - ???</li>
+		<li class="new">10 - Response too Big, The request would make a server
+return a Frame that would violate the TP size specifications.
+<p>
+The only time I can see this occurring is when you request to many IDs at once?
+</p></li>
 		<li class="fixme">11 - ???</li>
 		<li class="fixme">12 - ???</li>
 	</ul>
@@ -1183,6 +1187,11 @@ returning different fail codes.
 		<li class="new">a UInt64, the time to get IDs with changes from</li>
 	</ul>
 </p><p>
+<h4>Valid Responses</h4>
+<p>
+There are only two valid responses to a Get ID Sequence Frame. Either a Fail
+frame, or a IDSequence frame with the number of IDs requested.
+</p>
 <h4>Getting a Sequence</h4>
 <ul>
 	<li>To start a sequence, the key of -1 should be sent in the first
