@@ -37,6 +37,13 @@ Currently, only a basic MySQL module has been written.</p>
 <p>The interface it fairly straight forward, but there is likely to be changes to the
 interface as the new game features are created and the internal architecture changes.</p>
 
+<h3>Write a SQLlite persistence module for tpserver-cpp</h3>
+<p><a href="/tp/dev/documents/tpserver-cpp/">Tpserver-cpp</a> (C++ Thousand Parsec server)
+has an abstract persistence interface that allows different methods of saving the game data.
+Currently, only a basic MySQL module has been written.</p>
+<p>The interface it fairly straight forward, but there is likely to be changes to the
+interface as the new game features are created and the internal architecture changes.</p>
+
 <h3>Improve the XSLT document generation</h3>
 
 <h3>Improve the metaserver - make it standalone</h3>
