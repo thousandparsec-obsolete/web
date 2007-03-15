@@ -372,25 +372,46 @@ plain text or HTML.
 	include "../bits/start_section.inc";
 ?>
 
+<h2>Frames which have been added</h2>
+<table class="tabular">
+	<tr class="row0"><td class="numeric">??</td><td>Get Object Description</td></tr>
+	<tr class="row1"><td class="numeric">??</td><td>Object Description</td></tr>
+	<tr class="row0"><td class="numeric">??</td><td>Get Object Description IDs</td></tr>
+	<tr class="row1"><td class="numeric">??</td><td>Object Description ID Sequence</td></tr>
+
+	<tr class="row0"><td class="numeric">??</td><td>Get Games</td></tr>
+	<tr class="row1"><td class="numeric">??</td><td>Game</td></tr>
+
+	<tr class="row0"><td class="numeric">??</td><td>Set Filters</td></tr>
+
+	<tr class="row0"><td class="numeric">??</td><td class="fixme">Get Research Items</td></tr>
+	<tr class="row1"><td class="numeric">??</td><td class="fixme">Research Item</td></tr>
+	<tr class="row0"><td class="numeric">??</td><td class="fixme">Get Research Item IDs</td></tr>
+	<tr class="row1"><td class="numeric">??</td><td class="fixme">Research Item ID Sequence</td></tr>
+
+	<tr class="row0"><td class="numeric">??</td><td class="fixme">Player Finished/Request Turn End</td></tr>
+</table>
+
 <h2>Frames which are obsolete</h2>
 <table class="tabular">
+
 </table>
 
 <h2>Frames which have changed</h2>
 <table class="tabular">
-	<tr class="row0 new"><td class="numeric"> -</td><td>Get ID Sequence</td></tr>
+	<tr class="row0"><td class="numeric"> -</td><td>Get ID Sequence</td></tr>
 	<tr class="row1"><td class="numeric"> 1</td><td>Fail</td></tr>
-	<tr class="row1 new"><td class="numeric">26</td><td>Available Features</td></tr>
-	<tr class="row1 new"><td class="numeric">40</td><td>Player Data</td></tr>
+	<tr class="row0"><td class="numeric">26</td><td>Available Features</td></tr>
+	<tr class="row1"><td class="numeric">40</td><td>Player Data</td></tr>
 </table>
 
 <h2>Frames which haven't changed</h2>
  
 <table class="tabular">
-	<tr class="row0 new"><td class="numeric"> -</td><td>Get with ID</td></tr>
-	<tr class="row1 new"><td class="numeric"> -</td><td>Get with ID and Slots</td></tr>
-	<tr class="row1 new"><td class="numeric"> -</td><td>ID Sequence</td></tr>
-	<tr class="row0"><td class="numeric"> 0</td><td>Ok</td></tr>
+	<tr class="row0"><td class="numeric"> -</td><td>Get with ID</td></tr>
+	<tr class="row1"><td class="numeric"> -</td><td>Get with ID and Slots</td></tr>
+	<tr class="row0"><td class="numeric"> -</td><td>ID Sequence</td></tr>
+	<tr class="row1"><td class="numeric"> 0</td><td>Ok</td></tr>
 	<tr class="row0"><td class="numeric"> 2</td><td>Sequence</td></tr>
 	<tr class="row1"><td class="numeric"> 3</td><td>Connect</td></tr>
 	<tr class="row0"><td class="numeric"> 4</td><td>Login</td></tr>
@@ -587,6 +608,12 @@ example, creating a new Torpedo design would create a new Torpedo component.)
 Currently only components are on this list (other than the time remaining
 frames). Once research/technology is implemented, there could be others.  I
 would rather have a set list.
+</p><p>
+Currently the frames which can appear in an async manner are,
+<ul>
+	<li>Time Remaining Frame</li>
+	<li>Component Frame</li>
+</ul>
 </p>
 
 <h2>Research / Technology Frames</h2>
