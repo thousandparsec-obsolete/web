@@ -19,35 +19,173 @@ the summer of 2007, have fun and earn some money during the process.</p>
 Thousand Parsec project. The list is not definitive and any student is more than welcome
 to come up with their own idea to work on.</p>
 
-<h3>Implement MTSec game in one server</h3>
-<p>Currently Thousand Parsec servers only implement a very simple game we call MiniSec.
-To make the game more interesting and challenging a more complex game needs to be implemented
-in any of the servers. The rules and properties of this new game are already defined in a
-game we call MTSec (short for Missile and Torpedo Wars). For more information see
-<a href="/tp/dev/documents/mtsec.php">MTSec documentation</a>.</p>
+<table>
+	<tr>
+		<td colspan="2"><h3>Implement MTSec game in one server</h3></td>
+	</tr><tr>
+		<td colspan="2">
+<p>
+Currently, Thousand Parsec servers only implement a very simple game we call MiniSec. To
+make the game more interesting and challenging a more complex game needs to be implemented
+in one of the servers. The rules and properties of this new game are already defined in a
+game we call MTSec (short for Missile and Torpedo Wars).
+</p><p>
+You can choose to implement the game in either the 
+<a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=tpserver-cpp;a=summary">Python Server</a> 
+or in the 
+<a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=tpserver-py;a=summary">C++ Server</a>.
+</p>
+		</td>
+	</tr><tr>
+		<td><h4>More Information</h4></td>
+		<td>
+			<a href="/tp/dev/documents/mtsec.php">MTSec Documentation</a><br />
+			<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1678819&group_id=132078&atid=829724">SF Todo Tracker Item</a>
+		</td>
+	</tr><tr>
+		<td><h4>Required Skills</h4></td>
+		<td>Strong C++ or Strong Python skill.</td>
+	</tr>
+</table>
 
-<h3>Web based client</h3>
-<p>Web based client enables players to join Thousand Parsec games easily from any computer
+
+<table>
+	<tr>
+		<td colspan="2"><h3>Web based client</h3></td>
+	</tr><tr>
+		<td colspan="2">
+<p>
+A web based client enables players to join Thousand Parsec games easily from any computer
 with a web browser and internet connection. This makes web based client the fastest and
-easiest way to start playing the game.</p>
+easiest way to start playing the game.
+</p><p>
+Any language could be used for the client. Some suggestions are 
+<a href="http://www.php.net/">PHP</a>, <a href="http://www.python.org/">Python</a> or 
+<a href="http://www.ruby-lang.org/en/">Ruby</a>. It might be a good idea to use 
+<a href="http://en.wikipedia.org/wiki/AJAX">AJAX</a> or something similar.
+</p><p>
+It is expected that you would produce a client which has the following functionality,
+<ul>
+	<li>Support for displaying the Starmap</li>
+	<li>Support for issuing orders</li>
+	<li>Support for creating designs</li>
+</ul>
+</p>
+		</td>
+	</tr><tr>
+		<td><h4>More Information</h4></td>
+		<td>
+			<a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=libtpproto-php;a=summary">libtpproto-php</a>,
+			<a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=libtpproto-rb;a=summary">libtpproto-rb</a>,
+			<a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=libtpproto-py;a=summary">libtpproto-py</a>
+		</td>
+	</tr><tr>
+		<td><h4>Required Skills</h4></td>
+		<td>Strong Web development skill.</td>
+	</tr>
+</table>
 
-<h3>Write a PostgreSQL persistence module for tpserver-cpp</h3>
-<p><a href="/tp/dev/documents/tpserver-cpp/">Tpserver-cpp</a> (C++ Thousand Parsec server)
-has an abstract persistence interface that allows different methods of saving the game data.
-Currently, only a basic MySQL module has been written.</p>
-<p>The interface it fairly straight forward, but there is likely to be changes to the
-interface as the new game features are created and the internal architecture changes.</p>
 
-<h3>Write a SQLlite persistence module for tpserver-cpp</h3>
-<p><a href="/tp/dev/documents/tpserver-cpp/">Tpserver-cpp</a> (C++ Thousand Parsec server)
-has an abstract persistence interface that allows different methods of saving the game data.
-Currently, only a basic MySQL module has been written.</p>
-<p>The interface it fairly straight forward, but there is likely to be changes to the
-interface as the new game features are created and the internal architecture changes.</p>
+<table>
+	<tr>
+		<td colspan="2"><h3>Write a PostgreSQL persistence module for tpserver-cpp</h3></td>
+	</tr><tr>
+		<td colspan="2">
 
-<h3>Improve the XSLT document generation</h3>
+<p>
+<a href="/tp/dev/documents/tpserver-cpp/">Tpserver-cpp</a> (C++ Thousand Parsec server)
+has an abstract persistence interface that allows different methods of saving the game
+data. Currently, only a basic MySQL module has been written.
+</p><p>
+The interface it fairly straight forward, but there is likely to be changes to the
+interface as the new game features are created and the internal architecture changes.
+</p>
+		</td>
+	</tr><tr>
+		<td><h4>More Information</h4></td>
+		<td>
+			<a href="http://www.postgresql.org/">PostgresSQL</a>
+			<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1678819&group_id=132078&atid=829724">SF Todo Tracker Item</a>.
+		</td>
+	</tr><tr>
+		<td><h4>Required Skills</h4></td>
+		<td>SQL (preferably PostgreSQL and or MySQL) experience, C++ experience</td>
+	</tr>
+</table>
 
-<h3>Improve the metaserver - make it standalone</h3>
+<table>
+	<tr>
+		<td colspan="2"><h3>Write a SQLlite persistence module for tpserver-cpp</h3></td>
+	</tr><tr>
+		<td colspan="2">
+<p>
+<a href="/tp/dev/documents/tpserver-cpp/">Tpserver-cpp</a> (C++ Thousand Parsec server)
+has an abstract persistence interface that allows different methods of saving the game
+data. Currently, only a basic MySQL module has been written.
+</p><p>
+The interface it fairly straight forward, but there is likely to be changes to the
+interface as the new game features are created and the internal architecture changes.
+</p>
+		</td>
+	</tr><tr>
+		<td><h4>More Information</h4></td>
+		<td>
+			<a href="http://www.sqlite.org/">SQLlite</a>
+			<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1678819&group_id=132078&atid=829724">SF Todo Tracker Item</a>.
+		</td>
+	</tr><tr>
+		<td><h4>Required Skills</h4></td>
+		<td>SQL (preferably SQLlite or MySQL) experience, C++ experience</td>
+	</tr>
+</table>
+
+<table>
+	<tr>
+		<td colspan="2"><h3>Improve the XSLT document generation</h3></td>
+	</tr><tr>
+		<td colspan="2">
+		</td>
+	</tr><tr>
+		<td><h4>More Information</h4></td>
+		<td>
+			<a href="">MTSec Documentation</a>
+		</td>
+	</tr><tr>
+		<td><h4>Required Skills</h4></td>
+		<td></td>
+	</tr>
+</table>
+
+<table>
+	<tr>
+		<td colspan="2"><h3>Improve the metaserver - make it standalone</h3></td>
+	</tr><tr>
+		<td colspan="2">
+<p>
+The metaserver was written in about 5 hours. It works but requires a lot of work before
+it's a "good" piece of software. It could also be rewritten in another language.
+</p><p>
+Some features would include:
+<ul>
+	<li>Implementing the full specification found in the 
+<a href="http://www.thousandparsec.net/tp/dev/documents/protocol4.php">discussion document</a></li>
+	<li>Make it portable across databases</li>
+	<li>Add RSS output support</li>
+	<li>Produce statistics and some type of graphing</li>
+	<li>"Back Connect" support for verification of details</li>
+	<li>Some type of "match making" support</li>
+</ul>
+</p>
+		</td>
+	</tr><tr>
+		<td><h4>More Information</h4></td>
+		<td>
+		</td>
+	</tr><tr>
+		<td><h4>Required Skills</h4></td>
+		<td>Some PHP skills (or other Web development skills).</td>
+	</tr>
+</table>
 
 <p>For additional ideas we encourage students to look at
 <a href="http://sourceforge.net/tracker/?group_id=132078&atid=829724">Thousand Parsec TODO list</a>.</p>
@@ -59,17 +197,17 @@ interface as the new game features are created and the internal architecture cha
 <ul>
 <li>Tim Ansell (mithro)</li>
     <ul>
-        <li>E-mail:</li>
-        <li>Jabber:</li>
+        <li>E-mail: <a href="mailto:mithro NOSPAM mithis PLEASE com">jlp@holodeck1.com</a></li>
+        <li>Jabber: <a href="xmpp:mithro@gmail.org">mithro@gmail.org</a></li>
     </ul>
 <li>Lee Begg (llnz)</li>
     <ul>
-        <li>E-mail: <a href="mailto:llnz@paradise.net.nz">llnz@paradise.net.nz</a></li>
+        <li>E-mail: <a href="mailto:llnz NOSPAM paradise PLEASE net.nz">llnz AT paradise DOT net DOT nz</a></li>
         <li>Jabber: <a href="xmpp:llnz@jabber.org">llnz@jabber.org</a></li>
     </ul>
 <li>Jure Repinc (JLP)</li>
     <ul>
-        <li>E-mail: <a href="mailto:jlp@holodeck1.com">jlp@holodeck1.com</a></li>
+        <li>E-mail: <a href="mailto:jlp NOSPAM holodeck1 PLEASEcom">jlp@holodeck1.com</a></li>
         <li>Jabber: <a href="xmpp:jlp@jabber.org">jlp@jabber.org</a></li>
     </ul>
 </ul>
