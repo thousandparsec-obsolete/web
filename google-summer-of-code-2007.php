@@ -37,8 +37,8 @@ This page highlights ideas and suggestions for student proposals for 2007.
 <p>
 If you find an <a href="#General_Ideas">idea listed below</a> that you like or have your
 own idea for a Thousand Parsec open source project, we encourage you to read up about the
-<a href="/tp/gettingstarted.php">Getting Started Page</a>, <a href="#Questions"
-title="">ask questions</a>, and then include the following in your proposal: </p>
+<a href="/tp/gettingstarted.php">Getting Started Page</a>, <a href="#Questions">ask
+questions</a>, and then include the following in your proposal: </p> 
 <ol>
 	<li>detailed description / design document</li>
 	<li>an approximate schedule (timeline)</li>
@@ -71,7 +71,11 @@ The following links detail successful general ways to write a Summer of Code Pro
 <p>
 Please read <a href="http://code.google.com/soc/studentfaq.html">Google's Summer of Code
 Student FAQ</a> and <a href="#Selection_Criteria">advice from past participants</a> as you
-create your proposal. Good luck!  
+create your proposal. 
+</p><p>
+Feel free to submit multiple proposals.
+</p><p>
+Good luck!  
 </p>
 
 <?php include "bits/end_section.inc" ?>
