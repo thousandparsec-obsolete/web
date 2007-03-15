@@ -98,7 +98,8 @@ Proposer knows the appropriate programming language(s).
 
 	</li><li>
 Proposer shows evidence of being able to create software. Our goal is to help programmers
-become good at Open Source, not to teach non-programmers how to program.
+become good at Open Source, not to teach non-programmers how to program. However, we are
+willing to help people develop their programming skills.
 
 	</li><li>
 Proposal is well written. While we don't expect perfect English, we do expect that the
