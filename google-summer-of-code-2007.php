@@ -40,6 +40,28 @@ easiest way to start playing the game.</p>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
+<h2>Mentors</h2>
+<ul>
+<li>Tim Ansell (mithro)</li>
+    <ul>
+        <li>E-mail:</li>
+        <li>Jabber:</li>
+    </ul>
+<li>Lee Begg (llnz)</li>
+    <ul>
+        <li>E-mail:</li>
+        <li>Jabber:</li>
+    </ul>
+<li>Jure Repinc (JLP)</li>
+    <ul>
+        <li>E-mail: <a href="mailto:jlp@holodeck1.com">jlp@holodeck1.com</a></li>
+        <li>Jabber: <a href="xmpp:jlp@jabber.org">jlp@jabber.org</a></li>
+    </ul>
+</ul>
+
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
 <h2>Important dates</h2>
 <dl>
 
