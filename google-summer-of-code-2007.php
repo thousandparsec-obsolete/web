@@ -175,7 +175,7 @@ Feel free to come up with your own projects.
 
 <table>
 	<tr>
-		<td colspan="2"><h3>Implement MTSec game in one server</h3></td>
+		<td colspan="2"><h2>Implement MTSec game in one server</h2></td>
 	</tr><tr>
 		<td colspan="2">
 <p>
@@ -205,7 +205,7 @@ or in the
 
 <table>
 	<tr>
-		<td colspan="2"><h3>Web based client</h3></td>
+		<td colspan="2"><h2>Web based client</h2></td>
 	</tr><tr>
 		<td colspan="2">
 <p>
@@ -242,7 +242,7 @@ It is expected that you would produce a client which has the following functiona
 
 <table>
 	<tr>
-		<td colspan="2"><h3>Develop a 3D Client (or improve tpclient-pyogre)</h3></td>
+		<td colspan="2"><h2>Develop a 3D Client (or improve tpclient-pyogre)</h2></td>
 	</tr><tr>
 		<td colspan="2">
 
@@ -274,7 +274,7 @@ It is expected that you would produce a client which has the following functiona
 
 <table>
 	<tr>
-		<td colspan="2"><h3>Write a PostgreSQL persistence module for tpserver-cpp</h3></td>
+		<td colspan="2"><h2>Write a PostgreSQL persistence module for tpserver-cpp</h2></td>
 	</tr><tr>
 		<td colspan="2">
 
@@ -302,7 +302,7 @@ interface as the new game features are created and the internal architecture cha
 
 <table>
 	<tr>
-		<td colspan="2"><h3>Write a SQLlite persistence module for tpserver-cpp</h3></td>
+		<td colspan="2"><h2>Write a SQLlite persistence module for tpserver-cpp</h2></td>
 	</tr><tr>
 		<td colspan="2">
 <p>
@@ -328,7 +328,7 @@ interface as the new game features are created and the internal architecture cha
 
 <table>
 	<tr>
-		<td colspan="2"><h3>Improve the XSLT document generation</h3></td>
+		<td colspan="2"><h2>Improve the XSLT document generation</h2></td>
 	</tr><tr>
 		<td colspan="2">
 		</td>
@@ -345,7 +345,7 @@ interface as the new game features are created and the internal architecture cha
 
 <table>
 	<tr>
-		<td colspan="2"><h3>Create a ruleset development Enviroment</h3></td>
+		<td colspan="2"><h2>Create a ruleset development Enviroment</h2></td>
 	</tr><tr>
 		<td colspan="2">
 <p>
@@ -369,7 +369,7 @@ new components and properties (and develop the scheme code to go with it).
 
 <table>
 	<tr>
-		<td colspan="2"><h3>Improve the metaserver - make it standalone</h3></td>
+		<td colspan="2"><h2>Improve the metaserver - make it standalone</h2></td>
 	</tr><tr>
 		<td colspan="2">
 <p>
