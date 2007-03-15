@@ -2,6 +2,8 @@
 <?php include "bits/start_page.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
+
+
 <h1>Google Summer of Code 2007</h1>
 <h6>Last updated: 15 March 2007</h6>
 
@@ -34,10 +36,9 @@ This page highlights ideas and suggestions for student proposals for 2007.
 <a name="Students"></a><h2>Students</h2>
 <p>
 If you find an <a href="#General_Ideas">idea listed below</a> that you like or have your
-own idea for a Creative Commons-related open source project, we encourage you to
-read up about the <a href="/tp/gettingstarted.php">Getting Started Page</a>, <a
-href="#Questions" title="">ask questions</a>, and then include the following in your
-proposal: </p>
+own idea for a Thousand Parsec open source project, we encourage you to read up about the
+<a href="/tp/gettingstarted.php">Getting Started Page</a>, <a href="#Questions"
+title="">ask questions</a>, and then include the following in your proposal: </p>
 <ol>
 	<li>detailed description / design document</li>
 	<li>an approximate schedule (timeline)</li>
