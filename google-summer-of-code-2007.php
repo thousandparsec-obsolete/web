@@ -67,6 +67,7 @@ Any language could be used for the client. Some suggestions are
 It is expected that you would produce a client which has the following functionality,
 <ul>
 	<li>Support for displaying the Starmap</li>
+	<li>Support for displaying all information about objects</li>
 	<li>Support for issuing orders</li>
 	<li>Support for creating designs</li>
 </ul>
@@ -85,6 +86,37 @@ It is expected that you would produce a client which has the following functiona
 	</tr>
 </table>
 
+<table>
+	<tr>
+		<td colspan="2"><h3>Develop a 3D Client (or improve tpclient-pyogre)</h3></td>
+	</tr><tr>
+		<td colspan="2">
+
+<p>
+A cool 3d client for Thousand Parsec is needed. A pyOgre client was started but is in need
+of quite a bit of love. You could choose to use that as a base or start a new client from
+scratch.
+</p><p>
+It is expected that you would produce a client which has the following functionality,
+<ul>
+	<li>Support for displaying the Starmap</li>
+	<li>Support for displaying all information about objects</li>
+	<li>Support for issuing orders</li>
+	<li>Support for creating designs</li>
+</ul>
+</p>
+
+		</td>
+	</tr><tr>
+		<td><h4>More Information</h4></td>
+		<td>
+		</td>
+	</tr><tr>
+		<td><h4>Required Skills</h4></td>
+		<td>Some 3D development skills</td>
+	</tr>
+</table>
+
 
 <table>
 	<tr>
@@ -100,6 +132,7 @@ data. Currently, only a basic MySQL module has been written.
 The interface it fairly straight forward, but there is likely to be changes to the
 interface as the new game features are created and the internal architecture changes.
 </p>
+
 		</td>
 	</tr><tr>
 		<td><h4>More Information</h4></td>
@@ -180,6 +213,10 @@ Some features would include:
 	</tr><tr>
 		<td><h4>More Information</h4></td>
 		<td>
+<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1652210&group_id=132078&atid=829724">[1652210] - Add long term stats to Metaserver</a><br />
+<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1652205&group_id=132078&atid=829724">[1652205] - Add match making service to the Metaserver.</a><br />
+<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1652204&group_id=132078&atid=829724">[1652204] - Add RSS Feeds to the Metaserver.</a><br />
+<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1586115&group_id=132078&atid=829724">[1652209] - Clean up Metaserver code.</a><br />
 		</td>
 	</tr><tr>
 		<td><h4>Required Skills</h4></td>
