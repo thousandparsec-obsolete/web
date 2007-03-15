@@ -1077,20 +1077,86 @@ It would probably be displayed in the client like the following,
 	</ul>
 	Current error codes consist of:
 	<ul>
-		<li>0 - Protocol Error, Something went wrong with the protocol</li>
-		<li>1 - Frame Error, One of the frames sent was bad</li>
-		<li>2 - Unavailable Permanently, This operation is unavailable</li>
-		<li>3 - Unavailable Temporarily, This operation is unavailable at this moment (IE The server is currently overloaded)</li>
-		<li>4 - No such thing, The object/order/message does not exist</li>
-		<li>5 - Permission Denied, You don't have permission to do this operation</li>
-		<li class="new">6 - Permission Denied, You don't have permission to access this object/order/message</li>
-		<li class="new">7 - Gone Permanently, The object/order/message has been destroyed or similar</li>
-		<li class="new">8 - Gone Temporarily, The object/order/message has been obscured from your view</li>
-		<li class="new">9 - Version not Supported, The server doesn't support that version of the packet</li>
-		<li class="new">10 - Version not Supported, The server doesn't support that version of the packet</li>
-		<li class="new">11 - Version not Supported, The server doesn't support that version of the packet</li>
-		<li class="new">12 - Version not Supported, The server doesn't support that version of the packet</li>
+
+		<li>0 - Protocol Error, Something went wrong with the protocol
+<p>
+This error it means that your frame header has something which wasn't valid.
+Specific errors include,
+<ul>
+	<li>Something or rather</li>
+</ul>
+</p><p>
+This error is a fatal error and the server can hang up after this error.
+</p></li>
+
+		<li>1 - Frame Error, One of the frames sent was bad
+<p>
+This means that the frame header and data was okay, but something else about
+the frame was invalid.  
+</p></li>
+
+		<li>2 - Unavailable Permanently, This operation is unavailable
+<p>
+This error means that a request you sent doesn't work on this server (and will
+not work). An example would be a server which doesn't support Designs.
+</p></li>
+
+		<li>3 - Unavailable Temporarily, This operation is unavailable at this
+moment (IE The server is currently overloaded)
+<p>
+This operation has been temporarily disabled. This means that the server may be
+overloaded and can't service this request at the moment.
+</p></li>
+
+		<li>4 - No such thing, The object/order/message does not exist.
+<p>
+This object does not exist (and probably never will exist). This is useful for
+returning when the client asked for something silly in regards to your 
+server (IE Maybe your server can only have IDs from 100-400, and the client
+asks for ID 401 - probably a stupid example).  
+</p></li>
+
+		<li>5 - Permission Denied, You don't have permission to do this
+operation 
+<p>
+This means you are trying to access an admin only functionality. (Or other
+functionality that is server, not game, restricted).
+</p></li>
+
+		<li class="new">6 - Permission Denied, You don't have permission to
+access this object/order/message 
+<p>
+The object you are trying to access (and can see), you don't have permission to
+get this type of detail about. Servers should NOT return this error on
+objects/order/messages that the player can't see.
+</p></li>
+
+		<li class="new">7 - Gone Permanently, The object/order/message has been
+destroyed or similar 
+<p>
+An object has been removed and will never be seen again.
+</p></li>
+
+		<li class="new">8 - Gone Temporarily, The object/order/message has been
+obscured from your view 
+<p>
+An object can no longer be seen. It may be seen again some time in the future.
+</p></li>
+
+
+		<li class="new">9 - Version not Supported, The server doesn't support
+that version of the packet 
+<p>
+You have sent a packet with a version number that the server doesn't support.
+This will only occur when there is a protocol version mismatch. As frame 
+versions are backwards compatible there should not be a failure.
+</p></li>
+
+		<li class="new">10 - ???</li>
+		<li class="new">11 - ???</li>
+		<li class="new">12 - ???</li>
 	</ul>
+</p><p>
 Exception: If the connect frame is not valid TP frame, this frame will not be
 returned, instead a plain text string will be sent saying that the wrong
 protocol has been used. A fail frame may be send if the wrong protocol version
