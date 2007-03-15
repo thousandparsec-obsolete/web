@@ -401,21 +401,26 @@ Some features would include:
 
 <a name="Mentors"></a><h2>Mentors</h2>
 <ul>
-<li>Tim Ansell (mithro)</li>
+<li>Tim Ansell (mithro)
     <ul>
         <li>E-mail: <a href="mailto:mithro NOSPAM mithis PLEASE com">jlp@holodeck1.com</a></li>
         <li>Jabber: <a href="xmpp:mithro@gmail.org">mithro@gmail.org</a></li>
-    </ul>
-<li>Lee Begg (llnz)</li>
+    </ul></li>
+<li>Lee Begg (llnz)
     <ul>
         <li>E-mail: <a href="mailto:llnz NOSPAM paradise PLEASE net.nz">llnz AT paradise DOT net DOT nz</a></li>
         <li>Jabber: <a href="xmpp:llnz@jabber.org">llnz@jabber.org</a></li>
-    </ul>
-<li>Jure Repinc (JLP)</li>
+    </ul></li>
+<li>Jure Repinc (JLP)
     <ul>
-        <li>E-mail: <a href="mailto:jlp NOSPAM holodeck1 PLEASEcom">jlp@holodeck1.com</a></li>
+        <li>E-mail: <a href="mailto:jlp NOSPAM holodeck1 PLEASE com">jlp@holodeck1.com</a></li>
         <li>Jabber: <a href="xmpp:jlp@jabber.org">jlp@jabber.org</a></li>
-    </ul>
+    </ul></li>
+<li>Brett Nash (nash)
+    <ul>
+        <li>E-mail: <a href="">jlp@holodeck1.com</a></li>
+        <li>Jabber: <a href=""></a></li>
+    </ul></li>
 </ul>
 
 <?php include "bits/end_section.inc" ?>
