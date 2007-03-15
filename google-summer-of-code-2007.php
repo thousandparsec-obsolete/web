@@ -182,6 +182,7 @@ Feel free to come up with your own projects.
 	<li>Write a SQLlite persistence module for tpserver-cpp</li>
 	<li>Create a "Ruleset" development Environment</li>
 	<li>Improve the metaserver - make it standalone</li>
+	<li>Write a protocol compliance test suite</li>
 </ul>
 
 <br /><br />
@@ -395,6 +396,29 @@ Some features would include:
 		<td>Some PHP skills (or other Web development skills).</td>
 	</tr>
 </table>
+
+<table>
+	<tr>
+		<td colspan="2"><h2>Write a protocol compliance test suite</h2></td>
+	</tr><tr>
+		<td colspan="2">
+<p>
+Currently protocol libraries have no way of testing their compliance with the protocol
+specification. Your job would be to write a suite which runs a protocol library through a
+bunch of tests and report on it's compliance.
+</p>
+		</td>
+	</tr><tr>
+		<td><h4>More Information</h4></td>
+		<td>
+			<a href="/tp/dev/documnets/protocol3.php">Protocol 3</a><br />
+		</td>
+	</tr><tr>
+		<td><h4>Required Skills</h4></td>
+		<td>Some experience with testing is a must</td>
+	</tr>
+</table>
+
 
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
