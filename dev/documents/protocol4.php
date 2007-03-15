@@ -913,7 +913,7 @@ How servers solve this problem is up to them.
 				<li>Logarithmic Base 8 </li>
 				<li>Logarithmic Base 10 </li>
 				<li>dB (10*log(x^2)) </li>
-				<li>??? </li>
+				<li class="fixme">??? </li>
 			</ol></li>
 			<li>A String, the X axis label</li>
 			<li>Enumeration, the Type of the Y axis (same as above)</li>
@@ -947,7 +947,7 @@ range</li>
 				<li>Logarithmic Base 8 </li>
 				<li>Logarithmic Base 10 </li>
 				<li>dB (10*log(x^2)) </li>
-				<li>??? </li>
+				<li class="fixme">??? </li>
 			</ol></li>
 		</ul></li>
 	</ul></li>
@@ -1073,16 +1073,15 @@ It would probably be displayed in the client like the following,
 	<ul>
 		<li>a Int32, error code</li>
 		<li>a String, message of the error</li>
-		<li>List of GRS, Describes what the error message refers to</li>
+		<li class="new">List of GRS, Describes what the error message refers to</li>
 	</ul>
 	Current error codes consist of:
 	<ul>
-
 		<li>0 - Protocol Error, Something went wrong with the protocol
 <p>
 This error it means that your frame header has something which wasn't valid.
 Specific errors include,
-<ul>
+<ul class="fixme">
 	<li>Something or rather</li>
 </ul>
 </p><p>
@@ -1152,9 +1151,9 @@ This will only occur when there is a protocol version mismatch. As frame
 versions are backwards compatible there should not be a failure.
 </p></li>
 
-		<li class="new">10 - ???</li>
-		<li class="new">11 - ???</li>
-		<li class="new">12 - ???</li>
+		<li class="fixme">10 - ???</li>
+		<li class="fixme">11 - ???</li>
+		<li class="fixme">12 - ???</li>
 	</ul>
 </p><p>
 Exception: If the connect frame is not valid TP frame, this frame will not be
@@ -1165,6 +1164,62 @@ connect frame right.
 </p><p class="note">
 The server needs to be careful that it doesn't disclose extra information by
 returning different fail codes.
+</p>
+
+<a name="GetIDSequence_Desc"></a>
+<h3>Get ID Sequence Frame</h3>
+<p>
+	Get ID Sequence frame consist of:
+	<ul>
+		<li>a SInt32, the sequence key</li>
+		<li>a UInt32, the starting number in the sequence</li>
+		<li>a SInt32, the number of IDs to get</li>
+		<li class="new">a UInt64, the time to get IDs with changes from</li>
+	</ul>
+</p><p>
+<h4>Getting a Sequence</h4>
+<ul>
+	<li>To start a sequence, the key of -1 should be sent in the first
+request.</li> 
+	<li>Subsequent requests in a sequence should use the key which is returned
+from the first request.</li>
+	<li>All requests must be continuous and ascending.</li>
+	<li>Only one sequence key (for each real frame type) can exist at any time,
+starting a new sequence causes the old one to be discarded.</li>
+	<li>Key persist for only as long as the connection remains open and there
+are IDs left in the sequence.</li>
+</ul>
+If the client requests any of the following a Fail packet will be returned (as
+they are a violation of the requirements specified above).
+<ul>
+	<li>a range has already had any part already given (IE no overlaps)</li>
+	<li>a range specifies a range which starts below the previously ending
+number (IE requesting from 6 to 10 then 0 to 5)</li>
+	<li>a range is bigger then the remaining IDs left (IE requesting 6 when
+only 4 remain)</li> 
+	<li>try to use a key from a previous connection</li>
+</ul>
+<b>Note:</b> All servers must follow all the requirements above even if the
+server could provide support for certain violations.  
+</p><p>
+The server may also return a Fail Packet if a key becomes invalid. This may
+occur when, the order of the returned IDs changes or when the number of IDs
+changes. This may be caused by new changes become available (such as a turn
+generation had just started) or for any other reason. It is up to the client to
+restart the request from the beginning.
+</p>
+<h4>Using "Changes From" field</h4>
+<p>
+The changes from field is used to download a partial update of the Universe.
+When the changes from field is non-zero, the ID list will only include objects
+which have a modification time newer then the given number.
+</p><p>
+Servers will return <b>all</b> objects which have been modified after the number
+given, <b>including those which may have been destroyed, deleted or otherwise no
+longer accessible</b>.
+</p><p>
+When the Changes From field is zero, the list will return only those objects
+which currently exist (as Get ID Sequence had previously).
 </p>
 
 <a name="FeatureNegotiation"></a>
