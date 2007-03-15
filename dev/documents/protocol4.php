@@ -742,7 +742,7 @@ I was thinking a cut back version of the current common attributes.
       * extra data, as defined by each object description
 </pre>
 
-<h1>Common Stuff</h1>
+<h3>Object Frame</h3>
 <ul>
     <li>a UInt32, Object ID </li>
     <li>a UInt32, Object type </li>
@@ -751,10 +751,14 @@ I was thinking a cut back version of the current common attributes.
     <li>a list of UInt32, Object IDs of objects contained in the current object </li>
     <li>a UInt64, The last modified time </li>
     <li>x by UInt32 of padding, for future expansion of common attributes</li>
+	<li>Extra data as describe by the Object Description</li>
 </ul>
 
-<h1>Descriptions Stuff</h1>
+<a name="ObjectDesc_Desc"></a>
+<h3>Object Description Frame</h3>
+
 <ul>
+	<li class="fixme">Stuff should go here</li>
     <li>A List of
 	<ul>
 		<li>UInt32, Property Group ID</li>
@@ -1066,8 +1070,8 @@ It would probably be displayed in the client like the following,
 	include "../bits/start_section.inc";
 ?>
 
-<a name="Fail_Desc">
-</a><h3>Fail Frame</h3>
+<a name="Fail_Desc"></a>
+<h3>Fail Frame</h3>
 <p>
 	A fail frame consists of:
 	<ul>
