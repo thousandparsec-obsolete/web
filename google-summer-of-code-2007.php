@@ -2,10 +2,8 @@
 <?php include "bits/start_page.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
-
-
 <h1>Google Summer of Code 2007</h1>
-<h6>Last updated: 15 March 2007</h6>
+<h6>Last updated: 16 March 2007</h6>
 
 <p>Thousand Parsec is one of the mentoring organisations for
 <a href="http://code.google.com/soc/" target="_blank">Google Summer of Code 2007</a>.
@@ -180,49 +178,68 @@ Feel free to come up with your own projects.
 
 <h2>Project Table of Contents</h2>
 <ul>
-	<li>Implement MTSec game in one server</li>
-	<li>Web based client</li>
-	<li>Develop a 3D Client (or improve tpclient-pyogre)</li>
-	<li>Write a PostgreSQL persistence module for tpserver-cpp</li>
-	<li>Write a SQLlite persistence module for tpserver-cpp</li>
-	<li>Create a "Ruleset" development Environment</li>
-	<li>Improve the metaserver - make it standalone</li>
-	<li>Write a protocol compliance test suite</li>
-	<li>Add testing to libtpproto-py</li>
-	<li>Improve wxWidget's pyAUI</li>
+	<li>Develop a new client
+		<ul>
+			<li>Web based Client</li>
+			<li>Develop a 3D Client (or improve tpclient-pyogre)</li>
+			<li>Develop a MIDP Client for Mobile Phones</li>
+		</ul>
+	<br /></li>
+
+	<li>Improve tpserver-cpp
+		<ul>
+			<li>Write a PostgreSQL persistence module for tpserver-cpp</li>
+			<li>Write a SQLlite persistence module for tpserver-cpp</li>
+		</ul>
+	<br /></li>
+
+	<li>Create tools
+		<ul>
+			<li>Create a "Ruleset" development Environment</li>
+			<li>Create a Race Designer</li>
+			<li>Improve the metaserver - make it standalone</li>
+		</ul>
+	<br /></li>
+
+	<li>Python Stuff
+		<ul>
+			<li>Add testing to libtpproto-py</li>
+			<li>Improve wxWidget's pyAUI</li>
+		</ul>
+	<br /></li>
+
+	<li>Improve the protocol
+		<ul>
+			<li>Write a protocol compliance test suite</li>
+			<li>Design and Implement a Research Framework</li>
+		</ul>
+	<br /></li>
+
+	<li>Implement a new Ruleset
+		<ul>
+			<li>Implement MTSec prototype ruleset</li>
+			<li>Implement "Reach for the Stars!" Clone</li>
+			<li>Implement "Diplomancy... In Space" Clone</li>
+		</ul>
+	<br /></li>
 </ul>
 
-<br /><br />
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
 
-<table>
-	<tr>
-		<td colspan="2"><h2>Implement MTSec game in one server</h2></td>
-	</tr><tr>
-		<td colspan="2">
+<h1>Create a new Client</h1>
 <p>
-Currently, Thousand Parsec servers only implement a very simple game we call MiniSec. To
-make the game more interesting and challenging a more complex game needs to be implemented
-in one of the servers. The rules and properties of this new game are already defined in a
-game we call MTSec (short for Missile and Torpedo Wars).
+Thousand Parsec is designed to allow many different clients to connect to the same server
+and still fully participate. Currently the <a href="/tp/downloads.php#tpclient-pywx">main
+client</a> is written in Python. There is also a C++ client for KDE being developed.
 </p><p>
-You can choose to implement the game in either the 
-<a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=tpserver-cpp;a=summary">Python Server</a> 
-or in the 
-<a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=tpserver-py;a=summary">C++ Server</a>.
+We want you to write a new client for Thousand Parsec. This client will service people who
+are not in a situation to use tpclient-pywx.
+</p><p>
+These tasks are a reasonable amount of work, depending on which language you choose you
+may need to improve (or implement from scratch) a protocol library. You will need to be a
+reasonable coder before you start any of these projects if you hope to succeed.
 </p>
-		</td>
-	</tr><tr>
-		<td><h4>More Information</h4></td>
-		<td>
-			<a href="/tp/dev/documents/mtsec.php">MTSec Documentation</a><br />
-			<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1678819&group_id=132078&atid=829724">SF Todo Tracker Item</a>
-		</td>
-	</tr><tr>
-		<td><h4>Required Skills</h4></td>
-		<td>Strong C++ or Strong Python skill.</td>
-	</tr>
-</table>
-
 
 <table>
 	<tr>
@@ -285,6 +302,7 @@ It is expected that you would produce a client which has the following functiona
 	</tr><tr>
 		<td><h4>More Information</h4></td>
 		<td>
+			<a href="http://www.ogre3d.org/wiki/index.php/PyOgre">pyOgre</a><br />
 		</td>
 	</tr><tr>
 		<td><h4>Required Skills</h4></td>
@@ -292,6 +310,17 @@ It is expected that you would produce a client which has the following functiona
 	</tr>
 </table>
 
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
+<h1>Improve tpserver-cpp</h1>
+<p>
+tpserver-cpp is one of the main servers in Thousand Parsec. These project ideas deal with
+improving it in various ways.
+</p><p>
+You will need some C++ skills before you start any of these projects (but not as much as
+if you where implementing a ruleset for this server).
+</p>
 
 <table>
 	<tr>
@@ -347,25 +376,75 @@ interface as the new game features are created and the internal architecture cha
 	</tr>
 </table>
 
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
+<h1>Create tools</h1>
+<p>
+These projects are about improving or creating standalone tools for Thousand Parsec. They
+are the mostly self contain projects, however it is still expected that you be involved
+with the rest of the project.
+</p><p>
+Some of these projects might require you to extend the Thousand Parsec protocol or specify
+out new features. These will need to be public discussed on the mailing lists.
+</p>
+
+
 <table>
 	<tr>
 		<td colspan="2"><h2>Create a "Ruleset" development Environment</h2></td>
 	</tr><tr>
 		<td colspan="2">
 <p>
-Scheme is quite a hard language to work write. Create an IDE which makes it easy to create
-new components and properties (and develop the scheme code to go with it).
+Scheme is quite a hard language to write. tpcl the language which is used for
+communicating between server and client the details about Designs, components and
+properties is based on Scheme.
+</p><p>
+Your job is to create an IDE which makes it easy to create new components and properties
+(and develop the scheme code to go with it).
 </p>
 		</td>
 	</tr><tr>
 		<td><h4>More Information</h4></td>
 		<td>
 <a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1586115&group_id=132078&atid=829724">[1586115] - Create a component editor.</a><br />
+<a href="/tp/dev/documents/tpcl.php">Thousand Parsec Component Language</a><br />
 		</td>
 	</tr><tr>
 		<td><h4>Required Skills</h4></td>
 		<td>Scheme or Lisp programming skills a good advantage but not required.
 Experience with a GUI toolkit (GTK, Qt, wxWindows) would also be a bonus.</td>
+	</tr>
+</table>
+
+<table>
+	<tr>
+		<td colspan="2"><h2>Implement a Race Designer</h2></td>
+	</tr><tr>
+		<td colspan="2">
+<p>
+Meet strange and interesting races... and kill them.  One of the core tenants of the
+modern 4X game.  Race design for Stars! is an art form, with few major race strategies
+(HP, HG, -F...), and dozens of minor variations.  Other games feature fixed races - do you
+play the strange robotic machines, or the orange giant insects of Epsilon Persei III.
+</p><p>
+The goal for this project is to design and implement a protocol for player races.
+Protocol and server support are a necessity, as is a (portable) client that can create
+races in some way.  Race files will need to be saved and distributed..  Take into account
+both fixed races (ala Master of Orion) or races built using another ruleset (ala Stars!).
+Also you will need to have at least one implementation of a game that uses the races in
+some way - easiest is Minisec, but if others are working on another project building a
+ruleset, you may work with them.  Race files need to be verified in some manner on the
+server, so take into account how to do this easily.
+</p>
+		</td>
+	</tr><tr>
+		<td><h4>More Information</h4></td>
+		<td>
+		</td>
+	</tr><tr>
+		<td><h4>Required Skills</h4></td>
+		<td></td>
 	</tr>
 </table>
 
@@ -404,6 +483,22 @@ Some features would include:
 	</tr>
 </table>
 
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
+<h1>Improve the protocol</h1>
+<p>
+These projects are about improving a core part of Thousand Parsec. They may require a
+smaller amount of code then other projects, but the code will have to be of a much higher
+quality.
+</p><p>
+Any changes to the core protocol will need to be vetted by other Thousand Parsec members
+and approved. This means that these projects may be slower to progress and more
+frustrating. They will generally be more rewarding as you will know that you have helped
+with a fundamental part of Thousand Parsec and every one else is doing work based on
+yours.
+</p>
+
 <table>
 	<tr>
 		<td colspan="2"><h2>Write a protocol compliance test suite</h2></td>
@@ -428,6 +523,47 @@ bunch of tests and report on it's compliance.
 
 <table>
 	<tr>
+		<td colspan="2"><h2>Design and Implement a Research Framework</h2></td>
+	</tr><tr>
+		<td colspan="2">
+<p>
+A general research framework is not designed yet.  Design it...
+</p><p>
+You need to be able to support a wide variety of research rules, technology items and
+similar.  Some rulesets feature randomly generated technology, others have a fixed list.
+Different trees for different races/players is also a common feature.  Variable tech
+levels (Weapons vs Construction) must be supported as well technology with different
+requirements.  
+</p><p>
+Obviously this requires extensions to the TP protocol - it's the main feature.  Also you
+will need to expand a client and server to support it, along with an example in a ruleset.
+Once again this may be good to do in a group with someone else implementing the core rules
+why you focus on this aspect.
+</p>
+		</td>
+	</tr><tr>
+		<td><h4>More Information</h4></td>
+		<td>
+			<a href="/tp/dev/documents/protocol4.php">Discussion of the next Thousand
+Parsec protocol.</a><br />
+		</td>
+	</tr><tr>
+		<td><h4>Required Skills</h4></td>
+		<td>Good Python or C++ Skills</td>
+	</tr>
+</table>
+
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
+<h1>Python Stuff</h1>
+<p>
+Thousand Parsec uses a lot of python. These projects are generally to do with improve some
+python part of Thousand Parsec.
+</p>
+
+<table>
+	<tr>
 		<td colspan="2"><h2>Add testing to libtpproto-py</h2></td>
 	</tr><tr>
 		<td colspan="2">
@@ -446,7 +582,6 @@ at least 60% of the code has proper testing.
 		<td>Some experience with unit testing and Python is a must</td>
 	</tr>
 </table>
-
 
 <table>
 	<tr>
@@ -483,6 +618,124 @@ href="http://www.kirix.com/community/forums/viewforum.php?f=15">wxAUI Forums</a>
 	</tr>
 </table>
 
+<?php include "bits/end_section.inc" ?>
+<?php include "bits/start_section.inc" ?>
+
+<h1>Implement a new Ruleset</h1>
+<p>
+Thousand Parsec's greatest strength is that it is a protocol for describing games, not a
+single game ruleset.  Obviously then the more (complete) rulesets the better.
+</p><p>
+You can choose to implement the rulesets in either the 
+<a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=tpserver-cpp;a=summary">Python Server</a> 
+or in the 
+<a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=tpserver-py;a=summary">C++ Server</a>.
+Both servers currently only implement <a href="/tp/dev/documents/minisec.php">MiniSec</a>
+but have been designed to support a wide variety of other rulesets.
+</p><p>
+All these tasks will require C++ skills (if developing for the C++ Server) or Python (if
+developing for the Python Server). You may need to do some work on the core of the server
+if you are doing more advanced stuff too.
+</p>
+
+<table>
+	<tr>
+		<td colspan="2"><h2>Implement MTSec prototype Ruleset</h2></td>
+	</tr><tr>
+		<td colspan="2">
+<p>
+MTSec (short for Missile and Torpedo Wars) is a simple game designed to flex the ship and
+weapon design capabilities of Thousand Parsec. It is the first ruleset to have a simple
+economy and should be more interesting then the first prototype game MiniSec.
+</p>
+		</td>
+	</tr><tr>
+		<td><h4>More Information</h4></td>
+		<td>
+			<a href="/tp/dev/documents/mtsec.php">MTSec Documentation</a><br />
+			<a href="https://sourceforge.net/tracker/index.php?func=detail&aid=1678819&group_id=132078&atid=829724">SF Todo Tracker Item</a>
+		</td>
+	</tr><tr>
+		<td><h4>Required Skills</h4></td>
+		<td>C++ skills or Python skill.</td>
+	</tr>
+</table>
+
+<table>
+	<tr>
+		<td colspan="2"><h2>Implement "Reach for the Stars" Clone</h2></td>
+	</tr><tr>
+		<td colspan="2">
+<p>
+In 1981 SSI released "Reach for the Stars", a classic in the 4X genre.  The rules for the
+game itself were fairly simple - in the mechanics for everything except combat were in the
+rule book.   It allowed up to 4 players, although it lacked decent network play (not a
+surprise -- the internet as we know it was quite a few years in the future).   
+</p><p>
+TP is currently at a stage were most, if not all, of RFTS can be implemented in the
+current protocol.  The game itself was balanced (by virtue of identical races) but had
+more then enough depth to keep players coming back. 
+</p><p>
+The goal of this project is to implement RFTS as a TP ruleset in any server.  Additionally
+you may need to make adjustments to a client to support it.  The RFTS AI's are a challenge
+for the truly adventurous.  
+</p><p>
+A new version of RFTS was released some years later.  It also could be used as a ruleset,
+however it is a much more ambitous project, and would require a lot of work to expand the
+TP protocol.
+</p>
+		</td>
+	</tr><tr>
+		<td><h4>More Information</h4></td>
+		<td>
+			<a href="http://en.wikipedia.org/wiki/Reach_for_the_stars">Wikipedia Page</a><br />
+		</td>
+	</tr><tr>
+		<td><h4>Required Skills</h4></td>
+		<td>Good Python or C++ Skills</td>
+	</tr>
+</table>
+
+
+<table>
+	<tr>
+		<td colspan="2"><h2>Implement "Diplomancy... In Space" Clone</h2></td>
+	</tr><tr>
+		<td colspan="2">
+<p>
+One of the greatest board (and later computer) games is Avalon Hills
+Diplomacy game.  Focusing on diplomacy between the players, forcing them
+to ally, lie, cheat, support and often backstab each other the game was
+(and is) a classic.  Without the diplomacy aspect it becomes a fairly
+average war game - with the diplomacy aspect, it's simple support-based
+combat system, secret orders and general tight confines make for an
+engaging and deep gaming experience.  
+</p><p>
+TP itself is missing some basic in turn messaging, but otherwise a
+ruleset using some of the ideas from Diplomacy to create fairly simple
+diplomatic game - in space could be done.  Some work on how to turn
+adjacent countries/territories into space fleets need to done.
+</p><p>
+The goal of this project is to implement a Diplomacy style game - one
+focused on shifting alliances and political manoeuvring, rather then
+pure military might.  Messaging between players will need to implemented
+in a server and client, and minor protocol adjustments will need to be
+made to allow messaging between players.  
+</p>
+		</td>
+	</tr><tr>
+		<td><h4>More Information</h4></td>
+		<td>
+			<a href="http://en.wikipedia.org/wiki/Diplomacy_%28board_game%29">Wikipedia Page</a><br />
+		</td>
+	</tr><tr>
+		<td><h4>Required Skills</h4></td>
+		<td>Good Python or C++ Skills</td>
+	</tr>
+</table>
+
+
+
 
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
@@ -509,9 +762,9 @@ href="http://www.kirix.com/community/forums/viewforum.php?f=15">wxAUI Forums</a>
     </ul></li>
 <li>Brett Nash (nash)
     <ul>
-        <li>E-mail: <a href="">jlp@holodeck1.com</a></li>
+        <li>E-mail: <a href=""></a></li>
         <li>Jabber: <a href=""></a></li>
-		<li>Responsible for: AI, General client Development</li>
+		<li>Responsible for: AI, General client Development, Ruleset Development</li>
     </ul></li>
 </ul>
 
