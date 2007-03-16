@@ -744,26 +744,26 @@ made to allow messaging between players.
 <ul>
 <li>Tim Ansell (mithro)
     <ul>
-        <li>E-mail: <a href="mailto:mithro NOSPAM mithis PLEASE com">jlp@holodeck1.com</a></li>
+        <li>E-mail: <a href="mailto:mithro NOSPAM mithis PLEASE com">mithro AT mithis DOT. com</a></li>
         <li>Jabber: <a href="xmpp:mithro@gmail.org">mithro@gmail.org</a></li>
 		<li>Responsible for: All Python Code (tpserver-py, tpclient-py, libtp*-py), Metaserver</li>
     </ul></li>
 <li>Lee Begg (llnz)
     <ul>
-        <li>E-mail: <a href="mailto:llnz NOSPAM paradise PLEASE net.nz">llnz AT paradise DOT net DOT nz</a></li>
+        <li>E-mail: <a href="mailto:llnz NOSPAM paradise PLEASE net.nz">llnz AT paradise DOT. net DOT. nz</a></li>
         <li>Jabber: <a href="xmpp:llnz@jabber.org">llnz@jabber.org</a></li>
 		<li>Responsible for: All C++ Server (tpserver-cpp, libtpproto-cpp)</li>
     </ul></li>
 <li>Jure Repinc (JLP)
     <ul>
-        <li>E-mail: <a href="mailto:jlp NOSPAM holodeck1 PLEASE com">jlp@holodeck1.com</a></li>
+        <li>E-mail: <a href="mailto:jlp NOSPAM holodeck1 PLEASE com">jlp AT holodeck1 DOT. com</a></li>
         <li>Jabber: <a href="xmpp:jlp@jabber.org">jlp@jabber.org</a></li>
 		<li>Responsible for: parsek, General client Development</li>
     </ul></li>
 <li>Brett Nash (nash)
     <ul>
-        <li>E-mail: <a href=""></a></li>
-        <li>Jabber: <a href=""></a></li>
+        <li>E-mail: <a href="mailto: nash NOSPAM nash PLEASE id.au">nash AT nash DOT. id DOT. au</a></li>
+        <li>Jabber: <a href="xmpp:brettnash@gmail.com">brettnash@gmail.com</a></li>
 		<li>Responsible for: AI, General client Development, Ruleset Development</li>
     </ul></li>
 </ul>
