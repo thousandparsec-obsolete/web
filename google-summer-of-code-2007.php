@@ -19,8 +19,8 @@ This page highlights ideas and suggestions for student proposals for 2007.
 	<li><a href="#Writing_Proposals"> 	Writing Proposals</a></li>
 	<li><a href="#Selection_Criteria"> 	Selection Criteria</a></li>
 	<li><a href="#Questions"> 			Questions</a></li>
-	<li><a href="#General_Ideas"> 		General Ideas</a>
-	<li><a href="#Bonus_Points"> 		Bonus Points</a></li>
+	<li><a href="#Ideas"> 			Ideas</a>
+<!--	<li><a href="#Bonus_Points"> 		Bonus Points</a></li> -->
 	<li><a href="#Mentors"> 			Mentors</a></li>
 	<li><a href="#Deadlines"> 			Deadlines and Dates</a></li>
 	<li><a href="#External_Links"> 		External Links</a></li>
@@ -162,7 +162,7 @@ participate. Individuals only.</li>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
-<h2>Ideas</h2>
+<a name="Ideas"></a><h2>Ideas</h2>
 
 <p>
 Below are some of the ideas and suggestion for students who are interested in joining
@@ -627,9 +627,9 @@ Thousand Parsec's greatest strength is that it is a protocol for describing game
 single game ruleset.  Obviously then the more (complete) rulesets the better.
 </p><p>
 You can choose to implement the rulesets in either the 
-<a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=tpserver-cpp;a=summary">Python Server</a> 
+<a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=tpserver-py;a=summary">Python Server</a> 
 or in the 
-<a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=tpserver-py;a=summary">C++ Server</a>.
+<a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=tpserver-cpp;a=summary">C++ Server</a>.
 Both servers currently only implement <a href="/tp/dev/documents/minisec.php">MiniSec</a>
 but have been designed to support a wide variety of other rulesets.
 </p><p>
