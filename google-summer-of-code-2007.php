@@ -149,8 +149,8 @@ participate. Individuals only.</li>
 		Read up the developer section <a href="/tp/dev/index.php">/tp/dev/index.php</a>
 	</li><li> 
 		Join the 
-			<a href="http://localhost/tp/mailman.php/listinfo/" title="Mailing Lists">mailing lists</a> or
-			<a href="http://localhost/forums" title="Forums">web forums</a> 
+			<a href="http://www.thousandparsec.net/tp/mailman.php/listinfo/" title="Mailing Lists">mailing lists</a> or
+			<a href="http://www.thousandparsec.net/forums" title="Forums">web forums</a> 
 		(they are connected so you don't need to join both) and ask questions
 	</li><li>
 		Join the 
