@@ -19,10 +19,10 @@
 
 <div class="stats">
 <?php 
-	$suggestion = $todo[array_rand($todo)];
+	$suggestion = str_replace('.', '', $todo[array_rand($todo)]);
 	$suggestion['summary'] = str_replace(
-		array('Create ', 'Design ', 'Develop ', 'Fix ', 'Add ',), 
-		array('Creating ', 'Designing ', 'Developing ', 'Fixing ', 'Adding '),
+		array('Create ', 'Design ', 'Develop ', 'Fix ', 'Add ', 'Clean '), 
+		array('Creating ', 'Designing ', 'Developing ', 'Fixing ', 'Adding ', 'Cleaning '),
 		$suggestion['summary']);
  ?>
 <a href="http://www.sf.net<?php echo $suggestion['url']; ?>">
