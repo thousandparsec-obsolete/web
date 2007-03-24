@@ -777,10 +777,10 @@ made to allow messaging between players.
 <dt>March 14</dt>
 <dd>List of accepted mentoring organizations published on code.google.com; student application period opens</dd>
 
-<dt>March 24</dt>
+<dt>March 26</dt>
 <dd>Student application deadline</dd>
 
-<dt>April 9</dt>
+<dt>April 11</dt>
 <dd>List of accepted student applications published on code.google.com</dd>
  
 <dt>May 28</dt>
