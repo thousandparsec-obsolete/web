@@ -767,6 +767,21 @@ made to allow messaging between players.
 		<li>Responsible for: AI, General client Development, Ruleset Development</li>
     </ul></li>
 </ul>
+<p>There are also the following mentors, but they are smart enough not to disclose their details to the public.</p>
+<ul>
+<li>Matthew Draper (matthewd)
+    <ul>
+		<li>Responsible for: All Ruby code (such as libtpproto-rb), Improvements to protocol.xml</li>
+    </ul></li>
+<li>Jotham Read (jothamd)
+    <ul>
+		<li>Responsible for: Battleviewer, Some Artwork</li>
+    </ul></li>
+<li>Tam Ho Wai Howell (pigeond)
+    <ul>
+		<li>Responsible for: Mobile/Embedded Gui, Graphics, Play testing</li>
+    </ul></li>
+</ul>
 
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
