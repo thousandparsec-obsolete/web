@@ -44,6 +44,75 @@
 <a name="news"></a>
 <h1>News</h1>
 
+<h2>Submitting your entry</h2>
+<p>by Mithro</p>
+<p>
+As there is less then 4 days to go until the competition closes, here are the
+details for submitting your entry for the competition.
+</p><p>
+Before we tell you how to submit your AI, if you want to compete in the battle
+section of the competition you must first check that it fits these criteria.
+<ul>
+	<li>The AI must have an executable file which is called "tpai". This can be
+a symbolic link to the real file.</li>
+	<li>The AI must either run without being installed or when installed to an
+arbitrary location.</li>
+	<li>Multiple instances of your AI's must be able to be run at the same
+time.</li>
+	<li>The AI will be called with an URI specifying the server to connect to.
+This will be as follows below,
+<pre>
+./tpai tp://&lt;username&gt;:&lt;password&gt;@&lt;server&gt;:&lt;port&gt;/
+</pre>
+The URI will be fully specified, even if the port is default. The URI will
+always use the tp protocol. Support for tps, http, https, tphttp or tphttps is
+not required.</li>
+	<li>The AI will run in a text console only environment. No graphical
+environment such as X or the console Frame Buffer will be available.</li>
+	<li>The AI will be restarted for each battle. There is no guarantee that any
+data will persist across battles (For example, the AI could be run on a
+different machine or in a different directory or under a different user.)</li>
+</ul>
+</p><p>
+To submit your entry, you must create a tar.gz or zip file of your AI. This
+archive must include the following things:
+<ul>
+	<li>An INSTALL file, this file must describe how to setup and install the
+AI. Include ALL dependencies which may be required and how to get them. It is
+HIGHLY recommended that you include the Debian/Ubuntu package names (and/or
+package repositories) in this file.</li>
+	<li>A LICENSE file, this file must describe the OSI approved license you are
+using for this AI.</li>
+	<li>A README file, this file must include a short description on how your AI
+works, cool things to look at and general information.</li>
+	<li>Your source code. We will not accept binary only submissions.</li>
+	<li><b>Optionally</b>, you can include a prebuilt binary which will run on
+an x86 Ubuntu Edgy Eft install.</li>
+</ul>
+</p><p>
+You must then upload the archive to a public web location and email the
+<b style="font-size: 14pt;">URL and a MD5 sum</b> of the archive to 
+<a href="mailto:submission@thousandparsec.net">submission@thousandparsec.net</a>.
+You will get a reply within 24 hours (from a human) confirming we have
+successfully downloaded your submission.
+</p><p>
+Some more notes about judging too:
+<ul>
+	<li>If your AI segfaults, stops with a stack trace or has a similar issue.
+It will not be restarted for the remainder of that battle.</li>
+	<li>A reasonable attempt will be made to build your AI (if required). If we
+are unable to build your AI it will not be eligible to participate in the battle
+section of the competition. We may at the judges discretion contact you if we
+are having problems.</li> 
+</ul>
+</p><p>
+<b style="font-size: 14pt;">All submissions must be in before 00:01 on the 31st
+of March 2007 (UTC).</b> 
+</p><p>
+Winners will be announced before the Monday, 30th April.
+</p>
+<h6>Wednesday, 28nd Mar 2007</h6>
+
 <h2>New Links Section</h2>
 <p>by Mithro</p>
 <p>
