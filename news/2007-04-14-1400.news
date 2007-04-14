@@ -1,0 +1,19 @@
+
+<h2>Thousand Parsec services down</h2>
+<p>by Mithro</p>
+<p>
+	The server which hosts most of the Thousand Parsec resources (such as the
+website, forums and code) was compromised. The attack was not directed at
+Thousand Parsec but at another website running on the same box. 
+</p><p>
+	The machine is undergoing a complete reinstall. There is currently no ETA on
+when the server will be back in action.
+</p><p>
+	As a temporary measure, I have put up a copy of the website on my home
+gateway box. It's running of an ADSL link and only has 1Mbit uplink so it's
+going to be a little slow.
+</p><p>
+	We will be taking this downtime to upgrade and modify some of our services.
+We are currently planning to migrate our code repositories to <a
+href="http://git.or.cz/">GIT</a> and are adding more RAM to the server.  
+</p>
