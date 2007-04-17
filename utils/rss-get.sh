@@ -1,11 +1,11 @@
 #! /bin/sh
 
-if [ "x$DARCSROOT" = "x" ]; then
-	DARCSROOT="/var/www/thousandparsec/tp"
+if [ "x$GITROOT" = "x" ]; then
+	GITROOT="/var/www/thousandparsec/tp"
 fi
 
-cd $DARCSROOT
-TMP=$DARCSROOT/tmp
+cd $GITROOT
+TMP=$GITROOT/tmp
 
 # Download the latest metaserver stats
 wget "http://metaserver.thousandparsec.net/?action=badge" -O $TMP/meta.inc
@@ -23,7 +23,7 @@ wget "http://sourceforge.net/project/stats/graph/detail-graph.php?group_id=13207
 convert -resize 50x27 $TMP/sf-stats.png $TMP/sf-stats-small.png
 
 # Download the tracker information
-ruby $DARCSROOT/utils/sftodo.rb > $TMP/sf-todo.inc
+ruby $GITROOT/utils/sftodo.rb > $TMP/sf-todo.inc
 
 # Download the freshmeat rss details
 find $TMP/fm.rss -mtime +1 -exec rm '{}' ';'
@@ -56,9 +56,9 @@ for list in $lists; do
 	convert -resize 50x15 $TMP/lists/$list.png $TMP/lists/$list-small.png
 done
 # Post process the repository rss (combind them, sort them and trim old)
-ruby $DARCSROOT/utils/rss2php.rb lists $TMP/lists/*.rss > $TMP/lists.inc
+ruby $GITROOT/utils/rss2php.rb lists $TMP/lists/*.rss > $TMP/lists.inc
 
-# Download the rss details from the darcs repository
+# Download the rss details from the git repository
 export repositories="
  libtpclient-py
  libtpproto-cpp
@@ -74,15 +74,14 @@ export repositories="
  tpclient-pywx
  tpsai-py
  tpserver-cpp
- tpserver-py
- web"
+ tpserver-py"
 
-if [ ! -d $TMP/darcs ]; then
-	mkdir $TMP/darcs
+if [ ! -d $TMP/git ]; then
+	mkdir $TMP/git
 fi
 for repository in $repositories; do
-	wget "http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi?r=$repository;a=rss" -O $TMP/darcs/$repository.rss
+	wget "http://git.thousandparsec.net/gitweb/gitweb.cgi?p=$repository;a=rss" -O $TMP/git/$repository.rss
 done
 # Post process the repository rss (combind them, sort them and trim old)
-ruby $DARCSROOT/utils/rss2php.rb darcs $TMP/darcs/*.rss > $TMP/darcs.inc
+ruby $GITROOT/utils/rss2php.rb git $TMP/git/*.rss > $TMP/git.inc
 
