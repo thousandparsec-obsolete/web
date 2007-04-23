@@ -3,13 +3,13 @@
 GITROOT="/var/www/thousandparsec/repos/"
 
 #create the stable version of tp.* documents.
-cd $DARCSROOT/web/dev/documents/python/netlib
+cd $GITROOT/web/dev/documents/python/netlib
 epydoc --html -o libtpproto-py-doc -v --private-css green --docformat plaintext tp
 tar -zcvf libtpproto-py-doc.tar.gz python-tp-doc/*
-cd $DARCSROOT/web/dev/documents/python/stable
+cd $GITROOT/web/dev/documents/python/stable
 epydoc --html -o python-tp-doc -v --private-css green --docformat plaintext tp
 tar -zcvf python-tp-doc.tar.gz python-tp-doc/*
-cd $DARCSROOT/web/dev/documents/python/dev
+cd $GITROOT/web/dev/documents/python/dev
 epydoc --html -o python-tp-doc -v --private-css green --docformat plaintext tp
 tar -zcvf python-tp-doc.tar.gz python-tp-doc/*
 
