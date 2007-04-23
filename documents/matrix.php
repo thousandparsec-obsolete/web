@@ -46,7 +46,7 @@
 		<td>(library)</td>
 		<td>tpclient-cpptext</td>
 		<td>Parsek</td>
-		<td>TPE</td>
+		<td>GalaxiE</td>
 		<td>TPJava</td>
 	</tr>
 	<tr>
