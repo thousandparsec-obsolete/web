@@ -60,21 +60,21 @@ ruby $GITROOT/utils/rss2php.rb lists $TMP/lists/*.rss > $TMP/lists.inc
 
 # Download the rss details from the git repository
 export repositories="
- libtpclient-py
- libtpproto-cpp
- libtpproto-php
- libtpproto-py
- libtpproto-rb
- libtpproto2-py
- tpclient-cpptext
- tpclient-java
- tpclient-pygame
- tpclient-pyogre
- tpclient-pytext
- tpclient-pywx
- tpsai-py
- tpserver-cpp
- tpserver-py"
+ libtpclient-py.git
+ libtpproto-cpp.git
+ libtpproto-php.git
+ libtpproto-py.git
+ libtpproto-rb.git
+ libtpproto2-py.git
+ tpclient-cpptext.git
+ tpclient-java.git
+ tpclient-pygame.git
+ tpclient-pyogre.git
+ tpclient-pytext.git
+ tpclient-pywx.git
+ tpsai-py.git
+ tpserver-cpp.git
+ tpserver-py.git"
 
 if [ ! -d $TMP/git ]; then
 	mkdir $TMP/git
