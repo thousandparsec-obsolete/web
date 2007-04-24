@@ -5,7 +5,7 @@
 <center>
 <?php 
 
-if ($_SERVER['SERVER_NAME'] == 'www.thousandparsec.net')
+if (is_readable("bits/sloc.inc"))
 	include "bits/sloc.inc" ; 
 else
 	include "http://www.thousandparsec.net/tp/dev/bits/sloc.inc" ;
