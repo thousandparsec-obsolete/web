@@ -118,7 +118,7 @@
 </div>
 
 <div class="stats" style="text-align: center">
-<SCRIPT type='text/javascript' language='JavaScript' src='http://www.ohloh.net/projects/3679;badge_js'></SCRIPT>
+<script type='text/javascript' language='JavaScript' src='http://www.ohloh.net/projects/3679;badge_js'></script>
 </div>
 
 <?php include "bits/end_section.inc"; ?> 
