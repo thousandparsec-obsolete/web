@@ -1,6 +1,8 @@
 #! /bin/sh
 
-GITROOT="/var/www/thousandparsec/repos/"
+if [ "x$GITROOT" = "x" ]; then
+	GITROOT="/var/www/thousandparsec/repos"
+fi
 
 cd $GITROOT
 for r in `ls`; do
