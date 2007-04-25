@@ -1,11 +1,11 @@
 #! /bin/sh
 
-if [ "x$GITROOT" = "x" ]; then
-	GITROOT="/var/www/thousandparsec/tp"
+if [ "x$WEBROOT" = "x" ]; then
+	WEBROOT="/var/www/thousandparsec/tp"
 fi
 
-cd $GITROOT
-TMP=$GITROOT/tmp
+cd $WEBROOT
+TMP=$WEBROOT/tmp
 
 # Download the latest metaserver stats
 wget "http://metaserver.thousandparsec.net/?action=badge" -O $TMP/meta.inc
@@ -23,7 +23,7 @@ wget "http://sourceforge.net/project/stats/graph/detail-graph.php?group_id=13207
 convert -resize 50x27 $TMP/sf-stats.png $TMP/sf-stats-small.png
 
 # Download the tracker information
-ruby $GITROOT/utils/sftodo.rb > $TMP/sf-todo.inc
+ruby $WEBROOT/utils/sftodo.rb > $TMP/sf-todo.inc
 
 # Download the freshmeat rss details
 find $TMP/fm.rss -mtime +1 -exec rm '{}' ';'
@@ -56,7 +56,7 @@ for list in $lists; do
 	convert -resize 50x15 $TMP/lists/$list.png $TMP/lists/$list-small.png
 done
 # Post process the repository rss (combind them, sort them and trim old)
-ruby $GITROOT/utils/rss2php.rb lists $TMP/lists/*.rss > $TMP/lists.inc
+ruby $WEBROOT/utils/rss2php.rb lists $TMP/lists/*.rss > $TMP/lists.inc
 
 # Download the rss details from the git repository
 export repositories="
@@ -81,5 +81,5 @@ for repository in $repositories; do
 	wget "http://git.thousandparsec.net/gitweb/gitweb.cgi?p=$repository;a=rss" -O $TMP/git/$repository.rss
 done
 # Post process the repository rss (combind them, sort them and trim old)
-ruby $GITROOT/utils/rss2php.rb git $TMP/git/*.rss > $TMP/git.inc
+ruby $WEBROOT/utils/rss2php.rb git $TMP/git/*.rss > $TMP/git.inc
 
