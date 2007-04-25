@@ -2,6 +2,14 @@
 
 GITROOT="/var/www/thousandparsec/repos/"
 
+cd $GITROOT
+for r in `ls`; do
+  if test -x $GITROOT/$r/.git ; then
+    cd $GITROOT/$r
+    cg-update
+  fi
+done
+
 #create the stable version of tp.* documents.
 cd $GITROOT/web/dev/documents/python/netlib
 epydoc --html -o libtpproto-py-doc -v --private-css green --docformat plaintext tp
@@ -15,7 +23,6 @@ tar -zcvf python-tp-doc.tar.gz python-tp-doc/*
 
 #create libtpproto-cpp docs.
 cd $GITROOT/libtpproto-cpp/
-cg-update
 doxygen Doxyfile
 cd ..
 tar czf libtpproto-cpp-doc-cvs.tar.gz libtpproto-cpp/docs/
@@ -28,7 +35,6 @@ cd $GITROOT/web/screenshots
 
 #generate content of protocolxml.php from darcs
 cd $GITROOT/documents
-cg-update
 xsltproc $GITROOT/web/dev/documents/protocol2html.xsl ./protocol/protocol.xml > $GITROOT/web/dev/bits/protocolxml.inc
 
 # Run the sloc2html update
