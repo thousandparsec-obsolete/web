@@ -13,7 +13,7 @@
 <?php include(dirname(__FILE__) . "/tmp/fm-stats.inc"); ?>
 <?php include(dirname(__FILE__) . "/tmp/sf-stats.inc"); ?>
 <?php include(dirname(__FILE__) . "/tmp/sf-todo.inc"); ?>
-<?php include(dirname(__FILE__) . "/tmp/darcs.inc"); ?>
+<?php include(dirname(__FILE__) . "/tmp/git.inc"); ?>
 <?php include(dirname(__FILE__) . "/tmp/lists.inc"); ?>
 
 <div class="stats">
@@ -39,11 +39,11 @@
 </div>
 
 <div class="stats">
-	<b class="small"><a href="http://darcs.thousandparsec.net/darcsweb/darcsweb.cgi">Latest Developments:</a></b><br />
-	<span class="small">On: <?php echo strtr($darcs[0]['when'], array('T' => ' ', 'Z' => ' ')); ?></span><br /> 
-	<span class="small">By: <?php echo preg_replace('/@[A-Za-z0-9.-]*/' , '@...', $darcs[0]['whom']); ?></span><br /> 
-	<span class="small">To: <?php echo substr($darcs[0]['where'], strrpos($darcs[0]['where'], '/')+1, -4); ?></span><br />
-	<span class="ultrasmall">Comment:</span><br /><span class="small"><?php echo $darcs[0]['title']; ?></span><br />
+	<b class="small"><a href="http://git.thousandparsec.net/gitweb/gitweb.cgi">Latest Developments:</a></b><br />
+	<span class="small">On: <?php echo strtr($git[0]['when'], array('T' => ' ', 'Z' => ' ')); ?></span><br /> 
+	<span class="small">By: <?php echo preg_replace('/@[A-Za-z0-9.-]*/' , '@...', $git[0]['whom']); ?></span><br /> 
+	<span class="small">To: <?php echo substr($git[0]['where'], strrpos($git[0]['where'], '/')+1, -4); ?></span><br />
+	<span class="ultrasmall">Comment:</span><br /><span class="small"><?php echo $git[0]['title']; ?></span><br />
 </div>
 
 <div class="stats">

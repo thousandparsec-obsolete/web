@@ -67,8 +67,6 @@ export repositories="
  libtpproto-rb.git
  libtpproto2-py.git
  tpclient-cpptext.git
- tpclient-java.git
- tpclient-pygame.git
  tpclient-pyogre.git
  tpclient-pytext.git
  tpclient-pywx.git
