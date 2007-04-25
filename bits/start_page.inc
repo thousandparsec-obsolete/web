@@ -41,7 +41,7 @@ Commented out because it was causing loading issues on slow links.
 -->
 <div id="wrapper">
 
-<a href="/tp/"><div id="banner">
+<div id="banner"><a href="/tp/">
 	<h1>Thousand Parsec: <?php echo $title; ?></h1>
 	<img src="/tp/img/logo_t.png" alt="Thousand Parsec Logo" /></a>
 </div>
