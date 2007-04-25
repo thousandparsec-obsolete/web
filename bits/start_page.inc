@@ -76,7 +76,8 @@ Commented out because it was causing loading issues on slow links.
 	<a href="/tp/mailman.php/listinfo/"
 		class="<?php echo $title == 'Lists' ? 'on' : ''; ?>">Lists</a>
 </td><td>
-	<a href="/forums" class="">Forums</a> 
+	<span style="color: gray;" class="">Forums</span>
+<!--	<a href="/forums" class="">Forums</a> -->
 </td><td>
 	<a href="/tp/links.php"
 		class="<?php echo $title == 'Links' ? 'on' : ''; ?>">Links</a>
