@@ -194,7 +194,7 @@ a {
 	margin: 10px 0;
 }
 
-#content h1 {
+#content h1, #content h1 a {
 	color: #E1870D;
 	/* background-color: #000000; */
 	font-size: 20pt;
@@ -202,7 +202,7 @@ a {
 	border-bottom: 1px solid #333333;
 }
 
-#content h2 {
+#content h2, #content h2 a {
 	color: #E1870D;
 	/* background-color: #000000; */
 	font-size: 14pt;

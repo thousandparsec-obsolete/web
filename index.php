@@ -132,7 +132,7 @@ $news = "news/";
 $file = $news.basename($_SERVER['PATH_INFO']).".news";
 if (file_exists($file)) {
 	include($file);
-	echo "<h6>Posted: ". substr($file, 0, -5) . "</h6>\n";
+	echo "<h6>Posted: ". str_replace($news, '', substr($file, 0, -5)) . "</h6>\n";
 } else {
 	$files = get_files($news);
 
@@ -146,8 +146,8 @@ if (file_exists($file)) {
 			$i++;
 
 		$haystack = file_get_contents($news . $file);
-		$haystack = str_replace("<h2>", "<a href='/tp/news.php/$fshort'><h2>", $haystack);
-		$haystack = str_replace("</h2>", "</h2></a>", $haystack);
+		$haystack = str_replace("<h2>", "<h2><a href='/tp/news.php/$fshort'>", $haystack);
+		$haystack = str_replace("</h2>", "</a></h2>", $haystack);
 
 		echo $haystack;
 		echo "<h6>Posted: ". substr($file, 0, -5) . "</h6>\n";
