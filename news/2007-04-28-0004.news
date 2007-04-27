@@ -1,0 +1,25 @@
+
+<h2>Thousand Parsec services back</h2>
+<p>by Mithro</p>
+<p>
+	After a large amount of effort, most of the services should be back
+now. If you are having problems with any service (or notice something we
+have missed), please contact <a
+href="mailto:tim AT thousandparsec SPAM net">me</a>.
+</p><p>
+	Both the media server and the forums are still down. If you still wish
+to access mailing list achieves via the web there are two other choices:
+<ul>
+	<li><a href="http://dir.gmane.org/search.php?match=games.tp">GMane</a>
+- GMane mirror all our mailing lists to a news server. They also provide a
+number of web interfaces.</li>
+	<li><a href="http://www.nabble.com/TP-f1138.html">Nabble</a> - Nabble
+provides a forum like web interface.</li>
+</ul>
+</p><p>
+	We have also successfully migrated all our repositories to
+<href="http://git.or.cz/">GIT</a>. You can find information on how to use
+GIT to checkout our code <a href="/tp/dev/rcs.php">Source Code Page</a>.
+More comprehensive instructions will be coming soon. You can also view the
+repositories through the web <a href="http://git.thousandparsec.net/">here</a>.
+</p>
