@@ -27,7 +27,7 @@
 ?>
 
 <h1>Client Support Matrix</h1>
-<p>Last updated 12 December 2005.</p>
+<p>Last updated 23 April 2007.</p>
 
 <table cellpadding=3>
 	<tr>
