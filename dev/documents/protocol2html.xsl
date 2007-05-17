@@ -52,7 +52,12 @@
   <xsl:template match="packet" mode="description">
     <xsl:element name="h3">
       <xsl:attribute name="id"><xsl:text>Desc_</xsl:text><xsl:value-of select="@name"/></xsl:attribute>
-      <xsl:value-of select="@name"/><xsl:text> Frame</xsl:text>
+      <xsl:choose>
+        <xsl:when test="child::longname">
+          <xsl:value-of select="longname"/>
+	</xsl:when>
+	<xsl:otherwise><xsl:value-of select="@name"/></xsl:otherwise>
+      </xsl:choose><xsl:text> Frame</xsl:text>
     </xsl:element>
     <xsl:element name="p">
       <xsl:value-of select="description"/>
@@ -173,7 +178,12 @@
     <xsl:element name="li">
       <xsl:element name="a">
         <xsl:attribute name="href"><xsl:text>#Desc_</xsl:text><xsl:value-of select="@name"/></xsl:attribute>
-        <xsl:value-of select="@name"/><xsl:text> Frame</xsl:text>
+        <xsl:choose>
+        <xsl:when test="child::longname">
+          <xsl:value-of select="longname"/>
+	</xsl:when>
+	<xsl:otherwise><xsl:value-of select="@name"/></xsl:otherwise>
+      </xsl:choose><xsl:text> Frame</xsl:text>
       </xsl:element>
     </xsl:element>
   </xsl:template>
@@ -190,7 +200,12 @@
       <xsl:element name="td">
         <xsl:element name="a">
           <xsl:attribute name="href"><xsl:text>#Desc_</xsl:text><xsl:value-of select="@name"/></xsl:attribute>
-	  <xsl:value-of select="@name" /><xsl:text> Frame</xsl:text>
+	  <xsl:choose>
+        <xsl:when test="child::longname">
+          <xsl:value-of select="longname"/>
+	</xsl:when>
+	<xsl:otherwise><xsl:value-of select="@name"/></xsl:otherwise>
+      </xsl:choose><xsl:text> Frame</xsl:text>
         </xsl:element>
       </xsl:element>
       <xsl:element name="td"><xsl:value-of select="description" /></xsl:element>
