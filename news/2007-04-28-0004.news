@@ -18,7 +18,7 @@ provides a forum like web interface.</li>
 </ul>
 </p><p>
 	We have also successfully migrated all our repositories to
-<href="http://git.or.cz/">GIT</a>. You can find information on how to use
+<a href="http://git.or.cz/">GIT</a>. You can find information on how to use
 GIT to checkout our code <a href="/tp/dev/rcs.php">Source Code Page</a>.
 More comprehensive instructions will be coming soon. You can also view the
 repositories through the web <a href="http://git.thousandparsec.net/">here</a>.
