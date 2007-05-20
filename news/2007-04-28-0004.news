@@ -8,7 +8,7 @@ have missed), please contact <a
 href="mailto:tim AT thousandparsec SPAM net">me</a>.
 </p><p>
 	Both the media server and the forums are still down. If you still wish
-to access mailing list achieves via the web there are two other choices:
+to access mailing list achieves via the web there are two other choices:</p>
 <ul>
 	<li><a href="http://dir.gmane.org/search.php?match=games.tp">GMane</a>
 - GMane mirror all our mailing lists to a news server. They also provide a
@@ -16,7 +16,7 @@ number of web interfaces.</li>
 	<li><a href="http://www.nabble.com/TP-f1138.html">Nabble</a> - Nabble
 provides a forum like web interface.</li>
 </ul>
-</p><p>
+<p>
 	We have also successfully migrated all our repositories to
 <a href="http://git.or.cz/">GIT</a>. You can find information on how to use
 GIT to checkout our code <a href="/tp/dev/rcs.php">Source Code Page</a>.
