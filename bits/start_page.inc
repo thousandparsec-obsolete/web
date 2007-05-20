@@ -41,9 +41,9 @@ Commented out because it was causing loading issues on slow links.
 -->
 <div id="wrapper">
 
-<div id="banner"><a href="/tp/">
-	<h1>Thousand Parsec: <?php echo $title; ?></h1>
-	<img src="/tp/img/logo_t.png" alt="Thousand Parsec Logo" /></a>
+<div id="banner">
+	<h1><a href="/tp/">Thousand Parsec: <?php echo $title; ?></a></h1>
+	<a href="/tp/"><img src="/tp/img/logo_t.png" alt="Thousand Parsec Logo" /></a>
 </div>
 
 <table class="menu">
