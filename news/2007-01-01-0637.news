@@ -5,6 +5,7 @@ With a New Year comes a new release of Thousand Parsec's primary client!
 <br />
 The next version stable version of tpclient-pywx 0.2.1 is now available. 
 This version fixes the following bugs and problems:
+</p>
 <ul>
  <li>Progress bars not reaching completed state. (all platforms)</li>
  <li>Pause when downloading initial media information. (all platforms)</li>
@@ -14,8 +15,9 @@ This version fixes the following bugs and problems:
  <li>Client support libraries requiring setuptools. (unix)</li>
 </ul>
 
-</p><p>
+<p>
 The following new features have been added!
+</p>
 <ul>
 	<li>Client can now be started with a URL and it will fill in the 
 connect box. (all platforms)</li>
@@ -23,7 +25,7 @@ connect box. (all platforms)</li>
 URLs in FireFox or Internet Explorer and it will start the client. (windows, 
 unix with gnome)</li>
 </ul>
-</p><p>
+<p>
 This release includes <a href="/tp/downloads.php#tpclient-pywx">binaries
 for windows and binaries for Mac OS X</a>. Install instructions for Linux can 
 be found on the <a href="/tp/gettingstarted.php#gamer">Getting Started page.</a>
