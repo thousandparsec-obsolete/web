@@ -1,8 +1,6 @@
 <?php $title = "Getting Started" ?>
 <?php include "bits/start_page.inc" ; ?>
 
-<div id="gs">Want to win cool prizes? Why not join the <a href="/tp/comp.php">AI Programming Competition?</a></div>
-
 <?php include "bits/start_section.inc" ; ?>
 <table class="borderless">
 	<tr>
