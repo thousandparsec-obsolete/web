@@ -448,6 +448,8 @@
 		<li>string-ref : (string nat -&gt; char)</li> 
 		<li>string? : (any -&gt; boolean)</li> 
 		<li>substring : (string nat nat -&gt; string)</li>
+		<li>sprintf : (format-spec obj ... -&gt; string) 
+			<p>Note: Not part of the R5RS standard, see <a href="http://galinha.ucpel.tche.br:8080/Unit%20extras#sprintf">here</a> for more information.</p></li> 
 	</ul>
 	<I>Misc</I>
 	<ul class="fixme">
