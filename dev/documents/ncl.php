@@ -448,6 +448,8 @@
 		<li>string-ref : (string nat -&gt; char)</li> 
 		<li>string? : (any -&gt; boolean)</li> 
 		<li>substring : (string nat nat -&gt; string)</li>
+		<li>sprintf : (format-spec obj ... -&gt; string) 
+			<p>Note: Not part of the R5RS standard, see <a href="http://galinha.ucpel.tche.br:8080/Unit%20extras#sprintf">here</a> for more information.</p></li> 
 	</ul>
 	<I>Misc</I>
 	<ul class="fixme">
@@ -600,7 +602,7 @@
 	A simple linear example which displays &quot;10 PSI&quot;,
 	
 <pre class="nclcode">
-(lambda (design, bits)
+(lambda (design bits)
 	(let ((n (apply + bits)))
 		(cons n
 			(string-append (number-&gt;string n) &quot; PSI&quot;)
@@ -615,7 +617,7 @@
 	depending on the value of the input
 
 <pre class="nclcode">
-(lambda (design, bits)
+(lambda (design bits)
 	(let ((n (apply + bits)))
 		(cond			  
 			((&lt; n 100) (cons n (string-append n &quot; grams&quot;)) )  
@@ -632,7 +634,7 @@
 	acceleration,
 
 <pre class="nclcode">
-(lambda (design, bits)
+(lambda (design bits)
 	(let ((n (/ (designtype.force design) (designtype.mass design))))
 		(cons n (string-append n &quot; m/s^2&quot;))
 	)
@@ -645,7 +647,7 @@
 	calculates the cloaking,
 
 <pre class="nclcode">
-(lambda (design, bits)
+(lambda (design bits)
 	(let ((n (/ (apply + bits) (designtype.mass design)))
 		(set! n (/ n (n+1)))
 		(cons n (string-append (number-&gt;string n) &quot; %&quot;))
