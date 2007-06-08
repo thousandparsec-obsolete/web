@@ -29,6 +29,7 @@ foreach($files as $file) {
 
 	# Read in the file
 	$haystack = file_get_contents($news . $file);
+	$haystack = substr($haystack, 0, -1);
 
 	# Extract the title
 	preg_match_all("|<h2>(.*?)</h2>|i",$haystack,$title);
@@ -72,7 +73,7 @@ $body
 $haystack = preg_replace('!<a(.*?)href\s*=[\'"\s]*/(.*?)[\'"\s]*>!', "<a\\1href='http://{$_SERVER['SERVER_NAME']}/\\2'>", $haystack);
 $haystack = preg_replace('!<img(.*?)src\s*=[\'"\s]*/(.*?)[\'"\s]*>!', "<img\\1src='http://{$_SERVER['SERVER_NAME']}/\\2'>", $haystack);
 
-echo htmlentities($haystack);
+echo htmlentities($haystack, ENT_QUOTES, 'UTF-8');
 ?>
 </description>
       <dc:creator><?php echo $author[1][0] ?></dc:creator>
