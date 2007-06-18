@@ -656,6 +656,7 @@
 </pre>
 </p>
 
+<a name="tips"></a>
 <h1>Implmentation Tips</h1>
 
 <p>
