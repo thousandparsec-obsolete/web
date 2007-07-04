@@ -1,0 +1,15 @@
+
+<h2>Libtpproto-cpp 0.1.1 released.</h2>
+<p>by Lee</p>
+<p>
+	Added a whole lot new features to libtpproto-cpp. It has been a while since a release so here is one.
+	Thanks to all how have helped over the last year and a half. The main reason for this release, other than
+	the new features and improvements, is to allow progress toward TP04 support and reworking the library to be
+	more asynchronous, and integrate better with clients.
+	See the ChangeLog and/or the git history for more.
+</p>
+<p>
+	Libtpproto-cpp 0.1.1 is on the <a href="http://www.thousandparsec.net/tp/downloads.php#libtpproto-cpp">downloads page</a> and will be on our SF downloads page soon. The Git repo is 
+	libtpproto-cpp and the tag is 
+	LIBTPPROTO_CPP_0_1_1. Feedback and suggestions are always welcome.
+</p>
