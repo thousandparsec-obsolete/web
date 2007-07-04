@@ -17,6 +17,8 @@
 			<a href="/tp/dev/rcs.php"
 				class="<?php echo $title == 'Source Code' ? 'on' : ''; ?>">Source Code</a>
 		</td><td>
+			<a href="http://www.thousandparsec.net/wiki">Wiki</a>
+		</td><td>
 			<a href="http://git.thousandparsec.net/gitweb/gitweb.cgi">GIT Web</a>
 <!--		</td><td>
 			<a href="/tp/dev/viewcvs.php/">Web CVS</a> -->

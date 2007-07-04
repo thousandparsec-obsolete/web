@@ -62,11 +62,10 @@ You lose if you get destroyed :).
 <a name="scout"></a>
 <h3>Scout</h3>
 <table>
+	<tr><td>Speed</td><td>5 Units per turn</td></tr>
 	<tr><td>Weapons</td><td>None</td></tr>
-	<tr><td>Moves</td><td>3 units per turn</td></tr>
 	<tr><td>Armour</td><td>2 HP</td></tr>
 	<tr><td>Build</td><td>1 Turn</td></tr>
-	<tr><td>Speed</td><td>5 Units per turn</td></tr>
 	<tr><td>Special</td><td>Gives the fleet a chance to escape if the fleet wins a match</td></tr>
 </table>
 <p>
@@ -112,12 +111,11 @@ the speed of Frigates (the slowest ships).
 <a name="frigate"></a>
 <h3>Frigate</h3>
 <table>
+	<tr><td>Speed</td><td>2 Units per turn</td></tr>
 	<tr><td>Weapon</td><td>2 HP Damage on Win</td></tr>
-	<tr><td>Moves</td><td>2 units per turn</td></tr>
 	<tr><td>Armour</td><td>4 HP</td></tr>
 	<tr><td>Build</td><td>2 Turns</td></tr>
 	<tr><td>Special</td><td>Can colonise a planet</td></tr>
-	<tr><td>Speed</td><td>2 Units per turn</td></tr>
 </table>
 <p>
 Frigates are the primary ships in the MiniSec universe. Able to do some 
@@ -136,11 +134,10 @@ only have 2 Frigates and 2 Battleships.
 <a name="battleship"></a>
 <h3>Battleship</h3>
 <table>
+	<tr><td>Speed</td><td>3 Units per turn</td></tr>
 	<tr><td>Weapon</td><td>3 HP Damage on Win, 1 HP Damage on Draw</td></tr>
-	<tr><td>Moves</td><td>1 units per turn</td></tr>
 	<tr><td>Armour</td><td>6 HP</td></tr>
 	<tr><td>Build</td><td>4 Turns</td></tr>
-	<tr><td>Speed</td><td>3 Units per turn</td></tr>
 </table>
 <p>
 Battleships are the largest and most hardy ship in the MiniSec universe.

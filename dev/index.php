@@ -3,7 +3,7 @@
 <?php include "bits/start_page.inc" ?>
 <?php include "bits/start_section.inc" ?>
 
-<br>
+<br />
 <h2>
 		Welcome Developers!
 </h2>
@@ -19,8 +19,8 @@
 	or see him on <a href="irc://irc.freenode.org/#tp">irc.freenode.org channel #tp</a>
 </p>
 
-<br>
-<br>
+<br />
+<br />
 
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/end_page.inc" ?>
