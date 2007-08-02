@@ -22,21 +22,20 @@
 <link rel="stylesheet" type="text/css" media="screen" href="/tp/style.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="/tp/parsec.css" />
 <link rel="alternate" type="application/rss+xml" title="Thousand Parsec News" href="http://www.thousandparsec.net/tp/rss.php" />
+<link rel="stylesheet" type="text/css" media="screen" href="/tp/menu.css" />
 
+<!--
 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
 <script type="text/javascript">
 _uacct = "UA-737789-1";
 urchinTracker();
 </script>
+-->
 
 <title>Thousand Parsec : <?php echo $title ?></title>
 
 </head>
 <body>
-<!--
-Commented out because it was causing loading issues on slow links.
-<script type='text/javascript' src='http://track3.mybloglog.com/js/jsserv.php?mblID=2007020216243388'></script>
--->
 <div id="wrapper">
 
 <div id="banner">
@@ -44,36 +43,69 @@ Commented out because it was causing loading issues on slow links.
 	<a href="/tp/"><img src="/tp/img/logo_t.png" alt="Thousand Parsec Logo" /></a>
 </div>
 
-<table class="menu">
-<tr>
-	<td>
-	<a href="/tp/gettingstarted.php"
-		class="<?php echo $title == 'Getting Started' ? 'on' : ''; ?>"><b>Getting Started</b></a>
-</td><td>
-	<a href="/tp/news.php"
-		class="<?php echo $title == 'News' ? 'on' : ''; ?>">News</a>
-	<a href="/tp/rss.php">
-		<img src="/tp/img/service_links/feed.png" alt="RSS Feed" />
-	</a>
-</td><td>
-	<a href="/tp/playing"
-		class="<?php echo $title == 'Playing Games' ? 'on' : ''; ?>">Playing Games</a>
-</td><td>
-	<a href="/tp/running"
-		class="<?php echo $title == 'Running Games' ? 'on' : ''; ?>">Running Games</a>
-</td><td>
-	<a href="/tp/downloads.php"
-		class="<?php echo $title == 'Utilities' ? 'on' : ''; ?>">Utilities</a>
-</td><td>
-	<a href="/tp/rulesets"
-		class="<?php echo $title == 'Different Games' ? 'on' : ''; ?>">Different Games</a>
-</td><td>
-	<a href="/tp/dev/index.php"
-		class="<?php echo $developer_section ? 'on' : ''; ?>">Developers</a>
-</td><td>
-	<a href="/tp/communicate"
-		class="<?php echo $title == 'Communicate' ? 'on' : ''; ?>">Communicate</a>
-</tr>
-</table>
+<div id="menu">
+<ul><li><h2><a href="/tp/gettingstarted.php">Getting Started</a></h2></li>
+</ul>
+
+<ul><li><h2><a href="/tp/news.php">News</a></h2></li>
+</ul>
+
+<ul><li><h2><a href="/tp/playing">Playing Games</a></h2>
+		<ul>
+			<li><a href="/tp/playing">Overview</a></li>
+			<li><a href="">Active Games</a></li>
+			<li><a href="/tp/playing/screenshots.php">Screenshots</a></li>
+			<li><a href="/tp/playing/download.php">Download</a></li>
+			<li>Clients:</li>
+			<li><a href="/tp/playing/galaxie">Galaxie</a>
+			<li><a href="/tp/playing/parsek">KDE Client</a></li>
+			<li><a href="/tp/playing/tpclient-pywx">wxPython Client</a></li>
+		</ul></li>
+</ul>
+
+<ul><li><h2><a href="/tp/running">Running Games</a></h2>
+		<ul>
+			<li><a href="/tp/running">Overview</a></li>
+			<li>Servers:</li>
+			<li><a href="/tp/running/tpserver-cpp">C++ Server</a></li>
+			<li><a href="/tp/running/tpserver-py">Python Server</a></li>
+		</ul></li>
+</ul>
+
+<ul><li><h2><a href="">Different Games</a></h2>
+		<ul>
+			<li><a href="/tp/running">Overview</a></li>
+			<li>Rulesets:</li>
+			<li><a href="/tp/rulesets/minisec">Minisec</a></li>
+			<li><a href="/tp/rulesets/mtsec">MTSec</a></li>
+			<li><a href="/tp/rulesets/rfts">RFTS</a></li>
+			<li><a href="/tp/rulesets/timtrader">TIM Trader</a></li>
+		</ul></li>
+</ul>
+
+<ul><li><h2><a href="">Utilities</a></h2>
+		<ul>
+			<li></li>
+			<li></li>
+		</ul></li>
+</ul>
+
+<ul><li><h2><a href="">Contributing</a></h2>
+		<ul>
+			<li></li>
+			<li></li>
+		</ul></li>
+</ul>
+
+<ul><li><h2><a href="/tp/communicate">Communicate</a></h2>
+		<ul>
+			<li><a href="/tp/communicate">Overview</a></li>
+			<li><a href="/tp/communicate/irc.php">IRC</a></li>
+			<li><a href="/tp/communicate/mailman.php">Mailing List</a></li>
+			<li><a href="http://www.thousandparsec.net/forums">Forums</a></li>
+		</ul></li>
+</ul>
+
+</div>
 
 <div id="content">
