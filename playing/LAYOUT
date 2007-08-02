@@ -1,0 +1,26 @@
+
+The front page of each client will have the following main bits...
+
+Feature Icons, a quick way for a person to see what a client supports.
+Breif Description, a quick way for a person to see the goals of the client.
+
+Download link should take it to the best match for the currently person?
+
+Development Info should include 
+ - Link to git page, include last commit info
+ - Link to bug tracker, include bug count
+
+======= Standard Header ===============
+------------------------ --------------
+| Feature Icons        | |  Random    |
+| Breif Description    | | Screenshot |
+------------------------ --------------
+------------------------ --------------
+| Client specific,     | | Download   |
+|  News maybe?         | |  Link      |
+|                      | --------------
+|                      | --------------
+|                      | | Development|
+|                      | | Info       |
+|                      | --------------
+|                      |
