@@ -56,30 +56,23 @@ Commented out because it was causing loading issues on slow links.
 		<img src="/tp/img/service_links/feed.png" alt="RSS Feed" />
 	</a>
 </td><td>
-	<a href="/tp/screenshots.php"
-		class="<?php echo $title == 'Screenshots' ? 'on' : ''; ?>">Screenshots</a>
+	<a href="/tp/playing"
+		class="<?php echo $title == 'Playing Games' ? 'on' : ''; ?>">Playing Games</a>
 </td><td>
-	<a href="/tp/documents.php"
-		class="<?php echo $title == 'Documents' ? 'on' : ''; ?>">Documents</a>
+	<a href="/tp/running"
+		class="<?php echo $title == 'Running Games' ? 'on' : ''; ?>">Running Games</a>
 </td><td>
 	<a href="/tp/downloads.php"
-		class="<?php echo $title == 'Downloads' ? 'on' : ''; ?>">Downloads</a>
+		class="<?php echo $title == 'Utilities' ? 'on' : ''; ?>">Utilities</a>
+</td><td>
+	<a href="/tp/rulesets"
+		class="<?php echo $title == 'Different Games' ? 'on' : ''; ?>">Different Games</a>
 </td><td>
 	<a href="/tp/dev/index.php"
 		class="<?php echo $developer_section ? 'on' : ''; ?>">Developers</a>
 </td><td>
-	<a href="/tp/faq.php"
-		class="<?php echo $title == 'FAQ' ? 'on' : ''; ?>">FAQ</a>
-</td><td>
-	<a href="/tp/mailman.php/listinfo/"
-		class="<?php echo $title == 'Lists' ? 'on' : ''; ?>">Lists</a>
-</td><td>
-	<span style="color: gray;" class="">Forums</span>
-<!--	<a href="/forums" class="">Forums</a> -->
-</td><td>
-	<a href="/tp/links.php"
-		class="<?php echo $title == 'Links' ? 'on' : ''; ?>">Links</a>
-	</td>
+	<a href="/tp/communicate"
+		class="<?php echo $title == 'Communicate' ? 'on' : ''; ?>">Communicate</a>
 </tr>
 </table>
 
