@@ -102,7 +102,7 @@ urchinTracker();
 			<li><a href="/tp/communicate">Overview</a></li>
 			<li><a href="/tp/communicate/irc.php">IRC</a></li>
 			<li><a href="/tp/communicate/mailman.php">Mailing List</a></li>
-			<li><a href="http://www.thousandparsec.net/forums">Forums</a></li>
+			<li><a href="/forums">Forums</a></li>
 		</ul></li>
 </ul>
 
