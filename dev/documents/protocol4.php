@@ -165,6 +165,9 @@ The unit of discovery is not "a server" as one might first think, rather it is
 <h4>Required Parameters</h4>
 <table>
 	<tr>
+		<td>sn</td>
+		<td>short (computer) name of the game (this must be <b>globally</b> unique!)</td>
+	</tr><tr>
 		<td>tp</td>
 		<td>comma seperated list of version strings (0.3, 0.2)</td>
 	</tr><tr>
@@ -210,11 +213,7 @@ The unit of discovery is not "a server" as one might first think, rather it is
 	</tr><tr>
 		<td>ln</td>
 		<td>7</td>
-		<td>human readable name of the sever</td>
-	</tr><tr>
-		<td>sn</td>
-		<td>8</td>
-		<td>short (computer) name of the sever</td>
+		<td>human readable name of the game</td>
 	</tr><tr>
 		<td>turn</td>
 		<td>9</td>
@@ -264,9 +263,10 @@ There are two ways to register with a Metaserver. The primary Thousand Parsec
 Metaserver can be found at <a
 href="metaserver.thousandparsec.net">metaserver.thousandparsec.net</a>.
 </p><p>
-When registering with a metaserver you must also send a "key", if the game with
-this name has never been seen before the "key" will be stored. The key must then
-be sent for all updates for that game name to take effect.
+When registering with a metaserver you must also send a "key". If the game with
+this name has never been seen before the key will be stored, the key is then
+checked for all updates for that game name to take effect. (You should think of
+the "key" as a password for a given short name.)
 </p><p>
 The server should send a registration/update request at least once every 10
 minutes. A server which hasn't send a request in the last 10 minutes will be
@@ -286,7 +286,7 @@ type1, dns1, ip1, port1 - details for second location
 </pre>
 </p><p>
 An example (using get) would be the following,
-<a href="http://metaserver.thousandparsec.net/?action=update&amp;tp=0.3,0.2&amp;key=mykey&amp;server=0.3.0&amp;name=MyGame1&amp;sertype=tpserver-cpp&amp;rule=MiniSec&amp;rulever=0.1&amp;type0=tp&amp;dns0=mithro.dyndns.org&amp;ip0=203.122.246.117&amp;port0=8000">url</a>
+<a href="http://metaserver.thousandparsec.net/?action=update&amp;tp=0.3,0.2&amp;key=mykey&amp;server=0.3.0&amp;sn=MyGame1&amp;sertype=tpserver-cpp&amp;rule=MiniSec&amp;rulever=0.1&amp;type0=tp&amp;dns0=mithro.dyndns.org&amp;ip0=203.122.246.117&amp;port0=8000">url</a>
 </p><p>
 One request should be sent for each game. The HTTP Registration supports
 HTTP/1.1 keep alive, so they can be sent in one connection.
@@ -310,29 +310,18 @@ To register a new game you send a single UDP frame to the metaserver on port
 XXXX. The UDP frame will contain a single tp04 Game frame.
 </p>
 
+<br />
+<br />
+<br />
+
 <h3>Discovery</h3>
 
-<h4>HTTP Discovery (Optional)</h4>
 <p>
-To get the details about which servers exist the client should send a HTTP Get
-request to the metaserver.
-</p><p>
-An example of this is "http://metaserver.thousandparsec.net/?action=get".
-</p>
-
-<h4>TCP Discovery</h4>
-<p>
-To get the details about which games exist the client should connect to the
-metaserver on port XXXX. It should then then send a Get Games frame.
-</p>
-
-<p>
-The server will return in the body of the message a Sequence frame
-telling the number of "Game" frames to come. Game frames are described
-as follows,
+The server will return a Sequence frame telling the number of "Game" frames to
+come. Game frames are described as follows,
 </p><p>
 <ul>
-	<li> a string,           (name)     Game (short) name</li>
+	<li> a string,           (sn)       Game (short) name</li>
 	<li> a string,           (key)      Empty on receive</li>
 	<li> a list of Strings,  (tp)       List of protocol versions supported</li>
 	<li> a string,           (server)   Server Version</li>
@@ -354,6 +343,27 @@ as follows,
 	</ul></li>
 </ul>
 </p>
+
+<h4>HTTP Discovery (Optional)</h4>
+<p>
+To get the details about which servers exist the client should send a HTTP Get
+request to the metaserver.
+</p><p>
+An example of this is "http://metaserver.thousandparsec.net/?action=get".
+</p><p>
+On success the server will return a HTTP response with the data body being 
+tp04 frames describing the current games.  On a protocol or other HTTP error,
+the metaserver will return a plain text response with the appropriate HTTP
+error code. (IE 404 Not Found.) Other errors should be returned using a tp04
+Fail frame.
+</p>
+
+<h4>TCP Discovery</h4>
+<p>
+To get the details about which games exist the client should connect to the
+metaserver on port XXXX. It should then then send a Get Games frame.
+</p>
+
 <?php
 	include "../bits/end_section.inc";
 	include "../bits/start_section.inc";
