@@ -33,7 +33,7 @@ ul.response ul {
 		still version 0.3
 	</span>
 </h4>
-<p>Last updated <?php echo date ("d F Y", filemtime("../../../libtpproto2-py/protocol.xml")); ?>.</p>
+<p>Last updated <?php echo date ("d F Y", filemtime("../../../documents/protocol/protocol.xml")); ?>.</p>
 
 <?php
 	include "../bits/end_section.inc";
