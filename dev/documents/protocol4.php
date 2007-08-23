@@ -184,6 +184,12 @@ The unit of discovery is not "a server" as one might first think, rather it is
 		<td>version of the ruleset</td>
 	</tr>
 </table>
+<p>
+	<b>Note:</b> The long name of a game should never change. Hence the long
+name can be considered immutable (and the metaserver will assume this
+property).  
+</p>
+
 <h4>Optional parameters</h4>
 <table>
 	<tr>
@@ -268,9 +274,9 @@ Metaserver can be found at <a
 href="metaserver.thousandparsec.net">metaserver.thousandparsec.net</a>.
 </p><p>
 When registering with a metaserver you must also send a "key". If the game with
-this name has never been seen before the key will be stored, the key is then
-checked for all updates for that game name to take effect. (You should think of
-the "key" as a password for a given short name.)
+this (long) name has never been seen before the key will be stored, the key is then
+checked for all updates for that game (long) name to take effect. (You should
+think of the "key" as a password for a given short name.)
 </p><p>
 The server should send a registration/update request at least once every 10
 minutes. A server which hasn't send a request in the last 10 minutes will be
@@ -290,7 +296,7 @@ type1, dns1, ip1, port1 - details for second location
 </pre>
 </p><p>
 An example (using get) would be the following,
-<a href="http://metaserver.thousandparsec.net/?action=update&amp;tp=0.3,0.2&amp;key=mykey&amp;server=0.3.0&amp;sn=MyGame1&amp;sertype=tpserver-cpp&amp;rule=MiniSec&amp;rulever=0.1&amp;type0=tp&amp;dns0=mithro.dyndns.org&amp;ip0=203.122.246.117&amp;port0=8000">url</a>
+<a href="http://metaserver.thousandparsec.net/?action=update&amp;tp=0.3,0.2&amp;key=mykey&amp;server=0.3.0&amp;ln=MyGame1&amp;sertype=tpserver-cpp&amp;rule=MiniSec&amp;rulever=0.1&amp;type0=tp&amp;dns0=mithro.dyndns.org&amp;ip0=203.122.246.117&amp;port0=8000">url</a>
 </p><p>
 One request should be sent for each game. The HTTP Registration supports
 HTTP/1.1 keep alive, so they can be sent in one connection.
@@ -325,7 +331,7 @@ The server will return a Sequence frame telling the number of "Game" frames to
 come. Game frames are described as follows,
 </p><p>
 <ul>
-	<li> a string,           (sn)       Game (short) name</li>
+	<li> a string,           (ln)       Game (long) name</li>
 	<li> a string,           (key)      Empty on receive</li>
 	<li> a list of Strings,  (tp)       List of protocol versions supported</li>
 	<li> a string,           (server)   Server Version</li>
