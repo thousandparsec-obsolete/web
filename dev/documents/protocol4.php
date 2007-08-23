@@ -165,8 +165,8 @@ The unit of discovery is not "a server" as one might first think, rather it is
 <h4>Required Parameters</h4>
 <table>
 	<tr>
-		<td>sn</td>
-		<td>short (computer) name of the game (this must be <b>globally</b> unique!)</td>
+		<td>ln</td>
+		<td>Long (human) name of the game (this must be <b>globally</b> unique!)</td>
 	</tr><tr>
 		<td>tp</td>
 		<td>comma seperated list of version strings (0.3, 0.2)</td>
@@ -214,6 +214,10 @@ The unit of discovery is not "a server" as one might first think, rather it is
 		<td>ln</td>
 		<td>7</td>
 		<td>human readable name of the game</td>
+	</tr><tr>
+		<td>sn</td>
+		<td>8</td>
+		<td>short name (computer readable) name for the game</td>
 	</tr><tr>
 		<td>turn</td>
 		<td>9</td>
