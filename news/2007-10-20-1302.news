@@ -1,0 +1,92 @@
+
+<h2>Summer of Code results!</h2>
+<p>by Mithro</p>
+<p>
+I have been meaning to do a Summer of Code round-up/results report for a while
+now, but had been putting it off until I could get some statistics from <a
+href="http://www.ohloh.net/projects/3679?p=Thousand+Parsec">Ohloh</a>. As they
+have now fixed the problem they where having with git branches, there is no
+excuses. I have previously mentioned my thoughts about the program on <a
+href="http://blog.mithis.net/archives/category/summer-of-code/">my own blog</a>
+but I'm going to provide a more comprehensive wrap-up of our Summer of Code.
+</p><p>
+If you have a good memory (or just look through our history) you will remember
+that we had 4 students participating. By the end of the Summer 3 students has
+successfully completed their projects. According to <a href="http://www.ohloh.net/">Oholo</a>,
+over the summer the students made a total of <b>371</b> commits to our public
+repository, changing a total of <b>39,050</b> lines of code. As well, over the
+next couple of months most of the code that the students have written will be
+released for everyone to use. The successful for projects are listed below.
+<ul>
+   <li>
+			Metaserver rewrite and improvement, 
+		done by 
+		<a href="http://www.ohloh.net/projects/3679/contributors/41715">
+			Donata Małecka aka 'niphree'</a>. 
+<p>
+The code that Donata has developed will be deployed on the primary 
+<a href="http://metaserver.thousandparsec.net/">metaserver</a>
+pending a few small fixes. This should give people the ability to view
+statistics about our servers including nice graphs.
+</p>
+	</li><li>
+		<a href="http://code.google.com/soc/parsec/appinfo.html?csaid=8EFC02A014D712EF">
+			Reach for the Stars ruleset for the C++ Server</a> 
+		done by 
+		<a href="http://www.ohloh.net/projects/3679/contributors/46696">
+			Tyler Shaub aka xdotx</a>.
+<p>
+The <a href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpserver-cpp.git;a=shortlog;h=rfts">ruleset</a>
+is pretty stable and we should have a server or two running in the near future.
+Currently it only implements the simple version of the RFTS ruleset, but Tyler
+will hopefully be working on adding support for the advanced features in his
+"copious amounts of free time". 
+</p>
+   </li>
+   <li>
+		<a href="http://code.google.com/soc/parsec/appinfo.html?csaid=450330A2492DDC71">
+			Ruleset Development Environment</a> 
+		done by 
+		<a href="http://www.ohloh.net/projects/3679/contributors/36081">
+			James Gardner aka DystopicFro</a>.
+<p>
+Over the next couple of months we hope to release the 
+<a href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpruledev.git;a=summary">Ruleset Development Environment (RDE)</a>
+ into the public. This will hopefully allow people to start developing their
+own rulesets with ease. James has committed to further development and has a
+ton of really good ideas.
+</p>
+	</li>
+</ul>
+</p><p>
+Participating in the <a href="http://www.google.com/soc">Summer of Code</a> has
+meant that students from around the world have started trying to figure out how
+to make Thousand Parsec part of their course work. 
+</p><p>
+One such student is 
+<a href="http://www.ohloh.net/projects/3679/contributors/46709">
+Nathan Partlan aka greywhind</a> who is doing a full year internship with
+Thousand Parsec. He is helping me to make some much needed improvements to 
+<a href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpclient-pywx.git;a=summary">tpclient-pywx</a>
+and has already pushed multiple changes into the incoming branch.
+</p><p>
+Over the next 6 months, it is likely that students from the 
+<a href="http://www.unisa.edu.au/">University of South Australia</a> will be
+working on developing a <a href="http://en.wikipedia.org/wiki/Midp">Java MIDP
+client</a>. This should allow anyone to login to a server from their Java
+enabled mobile phone!
+</p><p>
+If you are a student (or just anyone!) who wants to get in on some of this cool
+action, feel free to send us an 
+<a href="mailto:developers@thousandparsec.net">email</a>, 
+<a href="irc://irc.freenode.org/#tp">jump on IRC</a> or 
+<a href="/tp/mailman.php/listinfo/">join the mailing lists</a>.  
+We have a <a href="http://sourceforge.net/tracker/?group_id=132078&atid=829724">todo
+tracker</a> which lists some ideas which you could get started with, feel
+free to suggest your own ideas. There are both coding and <b>non-coding</b> tasks!
+</p><p>
+As you can see the Summer of Code has been really great. Not only have we have
+had some cool code produced the program has opened up opportunities we had not
+even considered before. Hopefully Google will let us participate again next
+year!
+</p>
