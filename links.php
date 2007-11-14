@@ -46,6 +46,21 @@
 		</a> (see where developers and players come from)
 	</li>
 </ul>
+
+<h2>
+	Thousand Parsec utilities
+</h2>
+<p>
+	These links are to sites which are external utilities related to Thousand Parsec.
+</p>
+<ul>
+
+	<li>
+		<a href="http://starmapper.sourceforge.net/wikka/HomePage">
+			Starmapper
+		</a> - A tool for doing various cool mapping of a Thousand Parsec game.
+	</li>
+</ul>
 <?php include "bits/end_section.inc" ?>
 <?php include "bits/start_section.inc" ?>
 <h2>
