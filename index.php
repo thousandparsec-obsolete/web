@@ -151,6 +151,7 @@ if (file_exists($file)) {
 
 		echo $haystack;
 		echo "<h6>Posted: ". substr($file, 0, -5) . "</h6>\n";
+		echo "<div style=\"clear:both\"></div>";
 	}
 }
 ?>
