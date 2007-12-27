@@ -133,6 +133,7 @@ $file = $news.basename($_SERVER['PATH_INFO']).".news";
 if (file_exists($file)) {
 	include($file);
 	echo "<h6>Posted: ". str_replace($news, '', substr($file, 0, -5)) . "</h6>\n";
+	echo "<div style=\"clear:both\"></div>";
 } else {
 	$files = get_files($news);
 
