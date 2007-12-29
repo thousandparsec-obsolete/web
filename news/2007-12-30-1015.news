@@ -1,0 +1,29 @@
+<h2>Project wide progress report</h2>
+<p>by Lee</p>
+<p>Hi all<p/>
+<p>The main developers thought we should update everyone with what is happening, especially since we haven't had a release lately.</p>
+<p>I guess first I should say that there are releases in the works. tpclient-pywx 
+is shaping up (along with the the python libraries) for a release soon. 
+tpserver-cpp is slowly getting closer to release, I'm just working out the 
+last of the TP04 support and getting the database backend to work again. 
+Galaxie client will be released soon too. The first test version of Parsek 
+client is expected to be around the release of KDE 4.0 on January 11, 2008.</p>
+<p>One of the cool things lately has been a musician called remaxim doing some 
+space themed music, and adding music and sound effects to the intro video. 
+There is plenty of media yet to be done, include music, sound effects, models 
+and images.</p>
+<p>Here are a few things to look forward to next year:</p>
+<ul>
+<li>New website will help keep all the information together and be easier to 
+navigate</li>
+<li>MTSec game completed and running on tpserver-cpp</li>
+<li>New protocol features being used by new games</li>
+<li>Improved metaserver for finding games</li>
+</ul>
+<p>More developers and artists are always welcome to help out.</p>
+
+<p>Another way you support Thousand Parsec is to buy Thousand Parsec things from 
+our cafepress shop: <a href="http://www.cafepress.com/thousandparsec" title="Thousand Parsec Cafepress shop">http://www.cafepress.com/thousandparsec</a>. The new TP calendar is available, using the concept art we have so far and it 
+looks fantastic. </p>
+<p>We hope you have a happy holiday season and new year.</p>
+<p>Regards<br>Lee (llnz) Begg with mithro, JLP and nash.</p>
