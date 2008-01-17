@@ -47,6 +47,11 @@
       <xsl:text>Packets</xsl:text>
     </xsl:element>
     <xsl:apply-templates select="descendant::packet" mode="description"/>
+    <xsl:element name="h2">
+      <xsl:attribute name="id"><xsl:text>Parameter Sets</xsl:text></xsl:attribute>
+      <xsl:text>Parameter Sets</xsl:text>
+    </xsl:element>
+    <xsl:apply-templates select="descendant::parameterset" mode="description"/>
   </xsl:template>
 
   <xsl:template match="packet" mode="description">
@@ -173,7 +178,6 @@
     </xsl:element>
   </xsl:template>
   
-  
   <xsl:template match="packet" mode="toc">
     <xsl:element name="li">
       <xsl:element name="a">
@@ -187,9 +191,6 @@
       </xsl:element>
     </xsl:element>
   </xsl:template>
-  
-  
-  
   
   <xsl:template match="packet" mode="summary">
     <xsl:element name="tr">
@@ -213,6 +214,42 @@
       <xsl:element name="td"><xsl:value-of select="direction" /></xsl:element>
       <xsl:element name="td"></xsl:element>
     </xsl:element>
+  </xsl:template>
+  
+  <xsl:template match="parameterset" mode="description">
+    <xsl:element name="h3">
+      <xsl:attribute name="id"><xsl:text>Desc_</xsl:text><xsl:value-of select="@name"/></xsl:attribute>
+      <xsl:choose>
+        <xsl:when test="child::longname">
+          <xsl:value-of select="longname"/>
+        </xsl:when>
+        <xsl:otherwise><xsl:value-of select="@name"/></xsl:otherwise>
+      </xsl:choose><xsl:text> Parameter Set</xsl:text>
+    </xsl:element>
+    <xsl:element name="p">
+      <xsl:value-of select="description"/>
+    </xsl:element>
+    <xsl:if test="child::parameter">
+      <xsl:element name="ul">
+        <xsl:apply-templates select="child::parameter/*" mode="description"/>
+      </xsl:element>
+    </xsl:if>
+  </xsl:template>
+  <xsl:template match="parameter" mode="description">
+    <xsl:element name="h4">
+      <xsl:attribute name="id"><xsl:text>Desc_</xsl:text><xsl:value-of select="@name"/></xsl:attribute>
+      <xsl:choose>
+        <xsl:when test="child::longname">
+          <xsl:value-of select="longname"/>
+        </xsl:when>
+        <xsl:otherwise><xsl:value-of select="@name"/></xsl:otherwise>
+      </xsl:choose><xsl:text> Frame</xsl:text>
+    </xsl:element>
+    <xsl:element name="p">
+      <xsl:value-of select="description"/>
+    </xsl:element>
+
+
   </xsl:template>
   
 </xsl:stylesheet>
