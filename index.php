@@ -2,10 +2,10 @@
 <?php include "bits/start_page.inc" ; ?>
 <?php include "bits/func.inc" ; ?>
 
-<?php include "bits/start_section.inc"; ?>
+<div id="gs">
 Thousand Parsec is an open source framework for building 4x style online turn based space strategy games.
-For more information and how to get started, <a href="/tp/gettingstarted.php">Start Here</a>
-<?php include "bits/end_section.inc"; ?>
+For more information and how to get started, <a href="/tp/gettingstarted.php">Start Here</a></div>
+<div style="height: 5px;"></div>
 
 <div id="columns">
 
