@@ -199,10 +199,12 @@ libraries.
 Optionally, install the optional dependencies.
   <ul><li>
 	libmysql-client (and dev package) if you want to use a MySQL server for the
-	persistence backend. You might want a server too. (0.1.3 onward)
+	persistence backend. You might want a server too.
   </li><li>
     libgnutls (and dev package) if you want secure sockets.
   </li></ul>
+</li><li>
+	Download, build and install <a href="/tp/downloads.php#libtprl">libtprl</a>. This requires readline5 (and dev packages).
 </li><li>
 	Download the sources from 
 	<a href="/tp/downloads.php#tpserver-cpp">Thousand Parsec Download page</a>.
@@ -226,7 +228,8 @@ Optionally, install the optional dependencies.
 </ol>
 <p>
 tpserver-cpp has a number of command line arguments and config files. A man page
-is provided and a sample config file is in the source package. The console when
+is provided and a sample config file is in the source package. quickstart config files for 
+the available games are also provided in the tarbal. The console when
 the server starts has a number of commands, and has help and tab completion.
 </p>
 
