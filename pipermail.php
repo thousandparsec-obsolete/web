@@ -13,7 +13,7 @@ $piper_real = "http://mail.thousandparsec.net$piper_short";
 $url = $_SERVER['REQUEST_URI'];
 $url = str_replace($my_url, '', $url);
 
-$handle = fopen($piper_real . $url, 'r');
+$handle = @fopen($piper_real . $url, 'r');
 
 if ($handle)
 	while (! feof($handle) ) {
