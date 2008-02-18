@@ -202,8 +202,10 @@ function display($directory) {
 	The following operating systems are officially supported,
 </p><p>
 	<ul>
-		<li>Debian</li>
-		<li>Ubuntu</li><br />
+		<li>
+<a href="http://www.debian.org">Debian</a> and 
+<a href="http://www.ubuntu.com">Ubuntu</a> packages can be found on 
+<a href="http://packages.thousandparsec.net">our packages repository</a>.</li><br />
         <li><span class="highlight">Windows</span>
         <ul>
                 <li>Windows 98 or greater, Windows 2000 or XP preferred</li>
@@ -213,7 +215,7 @@ function display($directory) {
         <li><span class="highlight">Mac OS X</span>
         <ul>
 				<li>Runs on Intel- and PowerPC-based Mac computers</li>
-                <li>Mac OS X 10.3.8 or higher, 10.4.1 or higher is preferred</li>
+                <li>Mac OS X 10.4.1 or higher is preferred</li>
                 <li>200mb disk space</li>
                 <li>1024x768 screen or greater</li>
         </ul><br /></li>
@@ -231,6 +233,7 @@ function display($directory) {
 	If is highly recommend to use versions marked <b>"inplace"</b>. These
 packages have all the Thousand Parsec developed dependencies needed to run the
 application.
+</p><p>
 </p>
 <?php display("tpclient-pywx/"); ?>
 <p>
