@@ -19,11 +19,19 @@ th.heading {
 
 <?php 
 function mycmp($a, $b) {
+	print "<!-- {$a['version']}-{$a['versiontype']}-{$a['size']} {$b['version']}-{$b['versiontype']}-{$b['size']} -->\n";
+
 	if (strcmp($a['version'], $b['version']) === 0) {
 		if (strlen($a['versiontype']) > 0 || strlen($b['versiontype']) > 0) {
+			if ($b['versiontype'] == $a['versiontype'])
+				return strnatcmp($b['size'], $a['size']);
+
 			// Check the super minor
  			return strcmp($b['versiontype'], $a['versiontype']);
 		} else {
+			if ($b['versionminor'] == $a['versionminor'])
+				return strnatcmp($b['size'], $a['size']);
+
  			return strcmp($b['versionminor'], $a['versionminor']);
 		}
 	}
@@ -40,16 +48,20 @@ function display($directory) {
 
 	$i = 0;
 
-
 	$details = array();
 	foreach ($files as $file) {
+		if (substr($file, 0, 1) == '.')
+			continue;
+
 		$tail = substr($file, -4);
 		if ($tail == '.asc' || $tail == '.sig')
+			continue;
+		if (substr($file, -5) == '.size')
 			continue;
 
 		# Figure out the ending of this file
 		$formatmap = array(
-			".dmg"			=> "Mac DMG",
+			".dmg"			=> "Mac dmg",
 			".zip"			=> "zip",
 			".tar.gz"		=> "tar/gz",
 			".tar.bz2"		=> "tar/bz2",
@@ -67,7 +79,7 @@ function display($directory) {
 			$pos = strpos($file, $ending);
 			if ($pos !== false)
 				break;
-		}		
+		}
 		$version = substr($file, 0, strlen($file)-strlen($ending));
 		
 		# See if there is a subversion
@@ -87,7 +99,11 @@ function display($directory) {
 		# Get the other versions
 		$version = substr($version, max(strrpos($version, '_'), strrpos($version, '-'))+1);
 
-		$size = (int)(filesize($dir . $file)/1024);
+		$sfonly = file_exists("$dir$file.size");
+		if ($sfonly)
+			$size = (int)(trim(file_get_contents("$dir$file.size"))/1024);
+		else
+			$size = (int)(filesize($dir . $file)/1024);
 
 		# Does a signature exist?
 		if (file_exists("$dir$file.asc"))
@@ -100,7 +116,8 @@ function display($directory) {
 		$details[] = array(
 			'file'			=> $file, 
 			'size'			=> $size, 
-			'type'			=> $type, 
+			'type'			=> $type,
+			'sfonly' 		=> $sfonly,
 			'version'		=> $version, 
 			'versiontype'	=> $versiontype,
 			'versionminor'	=> $versionminor,
@@ -148,9 +165,14 @@ function display($directory) {
 		else
 			print "  <td></td>\n";
 
-		print " <td><a href='$dir{$detail['file']}'>";
-		print "		<img src='img/logo-micro.png'>\n";
-		print "		Download from this host</a></td>\n";
+		if (!$detail{'sfonly'}) {
+			print " <td><a href='$dir{$detail['file']}'>";
+			print "		<img src='img/logo-micro.png'>\n";
+			print "		Download from this host</a></td>\n";
+		} else {
+			print " <td></td>\n";
+		}
+
 		#print " <td><a href='http://downloads.sourceforge.net/thousandparsec/{$detail['file']}'>\n";
 		print " <td><a href='http://sourceforge.net/project/downloading.php?group_id=132078&filename={$detail['file']}'>\n";
 		print "		<img src='img/service_links/sf.png'>\n";
