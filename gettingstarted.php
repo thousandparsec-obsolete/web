@@ -88,12 +88,18 @@
 
 <h2>Installing tpclient-pywx on Mac OS X</h2>
 <p>
-	Just download the Mac DMG version from the download page and double click on it!
+	Just download the Mac DMG version from the download page, drag the folder
+into your Applications directory and then double click on the icon.
+</p><p>
+	<b>Note:</b> <i>If you get an error about the application being "corrupted or
+incomplete" please eject the DMG file and double click on it again.</i>
 </p>
-
 <h2>Installing tpclient-pywx on Debian or Ubuntu</h2>
 <p>
 	First you need to install the prerequisites for tpclient-pywx not developed by the Thousand Parsec project.
+</p><p>
+	Experimental packages are available from the <a href="http://packages.thousandparsec.net/">packages server</a>.
+	You can find instructions on how to use the packages 
 </p>
 <ul>
 	<li>
@@ -102,19 +108,14 @@
 	apt-get install python
 		</pre>
 	</li><li>
-		You also need to install NumArray
+		You also need to install Numpy 
 		<pre class="code">
-	apt-get install python-numarray
+	apt-get install python-numpy python-numpy-ext
 		</pre>
 	</li><li>
 		Next you need to install wxPython
 		<pre class="code">
-	apt-get install python-wxgtk2.6
-		</pre>
-		<b>Note:</b> If you have wxPython 2.4 installed make sure you update to
-the latest version by doing a 
-		<pre class="code">
-	apt-get install python-wxgtk2.4
+	apt-get install python-wxgtk2.8
 		</pre>
 	</li>
 	</li><li>
