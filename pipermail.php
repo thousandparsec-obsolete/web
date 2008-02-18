@@ -15,9 +15,10 @@ $url = str_replace($my_url, '', $url);
 
 $handle = fopen($piper_real . $url, 'r');
 
-while (! feof($handle) ) {
-	$data = $data . fread($handle, 1024);
-}
+if ($handle)
+	while (! feof($handle) ) {
+		$data = $data . fread($handle, 1024);
+	}
 
 $data = preg_replace("-\"(.+)((\.mbox)|(\.txt)|(\.gz))\"-", "$piper_real$url$1$2", $data);
 
