@@ -1,0 +1,77 @@
+
+<h2>Primary Thousand Parsec client version 0.3.0 released!</h2>
+<p>by Mithro</p>
+
+<p>
+It's been a long time since the <a href="/tp/news.php/2007-01-01-0637">last release of the primary client</a> for
+playing Thousand Parsec games. Now, the wait is finally over and it was
+well worth it. Large parts of the client have drastically changed. If
+you downloaded a previous release and didn't like it, please give this
+new release a try!
+</p><p>
+In the version 0.3.0 you will find a lot of new features, such as:
+<ul>
+	<li>
+        <a href="/tp/screenshots/tpc-pywx-new-update.png">Finding servers is now easy</a>! With support for the <a href="http://metaserver.thousandparsec.net">metaserver
+        protocol</a> the client can get (and display) lists of both remote
+        and local servers.
+	</li><li>
+        The user interface has been rewritten so that it now uses the
+        <a href="/tp/screenshots/tpc-pywx-new-main.png">wxWidgets AUI interface</a> (like found in Microsoft Visual Studio
+        IDE) and takes advantage of XRC (an XML-based resource system).
+	</li><li>
+        The client now supports internationalization (under Windows and
+        Linux) and has been translated to Slovenian.
+	</li><li>
+        <a href="/tp/screenshots/tpc-pywx-new-update.png">Downloading the universe</a> is significantly faster, less likely to
+        get stuck and more informative.
+	</li><li>
+        The star map has been drastically changed and you can now,
+		<ul>
+			<li>
+                Choose how objects are coloured, either on a per player
+                basis or on own versus enemy basis.
+			</li><li>
+                See the resources availability using the resource
+                <a href="/tp/screenshots/tpc-pywx-new-pie.png">pie-chart overlay</a>.
+			</li><li>
+                Quickly see what is in a star system with new
+                information pop-ups for objects.
+			</li><li>
+                Issue move orders painlessly with a new waypoint mode
+                and context menu for quickly issuing single orders.
+			</li><li>
+                Use shortcuts to manipulate the star map using the
+                keyboard.
+			</li>
+		</ul>
+	</li><li>
+        The interface has been drastically improved on long latency
+        links through the ability to see the pending status of orders.
+        The client now works correctly when there are many outstanding
+        changes of any type.
+	</li><li>
+        You can now filter the systems panel to quickly find the objects
+        you are looking for.
+	</li><li>
+        You can easily find objects which are idle with new "Object
+        without Orders" window.
+	</li><li>
+        Quickly changing orders is now much easier with the addition of
+        keyboard shortcuts for order manipulation.
+	</li>
+</ul>
+</p><p>
+Of course there are thousands of bugfixes, support for easy Debian
+packaging, better integration on Mac OS X and loads more!
+</p><p>
+<a href="/tp/downloads.php#tpclient-pywx">Download of sources and binaries 
+are available from this web site.</a>
+</p><p>
+I would like to thank Nathan Partlan who has been extremely helpful and
+is responsible for a number of these new features. Jure Repinc for
+putting up with the constant headache of translation and helping prepare
+these release notes. All the people who tested the client and those who
+put up with the stable client while the development version was being
+developed.
+</p>
