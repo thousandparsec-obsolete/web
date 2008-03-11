@@ -147,6 +147,7 @@ version.</dd>
 	include "../bits/start_section.inc";
 ?>
 
+<a name="metaserver" />
 <h2>Server Location (Meta) Protocol</h2>
 
 <p>
