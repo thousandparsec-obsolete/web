@@ -1,4 +1,4 @@
-<h2>Thousand Parsec has been accepted into Google Summer of Code 2008!</h2>
+<h2>Thousand Parsec accepted into Google Summer of Code 2008!</h2>
 <p>by JLP</p>
 <p>Google has just published the list of accepted mentoring organizations for <a href="http://code.google.com/soc/2008/">Google Summer of Code 2008</a>. We are extremely happy to report that <a href="http://code.google.com/soc/2008/parsec/about.html">Thousand Parsec</a> is one of the projects which will have the opportunity to mentor aspiring open source developers.</p>
 <p>A few words about us for people who might be interested into Thousand Parsec. Our project is all about turn-based <a href="http://en.wikipedia.org/wiki/4x_game">4X</a> space strategy games, where the player gets to build his very own space empire. We mostly use Python and C++. There is also some code written in Java and PHP. Of course people who know other languages are most welcome too.</p>
