@@ -19,8 +19,6 @@ th.heading {
 
 <?php 
 function mycmp($a, $b) {
-	print "<!-- {$a['version']}-{$a['versiontype']}-{$a['size']} {$b['version']}-{$b['versiontype']}-{$b['size']} -->\n";
-
 	if (strcmp($a['version'], $b['version']) === 0) {
 		if (strlen($a['versiontype']) > 0 || strlen($b['versiontype']) > 0) {
 			if ($b['versiontype'] == $a['versiontype'])
