@@ -1,0 +1,24 @@
+<h2>wxPython Client 0.3.1 Released</h2>
+<p>by JLP</p>
+<p>Hot on the heals of <a href="http://www.thousandparsec.net/tp/news.php/2008-02-18-2107">0.3.0</a> is the <strong>0.3.1 release</strong> of the primary Thousand Parsec client. This release is an incremental improvement over the previous one but it does not lack in improvement. It fixes over 100 bugs found and adds a whole slew of new features.</p>
+<p>New features added:
+<ul>
+<li>More auto-detection around orders, meaning better support for the RFTS ruleset on tpserver-cpp.</li>
+<li>Copy, paste and quick-insert context menu (on the Orders window) is back.</li>
+<li>Added ability to request server end the current turn.</li>
+<li>Added a help menu and some help pop-ups.</li>
+<li>Added navigation icons.</li>
+<li>Resource overlay now lets you chose multiple resources to be displayed.</li>
+<li>Downloads all players and display their info in various locations.</li>
+<li>Order arguments in Orders window now built from XRC (removes some of the last remaining legacy code).</li>
+</ul></p>
+<p>Notable bugs fixed:
+<ul>
+<li>Added transparency to the icons used in the system window.</li>
+<li>Objects on the map are always sorted alphabetically now.</li>
+<li>Added support for object id order parameter.</li>
+<li>Tips can now also be translated.</li>
+</ul></p>
+<p>There are also numerous fixes for both Mac and Windows which improve the look and feel. For example, shortcuts now work on Windows, pop-ups no longer steal focus on Mac, etc.</p>
+<p>For details see the <a href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpclient-pywx.git;a=log;h=TPCLIENT_PYWX_0_3_1">complete changelog</a>.</p>
+<p>The new version is available from our <strong><a href="http://www.thousandparsec.net/tp/downloads.php">download page</a></strong>. <a href="http://packages.thousandparsec.net/">Packages for Debian and Ubuntu</a> will be updated as soon as possible (thanks to bddebian). One of our candidate students for Google Summer of Code, ezod, has also for the first time prepared an <a href="http://mavrinac.com/projects/tp/overlay/">overlay for Gentoo</a>. Expect updated ebuilds soon.</p>
