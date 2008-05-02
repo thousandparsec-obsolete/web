@@ -16,8 +16,8 @@ successfully completed their projects. According to <a href="http://www.ohloh.ne
 over the summer the students made a total of <b>371</b> commits to our public
 repository, changing a total of <b>39,050</b> lines of code. As well, over the
 next couple of months most of the code that the students have written will be
-released for everyone to use. The successful for projects are listed below.
-<ul>
+released for everyone to use. The successful projects are listed below.
+</p><ul>
    <li>
 			Metaserver rewrite and improvement, 
 		done by 
@@ -57,8 +57,7 @@ own rulesets with ease. James has committed to further development and has a
 ton of really good ideas.
 </p>
 	</li>
-</ul>
-</p><p>
+</ul><p>
 Participating in the <a href="http://www.google.com/soc">Summer of Code</a> has
 meant that students from around the world have started trying to figure out how
 to make Thousand Parsec part of their course work. 
