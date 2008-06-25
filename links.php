@@ -45,6 +45,11 @@
 			Thousand Parsec Frappr Map
 		</a> (see where developers and players come from)
 	</li>
+	<li>
+		<a href="http://schemepy.thousandparsec.net">
+			Schemepy, a library developed by Thousand Parsec
+		</a>
+	</li>
 </ul>
 
 <h2>
