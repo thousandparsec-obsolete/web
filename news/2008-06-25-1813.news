@@ -1,0 +1,68 @@
+<h2>First month of <a href="http://code.google.com/soc/">Google Summer of Code</a></h2>
+<p>by Mithro</p>
+<p>
+With the first month of GSoC almost gone, I thought I would horribly
+embarrass all our wonderful students by sending this email which links
+to all their blogs.
+</p><p>
+Why not help out and test the students work? Please ask questions or
+just comment on their blogs! I encourage everyone to at least put the
+blogs in their feed readers.
+</p><p>
+<a href="http://www.hammerofcode.com/">Jphr</a> has been working on a <a
+href="http://www.thousandparsec.net/wiki/Risk">Risk clone</a>.  He has finally
+got a working Risk ruleset which he is now debugging. Hopefully he will now
+create a simple AI to help with his testing :) After the mid-term evaluation he
+hopes to add options for more interesting variations and universe loading. 
+</p><p>
+<a href="http://juangsoc.blogspot.com/">JLafont</a> has been working on a
+totally new game called <a
+href="http://www.thousandparsec.net/wiki/DroneSec">DroneSec</a>. His progress
+also has been very good and will soon have a basic playable game. Already a
+majority of the orders needed have been implemented and combat is taking shape.
+</p><p>
+<a href="http://devhobby.blogspot.com/">Jmtan</a> has created a delicious meal
+for your eyes with a almost functional 3D client. It already supports a
+majority of interactions with the server and will soon allow you to easily work
+with orders. The screen shots look awesome and everyone should check it out.
+You can come and see some of our cool artwork being shown off.
+<table align="center">
+<tr>
+	<td><a href="http://bp1.blogger.com/_H-JNu2WhCxk/SF0M4pZUCaI/AAAAAAAAAIM/8L--G_EDqWw/s1600-h/screenshot_7.png">
+			<img width="200" height="161" src="http://bp1.blogger.com/_H-JNu2WhCxk/SF0M4pZUCaI/AAAAAAAAAIM/8L--G_EDqWw/s400/screenshot_7.png"  />
+				</a></td>
+	<td><a href="http://bp2.blogger.com/_H-JNu2WhCxk/SFapHedRzvI/AAAAAAAAAH8/4JJWJzAjoMI/s1600-h/screenshot_3.png">
+			<img width="200" height="161" src="http://bp2.blogger.com/_H-JNu2WhCxk/SFapHedRzvI/AAAAAAAAAH8/4JJWJzAjoMI/s400/screenshot_3.png" />
+				</a></td>
+	<td><a href="http://bp2.blogger.com/_H-JNu2WhCxk/SEgbLpq2zcI/AAAAAAAAAGM/MvY2DurWIIU/s1600-h/screenshot_19.png">
+			<img width="200" height="161" src="http://bp2.blogger.com/_H-JNu2WhCxk/SEgbLpq2zcI/AAAAAAAAAGM/MvY2DurWIIU/s400/screenshot_19.png" />
+				</a></td>
+</tr>
+</table>
+</p><p>
+<a href="http://ezod.livejournal.com/">Ezod</a> has been working on splitting
+the console from the server. He has successfully make tpserver-cpp a real
+daemon and is now working on creating a client to actually do the
+configuration. This should make running servers much easier to run and
+maintain.
+</p><p>
+<a href="http://thousand-parsec.blogspot.com/">Iwanowitch</a> has been working
+hard on a rule based AI for RFTS. He has his constraint store almost working
+and has had a basic client interacting with a server.
+</p><p>
+<a href="http://nuleren.blogspot.com/">Nuleren</a> is working on a game called
+Tigrus and Euphrates. A large number of orders have been created and the
+universe is generally taking shape.
+</p><p>        
+<a href="http://vi1985.blogspot.com/">vi1985</a> has been working hard on
+Iwanowitch's competition :). He has been working on an AI which is based around
+genetic algorithms. He has a basic java client working to help visualise how
+the AI will work. 
+</p><p>        
+<a href=http://pluskid.lifegoo.com/?p=352"">Pluskid</a> has been working hard
+on improving schemepy. <a href="http://schemepy.thousandparsec.net/">Schemepy
+will become the backend that all our python components use for scheme
+parsing</a>. He has gotten both a mzscheme and a guile back end working. He has
+also tested out various pure-python implementations.  The speed improvements
+for doing scheme processing is very impressive.
+</p>        
