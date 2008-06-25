@@ -23,12 +23,6 @@
 <link rel="stylesheet" type="text/css" media="screen" href="/tp/parsec.css" />
 <link rel="alternate" type="application/rss+xml" title="Thousand Parsec News" href="http://www.thousandparsec.net/tp/rss.php" />
 
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
-<script type="text/javascript">
-_uacct = "UA-737789-1";
-urchinTracker();
-</script>
-
 <title>Thousand Parsec : <?php echo $title ?></title>
 
 </head>
