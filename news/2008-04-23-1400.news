@@ -1,0 +1,21 @@
+<h2>Meet Thousand Parsec GSoC 2008 Students</h2>
+<p>by JLP</p>
+<p>
+A couple of days have passed since <a href="http://code.google.com/soc/2008/parsec/about.html">eight students</a> found out they will be hacking on <a href="http://www.thousandparsec.net/">Thousand Parsec</a> as part of <a href="http://code.google.com/soc/2008/">Google Summer of Code 2008</a>. All have come to <a href="irc://irc.freenode.org/#tp">Thousand Parsec IRC channel</a> to say Hi in and all of them posted their introductions to <a href="http://news.gmane.org/gmane.comp.games.tp.devel">Thousand Parsec Development mailing list</a>. Each and every student now also has a spot on the web where they will blog about their experiences and progress. Here’s what they will be working on this summer:
+</p>
+<ul>
+<li><a href="http://code.google.com/soc/2008/parsec/appinfo.html?csaid=678C2C068DCE83AE">3D Client for Thousand Parsec</a> - <a href="http://devhobby.blogspot.com/">Blog</a> - Eugene Tan Jie Ming</li>
+<li><a href="http://code.google.com/soc/2008/parsec/appinfo.html?csaid=E1CE7382099D727C">Tigris and Euprhates Ruleset Adaptation</a> - <a href="http://nuleren.blogspot.com/">Blog</a> - Dustin E. White</li>
+<li><a href="http://code.google.com/soc/2008/parsec/appinfo.html?csaid=9F7AC048F3DAC4C4">Genetic Conquest: An AI Client for Thousand Parsec (RFTS ruleset)</a> - <a href="http://vi1985.blogspot.com/">Blog</a> - Victor Ivri</li>
+<li><a href="http://code.google.com/soc/2008/parsec/appinfo.html?csaid=E83FEA7BC9DC4560">DroneSec: A simple, one hour game for tpserver-py</a> - <a href="http://juangsoc.blogspot.com/">Blog</a> - Juan Lafont</li>
+<li><a href="http://code.google.com/soc/2008/parsec/appinfo.html?csaid=5B1B1C8E204530AD">A Modified Risk ruleset for the Thousand Parsec C++ server</a> - <a href="http://www.hammerofcode.com/">Blog</a> - Ryan Neufeld</li>
+<li><a href="http://code.google.com/soc/2008/parsec/appinfo.html?csaid=7731B9B4B375E2E5">Remote Server Configuration Protocol and Single-Player Mode</a> - <a href="http://ezod.livejournal.com/">Blog</a> - Aaron Mavrinac</li>
+<li><a href="http://code.google.com/soc/2008/parsec/appinfo.html?csaid=AD885F56FE726D6C">AI for RFTS</a> - <a href="http://thousand-parsec.blogspot.com/">Blog</a> - Vincent Verhoeven</li>
+<li><a href="http://code.google.com/soc/2008/parsec/appinfo.html?csaid=39055FB6EAC6D799">Schemepy</a> - <a href="http://pluskid.lifegoo.com/">Blog</a> - Chiyuan Zhang</li>
+</ul>
+<p>
+We will also make sure that feeds from our blogs are aggregated on <a href="http://planet-soc.com/">Planet SoC</a>. You will then be able to see <strong><a href="http://planet-soc.com/organization/Thousand+Parsec/planet">all GSoC  posts from our blogs in one place</a></strong> and add <a href="http://planet-soc.com/organization/Thousand+Parsec/planet/feed">the feed</a> to your favourite feed reader.
+</p>
+<p>
+all of us, students and mentors, will do our very best to complete these projects successfully. Exciting months for open source 4X games are ahead of us. I hope you look forward to the results as much as we at Thousand Parsec do.
+</p>

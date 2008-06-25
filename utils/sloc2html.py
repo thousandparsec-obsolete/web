@@ -20,7 +20,7 @@ if len(sys.argv) != 2:
 colors = { "python" : "blue",
            "perl" : "purple",
            "ansic" : "silver",
-	   "java" : "yellow",
+	   "java" : "#996600",
            "cpp" : "green",
            "sh" : "red",
 	   "php" : "brown",

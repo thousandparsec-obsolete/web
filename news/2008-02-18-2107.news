@@ -10,7 +10,7 @@ you downloaded a previous release and didn't like it, please give this
 new release a try!
 </p><p>
 In the version 0.3.0 you will find a lot of new features, such as:
-<ul>
+</p><ul>
 	<li>
         <a href="/tp/screenshots/tpc-pywx-new-update.png">Finding servers is now easy</a>! With support for the <a href="http://metaserver.thousandparsec.net">metaserver
         protocol</a> the client can get (and display) lists of both remote
@@ -60,8 +60,7 @@ In the version 0.3.0 you will find a lot of new features, such as:
         Quickly changing orders is now much easier with the addition of
         keyboard shortcuts for order manipulation.
 	</li>
-</ul>
-</p><p>
+</ul><p>
 Of course there are thousands of bugfixes, support for easy Debian
 packaging, better integration on Mac OS X and loads more!
 </p><p>

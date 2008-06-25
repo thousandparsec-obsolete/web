@@ -1,0 +1,26 @@
+
+<h2>TPServer-cpp 0.5.0 released.</h2>
+<p>by Lee</p>
+<p>
+	It's been a year and I've finally got everything going again. This is a huge update.
+	This release includes:
+</p>
+	<ul>
+	<li>RFTS ruleset by xdotx for GSoC 2007</li>
+	<li>TP04 support</li>
+	<li>New IGObject model and persistence</li>
+	<li>More and better control of player's views of objects, etc</li>
+	<li>And much, much more</li>
+	</ul>
+<p>
+	This is the first release of tpserver-cpp since we moved to git (including full history). 
+	So now I have diffstat to give some details. There have been 548 commits in the release.
+	297 files changed, 21526 insertions(+), 7615 deletions(-). You can browse all 548 commits
+	in the <a href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpserver-cpp.git;a=shortlog">tpserver-cpp
+	gitweb shortlog</a>.
+</p>
+<p>
+	TPServer-cpp 0.5.0 is on the <a href="http://www.thousandparsec.net/tp/downloads.php#tpserver-cpp">downloads page</a> and will be on our SF downloads page soon. The GIT repo is 
+	tpserver-cpp (branch master) and the tag is 
+	TPSERVER_CPP_0_5_0. Feedback and suggestions are always welcome.
+</p>
