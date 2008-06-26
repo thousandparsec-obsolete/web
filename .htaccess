@@ -1,5 +1,5 @@
 ExpiresActive On
-ExpiresDefault "access plus 12 hour"
+ExpiresDefault "access plus 7 day"
 
 <Files mailman.php>
 	ExpiresDefault A0 
@@ -7,7 +7,7 @@ ExpiresDefault "access plus 12 hour"
 	Header set Pragma "no-cache"
 </Files>
 <Files ~ "\.php$">
-	ExpiresDefault "access plus 12 hour"
+	ExpiresDefault "access plus 7 day"
 </Files>
 <Files index.php>
 	ExpiresDefault "access plus 1 hour"
