@@ -14,3 +14,4 @@ ExpiresDefault "access plus 12 hour"
 </Files>
 
 Header append Cache-Control "public"
+FileETag none
