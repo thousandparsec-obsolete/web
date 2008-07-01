@@ -1,0 +1,12 @@
+
+<h2>TPServer-cpp 0.5.1 released.</h2>
+<p>by Lee</p>
+<p>
+	This release is mostly bug fixing, and a bit or refactoring. It certainly feels a lot better to
+	have two months between releases, instead of 14 like the last one.
+</p>
+<p>
+	TPServer-cpp 0.5.1 is on the <a href="http://www.thousandparsec.net/tp/downloads.php#tpserver-cpp">downloads page</a> and will be on our SF downloads page soon. The GIT repo is 
+	tpserver-cpp (branch master) and the tag is 
+	TPSERVER_CPP_0_5_1. Feedback and suggestions are always welcome.
+</p>
