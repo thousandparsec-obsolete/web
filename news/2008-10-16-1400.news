@@ -1,0 +1,190 @@
+
+<h2>Summer Writeup</h2>
+<p>by Mithro</p>
+
+<style>
+img {
+  text-decoration: none;
+  border: none;
+  padding: 5px 40px;
+}
+
+img.s {
+  text-decoration: none;
+  border: none;
+  padding: 0px;
+}
+</style>
+
+<p>
+<table>
+	<tbody>
+	<tr>
+		<td>
+			<p>
+
+This was the second year that <a href="http://www.thousandparsec.net">Thousand
+Parsec</a> partook in the <a href="http://code.google.com/soc" >Google Summer of
+Code&trade;</a> and we accomplished even more than we did in our very successful
+<a href="http://www.thousandparsec.net/tp/news.php/2007-10-20-1302">first year</a>.
+For those who don't know, Thousand Parsec is a framework for building turn
+based space empire building games. Many different types of 
+<a href="http://www.thousandparsec.net/wiki/Rulesets">rulesets</a> can be
+developed which have a wide variety of features.
+
+			</p><p>
+
+In 2008, we had <a href="http://www.thousandparsec.net/tp/news.php/2008-04-23-1400">8
+students</a>, all of whom successfully completed their projects.  Together they
+made a massive contribution to our code base, participating in 5 different modules and
+writing more than <a href="https://www.ohloh.net/projects/thousand-parsec/analyses/latest">130k lines of code</a> 
+in total. This year we were also pleased to see a great deal more collaboration
+and interaction between our students and Thousand Parsec's wider community.</p>
+			
+			</p>
+		</td><td>
+			<a href="http://www.thousandparsec.net/tp/">
+				<img src="http://svn.thousandparsec.net/svn/media/promotion/logo/zzorn-128x128.png" width="100" height="100" />
+			</a>
+		</td>
+	</tr>
+	</tbody>
+</table>
+
+<table>
+	<tbody>
+	<tr>
+		<td>
+			<a href="http://www.ogre3d.org/">
+				<img src="img/ogre.png" />
+			</a>
+		</td><td>			
+			<p>
+
+One of the most exciting projects to come from <i>Summer of Code</i> 2008 is
+the <a href="http://code.google.com/soc/2008/parsec/appinfo.html?csaid=678C2C068DCE83AE">new 3D client</a>. 
+This takes our existing libraries and couples them with the sweet <a href="http://www.python-ogre.org/">Python bindings</a>
+for <a href="http://www.ogre3d.org/">Ogre 3D</a> (<a href="http://code.google.com/soc/2008/ogre/about.html">another 2008 mentoring organization</a>)
+and builds a rich client full of eye candy. Since the completion of the
+<i>Summer of Code</i>, <a href="http://devhobby.blogspot.com/">Eugene Tan</a>
+has been hard at work to make his first release happen, and plans are on track
+for him to do so this week. Check out these screenshots for a preview:
+
+			</p>
+		</td>
+	</tr>
+	</tbody>
+</table>
+
+<p style="text-align: center;">
+	<a href="http://www.thousandparsec.net/~jmtan/s1.png"><img class="s" src="http://www.thousandparsec.net/~jmtan/s1-small.jpg" /></a>
+	<a href="http://www.thousandparsec.net/~jmtan/s2.png"><img class="s" src="http://www.thousandparsec.net/~jmtan/s2-small.jpg" /></a>
+	<a href="http://www.thousandparsec.net/~jmtan/s3.png"><img class="s" src="http://www.thousandparsec.net/~jmtan/s3-small.jpg" /></a>
+</p>
+
+<p>
+
+Our <a href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpserver-cpp.git;a=summary">primary server</a>
+also got a workout, with 3 students working hard on improving its functionality.
+All our students work has been merged into mainline and will be in our next
+release (which is also being preped at this very moment).
+<a href="http://www.hammerofcode.com/">Ryan Neufeld</a> and 
+<a href="http://nuleren.blogspot.com/">Dustin White</a> both added new "quick
+play" rulesets, while <a href="http://ezod.livejournal.com/">Aaron Mavrinac</a>
+added ability to remotely configure the server. This gives people a choice of 4
+different games to play, 3 of which were developed as <i>Summer of Code</i> projects.
+
+</p><p>
+
+Our <a href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpserver-py.git;a=summary">prototype
+and backup server</a> also got some love with <a href="http://juangsoc.blogspot.com/">Juan Lafont</a> contributing a quick 
+play game of his own creation called "<a href="http://www.thousandparsec.net/wiki/DroneSec">DroneSec</a>".
+This ruleset required that he also improve many of the server's features and he is in the
+process of preparing a release.
+
+</p>
+
+<table>
+	<tbody>
+	<tr>
+		<td>
+			<a href="http://en.wikipedia.org/wiki/HAL_9000">
+				<img src="img/hal.png" height="100" width="100" />
+			</a>
+		</td><td>
+			<p>
+
+Aaron, who initially worked on creating the remote configuration of
+tpserver-cpp, has also been working hard on <a
+href="http://code.google.com/soc/2008/parsec/appinfo.html?csaid=7731B9B4B375E2E5"
+>adding single player support</a>. His work touched and improved
+all our of sub-projects and even other students projects. Aaron is currently
+driving the next release of our primary client, which will include a
+wizard leting anyone setup a local game including the server, AI opponents
+and other options.
+
+			</p><p>
+
+Two students, <a href="http://vi1985.blogspot.com/" >Victor Ivri</a> and <a
+href="http://thousand-parsec.blogspot.com/" >Vincent Verhoeven</a>, each worked on
+creating AI frameworks and testing them out on the new rulesets
+developed this year. Having two frameworks allows us to continually refine
+their abilities and skills, giving people the ability to play non-trivial game
+scenarios without having to find human opponents.
+
+			</p>
+		</td>
+	</tr>
+	</tbody>
+</table>
+
+<table>
+	<tbody>
+	<tr>
+		<td>
+			<p>
+
+<a href="http://pluskid.lifegoo.com/" >Zhang Chiyuan's</a> project focused ona
+completely different tack: adding support for <a
+href="http://schemepy.thousandparsec.net">Schemepy</a> to Thousand Parsec. His
+project <a
+href="http://code.google.com/soc/2008/parsec/appinfo.html?csaid=39055FB6EAC6D799"
+>allows schemes to be used from the <a href="http://www.python.org">Python</a> framework. 
+Zhang completely rewrote the existing backends and added a bunch of new backends.  
+In the process, he created a extensive compliance suite which allows for quick 
+checking to ensure our backends are functioning correctly. He has also ported our
+Python client and servers and to the new interfaces.
+
+			</p>
+		</td><td>
+			<a href="http://schemepy.thousandparsec.net/">
+				<img src="http://schemepy.thousandparsec.net/html/schemepy.png" width="101" height="100">
+			</a>
+		</td>
+	</tr>
+	</tbody>
+</table>
+
+<table>
+	<tbody>
+	<tr>
+		<td>
+<p>
+
+Overall, we're very proud of all our student's work and it has all 
+made a dramatic impact on the health and usefulness of Thousand Parsec.  Of course,
+the entire community hopes they continue to contribute in the future. We would
+like to thank the Google <a href="http://code.google.com/opensource/" >Open
+Source Team</a> for all their efforts in running such an awesome program.
+
+</p><p>
+
+Finally, congratulations to all of our mentors and students for their many
+accomplishments!
+
+</p>
+
+		</td>
+	</tr>
+	</tbody>
+</table>
