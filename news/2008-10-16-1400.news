@@ -36,10 +36,11 @@ developed which have a wide variety of features.
 
 In 2008, we had <a href="http://www.thousandparsec.net/tp/news.php/2008-04-23-1400">8
 students</a>, all of whom successfully completed their projects.  Together they
-made a massive contribution to our code base, participating in 5 different modules and
-writing more than <a href="https://www.ohloh.net/projects/thousand-parsec/analyses/latest">130k lines of code</a> 
-in total. This year we were also pleased to see a great deal more collaboration
-and interaction between our students and Thousand Parsec's wider community.</p>
+made a massive contribution to our code base, writing more than <a
+href="https://www.ohloh.net/projects/thousand-parsec/analyses/latest">130k
+lines of code</a> over 5 different modules. This year we were also pleased
+to see a great deal more collaboration and interaction between our students and
+Thousand Parsec's wider community.</p>
 			
 			</p>
 		</td><td>
@@ -149,11 +150,12 @@ completely different tack: adding support for <a
 href="http://schemepy.thousandparsec.net">Schemepy</a> to Thousand Parsec. His
 project <a
 href="http://code.google.com/soc/2008/parsec/appinfo.html?csaid=39055FB6EAC6D799"
->allows schemes to be used from the <a href="http://www.python.org">Python</a> framework. 
-Zhang completely rewrote the existing backends and added a bunch of new backends.  
-In the process, he created a extensive compliance suite which allows for quick 
-checking to ensure our backends are functioning correctly. He has also ported our
-Python client and servers and to the new interfaces.
+>allows <a href="http://www.schemers.org/">Scheme</a> to be used from the <a
+>href="http://www.python.org">Python</a> framework. 
+Zhang completely rewrote the existing backends and added a bunch of new
+backends.  In the process, he created a extensive compliance suite which allows
+for quick checking to ensure our backends are functioning correctly. He has
+also ported our Python client and servers and to the new interfaces.
 
 			</p>
 		</td><td>
