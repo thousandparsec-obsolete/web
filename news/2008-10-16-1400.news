@@ -16,7 +16,6 @@ img.s {
 }
 </style>
 
-<p>
 <table>
 	<tbody>
 	<tr>
@@ -120,7 +119,7 @@ href="http://code.google.com/soc/2008/parsec/appinfo.html?csaid=7731B9B4B375E2E5
 >adding single player support</a>. His work touched and improved
 all our of sub-projects and even other students projects. Aaron is currently
 driving the next release of our primary client, which will include a
-wizard leting anyone setup a local game including the server, AI opponents
+wizard letting anyone setup a local game including the server, AI opponents
 and other options.
 
 			</p><p>
@@ -144,12 +143,12 @@ scenarios without having to find human opponents.
 		<td>
 			<p>
 
-<a href="http://pluskid.lifegoo.com/" >Zhang Chiyuan's</a> project focused ona
+<a href="http://pluskid.lifegoo.com/" >Zhang Chiyuan's</a> project focused on a
 completely different tack: adding support for <a
-href="http://schemepy.thousandparsec.net">Schemepy</a> to Thousand Parsec. His
-project <a
+href="http://schemepy.thousandparsec.net">Schemepy</a> to Thousand Parsec. <a
 href="http://code.google.com/soc/2008/parsec/appinfo.html?csaid=39055FB6EAC6D799"
->allows <a href="http://www.schemers.org/">Scheme</a> to be used from the <a
+>His
+project</a> allows <a href="http://www.schemers.org/">Scheme</a> to be used from the <a
 href="http://www.python.org/">Python</a> framework. 
 Zhang completely rewrote the existing backends and added a bunch of new
 backends.  In the process, he created a extensive compliance suite which allows
