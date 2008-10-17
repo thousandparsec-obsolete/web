@@ -57,7 +57,7 @@ Thousand Parsec's wider community.</p>
 	<tr>
 		<td>
 			<a href="http://www.ogre3d.org/">
-				<img src="img/ogre.png" />
+				<img src="/tp/img/ogre.png" />
 			</a>
 		</td><td>			
 			<p>
@@ -110,7 +110,7 @@ process of preparing a release.
 	<tr>
 		<td>
 			<a href="http://en.wikipedia.org/wiki/HAL_9000">
-				<img src="img/hal.png" height="100" width="100" />
+				<img src="/tp/img/hal.png" height="100" width="100" />
 			</a>
 		</td><td>
 			<p>
