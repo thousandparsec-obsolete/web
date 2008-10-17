@@ -3,13 +3,13 @@
 <p>by Mithro</p>
 
 <style>
-img {
+img.2008_10_16 {
   text-decoration: none;
   border: none;
   padding: 5px 40px;
 }
 
-img.s {
+img.2008_10_16s {
   text-decoration: none;
   border: none;
   padding: 0px;
@@ -43,7 +43,7 @@ Thousand Parsec's wider community.</p>
 
 		</td><td>
 			<a href="http://www.thousandparsec.net/tp/">
-				<img src="http://svn.thousandparsec.net/svn/media/promotion/logo/zzorn-128x128.png" width="100" height="100" />
+				<img class="2008_10_16" src="http://svn.thousandparsec.net/svn/media/promotion/logo/zzorn-128x128.png" width="100" height="100" />
 			</a>
 		</td>
 	</tr>
@@ -55,7 +55,7 @@ Thousand Parsec's wider community.</p>
 	<tr>
 		<td>
 			<a href="http://www.ogre3d.org/">
-				<img src="/tp/img/ogre.png" />
+				<img class="2008_10_16" src="/tp/img/ogre.png" />
 			</a>
 		</td><td>			
 			<p>
@@ -76,12 +76,17 @@ for him to do so this week. Check out these screenshots for a preview:
 </table>
 
 <p style="text-align: center;">
-	<a href="http://www.thousandparsec.net/~jmtan/s1.png"><img class="s" src="http://www.thousandparsec.net/~jmtan/s1-small.jpg" /></a>
-	<a href="http://www.thousandparsec.net/~jmtan/s2.png"><img class="s" src="http://www.thousandparsec.net/~jmtan/s2-small.jpg" /></a>
-	<a href="http://www.thousandparsec.net/~jmtan/s3.png"><img class="s" src="http://www.thousandparsec.net/~jmtan/s3-small.jpg" /></a>
+	<a href="http://www.thousandparsec.net/~jmtan/s1.png"><img class="2008_10_16s" src="http://www.thousandparsec.net/~jmtan/s1-small.jpg" /></a>
+	<a href="http://www.thousandparsec.net/~jmtan/s2.png"><img class="2008_10_16s" src="http://www.thousandparsec.net/~jmtan/s2-small.jpg" /></a>
+	<a href="http://www.thousandparsec.net/~jmtan/s3.png"><img class="2008_10_16s" src="http://www.thousandparsec.net/~jmtan/s3-small.jpg" /></a>
 </p>
 
-<p>
+
+<table>
+	<tbody>
+	<tr>
+		<td>
+			<p>
 
 Our <a href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpserver-cpp.git;a=summary">primary server</a>
 also got a workout, with 3 students working hard on improving its functionality.
@@ -93,7 +98,7 @@ play" rulesets, while <a href="http://ezod.livejournal.com/">Aaron Mavrinac</a>
 added ability to remotely configure the server. This gives people a choice of 4
 different games to play, 3 of which were developed as <i>Summer of Code</i> projects.
 
-</p><p>
+			</p><p>
 
 Our <a href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpserver-py.git;a=summary">prototype
 and backup server</a> also got some love with <a href="http://juangsoc.blogspot.com/">Juan Lafont</a> contributing a quick 
@@ -101,14 +106,22 @@ play game of his own creation called "<a href="http://www.thousandparsec.net/wik
 This ruleset required that he also improve many of the server's features and he is in the
 process of preparing a release.
 
-</p>
+
+			</p>
+		</td><td>
+			<img class="2008_10_16" src="/tp/img/server.png" height="100" />
+		</td>
+	</tr>
+	</tbody>
+</table>
+
 
 <table>
 	<tbody>
 	<tr>
 		<td>
 			<a href="http://en.wikipedia.org/wiki/HAL_9000">
-				<img src="/tp/img/hal.png" height="100" width="100" />
+				<img class="2008_10_16" src="/tp/img/hal.png" height="100" width="100" />
 			</a>
 		</td><td>
 			<p>
@@ -158,7 +171,7 @@ also ported our Python client and servers and to the new interfaces.
 			</p>
 		</td><td>
 			<a href="http://schemepy.thousandparsec.net/">
-				<img src="http://schemepy.thousandparsec.net/html/schemepy.png" width="101" height="100">
+				<img class="2008_10_16" src="http://schemepy.thousandparsec.net/html/schemepy.png" width="101" height="100">
 			</a>
 		</td>
 	</tr>
