@@ -1,0 +1,39 @@
+<h2>Thousand Parsec Ogre client released!</h2>
+<p>by jmtan</p>
+
+<p>
+I would like to announce a new client for Thousand Parsec. This new, true 3d
+client, brings Thousand Parsec into the 21st century with eye candy galore!
+Based on the <a href="http://www.ogre3d.org">Ogre 3d graphics engine</a> and
+leveraging the already developed python libraries, this new client provides the
+following features:
+
+<ul>
+	<li>3d models of ships and planets bring Thousand Parsec to life</li>
+    <li>Zoom and rotate the starmap for a better perspective</li>
+    <li>Sound effects</li>
+</ul>
+
+<h3>A brief history</h3>
+<p>
+The initial prototype for the client was first created by Tim Ansell, the
+project lead for Thousand Parsec. It was then used as the starting point for a
+Google Summer of Code project by Eugene Tan, whose job was to support the
+various features that are available in Thousand Parsec.
+</p>
+
+<h3>Downloading</h3>
+<p>
+A windows installer is available from
+<a href="/tp/downloads/tpclient-pyogre/tpclient-pyogre-0.0.1-setup.exe">here</a>,
+while those running from source can view the
+<a href="http://www.thousandparsec.net/wiki/Tpclient-pyogre_manual">documentation</a>,
+for more details. The git repository tag for this release is
+<a href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpclient-pyogre.git;a=commit;h=39aa12186e6587684d6a843d677b8bfb077d4170">TPCLIENT_PYOGRE_0_0_1</a>.
+</p>
+<p>
+  <img src="/tp/screenshots/tpclient-pyogre-s1.png" style="width:400px; height:300px" />
+  <img src="/tp/screenshots/tpclient-pyogre-s2.png" style="width:400px; height:300px" />
+  <img src="/tp/screenshots/tpclient-pyogre-s3.png" style="width:400px; height:300px" />
+  <img src="/tp/screenshots/tpclient-pyogre-s4.png" style="width:400px; height:300px" />
+</p>

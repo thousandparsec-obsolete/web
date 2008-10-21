@@ -241,6 +241,45 @@ application.
 <?php include "bits/end_section.inc" ?>
 
 <?php include "bits/start_section.inc" ?>
+<a name="tpclient-pyogre"></a>
+<h2>Python Ogre client</h2>
+<p>
+	This client should work on any computer which has Python Ogre and Python
+	installed. The following operating systems are officially supported,
+</p><p>
+	<ul>
+		<li>
+<a href="http://www.debian.org">Debian</a> and 
+<a href="http://www.ubuntu.com">Ubuntu</a> packages can be found on 
+<a href="http://packages.thousandparsec.net">our packages repository</a>.</li><br />
+        <li><span class="highlight">Windows</span>
+        <ul>
+                <li>Windows XP preferred</li>
+                <li>50mb disk space</li>
+                <li>1024x768 screen or greater</li>
+                <li>3d accelerator card</li>
+        </ul><br /></li>
+	</ul>
+</p><p>
+	If you want to download and play with the client, use the following files for each
+	operating system,
+	<ul>
+		<li>Windows - use the setup/exe like any other windows application.</li>
+		<li>MacOS X - use the dmg package like any other mac application.<br /></li>
+		<li>Unsupported Linux - use the <b>inplace</b> version</li>
+		<li>Supported Linux - use the <b>inplace</b> version for the time being until debs
+		appear in the distribution</li>
+	</ul>
+	If is highly recommend to use versions marked <b>"inplace"</b>. These
+packages have all the Thousand Parsec developed dependencies needed to run the
+application.
+</p><p>
+</p>
+<?php display("tpclient-pyogre/"); ?>
+<?php include "bits/end_section.inc" ?>
+
+
+<?php include "bits/start_section.inc" ?>
 <a name="tpclient-pytext"></a>
 <h2>Python Text client</h2>
 <p>
