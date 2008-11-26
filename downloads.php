@@ -1,384 +1,192 @@
-<?php $title = "Downloads" ; ?>
+<?php
+  // import downloads.xml
+  $doc = new DOMDocument();
+  $doc->load( 'downloads/downloads.xml' );
 
-<?php $downloads = "downloads/"; ?>
+	$title = "Downloads";
+  $catname = $_GET[ 'category' ];
 
-<?php include "bits/func.inc" ?>
-<?php include "bits/start_page.inc" ?>
-<?php include "bits/start_section.inc" ?>
+  // redirect to main/bundle product?
+  if( $catname == "" && $_GET[ 'redirect' ] != "no" )
+  {
+    include "bits/detect.inc";
+    switch( browser_detection( 'os' ) )
+    {
+    case 'win':
+    case 'nt':
+      $platname = 'win32';
+      break;
+    case 'mac':
+      $platname = 'macosx';
+      break;
+    case 'lin':
+      switch( browser_detection( 'os_number' ) )
+      {
+      case 'ubuntu':
+      case 'kubuntu':
+      case 'xubuntu':
+        $platname = 'linux-ubuntu';
+        break;
+      case 'debian':
+        $platname = 'linux-debian';
+        break;
+      case 'redhat':
+      case 'fedora':
+        $platname = 'linux-redhat';
+        break;
+      case 'gentoo':
+        $platname = 'linux-gentoo';
+        break;
+      }
+      break;
+    }
 
-<style>
-th.heading {
-	color: #E1870D;
-	width: 90%;
-	border-bottom: 1px solid #333333;
-	text-align: left;
-	padding-bottom: 0px;
-}
-</style>
-
-
-<?php 
-function mycmp($a, $b) {
-	if (strcmp($a['version'], $b['version']) === 0) {
-		if (strlen($a['versiontype']) > 0 || strlen($b['versiontype']) > 0) {
-			if ($b['versiontype'] == $a['versiontype'])
-				return strnatcmp($b['size'], $a['size']);
-
-			// Check the super minor
- 			return strcmp($b['versiontype'], $a['versiontype']);
-		} else {
-			if ($b['versionminor'] == $a['versionminor'])
-				return strnatcmp($b['size'], $a['size']);
-
- 			return strcmp($b['versionminor'], $a['versionminor']);
-		}
-	}
-	return strcmp($b['version'], $a['version']);
-}
-
-function display($directory) {
-	global $downloads;
-
-	$dir = $downloads . $directory;
-	$files = @get_files($dir);
-
-	print "<table class='tabular' style='width: auto;'>\n";
-
-	$i = 0;
-
-	$details = array();
-	foreach ($files as $file) {
-		if (substr($file, 0, 1) == '.')
-			continue;
-
-		$tail = substr($file, -4);
-		if ($tail == '.asc' || $tail == '.sig')
-			continue;
-		if (substr($file, -5) == '.size')
-			continue;
-
-		# Figure out the ending of this file
-		$formatmap = array(
-			".dmg"			=> "Mac dmg",
-			".zip"			=> "zip",
-			".tar.gz"		=> "tar/gz",
-			".tar.bz2"		=> "tar/bz2",
-			".win32.exe"	=> "setup/exe",
-			"-setup.exe"	=> "setup/exe",
-			"-py2.3.egg"	=> "py2.3/egg",
-			"-py2.4.egg"	=> "py2.4/egg",
-			"-py2.5.egg"	=> "py2.5/egg",
-			"-noarch.rpm"	=> "noarch/rpm",
-		);
-
-		$ending = "";
-		$type   = "";
-		foreach ($formatmap as $ending => $type) {
-			$pos = strpos($file, $ending);
-			if ($pos !== false)
-				break;
-		}
-		$version = substr($file, 0, strlen($file)-strlen($ending));
-		
-		# See if there is a subversion
-		$versiontype  = "";
-		$versionminor = "";
-		if (strrpos($version, '-') > strrpos($version, '.')) {
-			$versionminor = substr(substr($version, strrpos($version, '-')), 1);
-			$version = substr($version, 0, strlen($version)-strlen($versionminor)-1);
-
-			# Is this a string version?
-			if (!is_numeric($versionminor)) {
-				$versiontype  = $versionminor;
-				$versionminor = "";
-			}
-		}
-
-		# Get the other versions
-		$version = substr($version, max(strrpos($version, '_'), strrpos($version, '-'))+1);
-
-		$sfonly = file_exists("$dir$file.size");
-		if ($sfonly)
-			$size = (int)(trim(file_get_contents("$dir$file.size"))/1024);
-		else
-			$size = (int)(filesize($dir . $file)/1024);
-
-		# Does a signature exist?
-		if (file_exists("$dir$file.asc"))
-			$signature = "$dir$file.asc";
-		else if (file_exists("$dir$file.sig"))
-			$signature = "$dir$file.sig";
-		else
-			$signature = "";
-
-		$details[] = array(
-			'file'			=> $file, 
-			'size'			=> $size, 
-			'type'			=> $type,
-			'sfonly' 		=> $sfonly,
-			'version'		=> $version, 
-			'versiontype'	=> $versiontype,
-			'versionminor'	=> $versionminor,
-			'signature'		=> $signature,
-		);
-	}
-
-	# FIXME: Only take only the one with a largest versiontype
-	usort($details, "mycmp");
-
-	print "<table class='tabular' style='width: auto;'>";
-
-	foreach ($details as $detail) {
-		$sversion = "{$detail['version']}";
-		if ($sprevious != $sversion) {
-			if (strlen($sprevious) == 0) {
-				print "<tr>";
-				print "   <th colspan='5' class='heading'><h3>Current Version</h3></th>\n";
-				print "</tr>";
-			} else if (!$older) {
-				print "<tr>";
-				print "   <th colspan='5' class='heading' style='padding-top: 50px;'><h3>Older Versions</h3></th>\n";
-				print "</tr>";
-				$older = true;
-			}
-		}
-		$sprevious = $sversion;
-
-		$version = ucfirst($detail['versiontype'])." Version {$detail['version']}";
-		if ($previous != $version) {
-			print " <tr>\n";
-			print "   <th colspan='3' style='padding-top: 0;'><h4>$version</h4></th>\n";
-			print " </tr>\n";
-		}
-		$previous = $version;
-
-		print " <tr class=\"row{$i}\">\n";
-		$i = ($i+1) % 2; 
-
-		print " <td>{$detail['type']}</td>\n";
-		print " <td class='numeric'>{$detail['size']} KB</td>\n";
-
-		if (strlen($detail['signature']) > 0)
-			print "	 <td><a href='$dir{$detail['signature']}'><i>Signature</i></a></td>\n";
-		else
-			print "  <td></td>\n";
-
-		if (!$detail{'sfonly'}) {
-			print " <td><a href='$dir{$detail['file']}'>";
-			print "		<img src='img/logo-micro.png'>\n";
-			print "		Download from this host</a></td>\n";
-		} else {
-			print " <td></td>\n";
-		}
-
-		#print " <td><a href='http://downloads.sourceforge.net/thousandparsec/{$detail['file']}'>\n";
-		print " <td><a href='http://sourceforge.net/project/downloading.php?group_id=132078&filename={$detail['file']}'>\n";
-		print "		<img src='img/service_links/sf.png'>\n";
-		print "		Download from Sourceforge Mirrors</a></td>\n";
-		
-		print " </tr>\n";
-
-	}
-	print "</table>\n";
-}
+    if( $platname != "" )
+    {
+      header( "Location: download-instructions.php?product=tpclient-pywx&platform=" . $platname );
+    }
+  }
+	
+  include "bits/start_page.inc";
 ?>
 
-<h2>Mirrors</h2>
-<p>
-	All files are are mirrored on
-	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078">SourceForge here</a>. 
-	The SourceForge mirror also includes a complete archive of released files.
-</p>
+<style type="text/css">
+<!--
+.new { color: #00ff00; }
+.fixme { color: #ff0000; }
+.inote { color: #ffff00; }
 
-<?php include "bits/end_section.inc" ?>
+ul.response {
+	margin-top: 0.5em;
+	margin-bottom: 0.25em;
+	font-size: 8pt;
+	padding-left: 0.25em;
+}
 
-<?php include "bits/start_section.inc" ?>
-<a name="tpclient-pywx"></a>
-<h2>Python wxWidgets client</h2>
-<p>
-	This client should work on any computer which has wxPython and Python installed.
-	The following operating systems are officially supported,
-</p><p>
-	<ul>
-		<li>
-<a href="http://www.debian.org">Debian</a> and 
-<a href="http://www.ubuntu.com">Ubuntu</a> packages can be found on 
-<a href="http://packages.thousandparsec.net">our packages repository</a>.</li><br />
-        <li><span class="highlight">Windows</span>
-        <ul>
-                <li>Windows 98 or greater, Windows 2000 or XP preferred</li>
-                <li>50mb disk space</li>
-                <li>1024x768 screen or greater</li>
-        </ul><br /></li>
-        <li><span class="highlight">Mac OS X</span>
-        <ul>
-				<li>Runs on Intel- and PowerPC-based Mac computers</li>
-                <li>Mac OS X 10.4.1 or higher is preferred</li>
-                <li>200mb disk space</li>
-                <li>1024x768 screen or greater</li>
-        </ul><br /></li>
-	</ul>
-</p><p>
-	If you want to download and play with the client, use the following files for each
-	operating system,
-	<ul>
-		<li>Windows - use the setup/exe like any other windows application.</li>
-		<li>MacOS X - use the dmg package like any other mac application.<br /></li>
-		<li>Unsupported Linux - use the <b>inplace</b> version</li>
-		<li>Supported Linux - use the <b>inplace</b> version for the time being until debs
-		appear in the distribution</li>
-	</ul>
-	If is highly recommend to use versions marked <b>"inplace"</b>. These
-packages have all the Thousand Parsec developed dependencies needed to run the
-application.
-</p><p>
-</p>
-<?php display("tpclient-pywx/"); ?>
-<p>
-	Archives of <b>unsupported</b> old previous versions can be found on
-	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078&package_id=153890">SourceForge here</a>.
-</p>
-<?php include "bits/end_section.inc" ?>
+ul.response ul {
+	margin-top: 0em;
+	margin-bottom: 0em;
+	padding-left: 1em;
+}
 
-<?php include "bits/start_section.inc" ?>
-<a name="tpclient-pyogre"></a>
-<h2>Python Ogre client</h2>
-<p>
-	This client should work on any computer which has Python Ogre and Python
-	installed. The following operating systems are officially supported,
-</p><p>
-	<ul>
-		<li>
-<a href="http://www.debian.org">Debian</a> and 
-<a href="http://www.ubuntu.com">Ubuntu</a> packages can be found on 
-<a href="http://packages.thousandparsec.net">our packages repository</a>.</li><br />
-        <li><span class="highlight">Windows</span>
-        <ul>
-                <li>Windows XP preferred</li>
-                <li>50mb disk space</li>
-                <li>1024x768 screen or greater</li>
-                <li>3d accelerator card</li>
-        </ul><br /></li>
-	</ul>
-</p><p>
-	If you want to download and play with the client, use the following files for each
-	operating system,
-	<ul>
-		<li>Windows - use the setup/exe like any other windows application.</li>
-		<li>MacOS X - use the dmg package like any other mac application.<br /></li>
-		<li>Unsupported Linux - use the <b>inplace</b> version</li>
-		<li>Supported Linux - use the <b>inplace</b> version for the time being until debs
-		appear in the distribution</li>
-	</ul>
-	If is highly recommend to use versions marked <b>"inplace"</b>. These
-packages have all the Thousand Parsec developed dependencies needed to run the
-application.
-</p><p>
-</p>
-<?php display("tpclient-pyogre/"); ?>
-<?php include "bits/end_section.inc" ?>
+-->
+</style>
+
+<table class='menu'><tr>
+<td><a href='downloads.php?redirect=no' class='<?php echo $catname == '' ? 'on' : ''; ?>'>All Modules</a></td>
+
+<?php
+  // category menu
+  $xcategories = $doc->getElementsByTagName( "category" );
+  foreach( $xcategories as $xcategory )
+  {
+    $aclass = $xcategory->getAttribute( "name" ) == $catname ? 'on' : '';
+    print "<td><a href='downloads.php?category=" . $xcategory->getAttribute( "name" ) . "' class='" . $aclass . "'>" . $xcategory->getElementsByTagName( "longname" )->item(0)->nodeValue . "</a></td>";
+  }
+  print "</tr></table>";
+
+  include "bits/start_section.inc";
+?>
+
+<h1>Downloads</h1>
+
+<p>As a versatile framework, the Thousand Parsec project consists of a number of different modules. There are multiple client, server, and AI implementations, as well as a variety of utilities and development libraries for several languages. These modules are categorized below. Please click on the <i>Download</i> link next to your platform to see instructions on obtaining and installing a package.</p>
+
+<?php
+  include "bits/end_section.inc";
+  include "bits/start_section.inc";
+?>
+
+<h1>Quick Start</h1>
+<h2>Online Play</h2>
+<p>For online play, all you need is a Thousand Parsec client. Download <a href="downloads.php?category=client#tpclient-pywx">tpclient-pywx</a> for your platform.</p>
+<h2>Single Player</h2>
+<p>For single player games, you will need a locally installed Thousand Parsec server and one or more AI clients in addition to a normal Thousand Parsec client. Download <a href="downloads.php?category=client#tpclient-pywx">tpclient-pywx</a> and <a href="downloads.php?category=server#tpserver-cpp">tpserver-cpp</a> for your platform, then download one or more <a href="downloads.php?category=ai#ai">AI clients</a> supporting the ruleset you wish to play.</p>
+
+<?php
+  include "bits/end_section.inc";
+
+  // create the array of platforms
+  $platforms = array();
+  $xplatforms = $doc->getElementsByTagName( "platform" );
+  foreach( $xplatforms as $xplatform )
+  {
+    $platforms[ $xplatform->getAttribute( "name" ) ] = $xplatform->getElementsByTagName( "longname" )->item(0)->nodeValue;
+  }
+
+  // create the array of rulesets
+  $rulesets = array();
+  $xrulesets = $doc->getElementsByTagName( "ruleset" );
+  foreach( $xrulesets as $xruleset )
+  {
+    $rulesets[ $xruleset->getAttribute( "name" ) ] = $xruleset->getElementsByTagName( "longname" )->item(0)->nodeValue;
+  }
 
 
-<?php include "bits/start_section.inc" ?>
-<a name="tpclient-pytext"></a>
-<h2>Python Text client</h2>
-<p>
-	This client works with any computer which has Python and the python network library
-	installed. This client can only be checked out of CVS at the moment.
-</p><p>
-	Archives of <b>unsupported</b> old previous versions can be found on
-	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078&package_id=153889">SourceForge here</a>.
-</p>
-<?php include "bits/end_section.inc" ?>
+  // categories
+  $xcategories = $doc->getElementsByTagName( "category" );
+  foreach( $xcategories as $xcategory )
+  {
+    if( $catname == "" || $xcategory->getAttribute( "name" ) == $catname )
+    {
+      print "<a name=\"" . $xcategory->getAttribute( "name" ) . "\" />";
+      include "bits/start_section.inc";
+      print "<h1>" . $xcategory->getElementsByTagName( "longname" )->item(0)->nodeValue . "</h1>";
 
-<?php include "bits/start_section.inc" ?>
-<a name="libtpclient-py"></a>
-<h2>Python TP Client library</h2>
-<p>
-	This library is used by all the more complicated python applications to share
-	common code.
-</p><p>
-	You do <b>not</b> require this library if you are using a prebuild binary or the
-	inplace version of the client.
-</p>
-<?php display("libtpclient-py/"); ?>
-<p>
-	Archives of <b>unsupported</b> old previous versions can be found on
-	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078&package_id=214276">SourceForge here</a>.
-</p>
-<?php include "bits/end_section.inc" ?>
+      // products
+      $xproducts = $xcategory->getElementsByTagName( "product" );
+      foreach( $xproducts as $xproduct )
+      {
+        if( $xproduct->getAttribute( "visible" ) == "no" )
+        {
+          continue;
+        }
+        print "<a name=\"" . $xproduct->getAttribute( "name" ) . "\" />";
+        $prodname = $xproduct->getAttribute( "name" );
+        print "<h2>" . $xproduct->getElementsByTagName( "longname" )->item(0)->nodeValue . "</h2>";
+        print "<table class='tabular' style='width: auto;'><tr>";
+        // icon
+        $imgfile = ( "img/products/" . $prodname . ".png" );
+        if( ! file_exists( $imgfile ) )
+        {
+          $imgfile = "img/products/default-" . $xcategory->getAttribute( "name" ) . ".png";
+        }
+        print "<td><img src=\"" . $imgfile . "\" alt=\"" . $prodname . "\"></td>";
+        // description
+        print "<td><p>" . $xproduct->getElementsByTagName( "description" )->item(0)->nodeValue . "</p>";
+        // rulesets
+        $xrules = $xproduct->getElementsByTagName( "rules" );
+        if( $xrules->length > 0 )
+        {
+          $rulestr = "<p><b>Supported Rulesets:</b> ";
+          foreach( $xrules as $xrule )
+          {
+            $rulestr .= $rulesets[ $xrule->nodeValue ] . ", ";
+          }
+          print substr( $rulestr, 0, -2 ) . "</p>";
+        }
+        print "</td></tr></table><br />";
 
-<?php include "bits/start_section.inc" ?>
-<a name="libtpproto-py"></a>
-<h2>Python TP Network Library</h2>
-<p>
-	This library is used by all the python applications to communicate over the network.
-</p><p>
-	All python clients and servers <b>require</b> this library to function. 
-</p><p>
-	You do <b>not</b> require this library if you are using a prebuilt binary or the
-	inplace version of the client.
-</p>
-<?php display("libtpproto-py/"); ?>
-<p>
-	Archives of <b>unsupported</b> old previous versions can be found on
-	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078&package_id=153888">SourceForge here</a>.
-</p>
-<?php include "bits/end_section.inc" ?>
+        // packages
+        print "<table class='tabular' style='width: auto;'><tr><td align='center'><b>Platform</b></td><td align='center'><b>Current Version</b></td></tr>";
+        $r = 0;
+        $xpackages = $xproduct->getElementsByTagName( "package" );
+        foreach( $xpackages as $xpackage )
+        {
+          $platname = $xpackage->getAttribute( "platform" );
+          print "<tr class='row" . $r . "'>";
+          $r = ( $r + 1 ) % 2;
+          print "<td><img src='img/platforms/" . $platname . "-sm.png'> " . $platforms[ $platname ] . "</td>";
+          print "<td align='center'>" . $xpackage->getAttribute( "version" ) . "</td>";
+          $linkstr = $platname == 'developer' ? 'Repository' : 'Download';
+          print "<td align='center'><a href='download-instructions.php?product=" . $prodname . "&platform=" . $platname . "'>" . $linkstr . "</a></td>";
+          print "</tr>";
+        }
+        print "</table>";
+      }
+      include "bits/end_section.inc";
+    }
+  }
 
-<?php include "bits/start_section.inc" ?>
-<a name="libtpproto-cpp"></a>
-<h2>C++ TP Protocol Library</h2>
-<p>
-	The library libtpproto-cpp is a client side library written in C++ for TP.  It
-	is fully featured and can be easily extended in a number of ways including
-	logging, socket to the server and async frame handling.
-</p>
-<?php display("libtpproto-cpp/"); ?>
-<?php include "bits/end_section.inc" ?>
-
-<?php include "bits/start_section.inc" ?>
-<a name="tpserver-cpp"></a>
-<h2>C++ Server</h2>
-<p>
-	This is the main server for Thousand Parsec.
-</p>
-<?php display("tpserver-cpp/"); ?>
-<p>
-	Archives of <b>unsupported</b> old previous versions can be found on
-	<a href="https://sourceforge.net/project/showfiles.php?group_id=132078&package_id=153889">SourceForge here</a>.
-</p>
-<?php include "bits/end_section.inc" ?>
-
-<?php include "bits/start_section.inc" ?>
-<a name="libtprl"></a>
-<h2>C++ TP Readline library</h2>
-<p>
-  This library is used by tpserver-cpp to provide the console interface.
-</p>
-<?php display("libtprl/"); ?>
-<?php include "bits/end_section.inc" ?>
-
-<?php include "bits/start_section.inc" ?>
-<a name="tpserver-py"></a>
-<h2>Python Server</h2>
-<p>
-	This is a server for Thousand Parsec written in Python and using a SQL back end.
-</p>
-<?php display("tpserver-py/"); ?>
-<?php include "bits/end_section.inc" ?>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<?php include "bits/end_page.inc" ?>
+	include "bits/end_page.inc";
+?>
