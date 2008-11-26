@@ -1,0 +1,1 @@
+<p>See <a href="http://thousandparsec.net/wiki/Getting_started_with_development">Getting Started with Development</a> and <a href="http://thousandparsec.net/wiki/Working_with_Git">Working with Git</a> on our wiki for more information.</p>
