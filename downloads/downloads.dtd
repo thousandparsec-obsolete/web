@@ -1,0 +1,28 @@
+<!ELEMENT downloads (platforms, rulesets, products) >
+
+<!ELEMENT longname (#PCDATA) >
+<!ELEMENT description (#PCDATA) >
+
+<!ELEMENT platforms (platform*) >
+<!ELEMENT platform (longname, description?) >
+<!ATTLIST platform name ID #REQUIRED >
+
+<!ELEMENT rulesets (ruleset*) >
+<!ELEMENT ruleset (longname, description?) >
+<!ATTLIST ruleset name ID #REQUIRED >
+
+<!ELEMENT instruction (#PCDATA) >
+<!ELEMENT requirement (#PCDATA) >
+<!ELEMENT file (#PCDATA) >
+<!ATTLIST file href CDATA #REQUIRED >
+
+<!ELEMENT rules (#PCDATA) >
+<!ELEMENT package (instruction*, requirement*, file*) >
+<!ATTLIST package platform CDATA #REQUIRED version CDATA #REQUIRED >
+
+<!ELEMENT products (category*) >
+<!ELEMENT category (longname, description?, product*) >
+<!ATTLIST category name ID #REQUIRED >
+
+<!ELEMENT product (longname, description, rules*, package*) >
+<!ATTLIST product name ID #REQUIRED visible CDATA #REQUIRED >

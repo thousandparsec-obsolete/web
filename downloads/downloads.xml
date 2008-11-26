@@ -1,0 +1,339 @@
+<?xml version="1.0"?>
+<!DOCTYPE downloads SYSTEM "downloads.dtd">
+<downloads>
+    <platforms>
+        <platform name="win32">
+            <longname>Microsoft Windows</longname>
+        </platform>
+        <platform name="macosx">
+            <longname>MacOS X</longname>
+        </platform>
+        <platform name="linux-ubuntu">
+            <longname>Ubuntu Linux</longname>
+        </platform>
+        <platform name="linux-debian">
+            <longname>Debian GNU/Linux</longname>
+        </platform>
+        <platform name="linux-redhat">
+            <longname>Red Hat Linux</longname>
+        </platform>
+        <platform name="linux-gentoo">
+            <longname>Gentoo Linux</longname>
+        </platform>
+        <platform name="inplace">
+            <longname>Inplace</longname>
+        </platform>
+        <platform name="source">
+            <longname>Source</longname>
+        </platform>
+        <platform name="developer">
+            <longname>Developers</longname>
+        </platform>
+    </platforms>
+    <rulesets>
+        <ruleset name="minisec">
+            <longname>MiniSec</longname>
+        </ruleset>
+        <ruleset name="minisecplus">
+            <longname>MiniSec Plus</longname>
+        </ruleset>
+        <ruleset name="mtsec">
+            <longname>MTSec</longname>
+        </ruleset>
+        <ruleset name="timtrader">
+            <longname>TIM Trader</longname>
+        </ruleset>
+        <ruleset name="tae">
+            <longname>Tigris and Euphrates</longname>
+        </ruleset>
+        <ruleset name="rfts">
+            <longname>Reach for the Stars</longname>
+        </ruleset>
+        <ruleset name="risk">
+            <longname>Risk</longname>
+        </ruleset>
+    </rulesets>
+    <products>
+        <category name="client">
+            <longname>Clients</longname>
+            <product name="tpclient-pywx" visible="yes">
+                <longname>tpclient-pywx</longname>
+                <description>Main graphical client implemented in Python with wxWidgets.</description>
+                <package platform="win32" version="0.3.1.1">
+                    <requirement>Windows 98 (Windows 2000/XP preferred)</requirement>
+                    <requirement>50 MB disk space</requirement>
+                    <requirement>1024x768 or greater resolution</requirement>
+                    <requirement>&lt;a href="http://www.python.org"&gt;Python&lt;/a&gt; and &lt;a href="http://www.wxpython.org"&gt;wxPython&lt;/a&gt;</requirement>
+                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=tpclient-pywx-0.3.1.1-setup.exe">Download from SourceForge</file>
+                </package>
+                <package platform="macosx" version="0.3.1.1">
+                    <requirement>Intel- or PowerPC-based Mac</requirement>
+                    <requirement>Mac OS X 10.4.1 or higher preferred</requirement>
+                    <requirement>200 MB disk space</requirement>
+                    <requirement>1024x768 or greater resolution</requirement>
+                    <requirement>&lt;a href="http://www.python.org"&gt;Python&lt;/a&gt; and &lt;a href="http://www.wxpython.org"&gt;wxPython&lt;/a&gt;</requirement>
+                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=tpclient-pywx_0.3.1.1.dmg">Download from SourceForge</file>
+                </package>
+                <package platform="linux-ubuntu" version="0.3.1.1">
+                    <instruction>Run &lt;code&gt;sudo apt-get install tpclient-pywx&lt;/code&gt;.</instruction>
+                </package>
+                <package platform="linux-debian" version="0.3.1.1">
+                    <instruction>Run &lt;code&gt;sudo apt-get install tpclient-pywx&lt;/code&gt;.</instruction>
+                </package>
+                <package platform="linux-gentoo" version="0.3.1.1">
+                    <instruction>Run &lt;code&gt;emerge -av tpclient-pywx&lt;/code&gt;.</instruction>
+                </package>
+                <package platform="inplace" version="0.3.1.1">
+                    <requirement>&lt;a href="http://www.python.org"&gt;Python&lt;/a&gt; and &lt;a href="http://www.wxpython.org"&gt;wxPython&lt;/a&gt;</requirement>
+                    <file href="http://thousandparsec.net/tp/downloads/tpclient-pywx/tpclient-pywx-0.3.1.1-inplace.tar.bz2">Download from Thousand Parsec Website</file>
+                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=tpclient-pywx-0.3.1.1-inplace.tar.bz2">Download from SourceForge</file>
+                </package>
+                <package platform="source" version="0.3.1.1">
+                    <requirement>&lt;a href="http://www.python.org"&gt;Python&lt;/a&gt; and &lt;a href="http://www.wxpython.org"&gt;wxPython&lt;/a&gt;</requirement>
+                    <file href="http://thousandparsec.net/tp/downloads/tpclient-pywx/tpclient-pywx-0.3.1.1.tar.bz2">Download from Thousand Parsec Website</file>
+                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=tpclient-pywx-0.3.1.1.tar.bz2">Download from SourceForge</file>
+                </package>
+                <package platform="developer" version="-">
+                    <requirement>&lt;a href="http://www.python.org"&gt;Python&lt;/a&gt; and &lt;a href="http://www.wxpython.org"&gt;wxPython&lt;/a&gt;</requirement>
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpclient-pywx.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+            <product name="tpclient-pyogre" visible="yes">
+                <longname>tpclient-pyogre</longname>
+                <description>A client which uses a 3D interface based on the Ogre3d library.</description>
+                <package platform="win32" version="0.0.1">
+                    <requirement>Windows 98 (Windows 2000/XP preferred)</requirement>
+                    <requirement>50 MB disk space</requirement>
+                    <requirement>1024x768 or greater resolution</requirement>
+                    <requirement>3D accelerator graphics card</requirement>
+                    <requirement>&lt;a href="http://www.python.org"&gt;Python&lt;/a&gt; and &lt;a href="http://www.python-ogre.org"&gt;Python Ogre&lt;/a&gt;</requirement>
+                    <file href="http://thousandparsec.net/tp/downloads/tpclient-pyogre/tpclient-pyogre-0.0.1-setup.exe">Download from Thousand Parsec Website</file>
+                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=tpclient-pyogre-0.0.1-setup.exe">Download from SourceForge</file>
+                </package>
+                <package platform="source" version="0.0.1">
+                    <requirement>&lt;a href="http://www.python.org"&gt;Python&lt;/a&gt; and &lt;a href="http://www.python-ogre.org"&gt;Python Ogre&lt;/a&gt;</requirement>
+                    <file href="http://thousandparsec.net/tp/downloads/tpclient-pyogre/tpclient-pyogre-0.0.1.tar.gz">Download from Thousand Parsec Website</file>
+                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=tpclient-pyogre-0.0.1.tar.gz">Download from SourceForge</file>
+                </package>
+                <package platform="developer" version="-">
+                    <requirement>&lt;a href="http://www.python.org"&gt;Python&lt;/a&gt; and &lt;a href="http://www.python-ogre.org"&gt;Python Ogre&lt;/a&gt;</requirement>
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpclient-pyogre.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+            <product name="galaxie" visible="no">
+                <longname>Galaxie</longname>
+                <description>A client which uses the E libraries (also includes a helper AI!).</description>
+                <package platform="developer" version="-">
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=galaxie.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+            <product name="parsek" visible="no">
+                <longname>Parsek</longname>
+                <description>A client for KDE 4 written in C++.</description>
+                <package platform="developer" version="-">
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=parsek.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+        </category>
+        <category name="server">
+            <longname>Servers</longname>
+            <product name="tpserver-cpp" visible="yes">
+                <longname>tpserver-cpp</longname>
+                <description>A Thousand Parsec server implemented in C++ (currently the main server).</description>
+                <rules>minisec</rules>
+                <rules>mtsec</rules>
+                <rules>tae</rules>
+                <rules>rfts</rules>
+                <rules>risk</rules>
+                <package platform="win32" version="0.4.1">
+                    <file href="http://thousandparsec.net/tp/downloads/tpserver-cpp/tpserver-cpp-0.4.1-win32.zip">Download from Thousand Parsec Website</file>
+                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=tpserver-cpp-0.4.1-win32.zip">Download from SourceForge</file>
+                </package>
+                <package platform="linux-ubuntu" version="0.4.1">
+                    <instruction>Run &lt;code&gt;sudo apt-get install tpserver-cpp&lt;/code&gt;.</instruction>
+                </package>
+                <package platform="linux-debian" version="0.4.1">
+                    <instruction>Run &lt;code&gt;sudo apt-get install tpserver-cpp&lt;/code&gt;.</instruction>
+                </package>
+                <package platform="linux-gentoo" version="0.5.1">
+                    <instruction>Run &lt;code&gt;emerge -av tpserver-cpp&lt;/code&gt;.</instruction>
+                </package>
+                <package platform="source" version="0.5.1">
+                    <file href="http://thousandparsec.net/tp/downloads/tpserver-cpp/tpserver-cpp-0.5.1.tar.gz">Download from Thousand Parsec Website</file>
+                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=tpserver-cpp-0.5.1.tar.gz">Download from SourceForge</file>
+                </package>
+                <package platform="developer" version="-">
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpserver-cpp.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+            <product name="tpserver-py" visible="yes">
+                <longname>tpserver-py</longname>
+                <description>A Thousand Parsec server implemented in Python.</description>
+                <rules>minisec</rules>
+                <rules>minisecplus</rules>
+                <rules>timtrader</rules>
+                <package platform="inplace" version="0.1.0" />
+                <package platform="source" version="0.1.0">
+                    <file href="http://thousandparsec.net/tp/downloads/tpserver-py/tpserver-py-0.1.0.tar.gz">Download from Thousand Parsec Website</file>
+                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=tpserver-py-0.1.0.tar.gz">Download from SourceForge</file>
+                </package>
+                <package platform="developer" version="-">
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpserver-py.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+        </category>
+        <category name="ai">
+            <longname>AI Clients</longname>
+            <product name="daneel-ai" visible="yes">
+                <longname>daneel-ai</longname>
+                <description>An advanced rule based AI.</description>
+                <rules>rfts</rules>
+                <rules>risk</rules>
+                <package platform="developer" version="-">
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=daneel-ai.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+            <product name="gencon-rfts-ai" visible="yes">
+                <longname>Genetic Conquest</longname>
+                <description>An AI based around a genetic algorithm.</description>
+                <rules>rfts</rules>
+                <rules>risk</rules>
+                <package platform="developer" version="-">
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=gencon-rfts-ai.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+            <product name="tpsai-py" visible="yes">
+                <longname>tpsai-py</longname>
+                <description>A very basic AI which is designed to be a starting point for more advanced attempts.</description>
+                <rules>minisec</rules>
+                <package platform="developer" version="-">
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpsai-py.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+        </category>
+        <category name="util">
+            <longname>Utilities</longname>
+            <product name="tpadmin-cpp" visible="yes">
+                <longname>tpadmin-cpp</longname>
+                <description>An administration client for servers supporting the configuration protocol.</description>
+                <package platform="developer" version="-">
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpadmin-cpp.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+            <product name="metaserver-lite" visible="yes">
+                <longname>metaserver-lite</longname>
+                <description>A very simple implimentation of the metaserver in PHP.</description>
+                <package platform="developer" version="-">
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=metaserver-lite.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+            <product name="tpviewer-pygame" visible="no">
+                <longname>tpviewer-pygame</longname>
+                <description>Simple "viewer" program. Not intended to be used to play, just to view the universe (and generate "pictures").</description>
+                <package platform="developer" version="-">
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpviewer-pygame.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+            <product name="battleviewer" visible="no">
+                <longname>battleviewer</longname>
+                <description>A stand-alone program for viewing Thousand Parsec battle data.</description>
+                <package platform="developer" version="-">
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=battleviewer.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+            <product name="tpruledev" visible="no">
+                <longname>tpruledev</longname>
+                <description>A program which lets you quickly design rulesets for servers.</description>
+                <package platform="developer" version="-">
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpruledev.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+        </category>
+        <category name="lib">
+            <longname>Libraries</longname>
+            <product name="libtpproto-cpp" visible="yes">
+                <longname>libtpproto-cpp</longname>
+                <description>A client-side protocol and game library in C++.</description>
+                <package platform="linux-gentoo" version="0.1.1">
+                    <instruction>Run &lt;code&gt;emerge -av libtpproto-cpp&lt;/code&gt;.</instruction>
+                </package>
+                <package platform="source" version="0.1.1">
+                    <file href="http://thousandparsec.net/tp/downloads/libtpproto-cpp/libtpproto-cpp-0.1.1.tar.gz">Download from Thousand Parsec Website</file>
+                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=libtpproto-cpp-0.1.1.tar.gz">Download from SourceForge</file>
+                </package>
+                <package platform="developer" version="-">
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=libtpproto-cpp.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+            <product name="libtpproto-py" visible="yes">
+                <longname>libtpproto-py</longname>
+                <description>A client-side protocol and game library in Python.</description>
+                <package platform="linux-ubuntu" version="0.2.4">
+                    <instruction>Run &lt;code&gt;sudo apt-get install libtpproto-py&lt;/code&gt;.</instruction>
+                </package>
+                <package platform="linux-debian" version="0.2.4">
+                    <instruction>Run &lt;code&gt;sudo apt-get install libtpproto-py&lt;/code&gt;.</instruction>
+                </package>
+                <package platform="linux-redhat" version="0.2.4">
+                    <file href="http://thousandparsec.net/tp/downloads/libtpproto-py/libtpproto-py-0.2.4-1.noarch.rpm">Download from Thousand Parsec Website</file>
+                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=libtpproto-py-0.2.4-1.noarch.rpm">Download from SourceForge</file>
+                </package>
+                <package platform="linux-gentoo" version="0.2.4">
+                    <instruction>Run &lt;code&gt;emerge -av libtpproto-py&lt;/code&gt;.</instruction>
+                </package>
+                <package platform="source" version="0.2.4" />
+                <package platform="developer" version="-">
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=libtpproto-py.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+            <product name="libtpproto-java" visible="yes">
+                <longname>libtpproto-java</longname>
+                <description>A client-side protocol and game library in Java.</description>
+                <package platform="developer" version="-">
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=libtpproto-java.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+            <product name="libtpclient-py" visible="yes">
+                <longname>libtpclient-py</longname>
+                <description>A library which includes nice features for developing clients in python, includes things like caching support.</description>
+                <package platform="linux-ubuntu" version="0.3.1.1">
+                    <instruction>Run &lt;code&gt;sudo apt-get install libtpclient-py&lt;/code&gt;.</instruction>
+                </package>
+                <package platform="linux-debian" version="0.3.1.1">
+                    <instruction>Run &lt;code&gt;sudo apt-get install libtpclient-py&lt;/code&gt;.</instruction>
+                </package>
+                <package platform="linux-redhat" version="0.2.2">
+                    <file href="http://thousandparsec.net/tp/downloads/libtpclient-py/libtpclient-py-0.2.2-1.noarch.rpm">Download from Thousand Parsec Website</file>
+                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=libtpclient-py-0.2.2-1.noarch.rpm">Download from SourceForge</file>
+                </package>
+                <package platform="linux-gentoo" version="0.3.1.1">
+                    <instruction>Run &lt;code&gt;emerge -av libtpclient-py&lt;/code&gt;.</instruction>
+                </package>
+                <package platform="source" version="0.3.1.1" />
+                <package platform="developer" version="-">
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=libtpclient-py.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+            <product name="libtprl" visible="yes">
+                <longname>libtprl</longname>
+                <description>A C++ Readline wrapper.</description>
+                <package platform="linux-ubuntu" version="0.1.2">
+                    <instruction>Run &lt;code&gt;sudo apt-get install libtprl&lt;/code&gt;.</instruction>
+                </package>
+                <package platform="linux-debian" version="0.1.2">
+                    <instruction>Run &lt;code&gt;sudo apt-get install libtprl&lt;/code&gt;.</instruction>
+                </package>
+                <package platform="linux-gentoo" version="0.1.2">
+                    <instruction>Run &lt;code&gt;emerge -av libtprl&lt;/code&gt;.</instruction>
+                </package>
+                <package platform="source" version="0.1.2">
+                    <file href="http://thousandparsec.net/tp/downloads/libtprl/libtprl-0.1.2.tar.gz">Download from Thousand Parsec Website</file>
+                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=libtprl-0.1.2.tar.gz">Download from SourceForge</file>
+                </package>
+                <package platform="developer" version="-">
+                    <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=libtprl.git;a=summary">Git Repository</file>
+                </package>
+            </product>
+        </category>
+    </products>
+</downloads>

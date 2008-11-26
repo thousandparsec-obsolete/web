@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<layman>
+  <overlay
+      type = "git"
+      src = "git://git.thousandparsec.net/git/gentoo-overlay.git"
+      contact = "mavrinac@gmail.com"
+      name = "thousand-parsec">
+    <link>
+      http://www.thousandparsec.net/tp
+    </link>
+    <description>
+      Overlay for the Thousand Parsec framework for turn-based space empire
+      building games.
+    </description>
+  </overlay>
+</layman>
