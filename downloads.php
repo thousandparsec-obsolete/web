@@ -88,22 +88,25 @@ ul.response ul {
   include "bits/start_section.inc";
 ?>
 
-<h1>Downloads</h1>
-
-<p>As a versatile framework, the Thousand Parsec project consists of a number of different modules. There are multiple client, server, and AI implementations, as well as a variety of utilities and development libraries for several languages. These modules are categorized below. Please click on the <i>Download</i> link next to your platform to see instructions on obtaining and installing a package.</p>
-
 <?php
+  if( $catname == "" )
+  {
+    print "<h1>Downloads</h1>";
+    print "<p>As a versatile framework, the Thousand Parsec project consists of a number of different modules. There are multiple client, server, and AI implementations, as well as a variety of utilities and development libraries for several languages. These modules are categorized below. Please click on the <i>Download</i> link next to your platform to see instructions on obtaining and installing a package.</p>";
+  }
+
   include "bits/end_section.inc";
   include "bits/start_section.inc";
-?>
 
-<h1>Quick Start</h1>
-<h2>Online Play</h2>
-<p>For online play, all you need is a Thousand Parsec client. Download <a href="downloads.php?category=client#tpclient-pywx">tpclient-pywx</a> for your platform.</p>
-<h2>Single Player</h2>
-<p>For single player games, you will need a locally installed Thousand Parsec server and one or more AI clients in addition to a normal Thousand Parsec client. Download <a href="downloads.php?category=client#tpclient-pywx">tpclient-pywx</a> and <a href="downloads.php?category=server#tpserver-cpp">tpserver-cpp</a> for your platform, then download one or more <a href="downloads.php?category=ai#ai">AI clients</a> supporting the ruleset you wish to play.</p>
+  if( $catname == "" )
+  {
+    print "<h1>Quick Start</h1>";
+    print "<h2>Online Play</h2>";
+    print "<p>For online play, all you need is a Thousand Parsec client. Download <a href=\"downloads.php?category=client#tpclient-pywx\">tpclient-pywx</a> for your platform.</p>";
+    print "<h2>Single Player</h2>";
+    print "<p>For single player games, you will need a locally installed Thousand Parsec server and one or more AI clients in addition to a normal Thousand Parsec client. Download <a href=\"downloads.php?category=client#tpclient-pywx\">tpclient-pywx</a> and <a href=\"downloads.php?category=server#tpserver-cpp\">tpserver-cpp</a> for your platform, then download one or more <a href=\"downloads.php?category=ai#ai\">AI clients</a> supporting the ruleset you wish to play.</p>";
+  }
 
-<?php
   include "bits/end_section.inc";
 
   // create the array of platforms
