@@ -281,7 +281,9 @@
                 <package platform="linux-gentoo" version="0.2.4">
                     <instruction>Run &lt;code&gt;emerge -av libtpproto-py&lt;/code&gt;.</instruction>
                 </package>
-                <package platform="source" version="0.2.4" />
+                <package platform="source" version="0.2.4">
+                    <file href="http://thousandparsec.net/tp/downloads/libtpproto-py/libtpproto-py-0.2.4.tar.bz2">Download from Thousand Parsec Website</file>
+                </package>
                 <package platform="developer" version="-">
                     <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=libtpproto-py.git;a=summary">Git Repository</file>
                 </package>
@@ -309,7 +311,9 @@
                 <package platform="linux-gentoo" version="0.3.1.1">
                     <instruction>Run &lt;code&gt;emerge -av libtpclient-py&lt;/code&gt;.</instruction>
                 </package>
-                <package platform="source" version="0.3.1.1" />
+                <package platform="source" version="0.3.1.1">
+                    <file href="http://thousandparsec.net/tp/downloads/libtpclient-py/libtpclient-py-0.3.1.1.tar.bz2">Download from Thousand Parsec Website</file>
+                </package>
                 <package platform="developer" version="-">
                     <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=libtpclient-py.git;a=summary">Git Repository</file>
                 </package>
