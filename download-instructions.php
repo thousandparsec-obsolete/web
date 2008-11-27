@@ -82,15 +82,15 @@ ul.response ul {
       {
         $prodlongname = $xproduct->getElementsByTagName( "longname" )->item(0)->nodeValue;
         print "<h1>Download " . $prodlongname . " for " . $platforms[ $platname ] . "</h1>";
-        print "<table class='tabular' style='width: auto;'><tr>";
+        print "<table class='tabular' style='width: 100%;'><tr>";
         // icons
         $imgfile = ( "img/products/" . $prodname . ".png" );
         if( ! file_exists( $imgfile ) )
         {
           $imgfile = "img/products/default-" . $xcategory->getAttribute( "name" ) . ".png";
         }
-        print "<td><img src=\"" . $imgfile . "\" alt=\"" . $prodname . "\"></td>";
-        print "<td><img src=\"img/platforms/" . $platname . "-lg.png\" alt=\"" . $platforms[ $platname ] . "\"></td>";
+        print "<td width=\"64\"><img src=\"" . $imgfile . "\" alt=\"" . $prodname . "\"></td>";
+        print "<td width=\"64\"><img src=\"img/platforms/" . $platname . "-lg.png\" alt=\"" . $platforms[ $platname ] . "\"></td>";
         // description
         print "<td><p>" . $xproduct->getElementsByTagName( "description" )->item(0)->nodeValue . "</p>";
         // rulesets
@@ -104,14 +104,13 @@ ul.response ul {
           }
           print substr( $rulestr, 0, -2 ) . "</p>";
         } 
-        print "</td></tr></table><br />";
-
+        print "</td>";
         $shotfile = ( "img/screenshots/" . $prodname . ".png" );
         if( file_exists( $shotfile ) )
         {
-          print "<h2>Screenshot</h2>";
-          print "<a href=\"" . $shotfile . "\"><img src=\"" . $shotfile . "\" border=\"0\" height=\"200\" /></a>";
+          print "<td><a href=\"" . $shotfile . "\"><img src=\"" . $shotfile . "\" border=\"0\" height=\"200\" /></a></td>";
         }
+        print "</tr></table><br />";
 
         print "<h2>General Instructions for " . $platforms[ $platname ] . "</h2>";
         include "bits/instructions-" . $platname . ".inc";
