@@ -1,0 +1,17 @@
+
+<h2>TPServer-cpp 0.6.0 released.</h2>
+<p>by Lee</p>
+<p>
+	This release includes all three GSoC Projects that involved 
+	tpserver-cpp. Also included are some bug fixes and MySQL 
+	persistence is working again. One thing to note is that
+	the server is now a deamon and the internal console has been
+	removed. The tpadmin-cpp remote administration client should 
+	be released shortly. I tagged tpserver-cpp over a week ago, 
+	I've just been busy. Happy New Year to you all too!
+</p>
+<p>
+	TPServer-cpp 0.6.0 is on the <a href="http://www.thousandparsec.net/tp/downloads.php?category=server">downloads page</a> and will be on our SF downloads page soon. The GIT repo is 
+	tpserver-cpp (branch master) and the tag is 
+	TPSERVER_CPP_0_6_0. Feedback and suggestions are always welcome.
+</p>
