@@ -1,0 +1,15 @@
+
+<h2>First Release of TPAdmin-cpp</h2>
+<p>by ezod</p>
+<p>
+    To accompany the recent release of tpserver-cpp 0.6.0, which is now a daemon supporting
+    a remote administration protocol, tpadmin-cpp 0.1.0 has been released. As the internal console
+    has been removed from tpserver-cpp, you now need an administration client (either locally on
+    the same machine, or remotely on another) to do most configuration and maintenance while the
+    server is running. The tpadmin-cpp client is text-based and feels very similar to the original
+    console from previous versions of tpserver-cpp.
+</p>
+<p>
+	TPAdmin-cpp 0.1.0 is on the <a href="http://www.thousandparsec.net/tp/downloads.php?category=util">downloads page</a>. The Git repository is 
+	tpadmin-cpp and the tag is TPADMIN_CPP_0_1_0.
+</p>
