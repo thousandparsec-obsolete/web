@@ -216,6 +216,13 @@
             <product name="tpadmin-cpp" visible="yes">
                 <longname>tpadmin-cpp</longname>
                 <description>An administration client for servers supporting the configuration protocol.</description>
+                <package platform="linux-gentoo" version="0.1.0">
+                    <instruction>Run &lt;code&gt;emerge -av tpadmin-cpp&lt;/code&gt;.</instruction>
+                </package>
+                <package platform="source" version="0.1.0">
+                    <file href="http://thousandparsec.net/tp/downloads/tpserver-cpp/tpadmin-cpp-0.1.0.tar.gz">Download from Thousand Parsec Website</file>
+                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=tpadmin-cpp-0.1.0.tar.gz">Download from SourceForge</file>
+                </package>
                 <package platform="developer" version="-">
                     <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpadmin-cpp.git;a=summary">Git Repository</file>
                 </package>
