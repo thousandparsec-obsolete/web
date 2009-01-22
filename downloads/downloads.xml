@@ -261,7 +261,7 @@
             <product name="libtpproto-cpp" visible="yes">
                 <longname>libtpproto-cpp</longname>
                 <description>A client-side protocol and game library in C++.</description>
-                <package platform="linux-gentoo" version="0.1.1">
+                <package platform="linux-gentoo" version="0.1.9">
                     <instruction>Run &lt;code&gt;emerge -av libtpproto-cpp&lt;/code&gt;.</instruction>
                 </package>
 		<package platform="source" version="0.1.9 tpadmin-cpp/tech preview">
