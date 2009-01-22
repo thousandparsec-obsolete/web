@@ -1,0 +1,24 @@
+
+<h2>Libtpproto-cpp 0.1.9 technology preview released.</h2>
+<p>by Lee</p>
+<p>
+	This release of libtpproto-cpp is really to allow tpadmin-cpp (which 
+	uses the library) to be built without having to get the source code
+	out of git.
+</p>
+<p>
+	Having said that, this release is a preview of what libtpproto-cpp 0.2.0
+	will look like. The biggest different is interaction with the library is
+	now asynchronous, using boost::signals for callbacks. The library now
+	requires the client using it provides an EventLoop object that the
+	library can use to look after sockets and timers (or the client can use
+	the SimpleEventLoop provided). Also new is the start of support for 
+	TP04. The major things missing from this release are Order, Messages and
+	ObjectParameters. The 0.2.0 release will occur when these components are
+	in place.
+</p>
+<p>
+	Libtpproto-cpp 0.1.9 is on the <a href="http://www.thousandparsec.net/tp/downloads.php?category=lib">downloads page</a> and will be on our SF downloads page soon. The GIT repo is 
+	libtppproto-cpp (branch master) and the tag is 
+	LIBTPPROTO_CPP_0_1_9. Feedback and suggestions are always welcome.
+</p>
