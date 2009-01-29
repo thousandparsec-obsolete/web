@@ -29,7 +29,6 @@
   </div>
 </form>
 
-<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=cse-search-box&lang=en"></script>
 <div id="cse-search-results" style="text-align: center;"></div>
 <script type="text/javascript">
   var googleSearchIframeName = "cse-search-results";
