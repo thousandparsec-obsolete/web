@@ -271,13 +271,9 @@
                 <package platform="linux-gentoo" version="0.1.9">
                     <instruction>Run &lt;code&gt;emerge -av libtpproto-cpp&lt;/code&gt;.</instruction>
                 </package>
-		<package platform="source" version="0.1.9 tpadmin-cpp/tech preview">
-		    <file href="http://thousandparsec.net/tp/downloads/libtpproto-cpp/libtpproto-cpp-0.1.9.tar.gz">Download from Thousand Parsec Website</file>
-		    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=libtpproto-cpp-0.1.9.tar.gz">Download from SourceForge</file>
-                </package>
-                <package platform="source" version="0.1.1">
-                    <file href="http://thousandparsec.net/tp/downloads/libtpproto-cpp/libtpproto-cpp-0.1.1.tar.gz">Download from Thousand Parsec Website</file>
-                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=libtpproto-cpp-0.1.1.tar.gz">Download from SourceForge</file>
+                <package platform="source" version="0.1.9">
+                    <file href="http://thousandparsec.net/tp/downloads/libtpproto-cpp/libtpproto-cpp-0.1.9.tar.gz">Download from Thousand Parsec Website</file>
+                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=libtpproto-cpp-0.1.9.tar.gz">Download from SourceForge</file>
                 </package>
                 <package platform="developer" version="-">
                     <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=libtpproto-cpp.git;a=summary">Git Repository</file>
