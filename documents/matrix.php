@@ -26,7 +26,7 @@
   include "../bits/start_section.inc";
 ?>
 
-<h1>Client Support Matrix</h1>
+<h1>Ruleset/Game Support Matrix</h1>
 <p>Last updated 04 March 2008</p>
 
 <table cellpadding=3>
