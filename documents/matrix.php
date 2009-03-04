@@ -27,6 +27,83 @@
 ?>
 
 <h1>Client Support Matrix</h1>
+<p>Last updated 04 March 2008</p>
+
+<table cellpadding=3>
+	<tr>
+		<td>&nbsp;</td>
+		<td>MiniSec</td>
+		<td>MTSec</td>
+		<td>RFTS</td>
+		<td>Risk</td>
+		<td>TAE</td>
+		<td>DroneSec</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td align="center" colspan="7">
+			<b>Servers</b>
+		</td>
+	</tr>
+	<tr>
+		<td>tpserver-cpp</td>
+		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#ffff00">#</td>
+		<td align="center" bgcolor="#ffff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#ffff00">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+	</tr>
+	<tr>
+		<td>tpserver-py</td>
+		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td align="center" colspan="7">
+			<b>AI</b>
+		</td>
+	</tr>
+	<tr>
+		<td>tpsai-py</td>
+		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+	</tr>
+	<tr>
+		<td>daneel-ai</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ffff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+	</tr>
+	<tr>
+		<td>gencon-ai</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ffff00">#</td>
+		<td align="center" bgcolor="#00ff00">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+		<td align="center" bgcolor="#ff0000">#</td>
+	</tr>
+</table>
+
+<?php
+  include "../bits/end_section.inc";
+  include "../bits/start_section.inc";
+?>
+
+<h1>Client Support Matrix</h1>
 <p>Last updated 23 April 2007.</p>
 
 <table cellpadding=3>
