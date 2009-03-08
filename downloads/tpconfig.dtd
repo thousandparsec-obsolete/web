@@ -1,4 +1,5 @@
 <!ELEMENT tpconfig (server?, aiclient?) >
+<!ATTLIST tpconfig type (installed|inplace) "installed" >
 
 <!ELEMENT longname (#PCDATA) >
 <!ELEMENT version (#PCDATA) >
@@ -10,7 +11,7 @@
 <!ELEMENT rules (#PCDATA) >
 
 <!ELEMENT parameter (longname?, description?, default?, commandstring?) >
-<!ATTLIST parameter name ID #REQUIRED type NMTOKEN #REQUIRED >
+<!ATTLIST parameter name ID #REQUIRED type (I|S|F|B) "S" >
 
 <!ELEMENT ruleset (longname?, version?, description?, forced*, parameter*) >
 <!ATTLIST ruleset name ID #REQUIRED >
