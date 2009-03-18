@@ -1,9 +1,14 @@
 <!ELEMENT tpconfig (server?, aiclient?) >
-<!ATTLIST tpconfig type (installed|inplace) "installed" >
+<!ATTLIST tpconfig type (installed|inplace) "installed" xml:lang CDATA #IMPLIED >
 
 <!ELEMENT longname (#PCDATA) >
-<!ELEMENT version (#PCDATA) >
+<!ATTLIST longname xml:lang CDATA #IMPLIED >
+
 <!ELEMENT description (#PCDATA) >
+<!ATTLIST description xml:lang CDATA #IMPLIED >
+
+<!ELEMENT version (#PCDATA) >
+
 <!ELEMENT forced (#PCDATA) >
 <!ELEMENT default (#PCDATA) >
 <!ELEMENT commandstring (#PCDATA) >
