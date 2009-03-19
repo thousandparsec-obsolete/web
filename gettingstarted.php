@@ -67,7 +67,7 @@ will create their own games using Thousand Parsec framework.
 	To actually play a game which uses Thousand Parsec you need a client. Any
 	Thousand Parsec client can connect to any Thousand Parsec server.
 </p><p>
-	There are currently to primary clients for playing Thousand Parsec. The
+	There are currently two primary clients for playing Thousand Parsec. The
 	<a href="/tp/downloads.php?product=tpclient-pywx">tpclient-pywx client</a>
 	is 2d based but gets new features first (such as single player mode), while
 	<a href="/tp/downloads.php?product=tpclient-pyogre">tpclient-pyogre client</a>
@@ -128,43 +128,8 @@ cp config.py-template config.py
 
 <h2>tpserver-cpp</h2>
 <p>The tpserver-cpp is written in C++. It should compile and run under most
-unix-like operating systems (Linux, MacOS X, *BSD). No binaries are currently
-supplied.</p>
-<p>To build from source, follow these steps:</p>
-<ol>
-<li>
-Install the dependencies: autotools (autoconf, autoheader, automake, aclocal),
-libtprl, and MzScheme or guile. Don't forget to install dev packages for
-libraries.
-</li><li>
-Optionally, install the optional dependencies.
-  <ul><li>
-	libmysql-client (and dev package) if you want to use a MySQL server for the
-	persistence backend. You might want a server too.
-  </li><li>
-    libgnutls (and dev package) if you want secure sockets.
-  </li></ul>
-</li><li>
-	Download the sources from 
-	<a href="/tp/downloads.php#tpserver-cpp">Thousand Parsec Download page</a>.
-</li><li>
-	Extract the tar.gz file.
-</li><li>
-	Enter the created directory.
-</li><li>
-	Run <pre class="code">./configure</pre> To see what build options are
-	available run <pre class="code">./configure --help</pre>
-</li><li>
-	Build with make. 
-	<pre class="code">make</pre>
-</li><li>
-	As root (or administrator user) run <pre class="code">make install</pre>. The
-	executable, static data and man page are installed. They can be uninstalled with
-	<pre class="code">make uninstall</pre>
-</li><li>
-	To start server, run <pre class="code">tpserver-cpp</pre>
-</li>
-</ol>
+unix-like operating systems (Linux, MacOS X, *BSD). </p>
+<p>The server is available for download from the <a href="downloads.php?category=server">download page</a>.</p>
 <p>
 tpserver-cpp has a number of command line arguments and config files. A man page
 is provided and a sample config file is in the source package. quickstart config files for 
@@ -212,15 +177,19 @@ the server starts has a number of commands, and has help and tab completion.
 </ul>
 -->
 
-<h2>tpserver-cpp</h2>
 <p>
 There are a number of small tasks in the 
-<a href="http://sourceforge.net/tracker/?group_id=132078&atid=723099">TP bugs tracker</a> 
-on Sourceforge that a new programmer could start on.
+<a href="http://code.google.com/p/thousandparsec/issues/list">TP bugs tracker</a> 
+that could be good for new programmer to start on, get involved and get familar with our code.
 </p>
-<h3>Rulesets</h3>
 <p>
-The tpserver-cpp game server supports plug-in rulesets that define new games. A
+Some larger ideas are documented on the <a href="/wiki/Ideas_for_Programmers">Ideas for 
+Programmers</a> page. This is also the place to start for 
+<a href="/wiki/Google_Summer_of_Code">Google Summer of Code</a> project ideas.
+</p>
+<h2>Rulesets Development in tpserver-cpp</h2>
+<p>
+The tpserver-cpp game server supports plug-in rulesets that define new games. The draft of a
 book which talks about how to develop new rulesets can be found 
 <a href="http://www.thousandparsec.net/~lee/ruleset-book.pdf">here</a>.
 </p><p>
