@@ -6,6 +6,12 @@
 	$title = "Downloads";
   $catname = $_GET[ 'category' ];
 
+  if (isset($_GET['product'])) {
+    $product = $_GET['product'];
+  } else {
+    $product = 'tpclient-pywx';
+  }
+
   // redirect to main/bundle product?
   if( $catname == "" && $_GET[ 'redirect' ] != "no" )
   {
@@ -43,7 +49,7 @@
 
     if( $platname != "" )
     {
-      header( "Location: download-instructions.php?product=tpclient-pywx&platform=" . $platname );
+      header( "Location: download-instructions.php?product=$product&platform=$platname" );
     }
   }
 	

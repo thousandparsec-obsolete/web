@@ -7,14 +7,14 @@
 		<td>
 
 <h1>About</h1>
+
 <p>
-	Thousand Parsec is a framework for turn based space empire building games.
-</p><p>
-	It is important to understand that Thousand Parsec is <b>not</b> a game by itself,
-	it is a frame work for creating a similar group of games. Some of the games,
-	such as our first demo game <a href="/tp/dev/documents/minisec.php">MiniSec</a>,
-	are developed by the Thousand Parsec developers themselves. In the near 
-	future we hope that other developers will create their own games using Thousand Parsec.
+Thousand Parsec is a <a href="http://www.thousandparsec.net/wiki/Rulesets">
+bunch of games</a> based on a common framework for building turn based space
+empire building games. Some of the games, such as our first demo game <a
+href="/tp/dev/documents/minisec.php">MiniSec</a>, are developed by the Thousand
+Parsec developers themselves.  In the near future we hope that other developers
+will create their own games using Thousand Parsec framework.
 </p><p>
 	Some examples of games which Thousand Parsec draws ideas from are,
 <a href="http://www.faqs.org/faqs/games/stars/newsgroup-faq/">Stars!</a>, 
@@ -67,95 +67,35 @@
 	To actually play a game which uses Thousand Parsec you need a client. Any
 	Thousand Parsec client can connect to any Thousand Parsec server.
 </p><p>
-	At the moment you most probably want tpclient-pywx as it's the only client in 
-	active development. You should <b>always</b> get the latest version of the 
-	client because older versions tend to lack important features and have more
-	bugs. Below are instructions on how to install tpclient-pywx.
-</p><p>
-	If you are a console junkie you can also use tpclient-pytext, however this
-	client is far from polished. You can find instructions for installing this
-	client in the developer section.
-</p><p>
+	There are currently to primary clients for playing Thousand Parsec. The
+	<a href="/tp/downloads.php?product=tpclient-pywx">tpclient-pywx client</a>
+	is 2d based but gets new features first (such as single player mode), while
+	<a href="/tp/downloads.php?product=tpclient-pyogre">tpclient-pyogre client</a>
+	is a snazzy looking 3d client.
+</p><div style="text-align: center;"> 
+	<table style="width: 600px; margin-left:auto; margin-right:auto;">
+		<tr>
+			<td style="width: 50%;">
+				<a href="/tp/downloads.php?product=tpclient-pywx"><img style="border: 2px solid white; height: 200px;" src="/tp/img/screenshots/tpclient-pywx.png"></a>
+			</td><td style="width: 50%;">
+				<a href="/tp/downloads.php?product=tpclient-pyogre"><img style="border: 2px solid white; height: 200px;" src="/tp/img/screenshots/tpclient-pyogre.png"></a>
+			</td>
+		</tr>
+		<tr>
+			<td style="width: 50%;">
+				<a href="/tp/downloads.php?product=tpclient-pywx">tpclient-pywx screenshot</a>
+			</td><td style="width: 50%;">
+				<a href="/tp/downloads.php?product=tpclient-pyogre">tpclient-pyogre screenshot</a>
+			</td>
+		</tr>
+	</table>
+</div><p>
 	After you have installed a client you should then head over to the 
 	<a href="http://metaserver.thousandparsec.net">metaserver</a> which lists all
 	the currently running public servers.
-</p>
-
-<h2>Installing tpclient-pywx on Windows</h2>
-<p>
-	Just download the setup/exe version from the download page and run it!
-</p>
-
-<h2>Installing tpclient-pywx on Mac OS X</h2>
-<p>
-	Just download the Mac DMG version from the download page, drag the folder
-into your Applications directory and then double click on the icon.
 </p><p>
-	<b>Note:</b> <i>If you get an error about the application being "corrupted or
-incomplete" please eject the DMG file and double click on it again.</i>
+	You can download the both clients <a href="http://www.thousandparsec.net/tp/downloads.php?category=client">here</a>.
 </p>
-<h2>Installing tpclient-pywx on Debian or Ubuntu</h2>
-<p>
-	First you need to install the prerequisites for tpclient-pywx not developed by the Thousand Parsec project.
-</p><p>
-	Experimental packages are available from the <a href="http://packages.thousandparsec.net/">packages server</a>.
-	You can find instructions on how to use the packages 
-</p>
-<ul>
-	<li>
-		Firstly you need to install Python package.
-		<pre class="code">
-	apt-get install python
-		</pre>
-	</li><li>
-		You also need to install Numpy 
-		<pre class="code">
-	apt-get install python-numpy python-numpy-ext
-		</pre>
-	</li><li>
-		Next you need to install wxPython
-		<pre class="code">
-	apt-get install python-wxgtk2.8
-		</pre>
-	</li>
-	</li><li>
-		For best performance and the most functionality it is recommended you
-install the following.  
-		<pre class="code">
-	apt-get install python-psyco
-	apt-get install python-pyopenssl
-	apt-get install python-imaging
-		</pre>
-		If you are running a <a href="http://www.gnome.org">Gnome</a> or gtk
-system (which you are if you are running Ubuntu) it is also recommended you
-installed the following.
-		<ul>
-			<li>On Debian:
-			<pre class="code">
-	apt-get install python-gconf
-			</pre>
-		</li><li>On Ubuntu:
-			<pre class="code">
-	apt-get install python-gconf
-			</pre></li>
-		</ul>
-	</li>
-</ul>
-
-<p>
-	Next you need to install tpclient-pywx. 
-</p>
-<ul>	
-	</li><li>
-		Now all you need to do is get <b>tpclient-pywx</b>
-		<ol>
-			<li>Download the <b>"inplace"</b> version tar.gz from <a href="/tp/downloads.php#tpclient-pywx">here</a></li>
-			<li>Extract the tar.gz</li>
-			<li>Enter the newly created directory</li>
-			<li>Run <pre class="code">./tpclient-pywx</pre></li>
-		</ol>
-	</li>
-</ul>
 
 <?php include "bits/end_section.inc" ; ?>
 <?php include "bits/start_section.inc" ; ?>
@@ -163,7 +103,7 @@ installed the following.
 <h1 id="admin">I want to run a game!</h1>
 <p>There are two servers that can be used, tpserver-py and tpserver-cpp.</p>
 
-<h2>Tpserver-py</h2>
+<h2>tpserver-py</h2>
 
 <p>Real Instructions coming soon.</p>
 
@@ -186,7 +126,7 @@ cp config.py-template config.py
 ./tpserver-py-tool --turn tp
 </pre>
 
-<h2>Tpserver-cpp</h2>
+<h2>tpserver-cpp</h2>
 <p>The tpserver-cpp is written in C++. It should compile and run under most
 unix-like operating systems (Linux, MacOS X, *BSD). No binaries are currently
 supplied.</p>
@@ -204,8 +144,6 @@ Optionally, install the optional dependencies.
   </li><li>
     libgnutls (and dev package) if you want secure sockets.
   </li></ul>
-</li><li>
-	Download, build and install <a href="/tp/downloads.php#libtprl">libtprl</a>. This requires readline5 (and dev packages).
 </li><li>
 	Download the sources from 
 	<a href="/tp/downloads.php#tpserver-cpp">Thousand Parsec Download page</a>.
