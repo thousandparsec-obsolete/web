@@ -8,7 +8,7 @@
      xmlns:atom="http://www.w3.org/2005/Atom"
 >
   <channel>
-    <atom:link href="http://www.thousandparsec.net/tp/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.thousandparsec.net/tp/rss.php" rel="self" type="application/rss+xml" />
     <title>Thousand Parsec News</title>
     <link>http://www.thousandparsec.net/tp/</link>
     <description>News about Thousand Parsec!</description>
@@ -20,11 +20,14 @@ $files = get_files($news);
 
 $i = 0;
 foreach($files as $file) {
+  $dt = strptime($file, '%Y-%m-%d-%H%M.news');
+  $date = mktime($dt['tm_hour'], $dt['tm_min'], $dt['tm_sec'], $dt['tm_mon'] + 1, $dt['tm_mday'], $dt['tm_year'] + 1900);
+
 	$fshort = substr($file, 0, -5);
 	$url = "http://{$_SERVER['SERVER_NAME']}/tp/news.php/$fshort";
 
 	if ($i == 0) { ?>
-    <lastBuildDate><?php echo substr($file, 0, -10); ?>T<?php echo substr($file, -9, -7); ?>:<?php echo substr($file, -7, -5); ?>:00-00:00</lastBuildDate>
+    <lastBuildDate><?php echo strftime('%a, %d %b %Y %H:%M:%S %z', $date); ?></lastBuildDate>
 <?php
 	}
 
@@ -99,7 +102,7 @@ echo $haystack;
 echo "]]></content:encoded>\n";
 ?>
       <dc:creator><?php echo $author[1][0] ?></dc:creator>
-      <dc:date><?php echo substr($file, 0, -10); ?>T<?php echo substr($file, -9, -7); ?>:<?php echo substr($file, -7, -5); ?>:00-00:00</dc:date>    
+      <dc:date><?php echo strftime('%a, %d %b %Y %H:%M:%S %z', $date); ?></dc:date>
     </item>
 <? } ?>
   </channel>
