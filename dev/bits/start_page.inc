@@ -23,9 +23,7 @@
 <!--		</td><td>
 			<a href="/tp/dev/viewcvs.php/">Web CVS</a> -->
 		</td><td>
-			<a href="http://sourceforge.net/tracker/?group_id=132078&amp;atid=723099">
-				Bugs (<?php echo $sf_bugs_open?> open)
-			</a>
+			<a href="http://code.google.com/p/thousandparsec/issues/list">Bugs</a>
 		</td>
 	</tr>
 </table>
