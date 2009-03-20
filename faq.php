@@ -115,7 +115,7 @@ on GNU/Linux, Mac OS X and Windows.
 <a name="3-1"></a>
 <h2>3.1 I found a bug!</h2>
 <p>
-Please report the bug using the <a href="http://sourceforge.net/tracker/?group_id=132078&atid=723099">Sourceforge Bug tracker.</a>.
+Please report the bug using the <a href="http://code.google.com/p/thousandparsec/issues/list">Google Code issue tracker.</a>.
 If you don't think you can use the bug tracker just send an email to the
 <a href="/tp/mailman.php/listinfo/">mailing lists</a> or post on the <a href="/forums">forums</a>.
 </p><p>
