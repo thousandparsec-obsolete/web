@@ -102,7 +102,7 @@ echo $haystack;
 echo "]]></content:encoded>\n";
 ?>
       <dc:creator><?php echo $author[1][0] ?></dc:creator>
-      <dc:date><?php echo strftime('%a, %d %b %Y %H:%M:%S %z', $date); ?></dc:date>
+      <dc:date><?php echo substr($file, 0, -10); ?>T<?php echo substr($file, -9, -7); ?>:<?php echo substr($file, -7, -5); ?>:00-00:00</dc:date>
     </item>
 <? } ?>
   </channel>
