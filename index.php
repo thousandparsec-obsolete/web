@@ -3,6 +3,7 @@
 <?php include "bits/func.inc" ; ?>
 
 <div id="gs">Don't know what Thousand Parsec is or want more information? <a href="/tp/gettingstarted.php">Start Here</a></div>
+<div id="gs">Google Summer of Code students, <a href="http://www.thousandparsec.net/wiki/Google_Summer_of_Code">ideas and information are this way!</a></div>
 <div style="height: 5px;"></div>
 
 <div id="columns">
