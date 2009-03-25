@@ -158,9 +158,9 @@
                 <package platform="linux-gentoo" version="0.6.0">
                     <instruction>Run &lt;code&gt;emerge -av tpserver-cpp&lt;/code&gt;.</instruction>
                 </package>
-                <package platform="source" version="0.6.0">
-                    <file href="http://thousandparsec.net/tp/downloads/tpserver-cpp/tpserver-cpp-0.6.0.tar.gz">Download from Thousand Parsec Website</file>
-                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=tpserver-cpp-0.6.0.tar.gz">Download from SourceForge</file>
+                <package platform="source" version="0.6.1">
+                    <file href="http://thousandparsec.net/tp/downloads/tpserver-cpp/tpserver-cpp-0.6.1.tar.gz">Download from Thousand Parsec Website</file>
+                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=tpserver-cpp-0.6.1.tar.gz">Download from SourceForge</file>
                 </package>
                 <package platform="developer" version="-">
                     <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=tpserver-cpp.git;a=summary">Git Repository</file>
