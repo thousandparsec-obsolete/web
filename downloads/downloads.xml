@@ -149,10 +149,10 @@
                     <file href="http://thousandparsec.net/tp/downloads/tpserver-cpp/tpserver-cpp-0.4.1-win32.zip">Download from Thousand Parsec Website</file>
                     <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=tpserver-cpp-0.4.1-win32.zip">Download from SourceForge</file>
                 </package>
-                <package platform="linux-ubuntu" version="0.4.1">
+                <package platform="linux-ubuntu" version="0.6.1">
                     <instruction>Run &lt;code&gt;sudo apt-get install tpserver-cpp&lt;/code&gt;.</instruction>
                 </package>
-                <package platform="linux-debian" version="0.4.1">
+                <package platform="linux-debian" version="0.6.1">
                     <instruction>Run &lt;code&gt;sudo apt-get install tpserver-cpp&lt;/code&gt;.</instruction>
                 </package>
                 <package platform="linux-gentoo" version="0.6.1">
