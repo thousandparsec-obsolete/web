@@ -155,7 +155,7 @@
                 <package platform="linux-debian" version="0.6.1">
                     <instruction>Run &lt;code&gt;sudo apt-get install tpserver-cpp&lt;/code&gt;.</instruction>
                 </package>
-                <package platform="linux-gentoo" version="0.6.1">
+                <package platform="linux-gentoo" version="0.6.2">
                     <instruction>Run &lt;code&gt;emerge -av tpserver-cpp&lt;/code&gt;.</instruction>
                 </package>
                 <package platform="source" version="0.6.2">
