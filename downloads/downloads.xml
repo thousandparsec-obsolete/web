@@ -189,12 +189,12 @@
                 <description>An advanced rule based AI.</description>
                 <rules>rfts</rules>
                 <rules>risk</rules>
-                <package platform="linux-gentoo" version="0.0.2">
+                <package platform="linux-gentoo" version="0.0.3">
                     <instruction>Run &lt;code&gt;emerge -av daneel-ai&lt;/code&gt;.</instruction>
                 </package>
-                <package platform="source" version="0.0.2">
-                    <file href="http://thousandparsec.net/tp/downloads/daneel-ai/daneel-ai-0.0.2.tar.bz2">Download from Thousand Parsec Website</file>
-                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=daneel-ai-0.0.2.tar.bz2">Download from SourceForge</file>
+                <package platform="source" version="0.0.3">
+                    <file href="http://thousandparsec.net/tp/downloads/daneel-ai/daneel-ai-0.0.3.tar.bz2">Download from Thousand Parsec Website</file>
+                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=daneel-ai-0.0.3.tar.bz2">Download from SourceForge</file>
                 </package>
                 <package platform="developer" version="-">
                     <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=daneel-ai.git;a=summary">Git Repository</file>
