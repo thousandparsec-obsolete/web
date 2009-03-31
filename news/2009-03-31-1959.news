@@ -1,0 +1,19 @@
+
+<h2>TPServer-cpp 0.6.2 released.</h2>
+<p>by Lee</p>
+<p>
+	Hot on the heals of 0.6.1 comes 0.6.2 release of tpserver-cpp. The main
+	reason for this release is to update the single player support files
+	which changed since the last release. Single player client, etc are 
+	coming real soon now. Also in the release are the quickstart conf files,
+	shave support (nice build messages), and clearer TurnTimers split out
+	into separate ones, basic, players finished and threshold timers.
+	14 patches 
+	by 3 people. 47 files changed, 3363 insertions, 1480 deletions (thanks
+	libltdl update).
+</p>
+<p>
+	TPServer-cpp 0.6.2 is on the <a href="http://www.thousandparsec.net/tp/downloads.php?category=server">downloads page</a> and will be on our SF downloads page soon. The GIT repo is 
+	tpserver-cpp (branch master) and the tag is 
+	TPSERVER_CPP_0_6_2. Feedback and suggestions are always welcome.
+</p>
