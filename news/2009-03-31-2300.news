@@ -1,0 +1,38 @@
+<h2>Single Player released! - A tale of Google Summer of Code</h2>
+<p>by Mithro</p>
+
+<p> 
+<a href="http://www.thousandparsec.net/">Thousand Parsec</a> is pleased to announce our <a href="http://www.thousandparsec.net/tp/downloads.php?category=client#tpclient-pywx">first release that includes single player support</a>. Now all of our players can easily enjoy the game at anytime, whether or not they can find other interested players. We've made several other improvements with this release, but this feature is the most significant change for 0.3.2. Binaries are currently available for Windows and will soon be available for other systems (but you can always grab the code from our repository!).
+</p><p>
+Single player support is a huge step forward for us, as it gives players a quick way to get involved with minimal fuss. We have strived to hammer out this functionality for the past 3 years. Better still, contributions from <a href="http://code.google.com/soc/">Google Summer of Code</a> students have allowed us to reach this goal.
+</p><p>
+The story of this release is long, and has its beginnings back in <a href="http://code.google.com/soc/2008">2008</a> when <a href="http://www.thousandparsec.net/tp/news.php/2007-03-16-0157">Thousand Parsec joined</a> Google Summer of Code for the second time. The previous year's GSoC had been very successful, and we were looking to achieve even more success in round two.
+</p><p>
+<a href="http://ezod.livejournal.com/">Ezod</a> is our first Summer of Code student. He was pivotal in making this new release possible. At the start of the summer, he proposed an interesting project, "<a href="http://code.google.com/soc/2008/parsec/appinfo.html?csaid=7731B9B4B375E2E5">Add single player support to Thousand Parsec</a>". Little did he know what he was getting into!
+</p><p>
+To the naive, this may have seemed like a simple project; all it needed to do was start up the server and an AI or two in the background. The proposal actually meant that Ezod would have to touch almost every part of the code base and project infrastructure, from the servers, through the AIs, to the clients. Thousand Parsec was never really designed to work in this way, as everything designed to run standalone.
+</p><p>
+We had no qualms about Ezod's skill having already started submitting patches and packaging Thousand Parsec for Gentoo, but the extent of the changes needed for the proposal to work still raised some skepticism. To make things tougher, we had received a large number of quality applications, meaning that we had plenty to choose from.
+</p><p>
+Luckily, Google blessed us with more slots then we could manage (we ended up giving back two) and it was decided to take a risk. By the end of the summer Ezod had not disappointed -- he had the basics working -- but it would take another 9 months and integrating the work of two other students before we would reach the release we have today.
+</p><p>
+One problem we faced was that a game is not fun if you don't have any competition. This is were our second Summer of Code student joins us.
+</p><p>
+Iwanowitch put in a proposal for creating a <a href="http://code.google.com/soc/2008/parsec/appinfo.html?csaid=AD885F56FE726D6C">rule-based AI</a> for Thousand Parsec. His proposal was one of the two AI projects accepted as part of the 2008 Summer of Code.
+</p><p>
+The AI originally targeted the RFTS ruleset, which was developed as part of our first <a href="http://code.google.com/soc/2007">Summer of Code</a>. While functionally complete, it ended up having a number of show stopping bugs for AI development. This only became clear halfway through the summer with the mid-term evaluations coming up.
+</p><p>
+The mentors put their heads together, and the best solution we could come up with was for the AI to switch to a different ruleset. This decision would later decide which ruleset Ezod would support in single player mode.
+</p><p>
+Thanks to a good design, by the final evaluation, Iwanowitch had his AI competing against the second AI being developed over the summer. Ezod then worked with Iwanowitch to integrate the AI into the single player mode, and it has now become the major opponent that everyone who tries out Thousand Parsec will play against.
+</p><p>
+So which ruleset did they switch to, you ask? Well, that is where our third summer of code student comes in.
+</p><p>
+Jphr proposed (and was accepted) to create a <a href="http://code.google.com/soc/2008/parsec/appinfo.html?csaid=5B1B1C8E204530AD">new ruleset</a> for Thousand Parsec. Not having any C++ experience at all, he choose the ambitious goal of developing a modified version of the risk board game for the C++ server. He charged through the development, and by the mid-term evaluation the core rules had already been well developed and he was working on more advanced features such as custom maps.
+</p><p>
+It made sense for us to suggest that the AI guys target this ruleset. It had already been shown to be solid and it helped relieve some of the painful process of finding bugs. This also meant that with Ezod's help, Jphr's ruleset has gone on to be the first to be fully supported by single player mode.
+</p><p>
+So that is the story of how three students' work came together to produce this release. Both Iwanowitch and Ezod will be joining Thousand Parsec as Summer of Code mentors this year. These were not our only successful projects for Google Summer of Code 2008 -- in fact, all of our projects achieved success that year and more can be <a href="http://www.thousandparsec.net/tp/news.php/2008-10-16-1400">read about the others on our website</a>.
+</p><p>
+Sound like everything for Thousand Parsec has already been finished? Far from it! We are glad to be participating in <a href="http://www.thousandparsec.net/wiki/Google_Summer_of_Code">GSoC once again</a>, and I hope this story has inspired you to be part of Google Summer of Code and part of the Open Source community.
+</p>
