@@ -1,0 +1,103 @@
+<h2>Stand on the shoulders of giants, students wanted!</h2>
+<p>by Mithro</p>
+
+<p>
+As you probably read from 
+<a href="http://www.thousandparsec.net/tp/news.php/2009-03-31-2300">my previous post</a>, 
+Thousand Parsec had quite a successful Summer of Code last year. Unlike
+previous years, where we have concentrated on getting new stuff developed, this
+year we have decided to concentrate on building on the work of our 
+<a href="http://www.thousandparsec.net/tp/news.php/2008-10-16-1400">previous
+years students</a>. This is a great way to learn that important skill of
+working on other people's code.
+</p><p>
+With the deadline looming, some of the ideas on our 
+<a href="http://www.thousandparsec.net/wiki/Ideas_for_Programmers">ideas page</a> have
+already had lots of attention, but there are a number of ideas which have yet
+to have any applications. I would like to point out these ideas because we
+think they are very important and have a good chance to be accepted!
+</p><p>
+Some of the most important ideas have to deal with our coolest looking last
+Summer of Code project last year, 
+<a href="http://www.zdnetasia.com/news/software/0,39044164,62052477,00.htm">Eugene Tan's new 3d client</a>. 
+</p>
+<ul>
+  <li>Adding single player support to the 3d client. 
+	<p>
+    As <a href="http://www.thousandparsec.net/tp/news.php/2009-03-31-2300">mentioned here</a>
+	we have just release single player support in our 2d client. We would like
+	to see this extended to support our other major client.
+	</p><p>
+    Most of the code for this support is in the libtpclient-py
+    support library that is already shared between both the 3d and
+    2d clients, so it should be significantly easier then Ezod's own
+    task.
+	</p>
+  </li>
+  <li>Create a "Simple 3d ship designer".
+	<p>
+    Spore has shown us that it is possible to give people non-professional
+    3d artists, the ability to create cool looking models. With a little
+    bit of prefabed art work and some easy transforms, even programmers
+    don't have to be scared anymore.
+	</p><p>
+    We would like to see a similar ability added to Thousand Parsec. It can
+    be developed as part of the 3d client or as a stand alone program.
+	</p>
+  </li>
+</ul>
+<p>
+Another project we think is really important, is to continue the efforts
+to improve single player support. These include,
+</p>
+<ul>
+  <li>Adding support for saving and restoring games.
+	<p>
+    Having to play a complete game in one sitting is a real pain,
+    specially since some of the Thousand Parsec games can requires
+    many hours to play. The jist of this idea would be to add
+    save/load support found in most game types.
+	</p><p>
+    This would require adding saving/loading support to a number of
+    back end projects like our primary server (tpserver-cpp) and
+    daneel-ai.
+	</p>
+  </li>
+  <li>Adding support for single player "scenario" mode.
+	<p>
+    In some ways, this is related to the previous idea but a little
+    simpler. This would be similar to the "missions" you get in
+    other normal games.
+	</p><p>
+    An example would be something like "King Unorganised has run our
+    intergalactic empire into the ground, we have put you in charge
+    of restoring us to our former glory."
+	</p>
+  </li>
+  <li>Extending single player support to include "set up your own
+    multiplayer game".
+	<p>
+    Single player support has also paved the way towards adding
+    support for simple wizard set up of games to be played with
+    friends. Much of the procedure is the same and we already have
+    an auto-discovery process created.
+	</p>
+  </li>
+</ul>
+<p>
+Getting started with the single player development should be very easy, it only
+takes 6 commands!
+<pre class="code">
+ git clone git://git.thousandparsec.net/git/tpclient-pywx.git
+ git clone git://git.thousandparsec.net/git/daneel-ai.git
+ git clone git://git.thousandparsec.net/git/tpserver-cpp.git
+ cd tpserver-cpp; ./autogen.sh; ./configure; make; cd..
+ cd tpclient-pywx
+ ./tpclient-pywx
+</pre>
+</p><p>
+If you are interested, I suggest that <a href="irc://irc.freenode.org/#tp">you jump on IRC</a>
+and chat with our wonderful bunch of mentors.  It is also recommended that you
+put in an application (even if only a draft) as soon as possible, as we are
+happy to help you with your application and provide feedback.
+</p>
