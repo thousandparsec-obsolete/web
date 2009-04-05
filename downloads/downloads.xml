@@ -282,21 +282,21 @@
             <product name="libtpproto-py" visible="yes">
                 <longname>libtpproto-py</longname>
                 <description>A client-side protocol and game library in Python.</description>
-                <package platform="linux-ubuntu" version="0.2.4">
+                <package platform="linux-ubuntu" version="0.2.5">
                     <instruction>Run &lt;code&gt;sudo apt-get install libtpproto-py&lt;/code&gt;.</instruction>
                 </package>
-                <package platform="linux-debian" version="0.2.4">
+                <package platform="linux-debian" version="0.2.5">
                     <instruction>Run &lt;code&gt;sudo apt-get install libtpproto-py&lt;/code&gt;.</instruction>
                 </package>
-                <package platform="linux-redhat" version="0.2.4">
-                    <file href="http://thousandparsec.net/tp/downloads/libtpproto-py/libtpproto-py-0.2.4-1.noarch.rpm">Download from Thousand Parsec Website</file>
-                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=libtpproto-py-0.2.4-1.noarch.rpm">Download from SourceForge</file>
+                <package platform="linux-redhat" version="0.2.5">
+                    <file href="http://thousandparsec.net/tp/downloads/libtpproto-py/libtpproto-py-0.2.5-1.noarch.rpm">Download from Thousand Parsec Website</file>
+                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=libtpproto-py-0.2.5-1.noarch.rpm">Download from SourceForge</file>
                 </package>
-                <package platform="linux-gentoo" version="0.2.4">
+                <package platform="linux-gentoo" version="0.2.5">
                     <instruction>Run &lt;code&gt;emerge -av libtpproto-py&lt;/code&gt;.</instruction>
                 </package>
-                <package platform="source" version="0.2.4">
-                    <file href="http://thousandparsec.net/tp/downloads/libtpproto-py/libtpproto-py-0.2.4.tar.bz2">Download from Thousand Parsec Website</file>
+                <package platform="source" version="0.2.5">
+                    <file href="http://thousandparsec.net/tp/downloads/libtpproto-py/libtpproto-py-0.2.5.tar.bz2">Download from Thousand Parsec Website</file>
                 </package>
                 <package platform="developer" version="-">
                     <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=libtpproto-py.git;a=summary">Git Repository</file>
@@ -312,21 +312,17 @@
             <product name="libtpclient-py" visible="yes">
                 <longname>libtpclient-py</longname>
                 <description>A library which includes nice features for developing clients in python, includes things like caching support.</description>
-                <package platform="linux-ubuntu" version="0.3.1.1">
+                <package platform="linux-ubuntu" version="0.3.2">
                     <instruction>Run &lt;code&gt;sudo apt-get install libtpclient-py&lt;/code&gt;.</instruction>
                 </package>
-                <package platform="linux-debian" version="0.3.1.1">
+                <package platform="linux-debian" version="0.3.2">
                     <instruction>Run &lt;code&gt;sudo apt-get install libtpclient-py&lt;/code&gt;.</instruction>
                 </package>
-                <package platform="linux-redhat" version="0.2.2">
-                    <file href="http://thousandparsec.net/tp/downloads/libtpclient-py/libtpclient-py-0.2.2-1.noarch.rpm">Download from Thousand Parsec Website</file>
-                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=libtpclient-py-0.2.2-1.noarch.rpm">Download from SourceForge</file>
-                </package>
-                <package platform="linux-gentoo" version="0.3.1.1">
+                <package platform="linux-gentoo" version="0.3.2">
                     <instruction>Run &lt;code&gt;emerge -av libtpclient-py&lt;/code&gt;.</instruction>
                 </package>
-                <package platform="source" version="0.3.1.1">
-                    <file href="http://thousandparsec.net/tp/downloads/libtpclient-py/libtpclient-py-0.3.1.1.tar.bz2">Download from Thousand Parsec Website</file>
+                <package platform="source" version="0.3.2">
+                    <file href="http://thousandparsec.net/tp/downloads/libtpclient-py/libtpclient-py-0.3.2.tar.bz2">Download from Thousand Parsec Website</file>
                 </package>
                 <package platform="developer" version="-">
                     <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=libtpclient-py.git;a=summary">Git Repository</file>
