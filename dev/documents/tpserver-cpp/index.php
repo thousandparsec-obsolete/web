@@ -4,6 +4,15 @@
   include "../../bits/start_section.inc";
 ?>
 
+<h1>tpserver-cpp Documentation</h1>
+<p>The tpserver-cpp documentation is now on the wiki, so please have a look at the <a href="/wiki/Tpserver-cpp">tpserver-cpp wiki pages</a>. While the content below was true for a time, more up to date information is on the wiki.</p>
+
+<?php
+  include "../../bits/end_section.inc";
+  include "../../bits/start_section.inc";
+?>
+
+
 <h1>Documentation of cpp-server</h1>
 <p>Last updated 2 August 2004.</p>
 <p>This document outlines the design of the cpp-server and some of the ideas behind it.</p>
