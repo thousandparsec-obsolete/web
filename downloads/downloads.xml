@@ -74,13 +74,13 @@
                     <requirement>&lt;a href="http://www.python.org"&gt;Python&lt;/a&gt; and &lt;a href="http://www.wxpython.org"&gt;wxPython&lt;/a&gt;</requirement>
                     <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=tpclient-pywx_0.3.1.1.dmg">Download from SourceForge</file>
                 </package>
-                <package platform="linux-ubuntu" version="0.3.2">
+                <package platform="linux-ubuntu" version="0.3.1.1">
                     <instruction>Run &lt;code&gt;sudo apt-get install tpclient-pywx&lt;/code&gt;.</instruction>
                 </package>
-                <package platform="linux-debian" version="0.3.2">
+                <package platform="linux-debian" version="0.3.1.1">
                     <instruction>Run &lt;code&gt;sudo apt-get install tpclient-pywx&lt;/code&gt;.</instruction>
                 </package>
-                <package platform="linux-gentoo" version="0.3.2">
+                <package platform="linux-gentoo" version="0.3.1.1">
                     <instruction>Run &lt;code&gt;emerge -av tpclient-pywx&lt;/code&gt;.</instruction>
                 </package>
                 <package platform="inplace" version="0.3.1.1">
