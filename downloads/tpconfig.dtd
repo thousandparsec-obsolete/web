@@ -13,6 +13,7 @@
 <!ELEMENT default (#PCDATA) >
 <!ELEMENT commandstring (#PCDATA) >
 <!ELEMENT cwd (#PCDATA) >
+<!ELEMENT started (#PCDATA) >
 <!ELEMENT rules (#PCDATA) >
 
 <!ELEMENT parameter (longname?, description?, default?, commandstring?) >
@@ -21,8 +22,8 @@
 <!ELEMENT ruleset (longname?, version?, description?, forced*, parameter*) >
 <!ATTLIST ruleset name ID #REQUIRED >
 
-<!ELEMENT server (longname?, version?, description?, commandstring?, cwd?, forced*, parameter*, ruleset+) >
+<!ELEMENT server (longname?, version?, description?, commandstring?, cwd?, started?, forced*, parameter*, ruleset+) >
 <!ATTLIST server name ID #REQUIRED >
 
-<!ELEMENT aiclient (longname?, description?, commandstring?, cwd?, forced*, parameter*, rules+) >
+<!ELEMENT aiclient (longname?, description?, commandstring?, cwd?, started?, forced*, parameter*, rules+) >
 <!ATTLIST aiclient name ID #REQUIRED >
