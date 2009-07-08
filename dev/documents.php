@@ -61,10 +61,11 @@
 	<h4>
 		Game Documentation
 	</h4>
+	<p><a href="/wiki/Rulesets">Rulesets are now documented on the wiki</a>.</p>
 	<blockquote>
 		<p>
 			<a href="documents/minisec.php">MiniSec documentation.</a> Documentation for the first TP game.<br />
-			<a href="documents/mtsec.php">MTSec documentation.</a> Documentation for the second TP game.<br />
+			<a href="/wiki/MTSec">MTSec documentation.</a> Documentation for the second TP game.<br />
 		</p>
 	</blockquote>
 	
