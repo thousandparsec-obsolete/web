@@ -16,6 +16,7 @@
 <?php include(dirname(__FILE__) . "/tmp/sf-todo.inc"); ?>
 <?php include(dirname(__FILE__) . "/tmp/git.inc"); ?>
 <?php include(dirname(__FILE__) . "/tmp/lists.inc"); ?>
+<?php require(dirname(__FILE__) . "/utils/googleCodeStats.php"); ?>
 
 <div class="stats">
 <?php 
@@ -91,31 +92,46 @@
 				<?php echo $sf_ranking < 1000 ? "<b>$sf_ranking</b>\n" : "$sf_ranking\n"?>
 			</td>
 		</tr><tr>
-			<td style="text-align: left; padding-right: 2em;">
-				<span class="small">Bugs:</span> <?php echo $sf_bugs_open . "/" . $sf_bugs_closed; ?></td>
-		</tr><tr>
-			<td style="text-align: left"><span class="small">Todo:</span> <?php echo $sf_todo_open . "/" . $sf_todo_closed; ?></td>
-		</tr><tr>
 			<td style="text-align: left"><span class="small">Devs:</span> <?php echo $sf_devs; ?></td>
 		</tr>
 	</table>
 </div>
+<?php
+	$stats = new GoogleCodeStats('thousandparsec');
+	$data = $stats->getFeed('issues', 'CSV', -1, '?can=2&colspec=Reporter%20Component');
+	
+	
+	# Retrieves a list of issue reporters, and sort it out by # of issues.
+	# Additionally, we'll also do the same for the top components
+	$contributors = array();
+	$components = array();
+	foreach($data as $row) {
+		if (!in_array($row['Reporter'], array_keys($contributors))) {
+			$contributors[$row['Reporter']] = 1;
+		} else {
+			$contributors[$row['Reporter']] += 1;
+		}
+		
+		if (!in_array($row['Component'], array_keys($components))) {
+			$components[$row['Component']] = 1;
+		} else {
+			$components[$row['Component']] += 1;
+		}
+	}
+	
+	arsort($contributors);
+	arsort($components);
+	
 
-<div class="stats" style="
-	background-repeat: no-repeat;
-	background-image: url(/tp/tmp/fm-stats-small.png);
-	background-position: right center;
-	padding-right: 28px;">
-	<b class="small"><a href="http://freshmeat.net/project-stats/view/43366/">Freshmeat Stats:</a></b><br />
-	<span class="small">Rating:</span>          <?php echo $fm_rating; ?>/10.00<br />
-	<span class="small">Vitality Rank:</span>   <?php echo $fm_vitality_rank; ?><br />
-	<span class="small">Popularity Rank:</span> <?php echo $fm_popularity_rank; ?><br />
-<!--
-	<span class="small">Vitality:</span>   <?php echo $fm_vitality_percent; ?>%,
-	<span class="small">Rank</span>        <?php echo $fm_vitality_rank; ?><br />
-	<span class="small">Popularity:</span> <?php echo $fm_popularity_percent; ?>%, 
-	<span class="small">Rank</span>        <?php echo $fm_popularity_rank; ?><br /> 
--->
+
+	
+?>
+<div class="stats">
+	<b class="small"><a href="http://code.google.com/p/thousandparsec/issues/">Google Code:</a></b><br />
+	<span class="small">Open Issues:</span> <?=count($data)?><br />
+	<span class="small">Top Reporter:</span> <?=key($contributors)?>  (<?=current($contributors)?>)<br />
+	<span class="small">Most Active Component:</span> <?=key($components)?> (<?=current($components)?>)<br />
+
 </div>
 
 <div class="stats" style="text-align: center">

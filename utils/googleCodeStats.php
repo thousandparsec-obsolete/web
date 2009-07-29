@@ -1,19 +1,19 @@
 <?php
 
-include('FeedParser.php');
+include('simplepie.inc');
 
 
 # The web-server process will need write-access to the cache directory
-define("DEFAULT_LOCATION", dirname(__FILE__) . '/tmp/');
+define("DEFAULT_LOCATION", dirname(__FILE__) . '/cache/');
 
 # Cache expiry time (in seconds)
-define("DEFAULT_EXPIRY", 3600);
+define("DEFAULT_EXPIRY", 600);
 
 # Google Code Project Name
 define("COOGLE_CODE_PROJECT", "thousandparsec");
 
 /**
- * Simple caching class for PHP data-structures
+ * Simple file-based caching class for PHP data-structures
  */
 class CacheManager {
 	
@@ -23,7 +23,7 @@ class CacheManager {
 	function __construct() {}
 	
 	/**
-	 * Serializes a data-structure, then store them in a cache file.
+	 * Serializes a data-structure, then stores them in a cache file.
 	 *
 	 * @param string $id
 	 * @param mixed $data
@@ -84,7 +84,7 @@ class CacheManager {
 }
 
 /**
- * Simple class to retrieve data through Google Code's ATOM feeds for a specific project.
+ * Simple class to retrieve data through Google Code's ATOM or CSV feeds for a specific project.
  * Currently, Google Code exports the following ATOM feeds:
  * - Project Updates [updates]
  * - Downloads [downloads]
@@ -92,6 +92,28 @@ class CacheManager {
  * - Issue Updates [issueupdates]
  * - SVN Source Changes [svnchanges]
  * - Hg Source Changes [hgchanges]
+ * 
+ * The ATOM feed return values are SimplePie_Item objects that support the following methods:
+ * - get_author()
+ * - get_content()
+ * - get_date()
+ * - get_description()
+ * - get_food()
+ * - get_id()
+ * - get_permalink()
+ * - get_title()
+ * - And <a href="http://simplepie.org/wiki/reference/simplepie_item/start">more</a>
+ * 
+ * The following CSV fields are also currently supported:
+ * - Issues List [issues]
+ * 
+ * For the "issues" CSV feed, it looks like the following extra params should be used:
+ * - All issues [nothing]
+ * - Open issues [?can=2]
+ * - New issues [?can=6]
+ * - Issues to verify [?can=7]
+ * 
+ * CSV feeds return associative arrays instead of SimplePie_Item objects.
  */
 class GoogleCodeStats {
 	
@@ -102,7 +124,7 @@ class GoogleCodeStats {
 	function __construct($project = COOGLE_CODE_PROJECT) {
 		$this->project = $project;
 		$this->cache  = new CacheManager();
-		$this->parser = new FeedParser();
+		$this->parser = new SimplePie(NULL, "./tmp/", DEFAULT_EXPIRY);
 	}
 	
 	/**
@@ -110,26 +132,62 @@ class GoogleCodeStats {
 	 * PHP data-structure. 
 	 *
 	 * @param string $feed
+	 * @param string $format
 	 * @param int $num
 	 * @param string $params
-	 * @param int $cacheTimeout
-	 * @return array
+	 * @return mixed
 	 */
-	public function getFeed($feed, $num = -1, $params = '', $cacheTimeout = DEFAULT_EXPIRY) {
-		$url = "http://code.google.com/feeds/p/".$this->project."/$feed/basic$params";
-		$id = $this->project . "-$project-$num-" . preg_replace("[^a-zA-Z0-9]", '', $params);
+	public function getFeed($feed, $format = 'ATOM', $num = -1, $params = '') {
+		
+		$format = strtoupper($format);
+		
+		# Builds the feed URL based on required format.
+		if ('ATOM' == $format) {
+			$url = "http://code.google.com/feeds/p/".$this->project."/$feed/basic$params";
+		} else if ('CSV' == $format) {
+			$url = "http://code.google.com/p/".$this->project."/$feed/csv$params";
+		} else {
+			throw new Exception("Unsupported feed format: $format");
+		}
+		
+		# Generates the cache ID
+		$id = $this->project . "-$num-" . preg_replace("[^a-zA-Z0-9]", '', $params);
+		
 		
 		try {
 			$data = $this->cache->fetch($id. $cacheTimeout);
 			return $data;
 		} catch (Exception $e) {
-			$this->parser->parse($url);
-			$items = $this->parser->getItems();
-			
-			if ($num >= 1) {
-				$data = array_slice($items, 0, $num, TRUE);
+			if ('ATOM' == $format) {
+				# Parses ATOM feed using SimplePie
+				$this->parser->set_feed_url($url);
+				$this->parser->init();
+				$this->parser->handle_content_type();
+				$data = $this->parser->get_items();
 			} else {
-				$data = $items;
+				# Parses CSV feed
+				$fp = fopen($url, 'r');
+				$data = array();
+				
+				# We'll use the top row to locate headers
+				$headers = fgetcsv($fp);
+				
+				# This block creates a hashmap from the CSV data using the headers map.
+				while (($row = fgetcsv($fp)) !== FALSE) {
+					$pos = 0;
+					$container = array();
+					foreach($row as $block) {
+						$container[$headers[$pos++]] = $block;
+					}
+					$data[] = $container;
+				}
+			}
+			
+			# We'll return only the required number of elements.
+			if ($num >= 1) {
+				$data = array_slice($data, 0, $num, TRUE);
+			} else {
+				$data = $data;
 			}		
 			
 			$this->cache->store($id, $data);
@@ -137,40 +195,7 @@ class GoogleCodeStats {
 		
 		return $data;
 	}
-	
-	
-	
-	
 }
 
-
-
-/* Stats Testing
-
-$stats = new GoogleCodeStats();
-var_export($stats->getFeed('updates'));
-
-*/
-
-
-/* Cache testing
-
-$cache = new CacheManager();
-
-try {
-	$data = $cache->fetch("myData", 10);
-	echo "Cached data-structure: <br />" . var_export($data, TRUE);
-} catch(Exception $e) {
-	echo $e->getMessage() . "<br />";
-	$data = array("lala" => "elem 1", "lele" => "elem 2");
-	try {
-		$cache->store("myData", $data);
-	} catch (Exception $e) {
-		die("Unable to cache data-structure");
-	}
-	echo "Data-structure cached properly";
-}
-
-*/
 
 ?>
