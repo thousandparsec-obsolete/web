@@ -155,7 +155,7 @@ class GoogleCodeStats {
 		
 		
 		try {
-			$data = $this->cache->fetch($id. $timeout);
+			$data = $this->cache->fetch($id, $timeout);
 			return $data;
 		} catch (Exception $e) {
 			if ('ATOM' == $format) {
