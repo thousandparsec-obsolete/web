@@ -97,42 +97,51 @@
 	</table>
 </div>
 <?php
-	$stats = new GoogleCodeStats('thousandparsec');
-	$data = $stats->getFeed('issues', 'CSV', -1, '?can=2&colspec=Reporter%20Component');
-	
-	
-	# Retrieves a list of issue reporters, and sort it out by # of issues.
-	# Additionally, we'll also do the same for the top components
-	$contributors = array();
-	$components = array();
-	foreach($data as $row) {
-		if (!in_array($row['Reporter'], array_keys($contributors))) {
-			$contributors[$row['Reporter']] = 1;
-		} else {
-			$contributors[$row['Reporter']] += 1;
+
+	try {
+		$stats = new GoogleCodeStats('thousandparsec');
+		$data = $stats->getFeed('issues', 'CSV', -1, '?can=2&colspec=Reporter%20Component');
+		
+		
+		# Retrieves a list of issue reporters, and sort it out by # of issues.
+		# Additionally, we'll also do the same for the top components
+		$contributors = array();
+		$components = array();
+		foreach($data as $row) {
+			if (!in_array($row['Reporter'], array_keys($contributors))) {
+				$contributors[$row['Reporter']] = 1;
+			} else {
+				$contributors[$row['Reporter']] += 1;
+			}
+			
+			if (!in_array($row['Component'], array_keys($components))) {
+				$components[$row['Component']] = 1;
+			} else {
+				$components[$row['Component']] += 1;
+			}
 		}
 		
-		if (!in_array($row['Component'], array_keys($components))) {
-			$components[$row['Component']] = 1;
-		} else {
-			$components[$row['Component']] += 1;
-		}
+		arsort($contributors);
+		arsort($components);
+		
+	
+	
+		
+	?>
+	<div class="stats">
+		<b class="small"><a href="http://code.google.com/p/thousandparsec/issues/">Google Code:</a></b><br />
+		<span class="small">Open Issues:</span> <?=count($data)?><br />
+		<span class="small">Top Reporter:</span> <?=key($contributors)?>  (<?=current($contributors)?>)<br />
+		<span class="small">Most Active Component:</span> <?=key($components)?> (<?=current($components)?>)<br />
+	
+	</div>
+	<?php 
+	
+	} catch (Exception $e) {
+		echo '<!-- ' . $e->getMessage() . ' --> ';
 	}
 	
-	arsort($contributors);
-	arsort($components);
-	
-
-
-	
-?>
-<div class="stats">
-	<b class="small"><a href="http://code.google.com/p/thousandparsec/issues/">Google Code:</a></b><br />
-	<span class="small">Open Issues:</span> <?=count($data)?><br />
-	<span class="small">Top Reporter:</span> <?=key($contributors)?>  (<?=current($contributors)?>)<br />
-	<span class="small">Most Active Component:</span> <?=key($components)?> (<?=current($components)?>)<br />
-
-</div>
+	?>
 
 <div class="stats" style="text-align: center">
 <script type='text/javascript' src='http://www.ohloh.net/projects/3679;badge_js'></script>
