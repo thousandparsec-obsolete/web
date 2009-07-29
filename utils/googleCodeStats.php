@@ -4,7 +4,7 @@ include('simplepie.inc');
 
 
 # The web-server process will need write-access to the cache directory
-define("DEFAULT_LOCATION", dirname(__FILE__) . '/cache/');
+define("DEFAULT_LOCATION", dirname(__FILE__) . '../tmp/');
 
 # Cache expiry time (in seconds)
 define("DEFAULT_EXPIRY", 600);
@@ -32,7 +32,7 @@ class CacheManager {
 		# Basic filename sanitation
 		$cacheFile = $this->_get_cachefile($id);
 		
-		if (!file_put_contents($cacheFile, serialize($data))) {
+		if (!@file_put_contents($cacheFile, serialize($data))) {
 			throw new Exception("Unable to store cache data into " . $this->location);
 		}
 	}
