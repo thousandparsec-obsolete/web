@@ -100,7 +100,7 @@
 
 	try {
 		$stats = new GoogleCodeStats('thousandparsec');
-		$data = $stats->getFeed('issues', 'CSV', -1, '?can=2&colspec=Reporter%20Component');
+		$data = $stats->getFeed('issues', 'CSV', -1, '?can=2&colspec=Reporter%20Component', 3600);
 		
 		
 		# Retrieves a list of issue reporters, and sort it out by # of issues.

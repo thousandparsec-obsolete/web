@@ -137,7 +137,7 @@ class GoogleCodeStats {
 	 * @param string $params
 	 * @return mixed
 	 */
-	public function getFeed($feed, $format = 'ATOM', $num = -1, $params = '') {
+	public function getFeed($feed, $format = 'ATOM', $num = -1, $params = '', $timeout = DEFAULT_EXPIRY) {
 		
 		$format = strtoupper($format);
 		
@@ -155,7 +155,7 @@ class GoogleCodeStats {
 		
 		
 		try {
-			$data = $this->cache->fetch($id. $cacheTimeout);
+			$data = $this->cache->fetch($id. $timeout);
 			return $data;
 		} catch (Exception $e) {
 			if ('ATOM' == $format) {
