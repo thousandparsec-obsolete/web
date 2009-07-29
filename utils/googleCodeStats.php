@@ -4,7 +4,7 @@ include('simplepie.inc');
 
 
 # The web-server process will need write-access to the cache directory
-define("DEFAULT_LOCATION", dirname(__FILE__) . '../tmp/');
+define("DEFAULT_LOCATION", dirname(__FILE__) . '/../tmp/');
 
 # Cache expiry time (in seconds)
 define("DEFAULT_EXPIRY", 600);
