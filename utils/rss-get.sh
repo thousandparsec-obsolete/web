@@ -83,3 +83,6 @@ done
 # Post process the repository rss (combind them, sort them and trim old)
 ruby $WEBROOT/utils/rss2php.rb git $TMP/git/*.rss > $TMP/git.inc
 
+# Cache Google Code stats
+cd $WEBROOT/utils
+php -f $WEBROOT/utils/cache_google_data.php
