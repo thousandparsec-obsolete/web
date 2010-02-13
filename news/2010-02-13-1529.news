@@ -1,0 +1,98 @@
+<h2>GSoC 2009 wrap up</h2>
+<p>by Lee</p>
+
+<p>
+We've been a bit busy. Time for Thousand Parsec's wrap up for GSoC 2009.
+</p>
+
+<p>
+Overall, GSoC went well, and lots of exciting work was done. We have a working
+webclient, a 3D battle viewer, big improvements to the main client, big 
+improvements to the main server, MTSec ruleset working, and big improvements to
+the secondary python protocol library.
+</p>
+
+<p>
+Individual project details are below, in no particular order.
+</p>
+
+<h3>tpclient-pywx improvements</h3>
+<p>
+Greywhind worked on improvements to tpclient-pywx. This include tp04 media 
+parameter support, resource overlay updates for tp04, download threading fixes 
+and improvements, design window now works correctly, much nicer object 
+properties window and orders window. Some of the improvements involved changes 
+to libtpclient-py and libtpproto-py.
+</p>
+<p>
+See <a href="http://greywhind.wordpress.com/2009/08/19/gsoc-2009-final-report/">
+Greywhind's final report in his blog</a> for more
+</p>
+
+<h3>3D battleviewer</h3>
+<p>
+Landon has done an awesome job on creating a 3D battleviewer. It has all sorts 
+of cool effects, including firing and explosions.
+</p>
+<p>
+There are <a href="http://blog.lfowles.org/archives/2009/08/02/index.php">
+screenshots on Landon's blog</a> and, more appropriately, a video of the 
+battleviewer on YouTube.
+</p>
+
+<h3>MTSec</h3>
+<p>
+The MTSec ruleset in tpserver-cpp wasn't much more than stubs before GSoC. Alanp 
+spent his time making it into a proper working game. This includes much design 
+and component work, importing them from XML file.
+</p>
+<p>
+Alanp has a more details in his <a href="http://alanp.ca/blog/2009/08/23/gsoctp-final-report/">final report on MTSec</a> in his blog. 
+</p>
+
+<h3>Webclient</h3>
+<p>
+tote developed a webclient for Thousand Parsec, which me was able to get it working
+enought to play Minisec. This included log in and out, star/planet map, orders, 
+messages and object details. Very impressive.
+</p>
+
+<h3>libtpproto2-py</h3>
+<p>
+libtpproto2-py is a different python implementation of the TP protocol, its most
+significant feature is that the protocol objects are generated from the XML
+description of protocol. cherez made a number of significant improvements to the
+library, including updating it for parameter groups and TP04. He also developed 
+an extensive unit test suite for the library.
+</p>
+
+
+<h3>tpserver-cpp refactoring</h3>
+<p>
+This was a big project and epyon worked hard to refactor tpserver-cpp to make it 
+more maintainable. This gives a smaller core to tpserver-cpp, using more
+boost and STL, and hopefully setting up other improvements in future such as 
+ASIO. 
+</p>
+
+<h3>Parsek client update</h3>
+<p>
+A bonus, thanks to the KDE project. mhilmi worked on updating Parsek to use the
+latest (pre-release) version of libtpproto-cpp. This flushed out a few bugs in
+the library, and greatly improved the Parsek client. It is certainly a lot 
+closer to being usable, including the new libtpproto-cpp asynchronous support.
+</p>
+<p>
+<a href="http://www.marwanhilmi.com/2009/08/18/judgement/">Screenshots and more 
+info about Parsek</a> are available on mhilmi's blog.
+</p>
+
+<h3>The future</h3>
+<p>
+Most of the code changes made this year in GSoC have been merged to the mainline of the various code modules. We 
+are actively working on merging the others. Just about all will be included in the next release versions of the various components.
+</p>
+<p>
+Google has annouced Summer of Code for 2010. We are intending to apply again as 
+mentoring organisation, so now is a good time to get involved (as is any time).
+</p>
