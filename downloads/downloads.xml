@@ -340,9 +340,8 @@
                 <package platform="linux-gentoo" version="0.1.2">
                     <instruction>Run &lt;code&gt;emerge -av libtprl&lt;/code&gt;.</instruction>
                 </package>
-                <package platform="source" version="0.1.2">
-                    <file href="http://thousandparsec.net/tp/downloads/libtprl/libtprl-0.1.2.tar.gz">Download from Thousand Parsec Website</file>
-                    <file href="http://sourceforge.net/project/downloading.php?group_id=132078&amp;filename=libtprl-0.1.2.tar.gz">Download from SourceForge</file>
+                <package platform="source" version="0.1.3">
+                    <file href="http://thousandparsec.net/tp/downloads/libtprl/libtprl-0.1.3.tar.gz">Download from Thousand Parsec Website</file>
                 </package>
                 <package platform="developer" version="-">
                     <file href="http://git.thousandparsec.net/gitweb/gitweb.cgi?p=libtprl.git;a=summary">Git Repository</file>

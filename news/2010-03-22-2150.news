@@ -1,0 +1,14 @@
+
+<h2>Libtprl 0.1.3 released.</h2>
+<p>by Lee</p>
+<p>
+	New version to catch up with compilers and changes in the last 3 years. Mostly small things
+	but ezod has rewritten the tokenizing to work better. 
+	All 0.1.x releases should be interface compatible. Hopefully documentation 
+	makes it in soon.
+</p>
+<p>
+	Libtprl 0.1.3 is on the downloads page and will be on alternative hosting shortly. The Git repo is 
+	libtprl and the tag is 
+	LIBTPRL_0_1_3. Feedback and suggestions are always welcome.
+</p>
