@@ -1,0 +1,13 @@
+
+<h2>TPServer-cpp 0.7.0 released.</h2>
+<p>by Lee</p>
+<p>
+	This release merges last year's GSoC projects of refactoring and
+	MTSec, along with many bug fixes, BattleXML support, media support in
+	Minisec and tidyer libltdl support.
+</p>
+<p>
+	TPServer-cpp 0.7.0 is on the <a href="http://www.thousandparsec.net/tp/downloads.php?category=server">downloads page</a> and will be on our SF downloads page soon. The GIT repo is 
+	tpserver-cpp (branch master) and the tag is 
+	TPSERVER_CPP_0_7_0. Feedback and suggestions are always welcome.
+</p>
