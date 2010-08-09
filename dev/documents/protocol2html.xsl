@@ -47,6 +47,14 @@
       <xsl:text>Packets</xsl:text>
     </xsl:element>
     <xsl:apply-templates select="descendant::packet" mode="description"/>
+    
+    <xsl:processing-instruction name="php">
+    
+        include "../bits/end_section.inc";
+        include "../bits/start_section.inc";
+
+    </xsl:processing-instruction>
+
     <xsl:element name="h2">
       <xsl:attribute name="id"><xsl:text>Parameter Sets</xsl:text></xsl:attribute>
       <xsl:text>Parameter Sets</xsl:text>
@@ -230,11 +238,10 @@
       <xsl:value-of select="description"/>
     </xsl:element>
     <xsl:if test="child::parameter">
-      <xsl:element name="ul">
-        <xsl:apply-templates select="child::parameter/*" mode="description"/>
-      </xsl:element>
+        <xsl:apply-templates select="child::parameter" mode="description"/>
     </xsl:if>
   </xsl:template>
+
   <xsl:template match="parameter" mode="description">
     <xsl:element name="h4">
       <xsl:attribute name="id"><xsl:text>Desc_</xsl:text><xsl:value-of select="@name"/></xsl:attribute>
@@ -248,7 +255,14 @@
     <xsl:element name="p">
       <xsl:value-of select="description"/>
     </xsl:element>
-
+    <xsl:if test="child::usestruct">
+      <xsl:element name="p">
+        <xsl:text>The use of the parameter contains:</xsl:text>
+      </xsl:element>
+      <xsl:element name="ul">
+        <xsl:apply-templates select="child::usestruct/structure/*" mode="description" />
+      </xsl:element>
+    </xsl:if>
 
   </xsl:template>
   
