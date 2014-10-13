@@ -27,6 +27,13 @@
 
 </head>
 <body>
+
+<div id="banner" style="background-color: red;">
+<br>
+<h2>Thousand Parsec has been discontinued since 2012.</h2>
+Try the <a href="http://www.freeorion.org/">FreeOrion project</a> instead.
+</div>
+
 <!--
 Commented out because it was causing loading issues on slow links.
 <script type='text/javascript' src='http://track3.mybloglog.com/js/jsserv.php?mblID=2007020216243388'></script>
