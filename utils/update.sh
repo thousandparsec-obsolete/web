@@ -1,7 +1,7 @@
 #! /bin/sh
 
 if [ "x$GITROOT" = "x" ]; then
-	GITROOT="/var/www/thousandparsec/repos"
+	GITROOT="/srv/www.thousandparsec/repos"
 fi
 
 cd $GITROOT

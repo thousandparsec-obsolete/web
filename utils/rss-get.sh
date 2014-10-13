@@ -1,7 +1,7 @@
 #! /bin/sh
 
 if [ "x$WEBROOT" = "x" ]; then
-	WEBROOT="/var/www/thousandparsec/tp"
+	WEBROOT="/srv/www.thousandparsec/tp"
 fi
 
 cd $WEBROOT
