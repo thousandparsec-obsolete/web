@@ -8,7 +8,7 @@ cd $GITROOT
 for r in `ls`; do
   if test -x $GITROOT/$r/.git ; then
     cd $GITROOT/$r
-    git-pull
+    git pull
   fi
 done
 
