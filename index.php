@@ -97,7 +97,7 @@
 	</table>
 </div>
 <?php
-
+/*
 	try {
 		$stats = new GoogleCodeStats('thousandparsec');
 		$data = $stats->getFeed('issues', 'CSV', -1, '?can=2&colspec=Reporter%20Component', 3600);
@@ -139,7 +139,7 @@
 	
 	} catch (Exception $e) {
 		echo '<!-- ' . $e->getMessage() . ' --> ';
-	}
+	}*/
 	
 	?>
 
